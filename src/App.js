@@ -1,24 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import FileController from "./components/media/FileController";
+import tortulPic from "./components/media/tortul.jpg";
+import RabitPic from "./components/media/rabit.jpg";
+import Pdf from "./components/media/pdf";
+
+   {/* <FileController
+      item={{cover: RabitPic, media: tortulPic}}
+      style={{width: "40%"}}
+  /> */}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <Pdf />
   );
 }
 
