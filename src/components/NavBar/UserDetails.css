@@ -1,0 +1,21 @@
+/* FILEPATH: /c:/Users/ArTech/Desktop/portalClient/portalClient/src/components/NavBar/UserDetails.css */
+
+.user-details {
+  display: flex;
+  align-items: center;
+}
+
+.user-details__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-details__name {
+  font-weight: bold;
+}
+
+.user-details__email {
+  color: gray;
+}
