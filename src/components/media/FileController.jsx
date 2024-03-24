@@ -1,28 +1,21 @@
 import "./FileController.css";
 import {useState} from "react";
+import getHtml from "./getHtml";
 
-// import useBuffer from "../../store/useBuffer";
-
-const FileController = ({item, style, onClick = () => {}}) => {
-  // const [fileId, setFileId] = useState(item.cover ? item.cover : item.media);
-  const [display, setDisplay] = useState(item.cover);
-  // const {media} = useBuffer({fileId});
-
-  // useEffect(() => {
-  //   setDisplay(getHtmlFile(media.signedUrl, media.mimeType));
-  // }, [media]);
+const FileController = ({item, style = {}, onClick = () => {}}) => {
+  const [display, setDisplay] = useState(item.cover ? item.cover : item.media);
+  const [fileType, setFileType] = useState(item.cover ? "image" : item.type);
 
   return (
     <div
       className="file-container"
       onClick={() => {
         onClick();
-        // setFileId(item.media);
         setDisplay(item.media);
+        setFileType(item.type);
       }}
     >
-      <img className="file" src={display} style={style} alt="example" />
-      {/* {display} */}
+      {getHtml(display, fileType, style)}
     </div>
   );
 };
