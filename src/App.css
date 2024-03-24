@@ -4,8 +4,10 @@
 }
 
 .App {
-<<<<<<< HEAD
   text-align: center;
+  direction: rtl;
+  font-family: Assistant;
+  user-select: none;
 }
 
 .App-logo {
@@ -58,9 +60,4 @@
   to {
     transform: rotate(360deg);
   }
-=======
-  direction: rtl;
-  font-family: Assistant;
-  user-select: none;
->>>>>>> 71d28ab310591c33755288f14fa24dd2401fe91c
 }
