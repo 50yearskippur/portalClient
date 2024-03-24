@@ -2,6 +2,7 @@
   width: 13.8vw;
   height: 3.3vh;
   line-height: 1.5;
+  position: relative;
 }
 
 .title {
@@ -14,6 +15,7 @@
   width: 25px;
   border-radius: 2px;
   margin-left: 0.8rem;
+  aspect-ratio: 1;
 }
 
 .title-list-row {

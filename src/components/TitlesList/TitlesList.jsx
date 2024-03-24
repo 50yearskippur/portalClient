@@ -1,8 +1,9 @@
 import "./TitlesList.css";
 
-const TitlesList = ({ titlesArray, selectedTitle }) => {
+const TitlesList = ({ titlesArray, selectedTitle, style }) => {
+  console.log(style);
   return (
-    <div className="titles-list-container">
+    <div className="titles-list-container" style={style}>
       {titlesArray.map((title) => {
         return (
           <div className="title-list-row">
