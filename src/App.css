@@ -1,4 +1,10 @@
+@font-face {
+  font-family: "Assistant";
+  src: url("./assets/fonts/Assistant-VariableFont_wght.ttf");
+}
+
 .App {
+<<<<<<< HEAD
   text-align: center;
 }
 
@@ -52,4 +58,9 @@
   to {
     transform: rotate(360deg);
   }
+=======
+  direction: rtl;
+  font-family: Assistant;
+  user-select: none;
+>>>>>>> 71d28ab310591c33755288f14fa24dd2401fe91c
 }
