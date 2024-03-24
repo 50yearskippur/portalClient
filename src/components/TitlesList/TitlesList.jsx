@@ -1,11 +1,17 @@
 import "./TitlesList.css";
+import { useState } from "react";
 
-const TitlesList = ({ titlesArray, selectedTitle }) => {
+const TitlesList = ({ titlesArray, style }) => {
+  const [selectedTitle, setSelectedTitle] = useState(titlesArray[0]);
+
   return (
-    <div className="titles-list-container">
+    <div className="titles-list-container" style={style}>
       {titlesArray.map((title) => {
         return (
-          <div className="title-list-row">
+          <div
+            className="title-list-row"
+            onClick={() => setSelectedTitle(title)}
+          >
             <div
               className="rectangle"
               style={{
