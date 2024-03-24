@@ -21,7 +21,6 @@ const NavBar = () => {
       <UserDetails user={user} />
       <TitleList
         style={{ right: "-1.5vw", marginTop: "7vh" }}
-        selectedTitle={"דף הבית"}
         titlesArray={["דף הבית", "תבניות עיצוב", "תמונות ומדיה", "טפסים"]}
       />
     </div>
