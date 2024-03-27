@@ -1,6 +1,8 @@
 .pdf-container {
-  height: 17.2vh;
+  height: 14.2vh;
   position: relative;
-  border: 1px solid #d0d0d0;
+  border-top: 27px solid #d9d9d9;
+  border-left: 23px solid #d9d9d9;
+  border-right: 23px solid #d9d9d9;
   overflow: hidden;
 }

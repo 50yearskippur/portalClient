@@ -6,7 +6,7 @@ const Pdf = ({ file }) => {
   return (
     <div className="pdf-container">
       <Document file={file} loading={<div>Loading...</div>}>
-        <Page pageNumber={1} renderTextLayer={false} width={290} />
+        <Page pageNumber={1} renderTextLayer={false} width={241} />
       </Document>
     </div>
   );
