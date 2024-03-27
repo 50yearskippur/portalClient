@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
 }
 
 .pdf-preview-info {
@@ -31,5 +32,4 @@
   width: 1.5625vw;
   height: 2.71vh;
   margin-left: 1.2vw;
-  cursor: pointer;
 }
