@@ -1,6 +1,6 @@
 import "./NavBar.css";
 import TitleList from "../TitlesList/TitlesList";
-import portalLogo from "../../assets/media/portalLogo.png";
+import portalLogo from "../../assets/media/navbar/portalLogo.png";
 import UserDetails from "./UserDetails";
 
 //delete in production
