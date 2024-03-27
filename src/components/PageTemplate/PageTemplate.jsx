@@ -75,15 +75,6 @@ const PageTemplate = ({gridStyle, ItemComponent}) => {
       media: rabit,
       mediaType: "image",
     },
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "יונקים",
-      },
-      media: rabit,
-      mediaType: "image",
-    },
   ];
   return (
     <div className="page-template" style={gridStyle}>
