@@ -20,7 +20,7 @@ const NavBar = () => {
       <img className="portal-logo" alt="portal logo" src={portalLogo} />
       <UserDetails user={user} />
       <TitleList
-        style={{ right: "-1.5vw", marginTop: "7vh" }}
+        style={{right: "-1.5vw", marginTop: "7vh"}}
         titlesArray={["דף הבית", "תבניות עיצוב", "תמונות ומדיה", "טפסים"]}
       />
     </div>
