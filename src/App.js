@@ -1,7 +1,7 @@
 import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
-import FileController from "./components/media/FileController";
 import pdfPage from "./assets/pdfs/pdfPage.pdf";
+import PdfPreview from "./components/ItemComponents/PdfPreview/PdfPreview";
 
 const items = [{ media: pdfPage, type: "pdf" }];
 
@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-      <FileController item={items[0]} />
+      <PdfPreview pdfDetails={items[0]} />
     </div>
   );
 }
