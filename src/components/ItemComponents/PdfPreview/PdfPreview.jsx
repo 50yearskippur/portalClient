@@ -5,7 +5,7 @@ import DownloadIcon from "../../../assets/media/Icons/downloadIcon.png";
 const downloadPdf = (pdfDetails) => {
   const link = document.createElement("a");
   link.href = pdfDetails.media;
-  link.download = "file.pdf"; // or any other filename you want
+  link.download = `${pdfDetails.title}.pdf`; // or any other filename you want
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
