@@ -1,6 +1,6 @@
 import "./PdfPreview.css";
-import FileController from "../../media/FileController";
-import DownloadIcon from "../../../assets/media/Icons/downloadIcon.png";
+import FileController from "../../Media/FileController";
+import DownloadIcon from "../../../assets/media/icons/downloadIcon.png";
 
 const downloadPdf = (pdfDetails) => {
   const link = document.createElement("a");
@@ -11,7 +11,7 @@ const downloadPdf = (pdfDetails) => {
   document.body.removeChild(link);
 };
 
-const PdfPreview = ({ pdfDetails }) => {
+const PdfPreview = ({pdfDetails}) => {
   return (
     <div className="pdf-preview-container">
       <FileController item={pdfDetails} />
