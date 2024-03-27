@@ -1,4 +1,4 @@
-import profilePicture from "../../assets/media/profilePicture.png";
+import profilePicture from "../../assets/media/navbar/profilePicture.png";
 import "./UserDetails.css";
 
 const UserDetails = ({user}) => {

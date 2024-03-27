@@ -1,0 +1,37 @@
+.favorite-edu-title {
+  color: #5d5d5d;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 150%;
+}
+
+.favorite-edu-title {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.favorite-edu-conrainer {
+  color: #5d5d5d;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.favorite-edu-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.favorite-edu-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.favorite-edu-heart {
+  background-image: url("../../assets//media//icons//heart.png");
+  background-repeat: no-repeat;
+  width: 45px;
+}
