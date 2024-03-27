@@ -1,0 +1,7 @@
+.page-template {
+  margin-left: 148px;
+  margin-right: 148px;
+  width: 100%;
+  display: grid;
+  justify-content: space-between;
+}
