@@ -10,7 +10,7 @@ const PageTemplate = ({gridStyle, ItemComponent}) => {
         title: "יונקים",
       },
       media: rabit,
-      medidaType: "image",
+      mediaType: "image",
     },
     {
       title: "ארנב",
@@ -19,7 +19,7 @@ const PageTemplate = ({gridStyle, ItemComponent}) => {
         title: "יונקים",
       },
       media: rabit,
-      medidaType: "image",
+      mediaType: "image",
     },
     {
       title: "ארנב",
@@ -28,7 +28,7 @@ const PageTemplate = ({gridStyle, ItemComponent}) => {
         title: "יונקים",
       },
       media: rabit,
-      medidaType: "image",
+      mediaType: "image",
     },
     {
       title: "ארנב",
@@ -37,7 +37,7 @@ const PageTemplate = ({gridStyle, ItemComponent}) => {
         title: "יונקים",
       },
       media: rabit,
-      medidaType: "image",
+      mediaType: "image",
     },
     {
       title: "ארנב",
@@ -46,7 +46,7 @@ const PageTemplate = ({gridStyle, ItemComponent}) => {
         title: "יונקים",
       },
       media: rabit,
-      medidaType: "image",
+      mediaType: "image",
     },
     {
       title: "ארנב",
@@ -55,7 +55,7 @@ const PageTemplate = ({gridStyle, ItemComponent}) => {
         title: "יונקים",
       },
       media: rabit,
-      medidaType: "image",
+      mediaType: "image",
     },
     {
       title: "ארנב",
@@ -64,7 +64,7 @@ const PageTemplate = ({gridStyle, ItemComponent}) => {
         title: "יונקים",
       },
       media: rabit,
-      medidaType: "image",
+      mediaType: "image",
     },
     {
       title: "ארנב",
@@ -73,7 +73,7 @@ const PageTemplate = ({gridStyle, ItemComponent}) => {
         title: "יונקים",
       },
       media: rabit,
-      medidaType: "image",
+      mediaType: "image",
     },
     {
       title: "ארנב",
@@ -82,7 +82,7 @@ const PageTemplate = ({gridStyle, ItemComponent}) => {
         title: "יונקים",
       },
       media: rabit,
-      medidaType: "image",
+      mediaType: "image",
     },
     {
       title: "ארנב",
@@ -91,7 +91,7 @@ const PageTemplate = ({gridStyle, ItemComponent}) => {
         title: "יונקים",
       },
       media: rabit,
-      medidaType: "image",
+      mediaType: "image",
     },
     {
       title: "ארנב",
@@ -100,7 +100,7 @@ const PageTemplate = ({gridStyle, ItemComponent}) => {
         title: "יונקים",
       },
       media: rabit,
-      medidaType: "image",
+      mediaType: "image",
     },
     {
       title: "ארנב",
@@ -109,7 +109,7 @@ const PageTemplate = ({gridStyle, ItemComponent}) => {
         title: "יונקים",
       },
       media: rabit,
-      medidaType: "image",
+      mediaType: "image",
     },
     {
       title: "ארנב",
@@ -118,7 +118,7 @@ const PageTemplate = ({gridStyle, ItemComponent}) => {
         title: "יונקים",
       },
       media: rabit,
-      medidaType: "image",
+      mediaType: "image",
     },
     {
       title: "ארנב",
@@ -127,7 +127,7 @@ const PageTemplate = ({gridStyle, ItemComponent}) => {
         title: "יונקים",
       },
       media: rabit,
-      medidaType: "image",
+      mediaType: "image",
     },
     {
       title: "ארנב",
@@ -136,7 +136,7 @@ const PageTemplate = ({gridStyle, ItemComponent}) => {
         title: "יונקים",
       },
       media: rabit,
-      medidaType: "image",
+      mediaType: "image",
     },
     {
       title: "ארנב",
@@ -145,124 +145,7 @@ const PageTemplate = ({gridStyle, ItemComponent}) => {
         title: "יונקים",
       },
       media: rabit,
-      medidaType: "image",
-    },
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "יונקים",
-      },
-      media: rabit,
-      medidaType: "image",
-    },
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "יונקים",
-      },
-      media: rabit,
-      medidaType: "image",
-    },
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "יונקים",
-      },
-      media: rabit,
-      medidaType: "image",
-    },
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "יונקים",
-      },
-      media: rabit,
-      medidaType: "image",
-    },
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "יונקים",
-      },
-      media: rabit,
-      medidaType: "image",
-    },
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "יונקים",
-      },
-      media: rabit,
-      medidaType: "image",
-    },
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "יונקים",
-      },
-      media: rabit,
-      medidaType: "image",
-    },
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "יונקים",
-      },
-      media: rabit,
-      medidaType: "image",
-    },
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "יונקים",
-      },
-      media: rabit,
-      medidaType: "image",
-    },
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "יונקים",
-      },
-      media: rabit,
-      medidaType: "image",
-    },
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "יונקים",
-      },
-      media: rabit,
-      medidaType: "image",
-    },
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "יונקים",
-      },
-      media: rabit,
-      medidaType: "image",
-    },
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "יונקים",
-      },
-      media: rabit,
-      medidaType: "image",
+      mediaType: "image",
     },
   ];
   return (

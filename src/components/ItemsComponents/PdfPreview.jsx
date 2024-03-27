@@ -1,5 +1,5 @@
 import "./PdfPreview.css";
-import FileController from "../../Media/FileController";
+import FileController from "../Media/FileController";
 import DownloadIcon from "../../../assets/media/icons/downloadIcon.png";
 
 const downloadPdf = (pdfDetails) => {
