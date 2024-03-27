@@ -1,12 +1,12 @@
 import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
-import Favorites from "./components/Favorites/Favorites";
+import FormPage from "./pages/FormPage";
 
 function App() {
   return (
     <div className="App">
       <NavBar />
-      <Favorites />
+      <FormPage />
     </div>
   );
 }
