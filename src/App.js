@@ -1,12 +1,12 @@
 import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
-import FormPage from "./pages/FormPage";
+import Subjects from "./components/Subjects/Subjects";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <NavBar />
-      <FormPage />
+      <Subjects />
     </div>
   );
 }
