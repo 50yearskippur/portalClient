@@ -4,10 +4,10 @@ import DownloadIcon from "../../../assets/media/Icons/downloadIcon.png";
 import ShowFullPdf from "../../ShowFullPdf/ShowFullPdf";
 import { useState } from "react";
 
-const downloadPdf = (pdfDetails) => {
+const downloadPdf = (item) => {
   const link = document.createElement("a");
-  link.href = pdfDetails.media;
-  link.download = `${pdfDetails.title}.pdf`; // or any other filename you want
+  link.href = item.media;
+  link.download = `${item.title}.pdf`;
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);

@@ -1,4 +1,4 @@
-import PageTemplate from "./components/PageTemplate/PageTemplate";
+import PageTemplate from "../components/PageTemplate/PageTemplate";
 import PdfPreview from "../components/ItemsComponents/PdfPreview";
 
 const Form = () => {
