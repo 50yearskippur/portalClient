@@ -1,7 +1,7 @@
 import "./PageTemplate.css";
 import pdfFile from "../../assets/pdfs/pdfPage.pdf";
 
-const PageTemplate = ({gridStyle, ItemComponent}) => {
+const PageTemplate = ({ gridStyle, ItemComponent }) => {
   const data = [
     {
       title: "ארנב",
@@ -177,9 +177,9 @@ const PageTemplate = ({gridStyle, ItemComponent}) => {
   ];
   return (
     <div className="page-template" style={gridStyle}>
-      {data.map((item, index) => (
-        <ItemComponent item={item} key={`item${index}`} />
-      ))}
+      {data.map((item, index) => {
+        return <ItemComponent item={item} key={`item${index}`} />;
+      })}
     </div>
   );
 };

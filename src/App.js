@@ -1,12 +1,24 @@
 import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
-import Subjects from "./components/Subjects/Subjects";
+import pdfPage from "./assets/pdfs/pdfPage.pdf";
+// import Subjects from "./components/Subjects/Subjects";
+import FormPage from "./pages/FormPage";
+
+const items = [
+  {
+    media: pdfPage,
+    mediaType: "pdf",
+    subSubject: "שלישות",
+    title: "פורמט ריאיון אום",
+  },
+];
 
 function App() {
   return (
     <div>
       <NavBar />
-      <Subjects />
+      <FormPage />
+      {/* <Subjects /> */}
     </div>
   );
 }
