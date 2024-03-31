@@ -1,19 +1,33 @@
 import "./TitlesList.css";
+import {useState} from "react";
 
-const TitlesList = ({titlesArray, selectedTitle}) => {
+const TitlesList = ({titlesArray, style}) => {
+  const [selectedTitle, setSelectedTitle] = useState(titlesArray[0]);
+
   return (
-    <div className="titles-list-container">
+    <div className="titles-list-container" style={style.containerStyle}>
       {titlesArray.map((title, index) => (
-        <div key={`title${index}`} className="title-list-row">
+        <div
+          className="title-list-row"
+          key={`title${index}`}
+          onClick={() => setSelectedTitle(title)}
+        >
           <div
             className="rectangle"
             style={{
-              backgroundColor: title === selectedTitle ? "#FFF" : "#d4d4d4",
+              color: title === selectedTitle ? "#fff" : "#838383",
+              backgroundColor:
+                title === selectedTitle ? style.color : "#d4d4d4",
             }}
-          />
+          >
+            2
+          </div>
           <div
             className="title"
-            style={{fontWeight: title === selectedTitle ? "700" : "400"}}
+            style={{
+              color: style.color,
+              fontWeight: title === selectedTitle ? "700" : "400",
+            }}
           >
             {title}
           </div>

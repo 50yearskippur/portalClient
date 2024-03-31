@@ -1,5 +1,5 @@
 import "./PageTemplate.css";
-import rabit from "./rabit.jpg";
+import pdfFile from "../../assets/pdfs/pdfPage.pdf";
 
 const PageTemplate = ({gridStyle, ItemComponent}) => {
   const data = [
@@ -9,8 +9,8 @@ const PageTemplate = ({gridStyle, ItemComponent}) => {
       subSubject: {
         title: "יונקים",
       },
-      media: rabit,
-      medidaType: "image",
+      media: pdfFile,
+      mediaType: "pdf",
     },
     {
       title: "ארנב",
@@ -18,8 +18,8 @@ const PageTemplate = ({gridStyle, ItemComponent}) => {
       subSubject: {
         title: "יונקים",
       },
-      media: rabit,
-      medidaType: "image",
+      media: pdfFile,
+      mediaType: "pdf",
     },
     {
       title: "ארנב",
@@ -27,8 +27,8 @@ const PageTemplate = ({gridStyle, ItemComponent}) => {
       subSubject: {
         title: "יונקים",
       },
-      media: rabit,
-      medidaType: "image",
+      media: pdfFile,
+      mediaType: "pdf",
     },
     {
       title: "ארנב",
@@ -36,8 +36,8 @@ const PageTemplate = ({gridStyle, ItemComponent}) => {
       subSubject: {
         title: "יונקים",
       },
-      media: rabit,
-      medidaType: "image",
+      media: pdfFile,
+      mediaType: "pdf",
     },
     {
       title: "ארנב",
@@ -45,8 +45,8 @@ const PageTemplate = ({gridStyle, ItemComponent}) => {
       subSubject: {
         title: "יונקים",
       },
-      media: rabit,
-      medidaType: "image",
+      media: pdfFile,
+      mediaType: "pdf",
     },
     {
       title: "ארנב",
@@ -54,8 +54,8 @@ const PageTemplate = ({gridStyle, ItemComponent}) => {
       subSubject: {
         title: "יונקים",
       },
-      media: rabit,
-      medidaType: "image",
+      media: pdfFile,
+      mediaType: "pdf",
     },
     {
       title: "ארנב",
@@ -63,8 +63,8 @@ const PageTemplate = ({gridStyle, ItemComponent}) => {
       subSubject: {
         title: "יונקים",
       },
-      media: rabit,
-      medidaType: "image",
+      media: pdfFile,
+      mediaType: "pdf",
     },
     {
       title: "ארנב",
@@ -72,8 +72,8 @@ const PageTemplate = ({gridStyle, ItemComponent}) => {
       subSubject: {
         title: "יונקים",
       },
-      media: rabit,
-      medidaType: "image",
+      media: pdfFile,
+      mediaType: "pdf",
     },
     {
       title: "ארנב",
@@ -81,8 +81,8 @@ const PageTemplate = ({gridStyle, ItemComponent}) => {
       subSubject: {
         title: "יונקים",
       },
-      media: rabit,
-      medidaType: "image",
+      media: pdfFile,
+      mediaType: "pdf",
     },
     {
       title: "ארנב",
@@ -90,8 +90,8 @@ const PageTemplate = ({gridStyle, ItemComponent}) => {
       subSubject: {
         title: "יונקים",
       },
-      media: rabit,
-      medidaType: "image",
+      media: pdfFile,
+      mediaType: "pdf",
     },
     {
       title: "ארנב",
@@ -99,8 +99,8 @@ const PageTemplate = ({gridStyle, ItemComponent}) => {
       subSubject: {
         title: "יונקים",
       },
-      media: rabit,
-      medidaType: "image",
+      media: pdfFile,
+      mediaType: "pdf",
     },
     {
       title: "ארנב",
@@ -108,8 +108,8 @@ const PageTemplate = ({gridStyle, ItemComponent}) => {
       subSubject: {
         title: "יונקים",
       },
-      media: rabit,
-      medidaType: "image",
+      media: pdfFile,
+      mediaType: "pdf",
     },
     {
       title: "ארנב",
@@ -117,8 +117,8 @@ const PageTemplate = ({gridStyle, ItemComponent}) => {
       subSubject: {
         title: "יונקים",
       },
-      media: rabit,
-      medidaType: "image",
+      media: pdfFile,
+      mediaType: "pdf",
     },
     {
       title: "ארנב",
@@ -126,8 +126,8 @@ const PageTemplate = ({gridStyle, ItemComponent}) => {
       subSubject: {
         title: "יונקים",
       },
-      media: rabit,
-      medidaType: "image",
+      media: pdfFile,
+      mediaType: "pdf",
     },
     {
       title: "ארנב",
@@ -135,8 +135,8 @@ const PageTemplate = ({gridStyle, ItemComponent}) => {
       subSubject: {
         title: "יונקים",
       },
-      media: rabit,
-      medidaType: "image",
+      media: pdfFile,
+      mediaType: "pdf",
     },
     {
       title: "ארנב",
@@ -144,8 +144,8 @@ const PageTemplate = ({gridStyle, ItemComponent}) => {
       subSubject: {
         title: "יונקים",
       },
-      media: rabit,
-      medidaType: "image",
+      media: pdfFile,
+      mediaType: "pdf",
     },
     {
       title: "ארנב",
@@ -153,8 +153,8 @@ const PageTemplate = ({gridStyle, ItemComponent}) => {
       subSubject: {
         title: "יונקים",
       },
-      media: rabit,
-      medidaType: "image",
+      media: pdfFile,
+      mediaType: "pdf",
     },
     {
       title: "ארנב",
@@ -162,8 +162,8 @@ const PageTemplate = ({gridStyle, ItemComponent}) => {
       subSubject: {
         title: "יונקים",
       },
-      media: rabit,
-      medidaType: "image",
+      media: pdfFile,
+      mediaType: "pdf",
     },
     {
       title: "ארנב",
@@ -171,98 +171,8 @@ const PageTemplate = ({gridStyle, ItemComponent}) => {
       subSubject: {
         title: "יונקים",
       },
-      media: rabit,
-      medidaType: "image",
-    },
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "יונקים",
-      },
-      media: rabit,
-      medidaType: "image",
-    },
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "יונקים",
-      },
-      media: rabit,
-      medidaType: "image",
-    },
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "יונקים",
-      },
-      media: rabit,
-      medidaType: "image",
-    },
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "יונקים",
-      },
-      media: rabit,
-      medidaType: "image",
-    },
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "יונקים",
-      },
-      media: rabit,
-      medidaType: "image",
-    },
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "יונקים",
-      },
-      media: rabit,
-      medidaType: "image",
-    },
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "יונקים",
-      },
-      media: rabit,
-      medidaType: "image",
-    },
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "יונקים",
-      },
-      media: rabit,
-      medidaType: "image",
-    },
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "יונקים",
-      },
-      media: rabit,
-      medidaType: "image",
-    },
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "יונקים",
-      },
-      media: rabit,
-      medidaType: "image",
+      media: pdfFile,
+      mediaType: "pdf",
     },
   ];
   return (

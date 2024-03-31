@@ -15,12 +15,17 @@ const user = {
 };
 
 const NavBar = () => {
+  const titleListStyle = {
+    containerStyle: {right: "-1.5vw", marginTop: "7vh"},
+    color: "#FFF",
+  };
+
   return (
     <div className="navbar-container">
       <img className="portal-logo" alt="portal logo" src={portalLogo} />
       <UserDetails user={user} />
       <TitleList
-        selectedTitle={"דף הבית"}
+        style={titleListStyle}
         titlesArray={["דף הבית", "תבניות עיצוב", "תמונות ומדיה", "טפסים"]}
       />
     </div>
