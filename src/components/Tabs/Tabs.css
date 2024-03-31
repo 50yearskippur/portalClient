@@ -1,0 +1,29 @@
+.tabs-container {
+  display: flex;
+  gap: 60px;
+  justify-content: flex-start;
+  font-size: 20px;
+  font-weight: 700;
+  color: #d9d9d9;
+  border-bottom: 2px solid #d9d9d9;
+  width: 55vw;
+}
+
+.tabs-item {
+  position: relative;
+  padding-bottom: 2px;
+  cursor: pointer;
+}
+
+.tabs-item.current-tab::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  border-bottom: 2px solid #5d5d5d;
+}
+
+.tabs-item.current-tab {
+  color: #5d5d5d;
+}
