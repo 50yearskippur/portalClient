@@ -12,11 +12,12 @@ const SubSubjects = ({subject}) => {
               <div className="sub-subject-description">
                 {subSubject.description}
               </div>
-              <div className="sub-subject-edu-container">
-                {subSubject.eduResourse.map((eduResource, index) => (
-                  <div className="sub-subject-edu" key={`edu${index}`} />
-                ))}
-              </div>
+            </div>
+            <div className="sub-subject-edu-container">
+              <div>{subSubject.eduResourse.length}+</div>
+              {subSubject.eduResourse.map((edu, index) => (
+                <div className="sub-subject-edu" key={`edu${index}`} />
+              ))}
             </div>
           </div>
         );
