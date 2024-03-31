@@ -1,10 +1,12 @@
 import "./App.css";
-import Tabs from "./components/Tabs/Tabs";
+import {PopupProvider} from "./store/popup-context";
+import {UserProvider} from "./store/user-context";
+
 function App() {
   return (
-    <div>
-      <Tabs tabsArray={["במיוחד בשבילך", "כל התוצרים", "תוצרים שאהבתי"]} />
-    </div>
+    <UserProvider>
+      <PopupProvider></PopupProvider>
+    </UserProvider>
   );
 }
 
