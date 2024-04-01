@@ -11,16 +11,18 @@ function App() {
     <BrowserRouter>
       <UserProvider>
         <PopupProvider>
-          <NavBar />
-          <Routes>
-            {paths.map((path) => (
-              <Route
-                key={path.text}
-                path={path.path}
-                element={createElement(path.component)}
-              />
-            ))}
-          </Routes>
+          <div style={{display: "flex"}}>
+            <NavBar />
+            <Routes>
+              {paths.map((path) => (
+                <Route
+                  key={path.text}
+                  path={path.path}
+                  element={createElement(path.component)}
+                />
+              ))}
+            </Routes>
+          </div>
         </PopupProvider>
       </UserProvider>
     </BrowserRouter>

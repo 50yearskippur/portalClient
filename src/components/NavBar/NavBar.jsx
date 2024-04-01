@@ -2,6 +2,7 @@ import "./NavBar.css";
 import TitleList from "../TitlesList/TitlesList";
 import portalLogo from "../../assets/media/navbar/portalLogo.png";
 import UserDetails from "./UserDetails";
+import paths from "../../constants/paths";
 
 //delete in production
 const user = {
@@ -24,10 +25,7 @@ const NavBar = () => {
     <div className="navbar-container">
       <img className="portal-logo" alt="portal logo" src={portalLogo} />
       <UserDetails user={user} />
-      <TitleList
-        style={titleListStyle}
-        titlesArray={["דף הבית", "תבניות עיצוב", "תמונות ומדיה", "טפסים"]}
-      />
+      <TitleList style={titleListStyle} titlesArray={paths} />
     </div>
   );
 };
