@@ -5,8 +5,44 @@
   bottom: 0;
   left: 0;
   z-index: 1;
+  width: 100vw;
+  height: 100vh;
   background-color: #0000006b;
 }
 
 .pdf-document {
+  z-index: 2;
+  position: absolute;
+  overflow-y: auto;
+  height: 87.5vh;
+  top: 12.2vh;
+  right: 33vw;
+  direction: ltr;
+  padding-right: 1.5vw;
 }
+
+::-webkit-scrollbar {
+  width: 0.65vw;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #c8c8c8;
+  border-radius: 10px;
+  margin-right: 10vw;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #5c5c5c;
+}
+
+/* .pdf-wrapper {
+  background-color: red;
+} */
