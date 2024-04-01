@@ -9,7 +9,11 @@ const Subjects = () => {
   };
   return (
     <div className="subjects-container">
-      <TitlesList titlesArray={subjects} style={titleListStyle} />
+      <TitlesList
+        titlesArray={subjects}
+        showNumbers={true}
+        style={titleListStyle}
+      />
     </div>
   );
 };
