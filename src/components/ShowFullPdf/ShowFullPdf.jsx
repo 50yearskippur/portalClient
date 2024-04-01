@@ -1,17 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Document, Page } from "react-pdf";
 import "./ShowFullPdf.css";
 
 const ShowFullPdf = ({ pdfDetails }) => {
   const [numPages, setNumPages] = useState(null);
+  const [currentPage, setCurrentPage] = useState(1);
+  const documentRef = useRef();
 
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);
   }
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (numPages) {
+        const { scrollTop, scrollHeight, clientHeight } = documentRef.current;
+        const scrolled = scrollTop / (scrollHeight - clientHeight);
+        setCurrentPage(Math.max(1, Math.ceil(scrolled * numPages)));
+      }
+    };
+
+    documentRef.current.addEventListener("scroll", handleScroll);
+    return () =>
+      documentRef.current.removeEventListener("scroll", handleScroll);
+  }, [numPages]);
+
   return (
-    <div className="pdf-wrapper">
-      <div className="pdf-document">
+    <>
+      <div className="pdf-information">
+        <p className="pdf-title">{pdfDetails.title}</p>
+        <p>Page: {currentPage}</p>
+      </div>
+      <div className="pdf-document" ref={documentRef}>
         <Document
           file={pdfDetails.media}
           onLoadSuccess={onDocumentLoadSuccess}
@@ -28,7 +48,7 @@ const ShowFullPdf = ({ pdfDetails }) => {
         </Document>
       </div>
       <div className="background-shadow" />
-    </div>
+    </>
   );
 };
 

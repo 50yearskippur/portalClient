@@ -25,6 +25,17 @@
   width: 0.65vw;
 }
 
+.pdf-information {
+  z-index: 3;
+}
+
+.pdf-title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+  margin-right: 2.5vw;
+}
+
 /* Track */
 ::-webkit-scrollbar-track {
   background: #c8c8c8;
@@ -43,6 +54,8 @@
   background: #5c5c5c;
 }
 
-/* .pdf-wrapper {
-  background-color: red;
-} */
+.pdf-information {
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
+}
