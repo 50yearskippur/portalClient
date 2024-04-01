@@ -22,7 +22,6 @@ const Loading = () => {
 };
 
 const Pdf = ({file, style}) => {
-  console.log(style);
   return (
     <div className="pdf-container">
       <Document file={file} loading={Loading}>

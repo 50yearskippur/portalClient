@@ -1,7 +1,7 @@
 import "./TitlesList.css";
 import {useState} from "react";
 
-const TitlesList = ({titlesArray, style}) => {
+const TitlesList = ({titlesArray, showNumbers = false, style}) => {
   const [selectedTitle, setSelectedTitle] = useState(titlesArray[0]);
 
   return (
@@ -20,7 +20,7 @@ const TitlesList = ({titlesArray, style}) => {
                 title === selectedTitle ? style.color : "#d4d4d4",
             }}
           >
-            2
+            {showNumbers && 2}
           </div>
           <div
             className="title"
