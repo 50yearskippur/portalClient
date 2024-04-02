@@ -1,8 +1,8 @@
-import "./MediaPhoto.css";
+import "./CollageMedia.css";
 import FileController from "../Media/FileController";
 import rabit from "../PageTemplate/rabit.jpg";
 
-const MediaPhoto = () => {
+const CollageMedia = () => {
   const item = {
     title: "ארנב",
     type: "חיה",
@@ -13,16 +13,16 @@ const MediaPhoto = () => {
     mediaType: "image",
   };
   return (
-    <div className="media-photo-container">
+    <div className="collage-media-container">
       <FileController item={item} />
-      <div className="media-photo-side-container">
+      <div className="collage-media-side-container">
         <FileController item={item} />
         <FileController item={item} />
         <FileController item={item} />
       </div>
-      <div className="media-photo-title">סיום קורס</div>
+      <div className="collage-media-title">סיום קורס</div>
     </div>
   );
 };
 
-export default MediaPhoto;
+export default CollageMedia;

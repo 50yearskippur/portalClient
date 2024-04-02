@@ -1,9 +1,9 @@
-.stock-photo-container {
+.stock-media-container {
   position: relative;
   display: inline-block;
 }
 
-.stock-photo-overlay {
+.stock-media-overlay {
   position: absolute;
   bottom: 0;
   right: 0;

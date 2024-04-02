@@ -1,14 +1,14 @@
 import "./GalleryPage.css";
 import PageTemplate from "../components/PageTemplate/PageTemplate";
-import StockPhoto from "../components/ItemsComponents/StockPhoto";
-import MediaPhoto from "../components/ItemsComponents/MediaPhoto";
+import StockMedia from "../components/ItemsComponents/StockMedia";
+import CollageMedia from "../components/ItemsComponents/CollageMedia";
 
 const GalleryPage = () => {
   return (
     <div className="gallery-page-container">
       <div className="gallery-page-header">תמונת סטוק</div>
       <PageTemplate
-        ItemComponent={StockPhoto}
+        ItemComponent={StockMedia}
         gridStyle={{
           gridTemplateColumns: `repeat(auto-fill, minmax(175px, 1fr)`,
           gap: "34px",
@@ -17,7 +17,7 @@ const GalleryPage = () => {
 
       <div className="gallery-page-header">מדיה</div>
       <PageTemplate
-        ItemComponent={MediaPhoto}
+        ItemComponent={CollageMedia}
         gridStyle={{
           gridTemplateColumns: `repeat(auto-fill, minmax(225px, 1fr)`,
           gap: "40px",
