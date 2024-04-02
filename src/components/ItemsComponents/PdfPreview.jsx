@@ -1,6 +1,8 @@
 import "./PdfPreview.css";
-import FileController from "../Media/FileController";
-import DownloadIcon from "../../assets/media/icons/downloadIcon.png";
+import FileController from "../media/FileController";
+import DownloadIcon from "../../assets/media/Icons/downloadIcon.png";
+import ShowFullPdf from "../ShowFullPdf/ShowFullPdf";
+import { useState } from "react";
 
 const downloadPdf = (item) => {
   const link = document.createElement("a");
@@ -11,21 +13,31 @@ const downloadPdf = (item) => {
   document.body.removeChild(link);
 };
 
-const PdfPreview = ({item}) => {
+const PdfPreview = ({ item }) => {
+  const [showFullPdf, setShowFullPdf] = useState(false);
   return (
-    <div className="pdf-preview-container">
-      <FileController item={item} style={{width: "300"}} />
-      <div className="pdf-preview-info">
-        <div>
-          <div className="pdf-preview-title">{item.title}</div>
-          <div className="pdf-preview-subject">{item.subSubject.title}</div>
-        </div>
-        <img
-          onClick={() => downloadPdf(item)}
-          className="pdf-preview-download-icon"
-          alt="download-icon"
-          src={DownloadIcon}
+    <div>
+      {showFullPdf && (
+        <ShowFullPdf
+          downloadPdf={downloadPdf}
+          setShowFullPdf={setShowFullPdf}
+          pdfDetails={item}
         />
+      )}
+      <div className="pdf-preview-container">
+        <FileController item={item} onClick={() => setShowFullPdf(true)} />
+        <div className="pdf-preview-info">
+          <div>
+            <div className="pdf-preview-title">{item.title}</div>
+            <div className="pdf-preview-subject">{item.subSubject.title}</div>
+          </div>
+          <img
+            onClick={() => downloadPdf(item)}
+            className="pdf-preview-download-icon"
+            alt="download-icon"
+            src={DownloadIcon}
+          />
+        </div>
       </div>
     </div>
   );
