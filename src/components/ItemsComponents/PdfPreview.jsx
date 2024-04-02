@@ -1,8 +1,8 @@
 import "./PdfPreview.css";
-import FileController from "../media/FileController";
-import DownloadIcon from "../../assets/media/Icons/downloadIcon.png";
+import FileController from "../Media/FileController";
+import DownloadIcon from "../../assets/media/icons/downloadIcon.png";
 import ShowFullPdf from "../ShowFullPdf/ShowFullPdf";
-import { useState } from "react";
+import {useState} from "react";
 
 const downloadPdf = (item) => {
   const link = document.createElement("a");
@@ -13,7 +13,7 @@ const downloadPdf = (item) => {
   document.body.removeChild(link);
 };
 
-const PdfPreview = ({ item }) => {
+const PdfPreview = ({item}) => {
   const [showFullPdf, setShowFullPdf] = useState(false);
   return (
     <div>

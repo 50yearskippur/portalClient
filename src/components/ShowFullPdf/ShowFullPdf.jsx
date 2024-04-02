@@ -1,30 +1,35 @@
-import React, { useState, useEffect, useRef } from "react";
-import { Document, Page } from "react-pdf";
+import React, {useState, useEffect, useRef} from "react";
+import {Document, Page} from "react-pdf";
 import "./ShowFullPdf.css";
-import downloadBox from "../../assets/media/Icons/downloadBox.png";
+import downloadBox from "../../assets/media/icons/downloadBox.png";
 
-const ShowFullPdf = ({ pdfDetails, setShowFullPdf, downloadPdf }) => {
+const ShowFullPdf = ({pdfDetails, setShowFullPdf, downloadPdf}) => {
   const [numPages, setNumPages] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const documentRef = useRef();
 
-  function onDocumentLoadSuccess({ numPages }) {
+  function onDocumentLoadSuccess({numPages}) {
     setNumPages(numPages);
   }
 
   useEffect(() => {
+    const currentDocument = documentRef.current;
+
     const handleScroll = () => {
-      if (numPages) {
-        const { scrollTop, scrollHeight, clientHeight } = documentRef.current;
+      if (numPages && currentDocument) {
+        const {scrollTop, scrollHeight, clientHeight} = currentDocument;
         const scrolled = scrollTop / (scrollHeight - clientHeight);
         setCurrentPage(Math.max(1, Math.ceil(scrolled * numPages)));
       }
     };
 
-    documentRef.current.addEventListener("scroll", handleScroll);
+    if (currentDocument) {
+      currentDocument.addEventListener("scroll", handleScroll);
+    }
+
     return () => {
-      if (documentRef.current) {
-        documentRef.current.removeEventListener("scroll", handleScroll);
+      if (currentDocument) {
+        currentDocument.removeEventListener("scroll", handleScroll);
       }
     };
   }, [numPages]);

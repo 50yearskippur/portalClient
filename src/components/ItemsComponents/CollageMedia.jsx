@@ -1,6 +1,6 @@
 import "./CollageMedia.css";
 import FileController from "../Media/FileController";
-import rabit from "../PageTemplate/rabit.jpg";
+import rabit from "../../assets/img/rabit.jpg";
 
 const CollageMedia = () => {
   const item = {
