@@ -1,0 +1,32 @@
+.file-upload-container {
+  border: 2px dashed #7e7e7e;
+  padding: 20px;
+  text-align: center;
+  color: #333;
+  margin: 45px;
+}
+
+.file-upload-label {
+  display: block;
+  cursor: pointer;
+}
+
+.file-upload-text {
+  color: #bebebe;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.upload-icon {
+  border-radius: 7px;
+  background-color: #d9d9d9;
+  width: 40px;
+  height: 48px;
+  margin: 0 auto 10px;
+}
+
+.upload-file-text-container {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}

@@ -3,6 +3,7 @@
   src: url("./assets/fonts/Assistant-VariableFont_wght.ttf");
 }
 
+html,
 body {
   text-align: center;
   direction: rtl;
@@ -10,4 +11,10 @@ body {
   font-family: Assistant;
   user-select: none;
   display: flex;
+  width: 100%;
+  line-height: 150%;
+}
+
+input {
+  border: 2px solid transparent;
 }

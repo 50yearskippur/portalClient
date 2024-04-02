@@ -1,16 +1,31 @@
 import "./App.css";
+import {PopupProvider} from "./store/popup-context";
+import {UserProvider} from "./store/user-context";
+import {Route, Routes, BrowserRouter} from "react-router-dom";
+import paths from "./constants/paths";
+import {createElement} from "react";
 import NavBar from "./components/NavBar/NavBar";
-import pdfPage from "./assets/pdfs/pdfPage.pdf";
-// import Subjects from "./components/Subjects/Subjects";
-import FormPage from "./pages/FormPage";
 
 function App() {
   return (
-    <div>
-      <NavBar />
-      <FormPage />
-      {/* <Subjects /> */}
-    </div>
+    <BrowserRouter>
+      <UserProvider>
+        <PopupProvider>
+          <div style={{display: "flex"}}>
+            <NavBar />
+            <Routes>
+              {paths.map((path) => (
+                <Route
+                  key={path.text}
+                  path={path.path}
+                  element={createElement(path.component)}
+                />
+              ))}
+            </Routes>
+          </div>
+        </PopupProvider>
+      </UserProvider>
+    </BrowserRouter>
   );
 }
 
