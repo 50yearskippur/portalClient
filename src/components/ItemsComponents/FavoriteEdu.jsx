@@ -1,7 +1,7 @@
 import "./FavoriteEdu.css";
-import FileController from "../Media/FileController";
+import FileController from "../media/FileController";
 
-const FavotireEdu = ({item}) => {
+const FavotireEdu = ({ item }) => {
   return (
     <div className="favorite-edu-conrainer">
       <FileController item={item} />
