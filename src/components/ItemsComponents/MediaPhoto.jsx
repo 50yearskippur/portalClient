@@ -1,5 +1,5 @@
 import "./MediaPhoto.css";
-import FileController from "../Media/FileController";
+import FileController from "../media/FileController";
 import rabit from "../PageTemplate/rabit.jpg";
 
 const MediaPhoto = () => {

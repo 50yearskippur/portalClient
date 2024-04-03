@@ -1,7 +1,7 @@
 import "./StockPhoto.css";
-import FileController from "../Media/FileController";
+import FileController from "../media/FileController";
 
-const StockPhoto = ({item}) => {
+const StockPhoto = ({ item }) => {
   return (
     <div className="stock-photo-container">
       <FileController item={item} />
