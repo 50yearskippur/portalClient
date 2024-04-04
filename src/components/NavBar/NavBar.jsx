@@ -17,7 +17,7 @@ const user = {
 
 const NavBar = () => {
   const titleListStyle = {
-    containerStyle: {right: "-1.5vw", marginTop: "7vh"},
+    containerStyle: { right: "-1.5vw", marginTop: "7vh" },
     color: "#FFF",
   };
 
@@ -25,7 +25,11 @@ const NavBar = () => {
     <div className="navbar-container">
       <img className="portal-logo" alt="portal logo" src={portalLogo} />
       <UserDetails user={user} />
-      <TitleList style={titleListStyle} titlesArray={paths} />
+      <TitleList
+        style={titleListStyle}
+        titlesArray={paths}
+        defaultTitle={paths[0].text}
+      />
     </div>
   );
 };
