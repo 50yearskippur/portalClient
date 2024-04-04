@@ -1,10 +1,10 @@
-import "./GalleryPage.css";
+import "./MediaPage.css";
 import PageTemplate from "../components/PageTemplate/PageTemplate";
 import StockMedia from "../components/ItemsComponents/StockMedia";
 import CollageMedia from "../components/ItemsComponents/CollageMedia";
 import rabit from "../assets/img/rabit.jpg";
 
-const GalleryPage = () => {
+const MediaPage = () => {
   const data = [
     {
       title: "ארנב",
@@ -134,8 +134,8 @@ const GalleryPage = () => {
     },
   ];
   return (
-    <div className="gallery-page-container">
-      <div className="gallery-page-header">תמונת סטוק</div>
+    <div className="media-page-container">
+      <div className="media-page-header">תמונת סטוק</div>
       <PageTemplate
         ItemComponent={StockMedia}
         gridStyle={{
@@ -145,7 +145,7 @@ const GalleryPage = () => {
         data={data}
       />
 
-      <div className="gallery-page-header">מדיה</div>
+      <div className="media-page-header">מדיה</div>
       <PageTemplate
         ItemComponent={CollageMedia}
         gridStyle={{
@@ -158,4 +158,4 @@ const GalleryPage = () => {
   );
 };
 
-export default GalleryPage;
+export default MediaPage;

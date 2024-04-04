@@ -3,8 +3,8 @@ import {useState} from "react";
 import {useNavigate} from "react-router-dom";
 
 const TitlesList = ({titlesArray, showNumbers = false, style}) => {
-  const [selectedTitle, setSelectedTitle] = useState(titlesArray[0]);
-  const navigate = useNavigate(); 
+  const [selectedTitle, setSelectedTitle] = useState(titlesArray[0].text);
+  const navigate = useNavigate();
 
   return (
     <div className="titles-list-container" style={style.containerStyle}>
@@ -21,7 +21,7 @@ const TitlesList = ({titlesArray, showNumbers = false, style}) => {
               backgroundColor:
                 title.text === selectedTitle ? style.color : "#d4d4d4",
             }}
-            onClick={() => (navigate(title.path))}
+            onClick={() => navigate(title.path)}
           >
             {showNumbers && 2}
           </div>

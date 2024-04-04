@@ -1,6 +1,6 @@
 import Home from "../pages/HomePage";
 import Form from "../pages/FormPage";
-import Gallery from "../pages/GalleryPage";
+import media from "../pages/MediaPage";
 import designTemplates from "../pages/designTemplatesPage";
 
 const paths = [
@@ -19,7 +19,7 @@ const paths = [
     text: "טפסים",
     component: Form,
   },
-  {path: "gallery", text: "תמונות ומדיה", component: Gallery},
+  {path: "media", text: "תמונות ומדיה", component: media},
 ];
 
 export default paths;
