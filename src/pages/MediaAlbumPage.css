@@ -1,0 +1,12 @@
+.media-album-container {
+  width: 100%;
+  padding: 0 5vw;
+}
+
+.media-album-title {
+  color: #5d5d5d;
+  font-size: 30px;
+  font-weight: 700;
+  display: flex;
+  margin-bottom: 57px;
+}

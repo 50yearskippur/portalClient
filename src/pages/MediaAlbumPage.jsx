@@ -1,10 +1,12 @@
-import "./GalleryPage.css";
+import "./MediaAlbumPage.css";
 import PageTemplate from "../components/PageTemplate/PageTemplate";
-import StockMedia from "../components/ItemsComponents/StockMedia";
-import CollageMedia from "../components/ItemsComponents/CollageMedia";
+import MediaAlbumItem from "../components/ItemsComponents/MediaAlbumItem";
+import BackArrow from "../components/BackArrow/BackArrow";
+import {useNavigate} from "react-router-dom";
 import rabit from "../assets/img/rabit.jpg";
 
-const GalleryPage = () => {
+const MediaAlbumPage = () => {
+  const navigate = useNavigate();
   const data = [
     {
       title: "ארנב",
@@ -134,23 +136,14 @@ const GalleryPage = () => {
     },
   ];
   return (
-    <div className="gallery-page-container">
-      <div className="gallery-page-header">תמונת סטוק</div>
+    <div className="media-album-container">
+      <BackArrow onClick={() => navigate("/media")} />
+      <div className="media-album-title">פורימון בה"ד 15</div>
       <PageTemplate
-        ItemComponent={StockMedia}
+        ItemComponent={MediaAlbumItem}
         gridStyle={{
-          gridTemplateColumns: `repeat(auto-fill, minmax(175px, 1fr)`,
+          gridTemplateColumns: `repeat(auto-fill, minmax(200px, 1fr)`,
           gap: "34px",
-        }}
-        data={data}
-      />
-
-      <div className="gallery-page-header">מדיה</div>
-      <PageTemplate
-        ItemComponent={CollageMedia}
-        gridStyle={{
-          gridTemplateColumns: `repeat(auto-fill, minmax(225px, 1fr)`,
-          gap: "40px",
         }}
         data={data}
       />
@@ -158,4 +151,4 @@ const GalleryPage = () => {
   );
 };
 
-export default GalleryPage;
+export default MediaAlbumPage;

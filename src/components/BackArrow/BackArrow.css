@@ -1,0 +1,9 @@
+.back-arrow-container {
+  display: flex;
+  cursor: pointer;
+  margin: 43px 0 23px;
+}
+
+.back-arrow-img {
+  width: 26px;
+}
