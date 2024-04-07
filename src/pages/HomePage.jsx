@@ -77,9 +77,9 @@ const HomePage = () => {
     <div className="home-page-wrapper">
       <p className="recommended-title">מומלצים</p>
       <SideBar
-        numItems={3}
-        width="70%"
-        height="40%"
+        numItems={2}
+        width="28.7%"
+        height="53.65%"
         data={data}
         ItemComponent={PdfPreview}
       />
