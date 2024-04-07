@@ -1,8 +1,10 @@
 import "./CollageMedia.css";
 import FileController from "../Media/FileController";
 import rabit from "../../assets/img/rabit.jpg";
+import {useNavigate} from "react-router-dom";
 
 const CollageMedia = () => {
+  const navigate = useNavigate();
   const item = {
     title: "ארנב",
     type: "חיה",
@@ -13,7 +15,10 @@ const CollageMedia = () => {
     mediaType: "image",
   };
   return (
-    <div className="collage-media-container">
+    <div
+      className="collage-media-container"
+      onClick={() => navigate("/mediaAlbum")}
+    >
       <FileController item={item} />
       <div className="collage-media-side-container">
         <FileController item={item} />

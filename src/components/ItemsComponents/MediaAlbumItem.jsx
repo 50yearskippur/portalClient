@@ -1,6 +1,6 @@
 import FileController from "../Media/FileController";
 
-const CollageItem = ({item}) => {
+const MediaAlbumItem = ({item}) => {
   return (
     <div className="collage-item-container">
       <FileController item={item} />
@@ -8,4 +8,4 @@ const CollageItem = ({item}) => {
   );
 };
 
-export default CollageItem;
+export default MediaAlbumItem;

@@ -25,7 +25,7 @@ const NavBar = () => {
     <div className="navbar-container">
       <img className="portal-logo" alt="portal logo" src={portalLogo} />
       <UserDetails user={user} />
-      <TitleList style={titleListStyle} titlesArray={paths} />
+      <TitleList style={titleListStyle} titlesArray={paths.slice(0, 4)} />
     </div>
   );
 };
