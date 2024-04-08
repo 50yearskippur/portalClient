@@ -1,9 +1,9 @@
 import React, {useState, useEffect, useRef} from "react";
 import {Document, Page} from "react-pdf";
 import "./ShowFullPdf.css";
-import downloadBox from "../../assets/media/icons/downloadBox.png";
+import DownloadBox from "../Download/DownloadBox";
 
-const ShowFullPdf = ({pdfDetails, setShowFullPdf, downloadPdf}) => {
+const ShowFullPdf = ({pdfDetails, setShowFullPdf}) => {
   const [numPages, setNumPages] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const documentRef = useRef();
@@ -42,12 +42,7 @@ const ShowFullPdf = ({pdfDetails, setShowFullPdf, downloadPdf}) => {
           דף {currentPage} מתוך {numPages}
         </p>
       </div>
-      <img
-        onClick={() => downloadPdf(pdfDetails)}
-        className="download-icon-box"
-        src={downloadBox}
-        alt="download icon"
-      />
+      <DownloadBox item={pdfDetails} />
       <div className="pdf-document" ref={documentRef}>
         <Document
           file={pdfDetails.media}

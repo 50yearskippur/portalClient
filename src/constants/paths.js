@@ -6,22 +6,22 @@ import MediaAlbum from "../pages/MediaAlbumPage";
 
 const paths = [
   {
-    path: "",
+    path: "/",
     text: "דף הבית",
     component: Home,
   },
   {
-    path: "designTemplates",
+    path: "/designTemplates",
     text: "תבניות עיצוב",
     component: DesignTemplates,
   },
   {
-    path: "forms",
+    path: "/forms",
     text: "טפסים",
     component: Form,
   },
-  {path: "media", text: "תמונות ומדיה", component: Media},
-  {path: "mediaAlbum", text: "אלבומי תמונות", component: MediaAlbum},
+  {path: "/media", text: "תמונות ומדיה", component: Media},
+  {path: "/mediaAlbum", text: "אלבומי תמונות", component: MediaAlbum},
 ];
 
 export default paths;
