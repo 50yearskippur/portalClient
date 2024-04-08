@@ -1,16 +1,15 @@
 import "./TitlesList.css";
 import {useState} from "react";
-import {useNavigate, useLocation} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
-const TitlesList = ({titlesArray, showNumbers = false, style}) => {
-  const location = useLocation();
-  const currentPath = location.pathname;
+const TitlesList = ({
+  titlesArray,
+  getDefaultTitle,
+  showNumbers = false,
+  style,
+}) => {
   const navigate = useNavigate();
-  const [selectedTitle, setSelectedTitle] = useState(
-    showNumbers
-      ? titlesArray[0]
-      : titlesArray.find((p) => p.path === currentPath)?.text
-  );
+  const [selectedTitle, setSelectedTitle] = useState(getDefaultTitle());
 
   return (
     <div className="titles-list-container" style={style.containerStyle}>

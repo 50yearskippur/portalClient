@@ -134,7 +134,7 @@ const MediaPage = () => {
     },
   ];
   return (
-    <div className="media-page-container">
+    <div className="page-container">
       <div className="media-page-header">תמונת סטוק</div>
       <PageTemplate
         ItemComponent={StockMedia}

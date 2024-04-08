@@ -20,3 +20,8 @@ input {
 .app {
   display: flex;
 }
+
+.page-container {
+  width: 100%;
+  padding: 0 5vw;
+}

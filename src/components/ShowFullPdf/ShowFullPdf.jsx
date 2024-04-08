@@ -42,23 +42,26 @@ const ShowFullPdf = ({pdfDetails, setShowFullPdf}) => {
           דף {currentPage} מתוך {numPages}
         </p>
       </div>
-      <DownloadBox item={pdfDetails} />
-      <div className="pdf-document" ref={documentRef}>
-        <Document
-          file={pdfDetails.media}
-          onLoadSuccess={onDocumentLoadSuccess}
-          loading={<div>Loading...</div>}
-        >
-          {Array.from(new Array(numPages), (el, index) => (
-            <Page
-              key={`page_${index + 1}`}
-              pageNumber={index + 1}
-              renderTextLayer={false}
-              width={800}
-            />
-          ))}
-        </Document>
+      <div style={{display: "flex", justifyContent: "flex-end"}}>
+        <DownloadBox item={pdfDetails} />
+        <div className="pdf-document" ref={documentRef}>
+          <Document
+            file={pdfDetails.media}
+            onLoadSuccess={onDocumentLoadSuccess}
+            loading={<div>Loading...</div>}
+          >
+            {Array.from(new Array(numPages), (el, index) => (
+              <Page
+                key={`page_${index + 1}`}
+                pageNumber={index + 1}
+                renderTextLayer={false}
+                width={800}
+              />
+            ))}
+          </Document>
+        </div>
       </div>
+
       <div
         className="background-shadow"
         onClick={() => setShowFullPdf(false)}

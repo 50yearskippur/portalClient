@@ -1,8 +1,5 @@
 .download-icon-box {
-  height: 6.1vh;
   z-index: 2;
   position: relative;
-  top: -1.1vh;
-  right: 54.5vw;
   cursor: pointer;
 }

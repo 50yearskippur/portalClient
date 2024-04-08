@@ -1,3 +1,4 @@
+import "./FormPage.css";
 import PageTemplate from "../components/PageTemplate/PageTemplate";
 import PdfPreview from "../components/ItemsComponents/PdfPreview";
 import Subjects from "../components/Subjects/Subjects";
@@ -160,7 +161,7 @@ const FormPage = () => {
     },
   ];
   return (
-    <div style={{display: "flex", width: "70vw", marginRight: "21vw"}}>
+    <div className="page-container form-page-container">
       <Subjects />
       <PageTemplate
         ItemComponent={PdfPreview}
