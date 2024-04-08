@@ -1,17 +1,13 @@
 import React from "react";
+import "./SideBar.css";
 
 const SideBar = ({ numItems, height, ItemComponent, data }) => {
-  const itemHeight = `${height / numItems}vh`;
-
   return (
-    <div
-      style={{
-        display: "grid",
-        gridTemplateRows: `repeat(${numItems}, 1fr)`,
-      }}
-    >
-      {data.slice(0, numItems).map((item, index) => (
-        <ItemComponent key={index} item={item} />
+    <div className="image-list">
+      {data.slice(0, numItems).map((image, index) => (
+        <div className="image-item" key={index}>
+          <ItemComponent item={image} style={{ height: height }} />
+        </div>
       ))}
     </div>
   );
