@@ -1,23 +1,22 @@
 import React from "react";
 
-const SideBar = ({ data, numItems, width, height, ItemComponent }) => {
-  const gapSize = Math.floor(height / numItems);
-
-  const containerStyle = {
-    display: "grid",
-    gridTemplateColumns: `repeat(auto-fill, minmax(${Math.floor(
-      width / numItems
-    )}px, 1fr))`,
-    gridGap: `${gapSize}px`,
-    height,
-    width,
-  };
+const SideBar = ({ numItems, height, ItemComponent, data }) => {
+  const itemHeight = `${height / numItems}vh`;
+  console.log(itemHeight);
+  console.log(height);
 
   return (
-    <div style={containerStyle}>
-      {data.slice(-numItems).map((item, index) => {
-        return <ItemComponent item={item} key={`item${index}`} />;
-      })}
+    <div
+      style={{
+        display: "grid",
+        gridTemplateRows: `repeat(${numItems}, 1fr)`,
+        // gridGap: "5px", // Adjust this value to change the space between the items
+        // height: `${height}vh`,
+      }}
+    >
+      {data.slice(0, numItems).map((item, index) => (
+        <ItemComponent key={index} item={item} />
+      ))}
     </div>
   );
 };
