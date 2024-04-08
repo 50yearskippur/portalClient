@@ -2,7 +2,6 @@ import SideBar from "../components/SideBar/SideBar";
 import Tabs from "../components/Tabs/Tabs";
 import "./HomePage.css";
 import rabit from "../components/PageTemplate/rabit.jpg";
-import PdfPreview from "../components/ItemsComponents/PdfPreview";
 import RecommendedItem from "../components/ItemsComponents/RecommendedItem";
 
 const data = [
@@ -80,9 +79,9 @@ const HomePage = () => {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "59.7% 40%",
+          gridTemplateColumns: "58% 40%",
           width: "59.5vw",
-          gridGap: "0.3%",
+          gridGap: "2%",
           height: " 300px",
         }}
       >

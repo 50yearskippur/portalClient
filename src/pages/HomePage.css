@@ -1,7 +1,5 @@
 .home-page-wrapper {
-  background-color: red;
   width: 59.5vw;
-
   margin-top: 8.13vh;
   display: flex;
   flex-direction: column;
@@ -23,8 +21,7 @@
   display: flex;
   flex-direction: column; /* Display items in a single column */
   align-items: center; /* Center the items horizontally */
-  gap: 10px; /* Adjust as needed for spacing between items */
-
+  gap: 20px; /* Adjust as needed for spacing between items */
   overflow-y: auto; /* Add scrollbar if content overflows vertically */
 }
 
