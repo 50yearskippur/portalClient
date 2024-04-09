@@ -2,9 +2,14 @@ import "./TitlesList.css";
 import {useState} from "react";
 import {useNavigate} from "react-router-dom";
 
-const TitlesList = ({titlesArray, showNumbers = false, style}) => {
-  const [selectedTitle, setSelectedTitle] = useState(titlesArray[0].text);
+const TitlesList = ({
+  titlesArray,
+  getDefaultTitle,
+  showNumbers = false,
+  style,
+}) => {
   const navigate = useNavigate();
+  const [selectedTitle, setSelectedTitle] = useState(getDefaultTitle());
 
   return (
     <div className="titles-list-container" style={style.containerStyle}>

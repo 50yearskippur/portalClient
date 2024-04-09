@@ -16,3 +16,12 @@ body {
 input {
   border: 2px solid transparent;
 }
+
+.app {
+  display: flex;
+}
+
+.page-container {
+  width: 100%;
+  padding: 0 5vw;
+}
