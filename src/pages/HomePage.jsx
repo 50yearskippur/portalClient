@@ -76,15 +76,7 @@ const HomePage = () => {
   return (
     <div className="home-page-wrapper">
       <p className="recommended-title">מומלצים</p>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "58% 40%",
-          width: "59.5vw",
-          gridGap: "2%",
-          height: " 300px",
-        }}
-      >
+      <div className="recommended-wrapper">
         <RecommendedItem
           item={data[0]}
           style={{ height: "100%", width: "100%" }}
@@ -96,7 +88,7 @@ const HomePage = () => {
           data={data}
         />
       </div>
-      {/* <Tabs tabsArray={tabsArray} /> */}
+      <Tabs style={{ marginTop: "12.7vh" }} tabsArray={tabsArray} />
     </div>
   );
 };
