@@ -3,7 +3,8 @@ import "./RecommendedItem.css";
 
 const RecommendedItem = ({ item, style }) => {
   return (
-    <div>
+    <div className="recommended-item">
+      <div className="recommended-item-title">{item.title}</div>
       <img src={item.media} alt={item.title} style={style} />
     </div>
   );
