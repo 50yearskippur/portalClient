@@ -17,7 +17,7 @@ const Subjects = () => {
     <div className="subjects-container">
       <TitlesList
         titlesArray={subjects}
-        getDefaultTitle={() => subjects[0]}
+        getDefaultTitle={() => subjects[0].text}
         showNumbers={true}
         style={titleListStyle}
       />
