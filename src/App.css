@@ -3,11 +3,25 @@
   src: url("./assets/fonts/Assistant-VariableFont_wght.ttf");
 }
 
+html,
 body {
   text-align: center;
   direction: rtl;
   background-color: #f6f6f6;
   font-family: Assistant;
   user-select: none;
+  line-height: 150%;
+}
+
+input {
+  border: 2px solid transparent;
+}
+
+.app {
   display: flex;
+}
+
+.page-container {
+  width: 100%;
+  padding: 0 5vw;
 }

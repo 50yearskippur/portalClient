@@ -1,0 +1,72 @@
+.background-shadow {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0000006b;
+}
+
+.pdf-document {
+  z-index: 2;
+  position: absolute;
+  overflow-y: auto;
+  height: 87.5vh;
+  top: 12.2vh;
+  right: 33vw;
+  direction: ltr;
+  padding-right: 1.5vw;
+}
+
+::-webkit-scrollbar {
+  width: 0.65vw;
+}
+
+.pdf-information {
+  z-index: 3;
+}
+
+.pdf-title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #c8c8c8;
+  border-radius: 10px;
+  margin-right: 10vw;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #5c5c5c;
+}
+
+.pdf-information {
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
+  display: flex;
+  align-items: flex-end;
+  right: 50%;
+  width: 40vw;
+}
+
+.pdf-page-number {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-bottom: 21px;
+  margin-right: 20vw;
+}

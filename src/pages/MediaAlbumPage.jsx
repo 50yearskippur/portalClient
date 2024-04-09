@@ -1,10 +1,12 @@
-import "./FormPage.css";
+import "./MediaAlbumPage.css";
 import PageTemplate from "../components/PageTemplate/PageTemplate";
-import PdfPreview from "../components/ItemsComponents/PdfPreview";
-import Subjects from "../components/Subjects/Subjects";
-import pdf from "../assets/pdfs/pdfPage.pdf";
+import MediaAlbumItem from "../components/ItemsComponents/MediaAlbumItem";
+import BackArrow from "../components/BackArrow/BackArrow";
+import {useNavigate} from "react-router-dom";
+import rabit from "../assets/img/rabit.jpg";
 
-const FormPage = () => {
+const MediaAlbumPage = () => {
+  const navigate = useNavigate();
   const data = [
     {
       title: "ארנב",
@@ -12,8 +14,8 @@ const FormPage = () => {
       subSubject: {
         title: "יונקים",
       },
-      media: pdf,
-      mediaType: "pdf",
+      media: rabit,
+      mediaType: "image",
     },
     {
       title: "ארנב",
@@ -21,8 +23,8 @@ const FormPage = () => {
       subSubject: {
         title: "יונקים",
       },
-      media: pdf,
-      mediaType: "pdf",
+      media: rabit,
+      mediaType: "image",
     },
     {
       title: "ארנב",
@@ -30,8 +32,8 @@ const FormPage = () => {
       subSubject: {
         title: "יונקים",
       },
-      media: pdf,
-      mediaType: "pdf",
+      media: rabit,
+      mediaType: "image",
     },
     {
       title: "ארנב",
@@ -39,8 +41,8 @@ const FormPage = () => {
       subSubject: {
         title: "יונקים",
       },
-      media: pdf,
-      mediaType: "pdf",
+      media: rabit,
+      mediaType: "image",
     },
     {
       title: "ארנב",
@@ -48,8 +50,8 @@ const FormPage = () => {
       subSubject: {
         title: "יונקים",
       },
-      media: pdf,
-      mediaType: "pdf",
+      media: rabit,
+      mediaType: "image",
     },
     {
       title: "ארנב",
@@ -57,8 +59,8 @@ const FormPage = () => {
       subSubject: {
         title: "יונקים",
       },
-      media: pdf,
-      mediaType: "pdf",
+      media: rabit,
+      mediaType: "image",
     },
     {
       title: "ארנב",
@@ -66,8 +68,8 @@ const FormPage = () => {
       subSubject: {
         title: "יונקים",
       },
-      media: pdf,
-      mediaType: "pdf",
+      media: rabit,
+      mediaType: "image",
     },
     {
       title: "ארנב",
@@ -75,8 +77,8 @@ const FormPage = () => {
       subSubject: {
         title: "יונקים",
       },
-      media: pdf,
-      mediaType: "pdf",
+      media: rabit,
+      mediaType: "image",
     },
     {
       title: "ארנב",
@@ -84,8 +86,8 @@ const FormPage = () => {
       subSubject: {
         title: "יונקים",
       },
-      media: pdf,
-      mediaType: "pdf",
+      media: rabit,
+      mediaType: "image",
     },
     {
       title: "ארנב",
@@ -93,8 +95,8 @@ const FormPage = () => {
       subSubject: {
         title: "יונקים",
       },
-      media: pdf,
-      mediaType: "pdf",
+      media: rabit,
+      mediaType: "image",
     },
     {
       title: "ארנב",
@@ -102,8 +104,8 @@ const FormPage = () => {
       subSubject: {
         title: "יונקים",
       },
-      media: pdf,
-      mediaType: "pdf",
+      media: rabit,
+      mediaType: "image",
     },
     {
       title: "ארנב",
@@ -111,8 +113,8 @@ const FormPage = () => {
       subSubject: {
         title: "יונקים",
       },
-      media: pdf,
-      mediaType: "pdf",
+      media: rabit,
+      mediaType: "image",
     },
     {
       title: "ארנב",
@@ -120,8 +122,8 @@ const FormPage = () => {
       subSubject: {
         title: "יונקים",
       },
-      media: pdf,
-      mediaType: "pdf",
+      media: rabit,
+      mediaType: "image",
     },
     {
       title: "ארנב",
@@ -129,45 +131,19 @@ const FormPage = () => {
       subSubject: {
         title: "יונקים",
       },
-      media: pdf,
-      mediaType: "pdf",
-    },
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "יונקים",
-      },
-      media: pdf,
-      mediaType: "pdf",
-    },
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "יונקים",
-      },
-      media: pdf,
-      mediaType: "pdf",
-    },
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "יונקים",
-      },
-      media: pdf,
-      mediaType: "pdf",
+      media: rabit,
+      mediaType: "image",
     },
   ];
   return (
-    <div className="page-container form-page-container">
-      <Subjects />
+    <div className="media-album-container">
+      <BackArrow onClick={() => navigate("/media")} />
+      <div className="media-album-title">פורימון בה"ד 15</div>
       <PageTemplate
-        ItemComponent={PdfPreview}
+        ItemComponent={MediaAlbumItem}
         gridStyle={{
-          gridTemplateColumns: `repeat(auto-fill, minmax(250px, 1fr)`,
-          gap: "48px",
+          gridTemplateColumns: `repeat(auto-fill, minmax(200px, 1fr)`,
+          gap: "34px",
         }}
         data={data}
       />
@@ -175,4 +151,4 @@ const FormPage = () => {
   );
 };
 
-export default FormPage;
+export default MediaAlbumPage;

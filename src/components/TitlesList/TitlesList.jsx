@@ -1,8 +1,15 @@
 import "./TitlesList.css";
 import {useState} from "react";
+import {useNavigate} from "react-router-dom";
 
-const TitlesList = ({titlesArray, style}) => {
-  const [selectedTitle, setSelectedTitle] = useState(titlesArray[0]);
+const TitlesList = ({
+  titlesArray,
+  getDefaultTitle,
+  showNumbers = false,
+  style,
+}) => {
+  const navigate = useNavigate();
+  const [selectedTitle, setSelectedTitle] = useState(getDefaultTitle());
 
   return (
     <div className="titles-list-container" style={style.containerStyle}>
@@ -10,26 +17,27 @@ const TitlesList = ({titlesArray, style}) => {
         <div
           className="title-list-row"
           key={`title${index}`}
-          onClick={() => setSelectedTitle(title)}
+          onClick={() => setSelectedTitle(title.text)}
         >
           <div
             className="rectangle"
             style={{
-              color: title === selectedTitle ? "#fff" : "#838383",
+              color: title.text === selectedTitle ? "#fff" : "#838383",
               backgroundColor:
-                title === selectedTitle ? style.color : "#d4d4d4",
+                title.text === selectedTitle ? style.color : "#d4d4d4",
             }}
+            onClick={() => navigate(title.path)}
           >
-            2
+            {showNumbers && 2}
           </div>
           <div
             className="title"
             style={{
               color: style.color,
-              fontWeight: title === selectedTitle ? "700" : "400",
+              fontWeight: title.text === selectedTitle ? "700" : "400",
             }}
           >
-            {title}
+            {title.text}
           </div>
         </div>
       ))}

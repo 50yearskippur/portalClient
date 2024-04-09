@@ -2,6 +2,8 @@ import "./NavBar.css";
 import TitleList from "../TitlesList/TitlesList";
 import portalLogo from "../../assets/media/navbar/portalLogo.png";
 import UserDetails from "./UserDetails";
+import paths from "../../constants/paths";
+import {useLocation} from "react-router-dom";
 
 //delete in production
 const user = {
@@ -15,9 +17,11 @@ const user = {
 };
 
 const NavBar = () => {
+  const location = useLocation();
+  const currentPath = location.pathname;
   const titleListStyle = {
     containerStyle: {right: "-1.5vw", marginTop: "7vh"},
-    color: "#FFF",
+    color: "#fff",
   };
 
   return (
@@ -26,7 +30,10 @@ const NavBar = () => {
       <UserDetails user={user} />
       <TitleList
         style={titleListStyle}
-        titlesArray={["דף הבית", "תבניות עיצוב", "תמונות ומדיה", "טפסים"]}
+        getDefaultTitle={() =>
+          paths.slice(0, 4).find((p) => p.path === currentPath)?.text
+        }
+        titlesArray={paths.slice(0, 4)}
       />
     </div>
   );

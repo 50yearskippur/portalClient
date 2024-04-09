@@ -1,7 +1,3 @@
 .page-template {
-  margin-left: 48px;
-  margin-right: 48px;
-  width: 100%;
   display: grid;
-  justify-content: space-between;
 }
