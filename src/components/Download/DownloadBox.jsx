@@ -1,6 +1,6 @@
 import "./DownloadBox.css";
 import downloadPdf from "../../utils/downloadPdf ";
-import downloadBox from "../../assets/media/Icons/downloadBox.png"
+import downloadBox from "../../assets/media/icons/downloadBox.png";
 
 const DownloadBox = ({item, style}) => {
   return (

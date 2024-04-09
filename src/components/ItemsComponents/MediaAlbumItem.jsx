@@ -1,14 +1,14 @@
-import FileController from "../media/FileController";
-import { useContext } from "react";
-import { PopupContext } from "../../store/popup-context";
+import FileController from "../Media/FileController";
+import {useContext} from "react";
+import {PopupContext} from "../../store/popup-context";
 import DownloadBox from "../Download/DownloadBox";
 
-const MediaAlbumItem = ({ item }) => {
-  const { showPopup } = useContext(PopupContext);
+const MediaAlbumItem = ({item}) => {
+  const {showPopup} = useContext(PopupContext);
 
   const PopupItem = () => {
     return (
-      <div style={{ display: "flex" }}>
+      <div style={{display: "flex"}}>
         <FileController item={item} />
         <DownloadBox item={item} />
       </div>
