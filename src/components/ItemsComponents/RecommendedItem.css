@@ -1,0 +1,17 @@
+.recommended-item {
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  height: 100%;
+  width: 100%;
+}
+
+.recommended-item-title {
+  right: 5%;
+  position: absolute;
+  bottom: 0;
+  color: white; /* Optional: make the title text white */
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+}

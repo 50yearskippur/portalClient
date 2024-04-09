@@ -20,8 +20,8 @@ const NavBar = () => {
   const location = useLocation();
   const currentPath = location.pathname;
   const titleListStyle = {
-    containerStyle: {right: "-1.5vw", marginTop: "7vh"},
-    color: "#fff",
+    containerStyle: { right: "-1.5vw", marginTop: "7vh" },
+    color: "#FFF",
   };
 
   return (

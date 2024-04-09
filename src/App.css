@@ -10,6 +10,7 @@ body {
   background-color: #f6f6f6;
   font-family: Assistant;
   user-select: none;
+  /* width: 100%; */
   line-height: 150%;
 }
 
@@ -17,11 +18,20 @@ input {
   border: 2px solid transparent;
 }
 
+.routes-wrapper {
+  margin-right: 20.3vw;
+  padding-right: 9.5vw;
+}
+
 .app {
   display: flex;
 }
 
 .page-container {
-  width: 100%;
-  padding: 0 5vw;
+  /* width: 100%; */
+  /* display: flex; */
+  /* padding: 0 5vw; */
+  width: 60%;
+  margin-right: 30%;
+  /* padding-right: 20.3vw; */
 }

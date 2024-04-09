@@ -1,9 +1,9 @@
 import "./App.css";
-import {PopupProvider} from "./store/popup-context";
-import {UserProvider} from "./store/user-context";
-import {Route, Routes, BrowserRouter} from "react-router-dom";
+import { PopupProvider } from "./store/popup-context";
+import { UserProvider } from "./store/user-context";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
 import paths from "./constants/paths";
-import {createElement} from "react";
+import { createElement } from "react";
 import NavBar from "./components/NavBar/NavBar";
 import Popup from "./components/Popup/Popup";
 

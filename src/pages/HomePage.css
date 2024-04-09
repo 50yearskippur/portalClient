@@ -1,0 +1,21 @@
+.home-page-wrapper {
+  margin-top: 8.13vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.recommended-title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 30px;
+  color: #5d5d5d;
+}
+
+.recommended-wrapper {
+  display: grid;
+  grid-template-columns: 58% 40%;
+  width: 59.5vw;
+  grid-gap: 2%;
+  height: 300px;
+}
