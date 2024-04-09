@@ -5,26 +5,25 @@ import { Route, Routes, BrowserRouter } from "react-router-dom";
 import paths from "./constants/paths";
 import { createElement } from "react";
 import NavBar from "./components/NavBar/NavBar";
+import Popup from "./components/Popup/Popup";
 
 function App() {
   return (
     <BrowserRouter>
       <UserProvider>
         <PopupProvider>
-          <div style={{ display: "flex" }}>
+          <div className="app">
             <NavBar />
-            <div className="routes-wrapper"
-            >
-              <Routes>
-                {paths.map((path) => (
-                  <Route
-                    key={path.text}
-                    path={path.path}
-                    element={createElement(path.component)}
-                  />
-                ))}
-              </Routes>
-            </div>
+            <Popup />
+            <Routes>
+              {paths.map((path) => (
+                <Route
+                  key={path.text}
+                  path={path.path}
+                  element={createElement(path.component)}
+                />
+              ))}
+            </Routes>
           </div>
         </PopupProvider>
       </UserProvider>

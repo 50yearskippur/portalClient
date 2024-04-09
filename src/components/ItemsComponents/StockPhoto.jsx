@@ -1,5 +1,5 @@
 import "./StockPhoto.css";
-import FileController from "../media/FileController";
+import FileController from "../Media/FileController";
 
 const StockPhoto = ({ item }) => {
   return (

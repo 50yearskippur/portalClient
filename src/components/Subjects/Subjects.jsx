@@ -2,15 +2,22 @@ import "./Subjects.css";
 import TitlesList from "../TitlesList/TitlesList";
 
 const Subjects = () => {
-  const subjects = ["Math", "Science", "History", "English", "Art"];
+  const subjects = [
+    {text: "Math"},
+    {text: "Science"},
+    {text: "History"},
+    {text: "English"},
+    {text: "Art"},
+  ];
   const titleListStyle = {
     containerStyle: {marginTop: "5vh", marginRight: "25px"},
-    color: "#5D5D5D",
+    color: "#5d5d5d",
   };
   return (
     <div className="subjects-container">
       <TitlesList
         titlesArray={subjects}
+        getDefaultTitle={() => subjects[0].text}
         showNumbers={true}
         style={titleListStyle}
       />

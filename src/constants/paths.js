@@ -1,25 +1,27 @@
 import Home from "../pages/HomePage";
 import Form from "../pages/FormPage";
-import Gallery from "../pages/GalleryPage";
-import designTemplates from "../pages/designTemplatesPage";
+import Media from "../pages/MediaPage";
+import DesignTemplates from "../pages/designTemplatesPage";
+import MediaAlbum from "../pages/MediaAlbumPage";
 
 const paths = [
   {
-    path: "",
+    path: "/",
     text: "דף הבית",
     component: Home,
   },
   {
-    path: "designTemplates",
+    path: "/designTemplates",
     text: "תבניות עיצוב",
-    component: designTemplates,
+    component: DesignTemplates,
   },
   {
-    path: "forms",
+    path: "/forms",
     text: "טפסים",
     component: Form,
   },
-  {path: "gallery", text: "תמונות ומדיה", component: Gallery},
+  { path: "/media", text: "תמונות ומדיה", component: Media },
+  { path: "/mediaAlbum", text: "אלבומי תמונות", component: MediaAlbum },
 ];
 
 export default paths;

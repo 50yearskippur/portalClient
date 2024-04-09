@@ -1,7 +1,7 @@
 import SideBar from "../components/SideBar/SideBar";
 import Tabs from "../components/Tabs/Tabs";
 import "./HomePage.css";
-import rabit from "../components/PageTemplate/rabit.jpg";
+import rabit from "../assets/img/rabit.jpg";
 import RecommendedItem from "../components/ItemsComponents/RecommendedItem";
 
 const data = [
@@ -74,7 +74,8 @@ const tabsArray = ["במיוחד בשבילך", "כל התוצרים", "תוצר
 
 const HomePage = () => {
   return (
-    <div className="home-page-wrapper">
+    // <div className="home-page-wrapper page-container">
+    <div className="page-container">
       <p className="recommended-title">מומלצים</p>
       <div className="recommended-wrapper">
         <RecommendedItem

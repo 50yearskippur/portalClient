@@ -3,15 +3,7 @@ import FileController from "../media/FileController";
 import DownloadIcon from "../../assets/media/Icons/downloadIcon.png";
 import ShowFullPdf from "../ShowFullPdf/ShowFullPdf";
 import { useState } from "react";
-
-const downloadPdf = (item) => {
-  const link = document.createElement("a");
-  link.href = item.media;
-  link.download = `${item.title}.pdf`;
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-};
+import downloadPdf from "../../utils/downloadPdf ";
 
 const PdfPreview = ({ item }) => {
   const [showFullPdf, setShowFullPdf] = useState(false);

@@ -22,3 +22,16 @@ input {
   margin-right: 20.3vw;
   padding-right: 9.5vw;
 }
+
+.app {
+  display: flex;
+}
+
+.page-container {
+  /* width: 100%; */
+  /* display: flex; */
+  /* padding: 0 5vw; */
+  width: 60%;
+  margin-right: 30%;
+  /* padding-right: 20.3vw; */
+}

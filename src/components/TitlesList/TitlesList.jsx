@@ -4,12 +4,12 @@ import { useNavigate } from "react-router-dom";
 
 const TitlesList = ({
   titlesArray,
+  getDefaultTitle,
   showNumbers = false,
   style,
-  defaultTitle = titlesArray[0],
 }) => {
-  const [selectedTitle, setSelectedTitle] = useState(defaultTitle);
   const navigate = useNavigate();
+  const [selectedTitle, setSelectedTitle] = useState(getDefaultTitle());
 
   return (
     <div className="titles-list-container" style={style.containerStyle}>
