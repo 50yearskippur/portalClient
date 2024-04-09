@@ -18,20 +18,14 @@ input {
   border: 2px solid transparent;
 }
 
-.routes-wrapper {
-  margin-right: 20.3vw;
-  padding-right: 9.5vw;
-}
-
 .app {
   display: flex;
+  flex-direction: column;
 }
 
 .page-container {
-  /* width: 100%; */
-  /* display: flex; */
-  /* padding: 0 5vw; */
   width: 60%;
-  margin-right: 30%;
-  /* padding-right: 20.3vw; */
+  display: flex;
+  flex-direction: column;
+  margin: 0 30% 0 10%;
 }
