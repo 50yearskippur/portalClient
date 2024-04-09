@@ -14,7 +14,7 @@
 
 .recommended-wrapper {
   display: grid;
-  grid-template-columns: 58% 40%;
+  grid-template-columns: 64% 34%;
   width: 59.5vw;
   grid-gap: 2%;
   height: 300px;

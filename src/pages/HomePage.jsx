@@ -74,13 +74,12 @@ const tabsArray = ["במיוחד בשבילך", "כל התוצרים", "תוצר
 
 const HomePage = () => {
   return (
-    // <div className="home-page-wrapper page-container">
-    <div className="page-container">
+    <div className="home-page-wrapper page-container">
       <p className="recommended-title">מומלצים</p>
       <div className="recommended-wrapper">
         <RecommendedItem
           item={data[0]}
-          style={{ height: "100%", width: "100%" }}
+          style={{height: "100%", width: "100%"}}
         />
         <SideBar
           numItems={2}
@@ -89,7 +88,7 @@ const HomePage = () => {
           data={data}
         />
       </div>
-      <Tabs style={{ marginTop: "12.7vh" }} tabsArray={tabsArray} />
+      <Tabs style={{marginTop: "12.7vh"}} tabsArray={tabsArray} />
     </div>
   );
 };
