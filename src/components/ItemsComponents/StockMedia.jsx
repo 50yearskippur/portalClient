@@ -1,8 +1,8 @@
 import "./StockMedia.css";
-import FileController from "../media/FileController";
-import { useNavigate } from "react-router-dom";
+import FileController from "../Media/FileController";
+import {useNavigate} from "react-router-dom";
 
-const StockMedia = ({ item }) => {
+const StockMedia = ({item}) => {
   const navigate = useNavigate();
   return (
     <div className="stock-media-container">

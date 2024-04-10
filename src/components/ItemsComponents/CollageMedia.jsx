@@ -1,7 +1,7 @@
 import "./CollageMedia.css";
-import FileController from "../media/FileController";
+import FileController from "../Media/FileController";
 import rabit from "../../assets/img/rabit.jpg";
-import { useNavigate } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 const CollageMedia = () => {
   const navigate = useNavigate();

@@ -1,11 +1,11 @@
 import "./PdfPreview.css";
-import FileController from "../media/FileController";
-import DownloadIcon from "../../assets/media/Icons/downloadIcon.png";
+import FileController from "../Media/FileController";
+import DownloadIcon from "../../assets/media/icons/downloadIcon.png";
 import ShowFullPdf from "../ShowFullPdf/ShowFullPdf";
-import { useState } from "react";
+import {useState} from "react";
 import downloadPdf from "../../utils/downloadPdf ";
 
-const PdfPreview = ({ item }) => {
+const PdfPreview = ({item}) => {
   const [showFullPdf, setShowFullPdf] = useState(false);
   return (
     <div>
