@@ -83,9 +83,9 @@ const HomePage = () => {
         />
         <SideBar
           numItems={2}
-          height="100%"
           ItemComponent={RecommendedItem}
           data={data}
+          style={{height: "100%"}}
         />
       </div>
       <Tabs style={{marginTop: "12.7vh"}} tabsArray={tabsArray} />
