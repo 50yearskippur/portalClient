@@ -8,7 +8,6 @@ const TitlesList = ({
   showNumbers = false,
   style,
 }) => {
-  console.log(style);
   const navigate = useNavigate();
   const [selectedTitle, setSelectedTitle] = useState(getDefaultTitle());
 

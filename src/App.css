@@ -29,3 +29,7 @@ input {
   flex-direction: column;
   margin: 0 30% 0 10%;
 }
+
+.white-container {
+  background-color: #ffffff;
+}

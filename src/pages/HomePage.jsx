@@ -1,7 +1,6 @@
 import SideBar from "../components/SideBar/SideBar";
 import Tabs from "../components/Tabs/Tabs";
 import "./HomePage.css";
-import WhiteContainer from "../components/WhiteContainer/WhiteContainer";
 import rabit from "../assets/img/rabit.jpg";
 import RecommendedItem from "../components/ItemsComponents/RecommendedItem";
 import TitlesList from "../components/TitlesList/TitlesList";
@@ -101,14 +100,16 @@ const HomePage = () => {
         />
       </div>
       <Tabs style={{ marginTop: "12.7vh" }} tabsArray={tabsArray} />
-      <TitlesList
-        titlesArray={titlesObjectsArray}
-        getDefaultTitle={() => titlesObjectsArray[0]}
-        style={{
-          containerStyle: { marginTop: "7vh" },
-          color: "#5D5D5D",
-        }}
-      />
+      <div className="white-container" style={{ marginTop: "3.5vh" }}>
+        <TitlesList
+          titlesArray={titlesObjectsArray}
+          getDefaultTitle={() => titlesObjectsArray[0]}
+          style={{
+            containerStyle: { marginTop: "5vh", marginRight: "2vw" },
+            color: "#5D5D5D",
+          }}
+        />
+      </div>
     </div>
   );
 };
