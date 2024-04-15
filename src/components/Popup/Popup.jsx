@@ -6,11 +6,17 @@ import {PopupContext} from "../../store/popup-context";
 const Popup = () => {
   const {hidePopup, isPopupVisible, popupContent} = useContext(PopupContext);
 
+  const handlePopupClick = (e) => {
+    e.stopPropagation();
+  };
+
   return (
     <>
       {isPopupVisible && (
         <div className="popup-overlay" onClick={() => hidePopup()}>
-          <div className="popup-content">{popupContent}</div>
+          <div className="popup-content" onClick={handlePopupClick}>
+            {popupContent}
+          </div>
         </div>
       )}
     </>
