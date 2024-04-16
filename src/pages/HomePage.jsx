@@ -4,6 +4,8 @@ import "./HomePage.css";
 import rabit from "../assets/img/rabit.jpg";
 import RecommendedItem from "../components/ItemsComponents/RecommendedItem";
 import TitlesList from "../components/TitlesList/TitlesList";
+import SubSubjects from "../components/SubSubjects/SubSubjects";
+
 //delete in production
 const data = [
   {
@@ -70,7 +72,7 @@ const data = [
     mediaType: "image",
   },
 ];
-
+//delete in production
 const titlesArray = [
   "מבואות מודיעין",
   "טכנולוגיה וסייבר",
@@ -81,6 +83,7 @@ const titlesArray = [
 ];
 const titlesObjectsArray = titlesArray.map((title) => ({ text: title }));
 
+//delete in production
 const tabsArray = ["במיוחד בשבילך", "כל התוצרים", "תוצרים שאהבתי"];
 
 const HomePage = () => {
@@ -100,15 +103,42 @@ const HomePage = () => {
         />
       </div>
       <Tabs style={{ marginTop: "12.7vh" }} tabsArray={tabsArray} />
-      <div className="white-container" style={{ marginTop: "3.5vh" }}>
-        <TitlesList
-          titlesArray={titlesObjectsArray}
-          getDefaultTitle={() => titlesObjectsArray[0]}
-          style={{
-            containerStyle: { marginTop: "5vh", marginRight: "2vw" },
-            color: "#5D5D5D",
-          }}
-        />
+      <div style={{ display: "flex" }}>
+        <div
+          className="white-container"
+          style={{ marginTop: "3.5vh", marginLeft: "2vw", marginBottom: "2vh"  }}
+        >
+          <TitlesList
+            titlesArray={titlesObjectsArray}
+            getDefaultTitle={() => titlesObjectsArray[0]}
+            style={{
+              containerStyle: { marginTop: "5vh", marginRight: "2vw" },
+              color: "#5D5D5D",
+            }}
+          />
+        </div>
+        <div
+          className="white-container"
+          style={{ marginTop: "3.5vh", marginBottom: "2vh" }}
+        >
+          <SubSubjects
+            subject={{
+              title: "ארנב",
+              subSubject: [
+                {
+                  title: "יונקים",
+                  description: "כלבים קטנים",
+                  eduResourse: [{}, {}, {}],
+                },
+                {
+                  title: "יונקים",
+                  description: "כלבים קטנים",
+                  eduResourse: [{}, {}],
+                },
+              ],
+            }}
+          />
+        </div>
       </div>
     </div>
   );
