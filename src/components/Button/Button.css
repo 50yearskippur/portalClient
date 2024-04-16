@@ -1,0 +1,12 @@
+.text-button {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.button {
+  border: 1px solid #686868;
+  width: 11vw;
+  height: 6.7vh;
+  /* padding-top: 0; */
+}
