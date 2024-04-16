@@ -3,7 +3,7 @@ import {useNavigate} from "react-router-dom";
 import {useContext} from "react";
 import {PopupContext} from "../store/popup-context";
 import BackArrow from "../components/BackArrow/BackArrow";
-import UploadPopup from "../components/Popup/UploadPopup";
+import UploadEduType from "../components/Popup/UploadEduType";
 import rabit from "../assets/img/rabit.jpg";
 
 const SubSubjectPage = () => {
@@ -102,8 +102,13 @@ const SubSubjectPage = () => {
       <BackArrow onClick={() => navigate("/")} />
       <div className="subSubject-page-header">{subSubject.title}</div>
       <button
-        style={{width: "100px"}}
-        onClick={() => showPopup(UploadPopup)}
+        style={{
+          width: "100px",
+          backgroundColor: "red",
+          marginTop: "100px",
+          cursor: "pointer",
+        }}
+        onClick={() => showPopup(<UploadEduType />)}
       ></button>
     </div>
   );
