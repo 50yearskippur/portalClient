@@ -1,5 +1,5 @@
 import "./UploadEdu.css";
-import {useContext} from "react";
+import {useContext, useState} from "react";
 import {PopupContext} from "../../store/popup-context";
 import exitIcon from "../../assets/media/icons/exitIcon.png";
 import FileUploader from "../Media/FileUploader";
@@ -8,6 +8,7 @@ import UploadEduType from "./UploadEduType";
 
 const UploadEdu = () => {
   const {showPopup, hidePopup} = useContext(PopupContext);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   return (
     <div className="upload-popup">
@@ -17,10 +18,37 @@ const UploadEdu = () => {
         alt="exit-button"
         onClick={hidePopup}
       />
-      <div className="upload-popup-header">העלאת תוצר לפורטל </div>
+      <div className="upload-popup-header" style={{marginBottom: "42px"}}>
+        העלאת תוצר לפורטל{" "}
+      </div>
       <FileUploader />
+      <div className="upload-popup-text" style={{marginTop: "22px"}}>
+        שם התוצר:
+      </div>
+      <input className="upload-input" />
+      <div className="upload-popup-text" style={{marginTop: "22px"}}>
+        רמת קושי
+      </div>
+      <div className="upload-difficulty-container">
+        {[1, 2, 3, 4].map((difficulty, index) => (
+          <div
+            key={`difficulty${difficulty}`}
+            className={`upload-difficulty ${
+              activeIndex === index && "upload-difficulty-active"
+            }`}
+            onClick={() => setActiveIndex(index)}
+          >
+            {difficulty}
+          </div>
+        ))}
+      </div>
       <label>
-        <input type="checkbox" name="subscribe" value="newsletter" />
+        <input
+          className="upload-agreement-input"
+          type="checkbox"
+          name="subscribe"
+          value="newsletter"
+        />
         אני מאשר שהתוכן עומד
         <span style={{fontWeight: "700"}}>בתנאי בטחון מידע </span> ומותאם לפרסום
         לכלל אמ"ן

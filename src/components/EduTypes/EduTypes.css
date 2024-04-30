@@ -1,7 +1,7 @@
 .edu-types-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-  row-gap: 42px;
+  row-gap: 7px;
   column-gap: 33px;
 }
 
