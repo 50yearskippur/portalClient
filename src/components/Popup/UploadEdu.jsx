@@ -19,7 +19,7 @@ const UploadEdu = () => {
         onClick={hidePopup}
       />
       <div className="upload-popup-header" style={{marginBottom: "42px"}}>
-        העלאת תוצר לפורטל{" "}
+        העלאת תוצר לפורטל
       </div>
       <FileUploader />
       <div className="upload-popup-text" style={{marginTop: "22px"}}>

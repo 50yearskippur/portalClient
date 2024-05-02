@@ -38,7 +38,7 @@ const UploadEduType = () => {
       </div>
       <div
         className="upload-popup-text"
-        style={{width: "100%", marginTop: "40px"}}
+        style={{width: "100%", marginTop: "18px"}}
       >
         בחרו את סוג התוצר אותו תרצו להעלות
       </div>

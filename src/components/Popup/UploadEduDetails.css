@@ -1,0 +1,27 @@
+.upload-details-approval {
+  display: flex;
+}
+
+.upload-details-approve-icon {
+  width: 20px;
+  background-image: url("../../assets/media/icons/approve.jpg");
+  background-repeat: no-repeat;
+}
+
+.upload-details-personal-info {
+  display: flex;
+  gap: 17px;
+  justify-content: center;
+  margin-bottom: 43px;
+}
+
+.upload-details-input {
+  background: #efefef;
+  height: 40px;
+}
+
+.upload-details-cell {
+  display: flex;
+  flex-direction: column;
+  width: 31%;
+}
