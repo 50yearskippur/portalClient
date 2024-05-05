@@ -100,11 +100,16 @@ const HomePage = () => {
           numItems={2}
           ItemComponent={RecommendedItem}
           data={data}
-          style={{height: "100%"}}
+          style={{ height: "100%" }}
         />
       </div>
+      {/* <div style={{ display: "flex", alignItems: "flex-end" }}> */}
       <Tabs style={{ marginTop: "12.7vh" }} tabsArray={tabsArray} />
-      <Button text={"העלאת תוצר"} />
+      <div className="homepage-buttons-container">
+        <Button text={"העלאת תוצר"} />
+        <Button text={"הזמנת תוצר"} isDarkMode={true} />
+      </div>
+      {/* </div> */}
       <div style={{ display: "flex" }}>
         <div
           className="white-container"

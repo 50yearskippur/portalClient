@@ -1,10 +1,15 @@
 import "./Button.css";
 
-const Button = ({ text }) => {
+const Button = ({ text, isDarkMode = false }) => {
   return (
-    <div className="button">
+    <div
+      className="button"
+      style={{ backgroundColor: isDarkMode && "#686868" }}
+    >
       <div className="rectangle" style={{ backgroundColor: "#D9D9D9" }} />
-      <p className="text-button">{text}</p>
+      <p className="text-button" style={{ color: isDarkMode && "#FFFFFF" }}>
+        {text}
+      </p>
     </div>
   );
 };

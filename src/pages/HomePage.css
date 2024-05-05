@@ -19,3 +19,7 @@
   grid-gap: 2%;
   height: 300px;
 }
+
+.homepage-buttons-container {
+  display: flex;
+}
