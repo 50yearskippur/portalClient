@@ -1,5 +1,5 @@
 import "./StockMedia.css";
-import FileController from "../media/FileController";
+import FileController from "../Media/FileController";
 import { useNavigate } from "react-router-dom";
 
 const StockMedia = ({ item }) => {
