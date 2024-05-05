@@ -17,7 +17,11 @@ const TitlesList = ({
         <div
           className="title-list-row"
           key={`title${index}`}
-          onClick={() => {setSelectedTitle(title.text); navigate(title.path)}}        >
+          onClick={() => {
+            setSelectedTitle(title.text);
+            navigate(title.path);
+          }}
+        >
           <div
             className="rectangle"
             style={{

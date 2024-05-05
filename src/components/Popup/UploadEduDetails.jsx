@@ -1,8 +1,22 @@
 import "./UploadEduDetails.css";
 import UploadEdu from "./UploadEdu";
-import {useContext} from "react";
+import {useContext, useState} from "react";
 import {PopupContext} from "../../store/popup-context";
 import exitIcon from "../../assets/media/Icons/exitIcon.png";
+
+const SelectedTag = ({tag}) => {
+  const [isSlected, setIsSlected] = useState(false);
+
+  const toggleTag = () => {
+    setIsSlected((prev) => !prev);
+  }
+
+  return (
+    <div className={`upload-details-tag ${isSlected && "upload-details-tag-active"}`} onClick={toggleTag}>
+      {tag}
+    </div>);
+  
+}
 
 const UploadEduDetails = () => {
   const {hidePopup, showPopup} = useContext(PopupContext);
@@ -20,7 +34,7 @@ const UploadEduDetails = () => {
     "טיפוס הרים",
     "טניס",
     "חנוכה",
-    "ראש השנה",
+    "סוכות",
     "יום כיפור",
     "שבועות",
   ];
@@ -66,7 +80,7 @@ const UploadEduDetails = () => {
       </div>
       <div className="upload-details-tags-container">
         {tags.map((tag) => (
-          <div className="upload-details-tag">{tag}</div>
+         <SelectedTag tag={tag}/>
         ))}
       </div>
       <div className="upload-button-container">
