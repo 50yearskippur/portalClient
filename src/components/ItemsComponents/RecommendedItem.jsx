@@ -1,9 +1,9 @@
 import React from "react";
 import "./RecommendedItem.css";
-import FileController from "../Media/FileController";
-import {useNavigate} from "react-router-dom";
+import FileController from "../media/FileController";
+import { useNavigate } from "react-router-dom";
 
-const RecommendedItem = ({item, style}) => {
+const RecommendedItem = ({ item, style }) => {
   const navigate = useNavigate();
   return (
     <div className="recommended-item">

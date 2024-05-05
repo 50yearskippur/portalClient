@@ -1,4 +1,4 @@
-import Pdf from "./Pdf";
+import Pdf from "./pdf"
 
 const getHtml = (src, fileType, style) => {
   const fileTypeArray = fileType.split("/");
