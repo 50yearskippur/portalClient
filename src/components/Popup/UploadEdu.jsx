@@ -2,7 +2,7 @@ import "./UploadEdu.css";
 import { useContext, useState } from "react";
 import { PopupContext } from "../../store/popup-context";
 import exitIcon from "../../assets/media/Icons/exitIcon.png";
-import FileUploader from "../media/FileUploader";
+import FileUploader from "../Media/FileUploader";
 import UploadEduDetails from "./UploadEduDetails";
 import UploadEduType from "./UploadEduType";
 

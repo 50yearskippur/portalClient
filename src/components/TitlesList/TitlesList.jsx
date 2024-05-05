@@ -17,7 +17,10 @@ const TitlesList = ({
         <div
           className="title-list-row"
           key={`title${index}`}
-          onClick={() => setSelectedTitle(title.text)}
+          onClick={() => {
+            setSelectedTitle(title.text);
+            navigate(title.path);
+          }}
         >
           <div
             className="rectangle"
@@ -26,7 +29,6 @@ const TitlesList = ({
               backgroundColor:
                 title.text === selectedTitle ? style.color : "#d4d4d4",
             }}
-            onClick={() => navigate(title.path)}
           >
             {showNumbers && 2}
           </div>

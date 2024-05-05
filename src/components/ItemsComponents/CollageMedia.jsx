@@ -1,5 +1,5 @@
 import "./CollageMedia.css";
-import FileController from "../media/FileController.jsx";
+import FileController from "../Media/FileController.jsx";
 import rabit from "../../assets/img/rabit.jpg";
 import { useNavigate } from "react-router-dom";
 

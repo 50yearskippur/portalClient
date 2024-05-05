@@ -1,4 +1,4 @@
-import FileController from "../media/FileController";
+import FileController from "../Media/FileController";
 import { useContext } from "react";
 import { PopupContext } from "../../store/popup-context";
 import DownloadBox from "../Download/DownloadBox";
