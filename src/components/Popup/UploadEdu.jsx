@@ -1,13 +1,13 @@
 import "./UploadEdu.css";
-import {useContext, useState} from "react";
-import {PopupContext} from "../../store/popup-context";
+import { useContext, useState } from "react";
+import { PopupContext } from "../../store/popup-context";
 import exitIcon from "../../assets/media/Icons/exitIcon.png";
-import FileUploader from "../Media/FileUploader";
+import FileUploader from "../media/FileUploader";
 import UploadEduDetails from "./UploadEduDetails";
 import UploadEduType from "./UploadEduType";
 
 const UploadEdu = () => {
-  const {showPopup, hidePopup} = useContext(PopupContext);
+  const { showPopup, hidePopup } = useContext(PopupContext);
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
@@ -18,15 +18,15 @@ const UploadEdu = () => {
         alt="exit-button"
         onClick={hidePopup}
       />
-      <div className="upload-popup-header" style={{marginBottom: "42px"}}>
+      <div className="upload-popup-header" style={{ marginBottom: "42px" }}>
         העלאת תוצר לפורטל
       </div>
       <FileUploader />
-      <div className="upload-popup-text" style={{marginTop: "22px"}}>
+      <div className="upload-popup-text" style={{ marginTop: "22px" }}>
         שם התוצר:
       </div>
       <input className="upload-input" />
-      <div className="upload-popup-text" style={{marginTop: "22px"}}>
+      <div className="upload-popup-text" style={{ marginTop: "22px" }}>
         רמת קושי
       </div>
       <div className="upload-difficulty-container">
@@ -50,8 +50,8 @@ const UploadEdu = () => {
           value="newsletter"
         />
         אני מאשר שהתוכן עומד
-        <span style={{fontWeight: "700"}}>בתנאי בטחון מידע </span> ומותאם לפרסום
-        לכלל אמ"ן
+        <span style={{ fontWeight: "700" }}>בתנאי בטחון מידע </span> ומותאם
+        לפרסום לכלל אמ"ן
       </label>
       <div className="upload-button-container">
         <div
