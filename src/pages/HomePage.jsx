@@ -1,11 +1,14 @@
 import SideBar from "../components/SideBar/SideBar";
 import Tabs from "../components/Tabs/Tabs";
 import "./HomePage.css";
+import { useContext } from "react";
+import { PopupContext } from "../store/popup-context";
 import rabit from "../assets/img/rabit.jpg";
 import RecommendedItem from "../components/ItemsComponents/RecommendedItem";
 import TitlesList from "../components/TitlesList/TitlesList";
 import SubSubjects from "../components/SubSubjects/SubSubjects";
 import Button from "../components/Button/Button";
+import UploadEduType from "../components/Popup/UploadEduType";
 
 //delete in production
 const data = [
@@ -88,6 +91,8 @@ const titlesObjectsArray = titlesArray.map((title) => ({ text: title }));
 const tabsArray = ["במיוחד בשבילך", "כל התוצרים", "תוצרים שאהבתי"];
 
 const HomePage = () => {
+  const { showPopup } = useContext(PopupContext);
+
   return (
     <div className="home-page-wrapper page-container">
       <p className="recommended-title">מומלצים</p>
@@ -106,7 +111,10 @@ const HomePage = () => {
       {/* <div style={{ display: "flex", alignItems: "flex-end" }}> */}
       <Tabs style={{ marginTop: "12.7vh" }} tabsArray={tabsArray} />
       <div className="homepage-buttons-container">
-        <Button text={"העלאת תוצר"} />
+        <Button
+          text={"העלאת תוצר"}
+          onClick={() => showPopup(<UploadEduType />)}
+        />
         <Button text={"הזמנת תוצר"} isDarkMode={true} />
       </div>
       {/* </div> */}
