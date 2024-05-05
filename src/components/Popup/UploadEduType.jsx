@@ -3,7 +3,7 @@ import {useContext} from "react";
 import {PopupContext} from "../../store/popup-context";
 import UploadEdu from "./UploadEdu";
 import EduTypes from "../EduTypes/EduTypes";
-import exitIcon from "../../assets/media/icons/exitIcon.png";
+import exitIcon from "../../assets/media/Icons/exitIcon.png";
 
 const UploadEduType = () => {
   const {showPopup, hidePopup} = useContext(PopupContext);
