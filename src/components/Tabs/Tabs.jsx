@@ -1,7 +1,7 @@
 import "./Tabs.css";
-import {useState} from "react";
+import { useState } from "react";
 
-const Tabs = ({tabsArray, style = {}}) => {
+const Tabs = ({ tabsArray, style = {} }) => {
   const [currentTab, setCurrentTab] = useState(tabsArray[0]);
   return (
     <div className="tabs-container" style={style}>

@@ -108,16 +108,24 @@ const HomePage = () => {
           style={{ height: "100%" }}
         />
       </div>
-      {/* <div style={{ display: "flex", alignItems: "flex-end" }}> */}
-      <Tabs style={{ marginTop: "12.7vh" }} tabsArray={tabsArray} />
-      <div className="homepage-buttons-container">
-        <Button
-          text={"העלאת תוצר"}
-          onClick={() => showPopup(<UploadEduType />)}
-        />
-        <Button text={"הזמנת תוצר"} isDarkMode={true} />
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "65% 35%",
+          columnGap: "2.5%",
+          width: "100%",
+          alignItems: "flex-end",
+        }}
+      >
+        <Tabs style={{ marginTop: "12.7vh" }} tabsArray={tabsArray} />
+        <div className="homepage-buttons-container">
+          <Button
+            text={"העלאת תוצר"}
+            onClick={() => showPopup(<UploadEduType />)}
+          />
+          <Button text={"הזמנת תוצר"} isDarkMode={true} />
+        </div>
       </div>
-      {/* </div> */}
       <div style={{ display: "flex" }}>
         <div
           className="white-container"
