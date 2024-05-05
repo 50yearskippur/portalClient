@@ -136,7 +136,7 @@ const MediaAlbumPage = () => {
     },
   ];
   return (
-    <div className="media-album-container">
+    <div className="page-container">
       <BackArrow onClick={() => navigate("/media")} />
       <div className="media-album-title">פורימון בה"ד 15</div>
       <PageTemplate

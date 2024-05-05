@@ -3,7 +3,7 @@
   padding: 20px;
   text-align: center;
   color: #333;
-  margin: 45px;
+  cursor: pointer;
 }
 
 .file-upload-label {
