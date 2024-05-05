@@ -1,4 +1,4 @@
-import "./Spinner.css"; // make sure to create a corresponding CSS file
+import "./Spinner.css";
 
 const Spinner = () => (
   <div className="spinner-overlay">
