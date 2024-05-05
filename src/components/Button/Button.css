@@ -6,7 +6,9 @@
 
 .button {
   border: 1px solid #686868;
-  width: 11vw;
-  height: 6.7vh;
+  width: 11.13vw;
+  height: 6.6vh;
+  border-radius: 5px;
+  display: flex;
   /* padding-top: 0; */
 }
