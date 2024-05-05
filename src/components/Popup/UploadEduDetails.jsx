@@ -6,6 +6,24 @@ import exitIcon from "../../assets/media/icons/exitIcon.png";
 
 const UploadEduDetails = () => {
   const {hidePopup, showPopup} = useContext(PopupContext);
+  const tags = [
+    "אוכל",
+    "מים",
+    'חו"ל',
+    "שופינג",
+    "מוצרי חלב",
+    "שקדים",
+    "פיצוחים",
+    "פירות",
+    "ירקות",
+    "סקי",
+    "טיפוס הרים",
+    "טניס",
+    "חנוכה",
+    "ראש השנה",
+    "יום כיפור",
+    "שבועות",
+  ];
   return (
     <div className="upload-popup">
       <img
@@ -17,10 +35,7 @@ const UploadEduDetails = () => {
       <div className="upload-popup-header" style={{marginBottom: "1px"}}>
         לא חובה אבל יעזור לנו מאוד
       </div>
-      <div
-        className="upload-popup-text"
-        style={{marginBottom: "38px", width: "100%"}}
-      >
+      <div className="upload-popup-text" style={{marginBottom: "38px"}}>
         הפרטים האלו יעזרו לנו בהתאמת החומר לקורסים ולמשתמשי הפורטל
       </div>
       <div className="upload-details-approval">
@@ -46,7 +61,14 @@ const UploadEduDetails = () => {
           <input className="upload-details-input" />
         </div>
       </div>
-      <div className="upload-popup-text">תיוגים</div>
+      <div className="upload-popup-text" style={{marginBottom: "9px"}}>
+        תיוגים
+      </div>
+      <div className="upload-details-tags-container">
+        {tags.map((tag) => (
+          <div className="upload-details-tag">{tag}</div>
+        ))}
+      </div>
       <div className="upload-button-container">
         <div
           className="upload-back-button"
