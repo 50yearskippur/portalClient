@@ -18,4 +18,9 @@
   width: 59.5vw;
   grid-gap: 2%;
   height: 300px;
+  margin-bottom: 6vh;
+}
+
+.homepage-buttons-container {
+  display: flex;
 }

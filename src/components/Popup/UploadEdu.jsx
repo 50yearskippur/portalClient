@@ -50,7 +50,7 @@ const UploadEdu = () => {
           value="newsletter"
         />
         אני מאשר שהתוכן עומד
-        <span style={{ fontWeight: "700" }}>בתנאי בטחון מידע </span> ומותאם
+        <span style={{ fontWeight: "700" }}> בתנאי בטחון מידע </span> ומותאם
         לפרסום לכלל אמ"ן
       </label>
       <div className="upload-button-container">
