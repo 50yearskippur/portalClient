@@ -133,7 +133,7 @@ const HomePage = () => {
         >
           <TitlesList
             titlesArray={titlesObjectsArray}
-            getDefaultTitle={() => titlesObjectsArray[0]}
+            getDefaultTitle={() => titlesObjectsArray[0].text}
             style={{
               containerStyle: { marginTop: "5vh", marginRight: "2vw" },
               color: "#5D5D5D",
