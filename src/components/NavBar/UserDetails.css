@@ -46,3 +46,11 @@
   display: flex;
   margin: 6.9vh;
 }
+
+.show-profile-arrow-button {
+  height: 3.4vh;
+  position: relative;
+  top: 40%;
+  cursor: pointer;
+  right: 22%;
+}
