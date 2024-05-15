@@ -9,6 +9,7 @@ import TitlesList from "../components/TitlesList/TitlesList";
 import SubSubjects from "../components/SubSubjects/SubSubjects";
 import Button from "../components/Button/Button";
 import UploadEduType from "../components/Popup/UploadEduType";
+import Search from "../components/Search/Search";
 
 //delete in production
 const data = [
@@ -95,6 +96,7 @@ const HomePage = () => {
 
   return (
     <div className="home-page-wrapper page-container">
+      <Search style={{ width: "42.84%", height: "7.58%" }} />
       <p className="recommended-title">מומלצים</p>
       <div className="recommended-wrapper">
         <RecommendedItem

@@ -2,6 +2,7 @@ import "./App.css";
 import { PopupProvider } from "./store/popup-context";
 import { UserProvider } from "./store/user-context";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
+import paths from "./constants/paths.js";
 import { createElement } from "react";
 import NavBar from "./components/NavBar/NavBar";
 import Popup from "./components/Popup/Popup";
@@ -14,7 +15,7 @@ function App() {
           <div className="app">
             <NavBar />
             <Popup />
-            {/* <Routes>
+            <Routes>
               {paths.map((path) => (
                 <Route
                   key={path.text}
@@ -22,7 +23,7 @@ function App() {
                   element={createElement(path.component)}
                 />
               ))}
-            </Routes> */}
+            </Routes>
           </div>
         </PopupProvider>
       </UserProvider>
