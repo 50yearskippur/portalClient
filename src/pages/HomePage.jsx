@@ -100,8 +100,7 @@ const HomePage = () => {
         style={{
           width: "42.84%",
           height: "7.58vh",
-          margin: "auto",
-          marginTop: "1%",
+          margin: "1% auto",
         }}
       />
       <p className="recommended-title">מומלצים</p>
