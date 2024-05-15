@@ -6,30 +6,28 @@ import paths from "./constants/paths";
 import { createElement } from "react";
 import NavBar from "./components/NavBar/NavBar";
 import Popup from "./components/Popup/Popup";
-import Favorites from "./components/Favorites/Favorites";
 
 function App() {
   return (
-    // <BrowserRouter>
-    //   <UserProvider>
-    //     <PopupProvider>
-    //       <div className="app">
-    //         <NavBar />
-    //         <Popup />
-    //         <Routes>
-    //           {paths.map((path) => (
-    //             <Route
-    //               key={path.text}
-    //               path={path.path}
-    //               element={createElement(path.component)}
-    //             />
-    //           ))}
-    //         </Routes>
-    //       </div>
-    //     </PopupProvider>
-    //   </UserProvider>
-    // </BrowserRouter>
-    <Favorites />
+    <BrowserRouter>
+      <UserProvider>
+        <PopupProvider>
+          <div className="app">
+            <NavBar />
+            <Popup />
+            <Routes>
+              {paths.map((path) => (
+                <Route
+                  key={path.text}
+                  path={path.path}
+                  element={createElement(path.component)}
+                />
+              ))}
+            </Routes>
+          </div>
+        </PopupProvider>
+      </UserProvider>
+    </BrowserRouter>
   );
 }
 
