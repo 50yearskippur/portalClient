@@ -5,17 +5,6 @@ import UserDetails from "./UserDetails";
 import paths from "../../constants/paths";
 import { useLocation } from "react-router-dom";
 
-//delete in production
-const user = {
-  fullName: "ג'ורג טימותי קלוני",
-  email: "email@gmail.com",
-  personalNumber: "123456789",
-  unit: "8200",
-  group: 'קורס קפ"ה',
-  role: "user",
-  favorites: ["1", "2", "3"],
-};
-
 const NavBar = () => {
   const location = useLocation();
   const currentPath = location.pathname;
