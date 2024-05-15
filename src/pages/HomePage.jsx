@@ -96,7 +96,14 @@ const HomePage = () => {
 
   return (
     <div className="home-page-wrapper page-container">
-      <Search style={{ width: "42.84%", height: "7.58vh" }} />
+      <Search
+        style={{
+          width: "42.84%",
+          height: "7.58vh",
+          margin: "auto",
+          marginTop: "1%",
+        }}
+      />
       <p className="recommended-title">מומלצים</p>
       <div className="recommended-wrapper">
         <RecommendedItem
