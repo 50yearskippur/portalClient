@@ -3,7 +3,7 @@ import TitleList from "../TitlesList/TitlesList";
 import portalLogo from "../../assets/media/navbar/portalLogo.png";
 import UserDetails from "./UserDetails";
 import paths from "../../constants/paths";
-import {useLocation} from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 //delete in production
 const user = {

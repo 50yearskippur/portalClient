@@ -1,7 +1,8 @@
 import profilePicture from "../../assets/media/navbar/profilePicture.png";
+import RightArrow from "../../assets/media/navbar/rightArrow.png";
 import "./UserDetails.css";
 
-const UserDetails = ({user}) => {
+const UserDetails = ({ user }) => {
   return (
     <div className="profile-container">
       <img
@@ -13,6 +14,11 @@ const UserDetails = ({user}) => {
         <p className="user-fullName">{user.fullName}</p>
         <p className="user-group">{user.group}</p>
       </div>
+      <img
+        className="show-profile-arrow-button"
+        src={RightArrow}
+        alt="right-arrow-icon"
+      />
     </div>
   );
 };
