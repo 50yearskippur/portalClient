@@ -1,25 +1,30 @@
 import "./UploadEduDetails.css";
 import UploadEdu from "./UploadEdu";
-import {useContext, useState} from "react";
-import {PopupContext} from "../../store/popup-context";
+import { useContext, useState } from "react";
+import { PopupContext } from "../../store/popup-context";
 import exitIcon from "../../assets/media/Icons/exitIcon.png";
 
-const SelectedTag = ({tag}) => {
+const SelectedTag = ({ tag }) => {
   const [isSlected, setIsSlected] = useState(false);
 
   const toggleTag = () => {
     setIsSlected((prev) => !prev);
-  }
+  };
 
   return (
-    <div className={`upload-details-tag ${isSlected && "upload-details-tag-active"}`} onClick={toggleTag}>
+    <div
+      className={`upload-details-tag ${
+        isSlected && "upload-details-tag-active"
+      }`}
+      onClick={toggleTag}
+    >
       {tag}
-    </div>);
-  
-}
+    </div>
+  );
+};
 
 const UploadEduDetails = () => {
-  const {hidePopup, showPopup} = useContext(PopupContext);
+  const { hidePopup, showPopup } = useContext(PopupContext);
   const tags = [
     "אוכל",
     "מים",
@@ -46,16 +51,16 @@ const UploadEduDetails = () => {
         alt="exit-button"
         onClick={hidePopup}
       />
-      <div className="upload-popup-header" style={{marginBottom: "1px"}}>
+      <div className="upload-popup-header" style={{ marginBottom: "1px" }}>
         לא חובה אבל יעזור לנו מאוד
       </div>
-      <div className="upload-popup-text" style={{marginBottom: "38px"}}>
+      <div className="upload-popup-text" style={{ marginBottom: "38px" }}>
         הפרטים האלו יעזרו לנו בהתאמת החומר לקורסים ולמשתמשי הפורטל
       </div>
       <div className="upload-details-approval">
         <div
           className="upload-popup-text"
-          style={{marginBottom: "16px", width: "fit-content"}}
+          style={{ marginBottom: "16px", width: "fit-content" }}
         >
           מפקדים מאשרים אם יש
         </div>
@@ -75,12 +80,12 @@ const UploadEduDetails = () => {
           <input className="upload-details-input" />
         </div>
       </div>
-      <div className="upload-popup-text" style={{marginBottom: "9px"}}>
+      <div className="upload-popup-text" style={{ marginBottom: "9px" }}>
         תיוגים
       </div>
       <div className="upload-details-tags-container">
         {tags.map((tag) => (
-         <SelectedTag tag={tag}/>
+          <SelectedTag tag={tag} />
         ))}
       </div>
       <div className="upload-button-container">
