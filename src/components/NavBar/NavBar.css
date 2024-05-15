@@ -1,26 +1,10 @@
 .navbar-container {
-  background-color: #2c2c33;
   position: fixed;
   height: 100vh;
-  width: 20%;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+  width: 6.64%;
+  background: linear-gradient(127deg, #6c60ff 18.87%, #3b2ed1 71.49%);
+  box-shadow: 0px 4px 10px 0px #0000003d;
   right: 0;
   top: 0;
   z-index: 2;
-}
-
-.portal-logo {
-  width: 11.7vw;
-  height: 7.3vh;
-  margin-top: 5.7vh;
-}
-
-@media (max-width: 768px) {
-  .portal-logo {
-    width: 80%;
-    height: auto;
-    margin-top: 2rem;
-  }
 }
