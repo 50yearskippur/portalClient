@@ -1,8 +1,6 @@
 import "./NavBar.css";
 import TitleList from "../TitlesList/TitlesList";
 import portalLogo from "../../assets/media/navbar/portalLogo.png";
-import UserDetails from "./UserDetails";
-import paths from "../../constants/paths";
 import { useLocation } from "react-router-dom";
 
 const NavBar = () => {
@@ -16,7 +14,6 @@ const NavBar = () => {
   return (
     <div className="navbar-container">
       <img className="portal-logo" alt="portal logo" src={portalLogo} />
-      <UserDetails user={user} />
       <TitleList
         style={titleListStyle}
         getDefaultTitle={() =>
