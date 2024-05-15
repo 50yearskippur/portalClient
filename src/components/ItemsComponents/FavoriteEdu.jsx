@@ -11,13 +11,9 @@ const FavotireEdu = ({ item }) => {
     <div className="favorite-edu-container">
       <FileController item={item} />
       <div className="favorite-edu-info">
-        <div className="favorite-edu-content">
-          {/* <div className="favorite-edu-title">
-            <div className="favorite-edu-title">{item.title}</div>
-            <div className="favorite-edu-title">|</div>
-            <div>{item.type}</div>
-          </div>
-          <div>{item.subSubject.title}</div> */}
+        <div className="favorite-type-container">
+          <div className="favorite-type">{item.type}</div>
+          <div className="favorite-type">{item.subSubject.title}</div>
         </div>
         <div className="favorite-icons-container">
           <div className="favorite-icon-container">
