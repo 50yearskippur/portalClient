@@ -3,7 +3,7 @@ import FavotireEdu from "../ItemsComponents/FavoriteEdu";
 import rabit from "../../assets/img/rabit.jpg";
 
 const Favorits = () => {
-  data = [
+  const data = [
     {
       title: "ארנב",
       type: "חיה",

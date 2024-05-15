@@ -1,7 +1,10 @@
 .favorite-edu-title {
-  color: #5d5d5d;
-  font-size: 16px;
-  font-weight: 700;
+  color: var(--white, var(--Main-colors-White, #fff));
+  font-size: 20px;
+  font-weight: 500;
+  position: absolute;
+  right: 23px;
+  bottom: 18px;
 }
 
 .favorite-edu-title {
@@ -10,12 +13,13 @@
   gap: 5px;
 }
 
-.favorite-edu-conrainer {
+.favorite-edu-container {
   color: #5d5d5d;
   font-size: 16px;
   display: flex;
   flex-direction: column;
   gap: 14px;
+  position: relative;
 }
 
 .favorite-edu-content {
@@ -29,8 +33,51 @@
   justify-content: space-between;
 }
 
-.favorite-edu-heart {
-  background-image: url("../../assets/media/icons/heart.png");
-  background-repeat: no-repeat;
-  width: 45px;
+.favorite-icon-container {
+  width: 37px;
+  height: 37px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(2px);
+}
+
+.favorite-icons-container {
+  display: flex;
+  gap: 12px;
+  position: absolute;
+  top: 18px;
+  right: 20px;
+}
+
+.favorite-add-text {
+  color: #5777ff;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 12px;
+}
+
+.favorite-add-container {
+  display: flex;
+  width: fit-content;
+  padding-right: 10px;
+}
+
+.favorite-type {
+  display: flex;
+  padding: 4.324px 11.529px;
+  justify-content: center;
+  align-items: center;
+  gap: 14.412px;
+  border-radius: 2.882px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.favorite-type-container {
+  display: flex;
+  position: absolute;
+  top: 20px;
 }
