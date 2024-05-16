@@ -10,6 +10,7 @@ import SubSubjects from "../components/SubSubjects/SubSubjects";
 import Button from "../components/Button/Button";
 import UploadEduType from "../components/Popup/UploadEduType";
 import Search from "../components/Search/Search";
+import RecommendedSection from "../components/ItemsComponents/RecommendedSection/RecommendedSection";
 
 //delete in production
 const data = [
@@ -114,19 +115,7 @@ const HomePage = () => {
         }}
       />
       <p className="recommended-title">מומלצים</p>
-      {/* <div className="recommended-wrapper">
-      <RecommendedItem
-        item={data[0]}
-        // style={{ height: "100%", width: "100%" }}
-        style={{ width: "50%", height: "54%" }}
-      /> */}
-      {/* <SideBar
-          numItems={2}
-          ItemComponent={RecommendedItem}
-          data={data}
-          style={{ height: "100%" }}
-        /> */}
-      {/* </div> */}
+      <RecommendedSection />
       <div
         style={{
           display: "grid",
