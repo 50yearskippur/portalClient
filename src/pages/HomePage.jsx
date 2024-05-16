@@ -14,7 +14,7 @@ import Search from "../components/Search/Search";
 //delete in production
 const data = [
   {
-    title: "ארנב",
+    title: 'משחקי פז"מ',
     type: "חיה",
     subSubject: {
       title: "יונקים",
@@ -23,7 +23,7 @@ const data = [
     mediaType: "image",
   },
   {
-    title: "ארנב",
+    title: "סודות חיל המודיעין",
     type: "חיה",
     subSubject: {
       title: "יונקים",
@@ -32,7 +32,7 @@ const data = [
     mediaType: "image",
   },
   {
-    title: "ארנב",
+    title: "מצטייני הנשיא",
     type: "חיה",
     subSubject: {
       title: "יונקים",
@@ -91,6 +91,16 @@ const titlesObjectsArray = titlesArray.map((title) => ({ text: title }));
 //delete in production
 const tabsArray = ["במיוחד בשבילך", "כל התוצרים", "תוצרים שאהבתי"];
 
+//get recommended item per unit
+const getRecommendedPerUnit = () => {
+  return data;
+};
+
+//get recommended for all
+const getRecommendedForAll = () => {
+  return data[0];
+};
+
 const HomePage = () => {
   const { showPopup } = useContext(PopupContext);
 
@@ -104,18 +114,19 @@ const HomePage = () => {
         }}
       />
       <p className="recommended-title">מומלצים</p>
-      <div className="recommended-wrapper">
-        <RecommendedItem
-          item={data[0]}
-          style={{ height: "100%", width: "100%" }}
-        />
-        <SideBar
+      {/* <div className="recommended-wrapper">
+      <RecommendedItem
+        item={data[0]}
+        // style={{ height: "100%", width: "100%" }}
+        style={{ width: "50%", height: "54%" }}
+      /> */}
+      {/* <SideBar
           numItems={2}
           ItemComponent={RecommendedItem}
           data={data}
           style={{ height: "100%" }}
-        />
-      </div>
+        /> */}
+      {/* </div> */}
       <div
         style={{
           display: "grid",
