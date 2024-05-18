@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 49% 49% auto;
   grid-gap: 2%;
-  background-color: red;
+  /* background-color: red; */
   height: 53.95vh;
   width: 100%;
 }
@@ -12,6 +12,5 @@
 }
 
 .main-recommendation {
-  background-color: blue;
   height: 100%;
 }

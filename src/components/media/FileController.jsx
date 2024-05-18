@@ -11,6 +11,7 @@ const FileController = ({ item, style = {}, onClick = () => {} }) => {
   return (
     <div
       className="file-container"
+      style={style}
       onClick={() => {
         onClick();
         setDisplay(item.media);

@@ -8,5 +8,5 @@
 
 .file {
   width: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }

@@ -115,7 +115,7 @@ const HomePage = () => {
         }}
       />
       <p className="recommended-title">מומלצים</p>
-      <RecommendedSection />
+      <RecommendedSection data={data} />
       <div
         style={{
           display: "grid",
