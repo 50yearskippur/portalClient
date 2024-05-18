@@ -8,6 +8,7 @@ const RecommendedItem = ({
   style = { width: "100%", height: "100%" },
 }) => {
   const navigate = useNavigate();
+  console.log(style);
 
   return (
     <div className="recommended-item" style={style}>
