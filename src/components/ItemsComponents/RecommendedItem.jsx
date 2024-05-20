@@ -16,6 +16,8 @@ const RecommendedItem = ({
         style={{ ...style, borderRadius: "10px" }}
         onClick={() => navigate("/subSubject")}
       />
+      <p className="recommended-item-title">{item.title}</p>
+      <p className="recommended-item-subsubject">{item.subSubject.title}</p>
     </div>
   );
 };

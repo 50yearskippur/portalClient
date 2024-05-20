@@ -1,4 +1,27 @@
 .recommended-item {
   object-fit: cover;
   height: 100%;
+  position: relative;
+}
+
+.recommended-item-title {
+  color: white;
+  position: absolute;
+  bottom: 3vh;
+  font-size: 24px;
+  font-weight: 700;
+  /* line-height: 36px; */
+  text-align: right;
+  right: 2vw;
+}
+
+.recommended-item-subsubject {
+  color: white;
+  position: absolute;
+  bottom: 1vh;
+  font-size: 16px;
+  /* font-weight: 700; */
+  /* line-height: 36px; */
+  text-align: right;
+  right: 2vw;
 }

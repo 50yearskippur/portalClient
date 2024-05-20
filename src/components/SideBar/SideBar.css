@@ -11,8 +11,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* overflow: hidden; */
-  background-color: darkmagenta;
+  border-radius: 10px;
 }
 
 /* Media queries for responsiveness */
