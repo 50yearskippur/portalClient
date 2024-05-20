@@ -7,8 +7,10 @@
   width: 100%;
 }
 .recommendations-per-unit {
-  background-color: blueviolet;
+  /* background-color: blueviolet; */
   height: 100%;
+  display: flex;
+  gap: 4%;
 }
 
 .main-recommendation {

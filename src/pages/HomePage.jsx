@@ -42,7 +42,7 @@ const data = [
     mediaType: "image",
   },
   {
-    title: "ארנב",
+    title: "ריאיון עם רב סרן",
     type: "חיה",
     subSubject: {
       title: "יונקים",
@@ -51,7 +51,7 @@ const data = [
     mediaType: "image",
   },
   {
-    title: "ארנב",
+    title: "מידע פיקטיבי",
     type: "חיה",
     subSubject: {
       title: "יונקים",
@@ -60,7 +60,7 @@ const data = [
     mediaType: "image",
   },
   {
-    title: "ארנב",
+    title: "קיפוד",
     type: "חיה",
     subSubject: {
       title: "יונקים",

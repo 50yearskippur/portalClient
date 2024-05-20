@@ -1,6 +1,6 @@
 .image-list {
   display: flex;
-  background-color: darkgoldenrod;
+  /* background-color: darkgoldenrod; */
   flex-direction: column;
   /* align-items: center; */
   gap: 5%;
@@ -14,7 +14,6 @@
   /* overflow: hidden; */
   background-color: darkmagenta;
 }
-
 
 /* Media queries for responsiveness */
 @media (max-width: 768px) {
