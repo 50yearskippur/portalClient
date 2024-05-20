@@ -1,16 +1,14 @@
-import SideBar from "../components/SideBar/SideBar";
 import Tabs from "../components/Tabs/Tabs";
 import "./HomePage.css";
 import { useContext } from "react";
 import { PopupContext } from "../store/popup-context";
 import rabit from "../assets/img/rabit.jpg";
-import RecommendedItem from "../components/ItemsComponents/RecommendedItem";
 import TitlesList from "../components/TitlesList/TitlesList";
 import SubSubjects from "../components/SubSubjects/SubSubjects";
 import Button from "../components/Button/Button";
 import UploadEduType from "../components/Popup/UploadEduType";
 import Search from "../components/Search/Search";
-import RecommendedSection from "../components/ItemsComponents/RecommendedSection/RecommendedSection";
+import RecommendedSection from "../components/RecommendedSection/RecommendedSection";
 
 //delete in production
 const data = [
@@ -18,7 +16,7 @@ const data = [
     title: 'משחקי פז"מ',
     type: "חיה",
     subSubject: {
-      title: "יונקים",
+      title: "משחקים",
     },
     media: rabit,
     mediaType: "image",
@@ -27,7 +25,7 @@ const data = [
     title: "סודות חיל המודיעין",
     type: "חיה",
     subSubject: {
-      title: "יונקים",
+      title: "מודיעין",
     },
     media: rabit,
     mediaType: "image",
@@ -36,7 +34,7 @@ const data = [
     title: "מצטייני הנשיא",
     type: "חיה",
     subSubject: {
-      title: "יונקים",
+      title: "צבא ההגנה לישראל",
     },
     media: rabit,
     mediaType: "image",
@@ -45,7 +43,7 @@ const data = [
     title: "ריאיון עם רב סרן",
     type: "חיה",
     subSubject: {
-      title: "יונקים",
+      title: "מודיעין",
     },
     media: rabit,
     mediaType: "image",
@@ -54,7 +52,7 @@ const data = [
     title: "מידע פיקטיבי",
     type: "חיה",
     subSubject: {
-      title: "יונקים",
+      title: "רכילות",
     },
     media: rabit,
     mediaType: "image",
@@ -63,7 +61,7 @@ const data = [
     title: "קיפוד",
     type: "חיה",
     subSubject: {
-      title: "יונקים",
+      title: "חיות",
     },
     media: rabit,
     mediaType: "image",
@@ -72,7 +70,7 @@ const data = [
     title: "ארנב",
     type: "חיה",
     subSubject: {
-      title: "יונקים",
+      title: "חיות",
     },
     media: rabit,
     mediaType: "image",
@@ -114,8 +112,10 @@ const HomePage = () => {
           margin: "1% auto",
         }}
       />
-      <p className="recommended-title">מומלצים</p>
-      <RecommendedSection data={data} />
+      <p className="header" style={{ marginTop: "-4vh" }}>
+        מומלצים
+      </p>
+      <RecommendedSection style={{ marginTop: "6.48vh" }} data={data} />
       <div
         style={{
           display: "grid",

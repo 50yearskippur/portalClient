@@ -2,12 +2,11 @@
   display: grid;
   grid-template-columns: 49% 49% auto;
   grid-gap: 2%;
-  /* background-color: red; */
   height: 53.95vh;
   width: 100%;
+  margin-top: 2vh;
 }
 .recommendations-per-unit {
-  /* background-color: blueviolet; */
   height: 100%;
   display: flex;
   gap: 4%;

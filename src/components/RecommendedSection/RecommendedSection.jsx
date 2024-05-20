@@ -1,5 +1,5 @@
-import SideBar from "../../SideBar/SideBar";
-import RecommendedItem from "../RecommendedItem";
+import SideBar from "../SideBar/SideBar";
+import RecommendedItem from "../ItemsComponents/RecommendedItem";
 import "./RecommendedSection.css";
 
 const RecommendedSection = ({ data }) => {
