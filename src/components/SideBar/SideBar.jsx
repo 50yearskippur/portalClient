@@ -6,12 +6,10 @@ const SideBar = ({ numItems, ItemComponent, data, style, startFrom }) => {
     <div className="image-list" style={style}>
       {data.slice(startFrom, numItems + startFrom).map((item, index) => (
         <div className="image-item" key={index}>
-          {/* <img src={item.media} style={{ objectFit: "cover" }} /> */}
-          <div>{item.title}</div>
-          {/* <ItemComponent
+          <ItemComponent
             item={item}
-            style={{ position: "relative", objectFit: "cover" }}
-          /> */}
+            style={{ position: "relative", objectFit: "cover", height: "100%" }}
+          />
         </div>
       ))}
     </div>
