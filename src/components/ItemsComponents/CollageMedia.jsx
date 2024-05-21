@@ -19,13 +19,18 @@ const CollageMedia = () => {
       className="collage-media-container"
       onClick={() => navigate("/mediaAlbum")}
     >
-      <FileController item={item} />
-      <div className="collage-media-side-container">
-        <FileController item={item} />
-        <FileController item={item} />
-        <FileController item={item} />
+      <div className="collage-media-image-container">
+        <FileController item={item} style={{ height: "100%" }} />
+        <div className="collage-media-side-container">
+          <FileController item={item} />
+          <div className="collage-media-overlay-container">
+            <FileController item={item} />
+            <div className="collage-media-overlay">3+</div>
+            <div className="collage-media-overlay-gradient"></div>
+          </div>
+        </div>
       </div>
-      <div className="collage-media-title">סיום קורס</div>
+      <div className="collage-media-title">סיום קורס מט"ל</div>
     </div>
   );
 };
