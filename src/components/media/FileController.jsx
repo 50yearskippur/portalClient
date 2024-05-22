@@ -19,6 +19,7 @@ const FileController = ({ item, style = {}, onClick = () => {} }) => {
       }}
     >
       {getHtml(display, fileType, style)}
+      <div className="gradient" />
     </div>
   );
 };
