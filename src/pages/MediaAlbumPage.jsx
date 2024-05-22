@@ -1,13 +1,11 @@
 import "./MediaAlbumPage.css";
-import BackArrow from "../components/BackArrow/BackArrow";
-import { useNavigate } from "react-router-dom";
 import rabit from "../assets/img/rabit.jpg";
 import party from "../assets/img/party.png";
 import usa from "../assets/img/usa.png";
 import MasonryLayout from "../components/MasonryLayout/MasonryLayout";
+import TopSection from "../components/TopSection/TopSection";
 
 const MediaAlbumPage = () => {
-  const navigate = useNavigate();
   const data = [
     {
       title: "ארנב",
@@ -137,11 +135,12 @@ const MediaAlbumPage = () => {
     },
   ];
   return (
-    <div className="page-container">
-      <BackArrow onClick={() => navigate("/media")} />
-      <div className="media-album-title">פורימון בה"ד 15</div>
-      <MasonryLayout data={data} />
-    </div>
+    <>
+      <TopSection navigateTo={"/media"} />
+      <div className="page-container">
+        <MasonryLayout data={data} />
+      </div>
+    </>
   );
 };
 

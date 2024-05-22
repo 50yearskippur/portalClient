@@ -1,11 +1,7 @@
 import "./SubSubjectPage.css";
-import { useNavigate } from "react-router-dom";
-import BackArrow from "../components/BackArrow/BackArrow";
 import rabit from "../assets/img/rabit.jpg";
 
 const SubSubjectPage = () => {
-  const navigate = useNavigate();
-
   const subSubject = {
     title: "יונקים",
     description: "פרטים על יונקים",
@@ -95,7 +91,6 @@ const SubSubjectPage = () => {
   };
   return (
     <div className="page-container">
-      <BackArrow onClick={() => navigate("/")} />
       <div className="subSubject-page-header">{subSubject.title}</div>
     </div>
   );

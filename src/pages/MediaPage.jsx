@@ -1,4 +1,3 @@
-import "./MediaPage.css";
 import PageTemplate from "../components/PageTemplate/PageTemplate";
 import StockMedia from "../components/ItemsComponents/StockMedia";
 import CollageMedia from "../components/ItemsComponents/CollageMedia";
@@ -135,7 +134,9 @@ const MediaPage = () => {
   ];
   return (
     <div className="page-container">
-      <div className="media-page-header">תמונת סטוק</div>
+      <div className="header" style={{ marginBottom: "4.1vh" }}>
+        תמונת סטוק
+      </div>
       <PageTemplate
         ItemComponent={StockMedia}
         gridStyle={{
@@ -145,7 +146,9 @@ const MediaPage = () => {
         data={data}
       />
 
-      <div className="media-page-header">מדיה</div>
+      <div className="header" style={{ marginBottom: "4.1vh" }}>
+        מדיה
+      </div>
       <PageTemplate
         ItemComponent={CollageMedia}
         gridStyle={{
