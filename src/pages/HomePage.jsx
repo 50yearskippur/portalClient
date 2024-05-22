@@ -126,13 +126,10 @@ const HomePage = () => {
         }}
       >
         <Tabs style={{ marginTop: "12.7vh" }} tabsArray={tabsArray} />
-        <div className="homepage-buttons-container">
-          <Button
-            text={"העלאת תוצר"}
-            onClick={() => showPopup(<UploadEduType />)}
-          />
-          <Button text={"הזמנת תוצר"} isDarkMode={true} />
-        </div>
+        <Button
+          text={"העלאת תוצר"}
+          onClick={() => showPopup(<UploadEduType />)}
+        />
       </div>
       <div style={{ display: "flex" }}>
         <div
