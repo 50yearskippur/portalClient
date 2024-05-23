@@ -116,21 +116,14 @@ const HomePage = () => {
         מומלצים
       </p>
       <RecommendedSection style={{ marginTop: "6.48vh" }} data={data} />
-      <div
-        style={{
-          display: "flex",
-          width: "100%",
-          justifyContent: "space-between",
-        }}
-      >
-        <Tabs style={{ marginTop: "12.7vh" }} tabsArray={tabsArray} />
-        <div style={{ display: "flex", width: "708.62px", height: "32px", gap: "24px" }}>
-          <Search style={{borderRadius: "32.1px", height: "32px", width: "406.62px", padding: "10.7px, 21.4px, 10.7px, 21.4px"}}/>
-          <Button
-            text={"העלאת תוצר"}
-            onClick={() => showPopup(<UploadEduType />)}
-          />
-        </div>
+      <div className="edu-resource-nav-bar">
+        <Tabs tabsArray={tabsArray} />
+        <Search style={{ width: "21.17vw" }} />
+
+        <Button
+          text={"העלאת תוצר"}
+          onClick={() => showPopup(<UploadEduType />)}
+        />
       </div>
       <div style={{ display: "flex" }}>
         <div

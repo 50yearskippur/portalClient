@@ -4,3 +4,11 @@
   align-items: flex-start;
   background-color: beige;
 }
+
+.edu-resource-nav-bar {
+  display: flex;
+  height: 2.963vh;
+  background-color: aqua;
+  width: 100%;
+  justify-content: space-between;
+}
