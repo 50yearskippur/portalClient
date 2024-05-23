@@ -1,0 +1,47 @@
+.media-popup-container {
+  width: 82.2vw;
+  height: 82.8vh;
+  background-color: #f7f9fc;
+}
+
+.media-popup-top-container {
+  height: 8.5vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  margin-bottom: 3vh;
+  padding-right: 3vw;
+  padding-left: 1.7vw;
+}
+
+.media-popup-title {
+  color: #7d81b2;
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.media-popup-download {
+  border-radius: 4px;
+  background: var(
+    --Purple,
+    linear-gradient(127deg, #6c60ff 18.87%, #3b2ed1 71.49%)
+  );
+}
+
+.media-popup-exit-text {
+  background: var(
+    --liner-blue,
+    linear-gradient(112deg, #2555ff 17.11%, #7f6aff 95.17%)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.media-popup-exit-container {
+  display: flex;
+  gap: 4px;
+  cursor: pointer;
+}

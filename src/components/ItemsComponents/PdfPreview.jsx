@@ -1,6 +1,6 @@
 import "./PdfPreview.css";
 import FileController from "../Media/FileController";
-import DownloadIcon from "../../assets/media/Icons/downloadIcon.png";
+import DownloadIcon from "../../assets/media/Icons/downloadIcon.svg";
 import ShowFullPdf from "../ShowFullPdf/ShowFullPdf";
 import { useState } from "react";
 import downloadPdf from "../../utils/downloadPdf ";

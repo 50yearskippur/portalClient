@@ -1,8 +1,8 @@
 import "./DownloadBox.css";
 import downloadPdf from "../../utils/downloadPdf ";
-import downloadBox from "../../assets/media/Icons/downloadBox.png";
+import downloadBox from "../../assets/media/Icons/downloadIcon.svg";
 
-const DownloadBox = ({item, style}) => {
+const DownloadBox = ({ item, style }) => {
   return (
     <img
       onClick={() => downloadPdf(item)}

@@ -1,5 +1,5 @@
 import "./TopSection.css";
-import backImg from "../../assets/media/Icons/back.svg";
+import backImg from "../../assets/media/Icons/backIcon.svg";
 import { useNavigate } from "react-router-dom";
 
 const TopSection = ({ navigateTo }) => {
