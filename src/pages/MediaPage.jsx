@@ -2,6 +2,7 @@ import PageTemplate from "../components/PageTemplate/PageTemplate";
 import StockMedia from "../components/ItemsComponents/StockMedia";
 import CollageMedia from "../components/ItemsComponents/CollageMedia";
 import rabit from "../assets/img/rabit.jpg";
+import usa from "../assets/img/usa.png";
 
 const MediaPage = () => {
   const data = [
@@ -11,7 +12,7 @@ const MediaPage = () => {
       subSubject: {
         title: "יונקים",
       },
-      media: rabit,
+      media: usa,
       mediaType: "image",
     },
     {
@@ -20,7 +21,7 @@ const MediaPage = () => {
       subSubject: {
         title: "יונקים",
       },
-      media: rabit,
+      media: usa,
       mediaType: "image",
     },
     {
