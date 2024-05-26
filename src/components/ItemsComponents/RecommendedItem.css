@@ -1,23 +1,24 @@
 .recommended-item {
-  /* position: relative; */
-  /* top: -0.15px;
-  gap: 0px;
-  border-radius: 10px 0px 0px 0px;
-  opacity: 0.9px; */
-
-  /* display: flex;
-  position: relative;
-  align-items: flex-start;
+  object-fit: cover;
   height: 100%;
-  width: 100%; */
+  position: relative;
 }
 
 .recommended-item-title {
-  /* right: 5%; */
-  /* position: absolute; */
-  bottom: 0;
   color: white;
-  font-size: 20px;
+  position: absolute;
+  bottom: 3vh;
+  font-size: 24px;
   font-weight: 700;
-  line-height: 30px;
+  text-align: right;
+  right: 2vw;
+}
+
+.recommended-item-subsubject {
+  color: white;
+  position: absolute;
+  bottom: 1vh;
+  font-size: 16px;
+  text-align: right;
+  right: 2vw;
 }

@@ -2,17 +2,17 @@
   display: flex;
   gap: 60px;
   justify-content: flex-start;
-  font-size: 20px;
-  font-weight: 700;
-  color: #d9d9d9;
-  border-bottom: 2px solid #d9d9d9;
-  width: 100%;
+  font-size: 16px;
+  font-weight: 500;
+  color: #9599c6;
+  line-height: 24px;
 }
 
 .tabs-item {
   position: relative;
   padding-bottom: 2px;
   cursor: pointer;
+  padding-right: 0.5vw;
 }
 
 .tabs-item.current-tab::after {
@@ -21,9 +21,14 @@
   left: 0;
   right: 0;
   bottom: -2px;
-  border-bottom: 2px solid #5d5d5d;
+  height: 2px;
+  width: 110%;
+  background: linear-gradient(127deg, #6c60ff 18.87%, #3b2ed1 71.49%);
 }
 
 .tabs-item.current-tab {
-  color: #5d5d5d;
+  background: linear-gradient(127deg, #6c60ff 18.87%, #3b2ed1 71.49%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
 }
