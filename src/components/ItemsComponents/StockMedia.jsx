@@ -6,7 +6,11 @@ const StockMedia = ({ item }) => {
   const navigate = useNavigate();
   return (
     <div className="stock-media-container">
-      <FileController item={item} onClick={() => navigate("/mediaAlbum")} />
+      <FileController
+        item={item}
+        showGradient={false}
+        onClick={() => navigate("/mediaAlbum")}
+      />
       <div className="stock-media-overlay">{item.title}</div>
     </div>
   );

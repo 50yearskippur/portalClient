@@ -12,6 +12,7 @@ const MasonryLayout = ({ data }) => {
         <FileController
           key={`masonry${index}`}
           item={item}
+          showGradient={false}
           style={{ marginBottom: "24px" }}
           onClick={() => showPopup(<MediaPopup item={item} />)}
         />

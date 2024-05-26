@@ -104,8 +104,8 @@ const tabsArray = ["במיוחד בשבילך", "כל התוצרים", "תוצר
 const getEduResources = (selectedTab) => {
   switch (true) {
     case selectedTab === "תוצרים שאהבתי":
-      // return <Favorites />;
-      return <p>תוצרים שאהבתי</p>;
+      return <Favorites />;
+    // return <p>תוצרים שאהבתי</p>;
     case selectedTab === "כל התוצרים":
       return <p>כל התוצרים</p>;
     default:
