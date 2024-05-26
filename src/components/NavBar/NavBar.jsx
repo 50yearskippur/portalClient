@@ -30,7 +30,7 @@ const NavBar = () => {
         src={formsIcon}
         className="navbar-icon"
         alt="form icon"
-        onClick={() => navigate("/form")}
+        onClick={() => navigate("/forms")}
       />
       <img
         src={mediaIcon}
