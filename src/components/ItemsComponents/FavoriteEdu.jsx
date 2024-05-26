@@ -9,7 +9,10 @@ const FavotireEdu = ({ item }) => {
 
   return (
     <div className="favorite-edu-container">
-      <FileController item={item} />
+      <FileController
+        item={item}
+        style={{ bordeRradius: "8.647px", height: "25.4vh" }}
+      />
       <div className="favorite-edu-info">
         <div className="favorite-type-container">
           <div className="favorite-type">{item.type}</div>
