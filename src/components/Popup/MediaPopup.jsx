@@ -1,6 +1,7 @@
 import "./MediaPopup.css";
 import FileController from "../Media/FileController";
 import backImg from "../../assets/media/Icons/backIcon.svg";
+import downloadImg from "../../assets/media/Icons/downloadIcon.svg";
 
 const MediaPopup = ({ item }) => {
   return (
@@ -12,6 +13,7 @@ const MediaPopup = ({ item }) => {
         </div>
         <div className="media-popup-title">{item.title}</div>
         <div className="media-popup-download-container">
+          <img src={downloadImg} alt="download icon" />
           <div className="media-popup-download-text">הורדה</div>
         </div>
       </div>
