@@ -1,10 +1,8 @@
-import SideBar from "../components/SideBar/SideBar";
 import Tabs from "../components/Tabs/Tabs";
 import "./HomePage.css";
 import { useContext } from "react";
 import { PopupContext } from "../store/popup-context";
-import rabit from "../assets/img/rabit.jpg";
-import RecommendedItem from "../components/ItemsComponents/RecommendedItem";
+// import rabit from "../assets/img/rabit.jpg";
 import TitlesList from "../components/TitlesList/TitlesList";
 import SubSubjects from "../components/SubSubjects/SubSubjects";
 import Button from "../components/Button/Button";
@@ -13,71 +11,71 @@ import Search from "../components/Search/Search";
 import RecommendedSection from "../components/ItemsComponents/RecommendedSection/RecommendedSection";
 
 //delete in production
-const data = [
-  {
-    title: 'משחקי פז"מ',
-    type: "חיה",
-    subSubject: {
-      title: "יונקים",
-    },
-    media: rabit,
-    mediaType: "image",
-  },
-  {
-    title: "סודות חיל המודיעין",
-    type: "חיה",
-    subSubject: {
-      title: "יונקים",
-    },
-    media: rabit,
-    mediaType: "image",
-  },
-  {
-    title: "מצטייני הנשיא",
-    type: "חיה",
-    subSubject: {
-      title: "יונקים",
-    },
-    media: rabit,
-    mediaType: "image",
-  },
-  {
-    title: "ארנב",
-    type: "חיה",
-    subSubject: {
-      title: "יונקים",
-    },
-    media: rabit,
-    mediaType: "image",
-  },
-  {
-    title: "ארנב",
-    type: "חיה",
-    subSubject: {
-      title: "יונקים",
-    },
-    media: rabit,
-    mediaType: "image",
-  },
-  {
-    title: "ארנב",
-    type: "חיה",
-    subSubject: {
-      title: "יונקים",
-    },
-    media: rabit,
-    mediaType: "image",
-  },
-  {
-    title: "ארנב",
-    type: "חיה",
-    subSubject: {
-      title: "יונקים",
-    },
-    media: rabit,
-    mediaType: "image",
-  },
-];
+// const data = [
+//   {
+//     title: 'משחקי פז"מ',
+//     type: "חיה",
+//     subSubject: {
+//       title: "יונקים",
+//     },
+//     media: rabit,
+//     mediaType: "image",
+//   },
+//   {
+//     title: "סודות חיל המודיעין",
+//     type: "חיה",
+//     subSubject: {
+//       title: "יונקים",
+//     },
+//     media: rabit,
+//     mediaType: "image",
+//   },
+//   {
+//     title: "מצטייני הנשיא",
+//     type: "חיה",
+//     subSubject: {
+//       title: "יונקים",
+//     },
+//     media: rabit,
+//     mediaType: "image",
+//   },
+//   {
+//     title: "ארנב",
+//     type: "חיה",
+//     subSubject: {
+//       title: "יונקים",
+//     },
+//     media: rabit,
+//     mediaType: "image",
+//   },
+//   {
+//     title: "ארנב",
+//     type: "חיה",
+//     subSubject: {
+//       title: "יונקים",
+//     },
+//     media: rabit,
+//     mediaType: "image",
+//   },
+//   {
+//     title: "ארנב",
+//     type: "חיה",
+//     subSubject: {
+//       title: "יונקים",
+//     },
+//     media: rabit,
+//     mediaType: "image",
+//   },
+//   {
+//     title: "ארנב",
+//     type: "חיה",
+//     subSubject: {
+//       title: "יונקים",
+//     },
+//     media: rabit,
+//     mediaType: "image",
+//   },
+// ];
 //delete in production
 const titlesArray = [
   "מבואות מודיעין",
@@ -93,14 +91,14 @@ const titlesObjectsArray = titlesArray.map((title) => ({ text: title }));
 const tabsArray = ["במיוחד בשבילך", "כל התוצרים", "תוצרים שאהבתי"];
 
 //get recommended item per unit
-const getRecommendedPerUnit = () => {
-  return data;
-};
+// const getRecommendedPerUnit = () => {
+//   return data;
+// };
 
 //get recommended for all
-const getRecommendedForAll = () => {
-  return data[0];
-};
+// const getRecommendedForAll = () => {
+//   return data[0];
+// };
 
 const HomePage = () => {
   const { showPopup } = useContext(PopupContext);
