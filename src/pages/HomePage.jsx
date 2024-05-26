@@ -9,6 +9,8 @@ import Button from "../components/Button/Button";
 import UploadEduType from "../components/Popup/UploadEduType";
 import Search from "../components/Search/Search";
 import RecommendedSection from "../components/RecommendedSection/RecommendedSection";
+import filterIcon from "../assets/media/Icons/filterIcon.png";
+import openFilterIcon from "../assets/media/Icons/openFilterIcon.png";
 
 //delete in production
 const data = [
@@ -118,21 +120,19 @@ const HomePage = () => {
       <RecommendedSection style={{ marginTop: "6.48vh" }} data={data} />
       <div className="edu-resource-nav-bar">
         <Tabs tabsArray={tabsArray} />
-        <div className="filter-container">
-          
+        <div className="nav-bar-left-container">
+          <div className="filter-container">
+            <img className="filter-icon" src={filterIcon} alt="filter icon" />
+            <p className="filter-text">סנן לפי</p>
+            <img src={openFilterIcon} alt="open filter icon" />
+          </div>
+          <Search style={{ width: "21.17vw" }} />
+          <Button
+            text={"העלאת תוצר"}
+            onClick={() => showPopup(<UploadEduType />)}
+          />
         </div>
-        <Search style={{ width: "21.17vw" }} />
-        <Button
-          text={"העלאת תוצר"}
-          onClick={() => showPopup(<UploadEduType />)}
-        />
       </div>
-
-
-
-
-
-
       <div style={{ display: "flex" }}>
         <div
           className="white-container"
