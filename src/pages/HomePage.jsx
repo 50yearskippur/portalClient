@@ -118,13 +118,21 @@ const HomePage = () => {
       <RecommendedSection style={{ marginTop: "6.48vh" }} data={data} />
       <div className="edu-resource-nav-bar">
         <Tabs tabsArray={tabsArray} />
+        <div className="filter-container">
+          
+        </div>
         <Search style={{ width: "21.17vw" }} />
-
         <Button
           text={"העלאת תוצר"}
           onClick={() => showPopup(<UploadEduType />)}
         />
       </div>
+
+
+
+
+
+
       <div style={{ display: "flex" }}>
         <div
           className="white-container"
