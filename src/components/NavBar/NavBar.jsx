@@ -36,7 +36,7 @@ const NavBar = () => {
         src={mediaIcon}
         className="navbar-icon"
         alt="media icon"
-        onClick={() => navigate("/mediaAlbum")}
+        onClick={() => navigate("/media")}
       />
       <img
         src={userIcon}
