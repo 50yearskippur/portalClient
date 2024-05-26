@@ -5,36 +5,35 @@
   background-color: beige;
 }
 
-.recommended-title {
-  font-size: 32px;
-  font-weight: 500;
-  line-height: 7.04vh;
-  position: relative;
-  text-align: left;
-  color: #444a5a;
-}
-
-.recommended-title::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  bottom: -8px;
-  width: 75%;
-  height: 2px;
-  background: linear-gradient(127deg, #6c60ff 18.87%, #3b2ed1 71.49%);
-}
-
-.recommended-wrapper {
-  /* height: 100%;
-  width: 100%; */
-  /* display: grid; */
-  /* grid-template-columns: 64% 34%; */
-  /* width: 59.5vw; */
-  /* grid-gap: 2%; */
-  /* height: 300px; */
-  /* margin-bottom: 6vh; */
-}
-
-.homepage-buttons-container {
+.edu-resource-nav-bar {
   display: flex;
+  height: 2.963vh;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 5vh;
+}
+
+.nav-bar-left-container {
+  display: flex;
+  gap: 24px;
+}
+
+.filter-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.filter-icon {
+  width: 24px;
+  height: 24px;
+  gap: 8px;
+}
+
+.filter-text {
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  color: #9599c6;
 }
