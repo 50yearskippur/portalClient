@@ -13,7 +13,7 @@ const MasonryLayout = ({ data }) => {
           key={`masonry${index}`}
           item={item}
           showGradient={false}
-          style={{ marginBottom: "24px" }}
+          style={{ marginBottom: "10px" }}
           onClick={() => showPopup(<MediaPopup item={item} />)}
         />
       ))}
