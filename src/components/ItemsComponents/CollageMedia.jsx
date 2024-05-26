@@ -22,9 +22,17 @@ const CollageMedia = () => {
       <div className="collage-media-image-container">
         <FileController item={item} showGradient={false} />
         <div className="collage-media-side-container">
-          <FileController item={item} showGradient={false} />
+          <FileController
+            item={item}
+            showGradient={false}
+            style={{ height: "18vh" }}
+          />
           <div className="collage-media-overlay-container">
-            <FileController showGradient={false} item={item} />
+            <FileController
+              showGradient={false}
+              item={item}
+              style={{ height: "18vh" }}
+            />
             <div className="collage-media-overlay">3+</div>
             <div className="collage-media-overlay-gradient"></div>
           </div>
