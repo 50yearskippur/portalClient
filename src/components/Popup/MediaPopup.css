@@ -2,10 +2,9 @@
   width: 82.2vw;
   height: 82.8vh;
   background-color: #f7f9fc;
-  /* display: flex;
+  display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center; */
+  align-items: center;
 }
 
 .media-popup-top-container {
@@ -13,10 +12,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 29vw;
   background-color: #ffffff;
   margin-bottom: 3vh;
-  padding-right: 3vw;
-  padding-left: 1.7vw;
 }
 
 .media-popup-title {

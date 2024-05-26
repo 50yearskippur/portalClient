@@ -25,7 +25,6 @@ const MediaPopup = ({ item }) => {
           <div className="media-popup-download-text">הורדה</div>
         </div>
       </div>
-
       <FileController
         item={item}
         style={{ width: "57.9vw", height: "66.8vh" }}
