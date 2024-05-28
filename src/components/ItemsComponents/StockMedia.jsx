@@ -8,7 +8,6 @@ const StockMedia = ({ item }) => {
     <div className="stock-media-container">
       <FileController
         item={item}
-        showGradient={false}
         onClick={() => navigate("/mediaAlbum")}
         style={{ height: "7.5vh", borderRadius: "4px" }}
       />
