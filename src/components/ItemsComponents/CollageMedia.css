@@ -21,16 +21,6 @@
   transform: translate(-50%, -50%);
 }
 
-.collage-media-overlay-gradient {
-  position: absolute;
-  background-color: linear-gradient(
-      0deg,
-      rgba(24, 19, 43, 0.6) 0%,
-      rgba(24, 19, 43, 0.6) 100%
-    )
-    lightgray -59.83px 0px / 169.635% 100% no-repeat;
-}
-
 .collage-media-title {
   color: #5d5d5d;
   text-align: right;

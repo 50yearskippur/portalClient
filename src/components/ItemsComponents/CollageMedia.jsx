@@ -20,19 +20,19 @@ const CollageMedia = () => {
       onClick={() => navigate("/mediaAlbum")}
     >
       <div className="collage-media-image-container">
-        <FileController item={item} />
+        <FileController item={item} style={{ borderRadius: "0 10px 10px 0" }} />
         <div className="collage-media-side-container">
           <FileController
             item={item}
-            style={{ height: "18vh" }}
+            style={{ height: "18vh", borderRadius: "10px 0 0 0" }}
           />
           <div className="collage-media-overlay-container">
             <FileController
               item={item}
-              style={{ height: "18vh" }}
+              style={{ height: "18vh", borderRadius: "0 0 0 10px" }}
+              gradientStyle={{ background: "#18132B99", height: "100%" }}
             />
             <div className="collage-media-overlay">3+</div>
-            <div className="collage-media-overlay-gradient"></div>
           </div>
         </div>
       </div>
