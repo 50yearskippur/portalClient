@@ -10,6 +10,7 @@ const StockMedia = ({ item }) => {
         item={item}
         onClick={() => navigate("/mediaAlbum")}
         style={{ height: "7.5vh", borderRadius: "4px" }}
+        gradientStyle={{ background: "#18132B99", height: "100%" }}
       />
       <div className="stock-media-overlay">{item.title}</div>
     </div>
