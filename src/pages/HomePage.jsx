@@ -1,8 +1,7 @@
-import Tabs from "../components/Tabs/Tabs";
 import "./HomePage.css";
 import { useContext, useState } from "react";
 import { PopupContext } from "../store/popup-context";
-import rabit from "../assets/img/rabit.jpg";
+import Tabs from "../components/Tabs/Tabs";
 import Button from "../components/Button/Button";
 import UploadEduType from "../components/Popup/UploadEduType";
 import Search from "../components/Search/Search";
@@ -10,6 +9,9 @@ import RecommendedSection from "../components/RecommendedSection/RecommendedSect
 import filterIcon from "../assets/media/Icons/filterIcon.png";
 import openFilterIcon from "../assets/media/Icons/openFilterIcon.png";
 import Favorites from "../components/Favorites/Favorites.jsx";
+import ForYou from "../components/ForYou/ForYou.jsx";
+//delete in production
+import rabit from "../assets/img/rabit.jpg";
 
 //delete in production
 const data = [
@@ -77,8 +79,9 @@ const data = [
     mediaType: "image",
   },
 ];
+
 //delete in production
-const titlesArray = [
+const subjects = [
   "מבואות מודיעין",
   "טכנולוגיה וסייבר",
   "מחקר ומיצוי מידע",
@@ -86,9 +89,6 @@ const titlesArray = [
   "המלצות",
   "בלה בלה",
 ];
-const titlesObjectsArray = titlesArray.map((title) => ({ text: title }));
-
-//delete in production
 const tabsArray = ["במיוחד בשבילך", "כל התוצרים", "תוצרים שאהבתי"];
 
 //get recommended item per unit
@@ -104,15 +104,13 @@ const tabsArray = ["במיוחד בשבילך", "כל התוצרים", "תוצר
 const getEduResources = (selectedTab) => {
   switch (true) {
     case selectedTab === "תוצרים שאהבתי":
-      return <Favorites />;
-    // return <p>תוצרים שאהבתי</p>;
+      return <Favorites subjects={subjects} />;
     case selectedTab === "כל התוצרים":
       return <p>כל התוצרים</p>;
     default:
-      return <p>במיוחד בשבילך</p>;
+      return <ForYou subjects={subjects} />;
   }
 };
-// console.log(getEduResources)
 
 const HomePage = () => {
   const { showPopup } = useContext(PopupContext);

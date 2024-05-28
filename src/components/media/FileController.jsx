@@ -25,7 +25,6 @@ const FileController = ({
     >
       {getHtml(display, fileType, style)}
       <div className="gradient" style={gradientStyle} />
-      {/* <div className="gradient" /> */}
     </div>
   );
 };
