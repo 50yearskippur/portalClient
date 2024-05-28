@@ -6,7 +6,7 @@ const FileController = ({
   item,
   style = {},
   onClick = () => {},
-  showGradient = true,
+  gradientStyle = {},
 }) => {
   const [display, setDisplay] = useState(item.cover ? item.cover : item.media);
   const [fileType, setFileType] = useState(
@@ -24,7 +24,8 @@ const FileController = ({
       }}
     >
       {getHtml(display, fileType, style)}
-      {showGradient && <div className="gradient" />}
+      <div className="gradient" style={gradientStyle} />
+      {/* <div className="gradient" /> */}
     </div>
   );
 };

@@ -15,6 +15,7 @@ const RecommendedItem = ({
         item={item}
         style={{ ...style, borderRadius: "10px" }}
         onClick={() => navigate("/subSubject")}
+        gradientStyle={{ height: "65%", top: "35%" }}
       />
       <p className="recommended-item-title">{item.title}</p>
       <p className="recommended-item-subsubject">{item.subSubject.title}</p>
