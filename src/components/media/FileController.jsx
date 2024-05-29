@@ -8,7 +8,7 @@ const FileController = ({
   onClick = () => {},
   gradientStyle = {},
 }) => {
-  const [display, setDisplay] = useState(item.cover ? item.cover : item.media);
+  const [display, setDisplay] = useState(item?.cover ? item.cover : item.media);
   const [fileType, setFileType] = useState(
     item.cover ? "image" : item.mediaType
   );

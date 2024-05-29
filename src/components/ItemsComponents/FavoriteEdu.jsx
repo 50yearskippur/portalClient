@@ -1,7 +1,7 @@
 import "./FavoriteEdu.css";
 import { useState } from "react";
 import FileController from "../Media/FileController";
-import heartImg from "../../assets/media/Icons/heart.png";
+import heartImg from "../../assets/media/Icons/heartBox.png";
 import addImg from "../../assets/media/Icons/addIcon.svg";
 
 const FavotireEdu = ({ item }) => {
