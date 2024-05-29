@@ -8,8 +8,6 @@ import plusImg from "../assets/media/Icons/plus.svg";
 import point from "../assets/media/Icons/pinkPoint.svg";
 import headpones from "../assets/media/Icons/headphones.svg";
 import clock from "../assets/media/Icons/clock.svg";
-import fullStar from "../assets/media/Icons/fullStar.svg";
-import emptyStart from "../assets/media/Icons/emptyStar.svg";
 // delete in production
 import rabit from "../assets/img/rabit.jpg";
 
@@ -166,17 +164,59 @@ const SubSubjectPage = () => {
               </div>
               <div className="edu-resource-caption-icon">
                 <div className="edu-resource-requirement">דירוג</div>
-                <Rate imageSrc={fullStar} style={{ width: "24px" }} />
+                <Rate
+                  style={{ width: "24px" }}
+                  clickable={false}
+                  numberOfStars={3}
+                />
               </div>
             </div>
           </div>
+          <div className="horizontal-line" />
           <div className="edu-resource-comments">
             <div className="edu-resource-comment-text">
               אהבתם את הכרת
               <span style={{ fontWeight: "700" }}> זירת סוריה </span>
               יש לכם הערות? נשמח לשמוע את דעתכם ולהשתפר!
             </div>
-            <Rate imageSrc={emptyStart} style={{ width: "48px" }} />
+            <Rate style={{ width: "48px" }} />
+          </div>
+          <div className="edu-resourse-text">
+            משחק שנועד ללמד את צבעי הכומתות בחיילות השונים משחק שנועד ללמד את
+            צבעי הכומתות בחיילות השונים משחק שנועד ללמד את צבעי הכומתות בחיילות
+            השונים
+          </div>
+          <div className="edu-resourse-cradit-container">
+            <div className="edu-resourse-cradit">
+              <div className="edu-resourse-text" style={{ color: "#7D81B2" }}>
+                פרויקטור
+              </div>
+              <div className="edu-resourse-text">שם פרויקטור</div>
+            </div>
+            <div className="edu-resourse-cradit">
+              <div className="edu-resourse-text" style={{ color: "#7D81B2" }}>
+                מומחה תוכן
+              </div>
+              <div className="edu-resourse-text">שם מומחה תוכן</div>
+            </div>
+            <div className="edu-resourse-cradit">
+              <div className="edu-resourse-text" style={{ color: "#7D81B2" }}>
+                עיצוב גרפי
+              </div>
+              <div className="edu-resourse-text">שם עיצוב גרפי</div>
+            </div>
+            <div className="edu-resourse-cradit">
+              <div className="edu-resourse-text" style={{ color: "#7D81B2" }}>
+                פרויקטור
+              </div>
+              <div className="edu-resourse-text">שם פיתוח</div>
+            </div>
+            <div className="edu-resourse-cradit">
+              <div className="edu-resourse-text" style={{ color: "#7D81B2" }}>
+                פרויקטור
+              </div>
+              <div className="edu-resourse-text">שם פיצוח תוכן</div>
+            </div>
           </div>
         </div>
       </div>

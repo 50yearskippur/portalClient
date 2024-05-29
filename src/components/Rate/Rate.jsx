@@ -1,10 +1,11 @@
 import "./Rate.css";
+import Star from "./Star";
 
-const Rate = ({ imageSrc, style, numOfStars, clickable }) => {
+const Rate = ({ style, clickable = true, numberOfStars = 5 }) => {
   return (
     <div className="rate-container">
-      {Array.from({ length: numOfStars }).map((_, index) => (
-        <img src={imageSrc} style={style} alt={`star${index}`} key={index} />
+      {Array.from({ length: numberOfStars }).map((_, index) => (
+        <Star key={`star${index}`} style={style} clickable={clickable} />
       ))}
     </div>
   );
