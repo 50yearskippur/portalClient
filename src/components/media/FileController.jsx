@@ -13,8 +13,6 @@ const FileController = ({
     item.cover ? "image" : item.mediaType
   );
 
-  console.log(gradientStyle);
-
   return (
     <div
       className="file-container"
