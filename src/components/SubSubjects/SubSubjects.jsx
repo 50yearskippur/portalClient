@@ -33,12 +33,15 @@ const SubSubjects = ({ subject }) => {
                         height: "4.8vh",
                         borderRadius: "3px",
                       }}
-                      // gradientStyle={{ background: "#18132B99", height: "100%" }}
+                      gradientStyle={{
+                        height: index === 2 ? "100%" : "0%",
+                        backgroundColor: index === 2 && "#18132B99",
+                      }}
                     />
                     {index === 2 && (
-                      <div className="sub-subject-edu-number">{`+${
+                      <div className="sub-subject-edu-number">{`${
                         subSubject.eduResourse.length - 3
-                      }`}</div>
+                      }+`}</div>
                     )}
                   </div>
                 ))}
