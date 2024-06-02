@@ -1,0 +1,40 @@
+.edu-prev-container {
+  display: flex;
+  align-items: center;
+  gap: 0.8vw;
+  align-self: stretch;
+  height: 8.7vh;
+  width: 19.5vw;
+  border-radius: 10px;
+  background: var(--Main-colors-White, #fff);
+  box-shadow: 9.818px 13.745px 28.471px -11.781px rgba(20, 13, 63, 0.11);
+}
+
+.edu-prev-deatails {
+  display: flex;
+  gap: 8px;
+  color: #444a5a;
+}
+
+.edu-prev-title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  align-self: stretch;
+  overflow: hidden;
+  text-align: right;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.edu-prev-info {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.edu-prev-deatails-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}

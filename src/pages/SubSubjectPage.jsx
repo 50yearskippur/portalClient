@@ -1,13 +1,16 @@
 import "./SubSubjectPage.css";
 import TopSection from "../components/TopSection/TopSection";
 import FileController from "../components/Media/FileController";
+import SideBar from "../components/SideBar/SideBar";
 import Rate from "../components/Rate/Rate";
+import EduResPrev from "../components/EduResPrev/EduResPrev";
 import notebookImg from "../assets/media/Icons/notebook.svg";
 import heartimg from "../assets/media/Icons/heart.svg";
 import plusImg from "../assets/media/Icons/plus.svg";
 import point from "../assets/media/Icons/pinkPoint.svg";
 import headpones from "../assets/media/Icons/headphones.svg";
 import clock from "../assets/media/Icons/clock.svg";
+import bluePlus from "../assets/media/Icons/bluePlus.svg";
 // delete in production
 import rabit from "../assets/img/rabit.jpg";
 
@@ -104,7 +107,7 @@ const SubSubjectPage = () => {
   return (
     <>
       <TopSection title={subSubject.title} navigateTo={"/"} />
-      <div className="page-container">
+      <div className="page-container edu-resource-page">
         <div className="edu-resource-container">
           <FileController item={currentEdu} style={{ height: "54.1vh" }} />
           <div className="edu-resource-title-container">
@@ -217,6 +220,48 @@ const SubSubjectPage = () => {
               </div>
               <div className="edu-resourse-text">שם פיצוח תוכן</div>
             </div>
+          </div>
+        </div>
+        <div className="edu-resource-other-container">
+          <div className="edu-resource-other-users">
+            <div className="edu-resource-title">עוד דרכים ללמוד</div>
+            <SideBar
+              numItems={3}
+              startFrom={0}
+              ItemComponent={EduResPrev}
+              data={["", "", ""]}
+              style={{ height: "30.4vh" }}
+            />
+          </div>
+          <div
+            className="edu-resource-other-users"
+            style={{ height: "44.1vh" }}
+          >
+            <div className="edu-resource-title">תוצרים של משתמשים</div>
+            <div className="edu-resource-add-edu">
+              <div className="edu-resource-add-text">
+                יש לכם חומר על
+                <span style={{ fontWeight: "700" }}> זירת סוריה </span>? שתפו
+                אותנו ואולי תופיעו בפורטל
+              </div>
+              <div
+                className="edu-resourse-add-container"
+                style={{
+                  border: "1.5px solid rgba(255, 255, 255, 0.20)",
+                  backgroundColor: "#fff",
+                }}
+              >
+                <img src={bluePlus} alt="plus" />
+                <div className="edu-resource-add-text-btn">העלה תוצר</div>
+              </div>
+            </div>
+            <SideBar
+              numItems={3}
+              startFrom={0}
+              ItemComponent={EduResPrev}
+              data={["", "", ""]}
+              style={{ height: "30.4vh" }}
+            />
           </div>
         </div>
       </div>
