@@ -20,7 +20,10 @@ const CollageMedia = () => {
       onClick={() => navigate("/mediaAlbum")}
     >
       <div className="collage-media-image-container">
-        <FileController item={item} style={{ borderRadius: "0 10px 10px 0" }} />
+        <FileController
+          item={item}
+          style={{ borderRadius: "0 10px 10px 0", height: "36vh" }}
+        />
         <div className="collage-media-side-container">
           <FileController
             item={item}

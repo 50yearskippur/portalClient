@@ -136,7 +136,7 @@ const MediaAlbumPage = () => {
   ];
   return (
     <>
-      <TopSection navigateTo={"/media"} />
+      <TopSection navigateTo={"/media"} title='פורימון בה"ד 15' />
       <div className="page-container">
         <MasonryLayout data={data} />
       </div>

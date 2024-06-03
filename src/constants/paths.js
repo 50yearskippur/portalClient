@@ -23,7 +23,7 @@ const paths = [
   },
   { path: "/media", text: "תמונות ומדיה", component: Media },
   { path: "/mediaAlbum", text: "אלבומי תמונות", component: MediaAlbum },
-  { path: "/subSubject", text: "אלבומי תמונות", component: SubSubject },
+  { path: "/subSubject", text: "תת נושא", component: SubSubject },
 ];
 
 export default paths;

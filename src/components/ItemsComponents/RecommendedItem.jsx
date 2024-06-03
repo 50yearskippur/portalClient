@@ -10,11 +10,14 @@ const RecommendedItem = ({
   const navigate = useNavigate();
 
   return (
-    <div className="recommended-item" style={style}>
+    <div
+      className="recommended-item"
+      style={style}
+      onClick={() => navigate("/subSubject", { state: { item } })}
+    >
       <FileController
         item={item}
         style={{ ...style, borderRadius: "10px" }}
-        onClick={() => navigate("/subSubject")}
         gradientStyle={{ height: "65%", top: "35%" }}
       />
       <p className="recommended-item-title">{item.title}</p>
