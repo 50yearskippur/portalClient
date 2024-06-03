@@ -37,6 +37,10 @@ const SubSubjects = ({ subject, subSubjects }) => {
                       height: "4.8vh",
                       borderRadius: "3px",
                     }}
+                    gradientStyle={{
+                      height: index === 2 ? "100%" : "0%",
+                      backgroundColor: index === 2 && "#18132B99",
+                    }}
                   />
                   {index === 2 && (
                     <div className="sub-subject-edu-number">{`+${

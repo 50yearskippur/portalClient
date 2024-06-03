@@ -21,7 +21,7 @@ import rabit from "../assets/img/rabit.jpg";
 const SubSubjectPage = () => {
   const { showPopup } = useContext(PopupContext);
   const location = useLocation();
-  const currentEdu = location.state.item;
+  const currentEdu = location.state?.item;
 
   const eduResources = {
     uploadByArtch: [
