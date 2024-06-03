@@ -3,12 +3,17 @@ import { useState } from "react";
 import FileController from "../Media/FileController";
 import heartImg from "../../assets/media/Icons/heartBox.png";
 import addImg from "../../assets/media/Icons/addIcon.svg";
+import { useNavigate } from "react-router-dom";
 
 const FavotireEdu = ({ item }) => {
   const [addBtnHover, setAddBtnHover] = useState(false);
+  const navigate = useNavigate();
 
   return (
-    <div className="favorite-edu-container">
+    <div
+      className="favorite-edu-container"
+      onClick={() => navigate("/subSubject", { state: { item } })}
+    >
       <FileController
         item={item}
         style={{ bordeRradius: "8.647px", height: "25.4vh" }}

@@ -14,66 +14,69 @@ import ForYou from "../components/ForYou/ForYou.jsx";
 import rabit from "../assets/img/rabit.jpg";
 
 //delete in production
-const data = [
+const recommendedEduResource = [
   {
     title: 'משחקי פז"מ',
-    type: "חיה",
+    type: "משחק",
     subSubject: {
-      title: "משחקים",
+      title: "לורם אימפסום",
+      description: "תיאור תיאור",
+      eduResource: [],
     },
     media: rabit,
     mediaType: "image",
   },
   {
-    title: "סודות חיל המודיעין",
-    type: "חיה",
+    title: 'משחקי פז"מ',
+    type: "משחק",
     subSubject: {
-      title: "מודיעין",
+      title: "לורם אימפסום",
+      description: "תיאור תיאור",
+      eduResource: [],
     },
     media: rabit,
     mediaType: "image",
   },
   {
-    title: "מצטייני הנשיא",
-    type: "חיה",
+    title: 'משחקי פז"מ',
+    type: "משחק",
     subSubject: {
-      title: "צבא ההגנה לישראל",
+      title: "לורם אימפסום",
+      description: "תיאור תיאור",
+      eduResource: [],
     },
     media: rabit,
     mediaType: "image",
   },
   {
-    title: "ריאיון עם רב סרן",
-    type: "חיה",
+    title: 'משחקי פז"מ',
+    type: "משחק",
     subSubject: {
-      title: "מודיעין",
+      title: "לורם אימפסום",
+      description: "תיאור תיאור",
+      eduResource: [],
     },
     media: rabit,
     mediaType: "image",
   },
   {
-    title: "מידע פיקטיבי",
-    type: "חיה",
+    title: 'משחקי פז"מ',
+    type: "משחק",
     subSubject: {
-      title: "רכילות",
+      title: "לורם אימפסום",
+      description: "תיאור תיאור",
+      eduResource: [],
     },
     media: rabit,
     mediaType: "image",
   },
   {
-    title: "קיפוד",
-    type: "חיה",
+    title: 'משחקי פז"מ',
+    type: "משחק",
     subSubject: {
-      title: "חיות",
-    },
-    media: rabit,
-    mediaType: "image",
-  },
-  {
-    title: "ארנב",
-    type: "חיה",
-    subSubject: {
-      title: "חיות",
+      title: "לורם אימפסום",
+      description: "תיאור תיאור",
+      eduResource: [],
     },
     media: rabit,
     mediaType: "image",
@@ -82,12 +85,31 @@ const data = [
 
 //delete in production
 const subjects = [
-  "מבואות מודיעין",
-  "טכנולוגיה וסייבר",
-  "מחקר ומיצוי מידע",
-  "שפה",
-  "המלצות",
-  "בלה בלה",
+  {
+    title: "מבואות מודיעין",
+    type: "אמצעי למידה",
+    subSubject: [],
+  },
+  {
+    title: "טכנולוגיה וסייבר",
+    type: "אמצעי למידה",
+    subSubject: [],
+  },
+  {
+    title: "מחקר ומיצוי מידע",
+    type: "אמצעי למידה",
+    subSubject: [],
+  },
+  {
+    title: "שפה",
+    type: "אמצעי למידה",
+    subSubject: [],
+  },
+  {
+    title: "המלצות",
+    type: "אמצעי למידה",
+    subSubject: [],
+  },
 ];
 const tabsArray = ["במיוחד בשבילך", "כל התוצרים", "תוצרים שאהבתי"];
 
@@ -104,7 +126,7 @@ const tabsArray = ["במיוחד בשבילך", "כל התוצרים", "תוצר
 const getEduResources = (selectedTab) => {
   switch (true) {
     case selectedTab === "תוצרים שאהבתי":
-      return <Favorites subjects={subjects} />;
+      return <Favorites />;
     case selectedTab === "כל התוצרים":
       return <p>כל התוצרים</p>;
     default:
@@ -128,7 +150,10 @@ const HomePage = () => {
       <p className="header" style={{ marginTop: "-4vh" }}>
         מומלצים
       </p>
-      <RecommendedSection style={{ marginTop: "6.48vh" }} data={data} />
+      <RecommendedSection
+        style={{ marginTop: "6.48vh" }}
+        data={recommendedEduResource}
+      />
       <div className="edu-resource-nav-bar">
         <Tabs
           tabsArray={tabsArray}
@@ -149,49 +174,7 @@ const HomePage = () => {
         </div>
       </div>
       {getEduResources(selectedTab)}
-      {/* {selectedTab === "במיוחד בשבילך" && <p>במיוחד בשבילי</p>} */}
-      <div style={{ display: "flex" }}>
-        {/* <div
-          className="white-container"
-          style={{
-            marginTop: "3.5vh",
-            marginLeft: "2vw",
-            marginBottom: "2vh",
-            height: "42vh",
-          }}
-        >
-          <TitlesList
-            titlesArray={titlesObjectsArray}
-            getDefaultTitle={() => titlesObjectsArray[0].text}
-            style={{
-              containerStyle: { marginTop: "5vh", marginRight: "2vw" },
-              color: "#5D5D5D",
-            }}
-          />
-        </div>
-        <div
-          className="white-container"
-          style={{ marginTop: "3.5vh", marginBottom: "2vh" }}
-        >
-          <SubSubjects
-            subject={{
-              title: "ארנב",
-              subSubject: [
-                {
-                  title: "יונקים",
-                  description: "כלבים קטנים",
-                  eduResourse: [{}, {}, {}],
-                },
-                {
-                  title: "יונקים",
-                  description: "כלבים קטנים",
-                  eduResourse: [{}, {}],
-                },
-              ],
-            }}
-          />
-        </div> */}
-      </div>
+      <div style={{ display: "flex" }}></div>
     </div>
   );
 };

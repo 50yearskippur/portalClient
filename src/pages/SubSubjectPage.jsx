@@ -19,91 +19,84 @@ const SubSubjectPage = () => {
   const subSubject = {
     title: "יונקים",
     description: "פרטים על יונקים",
-    eduResourse: [
-      {
-        title: "ארנב",
-        type: "חיה",
-        subSubject: {
-          title: "כותרת",
-        },
-        media: rabit,
-        mediaType: "image",
-      },
-      {
-        title: "ארנב",
-        type: "חיה",
-        subSubject: {
-          title: "כותרת",
-        },
-        media: rabit,
-        mediaType: "image",
-      },
-      {
-        title: "ארנב",
-        type: "חיה",
-        subSubject: {
-          title: "כותרת",
-        },
-        media: rabit,
-        mediaType: "image",
-      },
-      {
-        title: "ארנב",
-        type: "חיה",
-        subSubject: {
-          title: "כותרת",
-        },
-        media: rabit,
-        mediaType: "image",
-      },
-      {
-        title: "ארנב",
-        type: "חיה",
-        subSubject: {
-          title: "כותרת",
-        },
-        media: rabit,
-        mediaType: "image",
-      },
-      {
-        title: "ארנב",
-        type: "חיה",
-        subSubject: {
-          title: "כותרת",
-        },
-        media: rabit,
-        mediaType: "image",
-      },
-      {
-        title: "ארנב",
-        type: "חיה",
-        subSubject: {
-          title: "כותרת",
-        },
-        media: rabit,
-        mediaType: "image",
-      },
-      {
-        title: "ארנב",
-        type: "חיה",
-        subSubject: {
-          title: "כותרת",
-        },
-        media: rabit,
-        mediaType: "image",
-      },
-      {
-        title: "ארנב",
-        type: "חיה",
-        subSubject: {
-          title: "כותרת",
-        },
-        media: rabit,
-        mediaType: "image",
-      },
-    ],
+    eduResourse: [],
   };
-  const currentEdu = subSubject.eduResourse[0];
+  const uploadByArtch = [
+    {
+      title: "ארנב",
+      type: "חיה",
+      subSubject: {
+        title: "כותרת",
+      },
+      media: rabit,
+      mediaType: "image",
+      uploadByArtech: true,
+    },
+    {
+      title: "ארנב",
+      type: "חיה",
+      subSubject: {
+        title: "כותרת",
+      },
+      media: rabit,
+      mediaType: "image",
+      uploadByArtech: true,
+    },
+    {
+      title: "ארנב",
+      type: "חיה",
+      subSubject: {
+        title: "כותרת",
+      },
+      media: rabit,
+      mediaType: "image",
+      uploadByArtech: true,
+    },
+    {
+      title: "ארנב",
+      type: "חיה",
+      subSubject: {
+        title: "כותרת",
+      },
+      media: rabit,
+      mediaType: "image",
+      uploadByArtech: true,
+    },
+  ];
+  const uploadByOther = [
+    {
+      title: "ארנב",
+      type: "חיה",
+      subSubject: {
+        title: "כותרת",
+      },
+      media: rabit,
+      mediaType: "image",
+      uploadByArtech: false,
+    },
+    {
+      title: "ארנב",
+      type: "חיה",
+      subSubject: {
+        title: "כותרת",
+      },
+      media: rabit,
+      mediaType: "image",
+      uploadByArtech: false,
+    },
+    {
+      title: "ארנב",
+      type: "חיה",
+      subSubject: {
+        title: "כותרת",
+      },
+      media: rabit,
+      mediaType: "image",
+      uploadByArtech: false,
+    },
+  ];
+
+  const currentEdu = uploadByArtch[0];
   return (
     <>
       <TopSection title={subSubject.title} navigateTo={"/"} />
