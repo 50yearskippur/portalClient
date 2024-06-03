@@ -1,9 +1,13 @@
 import "./SubSubjectPage.css";
+import { useLocation } from "react-router-dom";
+import { useContext } from "react";
 import TopSection from "../components/TopSection/TopSection";
 import FileController from "../components/Media/FileController";
 import SideBar from "../components/SideBar/SideBar";
 import Rate from "../components/Rate/Rate";
 import EduResPrev from "../components/EduResPrev/EduResPrev";
+import UploadEduType from "../components/Popup/UploadEduType";
+import { PopupContext } from "../store/popup-context";
 import notebookImg from "../assets/media/Icons/notebook.svg";
 import heartimg from "../assets/media/Icons/heart.svg";
 import plusImg from "../assets/media/Icons/plus.svg";
@@ -15,91 +19,92 @@ import bluePlus from "../assets/media/Icons/bluePlus.svg";
 import rabit from "../assets/img/rabit.jpg";
 
 const SubSubjectPage = () => {
-  // delete in production
-  const subSubject = {
-    title: "יונקים",
-    description: "פרטים על יונקים",
-    eduResourse: [],
-  };
-  const uploadByArtch = [
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "כותרת",
-      },
-      media: rabit,
-      mediaType: "image",
-      uploadByArtech: true,
-    },
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "כותרת",
-      },
-      media: rabit,
-      mediaType: "image",
-      uploadByArtech: true,
-    },
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "כותרת",
-      },
-      media: rabit,
-      mediaType: "image",
-      uploadByArtech: true,
-    },
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "כותרת",
-      },
-      media: rabit,
-      mediaType: "image",
-      uploadByArtech: true,
-    },
-  ];
-  const uploadByOther = [
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "כותרת",
-      },
-      media: rabit,
-      mediaType: "image",
-      uploadByArtech: false,
-    },
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "כותרת",
-      },
-      media: rabit,
-      mediaType: "image",
-      uploadByArtech: false,
-    },
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "כותרת",
-      },
-      media: rabit,
-      mediaType: "image",
-      uploadByArtech: false,
-    },
-  ];
+  const { showPopup } = useContext(PopupContext);
+  const location = useLocation();
+  const currentEdu = location.state.item;
 
-  const currentEdu = uploadByArtch[0];
+  const eduResources = {
+    uploadByArtch: [
+      {
+        title: "אמצעי למידה",
+        type: "סרטון",
+        date: "28.05.2024",
+        subSubject: {
+          title: "זירת סוריה",
+        },
+        media: rabit,
+        mediaType: "image",
+        level: "רמה בסיסית",
+        uploadByArtech: true,
+      },
+      {
+        title: "אמצעי למידה",
+        type: "סרטון",
+        date: "28.05.2024",
+        subSubject: {
+          title: "זירת סוריה",
+        },
+        media: rabit,
+        mediaType: "image",
+        level: "רמה בסיסית",
+        uploadByArtech: true,
+      },
+      {
+        title: "אמצעי למידה",
+        type: "סרטון",
+        date: "28.05.2024",
+        subSubject: {
+          title: "זירת סוריה",
+        },
+        media: rabit,
+        mediaType: "image",
+        level: "רמה בסיסית",
+        uploadByArtech: true,
+      },
+    ],
+    uploadByOther: [
+      {
+        title: "סוריה מאז ועד היום",
+        type: "סרטון",
+        date: "28.05.2024",
+        subSubject: {
+          title: "זירת סוריה",
+        },
+        media: rabit,
+        mediaType: "image",
+        level: "מותאם לכל הרמות",
+        uploadByArtech: false,
+      },
+      {
+        title: "סוריה מאז ועד היום",
+        type: "סרטון",
+        date: "28.05.2024",
+        subSubject: {
+          title: "זירת סוריה",
+        },
+        media: rabit,
+        mediaType: "image",
+        level: "מותאם לכל הרמות",
+        uploadByArtech: false,
+      },
+      {
+        title: "סוריה מאז ועד היום",
+        type: "סרטון",
+        date: "28.05.2024",
+        subSubject: {
+          title: "זירת סוריה",
+        },
+        media: rabit,
+        mediaType: "image",
+        level: "מותאם לכל הרמות",
+        uploadByArtech: false,
+      },
+    ],
+  };
+
   return (
     <>
-      <TopSection title={subSubject.title} navigateTo={"/"} />
+      <TopSection title={currentEdu.subSubject.title} navigateTo={"/"} />
       <div className="page-container edu-resource-page">
         <div className="edu-resource-container">
           <FileController item={currentEdu} style={{ height: "54.1vh" }} />
@@ -222,7 +227,7 @@ const SubSubjectPage = () => {
               numItems={3}
               startFrom={0}
               ItemComponent={EduResPrev}
-              data={["", "", ""]}
+              data={eduResources?.uploadByArtch}
               style={{ height: "30.4vh" }}
             />
           </div>
@@ -245,14 +250,19 @@ const SubSubjectPage = () => {
                 }}
               >
                 <img src={bluePlus} alt="plus" />
-                <div className="edu-resource-add-text-btn">העלה תוצר</div>
+                <div
+                  className="edu-resource-add-text-btn"
+                  onClick={() => showPopup(<UploadEduType />)}
+                >
+                  העלה תוצר
+                </div>
               </div>
             </div>
             <SideBar
               numItems={3}
               startFrom={0}
               ItemComponent={EduResPrev}
-              data={["", "", ""]}
+              data={eduResources?.uploadByOther}
               style={{ height: "30.4vh" }}
             />
           </div>

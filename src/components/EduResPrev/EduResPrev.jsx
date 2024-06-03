@@ -1,32 +1,36 @@
 import "./EduResPrev.css";
 import FileController from "../Media/FileController";
 import point from "../../assets/media/Icons/blackPoint.svg";
-// delete in ptoduction
-import rabit from "../../assets/img/party.png";
 
 const EduResPrev = ({ item }) => {
   return (
     <div className="edu-prev-container">
       <FileController
-        item={{
-          title: "ארנב",
-          type: "חיה",
-          subSubject: {
-            title: "כותרת",
-          },
-          media: rabit,
-          mediaType: "image",
-          uploadByArtech: false,
-        }}
+        item={item}
         style={{ width: "8.6vw", borderRadius: "10px" }}
       />
       <div className="edu-prev-deatails-container">
-        <div className="edu-prev-title">{`זירת סוריה, פלייליסט`}</div>
-        <div className="edu-prev-deatails">
-          <div className="edu-prev-info">28.5.2024</div>
-          <img src={point} alt="black point" />
-          <div className="edu-prev-info">רמה בסיסית</div>
+        <div className="edu-prev-title">
+          {item.uploadByArtech
+            ? `${item.subSubject.title}, ${item.type}`
+            : item.title}
         </div>
+        <div className="edu-prev-deatails">
+          <div className="edu-prev-info">{item.date}</div>
+          <img src={point} alt="black point" />
+          <div className="edu-prev-info">{item.level}</div>
+        </div>
+        {!item.uploadByArtech && <div className="edu-prev-creator">עמר</div>}
+        {item.uploadByArtech ? (
+          <div className="edu-prev-subSubject-tag">4 סרטונים</div>
+        ) : (
+          <div
+            className="edu-prev-subSubject-tag"
+            style={{ backgroundColor: "#444a5a" }}
+          >
+            PDF
+          </div>
+        )}
       </div>
     </div>
   );
