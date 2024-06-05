@@ -1,0 +1,28 @@
+.uploaded-edu-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  gap: 25px;
+}
+
+.uploaded-edu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  height: 25vh;
+  border-radius: 6px;
+  background: linear-gradient(180deg, #fff 0%, rgba(246, 246, 246, 0) 100%);
+}
+
+.uploaded-edu-icon {
+  width: 7.6vw;
+}
+
+.uploaded-edu-text {
+  text-align: center;
+  color: #7d81b2;
+  font-size: 18px;
+  font-weight: 500;
+  width: 16.25vw;
+}

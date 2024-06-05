@@ -1,15 +1,10 @@
 import "./HomePage.css";
-import { useContext, useState } from "react";
-import { PopupContext } from "../store/popup-context";
-import Tabs from "../components/Tabs/Tabs";
-import Button from "../components/Button/Button";
-import UploadEduType from "../components/Popup/UploadEduType";
+import { useState } from "react";
 import Search from "../components/Search/Search";
 import RecommendedSection from "../components/RecommendedSection/RecommendedSection";
-import filterIcon from "../assets/media/Icons/filterIcon.png";
-import openFilterIcon from "../assets/media/Icons/openFilterIcon.png";
 import Favorites from "../components/Favorites/Favorites.jsx";
 import ForYou from "../components/ForYou/ForYou.jsx";
+import TopNav from "../components/TopNav/TopNav.jsx";
 //delete in production
 import rabit from "../assets/img/rabit.jpg";
 
@@ -135,7 +130,6 @@ const getEduResources = (selectedTab) => {
 };
 
 const HomePage = () => {
-  const { showPopup } = useContext(PopupContext);
   const [selectedTab, setSelectedTab] = useState(tabsArray[0]);
 
   return (
@@ -150,31 +144,15 @@ const HomePage = () => {
       <p className="header" style={{ marginTop: "-4vh" }}>
         מומלצים
       </p>
-      <RecommendedSection
-        style={{ marginTop: "6.48vh" }}
-        data={recommendedEduResource}
+      <RecommendedSection data={recommendedEduResource} />
+      <TopNav
+        tabsArray={tabsArray}
+        setSelectedTab={setSelectedTab}
+        selectedTab={selectedTab}
+        tabsStyle={{ marginRight: "0.5vw" }}
+        topNavStyle={{ marginBottom: "4vh", marginTop: "5vh" }}
       />
-      <div className="edu-resource-nav-bar">
-        <Tabs
-          tabsArray={tabsArray}
-          setSelectedTab={setSelectedTab}
-          selectedTab={selectedTab}
-        />
-        <div className="nav-bar-left-container">
-          <div className="filter-container">
-            <img className="filter-icon" src={filterIcon} alt="filter icon" />
-            <p className="filter-text">סנן לפי</p>
-            <img src={openFilterIcon} alt="open filter icon" />
-          </div>
-          <Search style={{ width: "21.17vw" }} />
-          <Button
-            text={"העלאת תוצר"}
-            onClick={() => showPopup(<UploadEduType />)}
-          />
-        </div>
-      </div>
       {getEduResources(selectedTab)}
-      <div style={{ display: "flex" }}></div>
     </div>
   );
 };

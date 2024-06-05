@@ -1,6 +1,6 @@
 .tabs-container {
   display: flex;
-  gap: 60px;
+  gap: 32px;
   justify-content: flex-start;
   font-size: 16px;
   font-weight: 500;

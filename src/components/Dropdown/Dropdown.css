@@ -1,0 +1,13 @@
+.dropdown-container {
+  display: flex;
+  width: 12.5vw;
+  height: 2.8vh;
+  padding: 5px 12px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4px;
+  border: 1px solid var(--title, #7d81b2);
+  color: #7d81b2;
+  font-size: 14px;
+  font-weight: 500;
+}
