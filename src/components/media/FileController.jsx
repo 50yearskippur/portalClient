@@ -2,8 +2,13 @@ import "./FileController.css";
 import { useState } from "react";
 import getHtml from "./getHtml";
 
-const FileController = ({ item, style = {}, onClick = () => {} }) => {
-  const [display, setDisplay] = useState(item.cover ? item.cover : item.media);
+const FileController = ({
+  item,
+  style = {},
+  onClick = () => {},
+  gradientStyle = {},
+}) => {
+  const [display, setDisplay] = useState(item?.cover ? item.cover : item.media);
   const [fileType, setFileType] = useState(
     item.cover ? "image" : item.mediaType
   );
@@ -11,6 +16,7 @@ const FileController = ({ item, style = {}, onClick = () => {} }) => {
   return (
     <div
       className="file-container"
+      style={style}
       onClick={() => {
         onClick();
         setDisplay(item.media);
@@ -18,6 +24,7 @@ const FileController = ({ item, style = {}, onClick = () => {} }) => {
       }}
     >
       {getHtml(display, fileType, style)}
+      <div className="gradient" style={gradientStyle} />
     </div>
   );
 };

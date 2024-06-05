@@ -1,8 +1,8 @@
-import "./MediaPage.css";
 import PageTemplate from "../components/PageTemplate/PageTemplate";
 import StockMedia from "../components/ItemsComponents/StockMedia";
 import CollageMedia from "../components/ItemsComponents/CollageMedia";
 import rabit from "../assets/img/rabit.jpg";
+import usa from "../assets/img/usa.png";
 
 const MediaPage = () => {
   const data = [
@@ -12,7 +12,7 @@ const MediaPage = () => {
       subSubject: {
         title: "יונקים",
       },
-      media: rabit,
+      media: usa,
       mediaType: "image",
     },
     {
@@ -21,7 +21,7 @@ const MediaPage = () => {
       subSubject: {
         title: "יונקים",
       },
-      media: rabit,
+      media: usa,
       mediaType: "image",
     },
     {
@@ -135,21 +135,25 @@ const MediaPage = () => {
   ];
   return (
     <div className="page-container">
-      <div className="media-page-header">תמונת סטוק</div>
+      <div className="header" style={{ marginBottom: "4.1vh" }}>
+        תמונת סטוק
+      </div>
       <PageTemplate
         ItemComponent={StockMedia}
         gridStyle={{
-          gridTemplateColumns: `repeat(auto-fill, minmax(175px, 1fr)`,
+          gridTemplateColumns: `repeat(auto-fill, minmax(300px, 1fr)`,
           gap: "34px",
         }}
         data={data}
       />
 
-      <div className="media-page-header">מדיה</div>
+      <div className="header" style={{ marginBottom: "4.1vh" }}>
+        מדיה
+      </div>
       <PageTemplate
         ItemComponent={CollageMedia}
         gridStyle={{
-          gridTemplateColumns: `repeat(auto-fill, minmax(225px, 1fr)`,
+          gridTemplateColumns: `repeat(auto-fill, minmax(300px, 1fr)`,
           gap: "40px",
         }}
         data={data}

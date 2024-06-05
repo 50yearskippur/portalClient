@@ -1,0 +1,28 @@
+.upload-input {
+  background: #efefef;
+  height: 48px;
+  width: 100%;
+}
+
+.upload-agreement-input {
+  cursor: pointer;
+  margin-top: 37px;
+  margin-bottom: 65px;
+}
+
+.upload-difficulty {
+  width: 103px;
+  height: 28px;
+  background: #d9d9d9;
+  cursor: pointer;
+  text-align: center;
+}
+
+.upload-difficulty-active {
+  border: 1px solid #4761be;
+}
+
+.upload-difficulty-container {
+  display: flex;
+  gap: 12px;
+}

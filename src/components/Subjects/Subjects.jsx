@@ -1,26 +1,41 @@
 import "./Subjects.css";
-import TitlesList from "../TitlesList/TitlesList";
 
-const Subjects = () => {
-  const subjects = [
-    {text: "Math"},
-    {text: "Science"},
-    {text: "History"},
-    {text: "English"},
-    {text: "Art"},
-  ];
-  const titleListStyle = {
-    containerStyle: {marginTop: "5vh", marginRight: "25px"},
-    color: "#5d5d5d",
-  };
+const Subjects = ({
+  subjects,
+  getSubSubjects,
+  selectedSubject,
+  setSelectedSubject,
+}) => {
   return (
     <div className="subjects-container">
-      <TitlesList
-        titlesArray={subjects}
-        getDefaultTitle={() => subjects[0].text}
-        showNumbers={true}
-        style={titleListStyle}
-      />
+      {subjects?.map((subject, index) => {
+        return (
+          <div
+            className="subject-row"
+            key={`subject${index}`}
+            style={{
+              backgroundColor:
+                subject.title === selectedSubject.title && "#f2f4fa",
+            }}
+            onClick={() => {
+              setSelectedSubject(subject);
+              getSubSubjects(subject);
+            }}
+          >
+            <div className="subject">{subject.title}</div>
+            <div
+              className="rectangle"
+              style={{
+                backgroundColor:
+                  subject.title === selectedSubject.title && "#7d81b2",
+                color: subject.title === selectedSubject.title && "#f1f3fb",
+              }}
+            >
+              2
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 };

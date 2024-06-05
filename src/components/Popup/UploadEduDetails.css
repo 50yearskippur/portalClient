@@ -1,0 +1,47 @@
+.upload-details-approval {
+  display: flex;
+}
+
+.upload-details-approve-icon {
+  width: 20px;
+  background-image: url("../../assets/media/Icons/approve.jpg");
+  background-repeat: no-repeat;
+}
+
+.upload-details-personal-info {
+  display: flex;
+  gap: 17px;
+  justify-content: center;
+  margin-bottom: 43px;
+}
+
+.upload-details-input {
+  background: #efefef;
+  height: 40px;
+}
+
+.upload-details-cell {
+  display: flex;
+  flex-direction: column;
+  width: 31%;
+}
+
+.upload-details-tags-container {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: 53px;
+}
+
+.upload-details-tag {
+  width: fit-content;
+  background-color: #d9d9d9;
+  padding: 10px;
+  cursor: pointer;
+  border: 1px solid #d9d9d9;
+}
+
+.upload-details-tag-active {
+  border: 1px solid #4761be;
+}

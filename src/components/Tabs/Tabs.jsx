@@ -1,15 +1,13 @@
 import "./Tabs.css";
-import {useState} from "react";
 
-const Tabs = ({tabsArray}) => {
-  const [currentTab, setCurrentTab] = useState(tabsArray[0]);
+const Tabs = ({ tabsArray, style = {}, setSelectedTab, selectedTab }) => {
   return (
-    <div className="tabs-container">
+    <div className="tabs-container" style={style}>
       {tabsArray.map((tab, index) => (
         <div
           key={`tab${index}`}
-          className={`tabs-item ${currentTab === tab ? "current-tab" : ""}`}
-          onClick={() => setCurrentTab(tab)}
+          className={`tabs-item ${selectedTab === tab ? "current-tab" : ""}`}
+          onClick={() => setSelectedTab(tab)}
         >
           {tab}
         </div>

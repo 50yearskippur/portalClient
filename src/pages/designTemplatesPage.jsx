@@ -1,5 +1,5 @@
-const designTemplatesPage = () => {
+const DesignTemplatesPage = () => {
   return <h1>design templates page</h1>;
 };
 
-export default designTemplatesPage;
+export default DesignTemplatesPage;

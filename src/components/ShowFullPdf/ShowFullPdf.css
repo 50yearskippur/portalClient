@@ -20,10 +20,10 @@
   direction: ltr;
   padding-right: 1.5vw;
 }
-
+/* 
 ::-webkit-scrollbar {
   width: 0.65vw;
-}
+} */
 
 .pdf-information {
   z-index: 3;
@@ -34,7 +34,7 @@
   font-weight: 700;
   line-height: 30px;
 }
-
+/* 
 /* Track */
 ::-webkit-scrollbar-track {
   background: #c8c8c8;
@@ -52,8 +52,7 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #5c5c5c;
 }
-
-.pdf-information {
+*/ .pdf-information {
   position: relative;
   z-index: 2;
   color: #ffffff;

@@ -1,39 +1,49 @@
 import "./NavBar.css";
-import TitleList from "../TitlesList/TitlesList";
-import portalLogo from "../../assets/media/navbar/portalLogo.png";
-import UserDetails from "./UserDetails";
-import paths from "../../constants/paths";
-import {useLocation} from "react-router-dom";
-
-//delete in production
-const user = {
-  fullName: "ג'ורג טימותי קלוני",
-  email: "email@gmail.com",
-  personalNumber: "123456789",
-  unit: "8200",
-  group: 'קורס קפ"ה',
-  role: "user",
-  favorites: ["1", "2", "3"],
-};
+import { useNavigate } from "react-router-dom";
+// import closeNavbarIcon from "../../assets/media/Navbar/closeNavbar.svg";
+import openNavbarIcon from "../../assets/media/Navbar/openNavbar.svg";
+import homeIcon from "../../assets/media/Navbar/home.svg";
+import designTemplatesIcon from "../../assets/media/Navbar/designTemplates.svg";
+import formsIcon from "../../assets/media/Navbar/forms.svg";
+import mediaIcon from "../../assets/media/Navbar/media.svg";
+import userIcon from "../../assets/media/Navbar/user.svg";
 
 const NavBar = () => {
-  const location = useLocation();
-  const currentPath = location.pathname;
-  const titleListStyle = {
-    containerStyle: {right: "-1.5vw", marginTop: "7vh"},
-    color: "#fff",
-  };
-
+  const navigate = useNavigate();
   return (
     <div className="navbar-container">
-      <img className="portal-logo" alt="portal logo" src={portalLogo} />
-      <UserDetails user={user} />
-      <TitleList
-        style={titleListStyle}
-        getDefaultTitle={() =>
-          paths.slice(0, 4).find((p) => p.path === currentPath)?.text
-        }
-        titlesArray={paths.slice(0, 4)}
+      <div className="horizonal-line" />
+      <img src={openNavbarIcon} alt="close navbar icon" />
+      <img
+        src={homeIcon}
+        className="navbar-icon"
+        alt="home icon"
+        onClick={() => navigate("/")}
+      />
+      <img
+        src={designTemplatesIcon}
+        className="navbar-icon"
+        alt="designTemplates icon"
+        onClick={() => navigate("/designTemplates")}
+      />
+      <img
+        src={formsIcon}
+        className="navbar-icon"
+        alt="form icon"
+        onClick={() => navigate("/forms")}
+      />
+      <img
+        src={mediaIcon}
+        className="navbar-icon"
+        alt="media icon"
+        onClick={() => navigate("/media")}
+      />
+      <img
+        src={userIcon}
+        className="navbar-icon"
+        alt="media icon"
+        style={{ marginTop: "62.5vh" }}
+        onClick={() => navigate("/personalArea")}
       />
     </div>
   );
