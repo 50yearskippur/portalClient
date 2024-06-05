@@ -9,7 +9,7 @@ import EduResPrev from "../components/EduResPrev/EduResPrev";
 import UploadEduType from "../components/Popup/UploadEduType";
 import { PopupContext } from "../store/popup-context";
 import notebookImg from "../assets/media/Icons/notebook.svg";
-import heartimg from "../assets/media/Icons/heart.svg";
+import heartimg from "../assets/media/Icons/fullHeart.svg";
 import plusImg from "../assets/media/Icons/plus.svg";
 import point from "../assets/media/Icons/pinkPoint.svg";
 import headpones from "../assets/media/Icons/headphones.svg";

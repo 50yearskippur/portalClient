@@ -3,10 +3,8 @@
 }
 
 .profile-bar {
-  height: 15.7vh;
-  width: 86vw;
+  width: 92.4%;
   background: #bcb9ef;
-  margin-right: 9.9vw;
   margin-top: 7.4vh;
   border-radius: 10px;
 }
