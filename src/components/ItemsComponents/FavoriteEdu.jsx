@@ -1,18 +1,19 @@
 import "./FavoriteEdu.css";
 import { useState } from "react";
 import FileController from "../Media/FileController";
-import heartImg from "../../assets/media/Icons/heartBox.svg";
+import fullHeart from "../../assets/media/Icons/fullHeart.svg";
+import emptyHeart from "../../assets/media/Icons/emptyHeart.svg";
 import addImg from "../../assets/media/Icons/addIcon.svg";
 import { useNavigate } from "react-router-dom";
 
-const FavoriteEdu = ({ item }) => {
+const FavoriteEdu = ({ item, defaultHeart = true }) => {
   const [addBtnHover, setAddBtnHover] = useState(false);
+  const [activeHeart, setActiveHeart] = useState(defaultHeart);
   const navigate = useNavigate();
 
   // Function to handle click on the plus button
-  const handlePlusClick = (event) => {
+  const handlePropagation = (event) => {
     event.stopPropagation(); // Prevents the event from bubbling up to the parent
-    console.log("Plus button clicked");
     // Your logic for plus button click
   };
 
@@ -33,15 +34,25 @@ const FavoriteEdu = ({ item }) => {
       </div>
 
       <div className="favorite-icons-container">
-        <div className="favorite-icon-container">
-          <img src={heartImg} alt="heart icon" className="favorite-heart" />
+        <div
+          className="favorite-icon-container"
+          onClick={(e) => {
+            handlePropagation(e);
+            setActiveHeart((prev) => !prev);
+          }}
+        >
+          <img
+            src={activeHeart ? fullHeart : emptyHeart}
+            alt="heart icon"
+            className="favorite-heart"
+          />
         </div>
         <div
           className="favorite-icon-container"
           style={{ width: addBtnHover && "fit-content" }}
           onMouseEnter={() => setAddBtnHover(true)}
           onMouseLeave={() => setAddBtnHover(false)}
-          onClick={handlePlusClick}
+          onClick={handlePropagation}
         >
           {addBtnHover ? (
             <div className="favorite-add-container">
