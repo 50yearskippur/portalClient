@@ -43,6 +43,7 @@ const NavBar = () => {
         className="navbar-icon"
         alt="media icon"
         style={{ marginTop: "62.5vh" }}
+        onClick={() => navigate("/personalArea")}
       />
     </div>
   );

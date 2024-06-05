@@ -30,6 +30,7 @@ input {
 .page-container {
   width: 80%;
   margin: 0 13.36% 0 6.72%;
+  height: fit-content;
 }
 
 .white-container {

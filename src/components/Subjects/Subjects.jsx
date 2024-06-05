@@ -8,7 +8,7 @@ const Subjects = ({
 }) => {
   return (
     <div className="subjects-container">
-      {subjects.map((subject, index) => {
+      {subjects?.map((subject, index) => {
         return (
           <div
             className="subject-row"
