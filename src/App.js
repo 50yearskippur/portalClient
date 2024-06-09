@@ -15,15 +15,17 @@ function App() {
           <div className="app">
             <NavBar />
             <Popup />
-            <Routes>
-              {paths.map((path) => (
-                <Route
-                  key={path.text}
-                  path={path.path}
-                  element={createElement(path.component)}
-                />
-              ))}
-            </Routes>
+            <div className="content">
+              <Routes>
+                {paths.map((path) => (
+                  <Route
+                    key={path.text}
+                    path={path.path}
+                    element={createElement(path.component)}
+                  />
+                ))}
+              </Routes>
+            </div>
           </div>
         </PopupProvider>
       </UserProvider>

@@ -138,7 +138,7 @@ const Favorits = () => {
     <PageTemplate
       ItemComponent={FavotireEdu}
       gridStyle={{
-        gridTemplateColumns: `repeat(auto-fill, minmax(350px, 1fr)`,
+        gridTemplateColumns: `repeat(auto-fill, minmax(450px, 1fr)`,
         gap: "48px",
         width: "100%",
       }}
