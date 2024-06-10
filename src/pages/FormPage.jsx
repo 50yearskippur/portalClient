@@ -170,15 +170,15 @@ const FormPage = () => {
           style={{ width: "21.17vw", height: "3.38vh", marginTop: "1.4vh" }}
         />
       </div>
-      <SubjectsContainer subjects={data} />
-      {/* <PageTemplate
+      {/* <SubjectsContainer subjects={data} /> */}
+      <PageTemplate
         ItemComponent={PdfPreview}
         gridStyle={{
           gridTemplateColumns: `repeat(auto-fill, minmax(250px, 1fr)`,
           gap: "48px",
         }}
         data={data}
-      /> */}
+      />
     </div>
   );
 };

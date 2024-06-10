@@ -141,7 +141,7 @@ const HomePage = () => {
           margin: "1% auto",
         }}
       />
-      <p className="header" style={{ marginTop: "-4vh" }}>
+      <p className="header" style={{ marginTop: "-3vh" }}>
         מומלצים
       </p>
       <RecommendedSection data={recommendedEduResource} />

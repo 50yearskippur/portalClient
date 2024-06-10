@@ -9,7 +9,6 @@ const SubjectsContainer = ({ subjects }) => {
 
   const getSubSubjects = (subject) => {
     // After connect to the api, change to get subSubject by the given subject
-    console.log("getSubSubjects", subject);
     setSubSubjects([
       {
         title: "זירת סוריה",
