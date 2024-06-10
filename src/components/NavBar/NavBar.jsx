@@ -4,22 +4,42 @@ import { useNavigate } from "react-router-dom";
 import closeNavbarIcon from "../../assets/media/Navbar/closeNavbar.svg";
 import openNavbarIcon from "../../assets/media/Navbar/openNavbar.svg";
 import homeIcon from "../../assets/media/Navbar/home.svg";
+import homeIconSelected from "../../assets/media/Navbar/homeSelected.svg";
 import designTemplatesIcon from "../../assets/media/Navbar/designTemplates.svg";
+import designTemplatesIconSelected from "../../assets/media/Navbar/designTemplates.svg";
 import formsIcon from "../../assets/media/Navbar/forms.svg";
+import formIconSelected from "../../assets/media/Navbar/formsSelected.svg";
 import mediaIcon from "../../assets/media/Navbar/media.svg";
+import mediaIconSelected from "../../assets/media/Navbar/mediaSelected.svg";
 import bellIcon from "../../assets/media/Navbar/bell.svg";
 
 const NavBar = () => {
   const navigate = useNavigate();
   const IconsArrays = [
-    { path: homeIcon, navigateTo: "/", text: "דף הבית" },
+    {
+      path: homeIcon,
+      selected: homeIconSelected,
+      navigateTo: "/",
+      text: "דף הבית",
+    },
     {
       path: designTemplatesIcon,
+      selected: designTemplatesIconSelected,
       navigateTo: "/designTemplates",
       text: "תבניות עיצוב",
     },
-    { path: formsIcon, navigateTo: "/forms", text: "טפסים" },
-    { path: mediaIcon, navigateTo: "/media", text: "מדיה" },
+    {
+      path: formsIcon,
+      selected: formIconSelected,
+      navigateTo: "/forms",
+      text: "טפסים",
+    },
+    {
+      path: mediaIcon,
+      selected: mediaIconSelected,
+      navigateTo: "/media",
+      text: "מדיה",
+    },
   ];
   const [isOpen, setIsOpen] = useState(false);
   const [chosenIcon, setChosenIcon] = useState(IconsArrays[0]);
@@ -54,7 +74,11 @@ const NavBar = () => {
                 navigate(icon.navigateTo);
               }}
             >
-              <img src={icon.path} className="navbar-icon" alt="navbar icon" />
+              <img
+                src={chosenIcon?.path === icon.path ? icon.selected : icon.path}
+                className="navbar-icon"
+                alt="navbar icon"
+              />
               {isOpen && <div className="navbar-item-text">{icon.text}</div>}
             </div>
           ))}
