@@ -1,4 +1,4 @@
-import "./ForYou.css";
+import "./SubjectsContainer.css";
 import Subjects from "../Subjects/Subjects";
 import SubSubjects from "../SubSubjects/SubSubjects";
 import { useState, useEffect } from "react";
@@ -49,7 +49,7 @@ const ForYou = ({ subjects }) => {
   }, [subjects]);
 
   return (
-    <div className="for-you-container">
+    <div className="subjects-container-wrapper">
       <Subjects
         subjects={subjects}
         getSubSubjects={getSubSubjects}

@@ -164,9 +164,11 @@ const FormPage = () => {
 
   return (
     <div className="page-container">
-      <div className="form-top-page">
+      <div className="form-page-top">
         <div className="header">טפסים</div>
-        <Search style={{ width: "21.17vw", height: "3.38vh" }} />
+        <Search
+          style={{ width: "21.17vw", height: "3.38vh", marginTop: "1.4vh" }}
+        />
       </div>
       {/* <Subjects /> */}
       {/* <PageTemplate

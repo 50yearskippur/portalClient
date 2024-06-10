@@ -3,7 +3,7 @@ import { useState } from "react";
 import Search from "../components/Search/Search";
 import RecommendedSection from "../components/RecommendedSection/RecommendedSection";
 import Favorites from "../components/Favorites/Favorites.jsx";
-import ForYou from "../components/ForYou/ForYou.jsx";
+import ForYou from "../components/SubjectsContainer/SubjectsContainer.jsx";
 import TopNav from "../components/TopNav/TopNav.jsx";
 //delete in production
 import rabit from "../assets/img/rabit.jpg";
