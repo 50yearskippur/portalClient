@@ -1,18 +1,18 @@
-import "./Subjects.css";
+import "./ListTemplate.css";
 
-const Subjects = ({
+const ListTemplate = ({
   subjects,
   getSubSubjects,
   selectedSubject,
   setSelectedSubject,
 }) => {
   return (
-    <div className="subjects-container">
+    <div className="list-template-container">
       {subjects?.map((subject, index) => {
         return (
           <div
-            className="subject-row"
-            key={`subject${index}`}
+            className="list-item"
+            key={`listItem${index}`}
             style={{
               backgroundColor:
                 subject.title === selectedSubject.title && "#f2f4fa",
@@ -22,7 +22,7 @@ const Subjects = ({
               getSubSubjects(subject);
             }}
           >
-            <div className="subject">{subject.title}</div>
+            <div className="list-item-text">{subject.title}</div>
             <div
               className="rectangle"
               style={{
@@ -40,4 +40,4 @@ const Subjects = ({
   );
 };
 
-export default Subjects;
+export default ListTemplate;

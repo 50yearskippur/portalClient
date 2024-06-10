@@ -3,7 +3,7 @@ import { useState } from "react";
 import Search from "../components/Search/Search";
 import RecommendedSection from "../components/RecommendedSection/RecommendedSection";
 import Favorites from "../components/Favorites/Favorites.jsx";
-import ForYou from "../components/SubjectsContainer/SubjectsContainer.jsx";
+import SubjectsContainer from "../components/SubjectsContainer/SubjectsContainer.jsx";
 import TopNav from "../components/TopNav/TopNav.jsx";
 //delete in production
 import rabit from "../assets/img/rabit.jpg";
@@ -125,7 +125,7 @@ const getEduResources = (selectedTab) => {
     case selectedTab === "כל התוצרים":
       return <p>כל התוצרים</p>;
     default:
-      return <ForYou subjects={subjects} />;
+      return <SubjectsContainer subjects={subjects} />;
   }
 };
 

@@ -1,9 +1,9 @@
 import "./FormPage.css";
 import PageTemplate from "../components/PageTemplate/PageTemplate";
 import PdfPreview from "../components/ItemsComponents/PdfPreview";
-import Subjects from "../components/Subjects/Subjects";
 import pdf from "../assets/pdfs/pdfPage.pdf";
 import Search from "../components/Search/Search";
+import SubjectsContainer from "../components/SubjectsContainer/SubjectsContainer";
 
 const FormPage = () => {
   const data = [
@@ -170,7 +170,7 @@ const FormPage = () => {
           style={{ width: "21.17vw", height: "3.38vh", marginTop: "1.4vh" }}
         />
       </div>
-      {/* <Subjects /> */}
+      <SubjectsContainer subjects={data} />
       {/* <PageTemplate
         ItemComponent={PdfPreview}
         gridStyle={{

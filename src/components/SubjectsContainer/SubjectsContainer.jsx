@@ -1,9 +1,9 @@
 import "./SubjectsContainer.css";
-import Subjects from "../Subjects/Subjects";
+import ListTemplate from "../ListTemplate/ListTemplate";
 import SubSubjects from "../SubSubjects/SubSubjects";
 import { useState, useEffect } from "react";
 
-const ForYou = ({ subjects }) => {
+const SubjectsContainer = ({ subjects }) => {
   const [selectedSubject, setSelectedSubject] = useState(subjects[0]);
   const [subSubjects, setSubSubjects] = useState([]);
 
@@ -50,7 +50,7 @@ const ForYou = ({ subjects }) => {
 
   return (
     <div className="subjects-container-wrapper">
-      <Subjects
+      <ListTemplate
         subjects={subjects}
         getSubSubjects={getSubSubjects}
         selectedSubject={selectedSubject}
@@ -61,4 +61,4 @@ const ForYou = ({ subjects }) => {
   );
 };
 
-export default ForYou;
+export default SubjectsContainer;
