@@ -26,16 +26,22 @@ const NavBar = () => {
 
   return (
     <div className={`navbar-container ${isOpen ? "open" : "close"}`}>
-      <div className="horizonal-line" />
-      <div className="navbar-item">
-        <img
-          src={isOpen ? closeNavbarIcon : openNavbarIcon}
-          alt="close navbar icon"
-          className={`navbar-item ${isOpen && "open"}`}
-          onClick={() => setIsOpen((prev) => !prev)}
-        />
+      <div className={`horizonal-line ${isOpen ? "open" : "close"}`} />
+      <div className="navbar-top">
+        <div
+          className={`navbar-toggle-button ${isOpen && "open"}`}
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          <img
+            src={isOpen ? closeNavbarIcon : openNavbarIcon}
+            alt="close navbar icon"
+            onClick={() => setIsOpen((prev) => !prev)}
+          />
+        </div>
+        {isOpen && <div className="navbar-portal-text">Portal</div>}
       </div>
-      <div className="navbar-icons-container">
+
+      <div className="navbar-content">
         <div className={`navbar-top-icons ${isOpen && "open"}`}>
           {IconsArrays.map((icon, index) => (
             <div

@@ -24,7 +24,6 @@
 
 .horizonal-line {
   position: absolute;
-  top: 5.6vh;
   left: 0;
   right: 0;
   height: 1px;
@@ -32,16 +31,56 @@
   transform: translateY(-50%);
 }
 
+.horizonal-line.open {
+  top: 10.5vh;
+}
+
+.horizonal-line.close {
+  top: 5.6vh;
+}
+
+.navbar-toggle-button {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  margin-top: 24px;
+}
+
+.navbar-toggle-button.open {
+  justify-content: flex-end;
+}
+
+.navbar-top {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin-bottom: 48px;
+}
+
+.navbar-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.navbar-portal-text {
+  text-align: right;
+  font-size: 16px;
+  font-weight: 700;
+}
+
 .navbar-item {
   display: flex;
-  align-items: center;
   gap: 8px;
   cursor: pointer;
 }
 
 .navbar-item.open {
   padding: 6px 8px;
-  /* width: 10.5vw; */
+  width: 10.5vw;
 }
 
 .navbar-top-icons {
@@ -53,14 +92,6 @@
 
 .navbar-top-icons.open {
   align-items: flex-start;
-}
-
-.navbar-icons-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  height: 100%;
 }
 
 .navbar-icon {
@@ -111,7 +142,6 @@
 .navbar-selected-icon {
   display: flex;
   padding: 8px;
-  justify-content: center;
   align-items: center;
   gap: 8px;
   border-radius: 7px;
