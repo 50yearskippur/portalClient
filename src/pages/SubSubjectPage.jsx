@@ -104,7 +104,7 @@ const SubSubjectPage = () => {
 
   return (
     <>
-      <TopSection title={currentEdu.subSubject.title} navigateTo={"/"} />
+      <TopSection title={currentEdu?.subSubject?.title} navigateTo={"/"} />
       <div className="page-container edu-resource-page">
         <div className="edu-resource-container">
           <FileController item={currentEdu} style={{ height: "54.1vh" }} />

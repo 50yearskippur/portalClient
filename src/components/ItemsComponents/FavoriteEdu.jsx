@@ -11,10 +11,8 @@ const FavoriteEdu = ({ item, defaultHeart = true }) => {
   const [activeHeart, setActiveHeart] = useState(defaultHeart);
   const navigate = useNavigate();
 
-  // Function to handle click on the plus button
-  const handlePropagation = (event) => {
-    event.stopPropagation(); // Prevents the event from bubbling up to the parent
-    // Your logic for plus button click
+  const handlePropagation = (e) => {
+    e.stopPropagation();
   };
 
   return (

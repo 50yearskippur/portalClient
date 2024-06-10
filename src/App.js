@@ -15,7 +15,7 @@ function App() {
           <div className="app">
             <NavBar />
             <Popup />
-            <div className="please">
+            <div className="content">
               <Routes>
                 {paths.map((path) => (
                   <Route

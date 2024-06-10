@@ -9,14 +9,12 @@ const MasonryLayout = ({ data }) => {
   return (
     <div className="masonry-container">
       {data.map((item, index) => (
-        // <div className="masonry-item">
         <FileController
           key={`masonry${index}`}
           item={item}
           style={{ marginBottom: "10px" }}
           onClick={() => showPopup(<MediaPopup item={item} />)}
         />
-        /* </div> */
       ))}
       .
     </div>
