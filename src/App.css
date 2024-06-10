@@ -35,6 +35,7 @@ input {
 
 .page-container {
   width: 86.3%;
+  margin-top: 7.77vh;
   height: fit-content;
 }
 
@@ -45,7 +46,7 @@ input {
 .header {
   font-size: 32px;
   font-weight: 500;
-  line-height: 7.04vh;
+  line-height: 6.04vh;
   position: relative;
   text-align: right;
   color: #444a5a;
