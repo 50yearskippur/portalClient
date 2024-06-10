@@ -1,21 +1,29 @@
 .navbar-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 2.8vh;
   position: sticky;
-  height: 100vh;
-  width: 5.313vw;
+  height: 89vh;
   background: linear-gradient(180deg, #66b5ee -1.13%, #498bcd 84.39%);
   box-shadow: 0px 4px 10px 0px #0000003d;
   right: 0;
   top: 0;
   z-index: 2;
+  color: #fff;
+}
+
+.navbar-container.open {
+  align-items: flex-start;
+  width: 13.021vw;
+  padding: 0px 16px;
+}
+
+.navbar-container.close {
+  align-items: center;
+  width: 5.313vw;
 }
 
 .horizonal-line {
   position: absolute;
-  top: 6%;
   left: 0;
   right: 0;
   height: 1px;
@@ -23,7 +31,124 @@
   transform: translateY(-50%);
 }
 
+.horizonal-line.open {
+  top: 10.5vh;
+}
+
+.horizonal-line.close {
+  top: 5.6vh;
+}
+
+.navbar-toggle-button {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  margin-top: 24px;
+}
+
+.navbar-toggle-button.open {
+  justify-content: flex-end;
+}
+
+.navbar-top {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin-bottom: 48px;
+}
+
+.navbar-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.navbar-portal-text {
+  text-align: right;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.navbar-item {
+  display: flex;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.navbar-item.open {
+  padding: 6px 8px;
+  width: 10.5vw;
+}
+
+.navbar-top-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.navbar-top-icons.open {
+  align-items: flex-start;
+}
+
 .navbar-icon {
   width: 24px;
   cursor: pointer;
+}
+
+.navbar-item-text {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.navbar-button {
+  cursor: pointer;
+}
+
+.navbar-bell-icon {
+  width: 16px;
+  height: 20px;
+}
+
+.navbar-bottom-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.navbar-bottom-icons.open {
+  padding: 6px 8px;
+}
+
+.navbar-profile-icon {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 43px;
+  border: 1px solid #345576;
+  background: #1f304b;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.navbar-selected-icon {
+  display: flex;
+  padding: 8px;
+  align-items: center;
+  gap: 8px;
+  border-radius: 7px;
+  background: linear-gradient(
+    145deg,
+    rgba(239, 243, 255, 0.4) 6.9%,
+    rgba(197, 187, 255, 0.17) 87.92%
+  );
+  box-shadow: 0px 15px 35px 0px rgba(31, 84, 136, 0.26);
 }
