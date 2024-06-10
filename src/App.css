@@ -16,6 +16,7 @@ body {
   font-family: Rubik;
   user-select: none;
   line-height: 150%;
+  margin: 0;
 }
 
 input {

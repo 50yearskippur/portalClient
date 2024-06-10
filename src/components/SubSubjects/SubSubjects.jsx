@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 const SubSubjects = ({ subject, subSubjects }) => {
   const navigate = useNavigate();
+  // subSubjects[index].eduResourse[0]
   return (
     <div className="subject-container">
       <div className="subject-title">{subject.title}</div>
@@ -13,7 +14,19 @@ const SubSubjects = ({ subject, subSubjects }) => {
           <div key={`subSubject${index}`} className="sub-subject-container">
             <div
               className="sub-subject-details"
-              onClick={() => navigate("/subSubject")}
+              onClick={() =>
+                navigate("/subSubject", {
+                  state: {
+                    item: {
+                      media: rabit,
+                      mediaType: "image",
+                      subSubject: { title: "זירת סוריה" },
+                      title: "טילים עם סלים",
+                      type: "משחק",
+                    },
+                  },
+                })
+              }
             >
               <FileController
                 item={{ media: rabit, mediaType: "image" }}
