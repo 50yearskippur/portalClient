@@ -2,7 +2,7 @@ import "./UploadEduDetails.css";
 import UploadEdu from "./UploadEdu";
 import { useContext, useState } from "react";
 import { PopupContext } from "../../store/popup-context";
-import exitIcon from "../../assets/media/Icons/exitIcon.png";
+import exitIcon from "../../assets/media/Icons/exitIcon.svg";
 
 const SelectedTag = ({ tag }) => {
   const [isSlected, setIsSlected] = useState(false);

@@ -4,8 +4,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(24, 19, 43, 0.21);
-  backdrop-filter: blur(8px);
+  background: rgba(24, 19, 43, 0.21);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,8 +13,8 @@
 
 .upload-popup {
   background: #fff;
-  width: 32vw;
-  height: 75vh;
+  width: 42vw;
+  height: 70vh;
   min-height: 500px;
   color: #5c5c5c;
   text-align: right;
@@ -39,9 +38,16 @@
   cursor: pointer;
 }
 
+.upload-popup-top {
+  display: flex;
+  justify-content: space-between;
+}
+
 .upload-popup-text {
-  font-weight: 400;
   width: 100%;
+  color: #4c4c66;
+  font-size: 14px;
+  font-weight: 400;
 }
 
 .upload-button-container {

@@ -1,7 +1,7 @@
 import "./UploadEdu.css";
 import { useContext, useState } from "react";
 import { PopupContext } from "../../store/popup-context";
-import exitIcon from "../../assets/media/Icons/exitIcon.png";
+import exitIcon from "../../assets/media/Icons/exitIcon.svg";
 import FileUploader from "../Media/FileUploader";
 import UploadEduDetails from "./UploadEduDetails";
 import UploadEduType from "./UploadEduType";
@@ -12,14 +12,16 @@ const UploadEdu = () => {
 
   return (
     <div className="upload-popup">
-      <img
-        src={exitIcon}
-        className="upload-exit-button"
-        alt="exit-button"
-        onClick={hidePopup}
-      />
-      <div className="upload-popup-header" style={{ marginBottom: "42px" }}>
-        העלאת תוצר לפורטל
+      <div className="upload-popup-top">
+        <img
+          src={exitIcon}
+          className="upload-exit-button"
+          alt="exit-button"
+          onClick={hidePopup}
+        />
+        <div className="upload-popup-header" style={{ marginBottom: "42px" }}>
+          העלאת תוצר לפורטל
+        </div>
       </div>
       <FileUploader />
       <div className="upload-popup-text" style={{ marginTop: "22px" }}>
