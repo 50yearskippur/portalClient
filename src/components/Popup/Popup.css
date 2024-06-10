@@ -24,9 +24,9 @@
 }
 
 .upload-popup-header {
-  font-size: 20px;
+  color: #444a5a;
+  font-size: 24px;
   font-weight: 700;
-  color: #5d5d5d;
 }
 
 .upload-back-button {
