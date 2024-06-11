@@ -5,6 +5,7 @@
   text-align: right;
   padding: 32px;
   display: flex;
+  box-shadow: 7px 10px 35px 0px rgba(225, 226, 249, 0.62) inset;
   flex-direction: column;
 }
 
