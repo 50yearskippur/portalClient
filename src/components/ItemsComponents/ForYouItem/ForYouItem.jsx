@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import FileController from "../../Media/FileController";
 import "./ForYouItem.css";
 import rabit from "../../../assets/img/rabit.jpg";
-const ForYouItem = ({ subSubject }) => {
+const ForYouItem = ({ item }) => {
   const navigate = useNavigate();
 
   return (
@@ -28,14 +28,12 @@ const ForYouItem = ({ subSubject }) => {
           style={{ width: "8.3vw", borderRadius: "6px" }}
         />
         <div className="for-you-item-content">
-          <div className="for-you-item-title">{subSubject.title}</div>
-          <div className="for-you-item-description">
-            {subSubject.description}
-          </div>
+          <div className="for-you-item-title">{item.title}</div>
+          <div className="for-you-item-description">{item.description}</div>
         </div>
       </div>
       <div className="for-you-item-edu-container">
-        {subSubject.eduResourse.slice(0, 3).map((edu, index) => (
+        {item.eduResourse.slice(0, 3).map((edu, index) => (
           <div className="for-you-item-edu-img" key={`edu${index}`}>
             <FileController
               key={`edu${index}`}
@@ -52,7 +50,7 @@ const ForYouItem = ({ subSubject }) => {
             />
             {index === 2 && (
               <div className="for-you-item-edu-number">{`+${
-                subSubject.eduResourse.length - 3
+                item.eduResourse.length - 3
               }`}</div>
             )}
           </div>
@@ -61,5 +59,4 @@ const ForYouItem = ({ subSubject }) => {
     </div>
   );
 };
-
 export default ForYouItem;

@@ -1,6 +1,20 @@
 import "./PageTemplate.css";
 
-const PageTemplate = ({gridStyle, ItemComponent, data}) => {
+const PageTemplate = ({
+  gapSize,
+  ItemComponent,
+  data,
+  numberOfItemsInLine,
+}) => {
+  console.log(gapSize);
+
+  const gridStyle = {
+    gridTemplateColumns: `repeat(auto-fill, minmax(${
+      (100 - (numberOfItemsInLine - 1) * gapSize) / numberOfItemsInLine
+    }%, 1fr))`,
+  };
+
+  console.log((numberOfItemsInLine - 1) * gapSize);
   return (
     <div className="page-template" style={gridStyle}>
       {data.map((item, index) => {
