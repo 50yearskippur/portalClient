@@ -17,7 +17,10 @@ const PdfPreview = ({ item }) => {
         />
       )}
       <div className="pdf-preview-container">
-        <FileController item={item} onClick={() => setShowFullPdf(true)} />
+        <FileController
+          item={item}
+          // onClick={() => setShowFullPdf(true)}
+        />
         <div className="pdf-preview-info">
           <div>
             <div className="pdf-preview-title">{item.title}</div>

@@ -1,9 +1,10 @@
-import "./FormPage.css";
+import "./FormsPage.css";
 import PageTemplate from "../components/PageTemplate/PageTemplate";
 import PdfPreview from "../components/ItemsComponents/PdfPreview";
 import pdf from "../assets/pdfs/pdfPage.pdf";
 import Search from "../components/Search/Search";
 import SubjectsContainer from "../components/SubjectsContainer/SubjectsContainer";
+import SortBySubject from "../components/SortBySubject/SortBySubject";
 
 const FormPage = () => {
   const data = [
@@ -170,15 +171,16 @@ const FormPage = () => {
           style={{ width: "21.17vw", height: "3.38vh", marginTop: "1.4vh" }}
         />
       </div>
+      <SortBySubject />
       {/* <SubjectsContainer subjects={data} /> */}
-      <PageTemplate
+      {/* <PageTemplate
         ItemComponent={PdfPreview}
         gridStyle={{
           gridTemplateColumns: `repeat(auto-fill, minmax(250px, 1fr)`,
-          gap: "48px",
+          gap: "24px",
         }}
         data={data}
-      />
+      /> */}
     </div>
   );
 };

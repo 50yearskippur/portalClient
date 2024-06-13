@@ -7,6 +7,7 @@ import SubjectsContainer from "../components/SubjectsContainer/SubjectsContainer
 import TopNav from "../components/TopNav/TopNav.jsx";
 //delete in production
 import rabit from "../assets/img/rabit.jpg";
+import SortBySubject from "../components/SortBySubject/SortBySubject.jsx";
 
 //delete in production
 const recommendedEduResource = [
@@ -108,6 +109,39 @@ const subjects = [
 ];
 const tabsArray = ["במיוחד בשבילך", "כל התוצרים", "תוצרים שאהבתי"];
 
+const subSubjects = [
+  {
+    title: "זירת סוריה",
+    description: "בואו ללמוד איתנו על זירת סוריה!",
+    eduResourse: [{}, {}, {}, {}, {}],
+  },
+  {
+    title: "זירת סוריה",
+    description: "בואו ללמוד איתנו על זירת סוריה!",
+    eduResourse: [{}, {}, {}, {}, {}],
+  },
+  {
+    title: "זירת סוריה",
+    description: "בואו ללמוד איתנו על זירת סוריה!",
+    eduResourse: [{}],
+  },
+  {
+    title: "זירת סוריה",
+    description: "בואו ללמוד איתנו על זירת סוריה!",
+    eduResourse: [{}, {}, {}, {}, {}, {}, {}],
+  },
+  {
+    title: "זירת סוריה",
+    description: "בואו ללמוד איתנו על זירת סוריה!",
+    eduResourse: [{}, {}, {}, {}, {}, {}, {}, {}, {}],
+  },
+  {
+    title: "זירת סוריה",
+    description: "בואו ללמוד איתנו על זירת סוריה!",
+    eduResourse: [{}, {}],
+  },
+];
+
 //get recommended item per unit
 // const getRecommendedPerUnit = () => {
 //   return data;
@@ -125,7 +159,9 @@ const getEduResources = (selectedTab) => {
     case selectedTab === "כל התוצרים":
       return <p>כל התוצרים</p>;
     default:
-      return <SubjectsContainer subjects={subjects} />;
+      return (
+        <SortBySubject subjects={subjects} subSubjectsArray={subSubjects} />
+      );
   }
 };
 

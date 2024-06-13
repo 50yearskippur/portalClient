@@ -9,6 +9,7 @@ const SubjectsContainer = ({ subjects }) => {
 
   const getSubSubjects = (subject) => {
     // After connect to the api, change to get subSubject by the given subject
+    console.log("getSubSubjects", subject);
     setSubSubjects([
       {
         title: "זירת סוריה",
@@ -49,12 +50,7 @@ const SubjectsContainer = ({ subjects }) => {
 
   return (
     <div className="subjects-container-wrapper">
-      <ListTemplate
-        subjects={subjects}
-        getSubSubjects={getSubSubjects}
-        selectedSubject={selectedSubject}
-        setSelectedSubject={setSelectedSubject}
-      />
+      
       <SubSubjects subject={selectedSubject} subSubjects={subSubjects} />
     </div>
   );
