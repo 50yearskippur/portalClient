@@ -14,6 +14,7 @@ const UploadTop = () => {
         alt="exit-button"
         onClick={hidePopup}
       />
+      <div className="upload-popup-line" style={{ top: "6.67vh" }} />
     </div>
   );
 };

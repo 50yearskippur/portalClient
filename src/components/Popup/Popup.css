@@ -12,20 +12,29 @@
 }
 
 .upload-popup {
-  background: #fff;
   width: 42vw;
-  height: 70vh;
+  height: 66.4vh;
   min-height: 500px;
-  color: #5c5c5c;
   text-align: right;
   font-size: 16px;
-  padding: 36px 30px 50px 35px;
+  position: relative;
+  background-color: #fff;
+}
+
+.upload-popup-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #ebeef3;
+  transform: translateY(-50%);
 }
 
 .upload-popup-header {
   color: #444a5a;
   font-size: 24px;
   font-weight: 700;
+  height: fit-content;
 }
 
 .upload-back-button {
@@ -38,13 +47,21 @@
   cursor: pointer;
 }
 
+.upload-button-container {
+  padding: 24px 32px;
+}
+
 .upload-popup-top {
   display: flex;
   justify-content: space-between;
+  padding: 24px 32px;
+}
+
+.upload-popup-content {
+  padding: 24px 32px;
 }
 
 .upload-popup-text {
-  width: 100%;
   color: #4c4c66;
   font-size: 14px;
   font-weight: 400;
@@ -60,6 +77,4 @@
 .upload-exit-button {
   float: left;
   cursor: pointer;
-  margin-bottom: 25px;
-  margin-right: 4px;
 }

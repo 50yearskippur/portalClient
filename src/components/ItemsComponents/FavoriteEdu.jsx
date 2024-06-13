@@ -1,19 +1,16 @@
 import "./FavoriteEdu.css";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import FileController from "../Media/FileController";
 import fullHeart from "../../assets/media/Icons/fullHeart.svg";
 import emptyHeart from "../../assets/media/Icons/emptyHeart.svg";
 import addImg from "../../assets/media/Icons/addIcon.svg";
-import { useNavigate } from "react-router-dom";
+import handlePropagation from "../../utils/handlePropagation";
 
 const FavoriteEdu = ({ item, defaultHeart = true }) => {
   const [addBtnHover, setAddBtnHover] = useState(false);
   const [activeHeart, setActiveHeart] = useState(defaultHeart);
   const navigate = useNavigate();
-
-  const handlePropagation = (e) => {
-    e.stopPropagation();
-  };
 
   return (
     <div

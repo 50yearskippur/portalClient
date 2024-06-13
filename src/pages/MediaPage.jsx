@@ -141,7 +141,7 @@ const MediaPage = () => {
       <PageTemplate
         ItemComponent={StockMedia}
         gridStyle={{
-          gridTemplateColumns: `repeat(auto-fill, minmax(300px, 1fr)`,
+          gridTemplateColumns: `repeat(auto-fill, minmax(280px, 1fr)`,
           gap: "34px",
         }}
         data={data}
@@ -153,7 +153,7 @@ const MediaPage = () => {
       <PageTemplate
         ItemComponent={CollageMedia}
         gridStyle={{
-          gridTemplateColumns: `repeat(auto-fill, minmax(300px, 1fr)`,
+          gridTemplateColumns: `repeat(auto-fill, minmax(285px, 1fr)`,
           gap: "40px",
         }}
         data={data}
