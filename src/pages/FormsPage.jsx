@@ -1,9 +1,8 @@
 import "./FormsPage.css";
-import PageTemplate from "../components/PageTemplate/PageTemplate";
-import PdfPreview from "../components/ItemsComponents/PdfPreview";
+// import PageTemplate from "../components/PageTemplate/PageTemplate";
+// import PdfPreview from "../components/ItemsComponents/PdfPreview";
 import pdf from "../assets/pdfs/pdfPage.pdf";
 import Search from "../components/Search/Search";
-import SubjectsContainer from "../components/SubjectsContainer/SubjectsContainer";
 import SortBySubject from "../components/SortBySubject/SortBySubject";
 
 const FormPage = () => {

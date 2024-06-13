@@ -3,11 +3,11 @@ import { useState } from "react";
 import Search from "../components/Search/Search";
 import RecommendedSection from "../components/RecommendedSection/RecommendedSection";
 import Favorites from "../components/Favorites/Favorites.jsx";
-import SubjectsContainer from "../components/SubjectsContainer/SubjectsContainer.jsx";
 import TopNav from "../components/TopNav/TopNav.jsx";
 //delete in production
 import rabit from "../assets/img/rabit.jpg";
 import SortBySubject from "../components/SortBySubject/SortBySubject.jsx";
+import ForYouItem from "../components/ItemsComponents/ForYouItem/ForYouItem.jsx";
 
 //delete in production
 const recommendedEduResource = [
@@ -160,7 +160,11 @@ const getEduResources = (selectedTab) => {
       return <p>כל התוצרים</p>;
     default:
       return (
-        <SortBySubject subjects={subjects} subSubjectsArray={subSubjects} />
+        <SortBySubject
+          subjects={subjects}
+          subSubjectsArray={subSubjects}
+          ItemComponent={ForYouItem}
+        />
       );
   }
 };

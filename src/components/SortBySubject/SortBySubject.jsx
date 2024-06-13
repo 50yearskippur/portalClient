@@ -1,18 +1,19 @@
 import ListTemplate from "../ListTemplate/ListTemplate";
 import "./SortBySubject.css";
+import SubSubjects from "../SubSubjects/SubSubjects";
 import { useState, useEffect } from "react";
 
-const SortBySubject = ({ subjects, subSubjectsArray }) => {
+const SortBySubject = ({ subjects, subSubjectsArray, ItemComponent }) => {
   const [selectedSubject, setSelectedSubject] = useState(subjects[0]);
-  const [subSubjects, setSubSubjects] = useState([]);
+  const [subSubjects, setSubSubjects] = useState(subSubjectsArray);
 
   const getSubSubjects = (subject) => {
     setSubSubjects(subSubjectsArray);
   };
 
   useEffect(() => {
-    getSubSubjects(subjects[0]);
-  }, [subjects]);
+    getSubSubjects(subSubjectsArray[0]);
+  }, [selectedSubject]);
 
   return (
     <div className="sort-by-subject-container">
@@ -24,7 +25,14 @@ const SortBySubject = ({ subjects, subSubjectsArray }) => {
           setSelectedSubject={setSelectedSubject}
         />
       </div>
-      <div className="sub-subjects">hello</div>
+      <div className="sub-subjects">
+        <SubSubjects
+          getSubSubjects={getSubSubjects}
+          subject={selectedSubject}
+          subSubjects={subSubjects}
+          ItemComponent={ItemComponent}
+        />
+      </div>
     </div>
   );
 };
