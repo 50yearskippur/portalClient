@@ -11,8 +11,8 @@ const SubSubjects = ({ subject, subSubjects, ItemComponent }) => {
         })} */}
         <PageTemplate
           ItemComponent={ItemComponent}
-          numberOfItemsInLine={5}
-          gapSize={24}
+          numberOfItemsInLine={3}
+          gapSize={2}
           data={subSubjects}
         />
         {/* <ForYouItem subSubject={subSubjects[0]} /> */}

@@ -12,6 +12,7 @@ const PageTemplate = ({
     gridTemplateColumns: `repeat(auto-fill, minmax(${
       (100 - (numberOfItemsInLine - 1) * gapSize) / numberOfItemsInLine
     }%, 1fr))`,
+    gap: `${gapSize}%`,
   };
 
   console.log((numberOfItemsInLine - 1) * gapSize);
