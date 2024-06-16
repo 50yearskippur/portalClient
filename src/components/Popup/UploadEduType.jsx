@@ -1,16 +1,14 @@
 import "./UploadEduType.css";
-import { useState, useContext } from "react";
-import { PopupContext } from "../../store/popup-context";
-import UploadEdu from "./UploadEdu";
+import { useState } from "react";
 import EduTypes from "../EduTypes/EduTypes";
 import UploadTop from "./UploadTop";
+import UploadBottom from "./UoloadBottom";
 import PersonalAreaAvater from "../PersonalAreaAvater/PersonalAreaAvater";
 import Dropdown from "../Dropdown/Dropdown";
 import handlePropagation from "../../utils/handlePropagation";
 import AddSubSubject from "./AddSubSubject";
 
 const UploadEduType = () => {
-  const { showPopup } = useContext(PopupContext);
   const [isSubOpen, setIsSubOpen] = useState(false);
 
   const handleNewSubClick = (item) => {
@@ -33,10 +31,7 @@ const UploadEduType = () => {
       <UploadTop />
       <div className="upload-popup-content">
         <div className="upload-popup-info">
-          <div
-            className="upload-popup-text-container"
-            style={{ marginTop: "19px" }}
-          >
+          <div className="upload-popup-text-container">
             <div
               className="upload-popup-text"
               style={{ width: "109px", height: " 29px" }}
@@ -83,20 +78,12 @@ const UploadEduType = () => {
             />
           </div>
         </div>
-        <div className="upload-popup-text" style={{ marginTop: "18px" }}>
+        <div className="upload-popup-text">
           בחרו את סוג התוצר אותו תרצו להעלות
         </div>
         <EduTypes />
       </div>
-      <div className="upload-popup-line" style={{ bottom: "6.67vh" }} />
-      <div className="upload-button-container" style={{ padding: "24px 32px" }}>
-        <div
-          className="upload-popup-button"
-          onClick={() => showPopup(<UploadEdu />)}
-        >
-          המשך
-        </div>
-      </div>
+      <UploadBottom />
       <AddSubSubject isOpen={isSubOpen} onClose={() => setIsSubOpen(false)} />
     </div>
   );

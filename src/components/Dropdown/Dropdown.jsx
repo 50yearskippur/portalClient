@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Dropdown.css";
 import dropdownIcon from "../../assets/media/Icons/dropdownIcon.svg";
 import vIcon from "../../assets/media/Icons/v.svg";
+import warningIcon from "../../assets/media/Upload/warning.svg";
 
 const Dropdown = ({ list, onNewSubClick }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,7 +22,19 @@ const Dropdown = ({ list, onNewSubClick }) => {
       onClick={() => setIsOpen((prev) => !prev)}
     >
       <div className="dropdown-item-container">
-        <div className="dropdown-input-text">{selectedItem}</div>
+        <div className="dropdown-item-warning">
+          <div
+            className={`dropdown-input-text ${
+              (selectedItem === "תת נושא חדש" || selectedItem === "נושא חדש") &&
+              "new"
+            }`}
+          >
+            {selectedItem}
+          </div>
+          {(selectedItem === "תת נושא חדש" || selectedItem === "נושא חדש") && (
+            <img src={warningIcon} alt="warning" />
+          )}
+        </div>
         <img alt="dropdown" src={dropdownIcon} />
       </div>
       {isOpen && (
@@ -33,14 +46,12 @@ const Dropdown = ({ list, onNewSubClick }) => {
             <React.Fragment key={index}>
               {index === list.length - 1 && <hr className="dropdown-divider" />}
               <div
-                className={`dropdown-item-container ${
-                  (item === "תת נושא חדש" || item === "נושא חדש") && "selected"
-                }`}
+                className="dropdown-item-container"
                 onClick={() => handleSelect(item)}
               >
                 <div
                   className={`dropdown-text ${
-                    selectedItem === item && "selected"
+                    (item === "תת נושא חדש" || item === "נושא חדש") && "new"
                   }`}
                 >
                   {item}

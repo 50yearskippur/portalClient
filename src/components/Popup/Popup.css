@@ -13,7 +13,7 @@
 
 .upload-popup {
   width: 42vw;
-  height: 66.4vh;
+  height: 66.7vh;
   min-height: 500px;
   text-align: right;
   font-size: 16px;
@@ -37,16 +37,6 @@
   height: fit-content;
 }
 
-.upload-back-button {
-  border: 2px solid #5d5d5d;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 115px;
-  height: 42px;
-  cursor: pointer;
-}
-
 .upload-popup-top {
   display: flex;
   justify-content: space-between;
@@ -54,6 +44,9 @@
 }
 
 .upload-popup-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
   padding: 24px 32px;
 }
 
@@ -66,12 +59,41 @@
 .upload-button-container {
   display: flex;
   justify-content: flex-end;
-  gap: 16px;
   align-items: center;
 }
 
-.upload-exit-button {
-  float: left;
+.upload-btn {
+  display: flex;
+  width: 8.3vw;
+  height: 4.4vh;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
   cursor: pointer;
-  width: 24px;
+}
+
+.upload-btn.clickable {
+  background-color: #3259ff;
+  color: #fff;
+}
+
+.upload-btn.unclickable {
+  opacity: 0.5;
+  background: #c2c6cc;
+}
+
+.upload-btn.back {
+  border: 1.5px solid #3259ff;
+  background: linear-gradient(127deg, #6c60ff 18.87%, #3b2ed1 71.49%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.upload-btn.cancel {
+  color: #3259ff;
 }

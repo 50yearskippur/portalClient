@@ -20,6 +20,10 @@
   font-weight: 500;
 }
 
+.dropdown-input-text.new {
+  color: #fb2265;
+}
+
 .dropdown-text {
   color: #444a5a;
   text-align: center;
@@ -27,7 +31,7 @@
   font-weight: 500;
 }
 
-.dropdown-text.selected {
+.dropdown-text.new {
   color: #fb2265;
 }
 
@@ -52,8 +56,9 @@
   background-color: #f9f9f9;
 }
 
-.dropdown-item-container.selected {
-  color: #fb2265;
+.dropdown-item-warning {
+  display: flex;
+  gap: 5px;
 }
 
 .dropdown-list {

@@ -3,10 +3,13 @@ import { useContext } from "react";
 import { PopupContext } from "../../store/popup-context";
 import handlePropagation from "../../utils/handlePropagation";
 import exitIcon from "../../assets/media/Icons/exitIcon.svg";
-import Button from "../Button/Button";
 
 const AddSubSubject = ({ isOpen, onClose }) => {
   const { hidePopup } = useContext(PopupContext);
+
+  //   const closeAddPopup = () => {
+  //     hidePopup();
+  //   };
 
   if (!isOpen) return null;
 
@@ -28,8 +31,16 @@ const AddSubSubject = ({ isOpen, onClose }) => {
           </div>
           <input type="text" className="input-field" />
         </div>
-        <div className="upload-button-container">
-          <Button text="שליחת בקשה" />
+        <div
+          className="upload-button-container"
+          style={{ justifyContent: "center" }}
+        >
+          <div className="upload-btn clickable" onClick={onClose}>
+            שליחת בקשה
+          </div>
+          <div className="upload-btn cancel" onClick={onClose}>
+            ביטול
+          </div>
         </div>
       </div>
     </div>
