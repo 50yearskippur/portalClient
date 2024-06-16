@@ -234,19 +234,11 @@ const FormPage = () => {
         />
       </div>
       <SortBySubject
+        numberOfItemsInLine={3}
         subjects={subjects}
         subSubjectsArray={subSubjects}
         ItemComponent={PdfPreview}
       />
-      {/* <SubjectsContainer subjects={data} /> */}
-      {/* <PageTemplate
-        ItemComponent={PdfPreview}
-        gridStyle={{
-          gridTemplateColumns: `repeat(auto-fill, minmax(250px, 1fr)`,
-          gap: "24px",
-        }}
-        data={data}
-      /> */}
     </div>
   );
 };

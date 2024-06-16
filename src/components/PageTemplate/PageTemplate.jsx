@@ -6,8 +6,6 @@ const PageTemplate = ({
   data,
   numberOfItemsInLine,
 }) => {
-  console.log(gapSize);
-
   const gridStyle = {
     gridTemplateColumns: `repeat(auto-fill, minmax(${
       (100 - (numberOfItemsInLine - 1) * gapSize) / numberOfItemsInLine
@@ -15,7 +13,6 @@ const PageTemplate = ({
     gap: `${gapSize}%`,
   };
 
-  console.log((numberOfItemsInLine - 1) * gapSize);
   return (
     <div className="page-template" style={gridStyle}>
       {data.map((item, index) => {

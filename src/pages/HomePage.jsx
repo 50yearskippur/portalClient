@@ -161,6 +161,7 @@ const getEduResources = (selectedTab) => {
     default:
       return (
         <SortBySubject
+          numberOfItemsInLine={1}
           subjects={subjects}
           subSubjectsArray={subSubjects}
           ItemComponent={ForYouItem}
