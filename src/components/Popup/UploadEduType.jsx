@@ -7,11 +7,12 @@ import PersonalAreaAvater from "../PersonalAreaAvater/PersonalAreaAvater";
 import Dropdown from "../Dropdown/Dropdown";
 import handlePropagation from "../../utils/handlePropagation";
 import AddSubSubject from "./AddSubSubject";
+import UploadEdu from "./UploadEdu";
 
 const UploadEduType = () => {
   const [isSubOpen, setIsSubOpen] = useState(false);
 
-  const handleNewSubClick = (item) => {
+  const handleNewSubClick = () => {
     setIsSubOpen(true);
   };
 
@@ -29,7 +30,7 @@ const UploadEduType = () => {
   return (
     <div className="upload-popup" onClick={(e) => handlePropagation(e)}>
       <UploadTop />
-      <div className="upload-popup-content">
+      <div className="upload-popup-content" style={{ gap: "24px" }}>
         <div className="upload-popup-info">
           <div className="upload-popup-text-container">
             <div
@@ -83,7 +84,7 @@ const UploadEduType = () => {
         </div>
         <EduTypes />
       </div>
-      <UploadBottom />
+      <UploadBottom NextPopup={<UploadEdu />} />
       <AddSubSubject isOpen={isSubOpen} onClose={() => setIsSubOpen(false)} />
     </div>
   );

@@ -7,10 +7,6 @@ import exitIcon from "../../assets/media/Icons/exitIcon.svg";
 const AddSubSubject = ({ isOpen, onClose }) => {
   const { hidePopup } = useContext(PopupContext);
 
-  //   const closeAddPopup = () => {
-  //     hidePopup();
-  //   };
-
   if (!isOpen) return null;
 
   return (
@@ -29,7 +25,7 @@ const AddSubSubject = ({ isOpen, onClose }) => {
             <div className="add-sub-header">תת נושא מותאם אישית</div>
             <div className="add-sub-title">מה שם תת הנושא שתרצה להוסיף?</div>
           </div>
-          <input type="text" className="input-field" />
+          <input type="text" className="add-sub-input-field" />
         </div>
         <div
           className="upload-button-container"

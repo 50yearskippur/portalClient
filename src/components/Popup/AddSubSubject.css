@@ -51,7 +51,7 @@
   gap: 32px;
 }
 
-.input-field {
+.add-sub-input-field {
   display: flex;
   height: 28px;
   padding: 10px;
@@ -63,7 +63,7 @@
   box-shadow: 0px 4px 16px -1px rgba(207, 204, 217, 0.2);
 }
 
-.input-field:focus {
+.add-sub-input-field:focus {
   border: 1px solid #dddaf8;
   box-shadow: none;
   outline: none;

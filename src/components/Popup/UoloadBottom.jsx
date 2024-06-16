@@ -1,18 +1,32 @@
 import { useContext } from "react";
 import { PopupContext } from "../../store/popup-context";
-import UploadEdu from "./UploadEdu";
 
-const UploadBottom = () => {
+const UploadBottom = ({ NextPopup, PreviousPopup }) => {
   const { showPopup } = useContext(PopupContext);
+  console.log(NextPopup);
 
   return (
-    <div className="upload-button-container" style={{ padding: "24px 32px" }}>
+    <div
+      className="upload-button-container"
+      style={{
+        padding: "24px 32px",
+        justifyContent: !PreviousPopup ? "flex-end" : "space-between",
+      }}
+    >
       <div className="upload-popup-line" style={{ bottom: "96px" }} />
+      {PreviousPopup && (
+        <div
+          className="upload-btn back"
+          onClick={() => showPopup(PreviousPopup)}
+        >
+          חזרה
+        </div>
+      )}
       <div
         className="upload-btn clickable"
-        onClick={() => showPopup(<UploadEdu />)}
+        onClick={() => showPopup(NextPopup)}
       >
-        המשך
+        שמירת שינויים
       </div>
     </div>
   );

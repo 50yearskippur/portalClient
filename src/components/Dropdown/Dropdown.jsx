@@ -4,7 +4,7 @@ import dropdownIcon from "../../assets/media/Icons/dropdownIcon.svg";
 import vIcon from "../../assets/media/Icons/v.svg";
 import warningIcon from "../../assets/media/Upload/warning.svg";
 
-const Dropdown = ({ list, onNewSubClick }) => {
+const Dropdown = ({ list, onNewSubClick, style }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(list[0]);
 
@@ -20,6 +20,7 @@ const Dropdown = ({ list, onNewSubClick }) => {
     <div
       className="dropdown-container"
       onClick={() => setIsOpen((prev) => !prev)}
+      style={style}
     >
       <div className="dropdown-item-container">
         <div className="dropdown-item-warning">
@@ -44,7 +45,9 @@ const Dropdown = ({ list, onNewSubClick }) => {
         >
           {list.map((item, index) => (
             <React.Fragment key={index}>
-              {index === list.length - 1 && <hr className="dropdown-divider" />}
+              {index === list.length - 1 && onNewSubClick && (
+                <hr className="dropdown-divider" />
+              )}
               <div
                 className="dropdown-item-container"
                 onClick={() => handleSelect(item)}
