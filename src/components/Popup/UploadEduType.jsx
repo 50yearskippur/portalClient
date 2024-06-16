@@ -1,5 +1,5 @@
 import "./UploadEduType.css";
-import { useContext } from "react";
+import { useState, useContext } from "react";
 import { PopupContext } from "../../store/popup-context";
 import UploadEdu from "./UploadEdu";
 import EduTypes from "../EduTypes/EduTypes";
@@ -7,9 +7,15 @@ import UploadTop from "./UploadTop";
 import PersonalAreaAvater from "../PersonalAreaAvater/PersonalAreaAvater";
 import Dropdown from "../Dropdown/Dropdown";
 import handlePropagation from "../../utils/handlePropagation";
+import AddSubSubject from "./AddSubSubject";
 
 const UploadEduType = () => {
   const { showPopup } = useContext(PopupContext);
+  const [isSubOpen, setIsSubOpen] = useState(false);
+
+  const handleNewSubClick = (item) => {
+    setIsSubOpen(true);
+  };
 
   //delete in production
   const user = {
@@ -61,8 +67,9 @@ const UploadEduType = () => {
                 "טכנולוגיה וסייבר",
                 "שפה",
                 "המלצות",
-                "תת נושא חדש",
+                "נושא חדש",
               ]}
+              onNewSubClick={handleNewSubClick}
             />
             <Dropdown
               list={[
@@ -72,6 +79,7 @@ const UploadEduType = () => {
                 "המלצות",
                 "תת נושא חדש",
               ]}
+              onNewSubClick={handleNewSubClick}
             />
           </div>
         </div>
@@ -81,7 +89,7 @@ const UploadEduType = () => {
         <EduTypes />
       </div>
       <div className="upload-popup-line" style={{ bottom: "6.67vh" }} />
-      <div className="upload-button-container">
+      <div className="upload-button-container" style={{ padding: "24px 32px" }}>
         <div
           className="upload-popup-button"
           onClick={() => showPopup(<UploadEdu />)}
@@ -89,6 +97,7 @@ const UploadEduType = () => {
           המשך
         </div>
       </div>
+      <AddSubSubject isOpen={isSubOpen} onClose={() => setIsSubOpen(false)} />
     </div>
   );
 };

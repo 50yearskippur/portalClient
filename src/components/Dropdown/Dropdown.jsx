@@ -3,13 +3,16 @@ import "./Dropdown.css";
 import dropdownIcon from "../../assets/media/Icons/dropdownIcon.svg";
 import vIcon from "../../assets/media/Icons/v.svg";
 
-const Dropdown = ({ list }) => {
+const Dropdown = ({ list, onNewSubClick }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(list[0]);
 
   const handleSelect = (item) => {
     setSelectedItem(item);
     setIsOpen(false);
+    if (item === "תת נושא חדש" || item === "נושא חדש") {
+      onNewSubClick(item);
+    }
   };
 
   return (
@@ -31,13 +34,13 @@ const Dropdown = ({ list }) => {
               {index === list.length - 1 && <hr className="dropdown-divider" />}
               <div
                 className={`dropdown-item-container ${
-                  selectedItem === item && "selected"
+                  (item === "תת נושא חדש" || item === "נושא חדש") && "selected"
                 }`}
                 onClick={() => handleSelect(item)}
               >
                 <div
                   className={`dropdown-text ${
-                    selectedItem === item ? "selected" : ""
+                    selectedItem === item && "selected"
                   }`}
                 >
                   {item}

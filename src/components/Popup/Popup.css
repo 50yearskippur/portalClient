@@ -47,10 +47,6 @@
   cursor: pointer;
 }
 
-.upload-button-container {
-  padding: 24px 32px;
-}
-
 .upload-popup-top {
   display: flex;
   justify-content: space-between;
@@ -77,4 +73,5 @@
 .upload-exit-button {
   float: left;
   cursor: pointer;
+  width: 24px;
 }
