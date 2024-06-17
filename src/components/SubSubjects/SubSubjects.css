@@ -2,6 +2,7 @@
   background-color: #f2f4fa;
   text-align: right;
   padding: 32px;
+  height: 100%;
   border-radius: 10px;
   box-shadow: 7px 10px 35px 0px rgba(225, 226, 249, 0.62) inset;
 }

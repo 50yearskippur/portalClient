@@ -51,6 +51,7 @@ input {
   position: relative;
   text-align: right;
   color: #444a5a;
+  margin-bottom: 4vh;
 }
 
 .header::after {
