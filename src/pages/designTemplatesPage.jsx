@@ -7,63 +7,53 @@ import SortBySubject from "../components/SortBySubject/SortBySubject";
 const DesignTemplatesPage = () => {
   const subjects = [
     {
-      title: "טפסים נפוצים",
-      type: "טפסים",
+      title: "מצגות",
+      type: "תבניות עיצוב",
       subSubject: [],
     },
     {
-      title: "שלישות",
-      type: "טפסים",
+      title: "תעודות",
+      type: "תבניות עיצוב",
       subSubject: [],
     },
     {
-      title: 'ת"ש',
-      type: "טפסים",
+      title: "קול קורא",
+      type: "תבניות עיצוב",
       subSubject: [],
     },
     {
-      title: 'יוהל"ם',
-      type: "טפסים",
+      title: "חיילים",
+      type: "תבניות עיצוב",
       subSubject: [],
     },
     {
-      title: "חינוך",
-      type: "טפסים",
+      title: "מחברות",
+      type: "תבניות עיצוב",
       subSubject: [],
     },
     {
-      title: "נפגעים",
-      type: "טפסים",
+      title: "סמלים",
+      type: "תבניות עיצוב",
       subSubject: [],
     },
     {
-      title: 'רס"ר',
-      type: "טפסים",
+      title: "אינפוגרפיקות",
+      type: "תבניות עיצוב",
       subSubject: [],
     },
     {
-      title: "רכב",
-      type: "טפסים",
+      title: "פונטים",
+      type: "תבניות עיצוב",
       subSubject: [],
     },
     {
-      title: "שלמיה",
-      type: "טפסים",
+      title: "הזמנות",
+      type: "תבניות עיצוב",
       subSubject: [],
     },
     {
-      title: "רבנות",
-      type: "טפסים",
-      subSubject: [],
-    },
-    {
-      title: 'אג"מ',
-      type: "טפסים",
-      subSubject: [],
-    },
-    {
-      title: "בטיחות",
-      type: "טפסים",
+      title: "באנרים",
+      type: "תבניות עיצוב",
       subSubject: [],
     },
   ];
