@@ -42,7 +42,7 @@
 .selected-options {
   display: flex;
   gap: 8px;
-  /* position: absolute; */
+  position: absolute;
   top: 52px;
 }
 
