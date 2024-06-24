@@ -95,3 +95,10 @@
 .upload-btn.cancel {
   color: #3259ff;
 }
+
+.upload-details-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
