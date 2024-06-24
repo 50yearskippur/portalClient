@@ -1,28 +1,32 @@
-.upload-input {
-  background: #efefef;
-  height: 48px;
-  width: 100%;
+.upload-input-continer {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.upload-input-field {
+  display: flex;
+  height: 24px;
+  padding: 8px 12px;
+  justify-content: flex-end;
+  align-items: center;
+  border-radius: 4px;
+  border: 1px solid #dadbe8;
+  background: #f2f4fa;
+}
+
+.upload-input-field:focus {
+  border: 1px solid #dddaf8;
+  box-shadow: none;
+  outline: none;
 }
 
 .upload-agreement-input {
   cursor: pointer;
-  margin-top: 37px;
-  margin-bottom: 65px;
+  width: 18px;
 }
 
-.upload-difficulty {
-  width: 103px;
-  height: 28px;
-  background: #d9d9d9;
-  cursor: pointer;
-  text-align: center;
-}
-
-.upload-difficulty-active {
-  border: 1px solid #4761be;
-}
-
-.upload-difficulty-container {
+.upload-agreement-container {
   display: flex;
-  gap: 12px;
+  align-items: center;
 }

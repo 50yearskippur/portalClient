@@ -1,47 +1,28 @@
 .upload-details-approval {
   display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.upload-details-approve-icon {
-  width: 20px;
-  background-image: url("../../assets/media/Icons/approve.jpg");
-  background-repeat: no-repeat;
-}
-
-.upload-details-personal-info {
+.upload-details-row {
   display: flex;
-  gap: 17px;
-  justify-content: center;
-  margin-bottom: 43px;
+  gap: 24px;
 }
 
-.upload-details-input {
-  background: #efefef;
-  height: 40px;
+.upload-details-text {
+  color: #4c4c66;
+  font-size: 16px;
+  font-weight: 500;
 }
 
-.upload-details-cell {
+.upload-details-text-container {
   display: flex;
   flex-direction: column;
-  width: 31%;
-}
-
-.upload-details-tags-container {
-  display: flex;
   gap: 12px;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  margin-bottom: 53px;
 }
 
-.upload-details-tag {
-  width: fit-content;
-  background-color: #d9d9d9;
-  padding: 10px;
-  cursor: pointer;
-  border: 1px solid #d9d9d9;
-}
-
-.upload-details-tag-active {
-  border: 1px solid #4761be;
+.switch-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }

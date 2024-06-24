@@ -1,16 +1,24 @@
 import "./UploadEduType.css";
-import { useContext } from "react";
-import { PopupContext } from "../../store/popup-context";
-import UploadEdu from "./UploadEdu";
+import { useState } from "react";
 import EduTypes from "../EduTypes/EduTypes";
-import exitIcon from "../../assets/media/Icons/exitIcon.png";
+import UploadTop from "./UploadTop";
+import UploadBottom from "./UoloadBottom";
+import PersonalAreaAvater from "../PersonalAreaAvater/PersonalAreaAvater";
+import Dropdown from "../Dropdown/Dropdown";
+import handlePropagation from "../../utils/handlePropagation";
+import AddSubSubject from "./AddSubSubject";
+import UploadEdu from "./UploadEdu";
 
 const UploadEduType = () => {
-  const { showPopup, hidePopup } = useContext(PopupContext);
+  const [isSubOpen, setIsSubOpen] = useState(false);
+
+  const handleNewSubClick = () => {
+    setIsSubOpen(true);
+  };
 
   //delete in production
   const user = {
-    fullName: "ג'ורג טימותי קלוני",
+    fullName: "יובל כהן",
     email: "email@gmail.com",
     personalNumber: "123456789",
     unit: "8200",
@@ -20,49 +28,64 @@ const UploadEduType = () => {
   };
 
   return (
-    <div className="upload-popup">
-      <img
-        src={exitIcon}
-        className="upload-exit-button"
-        alt="exit-button"
-        onClick={hidePopup}
-      />
-      <div className="upload-popup-header">העלאת תוצר לפורטל</div>
-      <div
-        className="upload-popup-text-container"
-        style={{ marginTop: "19px" }}
-      >
-        <div
-          className="upload-popup-text"
-          style={{ width: "109px", height: " 29px" }}
-        >
-          שם מעלה התוכן:
+    <div className="upload-popup" onClick={(e) => handlePropagation(e)}>
+      <UploadTop />
+      <div className="upload-popup-content" style={{ gap: "24px" }}>
+        <div className="upload-popup-info">
+          <div className="upload-popup-text-container">
+            <div
+              className="upload-popup-text"
+              style={{ width: "109px", height: " 29px" }}
+            >
+              שם מעלה התוכן:
+            </div>
+            <PersonalAreaAvater
+              name="YC"
+              style={{
+                width: "32px",
+                height: "32px",
+                fontSize: "14px",
+                borderRadius: "43px",
+              }}
+            />
+            <div className="upload-popup-detale">{user?.fullName} (אתה)</div>
+          </div>
+          <div className="upload-popup-text-container">
+            <div
+              className="upload-popup-text"
+              style={{ width: "109px", height: " 29px" }}
+            >
+              נושא:
+            </div>
+            <Dropdown
+              list={[
+                "מבואות מודיעין",
+                "טכנולוגיה וסייבר",
+                "שפה",
+                "המלצות",
+                "נושא חדש",
+              ]}
+              onNewSubClick={handleNewSubClick}
+            />
+            <Dropdown
+              list={[
+                "מבואות מודיעין",
+                "טכנולוגיה וסייבר",
+                "שפה",
+                "המלצות",
+                "תת נושא חדש",
+              ]}
+              onNewSubClick={handleNewSubClick}
+            />
+          </div>
         </div>
-        <div className="upload-popup-detale">{user?.fullName} (אתה)</div>
-      </div>
-      <div
-        className="upload-popup-text-container"
-        style={{ marginTop: "15px" }}
-      >
-        <div
-          className="upload-popup-text"
-          style={{ width: "109px", height: " 29px" }}
-        >
-          נושא:
+        <div className="upload-popup-text">
+          בחרו את סוג התוצר אותו תרצו להעלות
         </div>
-        <div className="upload-popup-detale">זירת סוריה</div>
+        <EduTypes />
       </div>
-      <div className="upload-popup-text" style={{ marginTop: "18px" }}>
-        בחרו את סוג התוצר אותו תרצו להעלות
-      </div>
-      <EduTypes />
-      <div
-        className="upload-popup-button"
-        style={{ marginTop: "32px" }}
-        onClick={() => showPopup(<UploadEdu />)}
-      >
-        המשך
-      </div>
+      <UploadBottom NextPopup={<UploadEdu />} />
+      <AddSubSubject isOpen={isSubOpen} onClose={() => setIsSubOpen(false)} />
     </div>
   );
 };
