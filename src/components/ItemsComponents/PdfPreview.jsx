@@ -9,14 +9,15 @@ const PdfPreview = ({ item }) => {
   const [showFullPdf, setShowFullPdf] = useState(false);
   return (
     <div>
-      {showFullPdf && (
+      {/* {showFullPdf && (
         <ShowFullPdf
           downloadPdf={downloadPdf}
           setShowFullPdf={setShowFullPdf}
           pdfDetails={item}
         />
-      )}
+      )} */}
       <div className="pdf-preview-container">
+        <div className="pdf-preview-subject">{item.subSubject.title}</div>
         <FileController
           item={item}
           // onClick={() => setShowFullPdf(true)}
@@ -24,14 +25,7 @@ const PdfPreview = ({ item }) => {
         <div className="pdf-preview-info">
           <div>
             <div className="pdf-preview-title">{item.title}</div>
-            <div className="pdf-preview-subject">{item.subSubject.title}</div>
           </div>
-          <img
-            onClick={() => downloadPdf(item)}
-            className="pdf-preview-download-icon"
-            alt="download-icon"
-            src={DownloadIcon}
-          />
         </div>
       </div>
     </div>

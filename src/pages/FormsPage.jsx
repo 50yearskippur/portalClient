@@ -74,7 +74,7 @@ const FormPage = () => {
       title: "ארנב",
       type: "חיה",
       subSubject: {
-        title: "יונקים",
+        title: 'יוהל"ם',
       },
       media: pdf,
       mediaType: "pdf",
@@ -83,7 +83,7 @@ const FormPage = () => {
       title: "ארנב",
       type: "חיה",
       subSubject: {
-        title: "יונקים",
+        title: "חינוך",
       },
       media: pdf,
       mediaType: "pdf",
@@ -92,7 +92,7 @@ const FormPage = () => {
       title: "ארנב",
       type: "חיה",
       subSubject: {
-        title: "יונקים",
+        title: "שלישות",
       },
       media: pdf,
       mediaType: "pdf",
@@ -101,7 +101,7 @@ const FormPage = () => {
       title: "ארנב",
       type: "חיה",
       subSubject: {
-        title: "יונקים",
+        title: "שלישות",
       },
       media: pdf,
       mediaType: "pdf",
@@ -110,7 +110,7 @@ const FormPage = () => {
       title: "ארנב",
       type: "חיה",
       subSubject: {
-        title: "יונקים",
+        title: 'ת"ש',
       },
       media: pdf,
       mediaType: "pdf",
@@ -119,7 +119,7 @@ const FormPage = () => {
       title: "ארנב",
       type: "חיה",
       subSubject: {
-        title: "יונקים",
+        title: "שלישות",
       },
       media: pdf,
       mediaType: "pdf",
@@ -128,7 +128,7 @@ const FormPage = () => {
       title: "ארנב",
       type: "חיה",
       subSubject: {
-        title: "יונקים",
+        title: "חינוך",
       },
       media: pdf,
       mediaType: "pdf",
@@ -137,7 +137,7 @@ const FormPage = () => {
       title: "ארנב",
       type: "חיה",
       subSubject: {
-        title: "יונקים",
+        title: "חינוך",
       },
       media: pdf,
       mediaType: "pdf",
@@ -146,7 +146,7 @@ const FormPage = () => {
       title: "ארנב",
       type: "חיה",
       subSubject: {
-        title: "יונקים",
+        title: "חינוך",
       },
       media: pdf,
       mediaType: "pdf",
@@ -155,7 +155,7 @@ const FormPage = () => {
       title: "ארנב",
       type: "חיה",
       subSubject: {
-        title: "יונקים",
+        title: "חינוך",
       },
       media: pdf,
       mediaType: "pdf",
@@ -164,7 +164,7 @@ const FormPage = () => {
       title: "ארנב",
       type: "חיה",
       subSubject: {
-        title: "יונקים",
+        title: 'ת"ש',
       },
       media: pdf,
       mediaType: "pdf",
@@ -173,7 +173,7 @@ const FormPage = () => {
       title: "ארנב",
       type: "חיה",
       subSubject: {
-        title: "יונקים",
+        title: "חינוך",
       },
       media: pdf,
       mediaType: "pdf",
@@ -182,7 +182,7 @@ const FormPage = () => {
       title: "ארנב",
       type: "חיה",
       subSubject: {
-        title: "יונקים",
+        title: "שלמיה",
       },
       media: pdf,
       mediaType: "pdf",
@@ -191,7 +191,7 @@ const FormPage = () => {
       title: "ארנב",
       type: "חיה",
       subSubject: {
-        title: "יונקים",
+        title: "חינוך",
       },
       media: pdf,
       mediaType: "pdf",
@@ -200,7 +200,7 @@ const FormPage = () => {
       title: "ארנב",
       type: "חיה",
       subSubject: {
-        title: "יונקים",
+        title: "חינוך",
       },
       media: pdf,
       mediaType: "pdf",
@@ -209,7 +209,7 @@ const FormPage = () => {
       title: "ארנב",
       type: "חיה",
       subSubject: {
-        title: "יונקים",
+        title: "חינוך",
       },
       media: pdf,
       mediaType: "pdf",
@@ -218,7 +218,7 @@ const FormPage = () => {
       title: "ארנב",
       type: "חיה",
       subSubject: {
-        title: "יונקים",
+        title: "חינוך",
       },
       media: pdf,
       mediaType: "pdf",
