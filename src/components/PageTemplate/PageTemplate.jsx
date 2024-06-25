@@ -1,6 +1,7 @@
 import "./PageTemplate.css";
 
 const PageTemplate = ({
+  style = {},
   gapSize,
   ItemComponent,
   data,
@@ -11,6 +12,7 @@ const PageTemplate = ({
       (100 - (numberOfItemsInLine - 1) * gapSize) / numberOfItemsInLine
     }%, 1fr))`,
     columnGap: `${gapSize}%`,
+    ...style,
   };
 
   return (

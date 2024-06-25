@@ -1,14 +1,14 @@
-import React, {useState, useEffect, useRef} from "react";
-import {Document, Page} from "react-pdf";
+import React, { useState, useEffect, useRef } from "react";
+import { Document, Page } from "react-pdf";
 import "./ShowFullPdf.css";
 import DownloadBox from "../Download/DownloadBox";
 
-const ShowFullPdf = ({pdfDetails, setShowFullPdf}) => {
+const ShowFullPdf = ({ pdfDetails, setShowFullPdf }) => {
   const [numPages, setNumPages] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const documentRef = useRef();
 
-  function onDocumentLoadSuccess({numPages}) {
+  function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);
   }
 
@@ -17,7 +17,7 @@ const ShowFullPdf = ({pdfDetails, setShowFullPdf}) => {
 
     const handleScroll = () => {
       if (numPages && currentDocument) {
-        const {scrollTop, scrollHeight, clientHeight} = currentDocument;
+        const { scrollTop, scrollHeight, clientHeight } = currentDocument;
         const scrolled = scrollTop / (scrollHeight - clientHeight);
         setCurrentPage(Math.max(1, Math.ceil(scrolled * numPages)));
       }
@@ -42,7 +42,7 @@ const ShowFullPdf = ({pdfDetails, setShowFullPdf}) => {
           דף {currentPage} מתוך {numPages}
         </p>
       </div>
-      <div style={{display: "flex", justifyContent: "flex-end"}}>
+      <div style={{ display: "flex", justifyContent: "flex-end" }}>
         <DownloadBox item={pdfDetails} />
         <div className="pdf-document" ref={documentRef}>
           <Document
