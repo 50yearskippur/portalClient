@@ -1,14 +1,20 @@
 import "./EduTypes.css";
-import {useState} from "react";
+import { useState } from "react";
+import document from "../../assets/media/Upload/document.svg";
+import game from "../../assets/media/Upload/game.svg";
+import other from "../../assets/media/Upload/other.svg";
+import presentation from "../../assets/media/Upload/presentation.svg";
+import storyline from "../../assets/media/Upload/storyline.svg";
+import video from "../../assets/media/Upload/video.svg";
 
 const EduTypes = () => {
   const eduTypesTitles = [
-    "מסמך",
-    "מצגת",
-    "סרטון/פלייליסט",
-    "לומדה",
-    "משחק",
-    "אחר",
+    { text: "מסמך", img: document },
+    { text: "מצגת", img: game },
+    { text: "סרטון/פלייליסט", img: video },
+    { text: "לומדה", img: presentation },
+    { text: "משחק", img: storyline },
+    { text: "אחר", img: other },
   ];
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -20,8 +26,15 @@ const EduTypes = () => {
           className={`edu-container ${activeIndex === index && "edu-active"}`}
           onClick={() => setActiveIndex(index)}
         >
-          <div className="edu-type-icon"></div>
-          <div className="edu-type-title">{type}</div>
+          <img
+            src={type.img}
+            alt="edu icon"
+            className="edu-type-icon"
+            style={{
+              opacity: `${activeIndex === index ? "" : "0.3"}`,
+            }}
+          />
+          <div className="edu-type-title">{type.text}</div>
         </div>
       ))}
     </div>

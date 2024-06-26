@@ -1,6 +1,7 @@
 import "./NavBar.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import PersonalAreaAvater from "../PersonalAreaAvater/PersonalAreaAvater";
 import closeNavbarIcon from "../../assets/media/Navbar/closeNavbar.svg";
 import openNavbarIcon from "../../assets/media/Navbar/openNavbar.svg";
 import homeIcon from "../../assets/media/Navbar/home.svg";
@@ -85,15 +86,19 @@ const NavBar = () => {
         </div>
         <div className={`navbar-bottom-icons  ${isOpen && "open"}`}>
           <img src={bellIcon} className="navbar-bell-icon" alt="bell icon" />
-          <div
-            className="navbar-profile-icon"
+          <PersonalAreaAvater
+            name="YC"
+            style={{
+              width: "40px",
+              height: "40px",
+              fontSize: "14px",
+              borderRadius: "43px",
+            }}
             onClick={() => {
               navigate("/personalArea");
               setChosenIcon(null);
             }}
-          >
-            YC
-          </div>
+          />
         </div>
       </div>
     </div>

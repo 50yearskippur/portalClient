@@ -1,72 +1,45 @@
 import "./UploadEdu.css";
-import { useContext, useState } from "react";
-import { PopupContext } from "../../store/popup-context";
-import exitIcon from "../../assets/media/Icons/exitIcon.png";
+import UploadTop from "./UploadTop";
 import FileUploader from "../Media/FileUploader";
 import UploadEduDetails from "./UploadEduDetails";
 import UploadEduType from "./UploadEduType";
+import handlePropagation from "../../utils/handlePropagation";
+import UploadBottom from "./UoloadBottom";
+import Dropdown from "../Dropdown/Dropdown";
 
 const UploadEdu = () => {
-  const { showPopup, hidePopup } = useContext(PopupContext);
-  const [activeIndex, setActiveIndex] = useState(0);
-
   return (
-    <div className="upload-popup">
-      <img
-        src={exitIcon}
-        className="upload-exit-button"
-        alt="exit-button"
-        onClick={hidePopup}
-      />
-      <div className="upload-popup-header" style={{ marginBottom: "42px" }}>
-        העלאת תוצר לפורטל
-      </div>
-      <FileUploader />
-      <div className="upload-popup-text" style={{ marginTop: "22px" }}>
-        שם התוצר:
-      </div>
-      <input className="upload-input" />
-      <div className="upload-popup-text" style={{ marginTop: "22px" }}>
-        רמת קושי
-      </div>
-      <div className="upload-difficulty-container">
-        {[1, 2, 3, 4].map((difficulty, index) => (
-          <div
-            key={`difficulty${difficulty}`}
-            className={`upload-difficulty ${
-              activeIndex === index && "upload-difficulty-active"
-            }`}
-            onClick={() => setActiveIndex(index)}
-          >
-            {difficulty}
+    <div className="upload-popup" onClick={(e) => handlePropagation(e)}>
+      <UploadTop />
+      <div className="upload-popup-content" style={{ gap: "32px" }}>
+        <div className="upload-input-continer">
+          <div className="upload-details-container">
+            <div className="upload-popup-text">שם התוצר:</div>
+            <input type="text" className="upload-input-field" />
           </div>
-        ))}
-      </div>
-      <label>
-        <input
-          className="upload-agreement-input"
-          type="checkbox"
-          name="subscribe"
-          value="newsletter"
-        />
-        אני מאשר שהתוכן עומד
-        <span style={{ fontWeight: "700" }}> בתנאי בטחון מידע </span> ומותאם
-        לפרסום לכלל אמ"ן
-      </label>
-      <div className="upload-button-container">
-        <div
-          className="upload-back-button"
-          onClick={() => showPopup(<UploadEduType />)}
-        >
-          חזור
+          <div className="upload-details-container">
+            <div className="upload-popup-text">רמת קושי:</div>
+            <Dropdown
+              list={["מותאם לכל הרמות", "רמה 1", "רמה 2", "רמה 3"]}
+              style={{ width: "100%", height: "40px" }}
+            />
+          </div>
         </div>
-        <div
-          className="upload-popup-button"
-          onClick={() => showPopup(<UploadEduDetails />)}
-        >
-          המשך
+        <FileUploader />
+        <div className="upload-agreement-container">
+          <input
+            className="upload-agreement-input"
+            type="checkbox"
+            name="subscribe"
+            value="newsletter"
+          />
+          אני מאשר שהתוכן עומד בתנאי בטחון מידע ומותאם לפרסום לכלל אמ"ן
         </div>
       </div>
+      <UploadBottom
+        NextPopup={<UploadEduDetails />}
+        PreviousPopup={<UploadEduType />}
+      />
     </div>
   );
 };

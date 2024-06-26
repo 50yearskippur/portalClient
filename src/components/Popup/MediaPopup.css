@@ -16,9 +16,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 29vw;
+  gap: 29%;
   background-color: #ffffff;
-  margin-bottom: 3vh;
 }
 
 .media-popup-title {
@@ -67,4 +66,9 @@
   display: flex;
   gap: 4px;
   cursor: pointer;
+}
+
+.media-popup-content {
+  width: 100%;
+  height: 100%;
 }

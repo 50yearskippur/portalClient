@@ -19,10 +19,6 @@ body {
   margin: 0;
 }
 
-input {
-  border: 2px solid transparent;
-}
-
 .app {
   display: flex;
 }
