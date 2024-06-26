@@ -5,6 +5,7 @@ import blueStar from "../assets/media/Icons/blueStar.svg";
 import Search from "../components/Search/Search";
 import EduResourse from "../components/Admin/EduResourse";
 import DesignTemplates from "../components/Admin/DesignTemplates";
+import Forms from "../components/Admin/Forms";
 import rabit from "../assets/img/rabit.jpg";
 
 const getEduResources = (selectedTab) => {
@@ -39,15 +40,40 @@ const getEduResources = (selectedTab) => {
       tags: [{ title: "תג 1" }, { title: "תג 2" }],
     },
   ];
+  //delete in production
+  const designsArr = [
+    {
+      title: "הכירו את זירת סוריה",
+      type: "מצגת",
+      date: "28.05.2024",
+    },
+    {
+      title: "הכירו את זירת סוריה",
+      type: "מסמך",
+      date: "28.05.2024",
+    },
+  ];
 
-  const designsArr = []
+  const formsArr = [
+    {
+      title: "הכירו את זירת סוריה",
+      type: "מצגת",
+      date: "28.05.2024",
+    },
+    {
+      title: "הכירו את זירת סוריה",
+      type: "מסמך",
+      date: "28.05.2024",
+    },
+  ];
+
   switch (true) {
     case selectedTab === "תוצרים":
       return <EduResourse eduArr={eduArr} />;
     case selectedTab === "עיצובים":
-      return <DesignTemplates />;
+      return <DesignTemplates designsArr={designsArr} />;
     case selectedTab === "טפסים":
-      return;
+      return <Forms formsArr={formsArr} />;
     case selectedTab === "תמונות ואלבומים":
       return;
     default:

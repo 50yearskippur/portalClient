@@ -4,17 +4,17 @@ import "./GenericItem.css";
 import RowTemplate from "./RowTemplate";
 import GenericItem from "./GenericItem";
 import Star from "../Rate/Star";
-import eduTypesTitles from "../../constants/eduTypes";
+import eduTypeByText from "../../utils/eduTypeByText";
 
 const getChildren = (edu) => {
-  const eduTypeImg = eduTypesTitles.find(
-    (eduType) => eduType.text === edu.type
-  ).img;
-
   return [
     <GenericItem title={edu.title} subTitle="שם התוצר" />,
     <div className="generic-row-item-container">
-      <img src={eduTypeImg} alt="edu type" className="edu-type-img" />
+      <img
+        src={eduTypeByText(edu.type)}
+        alt="edu type"
+        className="item-type-img"
+      />
       <GenericItem title={edu.type} subTitle="סוג תוצר" />
     </div>,
     <GenericItem title={edu.subject.title} subTitle={edu.subSubject.title} />,
@@ -38,7 +38,7 @@ const EduResourse = ({ eduArr }) => {
   return (
     <div className="rows-container">
       {eduArr?.map((edu, index) => (
-        <RowTemplate key={`row ${index}`} children={getChildren(edu)} />
+        <RowTemplate key={`edu admin ${index}`} children={getChildren(edu)} />
       ))}
     </div>
   );

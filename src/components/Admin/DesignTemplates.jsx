@@ -1,33 +1,21 @@
-import "./EduResourse.css";
 import "./RowTemplate.css";
-import "./GenericItem.css";
 import RowTemplate from "./RowTemplate";
 import GenericItem from "./GenericItem";
-import arrow from "../../assets/media/Icons/curvedArrow.svg";
-import Star from "../Rate/Star";
+import eduTypeByText from "../../utils/eduTypeByText";
 
 const getChildren = (design) => {
   return [
-    <GenericItem title={design.title} subTitle="שם התוצר" />,
-    <GenericItem title={design.type} subTitle="סוג תוצר" />,
-    <GenericItem
-      title={design.subject.title}
-      subTitle={design.subSubject.title}
-    />,
-    <div className="edu-row-comment">12 תגובות</div>,
-    <div className="generic-item-container">
-      <Star style={{ width: "20px" }} clickable={true} />
-      <div className="generic-item-sub-title">מומלץ</div>
+    <div className="generic-row-item-container">
+      <img
+        src={eduTypeByText(design.type)}
+        alt="design type"
+        className="item-type-img"
+      />
+      <GenericItem title={design.type} subTitle="סוג עיצוב" />
     </div>,
+    <GenericItem title={design.title} subTitle="שם" />,
+    <GenericItem title="Power Point" subTitle="קובץ" />,
     <GenericItem title={design.date} subTitle="תאריך העלאה" />,
-    <div className="edu-row-tag-container">
-      {design?.tags?.map((tag, tagIndex) => (
-        <div key={`tag ${tagIndex}`} className="edu-row-tag">
-          {tag.title}
-        </div>
-      ))}
-      <img src={arrow} alt="arrow" />
-    </div>,
   ];
 };
 
@@ -35,7 +23,7 @@ const DesignTemplates = ({ designsArr }) => {
   return (
     <div className="rows-container">
       {designsArr?.map((design, index) => (
-        <RowTemplate key={`row ${index}`} children={getChildren(design)} />
+        <RowTemplate key={`design ${index}`} children={getChildren(design)} />
       ))}
     </div>
   );

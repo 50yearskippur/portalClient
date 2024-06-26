@@ -9,7 +9,7 @@ const RowTemplate = ({ children }) => {
           {child}
         </div>
       ))}
-      <img src={arrow} alt="arrow" className="edu-row-arrow" />
+      <img src={arrow} alt="arrow" className="generic-row-arrow" />
     </div>
   );
 };

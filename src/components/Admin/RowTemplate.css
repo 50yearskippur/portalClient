@@ -52,7 +52,7 @@
   gap: 8px;
 }
 
-.edu-row-arrow {
+.generic-row-arrow {
   margin-right: auto;
 }
 
@@ -61,4 +61,8 @@
   align-items: center;
   gap: 12px;
   width: 8.75vw;
+}
+
+.item-type-img {
+  width: 32px;
 }
