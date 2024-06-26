@@ -6,6 +6,13 @@
   border-radius: 6px;
 }
 
+.preview-on-hover {
+  background-color: black;
+  width: 100%;
+  position: absolute;
+  height: 100%;
+}
+
 .pdf-preview-info {
   width: 92%;
   height: 3.7vh;

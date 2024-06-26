@@ -6,7 +6,7 @@ import { useContext, useLayoutEffect } from "react";
 import { PopupContext } from "../../store/popup-context";
 import downloadPdf from "../../utils/downloadPdf ";
 
-const MediaPopup = ({ children }) => {
+const MediaPopup = ({ children, item = {} }) => {
   const { hidePopup } = useContext(PopupContext);
 
   const useLockBodyScroll = () => {
@@ -26,10 +26,10 @@ const MediaPopup = ({ children }) => {
           <img src={backImg} alt="back icon" />
           <div className="media-popup-exit-text">יציאה ממצב תצוגה מקדימה</div>
         </div>
-        <div className="media-popup-title">fdijs</div>
+        <div className="media-popup-title">{item.title}</div>
         <div
           className="media-popup-download-container"
-          // onClick={() => downloadPdf(item)}
+          onClick={() => downloadPdf(item)}
         >
           <img src={downloadImg} alt="download icon" />
           <div className="media-popup-download-text">הורדה</div>

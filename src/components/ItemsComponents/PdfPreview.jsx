@@ -10,12 +10,16 @@ const PdfPreview = ({ item }) => {
   return (
     <div>
       <div className="pdf-preview-container">
+        {/* <div className="preview-on-hover">hi</div> */}
         <div className="pdf-preview-subject">{item.subSubject.title}</div>
         <FileController
           item={item}
           onClick={() =>
             showPopup(
-              <MediaPopup children={<ShowFullPdf pdfDetails={item} />} />
+              <MediaPopup
+                item={item}
+                children={<ShowFullPdf pdfDetails={item} />}
+              />
             )
           }
         />
