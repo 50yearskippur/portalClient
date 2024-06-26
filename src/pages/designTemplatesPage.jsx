@@ -9,74 +9,75 @@ const DesignTemplatesPage = () => {
     {
       title: "מצגות",
       type: "תבניות עיצוב",
-      subSubject: [],
+      subSubjects: [],
     },
     {
       title: "תעודות",
       type: "תבניות עיצוב",
-      subSubject: [],
+      subSubjects: [],
     },
     {
       title: "קול קורא",
       type: "תבניות עיצוב",
-      subSubject: [],
+      subSubjects: [],
     },
     {
       title: "חיילים",
       type: "תבניות עיצוב",
-      subSubject: [],
+      subSubjects: [],
     },
     {
       title: "מחברות",
       type: "תבניות עיצוב",
-      subSubject: [],
+      subSubjects: [
+        {
+          title: "ארנב",
+          type: "חיה",
+          subSubject: {
+            title: "יונקים",
+          },
+          media: pdf,
+          mediaType: "pdf",
+        },
+        {
+          title: "ארנב",
+          type: "חיה",
+          subSubject: {
+            title: "יונקים",
+          },
+          media: pdf,
+          mediaType: "pdf",
+        },
+      ],
     },
     {
       title: "סמלים",
       type: "תבניות עיצוב",
-      subSubject: [],
+      subSubjects: [],
     },
     {
       title: "אינפוגרפיקות",
       type: "תבניות עיצוב",
-      subSubject: [],
+      subSubjects: [],
     },
     {
       title: "פונטים",
       type: "תבניות עיצוב",
-      subSubject: [],
+      subSubjects: [],
     },
     {
       title: "הזמנות",
       type: "תבניות עיצוב",
-      subSubject: [],
+      subSubjects: [],
     },
     {
       title: "באנרים",
       type: "תבניות עיצוב",
-      subSubject: [],
+      subSubjects: [],
     },
   ];
 
   const subSubjects = [
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "יונקים",
-      },
-      media: pdf,
-      mediaType: "pdf",
-    },
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "יונקים",
-      },
-      media: pdf,
-      mediaType: "pdf",
-    },
     {
       title: "ארנב",
       type: "חיה",

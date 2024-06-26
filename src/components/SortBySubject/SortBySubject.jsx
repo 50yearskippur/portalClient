@@ -3,21 +3,16 @@ import "./SortBySubject.css";
 import SubSubjects from "../SubSubjects/SubSubjects";
 import { useState, useEffect } from "react";
 
-const SortBySubject = ({
-  subjects,
-  subSubjectsArray,
-  ItemComponent,
-  numberOfItemsInLine,
-}) => {
+const SortBySubject = ({ subjects, ItemComponent, numberOfItemsInLine }) => {
   const [selectedSubject, setSelectedSubject] = useState(subjects[0]);
-  const [subSubjects, setSubSubjects] = useState(subSubjectsArray);
+  const [subSubjects, setSubSubjects] = useState(subjects[0].subSubjects);
 
   const getSubSubjects = (subject) => {
-    setSubSubjects(subSubjectsArray);
+    setSubSubjects(subjects.subSubjects);
   };
 
   useEffect(() => {
-    getSubSubjects(subSubjectsArray[0]);
+    getSubSubjects(subSubjects);
   }, [selectedSubject]);
 
   return (
@@ -33,9 +28,8 @@ const SortBySubject = ({
       <div className="sub-subjects">
         <SubSubjects
           numberOfItemsInLine={numberOfItemsInLine}
-          getSubSubjects={getSubSubjects}
           subject={selectedSubject}
-          subSubjects={subSubjects}
+          subSubjects={selectedSubject.subSubjects}
           ItemComponent={ItemComponent}
         />
       </div>

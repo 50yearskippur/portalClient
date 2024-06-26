@@ -10,7 +10,35 @@ const FormPage = () => {
     {
       title: "טפסים נפוצים",
       type: "טפסים",
-      subSubject: [],
+      subSubject: [
+        {
+          title: "ארנב",
+          type: "חיה",
+          subSubject: {
+            title: 'יוהל"ם',
+          },
+          media: pdf,
+          mediaType: "pdf",
+        },
+        {
+          title: "ארנב",
+          type: "חיה",
+          subSubject: {
+            title: "חינוך",
+          },
+          media: pdf,
+          mediaType: "pdf",
+        },
+        {
+          title: "ארנב",
+          type: "חיה",
+          subSubject: {
+            title: "שלישות",
+          },
+          media: pdf,
+          mediaType: "pdf",
+        },
+      ],
     },
     {
       title: "שלישות",
@@ -35,193 +63,170 @@ const FormPage = () => {
     {
       title: "נפגעים",
       type: "טפסים",
-      subSubject: [],
+      subSubject: [
+        {
+          title: "ארנב",
+          type: "חיה",
+          subSubject: {
+            title: 'נפגעים',
+          },
+          media: pdf,
+          mediaType: "pdf",
+        },
+        {
+          title: "ארנב",
+          type: "חיה",
+          subSubject: {
+            title: "נפגעים",
+          },
+          media: pdf,
+          mediaType: "pdf",
+        },
+      ],
     },
     {
       title: 'רס"ר',
       type: "טפסים",
-      subSubject: [],
+      subSubject: [
+        {
+          title: "ארנב",
+          type: "חיה",
+          subSubject: {
+            title: 'רס"ר',
+          },
+          media: pdf,
+          mediaType: "pdf",
+        },
+      ],
     },
     {
       title: "רכב",
       type: "טפסים",
-      subSubject: [],
+      subSubject: [
+        {
+          title: "ארנב",
+          type: "חיה",
+          subSubject: {
+            title: "רכב",
+          },
+          media: pdf,
+          mediaType: "pdf",
+        },
+        {
+          title: "ארנב",
+          type: "חיה",
+          subSubject: {
+            title: "רכב",
+          },
+          media: pdf,
+          mediaType: "pdf",
+        },
+        {
+          title: "ארנב",
+          type: "חיה",
+          subSubject: {
+            title: "רכב",
+          },
+          media: pdf,
+          mediaType: "pdf",
+        },
+        {
+          title: "ארנב",
+          type: "חיה",
+          subSubject: {
+            title: "רכב",
+          },
+          media: pdf,
+          mediaType: "pdf",
+        },
+      ],
     },
     {
       title: "שלמיה",
       type: "טפסים",
-      subSubject: [],
+      subSubject: [
+        {
+          title: "ארנב",
+          type: "חיה",
+          subSubject: {
+            title: 'שלמיה',
+          },
+          media: pdf,
+          mediaType: "pdf",
+        },
+        {
+          title: "ארנב",
+          type: "חיה",
+          subSubject: {
+            title: "שלמיה",
+          },
+          media: pdf,
+          mediaType: "pdf",
+        },
+      ],
     },
     {
       title: "רבנות",
       type: "טפסים",
-      subSubject: [],
+      subSubject: [
+        {
+          title: "ארנב",
+          type: "חיה",
+          subSubject: {
+            title: "רבנות",
+          },
+          media: pdf,
+          mediaType: "pdf",
+        },
+        {
+          title: "ארנב",
+          type: "חיה",
+          subSubject: {
+            title: "רבנות",
+          },
+          media: pdf,
+          mediaType: "pdf",
+        },
+      ],
     },
     {
       title: 'אג"מ',
       type: "טפסים",
-      subSubject: [],
+      subSubject: [
+        {
+          title: "ארנב",
+          type: "חיה",
+          subSubject: {
+            title: 'אג"מ',
+          },
+          media: pdf,
+          mediaType: "pdf",
+        },
+        {
+          title: "ארנב",
+          type: "חיה",
+          subSubject: {
+            title: 'אג"מ',
+          },
+          media: pdf,
+          mediaType: "pdf",
+        },
+      ],
     },
     {
       title: "בטיחות",
       type: "טפסים",
-      subSubject: [],
-    },
-  ];
-
-  const subSubjects = [
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: 'יוהל"ם',
-      },
-      media: pdf,
-      mediaType: "pdf",
-    },
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "חינוך",
-      },
-      media: pdf,
-      mediaType: "pdf",
-    },
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "שלישות",
-      },
-      media: pdf,
-      mediaType: "pdf",
-    },
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "שלישות",
-      },
-      media: pdf,
-      mediaType: "pdf",
-    },
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: 'ת"ש',
-      },
-      media: pdf,
-      mediaType: "pdf",
-    },
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "שלישות",
-      },
-      media: pdf,
-      mediaType: "pdf",
-    },
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "חינוך",
-      },
-      media: pdf,
-      mediaType: "pdf",
-    },
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "חינוך",
-      },
-      media: pdf,
-      mediaType: "pdf",
-    },
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "חינוך",
-      },
-      media: pdf,
-      mediaType: "pdf",
-    },
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "חינוך",
-      },
-      media: pdf,
-      mediaType: "pdf",
-    },
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: 'ת"ש',
-      },
-      media: pdf,
-      mediaType: "pdf",
-    },
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "חינוך",
-      },
-      media: pdf,
-      mediaType: "pdf",
-    },
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "שלמיה",
-      },
-      media: pdf,
-      mediaType: "pdf",
-    },
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "חינוך",
-      },
-      media: pdf,
-      mediaType: "pdf",
-    },
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "חינוך",
-      },
-      media: pdf,
-      mediaType: "pdf",
-    },
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "חינוך",
-      },
-      media: pdf,
-      mediaType: "pdf",
-    },
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "חינוך",
-      },
-      media: pdf,
-      mediaType: "pdf",
+      subSubject: [
+        {
+          title: "בטיחותתתת",
+          type: "חיה",
+          subSubject: {
+            title: "בטיחות",
+          },
+          media: pdf,
+          mediaType: "pdf",
+        },
+      ],
     },
   ];
 
@@ -236,7 +241,6 @@ const FormPage = () => {
       <SortBySubject
         numberOfItemsInLine={3}
         subjects={subjects}
-        subSubjectsArray={subSubjects}
         ItemComponent={PdfPreview}
       />
     </div>
