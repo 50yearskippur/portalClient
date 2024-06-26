@@ -2,12 +2,22 @@ import "./MediaPopup.css";
 import FileController from "../Media/FileController";
 import backImg from "../../assets/media/Icons/backIcon.svg";
 import downloadImg from "../../assets/media/Icons/downloadIcon.svg";
-import { useContext } from "react";
+import { useContext, useLayoutEffect } from "react";
 import { PopupContext } from "../../store/popup-context";
 import downloadPdf from "../../utils/downloadPdf ";
 
-const MediaPopup = ({ item }) => {
+const MediaPopup = ({ children, item = {} }) => {
   const { hidePopup } = useContext(PopupContext);
+
+  const useLockBodyScroll = () => {
+    useLayoutEffect(() => {
+      const originalStyle = window.getComputedStyle(document.body).overflow;
+      document.body.style.overflow = "hidden";
+      return () => (document.body.style.overflow = originalStyle);
+    }, []);
+  };
+
+  useLockBodyScroll();
 
   return (
     <div className="media-popup-container">
@@ -25,10 +35,11 @@ const MediaPopup = ({ item }) => {
           <div className="media-popup-download-text">הורדה</div>
         </div>
       </div>
-      <FileController
+      <div className="media-popup-content">{children}</div>
+      {/* <FileController
         item={item}
         style={{ width: "57.9vw", height: "66.8vh" }}
-      />
+      /> */}
     </div>
   );
 };

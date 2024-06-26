@@ -1,0 +1,16 @@
+.sort-by-subject-container {
+  /* background-color: red; */
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.list-container {
+  width: 14.5vw;
+  /* background-color: green; */
+}
+
+.sub-subjects {
+  width: 65.3vw;
+  /* background-color: blue; */
+}

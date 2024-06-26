@@ -3,10 +3,11 @@ import { useState } from "react";
 import Search from "../components/Search/Search";
 import RecommendedSection from "../components/RecommendedSection/RecommendedSection";
 import Favorites from "../components/Favorites/Favorites.jsx";
-import ForYou from "../components/ForYou/ForYou.jsx";
 import TopNav from "../components/TopNav/TopNav.jsx";
 //delete in production
 import rabit from "../assets/img/rabit.jpg";
+import SortBySubject from "../components/SortBySubject/SortBySubject.jsx";
+import ForYouItem from "../components/ItemsComponents/ForYouItem/ForYouItem.jsx";
 
 //delete in production
 const recommendedEduResource = [
@@ -108,6 +109,39 @@ const subjects = [
 ];
 const tabsArray = ["במיוחד בשבילך", "כל התוצרים", "תוצרים שאהבתי"];
 
+const subSubjects = [
+  {
+    title: "זירת סוריה",
+    description: "בואו ללמוד איתנו על זירת סוריה!",
+    eduResourse: [{}, {}, {}, {}, {}],
+  },
+  {
+    title: "זירת סוריה",
+    description: "בואו ללמוד איתנו על זירת סוריה!",
+    eduResourse: [{}, {}, {}, {}, {}],
+  },
+  {
+    title: "זירת סוריה",
+    description: "בואו ללמוד איתנו על זירת סוריה!",
+    eduResourse: [{}],
+  },
+  {
+    title: "זירת סוריה",
+    description: "בואו ללמוד איתנו על זירת סוריה!",
+    eduResourse: [{}, {}, {}, {}, {}, {}, {}],
+  },
+  {
+    title: "זירת סוריה",
+    description: "בואו ללמוד איתנו על זירת סוריה!",
+    eduResourse: [{}, {}, {}, {}, {}, {}, {}, {}, {}],
+  },
+  {
+    title: "זירת סוריה",
+    description: "בואו ללמוד איתנו על זירת סוריה!",
+    eduResourse: [{}, {}],
+  },
+];
+
 //get recommended item per unit
 // const getRecommendedPerUnit = () => {
 //   return data;
@@ -125,7 +159,14 @@ const getEduResources = (selectedTab) => {
     case selectedTab === "כל התוצרים":
       return <p>כל התוצרים</p>;
     default:
-      return <ForYou subjects={subjects} />;
+      return (
+        <SortBySubject
+          numberOfItemsInLine={1}
+          subjects={subjects}
+          subSubjectsArray={subSubjects}
+          ItemComponent={ForYouItem}
+        />
+      );
   }
 };
 
@@ -141,7 +182,7 @@ const HomePage = () => {
           margin: "1% auto",
         }}
       />
-      <p className="header" style={{ marginTop: "-4vh" }}>
+      <p className="header" style={{ marginTop: "-3vh" }}>
         מומלצים
       </p>
       <RecommendedSection data={recommendedEduResource} />

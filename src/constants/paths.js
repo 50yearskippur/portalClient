@@ -1,5 +1,5 @@
 import Home from "../pages/HomePage";
-import Form from "../pages/FormPage";
+import Form from "../pages/FormsPage";
 import Media from "../pages/MediaPage";
 import DesignTemplates from "../pages/DesignTemplatesPage";
 import MediaAlbum from "../pages/MediaAlbumPage";
