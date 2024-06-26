@@ -1,5 +1,5 @@
-import "./RowTemplate.css";
-import RowTemplate from "./RowTemplate";
+import "./TemplateRow.css";
+import TemplateRow from "./TemplateRow";
 import GenericItem from "./GenericItem";
 import eduTypeByText from "../../utils/eduTypeByText";
 
@@ -23,7 +23,7 @@ const DesignTemplates = ({ designsArr }) => {
   return (
     <div className="rows-container">
       {designsArr?.map((design, index) => (
-        <RowTemplate key={`design ${index}`} children={getChildren(design)} />
+        <TemplateRow key={`design ${index}`} children={getChildren(design)} />
       ))}
     </div>
   );

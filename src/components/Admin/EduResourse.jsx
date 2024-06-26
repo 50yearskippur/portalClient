@@ -1,7 +1,7 @@
 import "./EduResourse.css";
-import "./RowTemplate.css";
+import "./TemplateRow.css";
 import "./GenericItem.css";
-import RowTemplate from "./RowTemplate";
+import TemplateRow from "./TemplateRow";
 import GenericItem from "./GenericItem";
 import Star from "../Rate/Star";
 import eduTypeByText from "../../utils/eduTypeByText";
@@ -38,7 +38,7 @@ const EduResourse = ({ eduArr }) => {
   return (
     <div className="rows-container">
       {eduArr?.map((edu, index) => (
-        <RowTemplate key={`edu admin ${index}`} children={getChildren(edu)} />
+        <TemplateRow key={`edu admin ${index}`} children={getChildren(edu)} />
       ))}
     </div>
   );

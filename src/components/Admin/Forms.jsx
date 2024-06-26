@@ -1,6 +1,6 @@
-import "./RowTemplate.css";
+import "./TemplateRow.css";
 import "./GenericItem.css";
-import RowTemplate from "./RowTemplate";
+import TemplateRow from "./TemplateRow";
 import GenericItem from "./GenericItem";
 
 const getChildren = (form) => {
@@ -15,7 +15,7 @@ const Forms = ({ formsArr }) => {
   return (
     <div className="rows-container">
       {formsArr?.map((form, index) => (
-        <RowTemplate key={`form ${index}`} children={getChildren(form)} />
+        <TemplateRow key={`form ${index}`} children={getChildren(form)} />
       ))}
     </div>
   );

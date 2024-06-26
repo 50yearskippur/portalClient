@@ -1,4 +1,4 @@
-import "./RowTemplate.css";
+import "./TemplateRow.css";
 import arrow from "../../assets/media/Icons/curvedArrow.svg";
 
 const RowTemplate = ({ children }) => {
