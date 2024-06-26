@@ -1,0 +1,20 @@
+.admin-top-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 42.8px 0 12px 0;
+}
+
+.admin-top-recommended {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #4f35be;
+  font-size: 14px;
+  font-weight: 400;
+  width: 166px;
+}
+
+.admin-top-left {
+  display: flex;
+  gap: 28px;
+}

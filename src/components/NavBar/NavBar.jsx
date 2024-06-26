@@ -12,6 +12,8 @@ import formsIcon from "../../assets/media/Navbar/forms.svg";
 import formIconSelected from "../../assets/media/Navbar/formsSelected.svg";
 import mediaIcon from "../../assets/media/Navbar/media.svg";
 import mediaIconSelected from "../../assets/media/Navbar/mediaSelected.svg";
+import adminIcon from "../../assets/media/Navbar/admin.svg";
+import adminIconSelected from "../../assets/media/Navbar/adminSelected.svg";
 import bellIcon from "../../assets/media/Navbar/bell.svg";
 
 const NavBar = () => {
@@ -40,6 +42,12 @@ const NavBar = () => {
       selected: mediaIconSelected,
       navigateTo: "/media",
       text: "מדיה",
+    },
+    {
+      path: adminIcon,
+      selected: adminIconSelected,
+      navigateTo: "/admin",
+      text: "אדמין",
     },
   ];
   const [isOpen, setIsOpen] = useState(false);

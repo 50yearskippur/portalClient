@@ -46,6 +46,7 @@ body {
   position: relative;
   text-align: right;
   color: #444a5a;
+  margin-top: 84px;
 }
 
 .header::after {

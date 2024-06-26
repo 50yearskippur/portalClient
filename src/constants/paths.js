@@ -5,6 +5,7 @@ import DesignTemplates from "../pages/DesignTemplatesPage";
 import MediaAlbum from "../pages/MediaAlbumPage";
 import SubSubject from "../pages/SubSubjectPage";
 import PersonalArea from "../pages/PersonalAreaPage";
+import Admin from "../pages/AdminPage";
 
 const paths = [
   {
@@ -25,6 +26,7 @@ const paths = [
   { path: "/media", text: "תמונות ומדיה", component: Media },
   { path: "/mediaAlbum", text: "אלבומי תמונות", component: MediaAlbum },
   { path: "/subSubject", text: "תת נושא", component: SubSubject },
+  { path: "/admin", text: "אדמין", component: Admin },
   { path: "/personalArea", text: "איזור אישי", component: PersonalArea },
 ];
 

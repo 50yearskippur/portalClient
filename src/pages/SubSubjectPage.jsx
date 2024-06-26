@@ -32,6 +32,7 @@ const SubSubjectPage = () => {
         subSubject: {
           title: "זירת סוריה",
         },
+        subject: { title: "מבואות מודיעין" },
         media: rabit,
         mediaType: "image",
         level: "רמה בסיסית",
@@ -44,6 +45,7 @@ const SubSubjectPage = () => {
         subSubject: {
           title: "זירת סוריה",
         },
+        subject: { title: "מבואות מודיעין" },
         media: rabit,
         mediaType: "image",
         level: "רמה בסיסית",
@@ -56,6 +58,7 @@ const SubSubjectPage = () => {
         subSubject: {
           title: "זירת סוריה",
         },
+        subject: { title: "מבואות מודיעין" },
         media: rabit,
         mediaType: "image",
         level: "רמה בסיסית",
@@ -70,6 +73,7 @@ const SubSubjectPage = () => {
         subSubject: {
           title: "זירת סוריה",
         },
+        subject: { title: "מבואות מודיעין" },
         media: rabit,
         mediaType: "image",
         level: "מותאם לכל הרמות",
@@ -82,6 +86,7 @@ const SubSubjectPage = () => {
         subSubject: {
           title: "זירת סוריה",
         },
+        subject: { title: "מבואות מודיעין" },
         media: rabit,
         mediaType: "image",
         level: "מותאם לכל הרמות",
@@ -94,6 +99,7 @@ const SubSubjectPage = () => {
         subSubject: {
           title: "זירת סוריה",
         },
+        subject: { title: "מבואות מודיעין" },
         media: rabit,
         mediaType: "image",
         level: "מותאם לכל הרמות",
