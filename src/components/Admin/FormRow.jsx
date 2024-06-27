@@ -9,7 +9,11 @@ const FormRow = (item) => {
   const [isPressed, setIsPressed] = useState();
 
   return [
-    <GenericItem title={item.title} subTitle="שם הטופס" />,
+    <GenericItem
+      title={item.title}
+      subTitle="שם הטופס"
+      style={{ width: "9.375vw" }}
+    />,
     <div className="edu-row-tag">{item?.tag?.title}</div>,
     <div className="generic-item-container">
       <img
@@ -19,8 +23,12 @@ const FormRow = (item) => {
       />
       <div className="generic-item-sub-title">טפסים נפוצים</div>
     </div>,
-    <GenericItem title="PDF" subTitle="סוג קובץ" />,
-    <GenericItem title={item.date} subTitle="תאריך העלאה" />,
+    <GenericItem title="PDF" subTitle="סוג קובץ" style={{ width: "8.3vw" }} />,
+    <GenericItem
+      title={item.date}
+      subTitle="תאריך העלאה"
+      style={{ width: "5.2vw" }}
+    />,
   ];
 };
 

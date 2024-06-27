@@ -10,11 +10,27 @@ const DesignTemplatesRow = (item) => {
         alt="design type"
         className="item-type-img"
       />
-      <GenericItem title={item.type} subTitle="סוג עיצוב" />
+      <GenericItem
+        title={item.type}
+        subTitle="סוג עיצוב"
+        style={{ width: "6.25vw" }}
+      />
     </div>,
-    <GenericItem title={item.title} subTitle="שם" />,
-    <GenericItem title="Power Point" subTitle="קובץ" />,
-    <GenericItem title={item.date} subTitle="תאריך העלאה" />,
+    <GenericItem
+      title={item.title}
+      subTitle="שם"
+      style={{ width: "6.25vw" }}
+    />,
+    <GenericItem
+      title="Power Point"
+      subTitle="קובץ"
+      style={{ width: "9.375vw" }}
+    />,
+    <GenericItem
+      title={item.date}
+      subTitle="תאריך העלאה"
+      style={{ width: "5.2vw" }}
+    />,
   ];
 };
 
