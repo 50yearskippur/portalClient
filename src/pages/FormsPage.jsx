@@ -10,7 +10,7 @@ const FormPage = () => {
     {
       title: "טפסים נפוצים",
       type: "טפסים",
-      subSubject: [
+      subSubjects: [
         {
           title: "ארנב",
           type: "חיה",
@@ -43,32 +43,32 @@ const FormPage = () => {
     {
       title: "שלישות",
       type: "טפסים",
-      subSubject: [],
+      subSubjects: [],
     },
     {
       title: 'ת"ש',
       type: "טפסים",
-      subSubject: [],
+      subSubjects: [],
     },
     {
       title: 'יוהל"ם',
       type: "טפסים",
-      subSubject: [],
+      subSubjects: [],
     },
     {
       title: "חינוך",
       type: "טפסים",
-      subSubject: [],
+      subSubjects: [],
     },
     {
       title: "נפגעים",
       type: "טפסים",
-      subSubject: [
+      subSubjects: [
         {
           title: "ארנב",
           type: "חיה",
           subSubject: {
-            title: 'נפגעים',
+            title: "נפגעים",
           },
           media: pdf,
           mediaType: "pdf",
@@ -87,7 +87,7 @@ const FormPage = () => {
     {
       title: 'רס"ר',
       type: "טפסים",
-      subSubject: [
+      subSubjects: [
         {
           title: "ארנב",
           type: "חיה",
@@ -102,7 +102,7 @@ const FormPage = () => {
     {
       title: "רכב",
       type: "טפסים",
-      subSubject: [
+      subSubjects: [
         {
           title: "ארנב",
           type: "חיה",
@@ -144,12 +144,12 @@ const FormPage = () => {
     {
       title: "שלמיה",
       type: "טפסים",
-      subSubject: [
+      subSubjects: [
         {
           title: "ארנב",
           type: "חיה",
           subSubject: {
-            title: 'שלמיה',
+            title: "שלמיה",
           },
           media: pdf,
           mediaType: "pdf",
@@ -168,7 +168,7 @@ const FormPage = () => {
     {
       title: "רבנות",
       type: "טפסים",
-      subSubject: [
+      subSubjects: [
         {
           title: "ארנב",
           type: "חיה",
@@ -192,7 +192,7 @@ const FormPage = () => {
     {
       title: 'אג"מ',
       type: "טפסים",
-      subSubject: [
+      subSubjects: [
         {
           title: "ארנב",
           type: "חיה",
@@ -216,7 +216,7 @@ const FormPage = () => {
     {
       title: "בטיחות",
       type: "טפסים",
-      subSubject: [
+      subSubjects: [
         {
           title: "בטיחותתתת",
           type: "חיה",

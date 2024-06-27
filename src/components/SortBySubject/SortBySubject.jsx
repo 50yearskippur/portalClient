@@ -8,11 +8,13 @@ const SortBySubject = ({ subjects, ItemComponent, numberOfItemsInLine }) => {
   const [subSubjects, setSubSubjects] = useState(subjects[0].subSubjects);
 
   const getSubSubjects = (subject) => {
-    setSubSubjects(subjects.subSubjects);
+    console.log(subject);
+    setSubSubjects(subject.subSubjects);
+    console.log(subject.subSubjects);
   };
 
   useEffect(() => {
-    getSubSubjects(subSubjects);
+    getSubSubjects(selectedSubject);
   }, [selectedSubject]);
 
   return (
@@ -29,7 +31,7 @@ const SortBySubject = ({ subjects, ItemComponent, numberOfItemsInLine }) => {
         <SubSubjects
           numberOfItemsInLine={numberOfItemsInLine}
           subject={selectedSubject}
-          subSubjects={selectedSubject.subSubjects}
+          subSubjects={subSubjects}
           ItemComponent={ItemComponent}
         />
       </div>
