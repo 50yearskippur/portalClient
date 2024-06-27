@@ -27,12 +27,6 @@
   display: none;
 }
 
-.rows-container {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
 .edu-row-tag {
   width: fit-content;
   display: flex;

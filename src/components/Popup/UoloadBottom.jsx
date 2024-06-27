@@ -3,7 +3,6 @@ import { PopupContext } from "../../store/popup-context";
 
 const UploadBottom = ({ NextPopup, PreviousPopup }) => {
   const { showPopup } = useContext(PopupContext);
-  console.log(NextPopup);
 
   return (
     <div
