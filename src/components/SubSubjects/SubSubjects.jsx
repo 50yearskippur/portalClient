@@ -7,7 +7,6 @@ const SubSubjects = ({
   ItemComponent,
   numberOfItemsInLine,
 }) => {
-  console.log(subSubjects);
   return (
     <div className="sub-subjects-wrapper">
       <div className="sub-subjects-title">{subject.title}</div>
