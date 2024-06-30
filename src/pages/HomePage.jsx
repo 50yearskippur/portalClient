@@ -84,63 +84,63 @@ const subjects = [
   {
     title: "מבואות מודיעין",
     type: "אמצעי למידה",
-    subSubject: [],
+    subSubjects: [
+      {
+        title: "זירת סוריה",
+        description: "בואו ללמוד איתנו על זירת סוריה!",
+        eduResourse: [{}, {}, {}, {}, {}],
+      },
+      {
+        title: "זירת סוריה",
+        description: "בואו ללמוד איתנו על זירת סוריה!",
+        eduResourse: [{}, {}, {}, {}, {}],
+      },
+    ],
   },
   {
     title: "טכנולוגיה וסייבר",
     type: "אמצעי למידה",
-    subSubject: [],
+    subSubjects: [
+      {
+        title: "זירת סוריה",
+        description: "בואו ללמוד איתנו על זירת סוריה!",
+        eduResourse: [{}, {}],
+      },
+    ],
   },
   {
     title: "מחקר ומיצוי מידע",
     type: "אמצעי למידה",
-    subSubject: [],
+    subSubjects: [],
   },
   {
     title: "שפה",
     type: "אמצעי למידה",
-    subSubject: [],
+    subSubjects: [
+      {
+        title: "זירת סוריה",
+        description: "בואו ללמוד איתנו על זירת סוריה!",
+        eduResourse: [{}],
+      },
+      {
+        title: "זירת סוריה",
+        description: "בואו ללמוד איתנו על זירת סוריה!",
+        eduResourse: [{}, {}, {}, {}, {}, {}, {}],
+      },
+      {
+        title: "זירת סוריה",
+        description: "בואו ללמוד איתנו על זירת סוריה!",
+        eduResourse: [{}, {}, {}, {}, {}, {}, {}, {}, {}],
+      },
+    ],
   },
   {
     title: "המלצות",
     type: "אמצעי למידה",
-    subSubject: [],
+    subSubjects: [],
   },
 ];
 const tabsArray = ["במיוחד בשבילך", "כל התוצרים", "תוצרים שאהבתי"];
-
-const subSubjects = [
-  {
-    title: "זירת סוריה",
-    description: "בואו ללמוד איתנו על זירת סוריה!",
-    eduResourse: [{}, {}, {}, {}, {}],
-  },
-  {
-    title: "זירת סוריה",
-    description: "בואו ללמוד איתנו על זירת סוריה!",
-    eduResourse: [{}, {}, {}, {}, {}],
-  },
-  {
-    title: "זירת סוריה",
-    description: "בואו ללמוד איתנו על זירת סוריה!",
-    eduResourse: [{}],
-  },
-  {
-    title: "זירת סוריה",
-    description: "בואו ללמוד איתנו על זירת סוריה!",
-    eduResourse: [{}, {}, {}, {}, {}, {}, {}],
-  },
-  {
-    title: "זירת סוריה",
-    description: "בואו ללמוד איתנו על זירת סוריה!",
-    eduResourse: [{}, {}, {}, {}, {}, {}, {}, {}, {}],
-  },
-  {
-    title: "זירת סוריה",
-    description: "בואו ללמוד איתנו על זירת סוריה!",
-    eduResourse: [{}, {}],
-  },
-];
 
 //get recommended item per unit
 // const getRecommendedPerUnit = () => {
@@ -163,7 +163,6 @@ const getEduResources = (selectedTab) => {
         <SortBySubject
           numberOfItemsInLine={1}
           subjects={subjects}
-          subSubjectsArray={subSubjects}
           ItemComponent={ForYouItem}
         />
       );
