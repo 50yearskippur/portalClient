@@ -1,23 +1,22 @@
-import React, {useState, useEffect, useRef} from "react";
-import {Document, Page} from "react-pdf";
+import React, { useState, useEffect, useRef } from "react";
+import { Document, Page } from "react-pdf";
 import "./ShowFullPdf.css";
-import DownloadBox from "../Download/DownloadBox";
 
-const ShowFullPdf = ({pdfDetails, setShowFullPdf}) => {
+const ShowFullPdf = ({ pdfDetails }) => {
   const [numPages, setNumPages] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const documentRef = useRef();
 
-  function onDocumentLoadSuccess({numPages}) {
+  const onDocumentLoadSuccess = ({ numPages }) => {
     setNumPages(numPages);
-  }
+  };
 
   useEffect(() => {
     const currentDocument = documentRef.current;
 
     const handleScroll = () => {
       if (numPages && currentDocument) {
-        const {scrollTop, scrollHeight, clientHeight} = currentDocument;
+        const { scrollTop, scrollHeight, clientHeight } = currentDocument;
         const scrolled = scrollTop / (scrollHeight - clientHeight);
         setCurrentPage(Math.max(1, Math.ceil(scrolled * numPages)));
       }
@@ -36,14 +35,10 @@ const ShowFullPdf = ({pdfDetails, setShowFullPdf}) => {
 
   return (
     <>
-      <div className="pdf-information">
-        <p className="pdf-title">{pdfDetails.title}</p>
-        <p className="pdf-page-number">
-          דף {currentPage} מתוך {numPages}
-        </p>
-      </div>
-      <div style={{display: "flex", justifyContent: "flex-end"}}>
-        <DownloadBox item={pdfDetails} />
+      <p className="pdf-page-number">
+        דף {currentPage} מתוך {numPages}
+      </p>
+      <div style={{ display: "flex", justifyContent: "flex-end" }}>
         <div className="pdf-document" ref={documentRef}>
           <Document
             file={pdfDetails.media}
@@ -61,11 +56,6 @@ const ShowFullPdf = ({pdfDetails, setShowFullPdf}) => {
           </Document>
         </div>
       </div>
-
-      <div
-        className="background-shadow"
-        onClick={() => setShowFullPdf(false)}
-      />
     </>
   );
 };

@@ -1,8 +1,20 @@
 .pdf-container {
-  height: 14.2vh;
+  height: 20.1vh;
   position: relative;
-  border-top: 27px solid #d9d9d9;
-  border-left: 23px solid #d9d9d9;
-  border-right: 23px solid #d9d9d9;
+  border-top: 24px solid rgba(125, 129, 178, 0.2);
+  border-left: 73px solid rgba(125, 129, 178, 0.2);
+  border-right: 73px solid rgba(125, 129, 178, 0.2);
   overflow: hidden;
+  border-radius: 6px 6px 0 0;
+}
+
+.pdf-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: "100%";
+  text-align: "center";
+  color: white;
+  background-color: #f9f9f9;
 }
