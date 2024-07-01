@@ -1,5 +1,67 @@
-.admin-top-container {
+.admin-container {
+  display: flex;
+  gap: 24px;
+}
+
+.admin-header-container {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 42.8px;
+}
+
+.admin-top-approved {
   display: flex;
   justify-content: space-between;
-  margin: 42.8px 0 12px 0;
+}
+
+.admin-approved-edu-side {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  gap: 12px;
+}
+
+.admin-other-user-edu-side {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  gap: 24px;
+}
+
+.admin-other-header {
+  color: var(--body-text, #444a5a);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.admin-upload-btn {
+  display: flex;
+  align-items: center;
+  padding: 12px 24px;
+  background-color: #3259ff;
+  font-size: 16px;
+  color: #fff;
+}
+
+.admin-upload-img {
+  width: 10px;
+}
+
+.admin-top-other {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.admin-link {
+  text-align: center;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  text-decoration-line: underline;
+  color: #4f35be;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparen;
 }

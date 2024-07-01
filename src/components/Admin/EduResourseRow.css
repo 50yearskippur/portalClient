@@ -13,6 +13,7 @@
 }
 
 .edu-row-comment {
+  width: 3vw;
   padding: 4px 16px;
   border-radius: 20px;
   background: rgba(235, 235, 248, 0.5);

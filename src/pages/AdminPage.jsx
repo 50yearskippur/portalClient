@@ -1,11 +1,16 @@
 import "./AdminPage.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { PopupContext } from "../store/popup-context";
+import UploadEduType from "../components/Popup/UploadEduType";
 import Tabs from "../components/Tabs/Tabs";
 import Search from "../components/Search/Search";
 import TemplateTable from "../components/Admin/TemplateTable";
+import Requests from "../components/Admin/Requests";
+//delete in production
 import rabit from "../assets/img/rabit.jpg";
 
 const HomePage = () => {
+  const { showPopup } = useContext(PopupContext);
   const tabsArray = ["תוצרים", "עיצובים", "טפסים", "תמונות ואלבומים"];
   const [selectedTab, setSelectedTab] = useState(tabsArray[0]);
   const [data, setData] = useState([]);
@@ -104,16 +109,42 @@ const HomePage = () => {
 
   return (
     <div className="page-container">
-      <div className="header">העלאות</div>
-      <div className="admin-top-container">
-        <Tabs
-          tabsArray={tabsArray}
-          setSelectedTab={setSelectedTab}
-          selectedTab={selectedTab}
-        />
-        <Search style={{ height: "42px", width: "16.7vw" }} />
+      <div className="admin-header-container">
+        <div className="header">העלאות</div>
+        <div
+          className="admin-upload-btn"
+          onClick={() => showPopup(<UploadEduType />)}
+        >
+          העלאה
+        </div>
       </div>
-      <TemplateTable dataArr={data} selectedTab={selectedTab} />;
+      <div className="admin-container">
+        <div className="admin-approved-edu-side">
+          <div className="admin-top-approved">
+            <Tabs
+              tabsArray={tabsArray}
+              setSelectedTab={setSelectedTab}
+              selectedTab={selectedTab}
+            />
+            <Search style={{ height: "42px", width: "16.7vw" }} />
+          </div>
+          <TemplateTable dataArr={data} selectedTab={selectedTab} />;
+        </div>
+        <div className="admin-other-user-edu-side">
+          <div className="admin-top-other">
+            <div className="admin-other-header">תוצרים של משתמשים</div>
+            <div className="admin-link">היסטוריית העלאות</div>
+          </div>
+          <Requests
+            request={{
+              title: "סוריה מאז ועד היום",
+              date: "28.5.2024",
+              level: "מותאם לכל הרמות",
+              creator: "יובל כהן",
+            }}
+          />
+        </div>
+      </div>
     </div>
   );
 };
