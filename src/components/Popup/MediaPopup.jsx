@@ -1,5 +1,4 @@
 import "./MediaPopup.css";
-import FileController from "../Media/FileController";
 import backImg from "../../assets/media/Icons/backIcon.svg";
 import downloadImg from "../../assets/media/Icons/downloadIcon.svg";
 import { useContext, useLayoutEffect } from "react";
@@ -36,10 +35,6 @@ const MediaPopup = ({ children, item = {} }) => {
         </div>
       </div>
       <div className="media-popup-content">{children}</div>
-      {/* <FileController
-        item={item}
-        style={{ width: "57.9vw", height: "66.8vh" }}
-      /> */}
     </div>
   );
 };

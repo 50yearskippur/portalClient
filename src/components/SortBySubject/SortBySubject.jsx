@@ -17,8 +17,8 @@ const SortBySubject = ({
   };
 
   useEffect(() => {
-    getSubSubjects(subSubjectsArray[0]);
-  }, [selectedSubject]);
+    setSubSubjects(subSubjectsArray);
+  }, [selectedSubject, subSubjectsArray]);
 
   return (
     <div className="sort-by-subject-container">
