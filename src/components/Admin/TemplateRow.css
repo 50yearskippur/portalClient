@@ -28,7 +28,6 @@
 }
 
 .edu-row-tag {
-  width: fit-content;
   display: flex;
   align-items: center;
   height: 30px;
@@ -38,12 +37,14 @@
   background: rgba(255, 255, 255, 0.8);
   color: var(--dark-gray, #6f6e71);
   font-size: 12px;
+  white-space: nowrap;
   font-weight: 400;
 }
 
 .edu-row-tag-container {
   display: flex;
   gap: 8px;
+  width: 11.302vw;
 }
 
 .generic-row-arrow {
@@ -54,7 +55,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  width: 6.67vw;
+  width: 10.583vw;
 }
 
 .item-type-img {

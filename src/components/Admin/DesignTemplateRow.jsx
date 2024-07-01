@@ -24,7 +24,7 @@ const DesignTemplatesRow = (item) => {
     <GenericItem
       title="Power Point"
       subTitle="קובץ"
-      style={{ width: "9.375vw" }}
+      style={{ width: "4.5vw" }}
     />,
     <GenericItem
       title={item.date}

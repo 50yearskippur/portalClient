@@ -15,6 +15,42 @@ const HomePage = () => {
   const [selectedTab, setSelectedTab] = useState(tabsArray[0]);
   const [data, setData] = useState([]);
 
+  //delete in production
+  const requestsArr = [
+    {
+      title: "סוריה מאז ועד היום",
+      date: "28.5.2024",
+      level: "מותאם לכל הרמות",
+      creator: "יובל כהן",
+    },
+    {
+      title: "סוריה מאז ועד היום",
+      date: "28.5.2024",
+      level: "מותאם לכל הרמות",
+      creator: "יובל כהן",
+    },
+    {
+      title: "סוריה מאז ועד היום",
+      date: "28.5.2024",
+      level: "מותאם לכל הרמות",
+      creator: "יובל כהן",
+    },
+  ];
+
+  //delete in production
+  const subSubjectsArr = [
+    {
+      title: "לורם איפסום",
+      date: "28.5.2024",
+      creator: "יובל כהן",
+    },
+    {
+      title: "לורם איפסום",
+      date: "28.5.2024",
+      creator: "יובל כהן",
+    },
+  ];
+
   useEffect(() => {
     //delete in production
     const eduArr = [
@@ -130,19 +166,18 @@ const HomePage = () => {
           </div>
           <TemplateTable dataArr={data} selectedTab={selectedTab} />;
         </div>
-        <div className="admin-other-user-edu-side">
-          <div className="admin-top-other">
-            <div className="admin-other-header">תוצרים של משתמשים</div>
-            <div className="admin-link">היסטוריית העלאות</div>
+        <div className="admin-pending-approval-side">
+          <div className="admin-pending-approval-container">
+            <div className="admin-top-other">
+              <div className="admin-other-header">תוצרים שממתינים לאישור</div>
+              <div className="admin-link">היסטוריית העלאות</div>
+            </div>
+            <Requests requests={requestsArr} />
           </div>
-          <Requests
-            request={{
-              title: "סוריה מאז ועד היום",
-              date: "28.5.2024",
-              level: "מותאם לכל הרמות",
-              creator: "יובל כהן",
-            }}
-          />
+          <div className="admin-pending-approval-container">
+            <div className="admin-other-header">תתי נושאים חדשים</div>
+            <Requests requests={subSubjectsArr} />
+          </div>
         </div>
       </div>
     </div>

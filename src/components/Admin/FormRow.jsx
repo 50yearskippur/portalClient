@@ -12,7 +12,7 @@ const FormRow = (item) => {
     <GenericItem
       title={item.title}
       subTitle="שם הטופס"
-      style={{ width: "9.375vw" }}
+      style={{ width: "6.1vw" }}
     />,
     <div className="edu-row-tag">{item?.tag?.title}</div>,
     <div className="generic-item-container">
@@ -23,7 +23,7 @@ const FormRow = (item) => {
       />
       <div className="generic-item-sub-title">טפסים נפוצים</div>
     </div>,
-    <GenericItem title="PDF" subTitle="סוג קובץ" style={{ width: "8.3vw" }} />,
+    <GenericItem title="PDF" subTitle="סוג קובץ" style={{ width: "4.5vw" }} />,
     <GenericItem
       title={item.date}
       subTitle="תאריך העלאה"

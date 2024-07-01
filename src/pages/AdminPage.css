@@ -22,17 +22,24 @@
   gap: 12px;
 }
 
-.admin-other-user-edu-side {
+.admin-pending-approval-side {
   display: flex;
   flex-direction: column;
   width: 25%;
-  gap: 24px;
+  gap: 40px;
+}
+
+.admin-pending-approval-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .admin-other-header {
   color: var(--body-text, #444a5a);
   font-size: 16px;
   font-weight: 500;
+  align-self: start;
 }
 
 .admin-upload-btn {
@@ -64,4 +71,5 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparen;
+  cursor: pointer;
 }

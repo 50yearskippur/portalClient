@@ -7,12 +7,12 @@ const MediaRow = (item) => {
     <GenericItem
       title={item.title}
       subTitle="שם האלבום \ תמונה"
-      style={{ width: "12.3vw" }}
+      style={{ width: "8.3vw" }}
     />,
     <GenericItem
       title={item.type}
       subTitle="סוג תמונה"
-      style={{ width: "8.3vw" }}
+      style={{ width: "4.5vw" }}
     />,
     <GenericItem
       title={item.date}
