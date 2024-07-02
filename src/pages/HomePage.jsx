@@ -163,7 +163,6 @@ const getEduResources = (selectedTab) => {
         <SortBySubject
           numberOfItemsInLine={1}
           subjects={subjects}
-          ItemComponent={ForYouItem}
         />
       );
   }

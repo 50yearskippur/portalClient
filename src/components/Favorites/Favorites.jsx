@@ -136,7 +136,7 @@ const Favorits = () => {
 
   return (
     <PageTemplate
-      style={ {width: "100%"} }
+      style={{ width: "100%" }}
       ItemComponent={FavotireEdu}
       data={favoritesData}
       gapSize={2}

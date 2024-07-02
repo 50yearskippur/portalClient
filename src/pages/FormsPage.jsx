@@ -241,7 +241,6 @@ const FormPage = () => {
       <SortBySubject
         numberOfItemsInLine={3}
         subjects={subjects}
-        ItemComponent={PdfPreview}
       />
     </div>
   );

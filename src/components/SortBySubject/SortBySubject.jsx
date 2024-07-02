@@ -27,10 +27,8 @@ const SortBySubject = ({ subjects, ItemComponent, numberOfItemsInLine }) => {
       </div>
       <div className="sub-subjects">
         <SubSubjects
-          numberOfItemsInLine={numberOfItemsInLine}
           subject={selectedSubject}
           subSubjects={subSubjects}
-          ItemComponent={ItemComponent}
         />
       </div>
     </div>

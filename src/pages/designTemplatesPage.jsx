@@ -3,6 +3,8 @@ import PdfPreview from "../components/ItemsComponents/PdfPreview";
 import pdf from "../assets/pdfs/pdfPage.pdf";
 import Search from "../components/Search/Search";
 import SortBySubject from "../components/SortBySubject/SortBySubject";
+import font1 from "../assets/fonts/Assistant-VariableFont_wght.ttf";
+import font2 from "../assets/fonts/RubikDoodleShadow-Regular.ttf";
 
 const DesignTemplatesPage = () => {
   const subjects = [
@@ -63,7 +65,26 @@ const DesignTemplatesPage = () => {
     {
       title: "פונטים",
       type: "תבניות עיצוב",
-      subSubjects: [],
+      subSubjects: [
+        {
+          title: "font 1",
+          type: "חיה",
+          subSubject: {
+            title: "יונקים",
+          },
+          media: font1,
+          mediaType: "ttf",
+        },
+        {
+          title: "font 2",
+          type: "חיה",
+          subSubject: {
+            title: "יונקים",
+          },
+          media: font2,
+          mediaType: "ttf",
+        },
+      ],
     },
     {
       title: "הזמנות",
@@ -215,6 +236,13 @@ const DesignTemplatesPage = () => {
     },
   ];
 
+  const getNumberOfItemsInLine = () => {
+    if (selectedSubject.title === "פונטים") {
+      return 1;
+    }
+    return numberOfItemsInLine;
+  };
+
   return (
     <div className="page-container">
       <div className="form-page-top">
@@ -227,7 +255,6 @@ const DesignTemplatesPage = () => {
         numberOfItemsInLine={3}
         subjects={subjects}
         subSubjectsArray={subSubjects}
-        ItemComponent={PdfPreview}
       />
     </div>
   );
