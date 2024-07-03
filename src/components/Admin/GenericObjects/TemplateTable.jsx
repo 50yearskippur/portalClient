@@ -1,6 +1,6 @@
-import TemplateRow from "./TemplateRow";
 import "./TemplateTable.css";
-import getAdminChildren from "../../utils/getAdminChildren";
+import TemplateRow from "../RowTypes/TemplateRow";
+import getAdminChildren from "../../../utils/getAdminChildren";
 
 const TemplateTable = ({ dataArr, selectedTab }) => {
   return (
@@ -9,6 +9,7 @@ const TemplateTable = ({ dataArr, selectedTab }) => {
         <TemplateRow
           key={`edu admin ${index}`}
           children={getAdminChildren(item, selectedTab)}
+          item={item}
         />
       ))}
     </div>

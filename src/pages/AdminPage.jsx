@@ -4,8 +4,8 @@ import { PopupContext } from "../store/popup-context";
 import UploadEduType from "../components/Popup/UploadEduType";
 import Tabs from "../components/Tabs/Tabs";
 import Search from "../components/Search/Search";
-import TemplateTable from "../components/Admin/TemplateTable";
-import Requests from "../components/Admin/Requests";
+import TemplateTable from "../components/Admin/GenericObjects/TemplateTable";
+import Requests from "../components/Admin/Requests/Requests";
 //delete in production
 import rabit from "../assets/img/rabit.jpg";
 
@@ -164,7 +164,7 @@ const HomePage = () => {
             />
             <Search style={{ height: "42px", width: "16.7vw" }} />
           </div>
-          <TemplateTable dataArr={data} selectedTab={selectedTab} />;
+          <TemplateTable dataArr={data} selectedTab={selectedTab} />
         </div>
         <div className="admin-pending-approval-side">
           <div className="admin-pending-approval-container">

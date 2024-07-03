@@ -1,11 +1,13 @@
 import { useState } from "react";
 import emptyStar from "../../assets/media/Icons/emptyStar.svg";
 import fullStar from "../../assets/media/Icons/fullStar.svg";
+import handlePropagation from "../../utils/handlePropagation";
 
 const Star = ({ style, clickable }) => {
   const [pressed, setPressed] = useState(clickable ? false : true);
 
-  const handleClick = () => {
+  const handleClick = (e) => {
+    handlePropagation(e);
     if (clickable) {
       setPressed((prev) => !prev);
     }
@@ -16,7 +18,7 @@ const Star = ({ style, clickable }) => {
       src={pressed ? fullStar : emptyStar}
       alt="star"
       style={style}
-      onClick={handleClick}
+      onClick={(e) => handleClick(e)}
     />
   );
 };

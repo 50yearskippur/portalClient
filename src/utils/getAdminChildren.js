@@ -1,7 +1,7 @@
-import EduResourseRow from "../components/Admin/EduResourseRow";
-import DesignTemplateRow from "../components/Admin/DesignTemplateRow";
-import FormRow from "../components/Admin/FormRow";
-import MediaRow from "../components/Admin/mediaRow";
+import EduResourseRow from "../components/Admin/RowTypes/EduResourseRow";
+import DesignTemplateRow from "../components/Admin/RowTypes/DesignTemplateRow";
+import FormRow from "../components/Admin/RowTypes/FormRow";
+import MediaRow from "../components/Admin/RowTypes/mediaRow";
 
 const getAdminChildren = (item, selectedTab) => {
   switch (true) {

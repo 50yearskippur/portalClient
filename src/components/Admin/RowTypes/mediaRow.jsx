@@ -1,6 +1,5 @@
 import "./TemplateRow.css";
-import "./GenericItem.css";
-import GenericItem from "./GenericItem";
+import GenericItem from "../GenericObjects/GenericItem";
 
 const MediaRow = (item) => {
   return [
