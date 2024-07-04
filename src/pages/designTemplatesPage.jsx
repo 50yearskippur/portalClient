@@ -236,12 +236,11 @@ const DesignTemplatesPage = () => {
     },
   ];
 
-  const getNumberOfItemsInLine = () => {
-    if (selectedSubject.title === "פונטים") {
-      return 1;
-    }
-    return numberOfItemsInLine;
-  };
+  // {
+  //   name: "פונטים",
+  //   numberOfItemsInLine: 3,
+  //   ItemComponent: FontPreview,
+  // }
 
   return (
     <div className="page-container">
@@ -252,9 +251,9 @@ const DesignTemplatesPage = () => {
         />
       </div>
       <SortBySubject
-        numberOfItemsInLine={3}
+        getFromJSON={true}
         subjects={subjects}
-        subSubjectsArray={subSubjects}
+        getDetailsFromJSON={true}
       />
     </div>
   );
