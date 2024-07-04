@@ -9,14 +9,9 @@
   flex-direction: column;
   align-items: center;
   gap: 16px;
-  background: linear-gradient(
-    195deg,
-    #f6f8fb 12.38%,
-    #fff 27.68%,
-    #f9f9ff 77.1%,
-    rgba(255, 255, 255, 0.86) 93.09%
-  );
+  background: #f3f5f9;
   box-shadow: 10px 12.6px 52px 0px rgba(126, 123, 160, 0.25);
+  overflow-y: auto;
 }
 
 .edu-preview-title {
@@ -122,51 +117,5 @@
 .edu-validation-title {
   color: var(--Pink, #fc4e84);
   font-size: 16px;
-  font-weight: 500;
-}
-
-.edu-details-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
-  gap: 20px;
-}
-
-.edu-text-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
-}
-
-.edu-text-container.right {
-  width: 7.3vw;
-}
-
-.edu-text-container.left {
-  width: 15.625vw;
-}
-
-.edu-row-container {
-  display: flex;
-  gap: 24px;
-}
-
-.edu-bright-text {
-  font-size: 12px;
-  color: #a1a4ac;
-  font-weight: 400;
-}
-
-.edu-dark-text {
-  font-size: 14px;
-  color: var(--body-text, #444a5a);
-  font-weight: 400;
-}
-
-.edu-title-bright {
-  color: var(--title, #7d81b2);
-  font-size: 20px;
   font-weight: 500;
 }

@@ -1,9 +1,14 @@
 import "./EduPreview.css";
-import handlePropagation from "../../utils/handlePropagation";
-import eduTypeByText from "../../utils/eduTypeByText";
-import Rate from "../Rate/Rate";
-import edit from "../../assets/media/Icons/edit.svg";
-import warning from "../../assets/media/Icons/warningBox.svg";
+import handlePropagation from "../../../utils/handlePropagation";
+import eduTypeByText from "../../../utils/eduTypeByText";
+import Rate from "../../Rate/Rate";
+import edit from "../../../assets/media/Icons/edit.svg";
+import warning from "../../../assets/media/Icons/warningBox.svg";
+import EduResSection from "./EduResSection";
+import Details from "./Details";
+import Comments from "./Comments";
+import Credits from "./Credits";
+import Files from "./Files";
 
 const EduPreview = ({ edu }) => {
   return (
@@ -38,33 +43,10 @@ const EduPreview = ({ edu }) => {
           <div className="edu-blue-text underline">לחצו לאישור תיקוף</div>
         </div>
       </div>
-      <div className="edu-details-container">
-        <div className="edu-title-bright">קרדיטים</div>
-        <div className="edu-row-container">
-          <div className="edu-text-container right">
-            <div className="edu-bright-text">רת"ח ארטק</div>
-            <div className="edu-dark-text">צביקה</div>
-          </div>
-          <div className="edu-text-container left">
-            <div className="edu-bright-text">רשצים</div>
-            <div className="edu-dark-text">
-              נועם עמרם, גאיה גדג׳, אורי בוארון, אבירן
-            </div>
-          </div>
-        </div>
-        <div className="edu-row-container">
-          <div className="edu-text-container right">
-            <div className="edu-bright-text">רת"ח ארטק</div>
-            <div className="edu-dark-text">צביקה</div>
-          </div>
-          <div className="edu-text-container left">
-            <div className="edu-bright-text">רשצים</div>
-            <div className="edu-dark-text">
-              נועם עמרם, גאיה גדג׳, אורי בוארון, אבירן
-            </div>
-          </div>
-        </div>
-      </div>
+      <EduResSection title="פרטים" content={<Details edu={edu} />} />
+      <EduResSection title="תגובות" content={<Comments edu={edu} />} />
+      <EduResSection title="קרדיטים" content={<Credits edu={edu} />} />
+      <EduResSection title="קבצים" content={<Files edu={edu} />} />
     </div>
   );
 };

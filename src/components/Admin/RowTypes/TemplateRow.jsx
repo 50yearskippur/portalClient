@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { PopupContext } from "../../../store/popup-context";
-import EduPreview from "../../Popup/EduPreview";
+import EduPreview from "../../Popup/EduPreview/EduPreview";
 import arrow from "../../../assets/media/Icons/curvedArrow.svg";
 
 const TemplateRow = ({ children, item }) => {

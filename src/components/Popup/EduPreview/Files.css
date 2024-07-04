@@ -1,0 +1,16 @@
+.files-section-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.edu-preview-file-container {
+  display: flex;
+  gap: 16px;
+}
+
+.edu-preview-file-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
