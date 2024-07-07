@@ -25,12 +25,12 @@ const NavBar = () => {
       navigateTo: "/",
       text: "דף הבית",
     },
-    {
-      path: designTemplatesIcon,
-      selected: designTemplatesIconSelected,
-      navigateTo: "/designTemplates",
-      text: "תבניות עיצוב",
-    },
+    // {
+    //   path: designTemplatesIcon,
+    //   selected: designTemplatesIconSelected,
+    //   navigateTo: "/designTemplates",
+    //   text: "תבניות עיצוב",
+    // },
     {
       path: formsIcon,
       selected: formIconSelected,
@@ -93,7 +93,7 @@ const NavBar = () => {
           ))}
         </div>
         <div className={`navbar-bottom-icons  ${isOpen && "open"}`}>
-          <img src={bellIcon} className="navbar-bell-icon" alt="bell icon" />
+          {/* <img src={bellIcon} className="navbar-bell-icon" alt="bell icon" /> */}
           <PersonalAreaAvater
             name="YC"
             style={{
