@@ -1,3 +1,4 @@
+import FontPreview from "../components/FontPreview/FontPreview";
 import PdfPreview from "../components/ItemsComponents/PdfPreview";
 
 export const designTemplatesArray = {
@@ -31,7 +32,7 @@ export const designTemplatesArray = {
   },
   פונטים: {
     numberOfItemsInLine: 1,
-    itemComponent: PdfPreview,
+    itemComponent: FontPreview,
   },
   הזמנות: {
     numberOfItemsInLine: 3,

@@ -1,5 +1,4 @@
 import "./FormsPage.css";
-import PdfPreview from "../components/ItemsComponents/PdfPreview";
 import pdf from "../assets/pdfs/pdfPage.pdf";
 import Search from "../components/Search/Search";
 import SortBySubject from "../components/SortBySubject/SortBySubject";
@@ -235,12 +234,6 @@ const DesignTemplatesPage = () => {
       mediaType: "pdf",
     },
   ];
-
-  // {
-  //   name: "פונטים",
-  //   numberOfItemsInLine: 3,
-  //   ItemComponent: FontPreview,
-  // }
 
   return (
     <div className="page-container">
