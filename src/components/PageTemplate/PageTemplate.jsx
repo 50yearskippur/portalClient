@@ -17,7 +17,7 @@ const PageTemplate = ({
 
   return (
     <div className="page-template" style={gridStyle}>
-      {data.map((item, index) => {
+      {data?.map((item, index) => {
         return <ItemComponent item={item} key={`item${index}`} />;
       })}
     </div>

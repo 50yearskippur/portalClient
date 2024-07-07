@@ -31,7 +31,7 @@ const ListTemplate = ({
                 color: subject.title === selectedSubject.title && "#f1f3fb",
               }}
             >
-              2
+              {subject.subSubjects.length}
             </div>
           </div>
         );

@@ -1,82 +1,103 @@
 import "./FormsPage.css";
-import PdfPreview from "../components/ItemsComponents/PdfPreview";
 import pdf from "../assets/pdfs/pdfPage.pdf";
 import Search from "../components/Search/Search";
 import SortBySubject from "../components/SortBySubject/SortBySubject";
+import font1 from "../assets/fonts/Assistant-VariableFont_wght.ttf";
+import font2 from "../assets/fonts/RubikDoodleShadow-Regular.ttf";
 
 const DesignTemplatesPage = () => {
   const subjects = [
     {
       title: "מצגות",
       type: "תבניות עיצוב",
-      subSubject: [],
+      subSubjects: [],
     },
     {
       title: "תעודות",
       type: "תבניות עיצוב",
-      subSubject: [],
+      subSubjects: [],
     },
     {
       title: "קול קורא",
       type: "תבניות עיצוב",
-      subSubject: [],
+      subSubjects: [],
     },
     {
       title: "חיילים",
       type: "תבניות עיצוב",
-      subSubject: [],
+      subSubjects: [],
     },
     {
       title: "מחברות",
       type: "תבניות עיצוב",
-      subSubject: [],
+      subSubjects: [
+        {
+          title: "ארנב",
+          type: "חיה",
+          subSubject: {
+            title: "יונקים",
+          },
+          media: pdf,
+          mediaType: "pdf",
+        },
+        {
+          title: "ארנב",
+          type: "חיה",
+          subSubject: {
+            title: "יונקים",
+          },
+          media: pdf,
+          mediaType: "pdf",
+        },
+      ],
     },
     {
       title: "סמלים",
       type: "תבניות עיצוב",
-      subSubject: [],
+      subSubjects: [],
     },
     {
       title: "אינפוגרפיקות",
       type: "תבניות עיצוב",
-      subSubject: [],
+      subSubjects: [],
     },
     {
       title: "פונטים",
       type: "תבניות עיצוב",
-      subSubject: [],
+      subSubjects: [
+        {
+          title: "font 1",
+          type: "חיה",
+          subSubject: {
+            title: "יונקים",
+          },
+          media: font1,
+          mediaType: "ttf",
+        },
+        {
+          title: "font 2",
+          type: "חיה",
+          subSubject: {
+            title: "יונקים",
+          },
+          media: font2,
+          mediaType: "ttf",
+        },
+      ],
     },
     {
       title: "הזמנות",
       type: "תבניות עיצוב",
-      subSubject: [],
+      subSubjects: [],
     },
     {
       title: "באנרים",
       type: "תבניות עיצוב",
-      subSubject: [],
+      subSubjects: [],
     },
   ];
 
   const subSubjects = [
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "יונקים",
-      },
-      media: pdf,
-      mediaType: "pdf",
-    },
-    {
-      title: "ארנב",
-      type: "חיה",
-      subSubject: {
-        title: "יונקים",
-      },
-      media: pdf,
-      mediaType: "pdf",
-    },
     {
       title: "ארנב",
       type: "חיה",
@@ -223,10 +244,9 @@ const DesignTemplatesPage = () => {
         />
       </div>
       <SortBySubject
-        numberOfItemsInLine={3}
+        getFromJSON={true}
         subjects={subjects}
-        subSubjectsArray={subSubjects}
-        ItemComponent={PdfPreview}
+        getDetailsFromJSON={true}
       />
     </div>
   );

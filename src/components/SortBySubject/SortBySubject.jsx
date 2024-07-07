@@ -2,23 +2,38 @@ import ListTemplate from "../ListTemplate/ListTemplate";
 import "./SortBySubject.css";
 import SubSubjects from "../SubSubjects/SubSubjects";
 import { useState, useEffect } from "react";
+import { designTemplatesArray } from "../../store/designTemplatesArray";
 
 const SortBySubject = ({
   subjects,
-  subSubjectsArray,
-  ItemComponent,
-  numberOfItemsInLine,
+  ItemComponent = null,
+  numberOfItemsInLine = 1,
+  getDetailsFromJSON = false,
 }) => {
   const [selectedSubject, setSelectedSubject] = useState(subjects[0]);
-  const [subSubjects, setSubSubjects] = useState(subSubjectsArray);
+  const [subSubjects, setSubSubjects] = useState(subjects[0].subSubjects);
 
   const getSubSubjects = (subject) => {
-    setSubSubjects(subSubjectsArray);
+    setSubSubjects(subject.subSubjects);
+  };
+
+  const getNumberOfItemsInLine = () => {
+    if (getDetailsFromJSON) {
+      return designTemplatesArray[selectedSubject.title].numberOfItemsInLine;
+    }
+    return numberOfItemsInLine;
+  };
+
+  const getItemComponent = () => {
+    if (getDetailsFromJSON) {
+      return designTemplatesArray[selectedSubject.title].itemComponent;
+    }
+    return ItemComponent;
   };
 
   useEffect(() => {
-    setSubSubjects(subSubjectsArray);
-  }, [selectedSubject, subSubjectsArray]);
+    getSubSubjects(selectedSubject);
+  }, [selectedSubject]);
 
   return (
     <div className="sort-by-subject-container">
@@ -32,11 +47,10 @@ const SortBySubject = ({
       </div>
       <div className="sub-subjects">
         <SubSubjects
-          numberOfItemsInLine={numberOfItemsInLine}
-          getSubSubjects={getSubSubjects}
           subject={selectedSubject}
           subSubjects={subSubjects}
-          ItemComponent={ItemComponent}
+          numberOfItemsInLine={getNumberOfItemsInLine()}
+          ItemComponent={getItemComponent()}
         />
       </div>
     </div>
