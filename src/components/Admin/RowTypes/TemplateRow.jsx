@@ -1,14 +1,13 @@
 import { useContext } from "react";
 import { PopupContext } from "../../../store/popup-context";
-import EduResPreview from "../../Popup/EduPreview/EduResPreview";
 import arrow from "../../../assets/media/Icons/curvedArrow.svg";
 
-const TemplateRow = ({ children, item }) => {
+const TemplateRow = ({ children, item, PopUp }) => {
   const { showPopup } = useContext(PopupContext);
   return (
     <div
       className="generic-row-container"
-      onClick={() => showPopup(<EduResPreview edu={item} />)}
+      onClick={() => showPopup(<PopUp edu={item} />)}
     >
       {children.map((child, index) => (
         <div key={`child ${index}`} className="generic-row-child">
