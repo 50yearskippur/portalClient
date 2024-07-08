@@ -157,11 +157,17 @@ const HomePage = () => {
         title: "תבניות עיצוב 1",
         type: "מצגת",
         date: "28.05.2024",
+        media: rabit,
+        cover: rabit,
+        mediaType: "image",
       },
       {
         title: "תבניות עיצוב 2",
         type: "מסמך",
         date: "28.05.2024",
+        media: rabit,
+        cover: rabit,
+        mediaType: "image",
       },
     ];
 
@@ -171,12 +177,18 @@ const HomePage = () => {
         type: "מצגת",
         date: "28.05.2024",
         tag: { title: "שלישות" },
+        media: rabit,
+        cover: rabit,
+        mediaType: "image",
       },
       {
         title: "טפסים 2",
         type: "מסמך",
         date: "28.05.2024",
         tag: { title: "נשקייה" },
+        media: rabit,
+        cover: rabit,
+        mediaType: "image",
       },
     ];
 
@@ -185,11 +197,17 @@ const HomePage = () => {
         title: "הרמת כוסית לראש השנה",
         type: "מצגת",
         date: "28.05.2024",
+        media: rabit,
+        cover: rabit,
+        mediaType: "image",
       },
       {
         title: "פורים 2024",
         type: "מסמך",
         date: "28.05.2024",
+        media: rabit,
+        cover: rabit,
+        mediaType: "image",
       },
     ];
 

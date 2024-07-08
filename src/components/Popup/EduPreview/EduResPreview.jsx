@@ -13,6 +13,13 @@ import MoreDetails from "./MoreDetails";
 import Groups from "./Groups";
 
 const EduPreview = ({ edu }) => {
+  const settingsArray = [
+    "התוצר מצריך שימוש באוזניות",
+    "התוצר בסיווג גבוה מסגול צמצם ומצריך סיסמא",
+    "התוצר יהיה חלק ממאגר המומלצים ליחידות והקורסים הרלוונטיים",
+    "התוצר יהיה התוצר הראשי תחת תת הנושא",
+    "התוצר נבדק, המידע בו עדכני ומאושר ע”י גורם המקצועי",
+  ];
   return (
     <div className="edu-preview-content" onClick={(e) => handlePropagation(e)}>
       <EduPreviewTop edu={edu} />
@@ -31,7 +38,10 @@ const EduPreview = ({ edu }) => {
       <EduResSection title="תגובות" content={<Comments edu={edu} />} />
       <EduResSection title="קרדיטים" content={<Credits edu={edu} />} />
       <EduResSection title="קבצים" content={<Files edu={edu} />} />
-      <EduResSection title="הגדרות" content={<Setting />} />
+      <EduResSection
+        title="הגדרות"
+        content={<Setting settingsArray={settingsArray} />}
+      />
       <EduResSection content={<MoreDetails edu={edu} />} />
       <EduResSection content={<MoreDetails edu={edu} />} />
       <EduResSection

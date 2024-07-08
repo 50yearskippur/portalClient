@@ -3,7 +3,7 @@ import DeleteEdu from "./DeleteEdu";
 import handlePropagation from "../../../utils/handlePropagation";
 import EduResSection from "./EduResSection";
 import Files from "./Files";
-const DesignPreview = ({ edu }) => {
+const FormPreview = ({ edu }) => {
   return (
     <div className="edu-preview-content" onClick={(e) => handlePropagation(e)}>
       <EduPreviewTop edu={edu} />
@@ -13,4 +13,4 @@ const DesignPreview = ({ edu }) => {
   );
 };
 
-export default DesignPreview;
+export default FormPreview;
