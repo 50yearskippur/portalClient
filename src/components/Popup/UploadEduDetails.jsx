@@ -21,7 +21,7 @@ const UploadEduDetails = () => {
       <div className="upload-popup-content" style={{ gap: "32px" }}>
         <div className="upload-details-text-container">
           <div className="upload-details-text">לא חובה אבל יעזור לנו מאוד </div>
-          <div className="upload-popup-detale">
+          <div className="upload-popup-detailes">
             הפרטים האלו יעזרו לנו בהתאמת החומר לקורסים ולמשתמשי הפורטל
           </div>
         </div>

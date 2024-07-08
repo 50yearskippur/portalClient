@@ -35,7 +35,6 @@
   color: #444a5a;
   font-size: 24px;
   font-weight: 700;
-  height: fit-content;
 }
 
 .upload-popup-top {
@@ -59,6 +58,10 @@
 
 .upload-button-container {
   display: flex;
+}
+
+.upload-exit-button {
+  cursor: pointer;
 }
 
 .upload-btn {

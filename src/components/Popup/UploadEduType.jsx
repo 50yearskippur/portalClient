@@ -35,12 +35,12 @@ const UploadEduType = () => {
           <div className="upload-popup-text-container">
             <div
               className="upload-popup-text"
-              style={{ width: "109px", height: " 29px" }}
+              style={{ width: "109px", height: "29px" }}
             >
               שם מעלה התוכן:
             </div>
             <PersonalAreaAvater
-              name="YC"
+              name="יכ"
               style={{
                 width: "32px",
                 height: "32px",
@@ -48,7 +48,7 @@ const UploadEduType = () => {
                 borderRadius: "43px",
               }}
             />
-            <div className="upload-popup-detale">{user?.fullName} (אתה)</div>
+            <div className="upload-popup-detailes">{user?.fullName}</div>
           </div>
           <div className="upload-popup-text-container">
             <div
@@ -80,7 +80,7 @@ const UploadEduType = () => {
           </div>
         </div>
         <div className="upload-popup-text">
-          בחרו את סוג התוצר אותו תרצו להעלות
+          בחרו את סוג התוכן אותו תרצו להעלות
         </div>
         <EduTypes />
       </div>

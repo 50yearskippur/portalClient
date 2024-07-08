@@ -25,14 +25,14 @@ const TopNav = ({
         style={tabsStyle}
       />
       <div className="nav-bar-left-container">
-        <div className="filter-container">
+        {/* <div className="filter-container">
           <img className="filter-icon" src={filterIcon} alt="filter icon" />
           <p className="filter-text">סנן לפי</p>
           <img src={openFilterIcon} alt="open filter icon" />
-        </div>
+        </div> */}
         <Search style={{ width: "21.17vw" }} />
         <Button
-          text={"העלאת תוצר"}
+          text={"העלאת תוכן"}
           onClick={() => showPopup(<UploadEduType />)}
         />
       </div>

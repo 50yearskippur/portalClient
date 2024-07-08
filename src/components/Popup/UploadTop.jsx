@@ -7,7 +7,7 @@ const UploadTop = () => {
 
   return (
     <div className="upload-popup-top">
-      <div className="upload-popup-header">העלאת תוצר לפורטל</div>
+      <div className="upload-popup-header">העלאת תוכן לפורטל</div>
       <img
         src={exitIcon}
         className="upload-exit-button"

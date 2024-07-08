@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { PopupContext } from "../../store/popup-context";
 import handlePropagation from "../../utils/handlePropagation";
 import exitIcon from "../../assets/media/Icons/exitIcon.svg";
+import Button from "../Button/Button";
 
 const AddSubSubject = ({ isOpen, onClose }) => {
   const { hidePopup } = useContext(PopupContext);
@@ -10,7 +11,7 @@ const AddSubSubject = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="add-sub-overlay" onClick={onClose}>
+    <div className="add-sub-overlay">
       <div className="add-sub-content" onClick={(e) => handlePropagation(e)}>
         <div className="upload-button-container">
           <img
@@ -31,9 +32,15 @@ const AddSubSubject = ({ isOpen, onClose }) => {
           className="upload-button-container"
           style={{ justifyContent: "center" }}
         >
-          <div className="upload-btn clickable" onClick={onClose}>
+          <Button
+            text={"שליחת בקשה"}
+            onClick={onClose}
+            disabled={true}
+            // style={{ height: "fit-content", padding: "4px 0" }}
+          />
+          {/* <div className="upload-btn clickable" onClick={onClose}>
             שליחת בקשה
-          </div>
+          </div> */}
           <div className="upload-btn cancel" onClick={onClose}>
             ביטול
           </div>

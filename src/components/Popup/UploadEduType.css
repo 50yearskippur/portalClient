@@ -1,4 +1,4 @@
-.upload-popup-detale {
+.upload-popup-detailes {
   font-weight: 700;
   color: #374151;
   text-align: right;
@@ -14,7 +14,8 @@
 
 .upload-popup-text-container {
   display: flex;
-  gap: 26px;
+  align-items: center;
+  gap: 16px;
 }
 
 .upload-popup-button {
