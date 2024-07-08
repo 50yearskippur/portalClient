@@ -1,8 +1,7 @@
-import "./EduPreview.css";
+import "./EduResPreview.css";
 import handlePropagation from "../../../utils/handlePropagation";
-import eduTypeByText from "../../../utils/eduTypeByText";
-import Rate from "../../Rate/Rate";
-import edit from "../../../assets/media/Icons/edit.svg";
+import EduPreviewTop from "./EduPreviewTop";
+import DeleteEdu from "./DeleteEdu";
 import warning from "../../../assets/media/Icons/warningBox.svg";
 import EduResSection from "./EduResSection";
 import Details from "./Details";
@@ -16,25 +15,7 @@ import Groups from "./Groups";
 const EduPreview = ({ edu }) => {
   return (
     <div className="edu-preview-content" onClick={(e) => handlePropagation(e)}>
-      <div className="edu-preview-top">
-        <div className="edu-preview-top-right">
-          <div className="edu-preview-name-container">
-            <img src={eduTypeByText(edu?.type)} alt="edu type" />
-            <div className="edu-preview-title-container">
-              <div className="edu-preview-title">{edu.title}</div>
-              <div className="edu-rate-container">
-                <Rate clickable={false} numberOfStars={5} />
-                <div>(147)</div>
-              </div>
-            </div>
-          </div>
-          <div className="edu-preview-type">{edu?.type}</div>
-        </div>
-        <div className="edu-edit-container">
-          <img src={edit} alt="edit" />
-          <div className="edu-blue-text">עריכה</div>
-        </div>
-      </div>
+      <EduPreviewTop edu={edu} />
       <div className="edu-validation-container">
         <img src={warning} alt="warning" />
         <div className="edu-validation-text-container">
@@ -70,7 +51,7 @@ const EduPreview = ({ edu }) => {
           />
         }
       />
-      <div className="edu-delete-text">מחיקת תוצר</div>
+      <DeleteEdu />
     </div>
   );
 };
