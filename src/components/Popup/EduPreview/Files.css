@@ -4,13 +4,32 @@
   gap: 20px;
 }
 
+.edu-preview-file-section-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
 .edu-preview-file-container {
+  width: 22vw;
   display: flex;
   gap: 16px;
+  padding: 16px;
+  border-radius: 6px;
+  border: 1px solid #f2f4fa;
+  background: var(--Main-colors-White, #fff);
 }
 
 .edu-preview-file-details {
   display: flex;
   flex-direction: column;
   gap: 4px;
+}
+
+.edu-preview-text {
+  color: var(--body-text, #4c4c66);
+  text-align: right;
+  font-size: 16px;
+  font-weight: 400;
 }

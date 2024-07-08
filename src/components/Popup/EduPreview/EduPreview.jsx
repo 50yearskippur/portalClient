@@ -9,6 +9,9 @@ import Details from "./Details";
 import Comments from "./Comments";
 import Credits from "./Credits";
 import Files from "./Files";
+import Setting from "./Settings";
+import MoreDetails from "./MoreDetails";
+import Groups from "./Groups";
 
 const EduPreview = ({ edu }) => {
   return (
@@ -47,6 +50,27 @@ const EduPreview = ({ edu }) => {
       <EduResSection title="תגובות" content={<Comments edu={edu} />} />
       <EduResSection title="קרדיטים" content={<Credits edu={edu} />} />
       <EduResSection title="קבצים" content={<Files edu={edu} />} />
+      <EduResSection title="הגדרות" content={<Setting />} />
+      <EduResSection content={<MoreDetails edu={edu} />} />
+      <EduResSection content={<MoreDetails edu={edu} />} />
+      <EduResSection
+        title="קורסים או יחידות רלוונטיים"
+        content={<Groups groups={["לורם איפסום", "לורם איפסום"]} />}
+      />
+      <EduResSection
+        title="תיוגים"
+        content={
+          <Groups
+            groups={[
+              "לורם איפסום",
+              "לורם איפסום",
+              "לורם איפסום",
+              "לורם איפסום",
+            ]}
+          />
+        }
+      />
+      <div className="edu-delete-text">מחיקת תוצר</div>
     </div>
   );
 };

@@ -7,6 +7,7 @@
   padding: 21.531px 43.062px;
   box-shadow: 10px 12.6px 52px 0px rgba(126, 123, 160, 0.05);
   border-radius: 8px;
+  width: 83%;
 }
 
 .edu-section-title {
@@ -21,17 +22,6 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
-}
-
-.edu-text-container.right {
-  width: 7.3vw;
-}
-
-.edu-text-container.left {
-  width: 15.625vw;
-}
-.edu-text-container.bottom {
-  width: 100%;
 }
 
 .edu-row-container {
