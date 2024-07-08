@@ -1,20 +1,14 @@
 import "./UploadEduDetails.css";
-import { useState } from "react";
 import handlePropagation from "../../utils/handlePropagation";
 import UploadTop from "./UploadTop";
 import UploadBottom from "./UoloadBottom";
 import UploadEdu from "./UploadEdu";
 import Dropdown from "../Dropdown/Dropdown";
-import Switch from "react-switch";
+// import Switch from "react-switch";
+import Switch from "../Switch/Switch";
 import SearchDropdown from "../Search/SearchDropdown";
 
 const UploadEduDetails = () => {
-  const [isOtherGroup, setIsOtherGroup] = useState(true);
-
-  const handleToggle = () => {
-    setIsOtherGroup((prev) => !prev);
-  };
-
   return (
     <div className="upload-popup" onClick={(e) => handlePropagation(e)}>
       <UploadTop />
@@ -52,17 +46,7 @@ const UploadEduDetails = () => {
           </div>
         </div>
         <div className="switch-container">
-          <Switch
-            checked={isOtherGroup}
-            onChange={handleToggle}
-            onColor="#42c8a0"
-            offColor="#f2f4fa"
-            uncheckedIcon={false}
-            checkedIcon={false}
-            height={16}
-            width={39}
-            handleDiameter={10}
-          />
+          <Switch defaultChecked={true} />
           <div className="upload-popup-text">
             תוכן זה יכול לשמש לקורסים נוספים
           </div>
