@@ -1,6 +1,7 @@
 import "./TemplateRow.css";
 import "./GenericItem.css";
 import GenericItem from "./GenericItem";
+import React from 'react';
 
 const MediaRow = (item) => {
   return [

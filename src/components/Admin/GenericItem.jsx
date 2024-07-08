@@ -1,4 +1,5 @@
 import "./GenericItem.css";
+import React from 'react';
 
 const GenericItem = ({ title, subTitle, style }) => {
   return (

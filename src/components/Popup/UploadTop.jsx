@@ -1,3 +1,4 @@
+import React from 'react';
 import { useContext } from "react";
 import { PopupContext } from "../../store/popup-context";
 import exitIcon from "../../assets/media/Icons/exitIcon.svg";

@@ -1,3 +1,4 @@
+import React from 'react';
 import "./CollageMedia.css";
 import FileController from "../Media/FileController.jsx";
 import rabit from "../../assets/img/rabit.jpg";

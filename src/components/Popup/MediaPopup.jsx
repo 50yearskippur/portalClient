@@ -1,3 +1,4 @@
+import React from 'react';
 import "./MediaPopup.css";
 import backImg from "../../assets/media/Icons/backIcon.svg";
 import downloadImg from "../../assets/media/Icons/downloadIcon.svg";

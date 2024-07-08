@@ -1,6 +1,7 @@
 import "./EduTypes.css";
 import { useState } from "react";
 import eduTypesTitles from "../../constants/eduTypes";
+import React from 'react';
 
 const EduTypes = () => {
   const [activeIndex, setActiveIndex] = useState(0);

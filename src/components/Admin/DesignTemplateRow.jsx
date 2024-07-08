@@ -1,6 +1,7 @@
 import "./TemplateRow.css";
 import GenericItem from "./GenericItem";
 import eduTypeByText from "../../utils/eduTypeByText";
+import React from 'react';
 
 const DesignTemplatesRow = (item) => {
   return [

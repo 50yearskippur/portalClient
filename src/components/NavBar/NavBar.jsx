@@ -1,5 +1,5 @@
 import "./NavBar.css";
-import { useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import PersonalAreaAvater from "../PersonalAreaAvater/PersonalAreaAvater";
 import closeNavbarIcon from "../../assets/media/Navbar/closeNavbar.svg";

@@ -1,3 +1,4 @@
+import React from 'react';
 import "./StockPhoto.css";
 import FileController from "../Media/FileController";
 

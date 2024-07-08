@@ -1,3 +1,4 @@
+import React from 'react';
 import "./UploadEduDetails.css";
 import { useState } from "react";
 import handlePropagation from "../../utils/handlePropagation";

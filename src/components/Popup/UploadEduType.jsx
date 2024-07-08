@@ -1,3 +1,4 @@
+import React from 'react';
 import "./UploadEduType.css";
 import { useState } from "react";
 import EduTypes from "../EduTypes/EduTypes";

@@ -4,6 +4,7 @@ import "./GenericItem.css";
 import GenericItem from "./GenericItem";
 import Star from "../Rate/Star";
 import eduTypeByText from "../../utils/eduTypeByText";
+import React from 'react';
 
 const EduResourseRow = (item) => {
   return [

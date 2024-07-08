@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import SearchIcon from "../../assets/media/Icons/search.svg";
 import dropdownIcon from "../../assets/media/Icons/dropdownIcon.svg";
 import removeIcon from "../../assets/media/Icons/exitIcon.svg";
+import React from 'react';
 
 const SearchDropdown = ({ options }) => {
   const [input, setInput] = useState("");

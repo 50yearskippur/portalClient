@@ -2,6 +2,8 @@ import { useNavigate } from "react-router-dom";
 import FileController from "../../Media/FileController";
 import "./ForYouItem.css";
 import rabit from "../../../assets/img/rabit.jpg";
+import React from 'react';
+
 const ForYouItem = ({ item }) => {
   const navigate = useNavigate();
 

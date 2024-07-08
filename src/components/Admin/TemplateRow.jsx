@@ -1,5 +1,6 @@
 import "./TemplateRow.css";
 import arrow from "../../assets/media/Icons/curvedArrow.svg";
+import React from 'react';
 
 const RowTemplate = ({ children }) => {
   return (

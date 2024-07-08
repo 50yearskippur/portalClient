@@ -1,3 +1,4 @@
+import React from 'react';
 import "./App.css";
 import { PopupProvider } from "./store/popup-context";
 import { UserProvider } from "./store/user-context";
