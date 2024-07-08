@@ -23,18 +23,18 @@ import video from '../assets/img/video.mp4';
 const SubSubjectPage = () => {
   const { showPopup } = useContext(PopupContext);
   const location = useLocation();
-  // const currentEdu = location.state?.item;
-  const currentEdu = {
-    title: 'משחקי פז"מ',
-    type: "משחק",
-    subSubject: {
-      title: "לורם אימפסום",
-      description: "תיאור תיאור",
-      eduResource: [],
-    },
-    media: video,
-    mediaType: "video",
-  }
+  const currentEdu = location.state?.item;
+  // const currentEdu = {
+  //   title: 'משחקי פז"מ',
+  //   type: "משחק",
+  //   subSubject: {
+  //     title: "לורם אימפסום",
+  //     description: "תיאור תיאור",
+  //     eduResource: [],
+  //   },
+  //   media: video,
+  //   mediaType: "video",
+  // }
   const eduResources = {
     uploadByArtch: [
       {
