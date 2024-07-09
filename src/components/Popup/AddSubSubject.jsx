@@ -1,12 +1,16 @@
 import "./AddSubSubject.css";
-import { useContext } from "react";
-import { PopupContext } from "../../store/popup-context";
+import { useState } from "react";
 import handlePropagation from "../../utils/handlePropagation";
 import exitIcon from "../../assets/media/Icons/exitIcon.svg";
 import Button from "../Button/Button";
 
-const AddSubSubject = ({ isOpen, onClose }) => {
-  const { hidePopup } = useContext(PopupContext);
+const AddSubSubject = ({ isOpen, onClose, setValueFromInput }) => {
+  const [subSubjectName, setSubSubjectName] = useState("");
+
+  const handleSave = () => {
+    setValueFromInput(subSubjectName);
+    onClose();
+  };
 
   if (!isOpen) return null;
 
@@ -17,8 +21,9 @@ const AddSubSubject = ({ isOpen, onClose }) => {
           <img
             src={exitIcon}
             className="upload-exit-button"
+            style={{ position: "relative", right: "95%" }}
             alt="exit-button"
-            onClick={hidePopup}
+            onClick={onClose}
           />
         </div>
         <div className="add-sub-details">
@@ -26,7 +31,12 @@ const AddSubSubject = ({ isOpen, onClose }) => {
             <div className="add-sub-header">תת נושא מותאם אישית</div>
             <div className="add-sub-title">מה שם תת הנושא שתרצה להוסיף?</div>
           </div>
-          <input type="text" className="add-sub-input-field" />
+          <input
+            type="text"
+            className="add-sub-input-field"
+            value={subSubjectName} // Bind input value to state
+            onChange={(e) => setSubSubjectName(e.target.value)} // Update state on input change
+          />
         </div>
         <div
           className="upload-button-container"
@@ -34,13 +44,9 @@ const AddSubSubject = ({ isOpen, onClose }) => {
         >
           <Button
             text={"שליחת בקשה"}
-            onClick={onClose}
-            disabled={true}
-            // style={{ height: "fit-content", padding: "4px 0" }}
+            onClick={handleSave} // Use handleSave to process the input value
+            disabled={subSubjectName.trim() === ""} // Disable button if input is empty
           />
-          {/* <div className="upload-btn clickable" onClick={onClose}>
-            שליחת בקשה
-          </div> */}
           <div className="upload-btn cancel" onClick={onClose}>
             ביטול
           </div>

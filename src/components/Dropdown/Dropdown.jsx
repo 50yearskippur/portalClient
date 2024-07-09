@@ -4,11 +4,12 @@ import dropdownIcon from "../../assets/media/Icons/dropdownIcon.svg";
 import vIcon from "../../assets/media/Icons/v.svg";
 import warningIcon from "../../assets/media/Upload/warning.svg";
 
-const Dropdown = ({ list, onNewSubClick, style }) => {
+const Dropdown = ({ list, onNewSubClick, style, newSubValue }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(list[0]);
 
   const handleSelect = (item) => {
+    console.log(newSubValue);
     setSelectedItem(item);
     setIsOpen(false);
     if (item === "תת נושא חדש" || item === "נושא חדש") {
@@ -24,13 +25,8 @@ const Dropdown = ({ list, onNewSubClick, style }) => {
     >
       <div className="dropdown-item-container">
         <div className="dropdown-item-warning">
-          <div
-            className={`dropdown-input-text ${
-              (selectedItem === "תת נושא חדש" || selectedItem === "נושא חדש") &&
-              "new"
-            }`}
-          >
-            {selectedItem}
+          <div className="dropdown-input-text">
+            {selectedItem === "תת נושא חדש" ? newSubValue : selectedItem}
           </div>
           {(selectedItem === "תת נושא חדש" || selectedItem === "נושא חדש") && (
             <img src={warningIcon} alt="warning" />

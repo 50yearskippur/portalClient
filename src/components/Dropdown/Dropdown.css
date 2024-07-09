@@ -16,7 +16,9 @@
 .dropdown-input-text {
   color: #7d81b2;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 400;
+  text-align: center;
+  line-height: 20px;
 }
 
 .dropdown-input-text.new {

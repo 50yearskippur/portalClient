@@ -11,6 +11,7 @@ import UploadEdu from "./UploadEdu";
 
 const UploadEduType = () => {
   const [isSubOpen, setIsSubOpen] = useState(false);
+  const [newSubSubjectValue, setNewSubSubjectValue] = useState("");
 
   const handleNewSubClick = () => {
     setIsSubOpen(true);
@@ -58,6 +59,7 @@ const UploadEduType = () => {
               נושא:
             </div>
             <Dropdown
+              newSubValue={newSubSubjectValue}
               list={[
                 "מבואות מודיעין",
                 "טכנולוגיה וסייבר",
@@ -68,6 +70,7 @@ const UploadEduType = () => {
               onNewSubClick={handleNewSubClick}
             />
             <Dropdown
+              newSubValue={newSubSubjectValue}
               list={[
                 "מבואות מודיעין",
                 "טכנולוגיה וסייבר",
@@ -84,8 +87,19 @@ const UploadEduType = () => {
         </div>
         <EduTypes />
       </div>
-      <UploadBottom NextPopup={<UploadEdu />} />
-      <AddSubSubject isOpen={isSubOpen} onClose={() => setIsSubOpen(false)} />
+      <div
+        className="button-container"
+        style={{ justifyContent:newSubSubjectValue? "space-between":"flex-end"}}
+      >
+        {newSubSubjectValue&&<div className="feedback">בקשה לצירוף תת נושא חדש נשלחה</div>}
+        <UploadBottom NextPopup={<UploadEdu />} />
+      </div>
+
+      <AddSubSubject
+        setValueFromInput={setNewSubSubjectValue}
+        isOpen={isSubOpen}
+        onClose={() => setIsSubOpen(false)}
+      />
     </div>
   );
 };
