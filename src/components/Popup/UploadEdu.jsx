@@ -4,7 +4,7 @@ import FileUploader from "../Media/FileUploader";
 import UploadEduDetails from "./UploadEduDetails";
 import UploadEduType from "./UploadEduType";
 import handlePropagation from "../../utils/handlePropagation";
-import UploadBottom from "./UoloadBottom";
+import UploadBottom from "./UploadBottom";
 import Dropdown from "../Dropdown/Dropdown";
 
 const UploadEdu = () => {

@@ -1,18 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./Dropdown.css";
 import dropdownIcon from "../../assets/media/Icons/dropdownIcon.svg";
 import vIcon from "../../assets/media/Icons/v.svg";
 import warningIcon from "../../assets/media/Upload/warning.svg";
+import { PopupContext } from "../../store/popup-context";
 
-const Dropdown = ({ list, onNewSubClick, style, newSubValue }) => {
+const Dropdown = ({
+  list,
+  onNewSubClick,
+  style,
+  newSubValue,
+  defaultValue,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedItem, setSelectedItem] = useState(list[0]);
+  const [selectedItem, setSelectedItem] = useState(defaultValue);
+  const { setItemDetails } = useContext(PopupContext);
 
   const handleSelect = (item) => {
-    console.log(newSubValue);
+    setItemDetails((prevDetails) => ({
+      ...prevDetails,
+      [defaultValue === "נושא ראשי" ? "subject" : "subSubject"]:
+        item === "תת נושא חדש" ? newSubValue : item,
+    }));
+
     setSelectedItem(item);
     setIsOpen(false);
-    if (item === "תת נושא חדש" || item === "נושא חדש") {
+    if (item === "תת נושא חדש") {
       onNewSubClick(item);
     }
   };
@@ -28,7 +41,7 @@ const Dropdown = ({ list, onNewSubClick, style, newSubValue }) => {
           <div className="dropdown-input-text">
             {selectedItem === "תת נושא חדש" ? newSubValue : selectedItem}
           </div>
-          {(selectedItem === "תת נושא חדש" || selectedItem === "נושא חדש") && (
+          {selectedItem === "תת נושא חדש" && (
             <img src={warningIcon} alt="warning" />
           )}
         </div>
@@ -49,9 +62,7 @@ const Dropdown = ({ list, onNewSubClick, style, newSubValue }) => {
                 onClick={() => handleSelect(item)}
               >
                 <div
-                  className={`dropdown-text ${
-                    (item === "תת נושא חדש" || item === "נושא חדש") && "new"
-                  }`}
+                  className={`dropdown-text ${item === "תת נושא חדש" && "new"}`}
                 >
                   {item}
                 </div>

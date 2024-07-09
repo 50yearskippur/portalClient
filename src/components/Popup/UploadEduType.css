@@ -30,21 +30,20 @@
   float: left;
   margin-right: 4px;
 }
-.feedback {
+.new-sub-subject-created-feedback {
   border-radius: 30px;
-  background-color: black; /* pop up */
-  color: white;
-  box-shadow: 10px 12.6px 29px 0px rgba(67, 66, 89, 0.1);
+  background: var(--black, #000);
   display: flex;
-  padding: 14px 20px 14px 10px;
+  padding: 14px 20px 14px 30px;
   align-items: flex-start;
   gap: 15px;
-  z-index: 1;
+  color: white;
+  box-shadow: 10px 12.6px 29px 0px rgba(67, 66, 89, 0.1);
   position: relative;
-  right: 32px;
-  bottom: 3px;
+  right: 1.66vw;
 }
-.button-container{
+
+.button-container {
   display: flex;
   align-items: center;
   justify-items: center;

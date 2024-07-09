@@ -1,17 +1,20 @@
 import "./UploadEduType.css";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import EduTypes from "../EduTypes/EduTypes";
 import UploadTop from "./UploadTop";
-import UploadBottom from "./UoloadBottom";
+import UploadBottom from "./UploadBottom";
 import PersonalAreaAvater from "../PersonalAreaAvater/PersonalAreaAvater";
 import Dropdown from "../Dropdown/Dropdown";
 import handlePropagation from "../../utils/handlePropagation";
 import AddSubSubject from "./AddSubSubject";
 import UploadEdu from "./UploadEdu";
+import sentIcon from "../../assets/media/Icons/sentIcon.svg";
+import { PopupContext } from "../../store/popup-context";
 
 const UploadEduType = () => {
   const [isSubOpen, setIsSubOpen] = useState(false);
   const [newSubSubjectValue, setNewSubSubjectValue] = useState("");
+  const { itemDetails } = useContext(PopupContext);
 
   const handleNewSubClick = () => {
     setIsSubOpen(true);
@@ -59,17 +62,13 @@ const UploadEduType = () => {
               נושא:
             </div>
             <Dropdown
+              defaultValue={"נושא ראשי"}
               newSubValue={newSubSubjectValue}
-              list={[
-                "מבואות מודיעין",
-                "טכנולוגיה וסייבר",
-                "שפה",
-                "המלצות",
-                "נושא חדש",
-              ]}
-              onNewSubClick={handleNewSubClick}
+              list={["מבואות מודיעין", "טכנולוגיה וסייבר", "שפה", "המלצות"]}
+              // onNewSubClick={handleNewSubClick}
             />
             <Dropdown
+            defaultValue={"תת נושא"}
               newSubValue={newSubSubjectValue}
               list={[
                 "מבואות מודיעין",
@@ -89,10 +88,20 @@ const UploadEduType = () => {
       </div>
       <div
         className="button-container"
-        style={{ justifyContent:newSubSubjectValue? "space-between":"flex-end"}}
+        style={{
+          justifyContent: newSubSubjectValue ? "space-between" : "flex-end",
+        }}
       >
-        {newSubSubjectValue&&<div className="feedback">בקשה לצירוף תת נושא חדש נשלחה</div>}
-        <UploadBottom NextPopup={<UploadEdu />} />
+        {newSubSubjectValue && (
+          <div className="new-sub-subject-created-feedback">
+            <img src={sentIcon} />
+            <div>בקשה לצירוף תת נושא חדש נשלחה</div>
+          </div>
+        )}
+        <UploadBottom
+          NextPopup={<UploadEdu />}
+          disabled={!itemDetails["type"]}
+        />
       </div>
 
       <AddSubSubject

@@ -2,7 +2,7 @@ import "./UploadEduDetails.css";
 import { useState } from "react";
 import handlePropagation from "../../utils/handlePropagation";
 import UploadTop from "./UploadTop";
-import UploadBottom from "./UoloadBottom";
+import UploadBottom from "./UploadBottom";
 import UploadEdu from "./UploadEdu";
 import Dropdown from "../Dropdown/Dropdown";
 import Switch from "react-switch";
