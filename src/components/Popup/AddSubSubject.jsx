@@ -1,14 +1,19 @@
 import "./AddSubSubject.css";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import handlePropagation from "../../utils/handlePropagation";
 import exitIcon from "../../assets/media/Icons/exitIcon.svg";
 import Button from "../Button/Button";
+import { PopupContext } from "../../store/popup-context";
 
-const AddSubSubject = ({ isOpen, onClose, setValueFromInput }) => {
+const AddSubSubject = ({ isOpen, onClose }) => {
   const [subSubjectName, setSubSubjectName] = useState("");
+  const { setItemDetails } = useContext(PopupContext);
 
   const handleSave = () => {
-    setValueFromInput(subSubjectName);
+    setItemDetails((prevDetails) => ({
+      ...prevDetails,
+      subSubject: subSubjectName,
+    }));
     onClose();
   };
 

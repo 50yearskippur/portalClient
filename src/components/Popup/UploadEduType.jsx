@@ -1,5 +1,5 @@
 import "./UploadEduType.css";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import EduTypes from "../EduTypes/EduTypes";
 import UploadTop from "./UploadTop";
 import UploadBottom from "./UploadBottom";
@@ -13,8 +13,7 @@ import { PopupContext } from "../../store/popup-context";
 
 const UploadEduType = () => {
   const [isSubOpen, setIsSubOpen] = useState(false);
-  const [newSubSubjectValue, setNewSubSubjectValue] = useState("");
-  const { itemDetails } = useContext(PopupContext);
+  const { itemDetails, setItemDetails } = useContext(PopupContext);
 
   const handleNewSubClick = () => {
     setIsSubOpen(true);
@@ -30,6 +29,13 @@ const UploadEduType = () => {
     role: "user",
     favorites: ["1", "2", "3"],
   };
+
+  useEffect(() => {
+    setItemDetails((prevDetails) => ({
+      ...prevDetails,
+      uploader: user,
+    }));
+  }, []);
 
   return (
     <div className="upload-popup" onClick={(e) => handlePropagation(e)}>
@@ -63,13 +69,10 @@ const UploadEduType = () => {
             </div>
             <Dropdown
               defaultValue={"נושא ראשי"}
-              newSubValue={newSubSubjectValue}
               list={["מבואות מודיעין", "טכנולוגיה וסייבר", "שפה", "המלצות"]}
-              // onNewSubClick={handleNewSubClick}
             />
             <Dropdown
-            defaultValue={"תת נושא"}
-              newSubValue={newSubSubjectValue}
+              defaultValue={"תת נושא"}
               list={[
                 "מבואות מודיעין",
                 "טכנולוגיה וסייבר",
@@ -89,10 +92,12 @@ const UploadEduType = () => {
       <div
         className="button-container"
         style={{
-          justifyContent: newSubSubjectValue ? "space-between" : "flex-end",
+          justifyContent: itemDetails["subSubject"]
+            ? "space-between"
+            : "flex-end",
         }}
       >
-        {newSubSubjectValue && (
+        {itemDetails["subSubject"] && (
           <div className="new-sub-subject-created-feedback">
             <img src={sentIcon} />
             <div>בקשה לצירוף תת נושא חדש נשלחה</div>
@@ -100,15 +105,15 @@ const UploadEduType = () => {
         )}
         <UploadBottom
           NextPopup={<UploadEdu />}
-          disabled={!itemDetails["type"]}
+          disabled={
+            !itemDetails["type"] ||
+            !itemDetails["subSubject"] ||
+            !itemDetails["subject"] ||
+            !itemDetails["uploader"]
+          }
         />
       </div>
-
-      <AddSubSubject
-        setValueFromInput={setNewSubSubjectValue}
-        isOpen={isSubOpen}
-        onClose={() => setIsSubOpen(false)}
-      />
+      <AddSubSubject isOpen={isSubOpen} onClose={() => setIsSubOpen(false)} />
     </div>
   );
 };

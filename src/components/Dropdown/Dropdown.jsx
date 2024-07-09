@@ -5,24 +5,29 @@ import vIcon from "../../assets/media/Icons/v.svg";
 import warningIcon from "../../assets/media/Upload/warning.svg";
 import { PopupContext } from "../../store/popup-context";
 
-const Dropdown = ({
-  list,
-  onNewSubClick,
-  style,
-  newSubValue,
-  defaultValue,
-}) => {
+const Dropdown = ({ list, onNewSubClick, style, defaultValue }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(defaultValue);
-  const { setItemDetails } = useContext(PopupContext);
+  const { setItemDetails, itemDetails } = useContext(PopupContext);
 
   const handleSelect = (item) => {
-    setItemDetails((prevDetails) => ({
-      ...prevDetails,
-      [defaultValue === "נושא ראשי" ? "subject" : "subSubject"]:
-        item === "תת נושא חדש" ? newSubValue : item,
-    }));
+    if (defaultValue === "נושא ראשי") {
+      setItemDetails((prevDetails) => ({
+        ...prevDetails,
+        subject: item,
+      }));
+    } else if (item !== "תת נושא חדש") {
+      setItemDetails((prevDetails) => ({
+        ...prevDetails,
+        subSubject: item,
+      }));
+    }
 
+    // setItemDetails((prevDetails) => ({
+    //   ...prevDetails,
+    //   [defaultValue === "נושא ראשי" ? "subject" : "subSubject"]:
+    //     selectedItem === "תת נושא חדש" ? itemDetails["subSubject"] : item,
+    // }));
     setSelectedItem(item);
     setIsOpen(false);
     if (item === "תת נושא חדש") {
@@ -39,11 +44,14 @@ const Dropdown = ({
       <div className="dropdown-item-container">
         <div className="dropdown-item-warning">
           <div className="dropdown-input-text">
-            {selectedItem === "תת נושא חדש" ? newSubValue : selectedItem}
+            {selectedItem === "תת נושא חדש"
+              ? itemDetails["subSubject"]
+              : selectedItem}
           </div>
-          {selectedItem === "תת נושא חדש" && (
-            <img src={warningIcon} alt="warning" />
-          )}
+          {selectedItem === "תת נושא חדש" &&
+            itemDetails["subSubject"] !== "" && (
+              <img src={warningIcon} alt="warning" />
+            )}
         </div>
         <img alt="dropdown" src={dropdownIcon} />
       </div>
