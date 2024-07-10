@@ -13,7 +13,7 @@
 
 .upload-popup {
   width: 42vw;
-  height: 66.7vh;
+  height: 67.8vh;
   min-height: 500px;
   text-align: right;
   font-size: 16px;
@@ -35,7 +35,6 @@
   color: #444a5a;
   font-size: 24px;
   font-weight: 700;
-  height: fit-content;
 }
 
 .upload-popup-top {
@@ -61,36 +60,55 @@
   display: flex;
 }
 
+.upload-exit-button {
+  cursor: pointer;
+}
+
 .upload-btn {
   display: flex;
   width: 8.3vw;
   height: 4.4vh;
   justify-content: center;
   align-items: center;
-  gap: 8px;
-  border-radius: 4px;
+  /* gap: 8px; */
   text-align: center;
   font-size: 16px;
   font-weight: 500;
   cursor: pointer;
 }
 
-.upload-btn.clickable {
+/* .upload-btn { */
+/* display: flex;
+  width: 8.3vw;
+  height: 4.4vh;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer; */
+
+/* .upload-btn.clickable {
   background-color: #3259ff;
   color: #fff;
-}
-
+} */
+/* 
 .upload-btn.unclickable {
   opacity: 0.5;
   background: #c2c6cc;
-}
-
+} */
+/* 
 .upload-btn.back {
   border: 1.5px solid #3259ff;
   background: linear-gradient(127deg, #6c60ff 18.87%, #3b2ed1 71.49%);
   background-clip: text;
   -webkit-text-fill-color: transparent;
-}
+} */
+/* 
+.upload-btn.cancel {
+  color: #3259ff;
+}  */
 
 .upload-btn.cancel {
   color: #3259ff;

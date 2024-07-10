@@ -1,9 +1,9 @@
 import exitIcon from "../../assets/media/Icons/exitIcon.svg";
 
-const UploadTop = ({ title, onClickExit }) => {
+const UploadTop = ({ onClickExit }) => {
   return (
     <div className="upload-popup-top">
-      <div className="upload-popup-header">{title}</div>
+      <div className="upload-popup-header">העלאת תוכן לפורטל</div>
       <img
         src={exitIcon}
         className="upload-exit-button"

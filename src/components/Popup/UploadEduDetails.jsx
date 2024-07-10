@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { PopupContext } from "../../store/popup-context";
 import handlePropagation from "../../utils/handlePropagation";
 import UploadTop from "./UploadTop";
-import UploadBottom from "./UoloadBottom";
+import UploadBottom from "./UploadBottom";
 import UploadEdu from "./UploadEdu";
 import Dropdown from "../Dropdown/Dropdown";
 import Switch from "../Switch/Switch";
@@ -17,7 +17,7 @@ const UploadEduDetails = () => {
       <div className="upload-popup-content" style={{ gap: "32px" }}>
         <div className="upload-details-text-container">
           <div className="upload-details-text">לא חובה אבל יעזור לנו מאוד </div>
-          <div className="upload-popup-detale">
+          <div className="upload-popup-detailes">
             הפרטים האלו יעזרו לנו בהתאמת החומר לקורסים ולמשתמשי הפורטל
           </div>
         </div>
@@ -25,7 +25,7 @@ const UploadEduDetails = () => {
           <div className="upload-details-text">מפקד מאשר (אופציונלי)</div>
           <div className="upload-details-row">
             <div className="upload-details-container">
-              <div className="upload-popup-text">שם התוצר:</div>
+              <div className="upload-popup-text">שם:</div>
               <input type="text" className="upload-input-field" />
             </div>
             <div className="upload-details-container">

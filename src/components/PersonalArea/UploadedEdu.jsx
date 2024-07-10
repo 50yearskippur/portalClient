@@ -20,7 +20,7 @@ const UploadedEdu = () => {
           יש לכם חומר לימודי שיכול לעזור לאחרים? שתפו אותנו ואולי תופיעו בפורטל!
         </div>
         <Button
-          text={"העלאת תוצר"}
+          text={"העלאת תוכן"}
           onClick={() => showPopup(<UploadEduType />)}
           style={{ height: "fit-content", padding: "4px 0" }}
         />
