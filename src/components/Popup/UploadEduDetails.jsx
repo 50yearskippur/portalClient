@@ -1,17 +1,19 @@
 import "./UploadEduDetails.css";
+import { useContext } from "react";
+import { PopupContext } from "../../store/popup-context";
 import handlePropagation from "../../utils/handlePropagation";
 import UploadTop from "./UploadTop";
 import UploadBottom from "./UoloadBottom";
 import UploadEdu from "./UploadEdu";
 import Dropdown from "../Dropdown/Dropdown";
-// import Switch from "react-switch";
 import Switch from "../Switch/Switch";
 import SearchDropdown from "../Search/SearchDropdown";
 
 const UploadEduDetails = () => {
+  const { hidePopup } = useContext(PopupContext);
   return (
     <div className="upload-popup" onClick={(e) => handlePropagation(e)}>
-      <UploadTop />
+      <UploadTop title="העלאת תוצר לפורטל" onClickExit={hidePopup} />
       <div className="upload-popup-content" style={{ gap: "32px" }}>
         <div className="upload-details-text-container">
           <div className="upload-details-text">לא חובה אבל יעזור לנו מאוד </div>

@@ -16,7 +16,7 @@ const Comments = ({ edu }) => {
         </div>
       ))}
       <div className="comments-more-container">
-        <div>{`סה"כ ${edu.comments.length} תגובות`}</div>
+        <div className="edu-dark-text">{`סה"כ ${edu.comments.length} תגובות`}</div>
         <div className="edu-blue-text">ראה הכל</div>
       </div>
     </div>

@@ -1,7 +1,8 @@
 import "./EduResPreview.css";
+import { useState } from "react";
 import handlePropagation from "../../../utils/handlePropagation";
 import EduPreviewTop from "./EduPreviewTop";
-import DeleteEdu from "./DeleteEdu";
+import DeleteEduText from "./DeleteEduText";
 import warning from "../../../assets/media/Icons/warningBox.svg";
 import EduResSection from "./EduResSection";
 import Details from "./Details";
@@ -11,8 +12,11 @@ import Files from "./Files";
 import Setting from "./Settings";
 import MoreDetails from "./MoreDetails";
 import Groups from "./Groups";
+import DeleteEduPopup from "../DeleteEdu";
 
 const EduPreview = ({ edu }) => {
+  const [isDeletePopup, setIsDeletePopup] = useState(false);
+
   const settingsArray = [
     "התוצר מצריך שימוש באוזניות",
     "התוצר בסיווג גבוה מסגול צמצם ומצריך סיסמא",
@@ -61,7 +65,11 @@ const EduPreview = ({ edu }) => {
           />
         }
       />
-      <DeleteEdu />
+      <DeleteEduText onClick={() => setIsDeletePopup(true)} />
+      <DeleteEduPopup
+        isOpen={isDeletePopup}
+        onClose={() => setIsDeletePopup(false)}
+      />
     </div>
   );
 };

@@ -1,4 +1,6 @@
 import "./UploadEdu.css";
+import { useContext } from "react";
+import { PopupContext } from "../../store/popup-context";
 import UploadTop from "./UploadTop";
 import FileUploader from "../Media/FileUploader";
 import UploadEduDetails from "./UploadEduDetails";
@@ -8,9 +10,10 @@ import UploadBottom from "./UoloadBottom";
 import Dropdown from "../Dropdown/Dropdown";
 
 const UploadEdu = () => {
+  const { hidePopup } = useContext(PopupContext);
   return (
     <div className="upload-popup" onClick={(e) => handlePropagation(e)}>
-      <UploadTop />
+      <UploadTop title="העלאת תוצר לפורטל" onClickExit={hidePopup} />
       <div className="upload-popup-content" style={{ gap: "32px" }}>
         <div className="upload-input-continer">
           <div className="upload-details-container">

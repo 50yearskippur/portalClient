@@ -10,7 +10,7 @@ const AddSubSubject = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="add-sub-overlay" onClick={onClose}>
+    <div className="second-popup-overlay" onClick={onClose}>
       <div className="add-sub-content" onClick={(e) => handlePropagation(e)}>
         <div className="upload-button-container">
           <img

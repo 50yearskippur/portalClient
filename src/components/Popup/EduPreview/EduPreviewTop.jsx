@@ -1,9 +1,11 @@
 import "./EduPreviewTop.css";
+import { useNavigate } from "react-router-dom";
 import eduTypeByText from "../../../utils/eduTypeByText";
 import Rate from "../../Rate/Rate";
 import edit from "../../../assets/media/Icons/edit.svg";
 
 const EduPreviewTop = ({ edu }) => {
+  const navigate = useNavigate();
   return (
     <div className="edu-preview-top">
       <div className="edu-preview-top-right">
@@ -21,7 +23,9 @@ const EduPreviewTop = ({ edu }) => {
       </div>
       <div className="edu-edit-container">
         <img src={edit} alt="edit" />
-        <div className="edu-blue-text">עריכה</div>
+        <div className="edu-blue-text" onClick={() => navigate("admin/upload")}>
+          עריכה
+        </div>
       </div>
     </div>
   );

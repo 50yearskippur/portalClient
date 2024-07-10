@@ -9,7 +9,7 @@ import Requests from "../components/Admin/Requests/Requests";
 //delete in production
 import rabit from "../assets/img/rabit.jpg";
 
-const HomePage = () => {
+const AdminPage = () => {
   const { showPopup } = useContext(PopupContext);
   const tabsArray = ["תוצרים", "עיצובים", "טפסים", "תמונות ואלבומים"];
   const [selectedTab, setSelectedTab] = useState(tabsArray[0]);
@@ -270,4 +270,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default AdminPage;
