@@ -7,12 +7,10 @@ const useBuffer = ({ fileId }) => {
     const { data } = await FileService.get(id);
     return data;
   };
-
   const { data: media } = useQuery({
     queryKey: ["media", { fileId }],
     queryFn: () => getFile(fileId),
   });
-
   return { media };
 };
 
