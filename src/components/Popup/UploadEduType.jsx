@@ -39,7 +39,7 @@ const UploadEduType = () => {
 
   return (
     <div className="upload-popup" onClick={(e) => handlePropagation(e)}>
-      <UploadTop title="העלאת תוצר לפורטל" onClickExit={hidePopup} />
+      <UploadTop title="העלאת תוכן לפורטל" onClickExit={hidePopup} />
       <div className="upload-popup-content" style={{ gap: "24px" }}>
         <div className="upload-popup-info">
           <div className="upload-popup-text-container">

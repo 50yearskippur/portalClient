@@ -13,7 +13,7 @@ const UploadEduDetails = () => {
   const { hidePopup } = useContext(PopupContext);
   return (
     <div className="upload-popup" onClick={(e) => handlePropagation(e)}>
-      <UploadTop title="העלאת תוצר לפורטל" onClickExit={hidePopup} />
+      <UploadTop title="העלאת תוכן לפורטל" onClickExit={hidePopup} />
       <div className="upload-popup-content" style={{ gap: "32px" }}>
         <div className="upload-details-text-container">
           <div className="upload-details-text">לא חובה אבל יעזור לנו מאוד </div>
