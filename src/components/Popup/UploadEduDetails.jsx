@@ -29,7 +29,7 @@ const UploadEduDetails = () => {
           <div className="upload-details-text">מפקד מאשר (אופציונלי)</div>
           <div className="upload-details-row">
             <div className="upload-details-container">
-              <div className="upload-popup-text">שם התוצר:</div>
+              <div className="upload-popup-text">שם:</div>
               <input type="text" className="upload-input-field" />
             </div>
             <div className="upload-details-container">

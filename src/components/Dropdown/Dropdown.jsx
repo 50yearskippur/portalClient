@@ -10,6 +10,8 @@ const Dropdown = ({ list, onNewSubClick, style, defaultValue }) => {
   const [selectedItem, setSelectedItem] = useState(defaultValue);
   const { setItemDetails, itemDetails } = useContext(PopupContext);
 
+  const IS_NEW_SUB_SUBJECT = selectedItem === "תת נושא חדש";
+
   const handleSelect = (item) => {
     if (defaultValue === "נושא ראשי") {
       setItemDetails((prevDetails) => ({
@@ -23,11 +25,6 @@ const Dropdown = ({ list, onNewSubClick, style, defaultValue }) => {
       }));
     }
 
-    // setItemDetails((prevDetails) => ({
-    //   ...prevDetails,
-    //   [defaultValue === "נושא ראשי" ? "subject" : "subSubject"]:
-    //     selectedItem === "תת נושא חדש" ? itemDetails["subSubject"] : item,
-    // }));
     setSelectedItem(item);
     setIsOpen(false);
     if (item === "תת נושא חדש") {
@@ -44,14 +41,11 @@ const Dropdown = ({ list, onNewSubClick, style, defaultValue }) => {
       <div className="dropdown-item-container">
         <div className="dropdown-item-warning">
           <div className="dropdown-input-text">
-            {selectedItem === "תת נושא חדש"
-              ? itemDetails["subSubject"]
-              : selectedItem}
+            {IS_NEW_SUB_SUBJECT ? itemDetails["subSubject"] : selectedItem}
           </div>
-          {selectedItem === "תת נושא חדש" &&
-            itemDetails["subSubject"] !== "" && (
-              <img src={warningIcon} alt="warning" />
-            )}
+          {IS_NEW_SUB_SUBJECT && itemDetails["subSubject"] !== "" && (
+            <img src={warningIcon} alt="warning" />
+          )}
         </div>
         <img alt="dropdown" src={dropdownIcon} />
       </div>

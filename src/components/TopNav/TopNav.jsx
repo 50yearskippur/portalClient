@@ -7,6 +7,8 @@ import Search from "../Search/Search";
 import Button from "../Button/Button";
 import filterIcon from "../../assets/media/Icons/filterIcon.png";
 import openFilterIcon from "../../assets/media/Icons/openFilterIcon.png";
+import UploadEduDetails from "../Popup/UploadEduDetails";
+import UploadEdu from "../Popup/UploadEdu";
 
 const TopNav = ({
   tabsArray,
@@ -33,7 +35,9 @@ const TopNav = ({
         <Search style={{ width: "21.17vw" }} />
         <Button
           text={"העלאת תוכן"}
-          onClick={() => showPopup(<UploadEduType />)}
+          // onClick={() => showPopup(<UploadEduType />)}
+          // onClick={() => showPopup(<UploadEduDetails />)}
+          onClick={() => showPopup(<UploadEdu />)}
         />
       </div>
     </div>
