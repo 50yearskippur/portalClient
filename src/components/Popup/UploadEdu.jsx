@@ -6,6 +6,7 @@ import UploadEduType from "./UploadEduType";
 import handlePropagation from "../../utils/handlePropagation";
 import UploadBottom from "./UploadBottom";
 import Dropdown from "../Dropdown/Dropdown";
+import Textarea from "../Textarea/Textarea";
 
 const UploadEdu = () => {
   return (
@@ -45,9 +46,9 @@ const UploadEdu = () => {
         >
           תיאור (אופציונלי)
         </div>
-        <textarea
-          className="upload-add-describe"
-          placeholder="כתבו כאן את תיאור התוכן שאתם מעלים..."
+        <Textarea
+          style={{ marginBottom: "2vh" }}
+          placeholder={"כתבו כאן את תיאור התוכן שאתם מעלים..."}
         />
         <FileUploader />
         <div className="upload-agreement-container">

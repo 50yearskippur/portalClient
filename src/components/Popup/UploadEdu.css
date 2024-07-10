@@ -21,18 +21,6 @@
   outline: none;
 }
 
-.upload-add-describe {
-  display: flex;
-  height: 111px;
-  padding: 20px;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 10px;
-  border-radius: 8px;
-  border: 1px solid var(--Stroke, #d4daf8);
-  /* background: var(--Main-colors-White, #fff); */
-}
-
 .upload-agreement-input {
   cursor: pointer;
   width: 18px;
