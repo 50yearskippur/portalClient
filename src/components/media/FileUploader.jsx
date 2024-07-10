@@ -13,7 +13,7 @@ const FileUploader = () => {
   return (
     <div className="file-upload-container" {...getRootProps()}>
       <input {...getInputProps({ multiple: true })} />
-      <img src={uploadFile} style={{ width: "4.2vw" }} alt="upload file" />
+      <img src={uploadFile} style={{ width: "4vw" }} alt="upload file" />
       <div className="upload-file-text-container">
         <div className="file-upload-text">לחצו להעלות קבצים או גררו לתיבה</div>
       </div>

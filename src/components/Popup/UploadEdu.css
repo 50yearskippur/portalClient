@@ -24,9 +24,12 @@
 .upload-agreement-input {
   cursor: pointer;
   width: 18px;
+  accent-color: #8d91bb;
 }
 
 .upload-agreement-container {
   display: flex;
+  margin-top: 1vh;
   align-items: center;
+  color: #4C4C66
 }

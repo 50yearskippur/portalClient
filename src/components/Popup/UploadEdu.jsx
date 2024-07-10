@@ -17,7 +17,10 @@ const UploadEdu = () => {
       <UploadTop title={"העלאת תוכן לפורטל"} />
       <div className="upload-popup-content">
         <div className="upload-input-continer">
-          <div className="upload-details-container">
+          <div
+            className="upload-details-container"
+            style={{ padding: "14px 32px !important" }}
+          >
             <div className="upload-popup-text">שם:</div>
             <input type="text" className="upload-input-field" />
           </div>
