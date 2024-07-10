@@ -15,3 +15,7 @@ textarea:focus {
   font-family: Rubik;
   font-size: 16px;
 }
+
+textarea::placeholder {
+  opacity: 0.4;
+}
