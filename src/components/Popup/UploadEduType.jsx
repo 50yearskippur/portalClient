@@ -1,5 +1,5 @@
 import "./UploadEduType.css";
-import { useState } from "react";
+import { useState, useEffect, useContext } from "react";
 import EduTypes from "../EduTypes/EduTypes";
 import UploadTop from "./UploadTop";
 import UploadBottom from "./UploadBottom";
@@ -13,6 +13,7 @@ import { PopupContext } from "../../store/popup-context";
 
 const UploadEduType = () => {
   const [isSubOpen, setIsSubOpen] = useState(false);
+  const { hidePopup, itemDetails, setItemDetails } = useContext(PopupContext);
 
   const handleNewSubClick = () => {
     setIsSubOpen(true);

@@ -14,7 +14,7 @@ const UploadEdu = () => {
   const { hidePopup } = useContext(PopupContext);
   return (
     <div className="upload-popup" onClick={(e) => handlePropagation(e)}>
-      <UploadTop />
+      <UploadTop title={"העלת תוכן לפורטל"} />
       <div className="upload-popup-content">
         <div className="upload-input-continer">
           <div className="upload-details-container">
