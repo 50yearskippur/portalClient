@@ -6,6 +6,7 @@ import MediaAlbum from "../pages/MediaAlbumPage";
 import SubSubject from "../pages/SubSubjectPage";
 import PersonalArea from "../pages/PersonalAreaPage";
 import Admin from "../pages/AdminPage";
+import AdminUpload from "../pages/AdminUploadPage.jsx";
 
 const paths = [
   {
@@ -28,6 +29,7 @@ const paths = [
   { path: "/subSubject", text: "תת נושא", component: SubSubject },
   { path: "/admin", text: "אדמין", component: Admin },
   { path: "/personalArea", text: "איזור אישי", component: PersonalArea },
+  { path: "/admin/upload", text: "העלאה באדמין", component: AdminUpload },
 ];
 
 export default paths;
