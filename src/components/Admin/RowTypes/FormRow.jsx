@@ -1,9 +1,8 @@
-import "./TemplateRow.css";
-import "./GenericItem.css";
 import { useState } from "react";
-import GenericItem from "./GenericItem";
-import vPressed from "../../assets/media/Icons/vPressed.svg";
-import vUnressed from "../../assets/media/Icons/vUnpresed.svg";
+import "./TemplateRow.css";
+import GenericItem from "../GenericObjects/GenericItem";
+import vPressed from "../../../assets/media/Icons/vPressed.svg";
+import vUnressed from "../../../assets/media/Icons/vUnpresed.svg";
 
 const FormRow = (item) => {
   const [isPressed, setIsPressed] = useState();

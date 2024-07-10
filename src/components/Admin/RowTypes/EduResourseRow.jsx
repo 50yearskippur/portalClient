@@ -1,9 +1,8 @@
 import "./EduResourseRow.css";
 import "./TemplateRow.css";
-import "./GenericItem.css";
-import GenericItem from "./GenericItem";
-import Star from "../Rate/Star";
-import eduTypeByText from "../../utils/eduTypeByText";
+import GenericItem from "../GenericObjects/GenericItem";
+import Star from "../../Rate/Star";
+import eduTypeByText from "../../../utils/eduTypeByText";
 
 const EduResourseRow = (item) => {
   return [

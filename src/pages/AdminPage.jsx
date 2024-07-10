@@ -4,12 +4,12 @@ import { PopupContext } from "../store/popup-context";
 import UploadEduType from "../components/Popup/UploadEduType";
 import Tabs from "../components/Tabs/Tabs";
 import Search from "../components/Search/Search";
-import TemplateTable from "../components/Admin/TemplateTable";
-import Requests from "../components/Admin/Requests";
+import TemplateTable from "../components/Admin/GenericObjects/TemplateTable";
+import Requests from "../components/Admin/Requests/Requests";
 //delete in production
 import rabit from "../assets/img/rabit.jpg";
 
-const HomePage = () => {
+const AdminPage = () => {
   const { showPopup } = useContext(PopupContext);
   const tabsArray = ["תוצרים", "עיצובים", "טפסים", "תמונות ואלבומים"];
   const [selectedTab, setSelectedTab] = useState(tabsArray[0]);
@@ -63,10 +63,44 @@ const HomePage = () => {
         },
         subject: { title: "מבואות מודיעין" },
         media: rabit,
+        cover: rabit,
         mediaType: "image",
         level: "רמה בסיסית",
         uploadByArtech: true,
         tags: [{ title: "תג 1" }, { title: "תג 2" }],
+        info: "משחק שנועד ללמד את צבעי הכומתות בחיילות השונים משחק שנועד ללמד את צבעי הכומתות בחיילות השונים  משחק שנועד ללמד את צבעי הכומתות בחיילות השונים",
+        comments: [
+          {
+            content:
+              "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
+            date: "28.05.2024",
+            user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
+          },
+          {
+            content:
+              "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
+            date: "28.05.2024",
+            user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
+          },
+          {
+            content:
+              "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
+            date: "28.05.2024",
+            user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
+          },
+          {
+            content:
+              "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
+            date: "28.05.2024",
+            user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
+          },
+          {
+            content:
+              "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
+            date: "28.05.2024",
+            user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
+          },
+        ],
       },
       {
         title: "הכירו את זירת סוריה",
@@ -77,10 +111,44 @@ const HomePage = () => {
         },
         subject: { title: "מבואות מודיעין" },
         media: rabit,
+        cover: rabit,
         mediaType: "image",
         level: "רמה בסיסית",
         uploadByArtech: true,
         tags: [{ title: "תג 1" }, { title: "תג 2" }],
+        info: "משחק שנועד ללמד את צבעי הכומתות בחיילות השונים משחק שנועד ללמד את צבעי הכומתות בחיילות השונים  משחק שנועד ללמד את צבעי הכומתות בחיילות השונים",
+        comments: [
+          {
+            content:
+              "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
+            date: "28.05.2024",
+            user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
+          },
+          {
+            content:
+              "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
+            date: "28.05.2024",
+            user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
+          },
+          {
+            content:
+              "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
+            date: "28.05.2024",
+            user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
+          },
+          {
+            content:
+              "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
+            date: "28.05.2024",
+            user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
+          },
+          {
+            content:
+              "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
+            date: "28.05.2024",
+            user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
+          },
+        ],
       },
     ];
 
@@ -89,11 +157,17 @@ const HomePage = () => {
         title: "תבניות עיצוב 1",
         type: "מצגת",
         date: "28.05.2024",
+        media: rabit,
+        cover: rabit,
+        mediaType: "image",
       },
       {
         title: "תבניות עיצוב 2",
         type: "מסמך",
         date: "28.05.2024",
+        media: rabit,
+        cover: rabit,
+        mediaType: "image",
       },
     ];
 
@@ -103,12 +177,18 @@ const HomePage = () => {
         type: "מצגת",
         date: "28.05.2024",
         tag: { title: "שלישות" },
+        media: rabit,
+        cover: rabit,
+        mediaType: "image",
       },
       {
         title: "טפסים 2",
         type: "מסמך",
         date: "28.05.2024",
         tag: { title: "נשקייה" },
+        media: rabit,
+        cover: rabit,
+        mediaType: "image",
       },
     ];
 
@@ -117,11 +197,17 @@ const HomePage = () => {
         title: "הרמת כוסית לראש השנה",
         type: "מצגת",
         date: "28.05.2024",
+        media: rabit,
+        cover: rabit,
+        mediaType: "image",
       },
       {
         title: "פורים 2024",
         type: "מסמך",
         date: "28.05.2024",
+        media: rabit,
+        cover: rabit,
+        mediaType: "image",
       },
     ];
 
@@ -164,7 +250,7 @@ const HomePage = () => {
             />
             <Search style={{ height: "42px", width: "16.7vw" }} />
           </div>
-          <TemplateTable dataArr={data} selectedTab={selectedTab} />;
+          <TemplateTable dataArr={data} selectedTab={selectedTab} />
         </div>
         <div className="admin-pending-approval-side">
           <div className="admin-pending-approval-container">
@@ -184,4 +270,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default AdminPage;

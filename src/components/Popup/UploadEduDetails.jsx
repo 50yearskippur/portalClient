@@ -1,23 +1,19 @@
 import "./UploadEduDetails.css";
-import { useState } from "react";
+import { useContext } from "react";
+import { PopupContext } from "../../store/popup-context";
 import handlePropagation from "../../utils/handlePropagation";
 import UploadTop from "./UploadTop";
 import UploadBottom from "./UploadBottom";
 import UploadEdu from "./UploadEdu";
 import Dropdown from "../Dropdown/Dropdown";
-import Switch from "react-switch";
+import Switch from "../Switch/Switch";
 import SearchDropdown from "../Search/SearchDropdown";
 
 const UploadEduDetails = () => {
-  const [isOtherGroup, setIsOtherGroup] = useState(true);
-
-  const handleToggle = () => {
-    setIsOtherGroup((prev) => !prev);
-  };
-
+  const { hidePopup } = useContext(PopupContext);
   return (
     <div className="upload-popup" onClick={(e) => handlePropagation(e)}>
-      <UploadTop />
+      <UploadTop title="העלאת תוצר לפורטל" onClickExit={hidePopup} />
       <div className="upload-popup-content" style={{ gap: "32px" }}>
         <div className="upload-details-text-container">
           <div className="upload-details-text">לא חובה אבל יעזור לנו מאוד </div>
@@ -52,17 +48,7 @@ const UploadEduDetails = () => {
           </div>
         </div>
         <div className="switch-container">
-          <Switch
-            checked={isOtherGroup}
-            onChange={handleToggle}
-            onColor="#42c8a0"
-            offColor="#f2f4fa"
-            uncheckedIcon={false}
-            checkedIcon={false}
-            height={16}
-            width={39}
-            handleDiameter={10}
-          />
+          <Switch defaultChecked={true} />
           <div className="upload-popup-text">
             תוכן זה יכול לשמש לקורסים נוספים
           </div>

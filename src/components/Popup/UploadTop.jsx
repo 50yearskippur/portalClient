@@ -1,10 +1,6 @@
-import { useContext } from "react";
-import { PopupContext } from "../../store/popup-context";
 import exitIcon from "../../assets/media/Icons/exitIcon.svg";
 
-const UploadTop = () => {
-  const { hidePopup } = useContext(PopupContext);
-
+const UploadTop = ({ onClickExit }) => {
   return (
     <div className="upload-popup-top">
       <div className="upload-popup-header">העלאת תוכן לפורטל</div>
@@ -12,7 +8,7 @@ const UploadTop = () => {
         src={exitIcon}
         className="upload-exit-button"
         alt="exit-button"
-        onClick={hidePopup}
+        onClick={onClickExit}
       />
       <div className="upload-popup-line" style={{ top: "72px" }} />
     </div>
