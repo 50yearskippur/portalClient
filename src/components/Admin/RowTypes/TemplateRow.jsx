@@ -1,13 +1,13 @@
 import { useContext } from "react";
 import { PopupContext } from "../../../store/popup-context";
 
-const TemplateRow = ({ children, item, PopUp }) => {
-  console.log(item)
+const TemplateRow = ({ children, item, PopUp, onClick = () => {} }) => {
+  console.log(item);
   const { showPopup } = useContext(PopupContext);
   return (
     <div
       className="generic-row-container"
-      onClick={() => showPopup(<PopUp edu={item} />)}
+      onClick={onClick ? onClick : () => showPopup(<PopUp edu={item} />)}
     >
       {children.map((child, index) => (
         <div key={`child ${index}`} className="generic-row-child">

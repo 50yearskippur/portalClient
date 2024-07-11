@@ -11,6 +11,7 @@ const TemplateTable = ({ dataArr, selectedTab }) => {
           key={`edu admin ${index}`}
           children={getAdminChildren(item, selectedTab)}
           item={item}
+          onClick={() => console.log("no design yet")}
           PopUp={getAdminPopUp(selectedTab)}
         />
       ))}

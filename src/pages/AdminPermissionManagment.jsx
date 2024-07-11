@@ -110,10 +110,6 @@ const AdminPermissionManagment = () => {
               setSelectedTab={setSelectedTab}
               selectedTab={selectedTab}
             />
-            {/* <div className="admin-order-by">
-            <img alt="order-by" src={sortIcon}/>
-            סדר לפי
-            </div> */}
             <OrderBy />
 
             <Search style={{ height: "42px", width: "16.7vw" }} />
