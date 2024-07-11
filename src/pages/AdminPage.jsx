@@ -8,6 +8,8 @@ import TemplateTable from "../components/Admin/GenericObjects/TemplateTable";
 import Requests from "../components/Admin/Requests/Requests";
 //delete in production
 import rabit from "../assets/img/rabit.jpg";
+import arrow from "../assets/media/Icons/curvedArrow.svg";
+
 
 const HomePage = () => {
   const { showPopup } = useContext(PopupContext);
@@ -55,6 +57,7 @@ const HomePage = () => {
     //delete in production
     const eduArr = [
       {
+        icon:arrow,
         title: "הכירו את זירת סוריה",
         type: "סרטון",
         date: "28.05.2024",
@@ -103,6 +106,7 @@ const HomePage = () => {
         ],
       },
       {
+        icon:arrow,
         title: "הכירו את זירת סוריה",
         type: "סרטון",
         date: "28.05.2024",
@@ -258,11 +262,11 @@ const HomePage = () => {
               <div className="admin-other-header">תוצרים שממתינים לאישור</div>
               <div className="admin-link">היסטוריית העלאות</div>
             </div>
-            <Requests requests={requestsArr} />
+            <Requests header={"תוצרים שממתינים לאישור"}  requests={requestsArr} />
           </div>
           <div className="admin-pending-approval-container">
             <div className="admin-other-header">תתי נושאים חדשים</div>
-            <Requests requests={subSubjectsArr} />
+            <Requests header={"תתי נושאים חדשים"} requests={subSubjectsArr} />
           </div>
         </div>
       </div>

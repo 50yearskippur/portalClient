@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import { PopupContext } from "../../../store/popup-context";
-import arrow from "../../../assets/media/Icons/curvedArrow.svg";
 
 const TemplateRow = ({ children, item, PopUp }) => {
+  console.log(item)
   const { showPopup } = useContext(PopupContext);
   return (
     <div
@@ -14,7 +14,7 @@ const TemplateRow = ({ children, item, PopUp }) => {
           {child}
         </div>
       ))}
-      <img src={arrow} alt="arrow" className="generic-row-arrow" />
+      <img src={item.icon} alt="arrow" className="generic-row-arrow" />
     </div>
   );
 };

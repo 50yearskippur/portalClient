@@ -1,10 +1,11 @@
 import Home from "../pages/HomePage";
 import Form from "../pages/FormsPage";
 import Media from "../pages/MediaPage";
-import DesignTemplates from "../pages/designTemplatesPage.jsx";
+import DesignTemplates from "../pages/DesignTemplatesPage.jsx";
 import MediaAlbum from "../pages/MediaAlbumPage";
 import SubSubject from "../pages/SubSubjectPage";
 import PersonalArea from "../pages/PersonalAreaPage";
+import AdminPermissionManagment from "../pages/AdminPermissionManagment";
 import Admin from "../pages/AdminPage";
 
 const paths = [
@@ -28,6 +29,7 @@ const paths = [
   { path: "/subSubject", text: "תת נושא", component: SubSubject },
   { path: "/admin", text: "אדמין", component: Admin },
   { path: "/personalArea", text: "איזור אישי", component: PersonalArea },
+  { path: "/admin/permissions", text: "איזור אישי", component: AdminPermissionManagment },
 ];
 
 export default paths;
