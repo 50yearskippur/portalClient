@@ -36,8 +36,8 @@ const TopNav = ({
         <Button
           text={"העלאת תוכן"}
           // onClick={() => showPopup(<UploadEduType />)}
-          // onClick={() => showPopup(<UploadEduDetails />)}
-          onClick={() => showPopup(<UploadEdu />)}
+          onClick={() => showPopup(<UploadEduDetails />)}
+          // onClick={() => showPopup(<UploadEdu />)}
         />
       </div>
     </div>

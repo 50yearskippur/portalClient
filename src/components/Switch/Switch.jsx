@@ -6,8 +6,8 @@ const SwitchComponent = ({
   style = {
     width: 39,
     height: 16,
-    onColor: "#42c8a0",
-    offColor: "#f2f4fa",
+    onColor: "#42C8A0",
+    offColor: "#C2C6CC",
     handleDiameter: 10,
   },
 }) => {
