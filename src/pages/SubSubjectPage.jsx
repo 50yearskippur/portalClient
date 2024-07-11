@@ -135,7 +135,7 @@ const SubSubjectPage = () => {
                 }}
               >
                 <img src={heartimg} alt="heart" />
-                <div>הוספה למועדפים</div>
+                <>הוספה למועדפים</>
               </div>
               <div
                 className="edu-resourse-add-container"
@@ -146,7 +146,7 @@ const SubSubjectPage = () => {
                 }}
               >
                 <img src={plusImg} alt="plus" />
-                <div>הוספה לקורס שלי</div>
+                <>הוספה לקורס שלי</>
               </div>
             </div>
           </div>

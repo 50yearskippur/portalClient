@@ -10,14 +10,12 @@ const SubSubjects = ({
   return (
     <div className="sub-subjects-wrapper">
       <div className="sub-subjects-title">{subject.title}</div>
-      <div>
-        <PageTemplate
-          ItemComponent={ItemComponent}
-          numberOfItemsInLine={numberOfItemsInLine}
-          gapSize={2}
-          data={subSubjects}
-        />
-      </div>
+      <PageTemplate
+        ItemComponent={ItemComponent}
+        numberOfItemsInLine={numberOfItemsInLine}
+        gapSize={2}
+        data={subSubjects}
+      />
     </div>
   );
 };

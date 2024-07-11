@@ -1,9 +1,13 @@
 import "./DeleteEduText.css";
+import trashIcon from "../../../assets/media/Icons/trash.svg";
 
-const DeleteEduText = ({ onClick }) => {
+const DeleteEduText = ({ onClick, text = "מחיקת תוצר" }) => {
   return (
-    <div className="edu-delete-text" onClick={onClick}>
-      מחיקת תוצר
+    <div className="edu-delete-container">
+      <img src={trashIcon} alt="trash" />
+      <div className="edu-delete-text" onClick={onClick}>
+        {text}
+      </div>
     </div>
   );
 };

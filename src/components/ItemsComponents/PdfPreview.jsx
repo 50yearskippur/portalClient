@@ -8,9 +8,8 @@ import { PopupContext } from "../../store/popup-context";
 const PdfPreview = ({ item }) => {
   const { showPopup } = useContext(PopupContext);
   return (
-    <div>
+    <>
       <div className="pdf-preview-container">
-        {/* <div className="preview-on-hover">hi</div> */}
         <div className="pdf-preview-subject">{item.subSubject.title}</div>
         <FileController
           item={item}
@@ -24,12 +23,10 @@ const PdfPreview = ({ item }) => {
           }
         />
         <div className="pdf-preview-info">
-          <div>
-            <div className="pdf-preview-title">{item.title}</div>
-          </div>
+          <div className="pdf-preview-title">{item.title}</div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
