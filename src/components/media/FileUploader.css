@@ -1,13 +1,13 @@
 .file-upload-container {
   display: flex;
-  height: 25.76vh;
+  height: 19.7vh;
   padding: 0px 16px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
   border-radius: 10px;
   border: 1.8px dashed var(--Title, #9599c6);
+  cursor: pointer;
 }
 
 .file-upload-label {
@@ -21,10 +21,13 @@
   font-size: 14px;
   font-weight: 400;
   margin-top: 20px;
+  line-height: 18px;
+  margin-bottom: 3vh;
 }
 
 .upload-file-text-container {
   display: flex;
   justify-content: center;
   gap: 5px;
+  height: 5vh;
 }

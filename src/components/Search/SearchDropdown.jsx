@@ -51,7 +51,7 @@ const SearchDropdown = ({ options }) => {
             type="text"
             value={input}
             onChange={handleInputChange}
-            placeholder="בחר תיוגים"
+            placeholder="בחרו תיוגים"
             className="search-dropdown-input"
           />
         </div>

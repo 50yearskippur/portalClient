@@ -14,10 +14,13 @@ const UploadEdu = () => {
   const { hidePopup } = useContext(PopupContext);
   return (
     <div className="upload-popup" onClick={(e) => handlePropagation(e)}>
-      <UploadTop />
+      <UploadTop title={"העלאת תוכן לפורטל"} />
       <div className="upload-popup-content">
         <div className="upload-input-continer">
-          <div className="upload-details-container">
+          <div
+            className="upload-details-container"
+            style={{ padding: "14px 32px !important" }}
+          >
             <div className="upload-popup-text">שם:</div>
             <input type="text" className="upload-input-field" />
           </div>
@@ -50,7 +53,7 @@ const UploadEdu = () => {
           תיאור (אופציונלי)
         </div>
         <Textarea
-          style={{ marginBottom: "2vh" }}
+          style={{ marginBottom: "2vh", height: "6.58vh" }}
           placeholder={"כתבו כאן את תיאור התוכן שאתם מעלים..."}
         />
         <FileUploader />

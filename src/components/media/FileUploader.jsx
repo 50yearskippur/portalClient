@@ -1,6 +1,7 @@
 import "./FileUploader.css";
 import { useDropzone } from "react-dropzone";
 import uploadFile from "../../assets/media/Upload/uploadFile.svg";
+import Button from "../Button/Button";
 
 const FileUploader = () => {
   const { getRootProps, getInputProps } = useDropzone({
@@ -12,13 +13,16 @@ const FileUploader = () => {
   return (
     <div className="file-upload-container" {...getRootProps()}>
       <input {...getInputProps({ multiple: true })} />
-      <img src={uploadFile} alt="upload file" />
+      <img src={uploadFile} style={{ width: "4vw" }} alt="upload file" />
       <div className="upload-file-text-container">
-        <div className="file-upload-text">לחץ לעלות קבצים או גררו לתיבה</div>
+        <div className="file-upload-text">לחצו להעלות קבצים או גררו לתיבה</div>
       </div>
-      <div className="upload-btn back" style={{ marginTop: "32px" }}>
-        בחר קובץ
-      </div>
+      <Button
+        style={{ height: "3vh" }}
+        onClick={() => {}}
+        isWhiteButton={true}
+        text={"בחרו קובץ"}
+      />
     </div>
   );
 };

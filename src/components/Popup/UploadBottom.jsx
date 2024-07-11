@@ -16,12 +16,16 @@ const UploadBottom = ({ NextPopup, PreviousPopup, disabled }) => {
         }}
       >
         {PreviousPopup && (
-          <div
-            className="upload-btn back"
+          <Button
+            text={"חזרה"}
+            style={{
+              width: "8.3vw",
+              height: "4.4vh",
+            }}
+            // disabled={disabled}
+            isWhiteButton={true}
             onClick={() => showPopup(PreviousPopup)}
-          >
-            חזרה
-          </div>
+          />
         )}
         <Button
           text={"המשך"}
@@ -30,7 +34,6 @@ const UploadBottom = ({ NextPopup, PreviousPopup, disabled }) => {
             height: "4.4vh",
           }}
           disabled={disabled}
-          className="upload-btn"
           onClick={() => showPopup(NextPopup)}
         />
       </div>
