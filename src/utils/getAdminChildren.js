@@ -4,7 +4,6 @@ import FormRow from "../components/Admin/RowTypes/FormRow";
 import MediaRow from "../components/Admin/RowTypes/mediaRow";
 import adminRow from "../components/Admin/RowTypes/adminRow";
 const getAdminChildren = (item, selectedTab) => {
-  console.log(selectedTab);
   switch (true) {
     case selectedTab === "תוצרים":
       return EduResourseRow(item);

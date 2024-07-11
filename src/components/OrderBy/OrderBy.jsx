@@ -16,7 +16,6 @@ const OrderBy = () => {
   const [selected, setSelected] = useState(null);
 
   const toggleDropdown = () => {
-    console.log("hi");
     setIsOpen(!isOpen);
   };
 

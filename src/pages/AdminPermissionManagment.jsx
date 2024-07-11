@@ -114,7 +114,11 @@ const AdminPermissionManagment = () => {
 
             <Search style={{ height: "42px", width: "16.7vw" }} />
           </div>
-          <TemplateTable dataArr={data} selectedTab={selectedTab} />
+          <TemplateTable
+            onClick={() => console.log("no design yet")}
+            dataArr={data}
+            selectedTab={selectedTab}
+          />
         </div>
         <div className="admin-pending-approval-side">
           <div className="admin-pending-approval-container">

@@ -3,7 +3,7 @@ import TemplateRow from "../RowTypes/TemplateRow";
 import getAdminChildren from "../../../utils/getAdminChildren";
 import getAdminPopUp from "../../../utils/getAdminPopup";
 
-const TemplateTable = ({ dataArr, selectedTab }) => {
+const TemplateTable = ({ dataArr, selectedTab, onClick }) => {
   return (
     <div className="table-container">
       {dataArr?.map((item, index) => (
@@ -11,7 +11,7 @@ const TemplateTable = ({ dataArr, selectedTab }) => {
           key={`edu admin ${index}`}
           children={getAdminChildren(item, selectedTab)}
           item={item}
-          onClick={() => console.log("no design yet")}
+          onClick={onClick}
           PopUp={getAdminPopUp(selectedTab)}
         />
       ))}

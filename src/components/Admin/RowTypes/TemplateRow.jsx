@@ -1,8 +1,7 @@
 import { useContext } from "react";
 import { PopupContext } from "../../../store/popup-context";
 
-const TemplateRow = ({ children, item, PopUp, onClick = () => {} }) => {
-  console.log(item);
+const TemplateRow = ({ children, item, PopUp, onClick }) => {
   const { showPopup } = useContext(PopupContext);
   return (
     <div
