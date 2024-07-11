@@ -1,5 +1,5 @@
 import "./EduTypes.css";
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 import eduTypesTitles from "../../constants/eduTypes";
 import { PopupContext } from "../../store/popup-context";
 
@@ -22,16 +22,17 @@ const EduTypes = () => {
       {eduTypesTitles.map((type, index) => (
         <div
           key={`eduType${index}`}
-          className={`edu-container ${activeIndex === index && "edu-active"}`}
+          className={`edu-container ${
+            eduTypesTitles[activeIndex] &&
+            (activeIndex !== index ? "edu-not-active" : "edu-active")
+          }`}
           onClick={() => selectTypeHandler(index, type.text)}
         >
           <img
             src={type.img}
             alt="edu icon"
             className="edu-type-icon"
-            // style={{
-            //   opacity: `${activeIndex && activeIndex === index ? "" : "0.3"}`,
-            // }}
+
           />
           <div className="edu-type-title">{type.text}</div>
           <div className="edu-type-secondary-title">קובץ מסוג</div>
