@@ -10,33 +10,38 @@ const SearchDropdown = ({ options }) => {
   const [filteredOptions, setFilteredOptions] = useState([]);
   const [selectedOptions, setSelectedOptions] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
+  const [optionsAfterSelect, setOptionsAfterSelect] = useState(options);
 
   useEffect(() => {
-    if (isOpen) setFilteredOptions(options);
+    if (isOpen) setFilteredOptions(optionsAfterSelect);
   }, [isOpen, options]);
 
   const handleInputChange = (e) => {
     const value = e.target.value;
     setInput(value);
     if (value) {
-      const filtered = options.filter((option) => option.startsWith(value));
+      const filtered = optionsAfterSelect.filter((option) =>
+        option.includes(value)
+      );
       setFilteredOptions(filtered);
+    } else if (value.trim().length === 0) {
+      setFilteredOptions(optionsAfterSelect);
     } else {
       setFilteredOptions([]);
     }
   };
 
   const handleOptionClick = (option) => {
+    setOptionsAfterSelect((prev) => prev.filter((item) => item !== option));
     setIsOpen(false);
-    if (!selectedOptions.includes(option)) {
-      setSelectedOptions([...selectedOptions, option]);
-      setInput("");
-      setFilteredOptions([]);
-    }
+    setSelectedOptions([...selectedOptions, option]);
+    setInput("");
+    setFilteredOptions([]);
   };
 
   const handleRemoveOption = (option) => {
     setSelectedOptions(selectedOptions.filter((item) => item !== option));
+    setOptionsAfterSelect([...optionsAfterSelect, option]);
   };
 
   return (
