@@ -7,17 +7,20 @@ import removeIcon from "../../assets/media/Icons/exitIcon.svg";
 
 const SearchDropdown = ({ options }) => {
   const [input, setInput] = useState("");
-  const [filteredOptions, setFilteredOptions] = useState([]);
-  const [selectedOptions, setSelectedOptions] = useState([]);
-  const [isOpen, setIsOpen] = useState(false);
   const [optionsAfterSelect, setOptionsAfterSelect] = useState(options);
+  const [isOpen, setIsOpen] = useState(false);
+  const [filteredOptions, setFilteredOptions] = useState(optionsAfterSelect);
+  const [selectedOptions, setSelectedOptions] = useState([]);
 
   useEffect(() => {
-    if (isOpen) setFilteredOptions(optionsAfterSelect);
-  }, [isOpen, options]);
+    if (isOpen) {
+      setFilteredOptions(optionsAfterSelect);
+    }
+  }, [isOpen, optionsAfterSelect]);
 
   const handleInputChange = (e) => {
     const value = e.target.value;
+    setIsOpen(true);
     setInput(value);
     if (value) {
       const filtered = optionsAfterSelect.filter((option) =>
@@ -58,6 +61,8 @@ const SearchDropdown = ({ options }) => {
             onChange={handleInputChange}
             placeholder="בחרו תיוגים"
             className="search-dropdown-input"
+            onFocus={() => setIsOpen(true)}
+            // onBlur={() => setIsOpen(false)}
           />
         </div>
         <img
@@ -66,7 +71,7 @@ const SearchDropdown = ({ options }) => {
           onClick={() => setIsOpen((prev) => !prev)}
         />
       </div>
-      {(filteredOptions.length > 0 || isOpen) && (
+      {optionsAfterSelect.length > 0 && isOpen && (
         <div className="dropdown-list">
           {filteredOptions.map((option) => (
             <div key={option} onClick={() => handleOptionClick(option)}>
