@@ -44,6 +44,7 @@
   gap: 8px;
   position: absolute;
   top: 52px;
+  flex-wrap: wrap;
 }
 
 .selected-option {

@@ -62,7 +62,6 @@ const SearchDropdown = ({ options }) => {
             placeholder="בחרו תיוגים"
             className="search-dropdown-input"
             onFocus={() => setIsOpen(true)}
-            // onBlur={() => setIsOpen(false)}
           />
         </div>
         <img
