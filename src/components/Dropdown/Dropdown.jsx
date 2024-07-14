@@ -22,9 +22,9 @@ const Dropdown = ({ list, onNewSubClick, style, defaultValue }) => {
       setItemDetails((prevDetails) => ({
         ...prevDetails,
         subSubject: item,
+        isNewSubSubject: false,
       }));
     }
-
     setSelectedItem(item);
     setIsOpen(false);
     if (item === "תת נושא חדש") {
@@ -43,7 +43,7 @@ const Dropdown = ({ list, onNewSubClick, style, defaultValue }) => {
           <div className="dropdown-input-text">
             {IS_NEW_SUB_SUBJECT ? itemDetails["subSubject"] : selectedItem}
           </div>
-          {IS_NEW_SUB_SUBJECT && itemDetails["subSubject"] !== "" && (
+          {itemDetails["isNewSubSubject"] && IS_NEW_SUB_SUBJECT && (
             <img src={warningIcon} alt="warning" />
           )}
         </div>

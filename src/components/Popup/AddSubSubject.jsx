@@ -13,6 +13,7 @@ const AddSubSubject = ({ isOpen, onClose }) => {
     setItemDetails((prevDetails) => ({
       ...prevDetails,
       subSubject: subSubjectName,
+      isNewSubSubject: true,
     }));
     onClose();
   };
@@ -39,8 +40,8 @@ const AddSubSubject = ({ isOpen, onClose }) => {
           <input
             type="text"
             className="add-sub-input-field"
-            value={subSubjectName} // Bind input value to state
-            onChange={(e) => setSubSubjectName(e.target.value)} // Update state on input change
+            value={subSubjectName}
+            onChange={(e) => setSubSubjectName(e.target.value)}
           />
         </div>
         <div
@@ -49,8 +50,8 @@ const AddSubSubject = ({ isOpen, onClose }) => {
         >
           <Button
             text={"שליחת בקשה"}
-            onClick={handleSave} // Use handleSave to process the input value
-            disabled={subSubjectName.trim() === ""} // Disable button if input is empty
+            onClick={handleSave}
+            disabled={subSubjectName.trim() === ""}
           />
           <div className="upload-btn cancel" onClick={onClose}>
             ביטול

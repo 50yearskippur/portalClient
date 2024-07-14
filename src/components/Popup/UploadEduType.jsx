@@ -92,12 +92,12 @@ const UploadEduType = () => {
       <div
         className="button-container"
         style={{
-          justifyContent: itemDetails["subSubject"]
+          justifyContent: itemDetails["isNewSubSubject"]
             ? "space-between"
             : "flex-end",
         }}
       >
-        {itemDetails["subSubject"] && (
+        {itemDetails["isNewSubSubject"] && (
           <div className="new-sub-subject-created-feedback">
             <img src={sentIcon} />
             <div>בקשה לצירוף תת נושא חדש נשלחה</div>
