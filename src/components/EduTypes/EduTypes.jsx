@@ -3,7 +3,9 @@ import { useState, useContext } from "react";
 import eduTypesTitles from "../../constants/eduTypes";
 import { PopupContext } from "../../store/popup-context";
 
-const EduTypes = () => {
+const EduTypes = ({ defaultValue }) => {
+  // console.log(eduTypesTitles[defaultValue]);
+  // console.log(eduTypesTitles);
   const [activeIndex, setActiveIndex] = useState();
   const { setItemDetails } = useContext(PopupContext);
 
@@ -28,12 +30,7 @@ const EduTypes = () => {
           }`}
           onClick={() => selectTypeHandler(index, type.text)}
         >
-          <img
-            src={type.img}
-            alt="edu icon"
-            className="edu-type-icon"
-
-          />
+          <img src={type.img} alt="edu icon" className="edu-type-icon" />
           <div className="edu-type-title">{type.text}</div>
           <div className="edu-type-secondary-title">קובץ מסוג</div>
         </div>

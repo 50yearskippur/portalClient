@@ -5,15 +5,15 @@ import vIcon from "../../assets/media/Icons/v.svg";
 import warningIcon from "../../assets/media/Upload/warning.svg";
 import { PopupContext } from "../../store/popup-context";
 
-const Dropdown = ({ list, onNewSubClick, style, defaultValue }) => {
+const Dropdown = ({ list, onNewSubClick, style, placeholder, value }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedItem, setSelectedItem] = useState(defaultValue);
+  const [selectedItem, setSelectedItem] = useState(value ? value : placeholder);
   const { setItemDetails, itemDetails } = useContext(PopupContext);
 
   const IS_NEW_SUB_SUBJECT = selectedItem === "תת נושא חדש";
 
   const handleSelect = (item) => {
-    if (defaultValue === "נושא ראשי") {
+    if (placeholder === "נושא ראשי") {
       setItemDetails((prevDetails) => ({
         ...prevDetails,
         subject: item,

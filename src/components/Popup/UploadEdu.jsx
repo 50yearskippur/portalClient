@@ -27,7 +27,7 @@ const UploadEdu = () => {
           <div className="upload-details-container">
             <div className="upload-popup-text">רמת קושי:</div>
             <Dropdown
-              defaultValue={"בחרו רמת קושי"}
+              placeholder={"בחרו רמת קושי"}
               list={["קל", "בינוני", "קשה"]}
               style={{ width: "100%", height: "40px" }}
             />

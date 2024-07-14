@@ -41,7 +41,7 @@ const UploadEduDetails = () => {
             <div className="upload-details-container">
               <div className="upload-popup-text">דרגה:</div>
               <Dropdown
-                defaultValue="בחרו דרגה"
+                placeholder="בחרו דרגה"
                 list={[
                   'סמ"ר',
                   'רס"ל',

@@ -68,11 +68,13 @@ const UploadEduType = () => {
               נושא:
             </div>
             <Dropdown
-              defaultValue={"נושא ראשי"}
+              value={itemDetails["subject"]}
+              placeholder={"נושא ראשי"}
               list={["מבואות מודיעין", "טכנולוגיה וסייבר", "שפה", "המלצות"]}
             />
             <Dropdown
-              defaultValue={"תת נושא"}
+              value={itemDetails["subSubject"]}
+              placeholder={"תת נושא"}
               list={[
                 "מבואות מודיעין",
                 "טכנולוגיה וסייבר",
@@ -87,7 +89,7 @@ const UploadEduType = () => {
         <div className="upload-popup-text">
           בחרו את סוג התוכן אותו תרצו להעלות
         </div>
-        <EduTypes />
+        <EduTypes defaultValue={itemDetails["type"]} />
       </div>
       <div
         className="button-container"
