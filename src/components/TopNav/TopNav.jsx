@@ -7,6 +7,8 @@ import Search from "../Search/Search";
 import Button from "../Button/Button";
 import filterIcon from "../../assets/media/Icons/filterIcon.png";
 import openFilterIcon from "../../assets/media/Icons/openFilterIcon.png";
+import UploadEduDetails from "../Popup/UploadEduDetails";
+import UploadEdu from "../Popup/UploadEdu";
 
 const TopNav = ({
   tabsArray,
@@ -25,15 +27,17 @@ const TopNav = ({
         style={tabsStyle}
       />
       <div className="nav-bar-left-container">
-        <div className="filter-container">
+        {/* <div className="filter-container">
           <img className="filter-icon" src={filterIcon} alt="filter icon" />
           <p className="filter-text">סנן לפי</p>
           <img src={openFilterIcon} alt="open filter icon" />
-        </div>
+        </div> */}
         <Search style={{ width: "21.17vw" }} />
         <Button
-          text={"העלאת תוצר"}
-          onClick={() => showPopup(<UploadEduType />)}
+          text={"העלאת תוכן"}
+          // onClick={() => showPopup(<UploadEduType />)}
+          onClick={() => showPopup(<UploadEduDetails />)}
+          // onClick={() => showPopup(<UploadEdu />)}
         />
       </div>
     </div>

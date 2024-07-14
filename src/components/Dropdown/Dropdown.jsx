@@ -1,17 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./Dropdown.css";
 import dropdownIcon from "../../assets/media/Icons/dropdownIcon.svg";
 import vIcon from "../../assets/media/Icons/v.svg";
 import warningIcon from "../../assets/media/Upload/warning.svg";
+import { PopupContext } from "../../store/popup-context";
 
-const Dropdown = ({ list, onNewSubClick, style }) => {
+const Dropdown = ({ list, onNewSubClick, style, defaultValue }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedItem, setSelectedItem] = useState(list[0]);
+  const [selectedItem, setSelectedItem] = useState(defaultValue);
+  const { setItemDetails, itemDetails } = useContext(PopupContext);
+
+  const IS_NEW_SUB_SUBJECT = selectedItem === "תת נושא חדש";
 
   const handleSelect = (item) => {
+    if (defaultValue === "נושא ראשי") {
+      setItemDetails((prevDetails) => ({
+        ...prevDetails,
+        subject: item,
+      }));
+    } else if (item !== "תת נושא חדש") {
+      setItemDetails((prevDetails) => ({
+        ...prevDetails,
+        subSubject: item,
+      }));
+    }
+
     setSelectedItem(item);
     setIsOpen(false);
-    if (item === "תת נושא חדש" || item === "נושא חדש") {
+    if (item === "תת נושא חדש") {
       onNewSubClick(item);
     }
   };
@@ -24,15 +40,10 @@ const Dropdown = ({ list, onNewSubClick, style }) => {
     >
       <div className="dropdown-item-container">
         <div className="dropdown-item-warning">
-          <div
-            className={`dropdown-input-text ${
-              (selectedItem === "תת נושא חדש" || selectedItem === "נושא חדש") &&
-              "new"
-            }`}
-          >
-            {selectedItem}
+          <div className="dropdown-input-text">
+            {IS_NEW_SUB_SUBJECT ? itemDetails["subSubject"] : selectedItem}
           </div>
-          {(selectedItem === "תת נושא חדש" || selectedItem === "נושא חדש") && (
+          {IS_NEW_SUB_SUBJECT && itemDetails["subSubject"] !== "" && (
             <img src={warningIcon} alt="warning" />
           )}
         </div>
@@ -53,9 +64,7 @@ const Dropdown = ({ list, onNewSubClick, style }) => {
                 onClick={() => handleSelect(item)}
               >
                 <div
-                  className={`dropdown-text ${
-                    (item === "תת נושא חדש" || item === "נושא חדש") && "new"
-                  }`}
+                  className={`dropdown-text ${item === "תת נושא חדש" && "new"}`}
                 >
                   {item}
                 </div>

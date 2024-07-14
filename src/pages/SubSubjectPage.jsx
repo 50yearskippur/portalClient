@@ -260,7 +260,7 @@ const SubSubjectPage = () => {
                   className="edu-resource-add-text-btn"
                   onClick={() => showPopup(<UploadEduType />)}
                 >
-                  העלה תוצר
+                  העלה תוכן
                 </div>
               </div>
             </div>
