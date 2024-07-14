@@ -11,17 +11,17 @@ const EduResPrev = ({ item }) => {
       />
       <div className="edu-prev-deatails-container">
         <div className="edu-prev-title">
-          {item.uploadByArtech
-            ? `${item.subSubject.title}, ${item.type}`
-            : item.title}
+          {item?.ploadByArtech
+            ? `${item?.subSubject?.title}, ${item.type}`
+            : item?.title}
         </div>
         <div className="edu-prev-deatails">
-          <div className="edu-prev-info">{item.date}</div>
+          <div className="edu-prev-info">{item?.date}</div>
           <img src={point} alt="black point" />
-          <div className="edu-prev-info">{item.level}</div>
+          <div className="edu-prev-info">{item?.level}</div>
         </div>
-        {!item.uploadByArtech && <div className="edu-prev-creator">עמר</div>}
-        {item.uploadByArtech ? (
+        {!item?.uploadByArtech && <div className="edu-prev-creator">עמר</div>}
+        {item?.ploadByArtech ? (
           <div className="edu-prev-subSubject-tag">4 סרטונים</div>
         ) : (
           <div

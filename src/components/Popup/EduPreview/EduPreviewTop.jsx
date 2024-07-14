@@ -2,9 +2,18 @@ import "./EduPreviewTop.css";
 import { useNavigate } from "react-router-dom";
 import eduTypeByText from "../../../utils/eduTypeByText";
 import Rate from "../../Rate/Rate";
-import edit from "../../../assets/media/Icons/edit.svg";
+import editIcon from "../../../assets/media/Icons/edit.svg";
 
-const EduPreviewTop = ({ edu }) => {
+const EduPreviewTop = ({
+  edu,
+  iconDetails = {
+    text: "עריכה",
+    icon: editIcon,
+    onClick: (navigate) => {
+      navigate("admin/upload");
+    },
+  },
+}) => {
   const navigate = useNavigate();
   return (
     <div className="edu-preview-top">
@@ -22,9 +31,12 @@ const EduPreviewTop = ({ edu }) => {
         <div className="edu-preview-type">{edu?.type}</div>
       </div>
       <div className="edu-edit-container">
-        <img src={edit} alt="edit" />
-        <div className="edu-blue-text" onClick={() => navigate("admin/upload")}>
-          עריכה
+        <img src={iconDetails.icon} alt="edit" />
+        <div
+          className="edu-blue-text"
+          onClick={() => iconDetails.onClick(navigate)}
+        >
+          {iconDetails.text}
         </div>
       </div>
     </div>
