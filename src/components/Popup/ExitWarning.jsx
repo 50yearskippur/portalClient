@@ -20,13 +20,6 @@ const ExitWarning = () => {
               className="exit-warning-exit-button"
               alt="exit-button"
             />
-            {/* <div className="exit-warning-exit-button-div">
-              <img
-                src={exitIcon}
-                className="credit-upload-exit-button"
-                alt="exit-button"
-              />
-            </div> */}
           </div>
           <div className="exit-warning-popup-header">
             נראה שאתה עומד לצאת ...{" "}
