@@ -4,9 +4,9 @@ import eduTypesTitles from "../../constants/eduTypes";
 import { PopupContext } from "../../store/popup-context";
 
 const EduTypes = ({ defaultValue }) => {
-  // console.log(eduTypesTitles[defaultValue]);
-  // console.log(eduTypesTitles);
-  const [activeIndex, setActiveIndex] = useState();
+  const [activeIndex, setActiveIndex] = useState(
+    eduTypesTitles.findIndex((item) => item.text === defaultValue)
+  );
   const { setItemDetails } = useContext(PopupContext);
 
   const selectTypeHandler = (index, type) => {
