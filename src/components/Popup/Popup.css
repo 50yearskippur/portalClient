@@ -84,6 +84,6 @@
 .upload-details-container {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 5px;
   width: 100%;
 }

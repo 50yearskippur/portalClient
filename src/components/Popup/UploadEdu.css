@@ -4,6 +4,7 @@
   gap: 24px;
 }
 
+
 .upload-input-field {
   display: flex;
   height: 24px;
@@ -30,6 +31,7 @@
 .upload-agreement-container {
   display: flex;
   margin-top: 1vh;
+  margin-bottom: 0.6vh;
   align-items: center;
-  color: #4C4C66
+  color: #4c4c66;
 }

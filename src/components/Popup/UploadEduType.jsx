@@ -68,11 +68,15 @@ const UploadEduType = () => {
               נושא:
             </div>
             <Dropdown
-              defaultValue={"נושא ראשי"}
+              listHeight={"20vh"}
+              value={itemDetails["subject"]}
+              placeholder={"נושא ראשי"}
               list={["מבואות מודיעין", "טכנולוגיה וסייבר", "שפה", "המלצות"]}
             />
             <Dropdown
-              defaultValue={"תת נושא"}
+              listHeight={"20vh"}
+              value={itemDetails["subSubject"]}
+              placeholder={"תת נושא"}
               list={[
                 "מבואות מודיעין",
                 "טכנולוגיה וסייבר",
@@ -87,17 +91,17 @@ const UploadEduType = () => {
         <div className="upload-popup-text">
           בחרו את סוג התוכן אותו תרצו להעלות
         </div>
-        <EduTypes />
+        <EduTypes defaultValue={itemDetails["type"]} />
       </div>
       <div
         className="button-container"
         style={{
-          justifyContent: itemDetails["subSubject"]
+          justifyContent: itemDetails["isNewSubSubject"]
             ? "space-between"
             : "flex-end",
         }}
       >
-        {itemDetails["subSubject"] && (
+        {itemDetails["isNewSubSubject"] && (
           <div className="new-sub-subject-created-feedback">
             <img src={sentIcon} />
             <div>בקשה לצירוף תת נושא חדש נשלחה</div>

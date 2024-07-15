@@ -15,13 +15,20 @@ const UploadEduDetails = () => {
     <div className="upload-popup" onClick={(e) => handlePropagation(e)}>
       <UploadTop title="העלאת תוכן לפורטל" onClickExit={hidePopup} />
       <div className="upload-popup-content">
-        <div className="upload-details-text-container">
-          <div className="upload-details-text">לא חובה אבל יעזור לנו מאוד </div>
-          <div
-            className="upload-popup-detailes"
-            style={{ marginBottom: "1.8vh" }}
-          >
-            הפרטים האלו יעזרו לנו בהתאמת החומר לקורסים ולמשתמשי הפורטל
+        <div
+          className="upload-details-text-container"
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            gap: "5px",
+            marginBottom: "2.222vh",
+          }}
+        >
+          <div className="upload-details-text" style={{ fontSize: "14px" }}>
+            כמעט סיימנו,
+          </div>
+          <div className="upload-popup-text">
+            ברגע שתלחצו על שליחה התוצר יעבור לבדיקה ולא תוכלו לשנות אותו
           </div>
         </div>
         <div className="upload-details-approval">
@@ -34,7 +41,8 @@ const UploadEduDetails = () => {
             <div className="upload-details-container">
               <div className="upload-popup-text">דרגה:</div>
               <Dropdown
-                defaultValue="בחרו דרגה"
+                listHeight={"20vh"}
+                placeholder="בחרו דרגה"
                 list={[
                   'סמ"ר',
                   'רס"ל',
@@ -59,11 +67,11 @@ const UploadEduDetails = () => {
           <div className="upload-details-row" style={{ marginBottom: "2.5vh" }}>
             <div className="upload-details-container">
               <div className="upload-popup-text">מס' טלפון:</div>
-              <input type="text" className="upload-input-field" />
-            </div>
-            <div className="upload-details-container">
-              <div className="upload-popup-text">מטרת השיעור / תוכן:</div>
-              <input type="text" className="upload-input-field" />
+              <input
+                type="text"
+                className="upload-input-field"
+                style={{ width: "45%" }}
+              />
             </div>
           </div>
         </div>
@@ -94,11 +102,16 @@ const UploadEduDetails = () => {
               "טכנולוגיה וסייבר",
               "שפה",
               "מדעי המחשב",
+              "קיפודים",
+              "חתולים",
+              "כלבלבים",
+              "רעיונות לארוחות",
+              "מתנות",
             ]}
           />
         </div>
       </div>
-      <div style={{ marginTop: "1.8vh" }}>
+      <div style={{ marginTop: "6.75vh" }}>
         <UploadBottom PreviousPopup={UploadEdu} />
       </div>
     </div>
