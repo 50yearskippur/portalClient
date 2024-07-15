@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import emptyStar from "../../assets/media/Icons/emptyStar.svg";
 import fullStar from "../../assets/media/Icons/fullStar.svg";
 import handlePropagation from "../../utils/handlePropagation";

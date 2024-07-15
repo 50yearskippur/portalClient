@@ -1,3 +1,4 @@
+import React from 'react';
 import "./PdfPreview.css";
 import FileController from "../Media/FileController";
 import ShowFullPdf from "../ShowFullPdf/ShowFullPdf";

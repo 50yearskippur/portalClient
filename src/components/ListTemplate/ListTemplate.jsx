@@ -1,5 +1,5 @@
 import "./ListTemplate.css";
-
+import React from 'react';
 const ListTemplate = ({
   subjects,
   getSubSubjects,

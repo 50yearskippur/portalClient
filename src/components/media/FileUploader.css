@@ -31,3 +31,63 @@
   gap: 5px;
   height: 5vh;
 }
+
+
+.file-upload-container {
+  border: 2px dashed #cccccc;
+  border-radius: 4px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  margin: 20px;
+}
+
+.upload-file-text-container {
+  margin-top: 10px;
+}
+
+.file-upload-text {
+  font-size: 16px;
+  color: #666666;
+}
+
+.upload-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.upload-btn:hover {
+  background-color: #0056b3;
+}
+
+.back {
+  margin-top: 32px;
+}
+
+.file-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+  height: 300px;
+  overflow-y: auto;
+}
+.file-icon {
+  width: 200px !important;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.file-icon-container { 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

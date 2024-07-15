@@ -1,3 +1,4 @@
+import React from 'react';
 import "./AddSubSubject.css";
 import { useState, useContext } from "react";
 import handlePropagation from "../../utils/handlePropagation";

@@ -1,3 +1,5 @@
+
+import React from 'react';
 import "./FormsPage.css";
 import pdf from "../assets/pdfs/pdfPage.pdf";
 import Search from "../components/Search/Search";
