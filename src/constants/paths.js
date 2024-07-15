@@ -1,6 +1,7 @@
 import Home from "../pages/HomePage";
 import Form from "../pages/FormsPage";
 import Media from "../pages/MediaPage";
+import CreditsPopUp from "../components/Popup/CreditsPopUp";
 // import DesignTemplates from "../pages/designTemplatesPage.jsx";
 import MediaAlbum from "../pages/MediaAlbumPage";
 import SubSubject from "../pages/SubSubjectPage";
@@ -30,6 +31,7 @@ const paths = [
   { path: "/admin", text: "אדמין", component: Admin },
   { path: "/personalArea", text: "איזור אישי", component: PersonalArea },
   { path: "/admin/upload", text: "העלאה באדמין", component: AdminUpload },
+  { path: "/popup", text: "העלאה באדמין", component: CreditsPopUp },
 ];
 
 export default paths;
