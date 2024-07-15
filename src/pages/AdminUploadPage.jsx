@@ -20,7 +20,7 @@ const Upload = () => {
       <TopSection navigateTo={"/admin"} title="העלאת תוצר" />
       <div className="upload-stages-container">
         {stagesArray.map((stage, index) => (
-          <div key={`stage ${index}`} className="stage-white-conrainer">
+          <div key={`stage ${index}`} className="stage-white-container">
             <div
               className="stage-header"
               onClick={() => setCurrentStage(stage.title)}

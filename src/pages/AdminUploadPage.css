@@ -6,9 +6,9 @@
   width: 100%;
 }
 
-.stage-white-conrainer {
+.stage-white-container {
   display: flex;
-  width: 31.146vw;
+  width: 36vw;
   padding: 21.531px 32px;
   flex-direction: column;
   gap: 18px;
