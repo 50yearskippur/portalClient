@@ -5,7 +5,14 @@ import vIcon from "../../assets/media/Icons/v.svg";
 import warningIcon from "../../assets/media/Upload/warning.svg";
 import { PopupContext } from "../../store/popup-context";
 
-const Dropdown = ({ list, onNewSubClick, style, placeholder, value }) => {
+const Dropdown = ({
+  list,
+  onNewSubClick,
+  style,
+  placeholder,
+  value,
+  listHeight = {},
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(value ? value : placeholder);
   const { setItemDetails, itemDetails } = useContext(PopupContext);
@@ -52,6 +59,7 @@ const Dropdown = ({ list, onNewSubClick, style, placeholder, value }) => {
       {isOpen && (
         <div
           className="dropdown-list"
+          style={{ height: listHeight, overflowY: "auto", overflowX: "hidden"}}
           onClick={() => setIsOpen((prev) => !prev)}
         >
           {list.map((item, index) => (
