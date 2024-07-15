@@ -5,6 +5,10 @@
   column-gap: 24px;
 }
 
+.edu-not-active {
+  opacity: 0.3;
+}
+
 .edu-container {
   height: 11.58vh;
   width: 9.53vw;

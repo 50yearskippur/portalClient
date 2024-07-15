@@ -8,12 +8,10 @@ textarea {
 }
 
 textarea:focus {
-  padding: 20px;
-  border-radius: 8px;
-  border: 1px solid #d4daf8; /* Directly specifying the color */
-  color: #1f0039; /* Assuming --H1 is correctly defined, otherwise directly specify this color too */
-  font-family: Rubik;
+  color: #1f0039;
   font-size: 16px;
+  border-color: #4082f3;
+  outline: none;
 }
 
 textarea::placeholder {

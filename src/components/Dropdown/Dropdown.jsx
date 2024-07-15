@@ -5,15 +5,22 @@ import vIcon from "../../assets/media/Icons/v.svg";
 import warningIcon from "../../assets/media/Upload/warning.svg";
 import { PopupContext } from "../../store/popup-context";
 
-const Dropdown = ({ list, onNewSubClick, style, defaultValue }) => {
+const Dropdown = ({
+  list,
+  onNewSubClick,
+  style,
+  placeholder,
+  value,
+  listHeight = {},
+}) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedItem, setSelectedItem] = useState(defaultValue);
+  const [selectedItem, setSelectedItem] = useState(value ? value : placeholder);
   const { setItemDetails, itemDetails } = useContext(PopupContext);
 
   const IS_NEW_SUB_SUBJECT = selectedItem === "תת נושא חדש";
 
   const handleSelect = (item) => {
-    if (defaultValue === "נושא ראשי") {
+    if (placeholder === "נושא ראשי") {
       setItemDetails((prevDetails) => ({
         ...prevDetails,
         subject: item,
@@ -22,9 +29,9 @@ const Dropdown = ({ list, onNewSubClick, style, defaultValue }) => {
       setItemDetails((prevDetails) => ({
         ...prevDetails,
         subSubject: item,
+        isNewSubSubject: false,
       }));
     }
-
     setSelectedItem(item);
     setIsOpen(false);
     if (item === "תת נושא חדש") {
@@ -43,7 +50,7 @@ const Dropdown = ({ list, onNewSubClick, style, defaultValue }) => {
           <div className="dropdown-input-text">
             {IS_NEW_SUB_SUBJECT ? itemDetails["subSubject"] : selectedItem}
           </div>
-          {IS_NEW_SUB_SUBJECT && itemDetails["subSubject"] !== "" && (
+          {itemDetails["isNewSubSubject"] && IS_NEW_SUB_SUBJECT && (
             <img src={warningIcon} alt="warning" />
           )}
         </div>
@@ -52,6 +59,7 @@ const Dropdown = ({ list, onNewSubClick, style, defaultValue }) => {
       {isOpen && (
         <div
           className="dropdown-list"
+          style={{ height: listHeight, overflowY: "auto", overflowX: "hidden"}}
           onClick={() => setIsOpen((prev) => !prev)}
         >
           {list.map((item, index) => (

@@ -1,4 +1,4 @@
-import { useState, createContext } from "react";
+import { useState, createContext, useEffect } from "react";
 
 export const PopupContext = createContext({
   isPopupVisible: false,
@@ -10,6 +10,10 @@ export const PopupProvider = ({ children }) => {
   const [isPopupVisible, setPopupVisible] = useState(false);
   const [popupContent, setPopupContent] = useState(null);
   const [itemDetails, setItemDetails] = useState({});
+
+  useEffect(() => {
+    document.body.style.overflow = isPopupVisible ? "hidden" : "auto";
+  }, [isPopupVisible]);
 
   const showPopup = (content) => {
     setPopupContent(content);

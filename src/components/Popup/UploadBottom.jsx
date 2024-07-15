@@ -3,7 +3,16 @@ import { PopupContext } from "../../store/popup-context";
 import Button from "../Button/Button";
 
 const UploadBottom = ({ NextPopup, PreviousPopup, disabled }) => {
-  const { showPopup } = useContext(PopupContext);
+  const { showPopup, hidePopup, setItemDetails } = useContext(PopupContext);
+
+  const onClickHandler = () => {
+    if (NextPopup) {
+      showPopup(NextPopup);
+    } else {
+      hidePopup();
+      setItemDetails({});
+    }
+  };
 
   return (
     <div>
@@ -28,13 +37,13 @@ const UploadBottom = ({ NextPopup, PreviousPopup, disabled }) => {
           />
         )}
         <Button
-          text={"המשך"}
+          text={NextPopup ? "המשך" : "העלאה"}
           style={{
             width: "8.3vw",
             height: "4.4vh",
           }}
           disabled={disabled}
-          onClick={() => showPopup(NextPopup)}
+          onClick={onClickHandler}
         />
       </div>
     </div>

@@ -1,22 +1,12 @@
 import "./MediaPopup.css";
 import backImg from "../../assets/media/Icons/backIcon.svg";
 import downloadImg from "../../assets/media/Icons/downloadIcon.svg";
-import { useContext, useLayoutEffect } from "react";
+import { useContext } from "react";
 import { PopupContext } from "../../store/popup-context";
 import downloadPdf from "../../utils/downloadPdf ";
 
 const MediaPopup = ({ children, item = {} }) => {
   const { hidePopup } = useContext(PopupContext);
-
-  const useLockBodyScroll = () => {
-    useLayoutEffect(() => {
-      const originalStyle = window.getComputedStyle(document.body).overflow;
-      document.body.style.overflow = "hidden";
-      return () => (document.body.style.overflow = originalStyle);
-    }, []);
-  };
-
-  useLockBodyScroll();
 
   return (
     <div className="media-popup-container">
