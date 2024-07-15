@@ -1,6 +1,7 @@
 import "./DeleteEdu.css";
 import handlePropagation from "../../utils/handlePropagation";
 import UploadTop from "./UploadTop";
+import Textarea from "../Textarea/Textarea";
 
 const DeleteEdu = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
@@ -13,9 +14,8 @@ const DeleteEdu = ({ isOpen, onClose }) => {
           <div className="delete-edu-text">
             על מנת למחוק את התוכן תצטרכו לשלוח הודעה למעלה התוכן
           </div>
-          <textarea
-            type="text"
-            className="delete-edu-input"
+          <Textarea
+            style={{ height: "16.667vh" }}
             placeholder="כתוב כאן את תוכן ההודעה ..."
           />
         </div>

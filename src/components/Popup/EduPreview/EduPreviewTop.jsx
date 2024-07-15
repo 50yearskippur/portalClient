@@ -30,14 +30,12 @@ const EduPreviewTop = ({
         </div>
         <div className="edu-preview-type">{edu?.type}</div>
       </div>
-      <div className="edu-edit-container">
+      <div
+        className="edu-edit-container"
+        onClick={() => iconDetails.onClick(navigate)}
+      >
         <img src={iconDetails.icon} alt="edit" />
-        <div
-          className="edu-blue-text"
-          onClick={() => iconDetails.onClick(navigate)}
-        >
-          {iconDetails.text}
-        </div>
+        <div className="edu-blue-text">{iconDetails.text}</div>
       </div>
     </div>
   );

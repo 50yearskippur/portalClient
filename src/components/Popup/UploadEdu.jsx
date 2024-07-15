@@ -1,6 +1,4 @@
 import "./UploadEdu.css";
-import { useContext } from "react";
-import { PopupContext } from "../../store/popup-context";
 import UploadTop from "./UploadTop";
 import FileUploader from "../Media/FileUploader";
 import UploadEduDetails from "./UploadEduDetails";
@@ -11,7 +9,6 @@ import Dropdown from "../Dropdown/Dropdown";
 import Textarea from "../Textarea/Textarea";
 
 const UploadEdu = () => {
-  const { hidePopup } = useContext(PopupContext);
   return (
     <div className="upload-popup" onClick={(e) => handlePropagation(e)}>
       <UploadTop title={"העלאת תוכן לפורטל"} />

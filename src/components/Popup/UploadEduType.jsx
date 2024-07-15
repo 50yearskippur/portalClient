@@ -1,5 +1,6 @@
 import "./UploadEduType.css";
 import { useState, useEffect, useContext } from "react";
+import { PopupContext } from "../../store/popup-context";
 import EduTypes from "../EduTypes/EduTypes";
 import UploadTop from "./UploadTop";
 import UploadBottom from "./UploadBottom";
@@ -9,7 +10,7 @@ import handlePropagation from "../../utils/handlePropagation";
 import AddSubSubject from "./AddSubSubject";
 import UploadEdu from "./UploadEdu";
 import sentIcon from "../../assets/media/Icons/sentIcon.svg";
-import { PopupContext } from "../../store/popup-context";
+import eduTypesTitles from "../../constants/eduTypes";
 
 const UploadEduType = () => {
   const [isSubOpen, setIsSubOpen] = useState(false);
@@ -35,7 +36,7 @@ const UploadEduType = () => {
       ...prevDetails,
       uploader: user,
     }));
-  }, []);
+  }, [setItemDetails]);
 
   return (
     <div className="upload-popup" onClick={(e) => handlePropagation(e)}>
@@ -87,7 +88,7 @@ const UploadEduType = () => {
         <div className="upload-popup-text">
           בחרו את סוג התוכן אותו תרצו להעלות
         </div>
-        <EduTypes />
+        <EduTypes eduTypesTitles={eduTypesTitles} />
       </div>
       <div
         className="button-container"
@@ -99,7 +100,7 @@ const UploadEduType = () => {
       >
         {itemDetails["subSubject"] && (
           <div className="new-sub-subject-created-feedback">
-            <img src={sentIcon} />
+            <img src={sentIcon} alt="send" />
             <div>בקשה לצירוף תת נושא חדש נשלחה</div>
           </div>
         )}
