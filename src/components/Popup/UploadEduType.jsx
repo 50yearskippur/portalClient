@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import "./UploadEduType.css";
 import { useState, useEffect, useContext } from "react";
 import EduTypes from "../EduTypes/EduTypes";
@@ -11,10 +11,11 @@ import AddSubSubject from "./AddSubSubject";
 import UploadEdu from "./UploadEdu";
 import sentIcon from "../../assets/media/Icons/sentIcon.svg";
 import { PopupContext } from "../../store/popup-context";
+import ExitWarningPopup from "./ExitWarningPopup";
 
 const UploadEduType = () => {
   const [isSubOpen, setIsSubOpen] = useState(false);
-  const { hidePopup, itemDetails, setItemDetails } = useContext(PopupContext);
+  const { showPopup, itemDetails, setItemDetails } = useContext(PopupContext);
 
   const handleNewSubClick = () => {
     setIsSubOpen(true);
@@ -40,7 +41,10 @@ const UploadEduType = () => {
 
   return (
     <div className="upload-popup" onClick={(e) => handlePropagation(e)}>
-      <UploadTop title="העלאת תוכן לפורטל" onClickExit={hidePopup} />
+      <UploadTop
+        title="העלאת תוכן לפורטל"
+        onClickExit={() => showPopup(ExitWarningPopup)}
+      />
       <div className="upload-popup-content" style={{ gap: "24px" }}>
         <div className="upload-popup-info">
           <div className="upload-popup-text-container">

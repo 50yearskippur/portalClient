@@ -1,13 +1,13 @@
 import "./TemplateRow.css";
-import "./GenericItem.css";
-import GenericItem from "./GenericItem";
-import React from 'react';
+import "../GenericObjects/GenericItem.css";
+import GenericItem from "../GenericObjects/GenericItem";
+import React from "react";
 
 const MediaRow = (item) => {
   return [
     <GenericItem
       title={item.title}
-      subTitle="שם האלבום \ תמונה"
+      subTitle="שם האלבום\תמונה"
       style={{ width: "8.3vw" }}
     />,
     <GenericItem

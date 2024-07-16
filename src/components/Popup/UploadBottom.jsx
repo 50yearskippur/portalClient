@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { PopupContext } from "../../store/popup-context";
 import Button from "../Button/Button";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const UploadBottom = ({ NextPopup, PreviousPopup, disabled }) => {
@@ -11,7 +11,28 @@ const UploadBottom = ({ NextPopup, PreviousPopup, disabled }) => {
     if (NextPopup) {
       showPopup(NextPopup);
     } else {
-      toast("התוצר שלכם נשלח לאישור! צפייה בתוצר שנשלח");
+      toast(
+        <div
+          style={{
+            display: "flex",
+            direction: "rtl",
+            justifyContent: "space-between",
+          }}
+        >
+          <div>התוצר שלכם נשלח לאישור!</div>
+          <a
+            style={{ color: "#8CAEFF", cursor: "pointer" }}
+            href="/personal-area"
+          >
+            צפייה בתוצר שנשלח
+          </a>
+        </div>,
+        {
+          type: "info",
+          autoClose: 2000,
+          icon: false,
+        }
+      );
       // hidePopup();
       setItemDetails({});
     }
@@ -19,7 +40,6 @@ const UploadBottom = ({ NextPopup, PreviousPopup, disabled }) => {
 
   return (
     <div>
-      <ToastContainer />
       <div className="upload-popup-line" style={{ margin: 0 }} />
       <div
         className="upload-button-container"

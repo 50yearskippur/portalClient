@@ -32,14 +32,11 @@
   height: 5vh;
 }
 
-
 .file-upload-container {
   border: 2px dashed #cccccc;
   border-radius: 4px;
-  padding: 20px;
   text-align: center;
   cursor: pointer;
-  margin: 20px;
 }
 
 .upload-file-text-container {
@@ -86,7 +83,7 @@
   border-radius: 4px;
 }
 
-.file-icon-container { 
+.file-icon-container {
   display: flex;
   flex-direction: column;
   align-items: center;

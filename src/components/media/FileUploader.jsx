@@ -1,10 +1,11 @@
 import "./FileUploader.css";
 import { useDropzone } from "react-dropzone";
 import { useState } from "react";
-import React from 'react';
-import UploadFileIcon from '@mui/icons-material/UploadFile';
-import List from '@mui/material/List';
-import FileIcon from './FileIcon'; 
+import React from "react";
+import UploadFileIcon from "@mui/icons-material/UploadFile";
+import List from "@mui/material/List";
+import FileIcon from "./FileIcon";
+import Button from "../Button/Button";
 
 const FileUploader = () => {
   const [files, setFiles] = useState([]);
@@ -16,7 +17,7 @@ const FileUploader = () => {
   });
 
   const handleRemoveFile = (fileName) => {
-    setFiles((prevFiles) => prevFiles.filter(file => file.name !== fileName));
+    setFiles((prevFiles) => prevFiles.filter((file) => file.name !== fileName));
   };
 
   return (
