@@ -23,7 +23,11 @@ const EduPreviewTop = ({
           <div className="edu-preview-title-container">
             <div className="edu-preview-title">{edu.title}</div>
             <div className="edu-rate-container">
-              <Rate clickable={false} numberOfStars={5} />
+              <Rate
+                style={{ width: "24px" }}
+                clickable={false}
+                numberOfStars={5}
+              />
               <>(147)</>
             </div>
           </div>

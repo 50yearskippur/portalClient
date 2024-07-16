@@ -1,12 +1,19 @@
 import "./FileUploader.css";
 import { useDropzone } from "react-dropzone";
+import { useContext } from "react";
+import { PopupContext } from "../../store/popup-context";
 import uploadFile from "../../assets/media/Upload/uploadFile.svg";
 import Button from "../Button/Button";
 
-const FileUploader = () => {
+const FileUploader = ({ text, fileTypes }) => {
+  const { setItemDetails } = useContext(PopupContext);
+
   const { getRootProps, getInputProps } = useDropzone({
     onDrop: (acceptedFiles) => {
-      // handle file upload...
+      setItemDetails((prevDetails) => ({
+        ...prevDetails,
+        file: acceptedFiles,
+      }));
     },
   });
 
@@ -14,9 +21,8 @@ const FileUploader = () => {
     <div className="file-upload-container" {...getRootProps()}>
       <input {...getInputProps({ multiple: true })} />
       <img src={uploadFile} style={{ width: "4vw" }} alt="upload file" />
-      <div className="upload-file-text-container">
-        <div className="file-upload-text">לחצו להעלות קבצים או גררו לתיבה</div>
-      </div>
+      <div className="file-upload-text">{text}</div>
+      <div className="file-upload-type">{fileTypes.join(" / ")}</div>
       <Button
         style={{ height: "3vh" }}
         onClick={() => {}}

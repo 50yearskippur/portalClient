@@ -17,7 +17,11 @@ const Upload = () => {
 
   return (
     <div className="admin-upload-container">
-      <TopSection navigateTo={"/admin"} title="העלאת תוצר" />
+      <TopSection
+        navigateTo={"/admin"}
+        title="העלאת תוצר"
+        exitText="חזרה לדך העלאות"
+      />
       <div className="upload-stages-container">
         {stagesArray.map((stage, index) => (
           <div key={`stage ${index}`} className="stage-white-container">

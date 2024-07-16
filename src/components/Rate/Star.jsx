@@ -10,7 +10,7 @@ const Star = ({ style, onClick = () => {}, clickable = true, pressed }) => {
 
   return (
     <img
-      src={pressed ? fullStar : emptyStar}
+      src={pressed || !clickable ? fullStar : emptyStar}
       alt="star"
       style={style}
       onClick={(e) => handleClick(e)}

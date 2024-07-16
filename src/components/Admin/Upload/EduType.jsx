@@ -1,18 +1,18 @@
-import "./EduType.css";
+import "./uploadStage.css";
+import { useContext } from "react";
+import { PopupContext } from "../../../store/popup-context";
 import EduTypes from "../../EduTypes/EduTypes";
 import eduTypesTitles from "../../../constants/eduTypes";
 import gameIcon from "../../../assets/media/Upload/game.png";
 import Button from "../../Button/Button";
-import { useContext } from "react";
-import { PopupContext } from "../../../store/popup-context";
 
 const EduType = () => {
   const { itemDetails } = useContext(PopupContext);
   return (
-    <div className="edu-upload-container">
+    <div className="stage-upload-container">
       <EduTypes
         eduTypesTitles={[...eduTypesTitles, { text: "משחק", img: gameIcon }]}
-        width="8.715vw"
+        width="7.3vw"
       />
       <Button
         text={"המשך"}
@@ -21,7 +21,6 @@ const EduType = () => {
           height: "4.4vh",
         }}
         disabled={!itemDetails["type"]}
-        onClick={() => {}}
       />
     </div>
   );
