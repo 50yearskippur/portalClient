@@ -1,6 +1,7 @@
 import "./NavBar.css";
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import { Tooltip as ReactTooltip } from "react-tooltip";
 import PersonalAreaAvater from "../PersonalAreaAvater/PersonalAreaAvater";
 import closeNavbarIcon from "../../assets/media/Navbar/closeNavbar.svg";
 import openNavbarIcon from "../../assets/media/Navbar/openNavbar.svg";
@@ -18,12 +19,13 @@ import adminIconSelected from "../../assets/media/Navbar/adminSelected.svg";
 
 const NavBar = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const IconsArrays = [
     {
       path: homeIcon,
       selected: homeIconSelected,
       navigateTo: "/",
-      text: "דף הבית",
+      text: "עמוד הבית",
     },
     // {
     //   path: designTemplatesIcon,
@@ -41,17 +43,30 @@ const NavBar = () => {
       path: mediaIcon,
       selected: mediaIconSelected,
       navigateTo: "/media",
-      text: "מדיה",
+      text: "תמונות ומדיה",
     },
     {
       path: adminIcon,
       selected: adminIconSelected,
       navigateTo: "/admin",
-      text: "אדמין",
+      text: "צד אדמין",
     },
   ];
+
   const [isOpen, setIsOpen] = useState(false);
-  const [chosenIcon, setChosenIcon] = useState(IconsArrays[0]);
+
+  const getInitialIcon = () => {
+    const currentPath = location.pathname;
+    return (
+      IconsArrays.find((icon) => icon.navigateTo.includes(currentPath)) || null
+    );
+  };
+
+  const [chosenIcon, setChosenIcon] = useState(getInitialIcon);
+
+  useEffect(() => {
+    setChosenIcon(getInitialIcon());
+  }, [location.pathname]);
 
   return (
     <div className={`navbar-container ${isOpen ? "open" : "close"}`}>
@@ -84,9 +99,15 @@ const NavBar = () => {
               }}
             >
               <img
+                data-tooltip-id={`my-tooltip-${index}`}
                 src={chosenIcon?.path === icon.path ? icon.selected : icon.path}
                 className="navbar-icon"
                 alt="navbar icon"
+              />
+              <ReactTooltip
+                id={`my-tooltip-${index}`}
+                place="bottom"
+                content={icon.text}
               />
               {isOpen && <div className="navbar-item-text">{icon.text}</div>}
             </div>
@@ -104,8 +125,8 @@ const NavBar = () => {
               cursor: "pointer",
             }}
             onClick={() => {
-              navigate("/personalArea");
               setChosenIcon(null);
+              navigate("/personalArea");
             }}
           />
         </div>
