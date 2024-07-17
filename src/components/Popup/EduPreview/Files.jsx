@@ -20,8 +20,8 @@ const Files = ({ edu }) => {
         <div className="edu-preview-file-container">
           <FileController item={edu} style={fileStyle} />
           <div className="edu-preview-file-details">
-            <div>{edu.title}</div>
-            <div>524MB</div>
+            <>{edu.title}</>
+            <>524MB</>
           </div>
         </div>
       </div>

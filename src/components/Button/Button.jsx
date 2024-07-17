@@ -5,7 +5,7 @@ const Button = ({
   style,
   isWhiteButton = false,
   disabled = false,
-  onClick,
+  onClick = () => {},
 }) => {
   const onClickHandler = () => {
     if (disabled) return;

@@ -43,7 +43,7 @@ const ShowFullPdf = ({ pdfDetails }) => {
           <Document
             file={pdfDetails.media}
             onLoadSuccess={onDocumentLoadSuccess}
-            loading={<div>Loading...</div>}
+            loading={<>Loading...</>}
           >
             {Array.from(new Array(numPages), (el, index) => (
               <Page

@@ -1,7 +1,7 @@
 import "./AdminPage.css";
 import { useState, useEffect, useContext } from "react";
 import { PopupContext } from "../store/popup-context";
-import UploadEduType from "../components/Popup/UploadEduType";
+import UploadEduType from "../components/Popup/UploadEdu/UploadEduType";
 import Tabs from "../components/Tabs/Tabs";
 import Search from "../components/Search/Search";
 import TemplateTable from "../components/Admin/GenericObjects/TemplateTable";

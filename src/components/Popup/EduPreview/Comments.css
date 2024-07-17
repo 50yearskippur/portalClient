@@ -25,3 +25,15 @@
   display: flex;
   gap: 12px;
 }
+
+.select-comment-input {
+  width: 18px;
+  height: 18px;
+  margin-right: -20px;
+  cursor: pointer;
+}
+
+.select-comment-container {
+  display: flex;
+  gap: 13px;
+}

@@ -1,10 +1,12 @@
 import "./EduResourseRow.css";
 import "./TemplateRow.css";
+import { useState } from "react";
 import GenericItem from "../GenericObjects/GenericItem";
 import Star from "../../Rate/Star";
 import eduTypeByText from "../../../utils/eduTypeByText";
 
 const EduResourseRow = (item) => {
+  const [isRecommended, setIsRecommended] = useState(false);
   return [
     <div className="generic-row-item-container">
       <img
@@ -21,7 +23,11 @@ const EduResourseRow = (item) => {
     />,
     <div className="edu-row-views">12 צפיות</div>,
     <div className="generic-item-container" style={{ width: "3.125vw" }}>
-      <Star style={{ width: "20px" }} clickable={true} />
+      <Star
+        style={{ width: "20px" }}
+        pressed={isRecommended}
+        onClick={() => setIsRecommended((prev) => !prev)}
+      />
       <div className="generic-item-sub-title">מומלץ</div>
     </div>,
     <GenericItem

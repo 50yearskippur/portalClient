@@ -1,9 +1,9 @@
 import "./MediaPopup.css";
-import backImg from "../../assets/media/Icons/backIcon.svg";
-import downloadImg from "../../assets/media/Icons/downloadIcon.svg";
+import backImg from "../../../assets/media/Icons/backIcon.svg";
+import downloadImg from "../../../assets/media/Icons/downloadIcon.svg";
 import { useContext } from "react";
-import { PopupContext } from "../../store/popup-context";
-import downloadPdf from "../../utils/downloadPdf ";
+import { PopupContext } from "../../../store/popup-context";
+import downloadPdf from "../../../utils/downloadPdf ";
 
 const MediaPopup = ({ children, item = {} }) => {
   const { hidePopup } = useContext(PopupContext);

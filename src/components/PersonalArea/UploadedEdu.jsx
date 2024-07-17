@@ -3,7 +3,7 @@ import { useContext } from "react";
 import Button from "../Button/Button";
 import { PopupContext } from "../../store/popup-context";
 import uploadFileIcon from "../../assets/media/Icons/uploadFile.svg";
-import UploadEduType from "../Popup/UploadEduType";
+import UploadEduType from "../Popup/UploadEdu/UploadEduType";
 
 const UploadedEdu = () => {
   const { showPopup } = useContext(PopupContext);

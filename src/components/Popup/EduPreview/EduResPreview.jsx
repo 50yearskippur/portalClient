@@ -12,7 +12,7 @@ import Files from "./Files";
 import Setting from "./Settings";
 import MoreDetails from "./MoreDetails";
 import Groups from "./Groups";
-import DeleteEduPopup from "../DeleteEdu";
+import DeleteEduPopup from "../General/DeleteEdu";
 
 const EduPreview = ({ edu }) => {
   const [isDeletePopup, setIsDeletePopup] = useState(false);

@@ -6,7 +6,7 @@ import FileController from "../components/Media/FileController";
 import SideBar from "../components/SideBar/SideBar";
 import Rate from "../components/Rate/Rate";
 import EduResPrev from "../components/EduResPrev/EduResPrev";
-import UploadEduType from "../components/Popup/UploadEduType";
+import UploadEduType from "../components/Popup/UploadEdu/UploadEduType";
 import { PopupContext } from "../store/popup-context";
 import notebookImg from "../assets/media/Icons/notebook.svg";
 import heartimg from "../assets/media/Icons/fullHeart.svg";
@@ -135,7 +135,7 @@ const SubSubjectPage = () => {
                 }}
               >
                 <img src={heartimg} alt="heart" />
-                <div>הוספה למועדפים</div>
+                <>הוספה למועדפים</>
               </div>
               <div
                 className="edu-resourse-add-container"
@@ -146,7 +146,7 @@ const SubSubjectPage = () => {
                 }}
               >
                 <img src={plusImg} alt="plus" />
-                <div>הוספה לקורס שלי</div>
+                <>הוספה לקורס שלי</>
               </div>
             </div>
           </div>

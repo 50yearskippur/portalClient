@@ -1,5 +1,5 @@
 import UploadTop from "./UploadTop";
-import ButtonContainer from "../ButtonContainer/ButtonContainer";
+import ButtonContainer from "../../ButtonContainer/ButtonContainer";
 import exitIcon from "../../assets/media/Icons/exitIcon.svg";
 
 import "./CreditsPopUp.css";

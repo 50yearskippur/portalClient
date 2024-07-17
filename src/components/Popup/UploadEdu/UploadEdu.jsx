@@ -1,20 +1,17 @@
 import "./UploadEdu.css";
-import { useContext } from "react";
-import { PopupContext } from "../../store/popup-context";
-import UploadTop from "./UploadTop";
-import FileUploader from "../Media/FileUploader";
+import PopupTop from "../Edges/PopupTop";
+import FileUploader from "../../Media/FileUploader";
 import UploadEduDetails from "./UploadEduDetails";
 import UploadEduType from "./UploadEduType";
-import handlePropagation from "../../utils/handlePropagation";
-import UploadBottom from "./UploadBottom";
-import Dropdown from "../Dropdown/Dropdown";
-import Textarea from "../Textarea/Textarea";
+import handlePropagation from "../../../utils/handlePropagation";
+import PopupBottom from "../Edges/PopupBottom";
+import Dropdown from "../../Dropdown/Dropdown";
+import Textarea from "../../Textarea/Textarea";
 
 const UploadEdu = () => {
-  const { hidePopup } = useContext(PopupContext);
   return (
     <div className="upload-popup" onClick={(e) => handlePropagation(e)}>
-      <UploadTop title={"העלאת תוכן לפורטל"} />
+      <PopupTop title={"העלאת תוכן לפורטל"} />
       <div className="upload-popup-content">
         <div className="upload-input-continer">
           <div
@@ -53,10 +50,10 @@ const UploadEdu = () => {
           תיאור (אופציונלי)
         </div>
         <Textarea
-          style={{ marginBottom: "2vh", height: "6.58vh" }}
+          style={{ marginBottom: "2vh", height: "3.47vh" }}
           placeholder={"כתבו כאן את תיאור התוכן שאתם מעלים..."}
         />
-        <FileUploader />
+        <FileUploader text="לחץ להעלות קבצים או גררו לתיבה" />
         <div className="upload-agreement-container">
           <input
             className="upload-agreement-input"
@@ -67,7 +64,7 @@ const UploadEdu = () => {
           אני מאשר שהתוכן עומד בתנאי בטחון מידע ומותאם לפרסום לכלל אמ"ן
         </div>
       </div>
-      <UploadBottom
+      <PopupBottom
         NextPopup={<UploadEduDetails />}
         PreviousPopup={<UploadEduType />}
       />

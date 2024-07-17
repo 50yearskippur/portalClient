@@ -4,5 +4,9 @@
   font-size: 16px;
   font-weight: 500;
   margin-top: auto;
-  padding: 12px 24px;
+}
+
+.edu-delete-container {
+  display: flex;
+  gap: 7px;
 }

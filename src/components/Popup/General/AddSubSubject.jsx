@@ -1,9 +1,9 @@
 import "./AddSubSubject.css";
 import { useState, useContext } from "react";
-import handlePropagation from "../../utils/handlePropagation";
-import exitIcon from "../../assets/media/Icons/exitIcon.svg";
-import Button from "../Button/Button";
-import { PopupContext } from "../../store/popup-context";
+import handlePropagation from "../../../utils/handlePropagation";
+import exitIcon from "../../../assets/media/Icons/exitIcon.svg";
+import Button from "../../Button/Button";
+import { PopupContext } from "../../../store/popup-context";
 
 const AddSubSubject = ({ isOpen, onClose }) => {
   const [subSubjectName, setSubSubjectName] = useState("");

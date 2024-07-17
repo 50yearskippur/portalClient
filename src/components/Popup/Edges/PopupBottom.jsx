@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import { PopupContext } from "../../store/popup-context";
-import Button from "../Button/Button";
+import { PopupContext } from "../../../store/popup-context";
+import Button from "../../Button/Button";
 
 const UploadBottom = ({ NextPopup, PreviousPopup, disabled }) => {
   const { showPopup, hidePopup, setItemDetails } = useContext(PopupContext);
@@ -31,7 +31,6 @@ const UploadBottom = ({ NextPopup, PreviousPopup, disabled }) => {
               width: "8.3vw",
               height: "4.4vh",
             }}
-            // disabled={disabled}
             isWhiteButton={true}
             onClick={() => showPopup(PreviousPopup)}
           />

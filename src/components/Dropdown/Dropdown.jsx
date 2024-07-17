@@ -59,7 +59,7 @@ const Dropdown = ({
       {isOpen && (
         <div
           className="dropdown-list"
-          style={{ height: listHeight, overflowY: "auto", overflowX: "hidden"}}
+          style={{ height: listHeight, overflowY: "auto", overflowX: "hidden" }}
           onClick={() => setIsOpen((prev) => !prev)}
         >
           {list.map((item, index) => (
