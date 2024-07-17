@@ -1,9 +1,11 @@
+import React from "react";
 import "./UploadEduType.css";
 import { useState, useEffect, useContext } from "react";
 import { PopupContext } from "../../../store/popup-context";
 import EduTypes from "../../EduTypes/EduTypes";
 import PopupTop from "../Edges/PopupTop";
 import PopupBottom from "../Edges/PopupBottom";
+import ExitWarningPopup from "../General/ExitWarning";
 import PersonalAreaAvater from "../../PersonalAreaAvater/PersonalAreaAvater";
 import Dropdown from "../../Dropdown/Dropdown";
 import handlePropagation from "../../../utils/handlePropagation";
@@ -14,7 +16,7 @@ import eduTypesTitles from "../../../constants/eduTypes";
 
 const UploadEduType = () => {
   const [isSubOpen, setIsSubOpen] = useState(false);
-  const { hidePopup, itemDetails, setItemDetails } = useContext(PopupContext);
+  const { showPopup, itemDetails, setItemDetails } = useContext(PopupContext);
 
   const handleNewSubClick = () => {
     setIsSubOpen(true);
@@ -40,7 +42,10 @@ const UploadEduType = () => {
 
   return (
     <div className="upload-popup" onClick={(e) => handlePropagation(e)}>
-      <PopupTop title="העלאת תוכן לפורטל" onClickExit={hidePopup} />
+      <PopupTop
+        title="העלאת תוכן לפורטל"
+        onClickExit={() => showPopup(ExitWarningPopup)}
+      />
       <div className="upload-popup-content" style={{ gap: "24px" }}>
         <div className="upload-popup-info">
           <div className="upload-popup-text-container">

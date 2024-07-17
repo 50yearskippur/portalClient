@@ -1,6 +1,7 @@
 import { Document, Page } from "react-pdf";
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "./Pdf.css";
+import React from 'react';
 
 const Loading = () => {
   return (

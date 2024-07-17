@@ -1,4 +1,5 @@
 import "./Tabs.css";
+import React from 'react';
 
 const Tabs = ({ tabsArray, style = {}, setSelectedTab, selectedTab }) => {
   return (

@@ -1,3 +1,4 @@
+import React from 'react';
 import "./PersonalAreaPage.css";
 import { useState } from "react";
 import TopNav from "../components/TopNav/TopNav";

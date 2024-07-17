@@ -1,3 +1,4 @@
+import React from 'react';
 import "./FormsPage.css";
 // import PageTemplate from "../components/PageTemplate/PageTemplate";
 import PdfPreview from "../components/ItemsComponents/PdfPreview";

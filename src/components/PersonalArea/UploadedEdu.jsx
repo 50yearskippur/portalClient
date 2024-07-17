@@ -1,3 +1,4 @@
+import React from 'react';
 import "./UploadedEdu.css";
 import { useContext } from "react";
 import Button from "../Button/Button";

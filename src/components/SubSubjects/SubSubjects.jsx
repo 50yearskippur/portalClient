@@ -1,3 +1,4 @@
+import React from 'react';
 import "./SubSubjects.css";
 import PageTemplate from "../PageTemplate/PageTemplate";
 

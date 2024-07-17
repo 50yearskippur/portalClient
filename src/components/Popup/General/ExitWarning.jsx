@@ -1,5 +1,5 @@
-import paperIcon from "../../assets/media/Icons/paperIcon.svg";
-import exitIcon from "../../assets/media/Icons/exitIcon.svg";
+import paperIcon from "../../../assets/media/Icons/paperIcon.svg";
+import exitIcon from "../../../assets/media/Icons/exitIcon.svg";
 import "./ExitWarning.css";
 import ButtonContainer from "../../ButtonContainer/ButtonContainer";
 const ExitWarning = () => {
