@@ -1,5 +1,6 @@
 import exitIcon from "../../../assets/media/Icons/exitIcon.svg";
 
+
 const UploadTop = ({ title, onClickExit }) => {
   return (
     <div className="upload-popup-top">

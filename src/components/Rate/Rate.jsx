@@ -1,6 +1,7 @@
 import "./Rate.css";
 import { useState } from "react";
 import Star from "./Star";
+import React from 'react';
 
 const Rate = ({ style, clickable, numberOfStars = 5 }) => {
   const [starsIndex, setStarsIndex] = useState(0);

@@ -1,5 +1,5 @@
 import "./FileController.css";
-import { useState } from "react";
+import React, { useState } from "react";
 import getHtml from "./getHtml";
 
 const FileController = ({
@@ -12,7 +12,6 @@ const FileController = ({
   const [fileType, setFileType] = useState(
     item.cover ? "image" : item.mediaType
   );
-
   return (
     <div
       className="file-container"

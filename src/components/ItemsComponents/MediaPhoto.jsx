@@ -1,3 +1,4 @@
+import React from 'react';
 import "./MediaPhoto.css";
 import FileController from "../Media/FileController";
 import rabit from "../PageTemplate/rabit.jpg";

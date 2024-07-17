@@ -1,3 +1,4 @@
+import React from 'react';
 import "./UploadEdu.css";
 import PopupTop from "../Edges/PopupTop";
 import FileUploader from "../../Media/FileUploader";

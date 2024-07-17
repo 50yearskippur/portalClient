@@ -1,6 +1,7 @@
 import "./TopSection.css";
 import backImg from "../../assets/media/Icons/backIcon.svg";
 import { useNavigate } from "react-router-dom";
+import React from 'react';
 
 const TopSection = ({ title, navigateTo, exitText = "חזרה" }) => {
   const navigate = useNavigate();

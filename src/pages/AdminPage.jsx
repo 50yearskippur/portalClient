@@ -1,3 +1,4 @@
+import React from 'react';
 import "./AdminPage.css";
 import { useState, useEffect, useContext } from "react";
 import { PopupContext } from "../store/popup-context";

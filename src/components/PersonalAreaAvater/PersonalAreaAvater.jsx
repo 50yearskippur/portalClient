@@ -1,3 +1,4 @@
+import React from 'react';
 import "./PersonalAreaAvater.css";
 
 const PersonalAreaAvater = ({ name, style, onClick = () => {} }) => {

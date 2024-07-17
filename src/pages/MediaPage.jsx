@@ -1,3 +1,4 @@
+import React from 'react';
 import PageTemplate from "../components/PageTemplate/PageTemplate";
 import StockMedia from "../components/ItemsComponents/StockMedia";
 import CollageMedia from "../components/ItemsComponents/CollageMedia";

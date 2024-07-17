@@ -1,3 +1,4 @@
+import React from 'react';
 import "./MediaAlbumPage.css";
 import rabit from "../assets/img/rabit.jpg";
 import party from "../assets/img/party.png";

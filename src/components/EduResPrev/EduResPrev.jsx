@@ -1,6 +1,7 @@
 import "./EduResPrev.css";
 import FileController from "../Media/FileController";
 import point from "../../assets/media/Icons/blackPoint.svg";
+import React from 'react';
 
 const EduResPrev = ({ item }) => {
   return (

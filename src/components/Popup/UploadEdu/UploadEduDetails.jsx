@@ -1,3 +1,4 @@
+import React from 'react';
 import "./UploadEduDetails.css";
 import { useContext } from "react";
 import { PopupContext } from "../../../store/popup-context";
