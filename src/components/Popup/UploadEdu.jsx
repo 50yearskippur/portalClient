@@ -53,7 +53,7 @@ const UploadEdu = () => {
           style={{ marginBottom: "2vh", height: "6.58vh" }}
           placeholder={"כתבו כאן את תיאור התוכן שאתם מעלים..."}
         />
-        <FileUploader />
+        <FileUploader text="לחץ להעלות קבצים או גררו לתיבה" />
         <div className="upload-agreement-container">
           <input
             className="upload-agreement-input"

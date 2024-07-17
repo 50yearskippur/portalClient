@@ -13,7 +13,11 @@ const Upload = () => {
     { title: "פרטים", component: <Details /> },
     { title: "הגדרות", component: <Setting /> },
   ];
-  const [currentStage, setCurrentStage] = useState(stagesArray[0].title);
+  const [currentStage, setCurrentStage] = useState(1);
+
+  const handleStageClick = (stagenumber) => {
+    if (stagenumber > currentStage) setCurrentStage(stagenumber);
+  };
 
   return (
     <div className="admin-upload-container">
@@ -27,24 +31,20 @@ const Upload = () => {
           <div key={`stage ${index}`} className="stage-white-container">
             <div
               className="stage-header"
-              onClick={() => setCurrentStage(stage.title)}
+              onClick={() => handleStageClick(index + 1)}
             >
               <div
-                className={`stage-number ${
-                  currentStage === stage.title && "current"
-                } `}
+                className={`stage-number ${index < currentStage && "current"} `}
               >
                 {index + 1}
               </div>
               <div
-                className={`stage-title ${
-                  currentStage === stage.title && "current"
-                }`}
+                className={`stage-title ${index < currentStage && "current"}`}
               >
                 {stage.title}
               </div>
             </div>
-            {currentStage === stage.title && stage.component}
+            {currentStage === index + 1 && stage.component}
           </div>
         ))}
       </div>

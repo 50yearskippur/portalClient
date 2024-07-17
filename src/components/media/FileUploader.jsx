@@ -21,13 +21,17 @@ const FileUploader = ({ text, fileTypes }) => {
     <div className="file-upload-container" {...getRootProps()}>
       <input {...getInputProps({ multiple: true })} />
       <img src={uploadFile} style={{ width: "4vw" }} alt="upload file" />
-      <div className="file-upload-text">{text}</div>
-      <div className="file-upload-type">{fileTypes.join(" / ")}</div>
+      <div className="file-upload-text-container">
+        <div className="file-upload-text">{text}</div>
+        {fileTypes && (
+          <div className="file-upload-type">{fileTypes.join(" / ")}</div>
+        )}
+      </div>
       <Button
         style={{ height: "3vh" }}
         onClick={() => {}}
         isWhiteButton={true}
-        text={"בחרו קובץ"}
+        text={"בחר קובץ"}
       />
     </div>
   );
