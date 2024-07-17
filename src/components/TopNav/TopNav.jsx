@@ -4,7 +4,7 @@ import { PopupContext } from "../../store/popup-context";
 import Tabs from "../Tabs/Tabs";
 import Search from "../Search/Search";
 import Button from "../Button/Button";
-import UploadEduType from "../Popup/UploadEduType";
+import UploadEduType from "../Popup/UploadEdu/UploadEduType";
 
 const TopNav = ({
   tabsArray,

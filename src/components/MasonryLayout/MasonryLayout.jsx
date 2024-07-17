@@ -2,7 +2,7 @@ import "./MasonryLayout.css";
 import FileController from "../Media/FileController";
 import { useContext } from "react";
 import { PopupContext } from "../../store/popup-context";
-import MediaPopup from "../Popup/MediaPopup";
+import MediaPopup from "../Popup/General/MediaPopup";
 
 const MasonryLayout = ({ data }) => {
   const { showPopup } = useContext(PopupContext);

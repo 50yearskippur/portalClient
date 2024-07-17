@@ -1,19 +1,19 @@
 import "./UploadEduDetails.css";
 import { useContext } from "react";
-import { PopupContext } from "../../store/popup-context";
-import handlePropagation from "../../utils/handlePropagation";
-import UploadTop from "./UploadTop";
-import UploadBottom from "./UploadBottom";
+import { PopupContext } from "../../../store/popup-context";
+import handlePropagation from "../../../utils/handlePropagation";
+import PopupTop from "../Edges/PopupTop";
+import PopupBottom from "../Edges/PopupBottom";
 import UploadEdu from "./UploadEdu";
-import Dropdown from "../Dropdown/Dropdown";
-import Switch from "../Switch/Switch";
-import SearchDropdown from "../Search/SearchDropdown";
+import Dropdown from "../../Dropdown/Dropdown";
+import Switch from "../../Switch/Switch";
+import SearchDropdown from "../../Search/SearchDropdown";
 
 const UploadEduDetails = () => {
   const { hidePopup } = useContext(PopupContext);
   return (
     <div className="upload-popup" onClick={(e) => handlePropagation(e)}>
-      <UploadTop title="העלאת תוכן לפורטל" onClickExit={hidePopup} />
+      <PopupTop title="העלאת תוכן לפורטל" onClickExit={hidePopup} />
       <div className="upload-popup-content">
         <div
           className="upload-details-text-container"
@@ -112,7 +112,7 @@ const UploadEduDetails = () => {
         </div>
       </div>
       <div style={{ marginTop: "6.75vh" }}>
-        <UploadBottom PreviousPopup={UploadEdu} />
+        <PopupBottom PreviousPopup={UploadEdu} />
       </div>
     </div>
   );

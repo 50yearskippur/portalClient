@@ -2,7 +2,7 @@ import "./PdfPreview.css";
 import FileController from "../Media/FileController";
 import ShowFullPdf from "../ShowFullPdf/ShowFullPdf";
 import { useContext } from "react";
-import MediaPopup from "../Popup/MediaPopup";
+import MediaPopup from "../Popup/General/MediaPopup";
 import { PopupContext } from "../../store/popup-context";
 
 const PdfPreview = ({ item }) => {

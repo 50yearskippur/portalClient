@@ -1,16 +1,16 @@
 import "./UploadEduType.css";
 import { useState, useEffect, useContext } from "react";
-import { PopupContext } from "../../store/popup-context";
-import EduTypes from "../EduTypes/EduTypes";
-import UploadTop from "./UploadTop";
-import UploadBottom from "./UploadBottom";
-import PersonalAreaAvater from "../PersonalAreaAvater/PersonalAreaAvater";
-import Dropdown from "../Dropdown/Dropdown";
-import handlePropagation from "../../utils/handlePropagation";
-import AddSubSubject from "./AddSubSubject";
+import { PopupContext } from "../../../store/popup-context";
+import EduTypes from "../../EduTypes/EduTypes";
+import PopupTop from "../Edges/PopupTop";
+import PopupBottom from "../Edges/PopupBottom";
+import PersonalAreaAvater from "../../PersonalAreaAvater/PersonalAreaAvater";
+import Dropdown from "../../Dropdown/Dropdown";
+import handlePropagation from "../../../utils/handlePropagation";
+import AddSubSubject from "../General/AddSubSubject";
 import UploadEdu from "./UploadEdu";
-import sentIcon from "../../assets/media/Icons/sentIcon.svg";
-import eduTypesTitles from "../../constants/eduTypes";
+import sentIcon from "../../../assets/media/Icons/sentIcon.svg";
+import eduTypesTitles from "../../../constants/eduTypes";
 
 const UploadEduType = () => {
   const [isSubOpen, setIsSubOpen] = useState(false);
@@ -40,7 +40,7 @@ const UploadEduType = () => {
 
   return (
     <div className="upload-popup" onClick={(e) => handlePropagation(e)}>
-      <UploadTop title="העלאת תוכן לפורטל" onClickExit={hidePopup} />
+      <PopupTop title="העלאת תוכן לפורטל" onClickExit={hidePopup} />
       <div className="upload-popup-content" style={{ gap: "24px" }}>
         <div className="upload-popup-info">
           <div className="upload-popup-text-container">
@@ -111,7 +111,7 @@ const UploadEduType = () => {
             <div>בקשה לצירוף תת נושא חדש נשלחה</div>
           </div>
         )}
-        <UploadBottom
+        <PopupBottom
           NextPopup={<UploadEdu />}
           disabled={
             !itemDetails["type"] ||
