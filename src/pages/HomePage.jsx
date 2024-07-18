@@ -14,10 +14,32 @@ import { Padding } from "@mui/icons-material";
 //delete in production
 const recommendedEduResource = [
   {
-    title: 'משחקי פז"מ',
+    title: 'רעיון מטורף',
     type: "משחק",
     subSubject: {
-      title: "לורם אימפסום",
+      title: "קיפוד",
+      description: "תיאור תיאור",
+      eduResource: [],
+    },
+    media: rabit,
+    mediaType: "image",
+  },
+  {
+    title: 'מומלץ ממש',
+    type: "משחק",
+    subSubject: {
+      title: "מחברות",
+      description: "תיאור תיאור",
+      eduResource: [],
+    },
+    media: rabit,
+    mediaType: "image",
+  },
+  {
+    title: 'הכי מומלץ',
+    type: "משחק",
+    subSubject: {
+      title: "מבצע כיף",
       description: "תיאור תיאור",
       eduResource: [],
     },
@@ -28,7 +50,7 @@ const recommendedEduResource = [
     title: 'משחקי פז"מ',
     type: "משחק",
     subSubject: {
-      title: "לורם אימפסום",
+      title: "קיץ",
       description: "תיאור תיאור",
       eduResource: [],
     },
@@ -36,43 +58,10 @@ const recommendedEduResource = [
     mediaType: "image",
   },
   {
-    title: 'משחקי פז"מ',
+    title: 'מבצעים שווים',
     type: "משחק",
     subSubject: {
-      title: "לורם אימפסום",
-      description: "תיאור תיאור",
-      eduResource: [],
-    },
-    media: rabit,
-    mediaType: "image",
-  },
-  {
-    title: 'משחקי פז"מ',
-    type: "משחק",
-    subSubject: {
-      title: "לורם אימפסום",
-      description: "תיאור תיאור",
-      eduResource: [],
-    },
-    media: rabit,
-    mediaType: "image",
-  },
-  {
-    title: 'משחקי פז"מ',
-    type: "משחק",
-    subSubject: {
-      title: "לורם אימפסום",
-      description: "תיאור תיאור",
-      eduResource: [],
-    },
-    media: rabit,
-    mediaType: "image",
-  },
-  {
-    title: 'משחקי פז"מ',
-    type: "משחק",
-    subSubject: {
-      title: "לורם אימפסום",
+      title: "צוות סימבה",
       description: "תיאור תיאור",
       eduResource: [],
     },
@@ -184,7 +173,10 @@ const HomePage = () => {
           padding: "10px",
         }}
       />
-      <p className="header" style={{ marginTop: "-2.8vh" }}>
+      <p
+        className="header"
+        style={{ marginTop: "-3.4vh", marginBottom: "4.432vh" }}
+      >
         מומלצים
       </p>
       <RecommendedSection data={recommendedEduResource} />
@@ -193,7 +185,7 @@ const HomePage = () => {
         setSelectedTab={setSelectedTab}
         selectedTab={selectedTab}
         tabsStyle={{ marginRight: "0.5vw" }}
-        topNavStyle={{ marginBottom: "4vh", marginTop: "5vh" }}
+        topNavStyle={{ marginBottom: "4vh", marginTop: "5.96vh" }}
       />
       {getEduResources(selectedTab)}
     </div>

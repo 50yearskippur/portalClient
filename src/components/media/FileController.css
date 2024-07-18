@@ -16,6 +16,7 @@
 .gradient {
   position: absolute;
   width: 100%;
+  opacity: 0.7;
   border-radius: 10px;
   background: linear-gradient(
     180deg,
