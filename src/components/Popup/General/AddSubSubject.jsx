@@ -1,5 +1,5 @@
-import React from 'react';
 import "./AddSubSubject.css";
+import React from "react";
 import { useState, useContext } from "react";
 import handlePropagation from "../../../utils/handlePropagation";
 import exitIcon from "../../../assets/media/Icons/exitIcon.svg";
@@ -53,8 +53,9 @@ const AddSubSubject = ({ isOpen, onClose }) => {
             text={"שליחת בקשה"}
             onClick={handleSave}
             disabled={subSubjectName.trim() === ""}
+            style={{ background: "#3259FF" }}
           />
-          <div className="upload-btn cancel" onClick={onClose}>
+          <div className="cancel-btn" onClick={onClose}>
             ביטול
           </div>
         </div>

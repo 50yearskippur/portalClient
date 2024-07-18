@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import "./UploadEdu.css";
 import PopupTop from "../Edges/PopupTop";
 import FileUploader from "../../Media/FileUploader";
@@ -51,7 +51,7 @@ const UploadEdu = () => {
           תיאור (אופציונלי)
         </div>
         <Textarea
-          style={{ marginBottom: "2vh", height: "3.47vh" }}
+          style={{ marginBottom: "2vh", height: "100%" }}
           placeholder={"כתבו כאן את תיאור התוכן שאתם מעלים..."}
         />
         <FileUploader text="לחץ להעלות קבצים או גררו לתיבה" />

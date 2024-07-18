@@ -1,6 +1,6 @@
 import TemplateRow from "./TemplateRow";
 import "./TemplateTable.css";
-import getAdminChildren from "../../utils/getAdminChildren";
+import getAdminChildren from "../../../utils/getAdminChildren";
 import React from 'react';
 
 const TemplateTable = ({ dataArr, selectedTab }) => {

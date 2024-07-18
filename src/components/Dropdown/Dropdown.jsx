@@ -13,6 +13,7 @@ const Dropdown = ({
   value,
   listHeight = {},
 }) => {
+  console.log(style);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(value ? value : placeholder);
   const { setItemDetails, itemDetails } = useContext(PopupContext);
