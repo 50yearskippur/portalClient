@@ -4,7 +4,7 @@ import { PopupContext } from "../../../store/popup-context";
 import FileUploader from "../../Media/FileUploader";
 import Button from "../../Button/Button";
 
-const Files = () => {
+const Files = ({ nextStage }) => {
   const { itemDetails } = useContext(PopupContext);
 
   return (
@@ -29,6 +29,7 @@ const Files = () => {
           height: "4.4vh",
         }}
         disabled={!itemDetails["file"]}
+        onClick={nextStage}
       />
     </div>
   );
