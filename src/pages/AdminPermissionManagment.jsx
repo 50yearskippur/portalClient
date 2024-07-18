@@ -7,6 +7,7 @@ import TemplateTable from "../components/Admin/GenericObjects/TemplateTable";
 import Requests from "../components/Admin/Requests/Requests";
 import trash from "../assets/media/Icons/trashIcon.svg";
 import OrderBy from "../components/OrderBy/OrderBy";
+import PersonalAreaAvater from "../components/PersonalAreaAvater/PersonalAreaAvater";
 const AdminPermissionManagment = () => {
   const [data, setData] = useState([]);
 
@@ -14,17 +15,14 @@ const AdminPermissionManagment = () => {
     {
       fullName: "דניאל דניאלי",
       role: "רמד פיתוח",
-      icon: trash,
     },
     {
       fullName: "דניאל דניאלי",
       role: "רמד פיתוח",
-      icon: trash,
     },
     {
       fullName: "דניאל דניאלי",
       role: "רמד פיתוח",
-      icon: trash,
     },
   ];
   const [tabsArray, settabsArray] = useState([
@@ -32,7 +30,6 @@ const AdminPermissionManagment = () => {
     "תתי נושאים",
   ]);
   const [selectedTab, setSelectedTab] = useState(tabsArray[0]);
-  console.log(`אדמינים (${eduArr.length})`);
   //delete in production
   const subSubjectsArr = [
     {
@@ -69,17 +66,17 @@ const AdminPermissionManagment = () => {
       {
         fullName: "דניאל דניאלי",
         role: "רמד פיתוח",
-        icon: trash,
+        personalAreaName: "DD",
       },
       {
         fullName: "דניאל דניאלי",
         role: "רמד פיתוח",
-        icon: trash,
+        personalAreaName: "DS",
       },
       {
         fullName: "דניאל דניאלי",
         role: "רמד פיתוח",
-        icon: trash,
+        personalAreaName: "DD",
       },
     ];
 
@@ -115,6 +112,7 @@ const AdminPermissionManagment = () => {
             <Search style={{ height: "42px", width: "16.7vw" }} />
           </div>
           <TemplateTable
+            icon={trash}
             onClick={() => console.log("no design yet")}
             dataArr={data}
             selectedTab={selectedTab}

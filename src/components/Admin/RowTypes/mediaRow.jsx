@@ -1,6 +1,6 @@
 import "./TemplateRow.css";
 import GenericItem from "../GenericObjects/GenericItem";
-
+import convertDateToString from "../../../utils/convertDateToString";
 const MediaRow = (item) => {
   return [
     <GenericItem
@@ -14,8 +14,8 @@ const MediaRow = (item) => {
       style={{ width: "4.5vw" }}
     />,
     <GenericItem
-      title={item.date}
-      subTitle="תאריך העלאה"
+      title={convertDateToString(item.date)}
+      subTitle="עודכן בתאריך"
       style={{ width: "5.2vw" }}
     />,
   ];

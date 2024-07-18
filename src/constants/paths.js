@@ -1,7 +1,7 @@
 import Home from "../pages/HomePage";
 import Form from "../pages/FormsPage";
 import Media from "../pages/MediaPage";
-import DesignTemplates from "../pages/DesignTemplatesPage.jsx";
+// import DesignTemplates from "../pages/DesignTemplatesPage.jsx";
 import MediaAlbum from "../pages/MediaAlbumPage";
 import SubSubject from "../pages/SubSubjectPage";
 import PersonalArea from "../pages/PersonalAreaPage";
@@ -14,11 +14,11 @@ const paths = [
     text: "דף הבית",
     component: Home,
   },
-  {
-    path: "/designTemplates",
-    text: "תבניות עיצוב",
-    component: DesignTemplates,
-  },
+  // {
+  //   path: "/designTemplates",
+  //   text: "תבניות עיצוב",
+  //   component: DesignTemplates,
+  // },
   {
     path: "/forms",
     text: "טפסים",
@@ -29,7 +29,11 @@ const paths = [
   { path: "/subSubject", text: "תת נושא", component: SubSubject },
   { path: "/admin", text: "אדמין", component: Admin },
   { path: "/personalArea", text: "איזור אישי", component: PersonalArea },
-  { path: "/admin/permissions", text: "איזור אישי", component: AdminPermissionManagment },
+  {
+    path: "/admin/permissions",
+    text: "איזור אישי",
+    component: AdminPermissionManagment,
+  },
 ];
 
 export default paths;

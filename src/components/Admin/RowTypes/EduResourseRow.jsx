@@ -3,7 +3,9 @@ import "./TemplateRow.css";
 import GenericItem from "../GenericObjects/GenericItem";
 import Star from "../../Rate/Star";
 import eduTypeByText from "../../../utils/eduTypeByText";
-
+import blueV from "../../../assets/media/Icons/blueV.svg";
+import convertDateToString from "../../../utils/convertDateToString";
+import IconType from "../RowTypes/IconType";
 const EduResourseRow = (item) => {
   return [
     <div className="generic-row-item-container">
@@ -12,7 +14,11 @@ const EduResourseRow = (item) => {
         alt="edu type"
         className="item-type-img"
       />
-      <GenericItem title={item?.title} subTitle="שם התוצר" />
+      <GenericItem
+        icon={IconType(item)}
+        title={item?.title}
+        subTitle="שם התוצר"
+      />
     </div>,
     <GenericItem
       title={item?.subject?.title}
@@ -25,8 +31,8 @@ const EduResourseRow = (item) => {
       <div className="generic-item-sub-title">מומלץ</div>
     </div>,
     <GenericItem
-      title={item?.date}
-      subTitle="תאריך העלאה"
+      title={convertDateToString(item?.date)}
+      subTitle="עודכן בתאריך"
       style={{ width: "5.208vw" }}
     />,
     <div className="edu-row-tag-container">

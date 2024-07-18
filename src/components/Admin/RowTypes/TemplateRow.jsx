@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { PopupContext } from "../../../store/popup-context";
 
-const TemplateRow = ({ children, item, PopUp, onClick }) => {
+const TemplateRow = ({ children, item, PopUp, onClick, icon }) => {
   const { showPopup } = useContext(PopupContext);
   return (
     <div
@@ -13,7 +13,7 @@ const TemplateRow = ({ children, item, PopUp, onClick }) => {
           {child}
         </div>
       ))}
-      <img src={item.icon} alt="arrow" className="generic-row-arrow" />
+      <img src={icon} alt="arrow" className="generic-row-arrow" />
     </div>
   );
 };

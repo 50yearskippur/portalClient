@@ -1,6 +1,5 @@
 // src/DropdownMenu.js
 import React, { useState } from "react";
-import "react-dropdown/style.css";
 import sortIcon from "../../assets/media/Icons/sortIcon.svg";
 import vicon from "../../assets/media/Icons/Vicon.png";
 

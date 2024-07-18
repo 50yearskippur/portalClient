@@ -28,7 +28,7 @@ const SubSubjectPage = () => {
       {
         title: "אמצעי למידה",
         type: "סרטון",
-        date: "28.05.2024",
+        date: Date("28.8.2024"),
         subSubject: {
           title: "זירת סוריה",
         },
@@ -41,7 +41,7 @@ const SubSubjectPage = () => {
       {
         title: "אמצעי למידה",
         type: "סרטון",
-        date: "28.05.2024",
+        date: Date("28.05.2024"),
         subSubject: {
           title: "זירת סוריה",
         },
@@ -54,7 +54,7 @@ const SubSubjectPage = () => {
       {
         title: "אמצעי למידה",
         type: "סרטון",
-        date: "28.05.2024",
+        date: Date("28.8.2024"),
         subSubject: {
           title: "זירת סוריה",
         },
@@ -69,7 +69,7 @@ const SubSubjectPage = () => {
       {
         title: "סוריה מאז ועד היום",
         type: "סרטון",
-        date: "28.05.2024",
+        date: Date("28.8.2024"),
         subSubject: {
           title: "זירת סוריה",
         },
@@ -82,7 +82,7 @@ const SubSubjectPage = () => {
       {
         title: "סוריה מאז ועד היום",
         type: "סרטון",
-        date: "28.05.2024",
+        date: Date("28.8.2024"),
         subSubject: {
           title: "זירת סוריה",
         },
@@ -95,7 +95,7 @@ const SubSubjectPage = () => {
       {
         title: "סוריה מאז ועד היום",
         type: "סרטון",
-        date: "28.05.2024",
+        date: Date("28.8.2024"),
         subSubject: {
           title: "זירת סוריה",
         },

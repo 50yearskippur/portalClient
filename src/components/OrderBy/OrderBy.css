@@ -2,6 +2,7 @@
 .dropdown-container {
   position: relative;
   display: inline-block;
+  z-index: 10;
 }
 
 .dropdown-toggle {
@@ -38,6 +39,7 @@
 .dropdown-menu {
   position: absolute;
   display: flex;
+  z-index: 10;
   flex-direction: column;
   top: 100%;
   border-radius: 4px;

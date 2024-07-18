@@ -1,0 +1,99 @@
+.waitingList-container {
+  display: flex;
+  justify-content: space-between;
+  height: 7.407vh;
+  padding: 0px 16px;
+  align-items: center;
+  gap: 16px;
+  border-radius: 0px 0px 6px 6px;
+  background: rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid #e0e0e0;
+}
+.commet-text {
+  flex: 1 0 0;
+  color: #444a5a;
+  text-align: right;
+  font-family: Rubik;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%; /* 25.6px */
+}
+.comment-pic-and-details {
+  gap: "16px";
+  display: "flex";
+  align-items: "center";
+}
+.waitingLists-container {
+  display: flex;
+  flex-direction: column;
+}
+.waitinglist-title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  align-self: stretch;
+  overflow: hidden;
+  color: #444a5a;
+  text-align: right;
+  text-overflow: ellipsis;
+  font-family: Rubik;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 142.857% */
+}
+.waitinglist-details-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 9.01vw;
+  flex-shrink: 0;
+}
+.waitinglist-user-details {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  align-self: stretch;
+  color: var(--body-text, #444a5a);
+  text-align: right;
+  font-family: Rubik;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px; /* 133.333% */
+  opacity: 0.5;
+}
+.comment {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 7px;
+  padding: 14px 16px;
+  border-radius: 6px 6px 0px 0px;
+  border: 1px solid var(--bold-filed, #e8ebf4);
+  background: var(--Main-colors-White, #fff);
+}
+.comment-button-container {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  display: flex;
+  height: 34px;
+  align-items: center;
+  gap: 30px;
+}
+.comment-button {
+  color: #7d81b2;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-align: right;
+  font-family: Rubik;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px; /* 150% */
+}
