@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React from "react";
 import "./HomePage.css";
 import { useState } from "react";
 import Search from "../components/Search/Search";
@@ -10,6 +9,7 @@ import TopNav from "../components/TopNav/TopNav.jsx";
 import rabit from "../assets/img/rabit.jpg";
 import SortBySubject from "../components/SortBySubject/SortBySubject.jsx";
 import ForYouItem from "../components/ItemsComponents/ForYouItem/ForYouItem.jsx";
+import { Padding } from "@mui/icons-material";
 
 //delete in production
 const recommendedEduResource = [
@@ -179,8 +179,9 @@ const HomePage = () => {
       <Search
         style={{
           width: "42.84%",
-          height: "7.58vh",
-          margin: "1% auto",
+          height: "3.33vh",
+          margin: "2.96vh auto",
+          padding: "10px",
         }}
       />
       <p className="header" style={{ marginTop: "-2.8vh" }}>
