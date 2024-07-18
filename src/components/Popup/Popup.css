@@ -64,23 +64,6 @@
   cursor: pointer;
 }
 
-.upload-btn {
-  display: flex;
-  width: 8.3vw;
-  height: 4.4vh;
-  justify-content: center;
-  align-items: center;
-  /* gap: 8px; */
-  text-align: center;
-  font-size: 16px;
-  font-weight: 500;
-  cursor: pointer;
-}
-
-.upload-btn.cancel {
-  color: #3259ff;
-}
-
 .upload-details-container {
   display: flex;
   flex-direction: column;
