@@ -24,7 +24,7 @@ const Upload = () => {
       <TopSection
         navigateTo={"/admin"}
         title="העלאת תוצר"
-        exitText="חזרה לדך העלאות"
+        exitText=" לעמוד העלאות"
       />
       <div className="upload-stages-container">
         {stagesArray.map((stage, index) => (
