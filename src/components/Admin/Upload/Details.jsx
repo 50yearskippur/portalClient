@@ -8,16 +8,24 @@ import Button from "../../Button/Button";
 import AddSubSubject from "../../Popup/General/AddSubSubject";
 
 const Details = ({ nextStage }) => {
-  const { itemDetails } = useContext(PopupContext);
+  const { itemDetails, setItemDetails } = useContext(PopupContext);
   const [isSubOpen, setIsSubOpen] = useState(false);
   const [isNewCredit, setIsNewCredit] = useState(false);
   const [addCreditInput, setAddCreditInput] = useState([]);
+  console.log(itemDetails);
 
   const [creditsList, setCreditsList] = useState([
     "כתיבה",
     "מומחה תוכן",
     "עיצוב גרפי",
   ]);
+
+  const saveDetails = (detail) => {
+    setItemDetails((prevDetails) => ({
+      ...prevDetails,
+      ...detail,
+    }));
+  };
 
   const changeCreditInput = (e) => {
     setAddCreditInput(e.target.value);
@@ -38,7 +46,11 @@ const Details = ({ nextStage }) => {
     <div className="stage-upload-container">
       <div className="stage-input-container">
         <div className="stage-text">שם המצגת</div>
-        <input className="stage-input" type="text" />
+        <input
+          className="stage-input"
+          type="text"
+          onChange={(e) => saveDetails({ title: e.target.value })}
+        />
       </div>
       <div className="stage-row-container">
         <div className="stage-input-container">
@@ -81,8 +93,12 @@ const Details = ({ nextStage }) => {
         />
       </div>
       <div className="stage-text big">קרדיטים</div>
-      {creditsList.map((creditTitle) => (
-        <Credit title={creditTitle} deleteCredit={deleteCredit} />
+      {creditsList.map((creditTitle, index) => (
+        <Credit
+          key={`credit ${index}`}
+          title={creditTitle}
+          deleteCredit={deleteCredit}
+        />
       ))}
       {isNewCredit && (
         <div className="stage-credit-container">
@@ -116,7 +132,11 @@ const Details = ({ nextStage }) => {
           width: "8.3vw",
           height: "4.4vh",
         }}
-        disabled={!itemDetails["type"]}
+        disabled={
+          !itemDetails["title"] ||
+          !itemDetails["subject"] ||
+          !itemDetails["subSubject"]
+        }
         onClick={nextStage}
       />
       <AddSubSubject isOpen={isSubOpen} onClose={() => setIsSubOpen(false)} />

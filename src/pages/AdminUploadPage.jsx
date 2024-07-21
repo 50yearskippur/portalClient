@@ -5,6 +5,7 @@ import EduType from "../components/Admin/Upload/EduType";
 import Files from "../components/Admin/Upload/Files";
 import Details from "../components/Admin/Upload/Details";
 import Setting from "../components/Admin/Upload/Setting";
+import pencilIcon from "../assets/media/Icons/pencil.svg";
 
 const Upload = () => {
   const [currentStage, setCurrentStage] = useState(1);
@@ -15,9 +16,9 @@ const Upload = () => {
 
   const stagesArray = [
     { title: "סוג תוצר", component: <EduType nextStage={nextStage} /> },
-    { title: "קבצים", component: <Files nextStage={nextStage}/> },
-    { title: "פרטים", component: <Details nextStage={nextStage}/> },
-    { title: "הגדרות", component: <Setting nextStage={nextStage}/> },
+    { title: "קבצים", component: <Files nextStage={nextStage} /> },
+    { title: "פרטים", component: <Details nextStage={nextStage} /> },
+    { title: "הגדרות", component: <Setting nextStage={nextStage} /> },
   ];
 
   return (
@@ -41,6 +42,13 @@ const Upload = () => {
               >
                 {stage.title}
               </div>
+              {index + 1 < currentStage && (
+                <img
+                  alt="pencil"
+                  src={pencilIcon}
+                  className="admin-upload-edit-icon"
+                />
+              )}
             </div>
             {currentStage === index + 1 && stage.component}
           </div>
