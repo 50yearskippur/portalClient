@@ -9,13 +9,20 @@ import pencilIcon from "../assets/media/Icons/pencil.svg";
 
 const Upload = () => {
   const [currentStage, setCurrentStage] = useState(1);
+  const [lastOpenedStage, setLastOpenedStage] = useState(1);
 
   const nextStage = () => {
-    setCurrentStage((prevStage) => prevStage + 1);
+    setCurrentStage(lastOpenedStage + 1);
+    setLastOpenedStage((prevStage) => prevStage + 1);
+  };
+
+  const editStage = (stage) => {
+    setLastOpenedStage(currentStage - 1);
+    setCurrentStage(stage);
   };
 
   const stagesArray = [
-    { title: "סוג תוצר", component: <EduType nextStage={nextStage} /> },
+    { title: "סוג מוצר", component: <EduType nextStage={nextStage} /> },
     { title: "קבצים", component: <Files nextStage={nextStage} /> },
     { title: "פרטים", component: <Details nextStage={nextStage} /> },
     { title: "הגדרות", component: <Setting nextStage={nextStage} /> },
@@ -25,15 +32,15 @@ const Upload = () => {
     <div className="admin-upload-container">
       <TopSection
         navigateTo={"/admin"}
-        title="העלאת תוצר"
-        exitText=" לעמוד העלאות"
+        title="העלאת מוצר חדש"
+        exitText="בטל העלאת מוצר"
       />
       <div className="upload-stages-container">
         {stagesArray.map((stage, index) => (
-          <div key={`stage ${index}`} className="stage-white-container">
+          <div key={stage.title} className="stage-white-container">
             <div className="stage-header">
               <div
-                className={`stage-number ${index < currentStage && "current"} `}
+                className={`stage-number ${index < currentStage && "current"}`}
               >
                 {index + 1}
               </div>
@@ -42,11 +49,12 @@ const Upload = () => {
               >
                 {stage.title}
               </div>
-              {index + 1 < currentStage && (
+              {index < currentStage && (
                 <img
                   alt="pencil"
                   src={pencilIcon}
                   className="admin-upload-edit-icon"
+                  onClick={() => editStage(index + 1)}
                 />
               )}
             </div>
