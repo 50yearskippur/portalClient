@@ -1,5 +1,5 @@
 import EduPreviewTop from "./EduPreviewTop";
-import DeleteEdu from "./DeleteEdu";
+import DeleteEdu from "./DeleteEduText";
 import handlePropagation from "../../../utils/handlePropagation";
 import EduResSection from "./EduResSection";
 import Files from "./Files";

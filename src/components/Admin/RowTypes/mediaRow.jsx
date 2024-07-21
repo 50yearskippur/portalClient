@@ -1,11 +1,14 @@
 import "./TemplateRow.css";
+import "../GenericObjects/GenericItem.css";
 import GenericItem from "../GenericObjects/GenericItem";
 import convertDateToString from "../../../utils/convertDateToString";
+import React from "react";
+
 const MediaRow = (item) => {
   return [
     <GenericItem
       title={item.title}
-      subTitle="שם האלבום \ תמונה"
+      subTitle="שם האלבום\תמונה"
       style={{ width: "8.3vw" }}
     />,
     <GenericItem

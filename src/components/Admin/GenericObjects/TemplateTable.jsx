@@ -1,4 +1,5 @@
 import "./TemplateTable.css";
+import React from "react";
 import TemplateRow from "../RowTypes/TemplateRow";
 import getAdminChildren from "../../../utils/getAdminChildren";
 import getAdminPopUp from "../../../utils/getAdminPopup";

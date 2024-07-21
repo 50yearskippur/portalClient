@@ -1,6 +1,8 @@
 import "./Requests.css";
 import getRequestChildren from "../../../utils/getRequestChildren";
-const Requests = ({ requests, children, header }) => {
+import React from "react";
+
+const Requests = ({ requests, header }) => {
   return (
     <div className="waitingLists-container">
       {requests.map((request, index) => (

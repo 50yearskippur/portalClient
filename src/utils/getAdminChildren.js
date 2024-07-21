@@ -1,17 +1,18 @@
 import EduResourseRow from "../components/Admin/RowTypes/EduResourseRow";
 import DesignTemplateRow from "../components/Admin/RowTypes/DesignTemplateRow";
 import FormRow from "../components/Admin/RowTypes/FormRow";
-import MediaRow from "../components/Admin/RowTypes/mediaRow";
+import MediaRow from "../components/Admin/RowTypes/MediaRow";
 import adminRow from "../components/Admin/RowTypes/adminRow";
+
 const getAdminChildren = (item, selectedTab) => {
-  switch (true) {
-    case selectedTab === "תוצרים":
+  switch (selectedTab) {
+    case "תוצרים":
       return EduResourseRow(item);
-    case selectedTab === "עיצובים":
+    case "עיצובים":
       return DesignTemplateRow(item);
-    case selectedTab === "טפסים":
+    case "טפסים":
       return FormRow(item);
-    case selectedTab === "תמונות ואלבומים":
+    case "תמונות ואלבומים":
       return MediaRow(item);
     case selectedTab.includes("אדמינים"):
       return adminRow(item);

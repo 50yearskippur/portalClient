@@ -1,3 +1,4 @@
+import React from 'react';
 import "./SubSubjectPage.css";
 import { useLocation } from "react-router-dom";
 import { useContext } from "react";
@@ -6,7 +7,7 @@ import FileController from "../components/Media/FileController";
 import SideBar from "../components/SideBar/SideBar";
 import Rate from "../components/Rate/Rate";
 import EduResPrev from "../components/EduResPrev/EduResPrev";
-import UploadEduType from "../components/Popup/UploadEduType";
+import UploadEduType from "../components/Popup/UploadEdu/UploadEduType";
 import { PopupContext } from "../store/popup-context";
 import notebookImg from "../assets/media/Icons/notebook.svg";
 import heartimg from "../assets/media/Icons/fullHeart.svg";
@@ -17,12 +18,23 @@ import clock from "../assets/media/Icons/clock.svg";
 import bluePlus from "../assets/media/Icons/bluePlus.svg";
 // delete in production
 import rabit from "../assets/img/rabit.jpg";
+import video from '../assets/img/video.mp4';
 
 const SubSubjectPage = () => {
   const { showPopup } = useContext(PopupContext);
   const location = useLocation();
   const currentEdu = location.state?.item;
-
+  // const currentEdu = {
+  //   title: 'משחקי פז"מ',
+  //   type: "משחק",
+  //   subSubject: {
+  //     title: "לורם אימפסום",
+  //     description: "תיאור תיאור",
+  //     eduResource: [],
+  //   },
+  //   media: video,
+  //   mediaType: "video",
+  // }
   const eduResources = {
     uploadByArtch: [
       {
@@ -135,7 +147,7 @@ const SubSubjectPage = () => {
                 }}
               >
                 <img src={heartimg} alt="heart" />
-                <div>הוספה למועדפים</div>
+                <>הוספה למועדפים</>
               </div>
               <div
                 className="edu-resourse-add-container"
@@ -146,7 +158,7 @@ const SubSubjectPage = () => {
                 }}
               >
                 <img src={plusImg} alt="plus" />
-                <div>הוספה לקורס שלי</div>
+                <>הוספה לקורס שלי</>
               </div>
             </div>
           </div>
@@ -260,7 +272,7 @@ const SubSubjectPage = () => {
                   className="edu-resource-add-text-btn"
                   onClick={() => showPopup(<UploadEduType />)}
                 >
-                  העלה תוצר
+                  העלה תוכן
                 </div>
               </div>
             </div>

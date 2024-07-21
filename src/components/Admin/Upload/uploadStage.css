@@ -1,0 +1,58 @@
+.stage-upload-container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.file-stage-container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.files-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.stage-text {
+  color: var(--body-text, #4c4c66);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.1px;
+  text-transform: capitalize;
+  align-self: start;
+}
+
+.stage-file-container {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.stage-input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.stage-input {
+  height: 3.704vh;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid var(--filed, #f2f4fa);
+  background: var(--filed, #f2f4fa);
+}
+
+.stage-input:focus {
+  border: 1px solid #dddaf8;
+  box-shadow: none;
+  outline: none;
+}
+
+.stage-row-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}

@@ -1,3 +1,4 @@
+import React from 'react';
 import PageTemplate from "../PageTemplate/PageTemplate";
 import FavotireEdu from "../ItemsComponents/FavoriteEdu";
 import { useState, useEffect } from "react";

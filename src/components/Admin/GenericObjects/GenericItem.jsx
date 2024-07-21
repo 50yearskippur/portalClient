@@ -1,5 +1,5 @@
 import "./GenericItem.css";
-import bluev from "../../../assets/media/Icons/blueV.svg";
+import { Tooltip as ReactTooltip } from "react-tooltip";
 const GenericItem = ({ title, subTitle, style, icon }) => {
   return (
     <div className="generic-item-container" style={style}>
@@ -8,8 +8,13 @@ const GenericItem = ({ title, subTitle, style, icon }) => {
         className="generic-item-title"
       >
         {title}
-        <img src={icon} />
+        <img src={icon?.icon} />
       </div>
+      <ReactTooltip
+        id={icon?.tooltipId}
+        place="bottom"
+        content={icon?.toolTipContent}
+      />
       <div className="generic-item-sub-title">{subTitle}</div>
     </div>
   );

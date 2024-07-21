@@ -1,6 +1,7 @@
 import SideBar from "../SideBar/SideBar";
 import RecommendedItem from "../ItemsComponents/RecommendedItem";
 import "./RecommendedSection.css";
+import React from 'react';
 
 const RecommendedSection = ({ data }) => {
   return (

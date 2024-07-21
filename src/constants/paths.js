@@ -1,12 +1,12 @@
 import Home from "../pages/HomePage";
 import Form from "../pages/FormsPage";
 import Media from "../pages/MediaPage";
-// import DesignTemplates from "../pages/DesignTemplatesPage.jsx";
 import MediaAlbum from "../pages/MediaAlbumPage";
 import SubSubject from "../pages/SubSubjectPage";
 import PersonalArea from "../pages/PersonalAreaPage";
 import AdminPermissionManagment from "../pages/AdminPermissionManagment";
 import Admin from "../pages/AdminPage";
+import AdminUpload from "../pages/AdminUploadPage.jsx";
 
 const paths = [
   {
@@ -34,6 +34,7 @@ const paths = [
     text: "איזור אישי",
     component: AdminPermissionManagment,
   },
+  { path: "/admin/upload", text: "העלאה באדמין", component: AdminUpload },
 ];
 
 export default paths;

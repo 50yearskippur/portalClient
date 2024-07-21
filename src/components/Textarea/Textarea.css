@@ -1,0 +1,19 @@
+textarea {
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid var(--Stroke, #d4daf8);
+  color: var(--H1, #1f0039);
+  font-family: Rubik;
+  font-size: 16px;
+}
+
+textarea:focus {
+  color: #1f0039;
+  font-size: 16px;
+  border-color: #4082f3;
+  outline: none;
+}
+
+textarea::placeholder {
+  opacity: 0.4;
+}

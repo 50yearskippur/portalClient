@@ -11,11 +11,11 @@ const FormRow = (item) => {
 
   return [
     <div className="generic-row-item-container">
-      <img
+      {/* <img
         src={eduTypeByText(item?.type)}
         alt="edu type"
         className="item-type-img"
-      />
+      /> */}
       <GenericItem
         title={item.title}
         subTitle="שם הטופס"
