@@ -74,6 +74,7 @@
   padding: 10px;
   border-radius: 4px;
   border: 1px dashed #6c60ff;
+  cursor: pointer;
 }
 
 .stage-blue-text {

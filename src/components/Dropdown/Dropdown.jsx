@@ -20,7 +20,6 @@ const Dropdown = ({
   const IS_NEW_SUB_SUBJECT = selectedItem === "תת נושא חדש";
 
   const handleSelect = (item) => {
-    console.log(placeholder);
     if (placeholder.includes("תת נושא")) {
       setItemDetails((prevDetails) => ({
         ...prevDetails,

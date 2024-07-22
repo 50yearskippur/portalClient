@@ -1,6 +1,6 @@
 import trashIcon from "../../../assets/media/Icons/grayTrash.svg";
 
-const Credit = ({ title, deleteCredit }) => {
+const Credit = ({ title, text, deleteCredit }) => {
   return (
     <div className="stage-credit-container">
       <div
@@ -12,6 +12,7 @@ const Credit = ({ title, deleteCredit }) => {
       <input
         className="stage-input"
         type="text"
+        value={text}
         style={{ height: "19px", width: "17.5vw" }}
       />
       <img alt="trash" src={trashIcon} onClick={() => deleteCredit(title)} />

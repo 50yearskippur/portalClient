@@ -42,7 +42,7 @@ const Upload = () => {
               >
                 {stage.title}
               </div>
-              {index < currentStage && (
+              {index + 1 < currentStage && (
                 <img
                   alt="pencil"
                   src={pencilIcon}

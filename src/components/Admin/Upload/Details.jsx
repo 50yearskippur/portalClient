@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { PopupContext } from "../../../store/popup-context";
 import Dropdown from "../../Dropdown/Dropdown";
 import Textarea from "../../Textarea/Textarea";
@@ -11,13 +11,12 @@ const Details = ({ nextStage }) => {
   const { itemDetails, setItemDetails } = useContext(PopupContext);
   const [isSubOpen, setIsSubOpen] = useState(false);
   const [isNewCredit, setIsNewCredit] = useState(false);
-  const [addCreditInput, setAddCreditInput] = useState([]);
-
   const [creditsList, setCreditsList] = useState([
-    "כתיבה",
-    "מומחה תוכן",
-    "עיצוב גרפי",
+    { title: "כתיבה" },
+    { title: "מומחה תוכן" },
+    { title: "עיצוב גרפי" },
   ]);
+  const [newCredit, setNewCredit] = useState({ title: "", text: "" });
 
   const saveDetails = (detail) => {
     setItemDetails((prevDetails) => ({
@@ -26,19 +25,24 @@ const Details = ({ nextStage }) => {
     }));
   };
 
-  const changeCreditInput = (e) => {
-    setAddCreditInput(e.target.value);
+  useEffect(() => {
+    console.log(itemDetails);
+  }, [itemDetails]);
+
+  const handleNewCredit = (credit) => {
+    setNewCredit((prevCredit) => ({ ...prevCredit, ...credit }));
   };
 
-  const addCredit = () => {
-    setCreditsList((prevList) => [...prevList, addCreditInput]);
+  const addNewCredit = () => {
+    setCreditsList((prev) => [...prev, newCredit]);
     setIsNewCredit(false);
   };
 
-  const deleteCredit = (creditTitle) => {
-    setCreditsList((prevList) =>
-      prevList.filter((credit) => credit !== creditTitle)
+  const deleteCredit = (index) => {
+    const updatedCredits = creditsList.filter(
+      (_, creditIndex) => creditIndex !== index
     );
+    setCreditsList(updatedCredits);
   };
 
   return (
@@ -86,11 +90,12 @@ const Details = ({ nextStage }) => {
         />
       </div>
       <div className="stage-text big">קרדיטים</div>
-      {creditsList.map((creditTitle, index) => (
+      {creditsList.map((credit, index) => (
         <Credit
           key={`credit ${index}`}
-          title={creditTitle}
-          deleteCredit={deleteCredit}
+          title={credit.title}
+          text={credit.text}
+          deleteCredit={() => deleteCredit(index)}
         />
       ))}
       {isNewCredit && (
@@ -99,15 +104,15 @@ const Details = ({ nextStage }) => {
             className="stage-input"
             type="text"
             style={{ height: "19px", width: "5.104vw" }}
-            onChange={(e) => changeCreditInput(e)}
+            onChange={(e) => handleNewCredit({ title: e.target.value })}
           />
           <input
             className="stage-input"
-            onChange={(e) => changeCreditInput(e)}
+            onChange={(e) => handleNewCredit({ text: e.target.value })}
             type="text"
             style={{ height: "19px", width: "17.5vw" }}
           />
-          <div className="stage-blue-text" onClick={addCredit}>
+          <div className="stage-blue-text" onClick={addNewCredit}>
             שמור
           </div>
         </div>
