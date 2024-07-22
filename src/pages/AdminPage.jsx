@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 import "./AdminPage.css";
-import { useState, useEffect, useContext } from "react";
+import { useState, useContext, useMemo } from "react";
 import { PopupContext } from "../store/popup-context";
 import UploadEduType from "../components/Popup/UploadEdu/UploadEduType";
 import Tabs from "../components/Tabs/Tabs";
@@ -52,7 +52,7 @@ const AdminPage = () => {
     },
   ];
 
-  useEffect(() => {
+  useMemo(() => {
     //delete in production
     const eduArr = [
       {
@@ -163,6 +163,14 @@ const AdminPage = () => {
         mediaType: "image",
       },
       {
+        title: "תבניות עיצוב 1",
+        type: "מצגת",
+        date: "28.05.2024",
+        media: rabit,
+        cover: rabit,
+        mediaType: "image",
+      },
+      {
         title: "תבניות עיצוב 2",
         type: "מסמך",
         date: "28.05.2024",
@@ -211,7 +219,6 @@ const AdminPage = () => {
         mediaType: "image",
       },
     ];
-
     switch (true) {
       case selectedTab === "תוצרים":
         setData(eduArr);
