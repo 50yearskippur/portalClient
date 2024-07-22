@@ -15,6 +15,7 @@ const Files = ({ nextStage }) => {
           <FileUploader
             text="צרף או גרור לתיבה קובץ"
             fileTypes={["PNG", "JPG"]}
+            defaultFile={itemDetails["file"]}
           />
         </div>
         <div className="stage-file-container" style={{ width: "28%" }}>

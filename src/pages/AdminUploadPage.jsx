@@ -9,16 +9,9 @@ import pencilIcon from "../assets/media/Icons/pencil.svg";
 
 const Upload = () => {
   const [currentStage, setCurrentStage] = useState(1);
-  const [lastOpenedStage, setLastOpenedStage] = useState(1);
 
   const nextStage = () => {
-    setCurrentStage(lastOpenedStage + 1);
-    setLastOpenedStage((prevStage) => prevStage + 1);
-  };
-
-  const editStage = (stage) => {
-    setLastOpenedStage(currentStage - 1);
-    setCurrentStage(stage);
+    setCurrentStage((prevStage) => prevStage + 1);
   };
 
   const stagesArray = [
@@ -54,7 +47,7 @@ const Upload = () => {
                   alt="pencil"
                   src={pencilIcon}
                   className="admin-upload-edit-icon"
-                  onClick={() => editStage(index + 1)}
+                  onClick={() => setCurrentStage(index + 1)}
                 />
               )}
             </div>

@@ -12,7 +12,6 @@ const Details = ({ nextStage }) => {
   const [isSubOpen, setIsSubOpen] = useState(false);
   const [isNewCredit, setIsNewCredit] = useState(false);
   const [addCreditInput, setAddCreditInput] = useState([]);
-  console.log(itemDetails);
 
   const [creditsList, setCreditsList] = useState([
     "כתיבה",
@@ -58,13 +57,7 @@ const Details = ({ nextStage }) => {
           <Dropdown
             listHeight={"20vh"}
             placeholder="בחרו נושא"
-            list={[
-              "מבואות מודיעין",
-              "טכנולוגיה וסייבר",
-              "שפה",
-              "המלצות",
-              "תת נושא חדש",
-            ]}
+            list={["מבואות מודיעין", "טכנולוגיה וסייבר", "שפה", "המלצות"]}
             style={{ width: "100%", height: "100%" }}
           />
         </div>

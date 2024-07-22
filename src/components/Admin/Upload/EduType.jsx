@@ -13,6 +13,7 @@ const EduType = ({ nextStage }) => {
       <EduTypes
         eduTypesTitles={[...eduTypesTitles, { text: "משחק", img: gameIcon }]}
         width="7.3vw"
+        defaultValue={itemDetails["type"]}
       />
       <Button
         text={"המשך"}
