@@ -14,11 +14,24 @@ const Upload = () => {
     setCurrentStage((prevStage) => prevStage + 1);
   };
 
+  const settingArray = [
+    "התוצר מצריך שימוש באמצעי שמע",
+    "התוצר יהיה חלק ממאגר המומלצים ליחידות והקורסים הרלוונטיים",
+    "התוצר יהיה התוכן הראשי תחת תת הנושא",
+    "התוצר נבדק, המידע בו עדכני ומאושר ע”י גורם המקצועי",
+  ];
+
   const stagesArray = [
-    { title: "סוג מוצר", component: <EduType nextStage={nextStage} /> },
+    {
+      title: "סוג מוצר",
+      component: <EduType nextStage={nextStage} />,
+    },
     { title: "קבצים", component: <Files nextStage={nextStage} /> },
     { title: "פרטים", component: <Details nextStage={nextStage} /> },
-    { title: "הגדרות", component: <Setting nextStage={nextStage} /> },
+    {
+      title: "הגדרות",
+      component: <Setting nextStage={nextStage} settings={settingArray} />,
+    },
   ];
 
   return (

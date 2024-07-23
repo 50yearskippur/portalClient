@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 import { PopupContext } from "../../../store/popup-context";
 import Dropdown from "../../Dropdown/Dropdown";
 import Textarea from "../../Textarea/Textarea";
@@ -24,10 +24,6 @@ const Details = ({ nextStage }) => {
       ...detail,
     }));
   };
-
-  useEffect(() => {
-    console.log(itemDetails);
-  }, [itemDetails]);
 
   const handleNewCredit = (credit) => {
     setNewCredit((prevCredit) => ({ ...prevCredit, ...credit }));
@@ -60,7 +56,7 @@ const Details = ({ nextStage }) => {
           <div className="stage-text">נושא</div>
           <Dropdown
             listHeight={"20vh"}
-            placeholder="בחרו נושא"
+            defaultValue="בחרו נושא"
             list={["מבואות מודיעין", "טכנולוגיה וסייבר", "שפה", "המלצות"]}
             style={{ width: "100%", height: "100%" }}
           />
@@ -69,7 +65,7 @@ const Details = ({ nextStage }) => {
           <div className="stage-text">תת נושא</div>
           <Dropdown
             listHeight={"20vh"}
-            placeholder="בחרו תת נושא"
+            defaultValue="בחרו תת נושא"
             list={[
               "מבואות מודיעין",
               "טכנולוגיה וסייבר",

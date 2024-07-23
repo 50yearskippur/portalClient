@@ -85,3 +85,8 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.content-validation {
+  display: flex;
+  gap: 8px;
+}
