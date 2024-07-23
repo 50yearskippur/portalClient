@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import "./MasonryLayout.css";
 import FileController from "../Media/FileController";
 import { useContext } from "react";
@@ -13,7 +13,7 @@ const MasonryLayout = ({ data }) => {
         <FileController
           key={`masonry${index}`}
           item={item}
-          style={{ marginBottom: "10px" }}
+          style={{ marginBottom: "12px" }}
           onClick={() => showPopup(<MediaPopup item={item} />)}
         />
       ))}

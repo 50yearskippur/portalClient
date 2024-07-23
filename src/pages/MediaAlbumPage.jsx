@@ -139,7 +139,7 @@ const MediaAlbumPage = () => {
   return (
     <>
       <TopSection navigateTo={"/media"} title='פורימון בה"ד 15' />
-      <div className="page-container">
+      <div className="page-container" style={{ marginTop: "5.185vh" }}>
         <MasonryLayout data={data} />
       </div>
     </>
