@@ -1,3 +1,4 @@
+import React from 'react';
 import PageTemplate from "../components/PageTemplate/PageTemplate";
 import StockMedia from "../components/ItemsComponents/StockMedia";
 import CollageMedia from "../components/ItemsComponents/CollageMedia";
@@ -136,15 +137,13 @@ const MediaPage = () => {
   return (
     <div className="page-container">
       <div className="header" style={{ marginBottom: "4.1vh" }}>
-        תמונת סטוק
+        תמונות סטוק
       </div>
       <PageTemplate
         ItemComponent={StockMedia}
-        gridStyle={{
-          gridTemplateColumns: `repeat(auto-fill, minmax(300px, 1fr)`,
-          gap: "34px",
-        }}
+        numberOfItemsInLine={4}
         data={data}
+        gapSize={2}
       />
 
       <div className="header" style={{ marginBottom: "4.1vh" }}>
@@ -152,10 +151,8 @@ const MediaPage = () => {
       </div>
       <PageTemplate
         ItemComponent={CollageMedia}
-        gridStyle={{
-          gridTemplateColumns: `repeat(auto-fill, minmax(300px, 1fr)`,
-          gap: "40px",
-        }}
+        numberOfItemsInLine={4}
+        gapSize={2}
         data={data}
       />
     </div>

@@ -1,3 +1,4 @@
+import React from 'react';
 import "./StockMedia.css";
 import FileController from "../Media/FileController";
 import { useNavigate } from "react-router-dom";

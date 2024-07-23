@@ -1,3 +1,4 @@
+import React from 'react';
 import PageTemplate from "../PageTemplate/PageTemplate";
 import FavotireEdu from "../ItemsComponents/FavoriteEdu";
 import { useState, useEffect } from "react";
@@ -136,13 +137,11 @@ const Favorits = () => {
 
   return (
     <PageTemplate
+      style={{ width: "100%" }}
       ItemComponent={FavotireEdu}
-      gridStyle={{
-        gridTemplateColumns: `repeat(auto-fill, minmax(450px, 1fr)`,
-        gap: "48px",
-        width: "100%",
-      }}
       data={favoritesData}
+      gapSize={2}
+      numberOfItemsInLine={3}
     />
   );
 };

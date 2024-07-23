@@ -1,0 +1,23 @@
+.edu-row-title {
+  color: var(--H1, #1f0039);
+  text-align: right;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.edu-row-text {
+  color: var(--Subtitle, #827aa5);
+  text-align: right;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.edu-row-views {
+  width: 3vw;
+  padding: 4px 16px;
+  border-radius: 20px;
+  background: rgba(235, 235, 248, 0.5);
+  color: #4f35be;
+  font-size: 14px;
+  font-weight: 400;
+}

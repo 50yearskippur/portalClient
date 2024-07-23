@@ -1,9 +1,10 @@
+import React from 'react';
 import "./UploadedEdu.css";
 import { useContext } from "react";
 import Button from "../Button/Button";
 import { PopupContext } from "../../store/popup-context";
 import uploadFileIcon from "../../assets/media/Icons/uploadFile.svg";
-import UploadEduType from "../Popup/UploadEduType";
+import UploadEduType from "../Popup/UploadEdu/UploadEduType";
 
 const UploadedEdu = () => {
   const { showPopup } = useContext(PopupContext);
@@ -20,7 +21,7 @@ const UploadedEdu = () => {
           יש לכם חומר לימודי שיכול לעזור לאחרים? שתפו אותנו ואולי תופיעו בפורטל!
         </div>
         <Button
-          text={"העלאת תוצר"}
+          text={"העלאת תוכן"}
           onClick={() => showPopup(<UploadEduType />)}
           style={{ height: "fit-content", padding: "4px 0" }}
         />

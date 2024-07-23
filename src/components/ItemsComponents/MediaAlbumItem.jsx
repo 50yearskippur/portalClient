@@ -1,3 +1,4 @@
+import React from 'react';
 import FileController from "../Media/FileController";
 import { useContext } from "react";
 import { PopupContext } from "../../store/popup-context";

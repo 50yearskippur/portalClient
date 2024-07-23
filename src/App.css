@@ -10,17 +10,11 @@
 
 html,
 body {
-  text-align: center;
   direction: rtl;
   background-color: #f6f6f6;
   font-family: Rubik;
-  user-select: none;
   line-height: 150%;
   margin: 0;
-}
-
-input {
-  border: 2px solid transparent;
 }
 
 .app {
@@ -36,6 +30,7 @@ input {
 
 .page-container {
   width: 86.3%;
+  margin-top: 7.77vh;
   height: fit-content;
 }
 
@@ -46,10 +41,11 @@ input {
 .header {
   font-size: 32px;
   font-weight: 500;
-  line-height: 7.04vh;
+  line-height: 6.04vh;
   position: relative;
   text-align: right;
   color: #444a5a;
+  margin-bottom: 4vh;
 }
 
 .header::after {
@@ -60,4 +56,38 @@ input {
   width: 92px;
   height: 2px;
   background: linear-gradient(127deg, #6c60ff 18.87%, #3b2ed1 71.49%);
+}
+
+:root {
+  --toastify-color-light: black;
+  --toastify-toast-min-height: 48px;
+  --toastify-toast-max-height: 48px;
+  --toastify-toast-font-weight: 500;
+}
+
+.Toastify__toast-body {
+  padding: unset;
+}
+
+.Toastify__toast--info {
+  width: 16.32vw;
+  justify-content: center;
+  background-color: black;
+  color: white;
+  font-size: 14px;
+  font-family: Assistant;
+  display: flex;
+  border-radius: 30px;
+  padding: 14px 30px;
+  align-items: flex-start;
+  gap: 21px;
+}
+
+.Toastify__close-button {
+  display: none;
+}
+
+.Toastify__toast-container {
+  direction: rtl;
+  z-index: 10000;
 }

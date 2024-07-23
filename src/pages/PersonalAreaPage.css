@@ -9,20 +9,6 @@
   border-radius: 10px;
 }
 
-.personal-area-avater {
-  width: 10.3vw;
-  height: 15.8vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #345576;
-  background: #1f304b;
-  color: #fff;
-  font-size: 70px;
-  font-weight: 700;
-  border-radius: 10px;
-}
-
 .personal-area-details {
   display: flex;
   flex-direction: column;

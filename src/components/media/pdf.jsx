@@ -1,27 +1,17 @@
-import {Document, Page} from "react-pdf";
+import { Document, Page } from "react-pdf";
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "./Pdf.css";
+import React from 'react';
 
 const Loading = () => {
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        width: "100%",
-        textAlign: "center",
-        color: "white",
-        backgroundColor: "#f9f9f9",
-      }}
-    >
+    <div className="pdf-loading">
       ..............................................................................
     </div>
   );
 };
 
-const Pdf = ({file, style}) => {
+const Pdf = ({ file, style }) => {
   return (
     <div className="pdf-container">
       <Document file={file} loading={Loading}>

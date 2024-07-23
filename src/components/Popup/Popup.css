@@ -4,8 +4,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(24, 19, 43, 0.21);
-  backdrop-filter: blur(8px);
+  background: rgba(24, 19, 43, 0.21);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,47 +12,61 @@
 }
 
 .upload-popup {
-  background: #fff;
-  width: 32vw;
-  height: 75vh;
+  width: 42vw;
+  height: 67.8vh;
   min-height: 500px;
-  color: #5c5c5c;
   text-align: right;
   font-size: 16px;
-  padding: 36px 30px 50px 35px;
+  position: relative;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.upload-popup-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #ebeef3;
+  transform: translateY(-50%);
 }
 
 .upload-popup-header {
-  font-size: 20px;
+  color: #444a5a;
+  font-size: 24px;
   font-weight: 700;
-  color: #5d5d5d;
 }
 
-.upload-back-button {
-  border: 2px solid #5d5d5d;
+.upload-popup-top {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 115px;
-  height: 42px;
-  cursor: pointer;
+  justify-content: space-between;
+  padding: 24px 32px;
+  border-radius: 8px;
+}
+
+.upload-popup-content {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 32px;
 }
 
 .upload-popup-text {
+  color: #4c4c66;
+  font-size: 14px;
   font-weight: 400;
-  width: 100%;
 }
 
 .upload-button-container {
   display: flex;
-  justify-content: flex-end;
-  gap: 16px;
-  align-items: center;
 }
 
 .upload-exit-button {
-  float: left;
   cursor: pointer;
-  margin-bottom: 25px;
-  margin-right: 4px;
+}
+
+.upload-details-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
 }

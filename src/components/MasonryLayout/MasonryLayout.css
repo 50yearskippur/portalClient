@@ -2,18 +2,3 @@
   column-count: 3;
   column-gap: 20px;
 }
-
-.masonry-item {
-  position: relative;
-}
-
-.masonry-item:hover {
-  background-color: black;
-}
-
-.masonry-item:hover::after {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}

@@ -1,8 +1,10 @@
+import React from 'react';
 import "./PersonalAreaPage.css";
 import { useState } from "react";
 import TopNav from "../components/TopNav/TopNav";
 import Favorites from "../components/Favorites/Favorites";
 import Dropdown from "../components/Dropdown/Dropdown";
+import PersonalAreaAvater from "../components/PersonalAreaAvater/PersonalAreaAvater";
 import UploadedEdu from "../components/PersonalArea/UploadedEdu";
 import ProfileBar from "../assets/media/Profile/profileBar.svg";
 
@@ -26,10 +28,18 @@ const PersonalAreaPage = () => {
       <img src={ProfileBar} className="profile-bar" alt="profile bar" />
       <div className="page-container">
         <div className="personal-area-user">
-          <div className="personal-area-avater">YC</div>
+          <PersonalAreaAvater
+            name="YC"
+            style={{
+              width: "10.3vw",
+              height: "15.8vh",
+              fontSize: "70px",
+              borderRadius: "10px",
+            }}
+          />
           <div className="personal-area-details">
             <div className="personal-area-username">יובל כהן</div>
-            <Dropdown />
+            <Dropdown list={["אתרוג", "אטום", "שחקים", "מטל"]} />
           </div>
         </div>
         <TopNav

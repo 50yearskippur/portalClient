@@ -1,8 +1,9 @@
 import "./TopSection.css";
 import backImg from "../../assets/media/Icons/backIcon.svg";
 import { useNavigate } from "react-router-dom";
+import React from 'react';
 
-const TopSection = ({ title, navigateTo }) => {
+const TopSection = ({ title, navigateTo, exitText = "חזרה" }) => {
   const navigate = useNavigate();
   return (
     <div className="top-section-container">
@@ -11,7 +12,7 @@ const TopSection = ({ title, navigateTo }) => {
         onClick={() => navigate(navigateTo)}
       >
         <img src={backImg} alt="back icon" />
-        <div className="top-section-back-text">חזרה</div>
+        <div className="top-section-back-text">{exitText}</div>
       </div>
       <div className="top-section-header">{title}</div>
     </div>

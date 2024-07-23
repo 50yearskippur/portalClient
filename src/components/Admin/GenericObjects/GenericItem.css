@@ -1,0 +1,16 @@
+.generic-item-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 14px;
+}
+
+.generic-item-title {
+  color: var(--H1, #1f0039);
+  font-weight: 400;
+}
+
+.generic-item-sub-title {
+  color: var(--Subtitle, #827aa5);
+  font-weight: 500;
+}

@@ -1,12 +1,15 @@
+
+import React from 'react';
 import "./HomePage.css";
 import { useState } from "react";
 import Search from "../components/Search/Search";
 import RecommendedSection from "../components/RecommendedSection/RecommendedSection";
 import Favorites from "../components/Favorites/Favorites.jsx";
-import ForYou from "../components/ForYou/ForYou.jsx";
 import TopNav from "../components/TopNav/TopNav.jsx";
 //delete in production
 import rabit from "../assets/img/rabit.jpg";
+import SortBySubject from "../components/SortBySubject/SortBySubject.jsx";
+import ForYouItem from "../components/ItemsComponents/ForYouItem/ForYouItem.jsx";
 
 //delete in production
 const recommendedEduResource = [
@@ -83,27 +86,60 @@ const subjects = [
   {
     title: "מבואות מודיעין",
     type: "אמצעי למידה",
-    subSubject: [],
+    subSubjects: [
+      {
+        title: "זירת סוריה",
+        description: "בואו ללמוד איתנו על זירת סוריה!",
+        eduResourse: [{}, {}, {}, {}, {}],
+      },
+      {
+        title: "זירת סוריה",
+        description: "בואו ללמוד איתנו על זירת סוריה!",
+        eduResourse: [{}, {}, {}, {}, {}],
+      },
+    ],
   },
   {
     title: "טכנולוגיה וסייבר",
     type: "אמצעי למידה",
-    subSubject: [],
+    subSubjects: [
+      {
+        title: "זירת סוריה",
+        description: "בואו ללמוד איתנו על זירת סוריה!",
+        eduResourse: [{}, {}],
+      },
+    ],
   },
   {
     title: "מחקר ומיצוי מידע",
     type: "אמצעי למידה",
-    subSubject: [],
+    subSubjects: [],
   },
   {
     title: "שפה",
     type: "אמצעי למידה",
-    subSubject: [],
+    subSubjects: [
+      {
+        title: "זירת סוריה",
+        description: "בואו ללמוד איתנו על זירת סוריה!",
+        eduResourse: [{}],
+      },
+      {
+        title: "זירת סוריה",
+        description: "בואו ללמוד איתנו על זירת סוריה!",
+        eduResourse: [{}, {}, {}, {}, {}, {}, {}],
+      },
+      {
+        title: "זירת סוריה",
+        description: "בואו ללמוד איתנו על זירת סוריה!",
+        eduResourse: [{}, {}, {}, {}, {}, {}, {}, {}, {}],
+      },
+    ],
   },
   {
     title: "המלצות",
     type: "אמצעי למידה",
-    subSubject: [],
+    subSubjects: [],
   },
 ];
 const tabsArray = ["במיוחד בשבילך", "כל התוצרים", "תוצרים שאהבתי"];
@@ -125,7 +161,13 @@ const getEduResources = (selectedTab) => {
     case selectedTab === "כל התוצרים":
       return <p>כל התוצרים</p>;
     default:
-      return <ForYou subjects={subjects} />;
+      return (
+        <SortBySubject
+          numberOfItemsInLine={1}
+          subjects={subjects}
+          ItemComponent={ForYouItem}
+        />
+      );
   }
 };
 
@@ -141,7 +183,7 @@ const HomePage = () => {
           margin: "1% auto",
         }}
       />
-      <p className="header" style={{ marginTop: "-4vh" }}>
+      <p className="header" style={{ marginTop: "-2.8vh" }}>
         מומלצים
       </p>
       <RecommendedSection data={recommendedEduResource} />

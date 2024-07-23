@@ -1,28 +1,72 @@
 import "./NavBar.css";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import { Tooltip as ReactTooltip } from "react-tooltip";
+import PersonalAreaAvater from "../PersonalAreaAvater/PersonalAreaAvater";
 import closeNavbarIcon from "../../assets/media/Navbar/closeNavbar.svg";
 import openNavbarIcon from "../../assets/media/Navbar/openNavbar.svg";
 import homeIcon from "../../assets/media/Navbar/home.svg";
-import designTemplatesIcon from "../../assets/media/Navbar/designTemplates.svg";
+import homeIconSelected from "../../assets/media/Navbar/homeSelected.svg";
+// import designTemplatesIcon from "../../assets/media/Navbar/designTemplates.svg";
+// import designTemplatesIconSelected from "../../assets/media/Navbar/designTemplatesSelected.svg";
 import formsIcon from "../../assets/media/Navbar/forms.svg";
+import formIconSelected from "../../assets/media/Navbar/formsSelected.svg";
 import mediaIcon from "../../assets/media/Navbar/media.svg";
-import bellIcon from "../../assets/media/Navbar/bell.svg";
+import mediaIconSelected from "../../assets/media/Navbar/mediaSelected.svg";
+import adminIcon from "../../assets/media/Navbar/admin.svg";
+import adminIconSelected from "../../assets/media/Navbar/adminSelected.svg";
+// import bellIcon from "../../assets/media/Navbar/bell.svg";
 
 const NavBar = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const IconsArrays = [
-    { path: homeIcon, navigateTo: "/", text: "דף הבית" },
     {
-      path: designTemplatesIcon,
-      navigateTo: "/designTemplates",
-      text: "תבניות עיצוב",
+      path: homeIcon,
+      selected: homeIconSelected,
+      navigateTo: "/",
+      text: "עמוד הבית",
     },
-    { path: formsIcon, navigateTo: "/forms", text: "טפסים" },
-    { path: mediaIcon, navigateTo: "/media", text: "מדיה" },
+    // {
+    //   path: designTemplatesIcon,
+    //   selected: designTemplatesIconSelected,
+    //   navigateTo: "/designTemplates",
+    //   text: "תבניות עיצוב",
+    // },
+    {
+      path: formsIcon,
+      selected: formIconSelected,
+      navigateTo: "/forms",
+      text: "טפסים",
+    },
+    {
+      path: mediaIcon,
+      selected: mediaIconSelected,
+      navigateTo: "/media",
+      text: "תמונות ומדיה",
+    },
+    {
+      path: adminIcon,
+      selected: adminIconSelected,
+      navigateTo: "/admin",
+      text: "צד אדמין",
+    },
   ];
+
   const [isOpen, setIsOpen] = useState(false);
-  const [chosenIcon, setChosenIcon] = useState(IconsArrays[0]);
+
+  const getInitialIcon = () => {
+    const currentPath = location.pathname;
+    return (
+      IconsArrays.find((icon) => icon.navigateTo.includes(currentPath)) || null
+    );
+  };
+
+  const [chosenIcon, setChosenIcon] = useState(getInitialIcon);
+
+  useEffect(() => {
+    setChosenIcon(getInitialIcon());
+  }, [location.pathname]);
 
   return (
     <div className={`navbar-container ${isOpen ? "open" : "close"}`}>
@@ -54,22 +98,37 @@ const NavBar = () => {
                 navigate(icon.navigateTo);
               }}
             >
-              <img src={icon.path} className="navbar-icon" alt="navbar icon" />
+              <img
+                data-tooltip-id={`my-tooltip-${index}`}
+                src={chosenIcon?.path === icon.path ? icon.selected : icon.path}
+                className="navbar-icon"
+                alt="navbar icon"
+              />
+              <ReactTooltip
+                id={`my-tooltip-${index}`}
+                place="bottom"
+                content={icon.text}
+              />
               {isOpen && <div className="navbar-item-text">{icon.text}</div>}
             </div>
           ))}
         </div>
         <div className={`navbar-bottom-icons  ${isOpen && "open"}`}>
-          <img src={bellIcon} className="navbar-bell-icon" alt="bell icon" />
-          <div
-            className="navbar-profile-icon"
-            onClick={() => {
-              navigate("/personalArea");
-              setChosenIcon(null);
+          {/* <img src={bellIcon} className="navbar-bell-icon" alt="bell icon" /> */}
+          <PersonalAreaAvater
+            name="יכ"
+            style={{
+              width: "40px",
+              height: "40px",
+              fontSize: "14px",
+              borderRadius: "43px",
+              cursor: "pointer",
             }}
-          >
-            YC
-          </div>
+            onClick={() => {
+              setChosenIcon(null);
+              navigate("/personalArea");
+            }}
+          />
         </div>
       </div>
     </div>

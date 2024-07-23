@@ -1,0 +1,67 @@
+.delete-edu-content {
+  width: 29.063vw;
+  height: 42.778vh;
+  background: var(--Main-colors-White, #fff);
+  border-radius: 8px;
+  text-align: right;
+}
+
+.delete-edu-text {
+  color: var(--body-text, #4c4c66);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.delete-edu-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 24px 32px;
+}
+
+.delete-edu-input {
+  padding: 20px;
+  color: var(--H1, #1f0039);
+  border-radius: 8px;
+  border: 1px solid var(--Stroke, #d4daf8);
+  text-align: right;
+  font-size: 16px;
+  font-weight: 300;
+  height: 16.667vh;
+}
+
+.delete-edu-input:focus {
+  border: 1px solid #dddaf8;
+  box-shadow: none;
+  outline: none;
+}
+
+.delete-edu-buttons-conatiner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 32px;
+}
+
+.delete-edu-cancel {
+  font-size: 16px;
+  font-weight: 500;
+  color: #4f35be;
+  cursor: pointer;
+}
+
+.delete-edu-send {
+  width: 8.333vw;
+  height: 4.444vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  opacity: 0.5;
+  background: var(--disable-filed, #c2c6cc);
+  cursor: pointer;
+  color: var(--Main-colors-White, #fff);
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+}

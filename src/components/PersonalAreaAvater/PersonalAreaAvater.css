@@ -1,0 +1,9 @@
+.personal-area-avater {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #345576;
+  background: #1f304b;
+  color: #fff;
+  font-weight: 700;
+}
