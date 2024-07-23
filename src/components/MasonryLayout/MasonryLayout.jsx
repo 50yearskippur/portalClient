@@ -14,7 +14,19 @@ const MasonryLayout = ({ data }) => {
           key={`masonry${index}`}
           item={item}
           style={{ marginBottom: "12px" }}
-          onClick={() => showPopup(<MediaPopup item={item} />)}
+          onClick={() =>
+            showPopup(
+              <MediaPopup
+                children={
+                  <img
+                  className="masonry-item-popup"
+                    src={item.media}
+                  />
+                }
+                item={item}
+              />
+            )
+          }
         />
       ))}
       .

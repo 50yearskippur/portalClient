@@ -2,3 +2,8 @@
   column-count: 3;
   column-gap: 24px;
 }
+
+.masonry-item-popup {
+  height: 92%;
+  margin-top: 2.993vh;
+}
