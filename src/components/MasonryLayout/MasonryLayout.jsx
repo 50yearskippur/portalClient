@@ -28,7 +28,6 @@ const MasonryLayout = ({ data }) => {
           />
         </div>
       ))}
-      .
     </div>
   );
 };

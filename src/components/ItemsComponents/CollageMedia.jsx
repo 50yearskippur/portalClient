@@ -50,12 +50,12 @@ const CollageMedia = () => {
         <div className="collage-media-side-container">
           <FileController
             item={items[1]}
-            style={{ height: "18vh", borderRadius: "10px 0 0 0" }}
+            style={{ height: "17.95vh", borderRadius: "10px 0 0 0" }}
           />
           <div className="collage-media-overlay-container">
             <FileController
               item={items[2]}
-              style={{ height: "18vh", borderRadius: "0 0 0 10px" }}
+              style={{ height: "17.95vh", borderRadius: "0 0 0 10px" }}
               gradientStyle={{ background: "#18132B99", height: "100%" }}
             />
             <div className="collage-media-overlay">{items.length - 2}+</div>
