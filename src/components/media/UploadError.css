@@ -1,0 +1,36 @@
+.upload-error-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 31px;
+  height: 23vh;
+  padding: 0 48px;
+  border-radius: 10px;
+  border: 1px solid #e3e3e3;
+  background-color: #f2f4fa;
+}
+
+.upload-error-text {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.upload-error-text.red {
+  color: #fb2265;
+}
+
+.upload-error-text.blue {
+  color: #3259ff;
+  text-decoration-line: underline;
+  cursor: pointer;
+}
+
+.upload-error-icon {
+  width: 36px;
+}
+
+.upload-text-container {
+  display: flex;
+}

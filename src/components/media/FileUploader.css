@@ -25,6 +25,7 @@
 .file-upload-type {
   color: #75757b;
   font-weight: 300;
+  text-align: center;
 }
 
 .file-upload-text-container {
@@ -77,10 +78,4 @@
   align-items: center;
   padding: 10px;
   border-radius: 4px;
-}
-
-.file-icon-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }

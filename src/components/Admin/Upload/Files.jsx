@@ -6,7 +6,6 @@ import Button from "../../Button/Button";
 
 const Files = ({ nextStage }) => {
   const { itemDetails } = useContext(PopupContext);
-  console.log(itemDetails);
 
   return (
     <div className="stage-upload-container">
@@ -30,7 +29,7 @@ const Files = ({ nextStage }) => {
           width: "8.3vw",
           height: "4.4vh",
         }}
-        disabled={!itemDetails["file"]}
+        disabled={!itemDetails["files"]}
         onClick={nextStage}
       />
     </div>
