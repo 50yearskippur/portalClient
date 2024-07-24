@@ -5,14 +5,15 @@ import MediaRow from "../components/Admin/RowTypes/MediaRow";
 import adminRow from "../components/Admin/RowTypes/adminRow";
 
 const getAdminChildren = (item, selectedTab) => {
-  switch (selectedTab) {
-    case "תוצרים":
+  console.log(selectedTab);
+  switch (true) {
+    case selectedTab === "תוצרים":
       return EduResourseRow(item);
-    case "עיצובים":
+    case selectedTab === "עיצובים":
       return DesignTemplateRow(item);
-    case "טפסים":
+    case selectedTab === "טפסים":
       return FormRow(item);
-    case "תמונות ואלבומים":
+    case selectedTab === "תמונות סטוק ואלבומים":
       return MediaRow(item);
     case selectedTab.includes("אדמינים"):
       return adminRow(item);

@@ -29,8 +29,8 @@ const DesignTemplatesRow = (item) => {
     />,
     <GenericItem
       title={convertDateToString(item.date)}
-      subTitle="עודכן בתאריך"
-      style={{ width: "5.2vw" }}
+      subTitle="תאריך העלאה"
+      style={{ width: "7.4vw" }}
     />,
   ];
 };

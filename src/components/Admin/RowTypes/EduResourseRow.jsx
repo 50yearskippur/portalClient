@@ -6,15 +6,17 @@ import Star from "../../Rate/Star";
 import eduTypeByText from "../../../utils/eduTypeByText";
 import convertDateToString from "../../../utils/convertDateToString";
 import iconType from "../RowTypes/IconType";
+
 const EduResourseRow = (item) => {
   const [isRecommended, setIsRecommended] = useState(false);
+
   return [
     <div className="generic-row-item-container">
-      {/* <img
+      <img
         src={eduTypeByText(item?.type)}
         alt="edu type"
         className="item-type-img"
-      /> */}
+      />
       <GenericItem
         icon={iconType(item)}
         title={item?.title}
@@ -37,8 +39,8 @@ const EduResourseRow = (item) => {
     </div>,
     <GenericItem
       title={convertDateToString(item?.date)}
-      subTitle="עודכן בתאריך"
-      style={{ width: "5.208vw" }}
+      subTitle="תאריך העלאה"
+      style={{ width: "7.4vw" }}
     />,
     <div className="edu-row-tag-container">
       {item?.tags?.map((tag, tagIndex) => (

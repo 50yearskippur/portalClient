@@ -1,270 +1,336 @@
 import "./AdminPage.css";
-import { useState, useEffect, useContext } from "react";
+import { useState, useContext, useMemo } from "react";
 import { PopupContext } from "../store/popup-context";
 import UploadEduType from "../components/Popup/UploadEdu/UploadEduType";
 import Tabs from "../components/Tabs/Tabs";
 import WaitingList from "../components/Admin/Requests/WaitingList";
 import Search from "../components/Search/Search";
 import TemplateTable from "../components/Admin/GenericObjects/TemplateTable";
-import Requests from "../components/Admin/Requests/Requests";
+import bigA from "../assets/media/Icons/bigA.svg";
+import selectedbigA from "../assets/media/Icons/blueBigA.svg";
+import reversedClock from "../assets/media/Icons/reversedClock.svg";
+import selectedreversedClock from "../assets/media/Icons/blueReversedClock.svg";
+import staricon from "../assets/media/Icons/starIcon.svg";
+import selectedstaricon from "../assets/media/Icons/blueStarIcon.svg";
+
+import downloadIcon from "../assets/media/Icons/squereDownload.svg";
+import selecteddownloadIcon from "../assets/media/Icons/blueDownloadIcon.svg";
+
 //delete in production
 import rabit from "../assets/img/rabit.jpg";
 import arrow from "../assets/media/Icons/curvedArrow.svg";
 import OrderBy from "../components/OrderBy/OrderBy";
 
-const HomePage = () => {
+const AdminPage = () => {
   const { showPopup } = useContext(PopupContext);
-  const tabsArray = ["תוצרים", "עיצובים", "טפסים", "תמונות ואלבומים"];
+  const tabsArray = ["תוצרים", "עיצובים", "טפסים", "תמונות סטוק ואלבומים"];
   const [selectedTab, setSelectedTab] = useState(tabsArray[0]);
   const [data, setData] = useState([]);
 
   //delete in production
   const requestsArr = [
     {
-      title: "מצגת סוריה  מאז ועד היום",
-      date: "28.5.2024",
+      title: "סוריה מאז ועד היום",
+      date: Date("28.5.2024"),
+      type: "לומדה",
       level: "מותאם לכל הרמות",
       creator: "יובל כהן",
-      type: "מצגת",
     },
     {
       title: "סוריה מאז ועד היום",
-      date: "28.5.2024",
+      date: Date("28.5.2024"),
       level: "מותאם לכל הרמות",
+      type: "לומדה",
       creator: "יובל כהן",
-      type: "סיכום",
+    },
+    {
+      title: "סוריה מאז ועד היום",
+      date: Date("28.5.2024"),
+      level: "מותאם לכל הרמות",
+      type: "לומדה",
+
+      creator: "יובל כהן",
     },
   ];
-
-  //delete in production
   const commentsArr = [
     {
       title: "לורם איפסום",
-      date: "28.5.2024",
+      date: Date("28.5.2024"),
       text: "“וואי זאת המצגת הכי טובה שראיתי בחיים שלי, איזה כיף חיים שיוואווווווו חולה עלייכם ארטק כפרה עליכם חייאתי”",
       type: "סיכום",
       creator: "יובל כהן",
     },
     {
       title: "לורם איפסום",
-      date: "28.5.2024",
+      date: Date("28.5.2024"),
       text: "“יוואו אתם לא מפסיקים להפציץ”",
       type: "לומדה",
       creator: "יובל כהן",
     },
   ];
 
-  const eduArr = [
-    {
-      title: "הכירו את זירת סוריה",
-      type: "סרטון",
-      date: Date("28.8.2024"),
-      experationDate: new Date(2024, 8, 15),
-      subSubject: {
-        title: "זירת סוריה",
-      },
-      subject: { title: "מבואות מודיעין" },
-      media: rabit,
-      cover: rabit,
-      mediaType: "image",
-      level: "רמה בסיסית",
-      uploadByArtech: true,
-      tags: [{ title: "תג 1" }, { title: "תג 2" }],
-      info: "משחק שנועד ללמד את צבעי הכומתות בחיילות השונים משחק שנועד ללמד את צבעי הכומתות בחיילות השונים  משחק שנועד ללמד את צבעי הכומתות בחיילות השונים",
-      comments: [
-        {
-          content:
-            "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
-          date: "28.05.2024",
-          user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
-        },
-        {
-          content:
-            "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
-          date: "28.05.2024",
-          user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
-        },
-        {
-          content:
-            "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
-          date: "28.05.2024",
-          user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
-        },
-        {
-          content:
-            "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
-          date: "28.05.2024",
-          user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
-        },
-        {
-          content:
-            "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
-          date: "28.05.2024",
-          user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
-        },
-      ],
-    },
-    {
-      title: "הכירו את זירת סוריה",
-      type: "סרטון",
-      date: Date("28.8.2024"),
-      experationDate: new Date("2024-07-28T00:00"),
-      subSubject: {
-        title: "זירת סוריה",
-      },
-      subject: { title: "מבואות מודיעין" },
-      media: rabit,
-      cover: rabit,
-      mediaType: "image",
-      level: "רמה בסיסית",
-      uploadByArtech: false,
-      tags: [{ title: "תג 1" }, { title: "תג 2" }],
-      info: "משחק שנועד ללמד את צבעי הכומתות בחיילות השונים משחק שנועד ללמד את צבעי הכומתות בחיילות השונים  משחק שנועד ללמד את צבעי הכומתות בחיילות השונים",
-      comments: [
-        {
-          content:
-            "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
-          date: "28.05.2024",
-          user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
-        },
-        {
-          content:
-            "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
-          date: "28.05.2024",
-          user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
-        },
-        {
-          content:
-            "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
-          date: "28.05.2024",
-          user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
-        },
-        {
-          content:
-            "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
-          date: "28.05.2024",
-          user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
-        },
-        {
-          content:
-            "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
-          date: "28.05.2024",
-          user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
-        },
-      ],
-    },
-    {
-      title: "הכירו את זירת סוריה",
-      type: "סרטון",
-      date: Date("28.8.2024"),
-      experationDate: new Date("2024-07-14T00:00"),
-      subSubject: {
-        title: "זירת סוריה",
-      },
-      subject: { title: "מבואות מודיעין" },
-      media: rabit,
-      cover: rabit,
-      mediaType: "image",
-      level: "רמה בסיסית",
-      uploadByArtech: false,
-      tags: [{ title: "תג 1" }, { title: "תג 2" }],
-      info: "משחק שנועד ללמד את צבעי הכומתות בחיילות השונים משחק שנועד ללמד את צבעי הכומתות בחיילות השונים  משחק שנועד ללמד את צבעי הכומתות בחיילות השונים",
-      comments: [
-        {
-          content:
-            "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
-          date: "28.05.2024",
-          user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
-        },
-        {
-          content:
-            "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
-          date: "28.05.2024",
-          user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
-        },
-        {
-          content:
-            "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
-          date: "28.05.2024",
-          user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
-        },
-        {
-          content:
-            "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
-          date: "28.05.2024",
-          user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
-        },
-        {
-          content:
-            "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
-          date: "28.05.2024",
-          user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
-        },
-      ],
-    },
-  ];
+  //delete in production
 
-  const designsArr = [
-    {
-      title: "תבניות עיצוב 1",
-      type: "מצגת",
-      date: Date("28.8.2024"),
-      media: rabit,
-      cover: rabit,
-      mediaType: "image",
-    },
-    {
-      title: "תבניות עיצוב 2",
-      type: "סיכום",
-      date: Date("28.8.2024"),
-      media: rabit,
-      cover: rabit,
-      mediaType: "image",
-    },
-  ];
-
-  const formsArr = [
-    {
-      title: "טפסים 1",
-      type: "סיכום",
-      date: Date("28.8.2024"),
-      tag: { title: "שלישות" },
-      media: rabit,
-      cover: rabit,
-      mediaType: "image",
-    },
-    {
-      title: "טפסים 2",
-      type: "סיכום",
-      date: Date("28.8.2024"),
-      tag: { title: "נשקייה" },
-      media: rabit,
-      cover: rabit,
-      mediaType: "image",
-    },
-  ];
-
-  const mediaArr = [
-    {
-      title: "הרמת כוסית לראש השנה",
-      type: "מצגת",
-      date: Date("28.8.2024"),
-      media: rabit,
-      cover: rabit,
-      mediaType: "image",
-    },
-    {
-      title: "פורים 2024",
-      type: "סיכום",
-      date: Date("28.8.2024"),
-      media: rabit,
-      cover: rabit,
-      mediaType: "image",
-    },
-  ];
-  useEffect(() => {
+  useMemo(() => {
     //delete in production
-    console.log("hi");
+    const eduArr = [
+      {
+        title: "הכירו את זירת לבנון",
+        type: "סרטון",
+        date: Date("28.8.2024"),
+        experationDate: new Date("2024-07-26T00:00"),
+        subSubject: {
+          title: "זירת סוריה",
+        },
+        subject: { title: "מבואות מודיעין" },
+        media: rabit,
+        cover: rabit,
+        mediaType: "image",
+        level: "רמה בסיסית",
+        uploadByArtech: true,
+        tags: [{ title: "תג 1" }, { title: "תג 2" }],
+        info: "משחק שנועד ללמד את צבעי הכומתות בחיילות השונים משחק שנועד ללמד את צבעי הכומתות בחיילות השונים  משחק שנועד ללמד את צבעי הכומתות בחיילות השונים",
+        comments: [
+          {
+            content:
+              "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
+            date: Date("28.8.2024"),
+            user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
+          },
+          {
+            content:
+              "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
+            date: Date("28.8.2024"),
+            user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
+          },
+          {
+            content:
+              "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
+            date: Date("28.8.2024"),
+            user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
+          },
+          {
+            content:
+              "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
+            date: Date("28.8.2024"),
+            user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
+          },
+          {
+            content:
+              "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
+            date: Date("28.8.2024"),
+            user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
+          },
+        ],
+      },
+      {
+        title: "איך לשרוד בתנאי שטח",
+        type: "סרטון",
+        date: Date("28.8.2024"),
+        experationDate: new Date("2024-07-26T00:00"),
+        subSubject: {
+          title: " סוריה",
+        },
+        subject: { title: "מבואות מודיעין" },
+        media: rabit,
+        cover: rabit,
+        mediaType: "image",
+        level: "רמה בסיסית",
+        uploadByArtech: true,
+        tags: [{ title: "תג 1" }, { title: "תג 2" }],
+        info: "משחק שנועד ללמד את צבעי הכומתות בחיילות השונים משחק שנועד ללמד את צבעי הכומתות בחיילות השונים  משחק שנועד ללמד את צבעי הכומתות בחיילות השונים",
+        comments: [
+          {
+            content:
+              "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
+            date: Date("28.8.2024"),
+            user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
+          },
+          {
+            content:
+              "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
+            date: Date("28.8.2024"),
+            user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
+          },
+          {
+            content:
+              "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
+            date: Date("28.8.2024"),
+            user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
+          },
+          {
+            content:
+              "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
+            date: Date("28.8.2024"),
+            user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
+          },
+          {
+            content:
+              "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
+            date: Date("28.8.2024"),
+            user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
+          },
+        ],
+      },
+      {
+        title: "לומדת בם",
+        type: "סרטון",
+        date: Date("28.8.2024"),
+        experationDate: new Date("2024-07-30T00:00"),
+        subSubject: {
+          title: " סוריה",
+        },
+        subject: { title: "מבואות מודיעין" },
+        media: rabit,
+        cover: rabit,
+        mediaType: "image",
+        level: "רמה בסיסית",
+        uploadByArtech: true,
+        tags: [{ title: "תג 1" }, { title: "תג 2" }],
+        info: "משחק שנועד ללמד את צבעי הכומתות בחיילות השונים משחק שנועד ללמד את צבעי הכומתות בחיילות השונים  משחק שנועד ללמד את צבעי הכומתות בחיילות השונים",
+        comments: [
+          {
+            content:
+              "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
+            date: Date("28.8.2024"),
+            user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
+          },
+          {
+            content:
+              "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
+            date: Date("28.8.2024"),
+            user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
+          },
+          {
+            content:
+              "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
+            date: Date("28.8.2024"),
+            user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
+          },
+          {
+            content:
+              "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
+            date: Date("28.8.2024"),
+            user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
+          },
+          {
+            content:
+              "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
+            date: Date("28.8.2024"),
+            user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
+          },
+        ],
+      },
+      {
+        title: "3הכירו את זירת סוריה",
+        type: "סרטון",
+        date: Date("28.8.2024"),
+        experationDate: new Date("2024-07-20T00:00"),
+        subSubject: {
+          title: "זירת סוריה",
+        },
+        subject: { title: "מבואות מודיעין" },
+        media: rabit,
+        cover: rabit,
+        mediaType: "image",
+        level: "רמה בסיסית",
+        uploadByArtech: true,
+        tags: [{ title: "תג 1" }, { title: "תג 2" }],
+        info: "משחק שנועד ללמד את צבעי הכומתות בחיילות השונים משחק שנועד ללמד את צבעי הכומתות בחיילות השונים  משחק שנועד ללמד את צבעי הכומתות בחיילות השונים",
+        comments: [
+          {
+            content:
+              "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
+            date: Date("28.8.2024"),
+            user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
+          },
+          {
+            content:
+              "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
+            date: Date("28.8.2024"),
+            user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
+          },
+          {
+            content:
+              "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
+            date: Date("28.8.2024"),
+            user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
+          },
+          {
+            content:
+              "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
+            date: Date("28.8.2024"),
+            user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
+          },
+          {
+            content:
+              "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
+            date: Date("28.8.2024"),
+            user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
+          },
+        ],
+      },
+    ];
+
+    const designsArr = [
+      {
+        title: "תבניות עיצוב 1",
+        type: "מצגת",
+        date: Date("28.8.2024"),
+        media: rabit,
+        cover: rabit,
+        mediaType: "image",
+      },
+      {
+        title: "תבניות עיצוב 2",
+        type: "סיכום",
+        date: Date("28.8.2024"),
+        media: rabit,
+        cover: rabit,
+        mediaType: "image",
+      },
+    ];
+
+    const formsArr = [
+      {
+        title: "טפסים 1",
+        type: "סיכום",
+        date: Date("28.8.2024"),
+        tag: { title: "שלישות" },
+        media: rabit,
+        cover: rabit,
+        mediaType: "image",
+      },
+      {
+        title: "טפסים 1",
+        type: "סיכום",
+        date: Date("28.8.2024"),
+        tag: { title: "שלישות" },
+        media: rabit,
+        cover: rabit,
+        mediaType: "image",
+      },
+    ];
+
+    const mediaArr = [
+      {
+        title: "הרמת כוסית לראש השנה",
+        type: "מצגת",
+        date: Date("28.8.2024"),
+        media: rabit,
+        cover: rabit,
+        mediaType: "image",
+      },
+      {
+        title: "פורים 2024",
+        type: "סיכום",
+        date: Date("28.8.2024"),
+        media: rabit,
+        cover: rabit,
+        mediaType: "image",
+      },
+    ];
+
     switch (true) {
       case selectedTab === "תוצרים":
         setData(eduArr);
@@ -275,7 +341,7 @@ const HomePage = () => {
       case selectedTab === "טפסים":
         setData(formsArr);
         break;
-      case selectedTab === "תמונות ואלבומים":
+      case selectedTab === "תמונות סטוק ואלבומים":
         setData(mediaArr);
         break;
       default:
@@ -302,8 +368,39 @@ const HomePage = () => {
               setSelectedTab={setSelectedTab}
               selectedTab={selectedTab}
             />
-            <OrderBy />
-            <Search style={{ height: "42px", width: "16.7vw" }} />
+            <OrderBy
+              options={[
+                {
+                  value: "upload-date",
+                  label: "תאריך העלאה",
+                  icon: downloadIcon,
+                  selectedicon: selecteddownloadIcon,
+                },
+                {
+                  value: "update-date",
+                  label: "תאריך עדכון",
+                  icon: reversedClock,
+                  selectedicon: selectedreversedClock,
+                },
+                {
+                  value: "popularity",
+                  label: "פופולריות",
+                  icon: staricon,
+                  selectedicon: selectedstaricon,
+                },
+                {
+                  value: "alphabet",
+                  label: " 'א' - ב",
+                  icon: bigA,
+                  selectedicon: selectedbigA,
+                },
+                ,
+              ]}
+            />
+            <Search
+              placeholder={"חיפוש תוצר/נושא"}
+              style={{ height: "42px", width: "16.7vw" }}
+            />
           </div>
           <TemplateTable
             icon={arrow}
@@ -342,4 +439,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default AdminPage;

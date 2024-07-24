@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React from "react";
 import "./HomePage.css";
 import { useState } from "react";
 import Search from "../components/Search/Search";
@@ -177,6 +176,7 @@ const HomePage = () => {
   return (
     <div className="home-page-wrapper page-container">
       <Search
+        placeholder={"חיפוש חופשי"}
         style={{
           width: "42.84%",
           height: "7.58vh",

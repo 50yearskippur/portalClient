@@ -15,6 +15,7 @@ import mediaIcon from "../../assets/media/Navbar/media.svg";
 import mediaIconSelected from "../../assets/media/Navbar/mediaSelected.svg";
 import adminIcon from "../../assets/media/Navbar/admin.svg";
 import adminIconSelected from "../../assets/media/Navbar/adminSelected.svg";
+import permissonIcon from "../../assets/media/Navbar/permissionIcon.svg";
 // import bellIcon from "../../assets/media/Navbar/bell.svg";
 
 const NavBar = () => {
@@ -50,6 +51,12 @@ const NavBar = () => {
       selected: adminIconSelected,
       navigateTo: "/admin",
       text: "צד אדמין",
+    },
+    {
+      path: permissonIcon,
+      selected: permissonIcon,
+      navigateTo: "/admin/permissions",
+      text: "ניהול הרשאות",
     },
   ];
 

@@ -24,6 +24,10 @@
   align-self: start;
 }
 
+.stage-text.big {
+  font-size: 16px;
+}
+
 .stage-file-container {
   display: flex;
   flex-direction: column;
@@ -55,4 +59,10 @@
   display: flex;
   justify-content: space-between;
   gap: 16px;
+}
+
+.stage-cradit-container {
+  display: flex;
+  justify-content: space-between;
+  height: 35px;
 }

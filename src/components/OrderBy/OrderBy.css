@@ -29,7 +29,6 @@
   position: relative;
   display: flex;
   margin-right: auto;
-  height: 2.8vh;
   align-items: center;
   color: #7d81b2;
   font-size: 14px;
@@ -45,41 +44,77 @@
   border-radius: 4px;
   background: #e8ebf4;
   box-shadow: 10px 12.6px 29px 0px rgba(67, 66, 89, 0.1);
-  padding: 24px;
-  align-items: flex-start;
+  padding: 10px 12px;
+  /* align-items: flex-start; */
   gap: 24px;
-  align-self: stretch;
 }
-
+.check-icon {
+  width: 12px;
+  height: 12px;
+}
 .dropdown-item {
-  color: var(--body-text, #444a5a);
-  text-align: center;
-  /* Desktop/Regular (500) */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  display: flex;
+  width: 9.531vw;
+  padding: 10px 12px;
+  align-items: center;
+  gap: 8px;
+  color: var(--body-text, #4c4c66);
   font-family: Rubik;
-  font-size: 16px;
+  font-size: 14px;
   font-style: normal;
-  font-weight: 500;
-  line-height: 24px; /* 150% */
+  font-weight: 400;
+  line-height: normal;
 }
-
+.sort-icon {
+  width: 14px;
+  height: 11px;
+  flex-shrink: 0;
+}
 .dropdown-item.selected {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  align-self: stretch;
   font-weight: bold;
-  width: 6.5vw;
-
-  justify-content: space-between;
+  background: #e6e9f4;
+  color: var(--primary, #3259ff);
+  font-family: Rubik;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.dropdown-sort-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  display: flex;
+  width: 9.531vw;
+  padding: 10px 12px;
+  align-items: center;
+  color: #4c4c66;
+  font-family: Rubik;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.dropdown-sort-item.selected {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  background: #e6e9f4;
+  color: #3259ff;
+  font-family: Rubik;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .dropdown-item:hover {
-  background-color: #e0e0e5;
-}
-
-.check-mark {
-  width: 18px;
-  height: 18px;
-  color: blue;
-  margin-right: 10px;
+  background: #e6e9f4;
 }

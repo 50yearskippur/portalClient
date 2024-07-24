@@ -7,32 +7,30 @@ import Details from "../components/Admin/Upload/Details";
 import Setting from "../components/Admin/Upload/Setting";
 
 const Upload = () => {
-  const stagesArray = [
-    { title: "סוג תוצר", component: <EduType /> },
-    { title: "קבצים", component: <Files /> },
-    { title: "פרטים", component: <Details /> },
-    { title: "הגדרות", component: <Setting /> },
-  ];
   const [currentStage, setCurrentStage] = useState(1);
 
-  const handleStageClick = (stagenumber) => {
-    if (stagenumber > currentStage) setCurrentStage(stagenumber);
+  const nextStage = () => {
+    setCurrentStage((prevStage) => prevStage + 1);
   };
+
+  const stagesArray = [
+    { title: "סוג תוצר", component: <EduType nextStage={nextStage} /> },
+    { title: "קבצים", component: <Files nextStage={nextStage}/> },
+    { title: "פרטים", component: <Details nextStage={nextStage}/> },
+    { title: "הגדרות", component: <Setting nextStage={nextStage}/> },
+  ];
 
   return (
     <div className="admin-upload-container">
       <TopSection
         navigateTo={"/admin"}
         title="העלאת תוצר"
-        exitText="חזרה לדך העלאות"
+        exitText=" לעמוד העלאות"
       />
       <div className="upload-stages-container">
         {stagesArray.map((stage, index) => (
           <div key={`stage ${index}`} className="stage-white-container">
-            <div
-              className="stage-header"
-              onClick={() => handleStageClick(index + 1)}
-            >
+            <div className="stage-header">
               <div
                 className={`stage-number ${index < currentStage && "current"} `}
               >

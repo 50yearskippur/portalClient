@@ -55,7 +55,8 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  width: 10.583vw;
+  width: 16.583vw;
+  /* width: 10.583vw; */
 }
 
 .item-type-img {

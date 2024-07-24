@@ -1,13 +1,16 @@
 import "./AdminPermissionManagment.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import Tabs from "../components/Tabs/Tabs";
-import getRequestChildren from "../utils/getRequestChildren";
 import Search from "../components/Search/Search";
+import WaitingList from "../components/Admin/Requests/WaitingList";
 import TemplateTable from "../components/Admin/GenericObjects/TemplateTable";
-import Requests from "../components/Admin/Requests/Requests";
 import trash from "../assets/media/Icons/trashIcon.svg";
+import bigA from "../assets/media/Icons/bigA.svg";
+import selectedbigA from "../assets/media/Icons/blueBigA.svg";
+import downloadIcon from "../assets/media/Icons/squereDownload.svg";
+import selecteddownloadIcon from "../assets/media/Icons/blueDownloadIcon.svg";
+
 import OrderBy from "../components/OrderBy/OrderBy";
-import PersonalAreaAvater from "../components/PersonalAreaAvater/PersonalAreaAvater";
 const AdminPermissionManagment = () => {
   const [data, setData] = useState([]);
 
@@ -25,41 +28,51 @@ const AdminPermissionManagment = () => {
       role: "רמד פיתוח",
     },
   ];
-  const [tabsArray, settabsArray] = useState([
-    `אדמינים (${eduArr.length})`,
-    "תתי נושאים",
-  ]);
+  const [tabsArray, settabsArray] = useState([`אדמינים (${eduArr.length})`]);
   const [selectedTab, setSelectedTab] = useState(tabsArray[0]);
   //delete in production
-  const subSubjectsArr = [
+  const requestsArr = [
     {
-      title: "לורם איפסום",
-      date: "28.5.2024",
+      title: "סוריה מאז ועד היום",
+      date: Date("28.5.2024"),
+      type: "לומדה",
+      level: "מותאם לכל הרמות",
       creator: "יובל כהן",
     },
     {
-      title: "לורם איפסום",
-      date: "28.5.2024",
+      title: "סוריה מאז ועד היום",
+      date: Date("28.5.2024"),
+      level: "מותאם לכל הרמות",
+      type: "לומדה",
+      creator: "יובל כהן",
+    },
+    {
+      title: "סוריה מאז ועד היום",
+      date: Date("28.5.2024"),
+      level: "מותאם לכל הרמות",
+      type: "לומדה",
+
       creator: "יובל כהן",
     },
   ];
-  //delete in production
-  const newAdminsArr = [
+  const commentsArr = [
     {
       title: "לורם איפסום",
-      date: "28.5.2024",
-      fullName: "יובל כהן",
-      role: "קורס אתרוג",
+      date: Date("28.5.2024"),
+      text: "“וואי זאת המצגת הכי טובה שראיתי בחיים שלי, איזה כיף חיים שיוואווווווו חולה עלייכם ארטק כפרה עליכם חייאתי”",
+      type: "סיכום",
+      creator: "יובל כהן",
     },
     {
       title: "לורם איפסום",
-      date: "28.5.2024",
-      fullName: "יובל כהן",
-      role: "קורס אתרוג",
+      date: Date("28.5.2024"),
+      text: "“יוואו אתם לא מפסיקים להפציץ”",
+      type: "לומדה",
+      creator: "יובל כהן",
     },
   ];
 
-  useEffect(() => {
+  useMemo(() => {
     //delete in production
 
     eduArr = [
@@ -82,14 +95,11 @@ const AdminPermissionManagment = () => {
 
     switch (true) {
       case selectedTab === `אדמינים (${eduArr.length})`:
-        settabsArray([`אדמינים (${eduArr.length})`, "תתי נושאים"]);
+        settabsArray([`אדמינים (${eduArr.length})`]);
         setData(eduArr);
         break;
-      case selectedTab === "תתי נושאים":
-        setData([]);
-        break;
       default:
-        settabsArray([`אדמינים (${eduArr.length})`, "תתי נושאים"]);
+        settabsArray([`אדמינים (${eduArr.length})`]);
         setData(eduArr);
     }
   }, [selectedTab]);
@@ -107,9 +117,28 @@ const AdminPermissionManagment = () => {
               setSelectedTab={setSelectedTab}
               selectedTab={selectedTab}
             />
-            <OrderBy />
+            <OrderBy
+              options={[
+                {
+                  value: "upload-date",
+                  label: "תאריך העלאה",
+                  icon: downloadIcon,
+                  selectedicon: selecteddownloadIcon,
+                },
+                {
+                  value: "alphabet",
+                  label: " 'א' - ב",
+                  icon: bigA,
+                  selectedicon: selectedbigA,
+                },
+                ,
+              ]}
+            />
 
-            <Search style={{ height: "42px", width: "16.7vw" }} />
+            <Search
+              placeholder={"חיפוש חופשי"}
+              style={{ height: "42px", width: "16.7vw" }}
+            />
           </div>
           <TemplateTable
             icon={trash}
@@ -121,21 +150,26 @@ const AdminPermissionManagment = () => {
         <div className="admin-pending-approval-side">
           <div className="admin-pending-approval-container">
             <div className="admin-top-other">
-              <div className="admin-other-header">תתי נושאים חדשים </div>
+              <div className="admin-other-header">
+                תוצרים שמחכים לאישור ({requestsArr.length})
+              </div>
+              <div className="admin-link">כל השאר </div>
             </div>
+            <WaitingList
+              header={`תוצרים שמחכים לאישור`}
+              requests={requestsArr}
+            />
           </div>
           <div className="admin-pending-approval-container">
-            <Requests
-              header={"תתי נושאים חדשים"}
-              children={getRequestChildren("תתי נושאים חדשים")}
-              requests={subSubjectsArr}
-            />
-
-            <div className="admin-other-header">אדמינים חדשים</div>
-            <Requests
-              header={"אדמינים חדשים"}
-              children={getRequestChildren("אדמינים חדשים")}
-              requests={newAdminsArr}
+            <div className="admin-top-other">
+              <div className="admin-other-header">
+                תגובות לאישור בקליק ({commentsArr.length})
+              </div>
+              <div className="admin-link">כל השאר </div>
+            </div>
+            <WaitingList
+              header={"תגובות לאישור בקליק"}
+              requests={commentsArr}
             />
           </div>
         </div>

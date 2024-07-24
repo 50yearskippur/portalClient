@@ -6,7 +6,7 @@ import eduTypesTitles from "../../../constants/eduTypes";
 import gameIcon from "../../../assets/media/Upload/game.png";
 import Button from "../../Button/Button";
 
-const EduType = () => {
+const EduType = ({ nextStage }) => {
   const { itemDetails } = useContext(PopupContext);
   return (
     <div className="stage-upload-container">
@@ -21,6 +21,7 @@ const EduType = () => {
           height: "4.4vh",
         }}
         disabled={!itemDetails["type"]}
+        onClick={nextStage}
       />
     </div>
   );

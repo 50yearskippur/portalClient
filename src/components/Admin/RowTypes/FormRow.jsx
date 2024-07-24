@@ -1,9 +1,9 @@
 import { useState } from "react";
 import "./TemplateRow.css";
+import eduTypeByText from "../../../utils/eduTypeByText";
 import GenericItem from "../GenericObjects/GenericItem";
 import vPressed from "../../../assets/media/Icons/vPressed.svg";
 import vUnressed from "../../../assets/media/Icons/vUnpresed.svg";
-import eduTypeByText from "../../../utils/eduTypeByText";
 import convertDateToString from "../../../utils/convertDateToString";
 
 const FormRow = (item) => {
@@ -11,11 +11,11 @@ const FormRow = (item) => {
 
   return [
     <div className="generic-row-item-container">
-      {/* <img
+      <img
         src={eduTypeByText(item?.type)}
         alt="edu type"
         className="item-type-img"
-      /> */}
+      />
       <GenericItem
         title={item.title}
         subTitle="שם הטופס"
@@ -34,8 +34,8 @@ const FormRow = (item) => {
     <GenericItem title="PDF" subTitle="סוג קובץ" style={{ width: "4.5vw" }} />,
     <GenericItem
       title={convertDateToString(item.date)}
-      subTitle="עודכן בתאריך"
-      style={{ width: "5.2vw" }}
+      subTitle="תאריך העלאה"
+      style={{ width: "7.4vw" }}
     />,
   ];
 };

@@ -14,10 +14,22 @@
 
 .edu-row-views {
   width: 3vw;
-  padding: 4px 16px;
+  display: flex;
+  padding: 4px 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
   border-radius: 20px;
+  border: 1px solid var(--Main-colors-White, #fff);
   background: rgba(235, 235, 248, 0.5);
   color: #4f35be;
+  text-align: center;
+  font-feature-settings: "salt" on;
+
+  /* www.freepik.com/14 R */
+  font-family: Rubik;
   font-size: 14px;
+  font-style: normal;
   font-weight: 400;
+  line-height: 20px; /* 142.857% */
 }

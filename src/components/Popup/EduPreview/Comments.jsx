@@ -7,6 +7,7 @@ import EduPreviewTop from "./EduPreviewTop";
 import DeleteEduText from "./DeleteEduText";
 import backIcon from "../../../assets/media/Icons/backIcon.svg";
 import EduPreview from "./EduResPreview";
+import convertDateToString from "../../../utils/convertDateToString";
 
 const MoreComments = ({ edu }) => {
   const { showPopup } = useContext(PopupContext);
@@ -50,7 +51,9 @@ const Comments = ({ edu, checkbox = false }) => {
             <div className="edu-dark-text">{comment.user.fullName}</div>
             <div className="comment-bottom-container">
               <div className="edu-bright-text">{comment.user.role}</div>
-              <div className="edu-bright-text">{comment.date}</div>
+              <div className="edu-bright-text">
+                {convertDateToString(comment.date)}
+              </div>
             </div>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import "./WaitingList.css";
 import eduTypeByText from "../../../utils/eduTypeByText";
+import convertDateToString from "../../../utils/convertDateToString";
 
 const CommentDetails = ({ item, icon, style }) => {
   return (
@@ -14,11 +15,11 @@ const CommentDetails = ({ item, icon, style }) => {
           <div className="waitinglist-title">{item.title}</div>
           <div className="waitinglist-user-details">
             <div> {item.creator}</div>
-            <div>{item.date} </div>
+            <div>{convertDateToString(item.date)} </div>
           </div>
         </div>
       </div>
-      {icon && <img src={icon} />}
+      {icon && <img alt={"icon"} src={icon} />}
     </div>
   );
 };
