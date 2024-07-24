@@ -6,6 +6,7 @@ import Button from "../../Button/Button";
 
 const Files = ({ nextStage }) => {
   const { itemDetails } = useContext(PopupContext);
+  console.log(itemDetails);
 
   return (
     <div className="stage-upload-container">

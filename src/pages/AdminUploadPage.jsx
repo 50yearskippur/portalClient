@@ -38,8 +38,8 @@ const Upload = () => {
     <div className="admin-upload-container">
       <TopSection
         navigateTo={"/admin"}
-        title="העלאת מוצר חדש"
-        exitText="בטל העלאת מוצר"
+        title="העלאת תוצר"
+        exitText="לעמוד ההעלאות"
       />
       <div className="upload-stages-container">
         {stagesArray.map((stage, index) => (
