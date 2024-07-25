@@ -12,16 +12,55 @@ const FileUploader = ({ text, fileTypes, isCover = false }) => {
   const { itemDetails, setItemDetails } = useContext(PopupContext);
   const [isInvalidType, setIsInvalidType] = useState(false);
 
+  const { getRootProps, getInputProps } = useDropzone({
+    onDrop: (acceptedFiles) => {
+      const unsupportedFiles = acceptedFiles.filter((file) => {
+        const fileExtension = file.path.split(".").pop().toUpperCase();
+        return !fileTypes.includes(fileExtension);
+      });
+
+      if (unsupportedFiles.length > 0) setIsInvalidType(true);
+      else {
+        setItemDetails((prevDetails) => ({
+          ...prevDetails,
+          files: {
+            ...prevDetails.files,
+            [isCover ? "cover" : "media"]: acceptedFiles[0],
+          },
+        }));
+        setIsInvalidType(false);
+      }
+    },
+  });
+
+  const tryUploadAgain = () => {
+    setIsInvalidType(false);
+  };
+
+  const handleRemoveFile = () => {
+    setItemDetails((prevDetails) => {
+      const newFiles = { ...prevDetails.files };
+      delete newFiles.media;
+      return { ...prevDetails, files: newFiles };
+    });
+  };
+
   const hadnleDragFiles = () => {
-    console.log(itemDetails);
     switch (true) {
       case isInvalidType:
         return <UploadError fileTypes={fileTypes} onClick={tryUploadAgain} />;
+      case !isCover && !!itemDetails?.files?.media:
+        return (
+          <FilePreview
+            file={itemDetails?.files?.media}
+            handleRemoveFile={handleRemoveFile}
+          />
+        );
       case isCover && !!itemDetails?.files?.cover:
         return (
           <>
             <img
-              src={URL.createObjectURL(itemDetails?.files?.cover[0])}
+              src={URL.createObjectURL(itemDetails?.files?.cover)}
               className="file-upload-cover"
               alt="file"
             />
@@ -30,13 +69,6 @@ const FileUploader = ({ text, fileTypes, isCover = false }) => {
               <>עריכה</>
             </div>
           </>
-        );
-      case !isCover && !!itemDetails?.files?.media:
-        return (
-          <FilePreview
-            file={itemDetails?.files?.media[0]}
-            handleRemoveFile={handleRemoveFile}
-          />
         );
       default:
         return (
@@ -60,38 +92,32 @@ const FileUploader = ({ text, fileTypes, isCover = false }) => {
     }
   };
 
-  const { getRootProps, getInputProps } = useDropzone({
-    onDrop: (acceptedFiles) => {
-      const unsupportedFiles = acceptedFiles.filter((file) => {
-        const fileExtension = file.path.split(".").pop().toUpperCase();
-        return !fileTypes.includes(fileExtension);
-      });
-
-      if (unsupportedFiles.length > 0) setIsInvalidType(true);
-      else {
-        setItemDetails((prevDetails) => ({
-          ...prevDetails,
-          files: {
-            ...prevDetails.files,
-            [isCover ? "cover" : "media"]: acceptedFiles,
-          },
-        }));
-      }
-    },
-  });
-
-  const tryUploadAgain = () => {
-    setIsInvalidType(false);
-  };
-
-  const handleRemoveFile = (filePath) => {
-    setItemDetails((prevDetails) => ({
-      ...prevDetails,
-      files: prevDetails.files.filter((file) => file.path !== filePath),
-    }));
-  };
-
   return <div className="drag-container">{hadnleDragFiles()}</div>;
 };
 
 export default FileUploader;
+
+// some files and covers code
+// setItemDetails((prevDetails) => {
+//   const newFileObject = {
+//     [isCover ? "cover" : "media"]: acceptedFiles[0],
+//   };
+//   let newFiles = [...prevDetails.files];
+
+//   if (
+//     newFiles.length === 0 ||
+//     newFiles[newFiles.length - 1].length === 2
+//   ) {
+//     newFiles = [...newFiles, [newFileObject]];
+//   } else {
+//     newFiles[newFiles.length - 1] = [
+//       ...newFiles[newFiles.length - 1],
+//       newFileObject,
+//     ];
+//   }
+
+//   return {
+//     ...prevDetails,
+//     files: newFiles,
+//   };
+// });

@@ -9,7 +9,7 @@ export const PopupContext = createContext({
 export const PopupProvider = ({ children }) => {
   const [isPopupVisible, setPopupVisible] = useState(false);
   const [popupContent, setPopupContent] = useState(null);
-  const [itemDetails, setItemDetails] = useState({});
+  const [itemDetails, setItemDetails] = useState({ files: {} });
 
   useEffect(() => {
     document.body.style.overflow = isPopupVisible ? "hidden" : "auto";
