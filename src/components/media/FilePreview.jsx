@@ -1,5 +1,5 @@
 import "./FilePreview.css";
-import verifyFile from "../../assets/media/Icons/verifyFile.svg";
+import verifyFile from "../../assets/media/Icons/verifyFile.png";
 
 const FilePreview = ({ file, handleRemoveFile }) => {
   return (

@@ -6,7 +6,7 @@ import Button from "../../Button/Button";
 
 const Files = ({ nextStage }) => {
   const { itemDetails } = useContext(PopupContext);
-
+  console.log(itemDetails);
   return (
     <div className="stage-upload-container">
       <div className="files-container">
@@ -20,7 +20,11 @@ const Files = ({ nextStage }) => {
         </div>
         <div className="stage-file-container" style={{ width: "28%" }}>
           <div className="stage-text">תמונת קאבר</div>
-          <FileUploader text="צרף קובץ" fileTypes={["PNG", "JPG"]} />
+          <FileUploader
+            text="צרף קובץ"
+            fileTypes={["PNG", "JPG"]}
+            IsCover={true}
+          />
         </div>
       </div>
       <Button
