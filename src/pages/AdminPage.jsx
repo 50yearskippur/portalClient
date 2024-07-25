@@ -23,7 +23,12 @@ import OrderBy from "../components/OrderBy/OrderBy";
 
 const AdminPage = () => {
   const { showPopup } = useContext(PopupContext);
-  const tabsArray = ["תוצרים", "עיצובים", "טפסים", "תמונות סטוק ואלבומים"];
+  const [tabsArray, setTabs] = useState([
+    "תוצרים",
+    "עיצובים",
+    "טפסים",
+    "תמונות סטוק ואלבומים",
+  ]);
   const [selectedTab, setSelectedTab] = useState(tabsArray[0]);
   const [data, setData] = useState([]);
 
@@ -223,7 +228,7 @@ const AdminPage = () => {
       },
       {
         title: "3הכירו את זירת סוריה",
-        type: "סרטון",
+        type: "סיכום",
         date: Date("28.8.2024"),
         experationDate: new Date("2024-07-20T00:00"),
         subSubject: {
@@ -315,40 +320,44 @@ const AdminPage = () => {
     const mediaArr = [
       {
         title: "הרמת כוסית לראש השנה",
-        type: "מצגת",
+        type: "תמונה",
         date: Date("28.8.2024"),
-        media: rabit,
+        media: [rabit, rabit, rabit, rabit],
         cover: rabit,
         mediaType: "image",
       },
       {
         title: "פורים 2024",
-        type: "סיכום",
+        type: "תמונה",
         date: Date("28.8.2024"),
         media: rabit,
         cover: rabit,
         mediaType: "image",
       },
     ];
-
+    setTabs([
+      `תוצרים (${eduArr.length})`,
+      `עיצובים (${designsArr.length})`,
+      `טפסים (${formsArr.length})`,
+      `תמונות סטוק ואלבומים (${mediaArr.length})`,
+    ]);
     switch (true) {
-      case selectedTab === "תוצרים":
+      case selectedTab.includes("תוצרים"):
         setData(eduArr);
         break;
-      case selectedTab === "עיצובים":
+      case selectedTab.includes("עיצובים"):
         setData(designsArr);
         break;
-      case selectedTab === "טפסים":
+      case selectedTab.includes("טפסים"):
         setData(formsArr);
         break;
-      case selectedTab === "תמונות סטוק ואלבומים":
+      case selectedTab.includes("תמונות סטוק ואלבומים"):
         setData(mediaArr);
         break;
       default:
         setData(eduArr);
     }
   }, [selectedTab]);
-
   return (
     <div className="page-container">
       <div className="admin-header-container">
@@ -394,7 +403,6 @@ const AdminPage = () => {
                   icon: bigA,
                   selectedicon: selectedbigA,
                 },
-                ,
               ]}
             />
             <Search

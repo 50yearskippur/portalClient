@@ -1,5 +1,5 @@
 import "./AdminPermissionManagment.css";
-import { useState, useEffect, useMemo } from "react";
+import { useState, useMemo } from "react";
 import Tabs from "../components/Tabs/Tabs";
 import Search from "../components/Search/Search";
 import WaitingList from "../components/Admin/Requests/WaitingList";

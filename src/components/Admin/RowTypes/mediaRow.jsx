@@ -6,23 +6,13 @@ import convertDateToString from "../../../utils/convertDateToString";
 import CoverComponent from "../Templates/CoverComponent";
 const MediaRow = (item) => {
   return [
-    <div
-      style={{
-        display: "flex",
-        width: "100%",
-        alignItems: "center",
-        justifyContent: "space-between",
-      }}
-    >
-      <CoverComponent />
-      <GenericItem
-        title={item.title}
-        subTitle="שם האלבום\תמונה"
-        style={{ width: "8.3vw" }}
-      />
+    <CoverComponent />,
+    <GenericItem
+      title={item.title}
+      subTitle="שם האלבום\תמונה"
+      style={{ width: "8.3vw" }}
+    />,
 
-      {/*  */}
-    </div>,
     <div className="edu-row-views">12 צפיות</div>,
     <GenericItem
       title={item.type}

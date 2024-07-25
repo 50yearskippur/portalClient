@@ -3,11 +3,16 @@ import DeleteEduText from "./DeleteEduText";
 import handlePropagation from "../../../utils/handlePropagation";
 import EduResSection from "./EduResSection";
 import Files from "./Files";
-
+import getEduPreviewTopChildren from "../../../utils/getEduPreviewTopChildren";
+import MainEduTop from "./MainEduTop";
 const FormPreview = ({ edu }) => {
+  console.log(edu.type);
   return (
     <div className="edu-preview-content" onClick={(e) => handlePropagation(e)}>
-      <EduPreviewTop edu={edu} />
+      <MainEduTop
+        children={getEduPreviewTopChildren(edu.type, edu)}
+        edu={edu}
+      />{" "}
       <EduResSection title="קבצים" content={<Files edu={edu} />} />
       <DeleteEduText />
     </div>

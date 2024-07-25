@@ -5,13 +5,13 @@ import MediaPreview from "../components/Popup/EduPreview/MediaPreview";
 
 const getAdminPopUp = (selectedTab) => {
   switch (true) {
-    case selectedTab === "תוצרים":
+    case selectedTab.includes("תוצרים"):
       return EduResPreview;
-    case selectedTab === "עיצובים":
+    case selectedTab.includes("עיצובים"):
       return DesignPreview;
-    case selectedTab === "טפסים":
+    case selectedTab.includes("טפסים"):
       return FormPreview;
-    case selectedTab === "תמונות סטוק ואלבומים":
+    case selectedTab.includes("תמונות סטוק ואלבומים"):
       return MediaPreview;
     default:
       return EduResPreview;

@@ -7,7 +7,9 @@ const Tabs = ({ tabsArray, style = {}, setSelectedTab, selectedTab }) => {
       {tabsArray?.map((tab, index) => (
         <div
           key={`tab${index}`}
-          className={`tabs-item ${selectedTab === tab ? "current-tab" : ""}`}
+          className={`tabs-item ${
+            tab.includes(selectedTab) ? "current-tab" : ""
+          }`}
           onClick={() => setSelectedTab(tab)}
         >
           {tab}
