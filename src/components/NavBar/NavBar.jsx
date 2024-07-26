@@ -45,12 +45,12 @@ const NavBar = () => {
       navigateTo: "/media",
       text: "תמונות ומדיה",
     },
-    {
-      path: adminIcon,
-      selected: adminIconSelected,
-      navigateTo: "/admin",
-      text: "צד אדמין",
-    },
+    // {
+    //   path: adminIcon,
+    //   selected: adminIconSelected,
+    //   navigateTo: "/admin",
+    //   text: "צד אדמין",
+    // },
   ];
 
   const [isOpen, setIsOpen] = useState(false);
@@ -84,7 +84,7 @@ const NavBar = () => {
         </div>
         {isOpen && <div className="navbar-portal-text">Portal</div>}
       </div>
-
+      <div className={`horizonal-line-admin ${isOpen ? "open" : "close"}`} />
       <div className="navbar-content">
         <div className={`navbar-top-icons ${isOpen && "open"}`}>
           {IconsArrays.map((icon, index) => (
@@ -104,11 +104,11 @@ const NavBar = () => {
                 className="navbar-icon"
                 alt="navbar icon"
               />
-              <ReactTooltip
+              {/* <ReactTooltip
                 id={`my-tooltip-${index}`}
                 place="bottom"
                 content={icon.text}
-              />
+              /> */}
               {isOpen && <div className="navbar-item-text">{icon.text}</div>}
             </div>
           ))}
