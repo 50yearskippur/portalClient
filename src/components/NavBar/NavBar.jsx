@@ -130,11 +130,12 @@ const NavBar = () => {
                 className="navbar-icon"
                 alt="navbar icon"
               />
-              {/* <ReactTooltip
+              <ReactTooltip
+              style={{ borderRadius: "10px" }}
                 id={`my-tooltip-${index}`}
                 place="bottom"
                 content={icon.text}
-              /> */}
+              />
               {isOpen && <div className="navbar-item-text">{icon.text}</div>}
             </div>
           ))}
