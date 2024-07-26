@@ -9,12 +9,11 @@ import TopNav from "../components/TopNav/TopNav.jsx";
 import rabit from "../assets/img/rabit.jpg";
 import SortBySubject from "../components/SortBySubject/SortBySubject.jsx";
 import ForYouItem from "../components/ItemsComponents/ForYouItem/ForYouItem.jsx";
-import { Padding } from "@mui/icons-material";
 
 //delete in production
 const recommendedEduResource = [
   {
-    title: 'רעיון מטורף',
+    title: "רעיון מטורף",
     type: "משחק",
     subSubject: {
       title: "קיפוד",
@@ -25,7 +24,7 @@ const recommendedEduResource = [
     mediaType: "image",
   },
   {
-    title: 'מומלץ ממש',
+    title: "מומלץ ממש",
     type: "משחק",
     subSubject: {
       title: "מחברות",
@@ -36,7 +35,7 @@ const recommendedEduResource = [
     mediaType: "image",
   },
   {
-    title: 'הכי מומלץ',
+    title: "הכי מומלץ",
     type: "משחק",
     subSubject: {
       title: "מבצע כיף",
@@ -58,7 +57,7 @@ const recommendedEduResource = [
     mediaType: "image",
   },
   {
-    title: 'מבצעים שווים',
+    title: "מבצעים שווים",
     type: "משחק",
     subSubject: {
       title: "צוות סימבה",
@@ -148,7 +147,13 @@ const getEduResources = (selectedTab) => {
     case selectedTab === "תוצרים שאהבתי":
       return <Favorites />;
     case selectedTab === "כל התוצרים":
-      return <p>כל התוצרים</p>;
+      return (
+        <SortBySubject
+          numberOfItemsInLine={1}
+          subjects={subjects}
+          ItemComponent={ForYouItem}
+        />
+      );
     default:
       return (
         <SortBySubject

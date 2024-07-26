@@ -14,6 +14,7 @@ const PdfPreview = ({ item }) => {
         <div className="pdf-preview-subject">{item.subSubject.title}</div>
         <FileController
           item={item}
+          style={{height: 'auto'}}
           onClick={() =>
             showPopup(
               <MediaPopup
