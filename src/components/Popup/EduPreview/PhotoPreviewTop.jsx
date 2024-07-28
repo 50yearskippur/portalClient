@@ -1,12 +1,10 @@
 "./EduPreviewTop.css";
 import { useNavigate } from "react-router-dom";
-import eduTypeByText from "../../../utils/eduTypeByText";
-import Rate from "../../Rate/Rate";
 import editIcon from "../../../assets/media/Icons/edit.svg";
 import picture from "../../../assets/media/Upload/picture.svg";
+import doc from "../../../assets/media/Upload/document.svg";
 
 const PhotoPreviewTop = (edu) => {
-  console.log(edu);
   let iconDetails = {
     text: "עריכה",
     icon: editIcon,
@@ -18,7 +16,7 @@ const PhotoPreviewTop = (edu) => {
   return [
     <div className="edu-preview-top-right">
       <div className="edu-preview-name-container">
-        <img src={picture} alt="edu type" />
+        <img src={edu.type === "תמונה" ? picture : doc} alt="edu type" />
         <div className="edu-preview-title-container">
           <div className="edu-preview-title">{edu.title}</div>
         </div>

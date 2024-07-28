@@ -1,8 +1,4 @@
 import "./EduPreviewTop.css";
-import { useNavigate } from "react-router-dom";
-import eduTypeByText from "../../../utils/eduTypeByText";
-import Rate from "../../Rate/Rate";
-import editIcon from "../../../assets/media/Icons/edit.svg";
 
 const MainEduTop = ({ children }) => {
   return (

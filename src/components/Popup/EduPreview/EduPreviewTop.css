@@ -19,6 +19,7 @@
 
 .edu-edit-container {
   display: flex;
+  margin-right: auto;
   gap: 7px;
 }
 .edu-preview-type {
@@ -35,6 +36,7 @@
 .edu-preview-top-right {
   display: flex;
   align-items: center;
+  width: 100%;
   gap: 16px;
 }
 

@@ -1,10 +1,7 @@
 import EduPreviewTop from "../components/Popup/EduPreview/EduPreviewTop";
 import PhotoPreviewTop from "../components/Popup/EduPreview/PhotoPreviewTop";
 const getEduPreviewTopChildren = (eduType, edu) => {
-  console.log(edu);
   switch (true) {
-    case eduType.includes("תמונה"):
-      return PhotoPreviewTop(edu);
     case eduType.includes("סיכום"):
       return PhotoPreviewTop(edu);
     case eduType.includes("אלבום"):

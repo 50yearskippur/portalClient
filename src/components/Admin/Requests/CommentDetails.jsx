@@ -5,7 +5,7 @@ import convertDateToString from "../../../utils/convertDateToString";
 const CommentDetails = ({ item, icon, style }) => {
   return (
     <div style={style}>
-      <div style={{ gap: "16px", display: "flex", alignItems: "center" }}>
+      <div className="waiting-list-big-container">
         <img
           src={eduTypeByText(item?.type)}
           alt="edu type"

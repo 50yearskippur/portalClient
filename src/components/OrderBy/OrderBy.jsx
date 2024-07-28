@@ -63,14 +63,7 @@ const OrderBy = ({ options }) => {
               {option.label}
             </div>
           ))}
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-            className={"dropdown-item"}
-          >
+          <div className={"dropdown-item"}>
             {sortBottons.map((option) => (
               <div
                 key={option.value}

@@ -65,7 +65,7 @@ const Comments = ({ edu, checkbox = false }) => {
             className="edu-blue-text"
             onClick={() => showPopup(<MoreComments edu={edu} />)}
           >
-            ראה הכל
+            צפייה בכל התגובות ומחיקה
           </div>
         </div>
       )}
