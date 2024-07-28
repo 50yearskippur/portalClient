@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import "./SubSubjectPage.css";
 import { useLocation } from "react-router-dom";
 import { useContext } from "react";
@@ -18,7 +18,6 @@ import clock from "../assets/media/Icons/clock.svg";
 import bluePlus from "../assets/media/Icons/bluePlus.svg";
 // delete in production
 import rabit from "../assets/img/rabit.jpg";
-import video from '../assets/img/video.mp4';
 
 const SubSubjectPage = () => {
   const { showPopup } = useContext(PopupContext);

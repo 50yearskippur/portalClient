@@ -20,7 +20,11 @@ const Files = ({ nextStage }) => {
         </div>
         <div className="stage-file-container" style={{ width: "28%" }}>
           <div className="stage-text">תמונת קאבר</div>
-          <FileUploader text="צרף קובץ" fileTypes={["PNG", "JPG"]} />
+          <FileUploader
+            text="צרף קובץ"
+            fileTypes={["PNG", "JPG"]}
+            isCover={true}
+          />
         </div>
       </div>
       <Button
@@ -29,7 +33,7 @@ const Files = ({ nextStage }) => {
           width: "8.3vw",
           height: "4.4vh",
         }}
-        disabled={!itemDetails["file"]}
+        disabled={!itemDetails["files"]["media"]}
         onClick={nextStage}
       />
     </div>

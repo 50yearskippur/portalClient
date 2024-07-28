@@ -8,6 +8,7 @@ import handlePropagation from "../../../utils/handlePropagation";
 import PopupBottom from "../Edges/PopupBottom";
 import Dropdown from "../../Dropdown/Dropdown";
 import Textarea from "../../Textarea/Textarea";
+import levels from "../../../store/levels";
 
 const UploadEdu = () => {
   return (
@@ -25,8 +26,8 @@ const UploadEdu = () => {
           <div className="upload-details-container">
             <div className="upload-popup-text">רמת קושי:</div>
             <Dropdown
-              placeholder={"בחרו רמת קושי"}
-              list={["קל", "בינוני", "קשה"]}
+              defaultValue={"בחרו רמת קושי"}
+              list={levels}
               style={{ width: "100%", height: "40px" }}
             />
           </div>
