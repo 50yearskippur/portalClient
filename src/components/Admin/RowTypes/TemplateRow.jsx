@@ -1,8 +1,9 @@
+import React from "react";
 import { useContext } from "react";
 import { PopupContext } from "../../../store/popup-context";
 import arrow from "../../../assets/media/Icons/curvedArrow.svg";
 
-const TemplateRow = ({ children, item, PopUp }) => {
+const TemplateRow = React.memo(({ children, item, PopUp }) => {
   const { showPopup } = useContext(PopupContext);
   return (
     <div
@@ -17,6 +18,5 @@ const TemplateRow = ({ children, item, PopUp }) => {
       <img src={arrow} alt="arrow" className="generic-row-arrow" />
     </div>
   );
-};
-
+});
 export default TemplateRow;

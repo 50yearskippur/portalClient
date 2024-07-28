@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const UploadBottom = ({ NextPopup, PreviousPopup, disabled }) => {
-  const { showPopup, hidePopup, setItemDetails } = useContext(PopupContext);
+  const { showPopup, setItemDetails } = useContext(PopupContext);
 
   const onClickHandler = () => {
     if (NextPopup) {

@@ -4,7 +4,7 @@ import { PopupContext } from "../../../store/popup-context";
 import FileUploader from "../../Media/FileUploader";
 import Button from "../../Button/Button";
 
-const Files = () => {
+const Files = ({ nextStage }) => {
   const { itemDetails } = useContext(PopupContext);
 
   return (
@@ -15,6 +15,7 @@ const Files = () => {
           <FileUploader
             text="צרף או גרור לתיבה קובץ"
             fileTypes={["PNG", "JPG"]}
+            defaultFile={itemDetails["file"]}
           />
         </div>
         <div className="stage-file-container" style={{ width: "28%" }}>
@@ -29,6 +30,7 @@ const Files = () => {
           height: "4.4vh",
         }}
         disabled={!itemDetails["file"]}
+        onClick={nextStage}
       />
     </div>
   );

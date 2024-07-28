@@ -13,7 +13,6 @@ const Dropdown = ({
   value,
   listHeight = {},
 }) => {
-  console.log(style);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(value ? value : placeholder);
   const { setItemDetails, itemDetails } = useContext(PopupContext);
@@ -21,16 +20,16 @@ const Dropdown = ({
   const IS_NEW_SUB_SUBJECT = selectedItem === "תת נושא חדש";
 
   const handleSelect = (item) => {
-    if (placeholder === "נושא ראשי") {
-      setItemDetails((prevDetails) => ({
-        ...prevDetails,
-        subject: item,
-      }));
-    } else if (item !== "תת נושא חדש") {
+    if (placeholder.includes("תת נושא")) {
       setItemDetails((prevDetails) => ({
         ...prevDetails,
         subSubject: item,
         isNewSubSubject: false,
+      }));
+    } else if (placeholder.includes("נושא")) {
+      setItemDetails((prevDetails) => ({
+        ...prevDetails,
+        subject: item,
       }));
     }
     setSelectedItem(item);

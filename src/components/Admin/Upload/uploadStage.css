@@ -24,6 +24,10 @@
   align-self: start;
 }
 
+.stage-text.big {
+  font-size: 16px;
+}
+
 .stage-file-container {
   display: flex;
   flex-direction: column;
@@ -55,4 +59,29 @@
   display: flex;
   justify-content: space-between;
   gap: 16px;
+}
+
+.stage-credit-container {
+  display: flex;
+  justify-content: space-between;
+  height: 35px;
+}
+
+.add-credit-container {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px dashed #6c60ff;
+  cursor: pointer;
+}
+
+.stage-blue-text {
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 4px;
+  background: linear-gradient(127deg, #6c60ff 18.87%, #3b2ed1 71.49%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
