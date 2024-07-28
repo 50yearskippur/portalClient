@@ -78,14 +78,12 @@ const UploadEduType = () => {
             </div>
             <Dropdown
               listHeight={"20vh"}
-              value={itemDetails["subject"]}
-              placeholder={"נושא ראשי"}
+              defaultValue={itemDetails["subject"] || "נושא ראשי"}
               list={["מבואות מודיעין", "טכנולוגיה וסייבר", "שפה", "המלצות"]}
             />
             <Dropdown
               listHeight={"20vh"}
-              value={itemDetails["subSubject"]}
-              placeholder={"תת נושא"}
+              defaultValue={itemDetails["subSubject"] || "תת נושא"}
               list={[
                 "מבואות מודיעין",
                 "טכנולוגיה וסייבר",

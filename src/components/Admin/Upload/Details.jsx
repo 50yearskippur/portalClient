@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import { PopupContext } from "../../../store/popup-context";
 import Dropdown from "../../Dropdown/Dropdown";
 import Textarea from "../../Textarea/Textarea";
@@ -12,11 +12,22 @@ const Details = ({ nextStage }) => {
   const [isSubOpen, setIsSubOpen] = useState(false);
   const [isNewCredit, setIsNewCredit] = useState(false);
   const [creditsList, setCreditsList] = useState([
-    { title: "כתיבה" },
-    { title: "מומחה תוכן" },
-    { title: "עיצוב גרפי" },
+    { role: "כתיבה" },
+    { role: "מומחה תוכן" },
+    { role: "עיצוב גרפי" },
   ]);
-  const [newCredit, setNewCredit] = useState({ title: "", text: "" });
+  const [newCredit, setNewCredit] = useState({ role: "", user: "" });
+
+  useEffect(() => {
+    console.log(itemDetails);
+  }, [itemDetails]);
+
+  useEffect(() => {
+    setItemDetails((prevDetails) => ({
+      ...prevDetails,
+      credits: creditsList,
+    }));
+  }, [creditsList, setItemDetails]);
 
   const saveDetails = (detail) => {
     setItemDetails((prevDetails) => ({
@@ -56,7 +67,7 @@ const Details = ({ nextStage }) => {
           <div className="stage-text">נושא</div>
           <Dropdown
             listHeight={"20vh"}
-            placeholder="בחרו נושא"
+            defaultValue="בחרו נושא"
             list={["מבואות מודיעין", "טכנולוגיה וסייבר", "שפה", "המלצות"]}
             style={{ width: "100%", height: "100%" }}
           />
@@ -65,7 +76,7 @@ const Details = ({ nextStage }) => {
           <div className="stage-text">תת נושא</div>
           <Dropdown
             listHeight={"20vh"}
-            placeholder="בחרו תת נושא"
+            defaultValue="בחרו תת נושא"
             list={[
               "מבואות מודיעין",
               "טכנולוגיה וסייבר",
@@ -83,15 +94,17 @@ const Details = ({ nextStage }) => {
         <Textarea
           placeholder={"כתבו כאן את תיאור התוכן שאתם מעלים..."}
           style={{ height: "16.667vh" }}
+          onChange={(e) => saveDetails({ description: e.target.value })}
         />
       </div>
       <div className="stage-text big">קרדיטים</div>
       {creditsList.map((credit, index) => (
         <Credit
           key={`credit ${index}`}
-          title={credit.title}
-          text={credit.text}
+          role={credit.role}
+          defaultValue={credit.user}
           deleteCredit={() => deleteCredit(index)}
+          setCreditsList={setCreditsList}
         />
       ))}
       {isNewCredit && (
@@ -100,11 +113,11 @@ const Details = ({ nextStage }) => {
             className="stage-input"
             type="text"
             style={{ height: "19px", width: "5.104vw" }}
-            onChange={(e) => handleNewCredit({ title: e.target.value })}
+            onChange={(e) => handleNewCredit({ role: e.target.value })}
           />
           <input
             className="stage-input"
-            onChange={(e) => handleNewCredit({ text: e.target.value })}
+            onChange={(e) => handleNewCredit({ user: e.target.value })}
             type="text"
             style={{ height: "19px", width: "17.5vw" }}
           />

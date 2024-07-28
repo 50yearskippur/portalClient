@@ -24,6 +24,8 @@ const SubSubjectPage = () => {
   const { showPopup } = useContext(PopupContext);
   const location = useLocation();
   const currentEdu = location.state?.item;
+
+  //delete in production
   const eduResources = {
     uploadByArtch: [
       {

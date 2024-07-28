@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import "./UploadEduDetails.css";
 import { useContext } from "react";
 import { PopupContext } from "../../../store/popup-context";
@@ -43,7 +43,7 @@ const UploadEduDetails = () => {
               <div className="upload-popup-text">דרגה:</div>
               <Dropdown
                 listHeight={"20vh"}
-                placeholder="בחרו דרגה"
+                defaultValue="בחרו דרגה"
                 list={[
                   'סמ"ר',
                   'רס"ל',
