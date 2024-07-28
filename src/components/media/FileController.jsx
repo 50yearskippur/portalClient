@@ -34,8 +34,9 @@ const FileController = ({
             onClick={() => download(item)}
             style={{ marginLeft: "1.778vw" }}
             src={downloadIconHover}
+            alt="download icon"
           />
-          <img src={watchIconHover} />
+          <img src={watchIconHover} alt="eye icon" />
         </div>
       )}
     </div>

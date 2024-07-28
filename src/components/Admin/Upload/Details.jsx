@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext } from "react";
 import { PopupContext } from "../../../store/popup-context";
 import Dropdown from "../../Dropdown/Dropdown";
 import Textarea from "../../Textarea/Textarea";
@@ -24,10 +24,6 @@ const Details = ({ nextStage }) => {
       ...detail,
     }));
   };
-
-  useEffect(() => {
-    console.log(itemDetails);
-  }, [itemDetails]);
 
   const handleNewCredit = (credit) => {
     setNewCredit((prevCredit) => ({ ...prevCredit, ...credit }));

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import "./SubSubjectPage.css";
 import { useLocation } from "react-router-dom";
 import { useContext } from "react";
@@ -18,23 +18,12 @@ import clock from "../assets/media/Icons/clock.svg";
 import bluePlus from "../assets/media/Icons/bluePlus.svg";
 // delete in production
 import rabit from "../assets/img/rabit.jpg";
-import video from '../assets/img/video.mp4';
+import video from "../assets/img/video.mp4";
 
 const SubSubjectPage = () => {
   const { showPopup } = useContext(PopupContext);
   const location = useLocation();
   const currentEdu = location.state?.item;
-  // const currentEdu = {
-  //   title: 'משחקי פז"מ',
-  //   type: "משחק",
-  //   subSubject: {
-  //     title: "לורם אימפסום",
-  //     description: "תיאור תיאור",
-  //     eduResource: [],
-  //   },
-  //   media: video,
-  //   mediaType: "video",
-  // }
   const eduResources = {
     uploadByArtch: [
       {
@@ -45,8 +34,8 @@ const SubSubjectPage = () => {
           title: "זירת סוריה",
         },
         subject: { title: "מבואות מודיעין" },
-        media: rabit,
-        mediaType: "image",
+        media: video,
+        mediaType: "video",
         level: "רמה בסיסית",
         uploadByArtech: true,
       },

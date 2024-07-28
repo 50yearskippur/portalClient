@@ -19,7 +19,11 @@ const MasonryLayout = ({ data }) => {
               showPopup(
                 <MediaPopup
                   children={
-                    <img className="masonry-item-popup" src={item.media} />
+                    <img
+                      className="masonry-item-popup"
+                      src={item.media}
+                      alt="the full size item"
+                    />
                   }
                   item={item}
                 />

@@ -2,7 +2,6 @@ import React from "react";
 import "./RecommendedItem.css";
 import FileController from "../Media/FileController";
 import { useNavigate } from "react-router-dom";
-import { Opacity } from "@mui/icons-material";
 
 const RecommendedItem = ({
   item,

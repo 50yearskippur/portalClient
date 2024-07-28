@@ -1,5 +1,5 @@
 import "./NavBar.css";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback, useMemo } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Tooltip as ReactTooltip } from "react-tooltip";
 import PersonalAreaAvater from "../PersonalAreaAvater/PersonalAreaAvater";
@@ -29,64 +29,68 @@ const NavBar = () => {
 
   const isAdmin = user.role === "admin" || user.role === "superAdmin";
   const isSuperAdmin = user.role === "superAdmin";
-  const IconsArrays = [
-    {
-      path: homeIcon,
-      selected: homeIconSelected,
-      navigateTo: "/",
-      text: "עמוד הבית",
-      show: true,
-    },
-    // {
-    //   path: designTemplatesIcon,
-    //   selected: designTemplatesIconSelected,
-    //   navigateTo: "/designTemplates",
-    //   text: "תבניות עיצוב",
-    // },
-    {
-      path: formsIcon,
-      selected: formIconSelected,
-      navigateTo: "/forms",
-      text: "טפסים",
-      show: true,
-    },
-    {
-      path: mediaIcon,
-      selected: mediaIconSelected,
-      navigateTo: "/media",
-      text: "תמונות ומדיה",
-      show: true,
-    },
-    {
-      path: adminIcon,
-      selected: adminIconSelected,
-      navigateTo: "/admin",
-      text: "צד אדמין",
-      show: isAdmin,
-    },
-    {
-      path: addPermissionsIcon,
-      selected: addPermissionsIconSelected,
-      navigateTo: "/permissionsManagement",
-      text: "ניהול הרשאות",
-      show: isSuperAdmin,
-    },
-  ];
+
+  const IconsArrays = useMemo(
+    () => [
+      {
+        path: homeIcon,
+        selected: homeIconSelected,
+        navigateTo: "/",
+        text: "עמוד הבית",
+        show: true,
+      },
+      // {
+      //   path: designTemplatesIcon,
+      //   selected: designTemplatesIconSelected,
+      //   navigateTo: "/designTemplates",
+      //   text: "תבניות עיצוב",
+      // },
+      {
+        path: formsIcon,
+        selected: formIconSelected,
+        navigateTo: "/forms",
+        text: "טפסים",
+        show: true,
+      },
+      {
+        path: mediaIcon,
+        selected: mediaIconSelected,
+        navigateTo: "/media",
+        text: "תמונות ומדיה",
+        show: true,
+      },
+      {
+        path: adminIcon,
+        selected: adminIconSelected,
+        navigateTo: "/admin",
+        text: "צד אדמין",
+        show: isAdmin,
+      },
+      {
+        path: addPermissionsIcon,
+        selected: addPermissionsIconSelected,
+        navigateTo: "/permissionsManagement",
+        text: "ניהול הרשאות",
+        show: isSuperAdmin,
+      },
+    ],
+    [isAdmin, isSuperAdmin]
+  );
 
   const [isOpen, setIsOpen] = useState(false);
 
-  const getInitialIcon = () => {
+  const getInitialIcon = useCallback(() => {
     const currentPath = location.pathname;
     return (
       IconsArrays.find((icon) => icon.navigateTo.includes(currentPath)) || null
     );
-  };
+  }, [location.pathname, IconsArrays]);
 
   const [chosenIcon, setChosenIcon] = useState(getInitialIcon);
 
   useEffect(() => {
     setChosenIcon(getInitialIcon());
-  }, [location.pathname]);
+  }, [location.pathname, getInitialIcon]);
 
   return (
     <div className={`navbar-container ${isOpen ? "open" : "close"}`}>
@@ -131,7 +135,7 @@ const NavBar = () => {
                 alt="navbar icon"
               />
               <ReactTooltip
-              style={{ borderRadius: "10px" }}
+                style={{ borderRadius: "10px" }}
                 id={`my-tooltip-${index}`}
                 place="bottom"
                 content={icon.text}
