@@ -33,7 +33,7 @@ const Files = ({ nextStage }) => {
           width: "8.3vw",
           height: "4.4vh",
         }}
-        disabled={!itemDetails["files"]}
+        disabled={!itemDetails["files"]["media"]}
         onClick={nextStage}
       />
     </div>
