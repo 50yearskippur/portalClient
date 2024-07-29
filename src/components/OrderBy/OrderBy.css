@@ -27,6 +27,7 @@
   line-height: 24px;
 }
 .drop-down-container {
+  width: 13vw;
   position: relative;
   display: flex;
   margin-right: auto;

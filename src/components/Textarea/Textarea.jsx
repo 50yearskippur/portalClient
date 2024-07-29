@@ -1,6 +1,13 @@
 import "./Textarea.css";
-const Textarea = ({ style, placeholder }) => {
-  return <textarea style={style} type="text" placeholder={placeholder} />;
+const Textarea = ({ style, placeholder, onChange = () => {} }) => {
+  return (
+    <textarea
+      style={style}
+      type="text"
+      onChange={onChange}
+      placeholder={placeholder}
+    />
+  );
 };
 
 export default Textarea;

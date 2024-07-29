@@ -1,4 +1,5 @@
 import "./Files.css";
+import "./genericFileComponent.css";
 import greyArrow from "../../../assets/media/Icons/greyArrow.svg";
 import greyDownload from "../../../assets/media/Icons/greyDownloadIcon.svg";
 import FileController from "../../Media/FileController";
@@ -10,29 +11,16 @@ const GenericFileComponent = ({ edu, fileTitle, componentCover }) => {
     <div className="files-section-container">
       <div className="edu-preview-file-section-container">
         <div className="edu-preview-file-container">
-          {!edu.uploadByArtech && (
+          {edu.type !== "סיכום" && (
             <FileController item={edu} style={fileStyle} />
           )}
-          {edu.uploadByArtech && <img alt="form-icon" src={formIcon} />}
-          <div
-            style={{
-              width: "100%",
-              display: "flex",
-              justifyContent: "space-between",
-            }}
-          >
+          {edu.type === "סיכום" && <img alt="form-icon" src={formIcon} />}
+          <div className="file-details-container">
             <div className="edu-preview-file-details">
               <div className="edu-preview-text">{fileTitle}</div>
               <div className="edu-preview-text">524MB</div>
             </div>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                height: "100%",
-                justifyContent: "space-between",
-              }}
-            >
+            <div className="edu-preview-file-icons">
               <img src={greyArrow} alt="arrow" />
               <img src={greyDownload} alt="download" />
             </div>

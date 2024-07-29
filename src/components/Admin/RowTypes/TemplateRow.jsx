@@ -20,5 +20,4 @@ const TemplateRow = React.memo(({ children, item, PopUp, onClick, icon }) => {
     </div>
   );
 });
-
 export default TemplateRow;

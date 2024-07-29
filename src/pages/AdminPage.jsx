@@ -1,3 +1,4 @@
+import React from "react";
 import "./AdminPage.css";
 import { useState, useContext, useMemo } from "react";
 import { PopupContext } from "../store/popup-context";
@@ -279,6 +280,14 @@ const AdminPage = () => {
     ];
 
     const designsArr = [
+      {
+        title: "תבניות עיצוב 1",
+        type: "מצגת",
+        date: Date("28.8.2024"),
+        media: rabit,
+        cover: rabit,
+        mediaType: "image",
+      },
       {
         title: "תבניות עיצוב 1",
         type: "מצגת",

@@ -7,6 +7,7 @@ const iconType = (item) => {
   const date = new Date();
   let experationin4days = new Date();
   experationin4days.setDate(experationin4days.getDate() + 4);
+
   if (item.uploadByArtech)
     arr.push({ icon: blueV, toolTipContent: "דרוש תיקוף" });
   if (item.experationDate < date) {

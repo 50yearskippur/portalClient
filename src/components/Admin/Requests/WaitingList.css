@@ -102,3 +102,8 @@
   font-weight: 400;
   line-height: 18px; /* 150% */
 }
+.comment-container {
+  gap: "16px";
+  display: "flex";
+  align-items: "center";
+}

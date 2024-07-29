@@ -33,7 +33,7 @@ const OrderBy = ({ options }) => {
   };
 
   return (
-    <div style={{ width: "13vw" }} className="drop-down-container">
+    <div className="drop-down-container">
       <div onClick={toggleDropdown} className="admin-order-by">
         <img alt="order-by" src={sortIcon} />
       </div>
@@ -88,30 +88,6 @@ const OrderBy = ({ options }) => {
                 {option.label}
               </div>
             ))}
-            {/* <div
-              class="dropdown-item"
-              style={{
-                gap: "8px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <img src={sortIcon} />
-              סדר עולה
-            </div> */}
-            {/* <div
-              style={{
-                gap: "8px",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-              className={"dropdown-item"}
-            >
-              <img src={sortIcon} />
-              סדר יורד
-            </div> */}
           </div>
         </div>
       )}
