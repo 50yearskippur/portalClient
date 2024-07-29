@@ -28,7 +28,9 @@ const Setting = ({ nextStage }) => {
         <div className="stage-input-container">
           <div className="stage-text">רמה</div>
           <Dropdown
-            defaultValue={"בחרו רמת קושי"}
+            defaultValue={
+              itemDetails["level"] ? itemDetails["level"] : "בחרו רמת קושי"
+            }
             list={levels}
             style={{ width: "100%", height: "40px" }}
           />
