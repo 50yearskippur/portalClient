@@ -10,7 +10,7 @@ const MasonryLayout = ({ data }) => {
   return (
     <div className="masonry-container">
       {data.map((item, index) => (
-        <div style={{ marginBottom: "2.222vh" }}>
+        <div key={`masonry item ${index}`} style={{ marginBottom: "2.222vh" }}>
           <FileController
             showOnHover={true}
             key={`masonry${index}`}
