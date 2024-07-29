@@ -19,10 +19,6 @@ const Details = ({ nextStage }) => {
   const [newCredit, setNewCredit] = useState({ role: "", user: "" });
 
   useEffect(() => {
-    console.log(itemDetails);
-  }, [itemDetails]);
-
-  useEffect(() => {
     setItemDetails((prevDetails) => ({
       ...prevDetails,
       credits: creditsList,

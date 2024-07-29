@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import "./MasonryLayout.css";
 import FileController from "../Media/FileController";
 import { useContext } from "react";
@@ -10,14 +10,28 @@ const MasonryLayout = ({ data }) => {
   return (
     <div className="masonry-container">
       {data.map((item, index) => (
-        <FileController
-          key={`masonry${index}`}
-          item={item}
-          style={{ marginBottom: "10px" }}
-          onClick={() => showPopup(<MediaPopup item={item} />)}
-        />
+        <div key={`masonry item ${index}`} style={{ marginBottom: "2.222vh" }}>
+          <FileController
+            showOnHover={true}
+            key={`masonry${index}`}
+            item={item}
+            onClick={() =>
+              showPopup(
+                <MediaPopup
+                  children={
+                    <img
+                      className="masonry-item-popup"
+                      src={item.media}
+                      alt="the full size item"
+                    />
+                  }
+                  item={item}
+                />
+              )
+            }
+          />
+        </div>
       ))}
-      .
     </div>
   );
 };

@@ -1,5 +1,4 @@
 import { useContext } from "react";
-
 import { PopupContext } from "../../../store/popup-context";
 import SettingsArray from "../../Popup/EduPreview/Settings";
 import Dropdown from "../../Dropdown/Dropdown";
