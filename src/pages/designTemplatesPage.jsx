@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React from "react";
 import "./FormsPage.css";
 import pdf from "../assets/pdfs/pdfPage.pdf";
 import Search from "../components/Search/Search";
@@ -104,6 +103,7 @@ const DesignTemplatesPage = () => {
       <div className="form-page-top">
         <div className="header">תבניות עיצוב</div>
         <Search
+          placeholder={"חיפוש חופשי"}
           style={{ width: "21.17vw", height: "3.38vh", marginTop: "1.4vh" }}
         />
       </div>

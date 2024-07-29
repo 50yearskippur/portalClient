@@ -3,6 +3,7 @@ import { useState } from "react";
 
 const SwitchComponent = ({
   defaultChecked = false,
+  changeSetting = () => {},
   style = {
     width: 39,
     height: 16,
@@ -15,6 +16,7 @@ const SwitchComponent = ({
 
   const handleToggle = () => {
     setChecked((prev) => !prev);
+    changeSetting();
   };
 
   return (

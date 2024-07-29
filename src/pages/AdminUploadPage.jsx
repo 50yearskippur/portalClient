@@ -14,13 +14,6 @@ const Upload = () => {
     setCurrentStage((prevStage) => prevStage + 1);
   };
 
-  const settingArray = [
-    "התוצר מצריך שימוש באמצעי שמע",
-    "התוצר יהיה חלק ממאגר המומלצים ליחידות והקורסים הרלוונטיים",
-    "התוצר יהיה התוכן הראשי תחת תת הנושא",
-    "התוצר נבדק, המידע בו עדכני ומאושר ע”י גורם המקצועי",
-  ];
-
   const stagesArray = [
     {
       title: "סוג מוצר",
@@ -30,7 +23,7 @@ const Upload = () => {
     { title: "פרטים", component: <Details nextStage={nextStage} /> },
     {
       title: "הגדרות",
-      component: <Setting nextStage={nextStage} settings={settingArray} />,
+      component: <Setting nextStage={nextStage} />,
     },
   ];
 
@@ -38,8 +31,8 @@ const Upload = () => {
     <div className="admin-upload-container">
       <TopSection
         navigateTo={"/admin"}
-        title="העלאת מוצר חדש"
-        exitText="בטל העלאת מוצר"
+        title="העלאת תוצר"
+        exitText="לעמוד ההעלאות"
       />
       <div className="upload-stages-container">
         {stagesArray.map((stage, index) => (

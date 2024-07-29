@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 import "./MediaPopup.css";
 import backImg from "../../../assets/media/Icons/backIcon.svg";
-import downloadImg from "../../../assets/media/Icons/downloadIcon.svg";
+import downloadIcon from "../../../assets/media/Icons/downloadIcon.svg";
 import { useContext } from "react";
 import { PopupContext } from "../../../store/popup-context";
-import downloadPdf from "../../../utils/downloadPdf ";
+import { download } from "../../../utils/download";
 
 const MediaPopup = ({ children, item = {} }) => {
   const { hidePopup } = useContext(PopupContext);
@@ -19,9 +19,9 @@ const MediaPopup = ({ children, item = {} }) => {
         <div className="media-popup-title">{item.title}</div>
         <div
           className="media-popup-download-container"
-          onClick={() => downloadPdf(item)}
+          onClick={() => download(item)}
         >
-          <img src={downloadImg} alt="download icon" />
+          <img src={downloadIcon} alt="download icon" />
           <div className="media-popup-download-text">הורדה</div>
         </div>
       </div>

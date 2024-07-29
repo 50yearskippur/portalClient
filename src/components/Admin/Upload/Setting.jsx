@@ -1,5 +1,4 @@
 import { useContext } from "react";
-
 import { PopupContext } from "../../../store/popup-context";
 import SettingsArray from "../../Popup/EduPreview/Settings";
 import Dropdown from "../../Dropdown/Dropdown";
@@ -7,17 +6,31 @@ import levels from "../../../store/levels";
 import SearchDropdown from "../../Search/SearchDropdown";
 import Button from "../../Button/Button";
 
-const Setting = ({ nextStage, settings = [] }) => {
+const Setting = ({ nextStage }) => {
   const { itemDetails } = useContext(PopupContext);
+  const settingsArray = [
+    { text: "התוצר מצריך שימוש באמצעי שמע", defaultValue: true },
+    {
+      text: "התוצר יהיה חלק ממאגר המומלצים ליחידות והקורסים הרלוונטיים",
+      defaultValue: false,
+    },
+    { text: "התוצר יהיה התוכן הראשי תחת תת הנושא", defaultValue: false },
+    {
+      text: "התוצר נבדק, המידע בו עדכני ומאושר ע”י גורם המקצועי",
+      defaultValue: true,
+    },
+  ];
 
   return (
     <div className="stage-upload-container">
-      <SettingsArray settingsArray={settings} />
+      <SettingsArray settingsArray={settingsArray} />
       <div className="stage-row-container">
         <div className="stage-input-container">
           <div className="stage-text">רמה</div>
           <Dropdown
-            defaultValue={"בחרו רמת קושי"}
+            defaultValue={
+              itemDetails["level"] ? itemDetails["level"] : "בחרו רמת קושי"
+            }
             list={levels}
             style={{ width: "100%", height: "40px" }}
           />

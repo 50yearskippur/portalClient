@@ -30,7 +30,11 @@ const Dropdown = ({
         ...prevDetails,
         subject: item,
       }));
-    }
+    } else if (defaultValue?.includes("רמת"))
+      setItemDetails((prevDetails) => ({
+        ...prevDetails,
+        level: item,
+      }));
     setSelectedItem(item);
     setIsOpen(false);
     if (item === "תת נושא חדש") {

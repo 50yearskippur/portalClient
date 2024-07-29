@@ -30,8 +30,8 @@ const ExitWarning = () => {
             שים לב, יציאה כעת תביא לאיבוד המידע שהזנתם.
           </div>
           <ButtonContainer
-            blueButtonTitle={"חזור לטופס"}
-            whiteButtonTitle={"צא בלי לשמור"}
+            whiteButtonTitle={"חזור לטופס"}
+            blueButtonTitle={"צא בלי לשמור"}
           />
         </div>
       </div>

@@ -1,21 +1,22 @@
-import React from "react";
 import { useContext } from "react";
+import React from "react";
 import { PopupContext } from "../../../store/popup-context";
-import arrow from "../../../assets/media/Icons/curvedArrow.svg";
+import iconType from "../RowTypes/IconType";
 
-const TemplateRow = React.memo(({ children, item, PopUp }) => {
+const TemplateRow = React.memo(({ children, item, PopUp, onClick, icon }) => {
   const { showPopup } = useContext(PopupContext);
   return (
     <div
+      style={{ backgroundColor: iconType(item)[1]?.color }}
       className="generic-row-container"
-      onClick={() => showPopup(<PopUp edu={item} />)}
+      onClick={onClick ? onClick : () => showPopup(<PopUp edu={item} />)}
     >
       {children.map((child, index) => (
         <div key={`child ${index}`} className="generic-row-child">
           {child}
         </div>
       ))}
-      <img src={arrow} alt="arrow" className="generic-row-arrow" />
+      <img src={icon} alt="arrow" className="generic-row-arrow" />
     </div>
   );
 });

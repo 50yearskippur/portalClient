@@ -13,17 +13,27 @@ import Setting from "./Settings";
 import MoreDetails from "./MoreDetails";
 import Groups from "./Groups";
 import DeleteEduPopup from "../General/DeleteEdu";
+import GenericFileComponent from "./GenericFileComponent";
 
 const EduPreview = ({ edu }) => {
   const [isDeletePopup, setIsDeletePopup] = useState(false);
-
   const settingsArray = [
-    "התוצר מצריך שימוש באוזניות",
-    "התוצר בסיווג גבוה מסגול צמצם ומצריך סיסמא",
-    "התוצר יהיה חלק ממאגר המומלצים ליחידות והקורסים הרלוונטיים",
-    "התוצר יהיה התוצר הראשי תחת תת הנושא",
-    "התוצר נבדק, המידע בו עדכני ומאושר ע”י גורם המקצועי",
+    { text: "התוצר מצריך שימוש באוזניות", defaultValue: true },
+    {
+      text: "התוצר בסיווג גבוה מסגול צמצם ומצריך סיסמא",
+      defaultValue: false,
+    },
+    {
+      text: "התוצר יהיה חלק ממאגר המומלצים ליחידות והקורסים הרלוונטיים",
+      defaultValue: true,
+    },
+    { text: "התוצר יהיה התוצר הראשי תחת תת הנושא", defaultValue: false },
+    {
+      text: "התוצר נבדק, המידע בו עדכני ומאושר ע”י גורם המקצועי",
+      defaultValue: false,
+    },
   ];
+
   return (
     <div className="edu-preview-content" onClick={(e) => handlePropagation(e)}>
       <EduPreviewTop edu={edu} />
@@ -41,7 +51,10 @@ const EduPreview = ({ edu }) => {
       <EduResSection title="פרטים" content={<Details edu={edu} />} />
       <EduResSection title="תגובות" content={<Comments edu={edu} />} />
       <EduResSection title="קרדיטים" content={<Credits edu={edu} />} />
-      <EduResSection title="קבצים" content={<Files edu={edu} />} />
+      <EduResSection
+        title="קבצים"
+        content={<GenericFileComponent fileTitle={edu.title} edu={edu} />}
+      />
       <EduResSection
         title="הגדרות"
         content={<Setting settingsArray={settingsArray} />}

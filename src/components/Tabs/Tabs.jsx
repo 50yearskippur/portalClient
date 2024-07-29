@@ -1,13 +1,15 @@
 import "./Tabs.css";
-import React from 'react';
+import React from "react";
 
 const Tabs = ({ tabsArray, style = {}, setSelectedTab, selectedTab }) => {
   return (
     <div className="tabs-container" style={style}>
-      {tabsArray.map((tab, index) => (
+      {tabsArray?.map((tab, index) => (
         <div
           key={`tab${index}`}
-          className={`tabs-item ${selectedTab === tab ? "current-tab" : ""}`}
+          className={`tabs-item ${
+            tab.includes(selectedTab) ? "current-tab" : ""
+          }`}
           onClick={() => setSelectedTab(tab)}
         >
           {tab}
