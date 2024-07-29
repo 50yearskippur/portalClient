@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import "./PdfPreview.css";
 import FileController from "../Media/FileController";
 import ShowFullPdf from "../ShowFullPdf/ShowFullPdf";
@@ -14,7 +14,8 @@ const PdfPreview = ({ item }) => {
         <div className="pdf-preview-subject">{item.subSubject.title}</div>
         <FileController
           item={item}
-          style={{height: 'auto'}}
+          showOnHover={true}
+          style={{ height: "auto" }}
           onClick={() =>
             showPopup(
               <MediaPopup
