@@ -6,7 +6,6 @@ import FileController from "../../Media/FileController";
 import formIcon from "../../../assets/media/Icons/formIcon.svg";
 const GenericFileComponent = ({ edu, fileTitle, componentCover }) => {
   const fileStyle = { width: "6.8vw", height: "6.8vh" };
-
   return (
     <div className="files-section-container">
       <div className="edu-preview-file-section-container">
@@ -14,7 +13,14 @@ const GenericFileComponent = ({ edu, fileTitle, componentCover }) => {
           {edu.type !== "סיכום" && (
             <FileController item={edu} style={fileStyle} />
           )}
-          {edu.type === "סיכום" && <img alt="form-icon" src={formIcon} />}
+          {/* {edu.type !== "סיכום" ||
+            (edu.type === "סיכום" && !edu.uploadByArtech && (
+              <FileController item={edu} style={fileStyle} />
+            ))} */}
+
+          {edu.type === "סיכום" && edu.uploadByArtech && (
+            <img alt="form-icon" src={formIcon} />
+          )}
           <div className="file-details-container">
             <div className="edu-preview-file-details">
               <div className="edu-preview-text">{fileTitle}</div>

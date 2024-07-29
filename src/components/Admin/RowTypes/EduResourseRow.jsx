@@ -8,7 +8,7 @@ import convertDateToString from "../../../utils/convertDateToString";
 import iconType from "../RowTypes/IconType";
 
 const EduResourseRow = (item) => {
-  const [isRecommended, setIsRecommended] = useState(false);
+  // const [isRecommended, setIsRecommended] = useState(false);
 
   return [
     <div className="generic-row-item-container">
@@ -32,8 +32,8 @@ const EduResourseRow = (item) => {
     <div className="generic-item-container" style={{ width: "3.125vw" }}>
       <Star
         style={{ width: "20px" }}
-        pressed={isRecommended}
-        onClick={() => setIsRecommended((prev) => !prev)}
+        // pressed={isRecommended}
+        // onClick={() => setIsRecommended((prev) => !prev)}
       />
       <div className="generic-item-sub-title">מומלץ</div>
     </div>,

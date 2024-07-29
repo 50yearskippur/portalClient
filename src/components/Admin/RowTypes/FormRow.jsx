@@ -7,7 +7,7 @@ import vUnressed from "../../../assets/media/Icons/vUnpresed.svg";
 import convertDateToString from "../../../utils/convertDateToString";
 
 const FormRow = (item) => {
-  const [isPressed, setIsPressed] = useState();
+  // const [isPressed, setIsPressed] = useState();
 
   return [
     <div className="generic-row-item-container">
@@ -25,9 +25,9 @@ const FormRow = (item) => {
     <div className="edu-row-tag">{item?.tag?.title}</div>,
     <div className="generic-item-container">
       <img
-        src={`${isPressed ? vPressed : vUnressed}`}
+        // src={`${isPressed ? vPressed : vUnressed}`}
         alt="v to pressed"
-        onClick={() => setIsPressed((prev) => !prev)}
+        // onClick={() => setIsPressed((prev) => !prev)}
       />
       <div className="generic-item-sub-title">טפסים נפוצים</div>
     </div>,
