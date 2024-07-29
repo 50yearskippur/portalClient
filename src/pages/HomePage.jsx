@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React from "react";
 import "./HomePage.css";
 import { useState } from "react";
 import Search from "../components/Search/Search";
@@ -14,10 +13,32 @@ import ForYouItem from "../components/ItemsComponents/ForYouItem/ForYouItem.jsx"
 //delete in production
 const recommendedEduResource = [
   {
-    title: 'משחקי פז"מ',
+    title: "רעיון מטורף",
     type: "משחק",
     subSubject: {
-      title: "לורם אימפסום",
+      title: "קיפוד",
+      description: "תיאור תיאור",
+      eduResource: [],
+    },
+    media: rabit,
+    mediaType: "image",
+  },
+  {
+    title: "מומלץ ממש",
+    type: "משחק",
+    subSubject: {
+      title: "מחברות",
+      description: "תיאור תיאור",
+      eduResource: [],
+    },
+    media: rabit,
+    mediaType: "image",
+  },
+  {
+    title: "הכי מומלץ",
+    type: "משחק",
+    subSubject: {
+      title: "מבצע כיף",
       description: "תיאור תיאור",
       eduResource: [],
     },
@@ -28,7 +49,7 @@ const recommendedEduResource = [
     title: 'משחקי פז"מ',
     type: "משחק",
     subSubject: {
-      title: "לורם אימפסום",
+      title: "קיץ",
       description: "תיאור תיאור",
       eduResource: [],
     },
@@ -36,43 +57,10 @@ const recommendedEduResource = [
     mediaType: "image",
   },
   {
-    title: 'משחקי פז"מ',
+    title: "מבצעים שווים",
     type: "משחק",
     subSubject: {
-      title: "לורם אימפסום",
-      description: "תיאור תיאור",
-      eduResource: [],
-    },
-    media: rabit,
-    mediaType: "image",
-  },
-  {
-    title: 'משחקי פז"מ',
-    type: "משחק",
-    subSubject: {
-      title: "לורם אימפסום",
-      description: "תיאור תיאור",
-      eduResource: [],
-    },
-    media: rabit,
-    mediaType: "image",
-  },
-  {
-    title: 'משחקי פז"מ',
-    type: "משחק",
-    subSubject: {
-      title: "לורם אימפסום",
-      description: "תיאור תיאור",
-      eduResource: [],
-    },
-    media: rabit,
-    mediaType: "image",
-  },
-  {
-    title: 'משחקי פז"מ',
-    type: "משחק",
-    subSubject: {
-      title: "לורם אימפסום",
+      title: "צוות סימבה",
       description: "תיאור תיאור",
       eduResource: [],
     },
@@ -159,7 +147,13 @@ const getEduResources = (selectedTab) => {
     case selectedTab === "תוצרים שאהבתי":
       return <Favorites />;
     case selectedTab === "כל התוצרים":
-      return <p>כל התוצרים</p>;
+      return (
+        <SortBySubject
+          numberOfItemsInLine={1}
+          subjects={subjects}
+          ItemComponent={ForYouItem}
+        />
+      );
     default:
       return (
         <SortBySubject
@@ -179,11 +173,15 @@ const HomePage = () => {
       <Search
         style={{
           width: "42.84%",
-          height: "7.58vh",
-          margin: "1% auto",
+          height: "3.33vh",
+          margin: "2.96vh auto",
+          padding: "10px",
         }}
       />
-      <p className="header" style={{ marginTop: "-2.8vh" }}>
+      <p
+        className="header"
+        style={{ marginTop: "-3.4vh", marginBottom: "4.432vh" }}
+      >
         מומלצים
       </p>
       <RecommendedSection data={recommendedEduResource} />
@@ -192,7 +190,7 @@ const HomePage = () => {
         setSelectedTab={setSelectedTab}
         selectedTab={selectedTab}
         tabsStyle={{ marginRight: "0.5vw" }}
-        topNavStyle={{ marginBottom: "4vh", marginTop: "5vh" }}
+        topNavStyle={{ marginBottom: "4vh", marginTop: "5.96vh" }}
       />
       {getEduResources(selectedTab)}
     </div>

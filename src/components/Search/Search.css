@@ -12,7 +12,7 @@
   background-color: #e8ebf4;
   border: none;
   width: calc(100% - 30px);
-  padding-left: 30px;
+  padding-left: 20px;
   height: 100%;
   box-sizing: border-box;
   outline: none;
@@ -20,12 +20,15 @@
   font-family: inherit;
 }
 
+.search-input::placeholder {
+  color: #9599c6;
+}
+
 .search-icon {
   position: absolute;
-  left: 10px;
+  left: 20px;
   top: 50%;
   transform: translateY(-50%);
   width: 20px;
   height: auto;
-  pointer-events: none;
 }

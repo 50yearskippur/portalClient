@@ -1,6 +1,6 @@
 import React from "react";
 import "./UploadEduType.css";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect, useContext, useMemo } from "react";
 import { PopupContext } from "../../../store/popup-context";
 import EduTypes from "../../EduTypes/EduTypes";
 import PopupTop from "../Edges/PopupTop";
@@ -23,15 +23,18 @@ const UploadEduType = () => {
   };
 
   //delete in production
-  const user = {
-    fullName: "יובל כהן",
-    email: "email@gmail.com",
-    personalNumber: "123456789",
-    unit: "8200",
-    group: 'קורס קפ"ה',
-    role: "user",
-    favorites: ["1", "2", "3"],
-  };
+  const user = useMemo(
+    () => ({
+      fullName: "יובל כהן",
+      email: "email@gmail.com",
+      personalNumber: "123456789",
+      unit: "8200",
+      group: 'קורס קפ"ה',
+      role: "user",
+      favorites: ["1", "2", "3"],
+    }),
+    []
+  );
 
   useEffect(() => {
     setItemDetails((prevDetails) => ({

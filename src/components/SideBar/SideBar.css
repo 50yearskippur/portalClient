@@ -1,9 +1,7 @@
 .image-list {
   display: flex;
-  /* background-color: darkgoldenrod; */
   flex-direction: column;
-  /* align-items: center; */
-  gap: 5%;
+  gap: 3%;
   overflow-y: auto;
 }
 
