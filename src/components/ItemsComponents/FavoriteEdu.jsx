@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import "./FavoriteEdu.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -53,7 +53,7 @@ const FavoriteEdu = ({ item, defaultHeart = true }) => {
           {addBtnHover ? (
             <div className="favorite-add-container">
               <img src={addImg} alt="add icon" />
-              <div className="favorite-add-text">הוספה לקורס המועדף</div>
+              <div className="favorite-add-text">הוספה לקורס שלי</div>
             </div>
           ) : (
             <img src={addImg} alt="add icon" />

@@ -6,13 +6,6 @@
   border-radius: 6px;
 }
 
-.preview-on-hover {
-  background-color: black;
-  width: 100%;
-  position: absolute;
-  height: 100%;
-}
-
 .pdf-preview-info {
   width: 92%;
   height: 3.7vh;
@@ -33,12 +26,6 @@
   color: var(--Grey-Black, #444a5a);
 }
 
-.pdf-preview-subject {
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 18px;
-}
-
 .pdf-preview-download-icon {
   width: 1.5625vw;
   height: 2.71vh;
@@ -46,17 +33,15 @@
 }
 .pdf-preview-subject {
   font-size: 12px;
+  position: absolute;
   display: flex;
-  font-weight: 400;
-  position: relative;
-  min-width: 16%;
-  padding: 2%;
+  min-width: 3vw;
+  padding: 5px 8px;
   color: white;
-  top: 4.2vh;
-  right: 37%;
+  margin-top: 1.111vh;
+  margin-right: 15vw;
   z-index: 1;
   border-radius: 2.882px;
   background-color: #7974b7;
-  line-height: 18px;
   justify-content: center;
 }

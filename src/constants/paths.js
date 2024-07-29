@@ -30,8 +30,8 @@ const paths = [
   { path: "/admin", text: "אדמין", component: Admin },
   { path: "/personalArea", text: "איזור אישי", component: PersonalArea },
   {
-    path: "/admin/permissions",
-    text: "איזור אישי",
+    path: "/permissionsManagement",
+    text: " ניהול הרשאות",
     component: AdminPermissionManagment,
   },
   { path: "/admin/upload", text: "העלאה באדמין", component: AdminUpload },

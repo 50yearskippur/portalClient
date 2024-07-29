@@ -1,18 +1,21 @@
-import React from 'react';
+import React from "react";
 import "./PageTemplate.css";
 
 const PageTemplate = ({
   style = {},
-  gapSize,
+  gapRowSizeInPx,
+  gapColumnSizeInPercentage,
   ItemComponent,
   data,
   numberOfItemsInLine,
 }) => {
   const gridStyle = {
     gridTemplateColumns: `repeat(auto-fill, minmax(${
-      (100 - (numberOfItemsInLine - 1) * gapSize) / numberOfItemsInLine
+      (100 - (numberOfItemsInLine - 1) * gapColumnSizeInPercentage) /
+      numberOfItemsInLine
     }%, 1fr))`,
-    columnGap: `${gapSize}%`,
+    rowGap: `${gapRowSizeInPx}px`,
+    columnGap: `${gapColumnSizeInPercentage}%`,
     ...style,
   };
 
