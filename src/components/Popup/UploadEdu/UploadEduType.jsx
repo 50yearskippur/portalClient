@@ -38,7 +38,7 @@ const UploadEduType = () => {
       ...prevDetails,
       uploader: user,
     }));
-  }, [setItemDetails]);
+  }, [setItemDetails, user]);
 
   return (
     <div className="upload-popup" onClick={(e) => handlePropagation(e)}>

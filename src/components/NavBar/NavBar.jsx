@@ -62,7 +62,7 @@ const NavBar = () => {
     );
   };
 
-  const [chosenIcon, setChosenIcon] = useState(getInitialIcon);
+  const [chosenIcon, setChosenIcon] = useState(getInitialIcon());
 
   useEffect(() => {
     setChosenIcon(getInitialIcon());
