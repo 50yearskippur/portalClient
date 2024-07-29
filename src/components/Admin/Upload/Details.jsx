@@ -11,11 +11,11 @@ const Details = ({ nextStage }) => {
   const { itemDetails, setItemDetails } = useContext(PopupContext);
   const [isSubOpen, setIsSubOpen] = useState(false);
   const [isNewCredit, setIsNewCredit] = useState(false);
-  const [creditsList, setCreditsList] = useState([
-    { role: "כתיבה" },
-    { role: "מומחה תוכן" },
-    { role: "עיצוב גרפי" },
-  ]);
+  const [creditsList, setCreditsList] = useState(
+    itemDetails.credits
+      ? itemDetails.credits
+      : [{ role: "כתיבה" }, { role: "מומחה תוכן" }, { role: "עיצוב גרפי" }]
+  );
   const [newCredit, setNewCredit] = useState({ role: "", user: "" });
 
   useEffect(() => {
@@ -59,6 +59,7 @@ const Details = ({ nextStage }) => {
         <input
           className="stage-input"
           type="text"
+          defaultValue={itemDetails["title"]}
           onChange={(e) => saveDetails({ title: e.target.value })}
         />
       </div>
@@ -67,7 +68,9 @@ const Details = ({ nextStage }) => {
           <div className="stage-text">נושא</div>
           <Dropdown
             listHeight={"20vh"}
-            defaultValue="בחרו נושא"
+            defaultValue={
+              itemDetails["subject"] ? itemDetails["subject"] : "בחרו נושא"
+            }
             list={["מבואות מודיעין", "טכנולוגיה וסייבר", "שפה", "המלצות"]}
             style={{ width: "100%", height: "100%" }}
           />
@@ -76,7 +79,11 @@ const Details = ({ nextStage }) => {
           <div className="stage-text">תת נושא</div>
           <Dropdown
             listHeight={"20vh"}
-            defaultValue="בחרו תת נושא"
+            defaultValue={
+              itemDetails["subSubject"]
+                ? itemDetails["subSubject"]
+                : "בחרו תת נושא"
+            }
             list={[
               "מבואות מודיעין",
               "טכנולוגיה וסייבר",
@@ -92,7 +99,8 @@ const Details = ({ nextStage }) => {
       <div className="stage-input-container">
         <div className="stage-text">תיאור (אופציונלי)</div>
         <Textarea
-          placeholder={"כתבו כאן את תיאור התוכן שאתם מעלים..."}
+          defaultValue={itemDetails["description"]}
+          placeholder="כתבו כאן את תיאור התוכן שאתם מעלים..."
           style={{ height: "16.667vh" }}
           onChange={(e) => saveDetails({ description: e.target.value })}
         />
@@ -102,7 +110,11 @@ const Details = ({ nextStage }) => {
         <Credit
           key={`credit ${index}`}
           role={credit.role}
-          defaultValue={credit.user}
+          defaultValue={
+            itemDetails["credits"]?.[index]?.user
+              ? itemDetails["credits"][index].user
+              : credit.user
+          }
           deleteCredit={() => deleteCredit(index)}
           setCreditsList={setCreditsList}
         />
