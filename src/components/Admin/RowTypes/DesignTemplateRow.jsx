@@ -1,6 +1,7 @@
 import "./TemplateRow.css";
 import GenericItem from "../GenericObjects/GenericItem";
 import eduTypeByText from "../../../utils/eduTypeByText";
+import convertDateToString from "../../../utils/convertDateToString";
 
 const DesignTemplatesRow = (item) => {
   return [
@@ -27,9 +28,9 @@ const DesignTemplatesRow = (item) => {
       style={{ width: "4.5vw" }}
     />,
     <GenericItem
-      title={item.date}
+      title={convertDateToString(item.date)}
       subTitle="תאריך העלאה"
-      style={{ width: "5.2vw" }}
+      style={{ width: "7.4vw" }}
     />,
   ];
 };

@@ -4,15 +4,32 @@ import { useState, useContext, useMemo } from "react";
 import { PopupContext } from "../store/popup-context";
 import UploadEduType from "../components/Popup/UploadEdu/UploadEduType";
 import Tabs from "../components/Tabs/Tabs";
+import WaitingList from "../components/Admin/Requests/WaitingList";
 import Search from "../components/Search/Search";
 import TemplateTable from "../components/Admin/GenericObjects/TemplateTable";
-import Requests from "../components/Admin/Requests/Requests";
+import bigA from "../assets/media/Icons/bigA.svg";
+import selectedbigA from "../assets/media/Icons/blueBigA.svg";
+import reversedClock from "../assets/media/Icons/reversedClock.svg";
+import selectedreversedClock from "../assets/media/Icons/blueReversedClock.svg";
+import staricon from "../assets/media/Icons/starIcon.svg";
+import selectedstaricon from "../assets/media/Icons/blueStarIcon.svg";
+
+import downloadIcon from "../assets/media/Icons/squereDownload.svg";
+import selecteddownloadIcon from "../assets/media/Icons/blueDownloadIcon.svg";
+
 //delete in production
 import rabit from "../assets/img/rabit.jpg";
+import arrow from "../assets/media/Icons/curvedArrow.svg";
+import OrderBy from "../components/OrderBy/OrderBy";
 
 const AdminPage = () => {
   const { showPopup } = useContext(PopupContext);
-  const tabsArray = ["תוצרים", "עיצובים", "טפסים", "תמונות ואלבומים"];
+  const [tabsArray, setTabs] = useState([
+    "תוצרים",
+    "עיצובים",
+    "טפסים",
+    "תמונות סטוק ואלבומים",
+  ]);
   const [selectedTab, setSelectedTab] = useState(tabsArray[0]);
   const [data, setData] = useState([]);
 
@@ -20,45 +37,55 @@ const AdminPage = () => {
   const requestsArr = [
     {
       title: "סוריה מאז ועד היום",
-      date: "28.5.2024",
+      date: Date("28.5.2024"),
+      type: "לומדה",
       level: "מותאם לכל הרמות",
       creator: "יובל כהן",
     },
     {
       title: "סוריה מאז ועד היום",
-      date: "28.5.2024",
+      date: Date("28.5.2024"),
       level: "מותאם לכל הרמות",
+      type: "לומדה",
       creator: "יובל כהן",
     },
     {
       title: "סוריה מאז ועד היום",
-      date: "28.5.2024",
+      date: Date("28.5.2024"),
       level: "מותאם לכל הרמות",
+      type: "לומדה",
+
+      creator: "יובל כהן",
+    },
+  ];
+  const commentsArr = [
+    {
+      title: "לורם איפסום",
+      date: Date("28.5.2024"),
+      text: "“וואי זאת המצגת הכי טובה שראיתי בחיים שלי, איזה כיף חיים שיוואווווווו חולה עלייכם ארטק כפרה עליכם חייאתי”",
+      type: "סיכום",
+      creator: "יובל כהן",
+    },
+    {
+      title: "לורם איפסום",
+      date: Date("28.5.2024"),
+      text: "“יוואו אתם לא מפסיקים להפציץ”",
+      type: "לומדה",
       creator: "יובל כהן",
     },
   ];
 
   //delete in production
-  const subSubjectsArr = [
-    {
-      title: "לורם איפסום",
-      date: "28.5.2024",
-      creator: "יובל כהן",
-    },
-    {
-      title: "לורם איפסום",
-      date: "28.5.2024",
-      creator: "יובל כהן",
-    },
-  ];
 
   useMemo(() => {
     //delete in production
     const eduArr = [
       {
-        title: "הכירו את זירת סוריה",
-        type: "סרטון",
-        date: "28.05.2024",
+        title: "הכירו את זירת לבנון",
+        type: "לומדה",
+        date: Date("28.8.2024"),
+        creator: "נפתלי בנט",
+        experationDate: new Date("2024-07-26T00:00"),
         subSubject: {
           title: "זירת סוריה",
         },
@@ -74,41 +101,42 @@ const AdminPage = () => {
           {
             content:
               "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
-            date: "28.05.2024",
+            date: Date("28.8.2024"),
             user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
           },
           {
             content:
               "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
-            date: "28.05.2024",
+            date: Date("28.8.2024"),
             user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
           },
           {
             content:
               "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
-            date: "28.05.2024",
+            date: Date("28.8.2024"),
             user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
           },
           {
             content:
               "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
-            date: "28.05.2024",
+            date: Date("28.8.2024"),
             user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
           },
           {
             content:
               "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
-            date: "28.05.2024",
+            date: Date("28.8.2024"),
             user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
           },
         ],
       },
       {
-        title: "הכירו את זירת סוריה",
+        title: "איך לשרוד בתנאי שטח",
         type: "סרטון",
-        date: "28.05.2024",
+        date: Date("28.8.2024"),
+        experationDate: new Date("2024-07-26T00:00"),
         subSubject: {
-          title: "זירת סוריה",
+          title: " סוריה",
         },
         subject: { title: "מבואות מודיעין" },
         media: rabit,
@@ -122,31 +150,129 @@ const AdminPage = () => {
           {
             content:
               "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
-            date: "28.05.2024",
+            date: Date("28.8.2024"),
             user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
           },
           {
             content:
               "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
-            date: "28.05.2024",
+            date: Date("28.8.2024"),
             user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
           },
           {
             content:
               "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
-            date: "28.05.2024",
+            date: Date("28.8.2024"),
             user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
           },
           {
             content:
               "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
-            date: "28.05.2024",
+            date: Date("28.8.2024"),
             user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
           },
           {
             content:
               "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
-            date: "28.05.2024",
+            date: Date("28.8.2024"),
+            user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
+          },
+        ],
+      },
+      {
+        title: "לומדת בם",
+        type: "סרטון",
+        date: Date("28.8.2024"),
+        experationDate: new Date("2024-07-30T00:00"),
+        subSubject: {
+          title: " סוריה",
+        },
+        subject: { title: "מבואות מודיעין" },
+        media: rabit,
+        cover: rabit,
+        mediaType: "image",
+        level: "רמה בסיסית",
+        uploadByArtech: true,
+        tags: [{ title: "תג 1" }, { title: "תג 2" }],
+        info: "משחק שנועד ללמד את צבעי הכומתות בחיילות השונים משחק שנועד ללמד את צבעי הכומתות בחיילות השונים  משחק שנועד ללמד את צבעי הכומתות בחיילות השונים",
+        comments: [
+          {
+            content:
+              "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
+            date: Date("28.8.2024"),
+            user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
+          },
+          {
+            content:
+              "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
+            date: Date("28.8.2024"),
+            user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
+          },
+          {
+            content:
+              "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
+            date: Date("28.8.2024"),
+            user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
+          },
+          {
+            content:
+              "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
+            date: Date("28.8.2024"),
+            user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
+          },
+          {
+            content:
+              "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
+            date: Date("28.8.2024"),
+            user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
+          },
+        ],
+      },
+      {
+        title: "3הכירו את זירת סוריה",
+        type: "סיכום",
+        date: Date("28.8.2024"),
+        experationDate: new Date("2024-07-20T00:00"),
+        subSubject: {
+          title: "זירת סוריה",
+        },
+        subject: { title: "מבואות מודיעין" },
+        media: rabit,
+        cover: rabit,
+        mediaType: "image",
+        level: "רמה בסיסית",
+        uploadByArtech: false,
+        tags: [{ title: "תג 1" }, { title: "תג 2" }],
+        info: "משחק שנועד ללמד את צבעי הכומתות בחיילות השונים משחק שנועד ללמד את צבעי הכומתות בחיילות השונים  משחק שנועד ללמד את צבעי הכומתות בחיילות השונים",
+        comments: [
+          {
+            content:
+              "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
+            date: Date("28.8.2024"),
+            user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
+          },
+          {
+            content:
+              "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
+            date: Date("28.8.2024"),
+            user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
+          },
+          {
+            content:
+              "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
+            date: Date("28.8.2024"),
+            user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
+          },
+          {
+            content:
+              "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
+            date: Date("28.8.2024"),
+            user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
+          },
+          {
+            content:
+              "אחלה לומדה, לימדה אותי מלא על זירת סוריה איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.",
+            date: Date("28.8.2024"),
             user: { fullName: "בני גבע", role: 'רמ"ד קורס אתרוג' },
           },
         ],
@@ -157,7 +283,7 @@ const AdminPage = () => {
       {
         title: "תבניות עיצוב 1",
         type: "מצגת",
-        date: "28.05.2024",
+        date: Date("28.8.2024"),
         media: rabit,
         cover: rabit,
         mediaType: "image",
@@ -165,15 +291,15 @@ const AdminPage = () => {
       {
         title: "תבניות עיצוב 1",
         type: "מצגת",
-        date: "28.05.2024",
+        date: Date("28.8.2024"),
         media: rabit,
         cover: rabit,
         mediaType: "image",
       },
       {
         title: "תבניות עיצוב 2",
-        type: "מסמך",
-        date: "28.05.2024",
+        type: "סיכום",
+        date: Date("28.8.2024"),
         media: rabit,
         cover: rabit,
         mediaType: "image",
@@ -183,18 +309,18 @@ const AdminPage = () => {
     const formsArr = [
       {
         title: "טפסים 1",
-        type: "מצגת",
-        date: "28.05.2024",
+        type: "סיכום",
+        date: Date("28.8.2024"),
         tag: { title: "שלישות" },
         media: rabit,
         cover: rabit,
         mediaType: "image",
       },
       {
-        title: "טפסים 2",
-        type: "מסמך",
-        date: "28.05.2024",
-        tag: { title: "נשקייה" },
+        title: "טפסים 1",
+        type: "סיכום",
+        date: Date("28.8.2024"),
+        tag: { title: "שלישות" },
         media: rabit,
         cover: rabit,
         mediaType: "image",
@@ -204,39 +330,84 @@ const AdminPage = () => {
     const mediaArr = [
       {
         title: "הרמת כוסית לראש השנה",
-        type: "מצגת",
-        date: "28.05.2024",
+        type: "תמונה",
+        date: Date("28.8.2024"),
         media: rabit,
+        files: [rabit, rabit, rabit, rabit],
         cover: rabit,
         mediaType: "image",
       },
       {
         title: "פורים 2024",
-        type: "מסמך",
-        date: "28.05.2024",
+        type: "תמונה",
+        date: Date("28.8.2024"),
         media: rabit,
         cover: rabit,
+        files: [
+          rabit,
+          rabit,
+          rabit,
+          rabit,
+          rabit,
+          rabit,
+          rabit,
+          rabit,
+          rabit,
+          rabit,
+          rabit,
+          rabit,
+        ],
+
+        mediaType: "image",
+      },
+      {
+        title: "אלבום טקס קמנים ",
+        type: "אלבום",
+        uploadByArtech: true,
+        date: Date("28.8.2024"),
+        media: rabit,
+        cover: rabit,
+        files: [
+          rabit,
+          rabit,
+          rabit,
+          rabit,
+          rabit,
+          rabit,
+          rabit,
+          rabit,
+          rabit,
+          rabit,
+          rabit,
+          rabit,
+        ],
+
         mediaType: "image",
       },
     ];
+    setTabs([
+      `תוצרים (${eduArr.length})`,
+      `עיצובים (${designsArr.length})`,
+      `טפסים (${formsArr.length})`,
+      `תמונות סטוק ואלבומים (${mediaArr.length})`,
+    ]);
     switch (true) {
-      case selectedTab === "תוצרים":
+      case selectedTab.includes("תוצרים"):
         setData(eduArr);
         break;
-      case selectedTab === "עיצובים":
+      case selectedTab.includes("עיצובים"):
         setData(designsArr);
         break;
-      case selectedTab === "טפסים":
+      case selectedTab.includes("טפסים"):
         setData(formsArr);
         break;
-      case selectedTab === "תמונות ואלבומים":
+      case selectedTab.includes("תמונות סטוק ואלבומים"):
         setData(mediaArr);
         break;
       default:
         setData(eduArr);
     }
   }, [selectedTab]);
-
   return (
     <div className="page-container">
       <div className="admin-header-container">
@@ -256,21 +427,69 @@ const AdminPage = () => {
               setSelectedTab={setSelectedTab}
               selectedTab={selectedTab}
             />
-            <Search style={{ height: "42px", width: "16.7vw" }} />
+            <OrderBy
+              options={[
+                {
+                  value: "upload-date",
+                  label: "תאריך העלאה",
+                  icon: downloadIcon,
+                  selectedicon: selecteddownloadIcon,
+                },
+                {
+                  value: "update-date",
+                  label: "תאריך עדכון",
+                  icon: reversedClock,
+                  selectedicon: selectedreversedClock,
+                },
+                {
+                  value: "popularity",
+                  label: "פופולריות",
+                  icon: staricon,
+                  selectedicon: selectedstaricon,
+                },
+                {
+                  value: "alphabet",
+                  label: " 'א' - ב",
+                  icon: bigA,
+                  selectedicon: selectedbigA,
+                },
+              ]}
+            />
+            <Search
+              placeholder={"חיפוש תוצר/נושא"}
+              style={{ height: "42px", width: "16.7vw" }}
+            />
           </div>
-          <TemplateTable dataArr={data} selectedTab={selectedTab} />
+          <TemplateTable
+            icon={arrow}
+            dataArr={data}
+            selectedTab={selectedTab}
+          />
         </div>
         <div className="admin-pending-approval-side">
           <div className="admin-pending-approval-container">
             <div className="admin-top-other">
-              <div className="admin-other-header">תוצרים שממתינים לאישור</div>
-              <div className="admin-link">היסטוריית העלאות</div>
+              <div className="admin-other-header">
+                תוצרים שמחכים לאישור ({requestsArr.length})
+              </div>
+              <div className="admin-link">כל השאר </div>
             </div>
-            <Requests requests={requestsArr} />
+            <WaitingList
+              header={`תוצרים שמחכים לאישור`}
+              requests={requestsArr}
+            />
           </div>
           <div className="admin-pending-approval-container">
-            <div className="admin-other-header">תתי נושאים חדשים</div>
-            <Requests requests={subSubjectsArr} />
+            <div className="admin-top-other">
+              <div className="admin-other-header">
+                תגובות לאישור בקליק ({commentsArr.length})
+              </div>
+              <div className="admin-link">כל השאר </div>
+            </div>
+            <WaitingList
+              header={"תגובות לאישור בקליק"}
+              requests={commentsArr}
+            />
           </div>
         </div>
       </div>

@@ -13,6 +13,7 @@ import Setting from "./Settings";
 import MoreDetails from "./MoreDetails";
 import Groups from "./Groups";
 import DeleteEduPopup from "../General/DeleteEdu";
+import GenericFileComponent from "./GenericFileComponent";
 
 const EduPreview = ({ edu }) => {
   const [isDeletePopup, setIsDeletePopup] = useState(false);
@@ -50,7 +51,10 @@ const EduPreview = ({ edu }) => {
       <EduResSection title="פרטים" content={<Details edu={edu} />} />
       <EduResSection title="תגובות" content={<Comments edu={edu} />} />
       <EduResSection title="קרדיטים" content={<Credits edu={edu} />} />
-      <EduResSection title="קבצים" content={<Files edu={edu} />} />
+      <EduResSection
+        title="קבצים"
+        content={<GenericFileComponent fileTitle={edu.title} edu={edu} />}
+      />
       <EduResSection
         title="הגדרות"
         content={<Setting settingsArray={settingsArray} />}

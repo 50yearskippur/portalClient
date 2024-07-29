@@ -4,6 +4,7 @@ import Media from "../pages/MediaPage";
 import MediaAlbum from "../pages/MediaAlbumPage";
 import SubSubject from "../pages/SubSubjectPage";
 import PersonalArea from "../pages/PersonalAreaPage";
+import AdminPermissionManagment from "../pages/AdminPermissionManagment";
 import Admin from "../pages/AdminPage";
 import AdminUpload from "../pages/AdminUploadPage.jsx";
 
@@ -28,6 +29,11 @@ const paths = [
   { path: "/subSubject", text: "תת נושא", component: SubSubject },
   { path: "/admin", text: "אדמין", component: Admin },
   { path: "/personalArea", text: "איזור אישי", component: PersonalArea },
+  {
+    path: "/permissionsManagement",
+    text: " ניהול הרשאות",
+    component: AdminPermissionManagment,
+  },
   { path: "/admin/upload", text: "העלאה באדמין", component: AdminUpload },
 ];
 

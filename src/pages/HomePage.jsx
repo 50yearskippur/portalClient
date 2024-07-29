@@ -171,6 +171,7 @@ const HomePage = () => {
   return (
     <div className="home-page-wrapper page-container">
       <Search
+        placeholder={"חיפוש חופשי"}
         style={{
           width: "42.84%",
           height: "3.33vh",

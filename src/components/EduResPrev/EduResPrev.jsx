@@ -1,7 +1,8 @@
 import "./EduResPrev.css";
 import FileController from "../Media/FileController";
 import point from "../../assets/media/Icons/blackPoint.svg";
-import React from 'react';
+import convertDateToString from "../../utils/convertDateToString";
+import React from "react";
 
 const EduResPrev = ({ item }) => {
   return (
@@ -17,7 +18,7 @@ const EduResPrev = ({ item }) => {
             : item?.title}
         </div>
         <div className="edu-prev-deatails">
-          <div className="edu-prev-info">{item?.date}</div>
+          <div className="edu-prev-info">{convertDateToString(item.date)}</div>
           <img src={point} alt="black point" />
           <div className="edu-prev-info">{item?.level}</div>
         </div>

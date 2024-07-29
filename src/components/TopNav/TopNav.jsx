@@ -24,7 +24,7 @@ const TopNav = ({
         style={tabsStyle}
       />
       <div className="nav-bar-left-container">
-        <Search style={{ width: "21.17vw" }} />
+        <Search placeholder={"חיפוש חופשי"} style={{ width: "21.17vw" }} />
         <Button
           text={"העלאת תוכן"}
           onClick={() => showPopup(<UploadEduType />)}

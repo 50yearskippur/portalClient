@@ -4,13 +4,13 @@
   justify-content: center;
   align-items: center;
   gap: 12px;
+  width: 100%;
 }
 .credit-save-button {
   z-index: 10;
   display: flex;
   width: 8.333vw;
-  height: 2.963vh;
-  padding: 12px 24px;
+  padding: 5px 23px;
   justify-content: center;
   align-items: center;
   gap: 8px;
@@ -32,8 +32,7 @@
   display: flex;
   cursor: pointer;
   width: 8.333vw;
-  height: 2.963vh;
-  padding: 12px 24px;
+  padding: 5px 23px;
   justify-content: center;
   align-items: center;
   gap: 8px;

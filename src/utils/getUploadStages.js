@@ -6,7 +6,7 @@ const getUploadStages = (eduType) => {
   //       return DesignPreview;
   //     case selectedTab === "טפסים":
   //       return FormPreview;
-  //     case selectedTab === "תמונות ואלבומים":
+  //     case selectedTab === "תמונות סטוק ואלבומים":
   //       return MediaPreview;
   //     default:
   //       return EduResPreview;

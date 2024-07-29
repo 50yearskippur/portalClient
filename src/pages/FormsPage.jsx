@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import "./FormsPage.css";
 // import PageTemplate from "../components/PageTemplate/PageTemplate";
 import PdfPreview from "../components/ItemsComponents/PdfPreview";
@@ -236,6 +236,7 @@ const FormPage = () => {
       <div className="form-page-top">
         <div className="header">טפסים</div>
         <Search
+          placeholder={"חיפוש חופשי"}
           style={{ width: "21.17vw", height: "3.38vh", marginTop: "1.4vh" }}
         />
       </div>
