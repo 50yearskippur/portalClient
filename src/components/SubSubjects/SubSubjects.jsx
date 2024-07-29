@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import "./SubSubjects.css";
 import PageTemplate from "../PageTemplate/PageTemplate";
 
@@ -14,7 +14,8 @@ const SubSubjects = ({
       <PageTemplate
         ItemComponent={ItemComponent}
         numberOfItemsInLine={numberOfItemsInLine}
-        gapSize={2}
+        gapColumnSizeInPercentage={1.5}
+        gapRowSizeInPx={24}
         data={subSubjects}
       />
     </div>

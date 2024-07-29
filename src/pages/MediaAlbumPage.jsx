@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import "./MediaAlbumPage.css";
 import rabit from "../assets/img/rabit.jpg";
 import party from "../assets/img/party.png";
@@ -7,6 +7,7 @@ import MasonryLayout from "../components/MasonryLayout/MasonryLayout";
 import TopSection from "../components/TopSection/TopSection";
 
 const MediaAlbumPage = () => {
+  //delete in production
   const data = [
     {
       title: "ארנב",
@@ -138,7 +139,7 @@ const MediaAlbumPage = () => {
   return (
     <>
       <TopSection navigateTo={"/media"} title='פורימון בה"ד 15' />
-      <div className="page-container">
+      <div className="page-container" style={{ marginTop: "5.185vh" }}>
         <MasonryLayout data={data} />
       </div>
     </>

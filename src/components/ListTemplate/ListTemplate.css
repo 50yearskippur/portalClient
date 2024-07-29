@@ -1,7 +1,7 @@
 .list-template-container {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
   border-radius: 8px;
   background: linear-gradient(
     180deg,
