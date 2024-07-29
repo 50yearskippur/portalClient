@@ -199,6 +199,15 @@ const AdminPage = () => {
         cover: rabit,
         mediaType: "image",
       },
+      {
+        title: "טפסים 2",
+        type: "מסמך",
+        date: "28.05.2024",
+        tag: { title: "נשקייה" },
+        media: rabit,
+        cover: rabit,
+        mediaType: "image",
+      },
     ];
 
     const mediaArr = [
