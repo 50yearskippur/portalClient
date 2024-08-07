@@ -1,0 +1,48 @@
+.upload-popup-detailes {
+  color: #374151;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.upload-popup-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.upload-popup-text-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.upload-popup-button {
+  width: 145px;
+  height: 42px;
+  background: #4761be;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  float: left;
+  margin-right: 4px;
+}
+.new-sub-subject-created-feedback {
+  border-radius: 30px;
+  background: var(--black, #000);
+  display: flex;
+  padding: 14px 20px 14px 30px;
+  align-items: flex-start;
+  gap: 15px;
+  color: white;
+  box-shadow: 10px 12.6px 29px 0px rgba(67, 66, 89, 0.1);
+  position: relative;
+  right: 1.66vw;
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}

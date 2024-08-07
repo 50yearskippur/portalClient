@@ -1,0 +1,17 @@
+.recommended-section-wrapper {
+  display: grid;
+  grid-template-columns: 49.3% 49.3% auto;
+  grid-gap: 1.4%;
+  height: 54.03vh;
+  width: 100%;
+}
+
+.recommendations-per-unit {
+  height: 100%;
+  display: flex;
+  gap: 2.7%;
+}
+
+.main-recommendation {
+  height: 100%;
+}

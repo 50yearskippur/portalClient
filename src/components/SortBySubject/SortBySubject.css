@@ -1,0 +1,13 @@
+.sort-by-subject-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.list-container {
+  width: 14.5vw;
+}
+
+.sub-subjects {
+  width: 65.31vw;
+}

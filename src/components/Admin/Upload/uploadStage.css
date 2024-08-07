@@ -1,0 +1,90 @@
+.stage-upload-container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.admin-upload-file {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 9px;
+}
+
+.stage-files-container {
+  display: flex;
+  gap: 16px;
+}
+
+.stage-text {
+  color: var(--body-text, #4c4c66);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.1px;
+  text-transform: capitalize;
+  align-self: start;
+}
+
+.stage-text.big {
+  font-size: 16px;
+}
+
+.stage-input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.stage-input {
+  height: 3.704vh;
+  padding: 8px 10px;
+  border-radius: 4px;
+  border: 1px solid var(--filed, #f2f4fa);
+  background: var(--filed, #f2f4fa);
+}
+
+.stage-input:focus {
+  border: 1px solid #dddaf8;
+  box-shadow: none;
+  outline: none;
+}
+
+.stage-row-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.stage-credit-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 35px;
+}
+
+.add-credit-container {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px dashed #6c60ff;
+  cursor: pointer;
+}
+
+.stage-blue-text {
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 4px;
+  background: linear-gradient(to right, #6c60ff, #3b2ed1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.content-validation {
+  display: flex;
+  gap: 8px;
+}

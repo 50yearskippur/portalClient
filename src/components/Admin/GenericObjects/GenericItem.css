@@ -1,0 +1,28 @@
+.generic-item-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 14px;
+  width: 100%;
+}
+
+.generic-item-title {
+  color: var(--H1, #1f0039);
+  font-weight: 400;
+  gap: 4px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.generic-item-sub-title {
+  color: var(--Subtitle, #827aa5);
+  font-weight: 500;
+}
+.icons-container {
+  display: flex;
+  align-items: center;
+  width: -webkit-fill-available;
+  margin-right: auto;
+  justify-content: space-between;
+}

@@ -1,0 +1,31 @@
+.personal-area-container {
+  position: absolute;
+}
+
+.profile-bar {
+  width: 92.4%;
+  background: #bcb9ef;
+  margin-top: 7.4vh;
+  border-radius: 10px;
+}
+
+.personal-area-details {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.personal-area-user {
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+  position: relative;
+  bottom: 5.9vh;
+}
+
+.personal-area-username {
+  color: #0a033c;
+  text-align: right;
+  font-size: 32px;
+  font-weight: 400;
+}

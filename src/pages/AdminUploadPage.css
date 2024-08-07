@@ -1,0 +1,78 @@
+.admin-upload-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 44px;
+  width: 70%;
+}
+
+.stage-white-container {
+  display: flex;
+  width: 27.813vw;
+  padding: 32px;
+  flex-direction: column;
+  gap: 18px;
+  border-radius: 8px;
+  background: var(--Main-colors-White, #fff);
+  box-shadow: 0px 4px 16px -1px #f2f2f2;
+}
+
+.upload-stages-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.stage-number {
+  width: 9px;
+  height: 10px;
+  padding: 10px;
+  border-radius: 33px;
+  background: var(--title, #7d81b2);
+  color: var(--Main-colors-White, #fff);
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stage-number.current {
+  background: var(--blue, #3259ff);
+}
+
+.stage-column-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stage-title {
+  color: var(--Subtitle, #827aa5);
+  text-align: right;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.stage-title.small {
+  font-size: 14px;
+}
+
+.stage-title.current {
+  color: var(--Blue, #3259ff);
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.stage-header {
+  display: flex;
+  align-items: center;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.admin-upload-edit-icon {
+  margin-right: auto;
+  cursor: pointer;
+}

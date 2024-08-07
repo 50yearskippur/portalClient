@@ -1,0 +1,11 @@
+.settings-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.setting-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}

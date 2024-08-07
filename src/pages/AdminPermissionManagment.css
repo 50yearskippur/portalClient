@@ -1,0 +1,76 @@
+.admin-container {
+  display: flex;
+  gap: 24px;
+}
+
+.admin-header-container {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 42.8px;
+}
+
+.admin-top-approved {
+  display: flex;
+  justify-content: space-between;
+}
+
+.admin-approved-edu-side {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  gap: 12px;
+}
+
+.admin-pending-approval-side {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  gap: 40px;
+}
+
+.admin-pending-approval-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.admin-other-header {
+  color: var(--body-text, #444a5a);
+  font-size: 16px;
+  font-weight: 500;
+  align-self: start;
+}
+
+.admin-top-other {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.admin-link {
+  text-align: center;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  text-decoration-line: underline;
+  color: #4f35be;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparen;
+  cursor: pointer;
+}
+
+.admin-order-by {
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+  margin-left: 1.08vw;
+  cursor: pointer;
+  color: var(--Titale-2, #9599c6);
+  font-family: Rubik;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+}

@@ -1,0 +1,6 @@
+.top-bar-container {
+  width: 100%;
+  height: 2.963vh;
+  display: flex;
+  justify-content: space-between;
+}

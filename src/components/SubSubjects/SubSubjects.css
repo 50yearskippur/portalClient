@@ -1,0 +1,18 @@
+.sub-subjects-wrapper {
+  background-color: #f2f4fa;
+  text-align: right;
+  padding: 32px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 7px 10px 35px 0px rgba(225, 226, 249, 0.62) inset;
+}
+
+.sub-subjects-title {
+  font-size: 18px;
+  color: #444a5a;
+  color: var(--Grey-Black, #444a5a);
+  text-align: right;
+  font-weight: 500;
+  line-height: 24px;
+  margin-bottom: 2vh;
+}

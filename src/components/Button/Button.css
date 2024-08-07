@@ -1,0 +1,22 @@
+.text-button {
+  font-size: 16px;
+  margin: auto;
+}
+
+.button {
+  width: 6.875vw;
+  cursor: pointer;
+  align-items: center;
+  display: flex;
+  height: 100%;
+  gap: 0.417vw;
+  border-radius: 0.208vw;
+  background: #3259ff;
+  color: white;
+}
+
+.disabled {
+  opacity: 0.5;
+  background: var(--disable-filed, #c2c6cc);
+  cursor: auto;
+}

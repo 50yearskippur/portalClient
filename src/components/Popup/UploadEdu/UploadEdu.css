@@ -1,0 +1,36 @@
+.upload-input-continer {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.upload-input-field {
+  display: flex;
+  height: 24px;
+  padding: 8px 12px;
+  justify-content: flex-end;
+  align-items: center;
+  border-radius: 4px;
+  border: 1px solid #dadbe8;
+  background: #f2f4fa;
+}
+
+.upload-input-field:focus {
+  border: 1px solid #dddaf8;
+  box-shadow: none;
+  outline: none;
+}
+
+.upload-agreement-input {
+  cursor: pointer;
+  width: 18px;
+  accent-color: #8d91bb;
+}
+
+.upload-agreement-container {
+  display: flex;
+  margin-top: 1vh;
+  margin-bottom: 0.6vh;
+  align-items: center;
+  color: #4c4c66;
+}

@@ -1,0 +1,213 @@
+.edu-resource-page {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.7vw;
+}
+
+.edu-resource-container {
+  position: relative;
+  width: 54.1vw;
+  display: flex;
+  justify-content: space-between;
+  height: 110.5vh;
+  padding: 40px 28px;
+  flex-direction: column;
+  gap: 2.2vh;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.subSubject-page-header {
+  color: #5d5d5d;
+  text-align: right;
+  font-size: 30px;
+  font-weight: 700;
+  margin-top: 23px;
+}
+
+.edu-resource-title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: stretch;
+}
+
+.edu-resource-info-container {
+  display: flex;
+  align-items: center;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.edu-resource-title {
+  color: #4c4c66;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.edu-resource-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.edu-resource-type {
+  color: #4c4c66;
+  font-size: 14px;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+.edu-resourse-nootbook {
+  width: 64px;
+}
+
+.edu-resourse-btn-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.edu-resourse-add-container {
+  display: flex;
+  padding: 12px;
+  align-items: center;
+  gap: 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.edu-resource-requirement {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.edu-resource-details {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.25vw;
+}
+
+.edu-resource-statistics {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.edu-resource-details-text {
+  color: #4c4c66;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.edu-resource-caption-icon {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.edu-resource-comments {
+  display: flex;
+  padding: 24px 40px;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(
+    127deg,
+    rgba(108, 96, 255, 0.05) 18.87%,
+    rgba(59, 46, 209, 0.05) 71.49%
+  );
+}
+
+.edu-resource-comment-text {
+  width: 26vw;
+  text-align: right;
+  color: #444a5a;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.edu-resourse-text {
+  overflow: hidden;
+  color: #444a5a;
+  text-align: right;
+  text-overflow: ellipsis;
+  font-size: 16px;
+  font-weight: 400;
+  width: 38.5vw;
+}
+
+.edu-resourse-cradit-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.edu-resourse-cradit {
+  display: flex;
+  gap: 38px;
+  width: 12.9vw;
+}
+
+.horizontal-line {
+  width: 100%;
+  background-color: #000;
+  height: 1px;
+  opacity: 0.1;
+  margin-bottom: 24px;
+  margin-top: 8px;
+}
+
+.edu-resource-title {
+  color: #4c4c66;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.edu-resource-other-container {
+  display: flex;
+  flex-direction: column;
+  height: 94vh;
+}
+
+.edu-resource-other-users {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2.2vh;
+  padding: 40px 28px;
+}
+
+.edu-resource-add-edu {
+  width: 22.4vw;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  border-radius: 10px;
+  background: linear-gradient(111deg, #2555ff -1.82%, #7f6aff 95.93%);
+  filter: drop-shadow(0px 15px 49px rgba(0, 0, 0, 0.25));
+}
+
+.edu-resource-add-text {
+  height: 4.5vh;
+  width: 10.6vw;
+  color: #fff;
+  text-align: right;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+.edu-resource-add-text-btn {
+  background: var(
+    --Purple,
+    linear-gradient(127deg, #6c60ff 18.87%, #3b2ed1 71.49%)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
