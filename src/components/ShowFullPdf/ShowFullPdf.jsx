@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Document, Page } from "react-pdf";
 import "./ShowFullPdf.css";
-import PDFViewer from "pdf-viewer-reactjs";
+// import PDFViewer from "pdf-viewer-reactjs";
 
 const ShowFullPdf = ({ pdfDetails }) => {
   const [numPages, setNumPages] = useState(null);
@@ -41,7 +41,7 @@ const ShowFullPdf = ({ pdfDetails }) => {
       </p>
       <div style={{ display: "flex", justifyContent: "flex-end" }}>
         <div className="pdf-document" ref={documentRef}>
-          <PDFViewer document={{ url: pdfDetails.media }} />
+          {/* <PDFViewer document={{ url: pdfDetails.media }} /> */}
           {/* <Document
             file={pdfDetails.media}
             onLoadSuccess={onDocumentLoadSuccess}
