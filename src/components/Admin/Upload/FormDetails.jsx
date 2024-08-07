@@ -30,9 +30,8 @@ const FormDetails = ({ nextStage }) => {
           <div className="stage-text">נושא</div>
           <Dropdown
             listHeight={'25vh'}
-            defaultValue={itemDetails['subject']}
             list={['מבואות מודיעין', 'טכנולוגיה וסייבר', 'שפה', 'המלצות']}
-            style={{ width: '100%', height: '100%' }}
+            fieldName="subject"
           />
         </div>
       </div>

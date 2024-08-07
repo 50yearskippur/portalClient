@@ -10,8 +10,10 @@ import NextBtn from './NextBtn';
 
 const Setting = ({ nextStage }) => {
   const { itemDetails, setItemDetails } = useContext(PopupContext);
-  console.log(itemDetails);
-  const [experationDate, setExperationDate] = useState({ num: '', unit: '' });
+  const [experationDate, setExperationDate] = useState({
+    num: 12,
+    unit: 'חודשים',
+  });
 
   const calculateFutureDate = (experationDate) => {
     const { unit, num } = experationDate;
@@ -45,23 +47,17 @@ const Setting = ({ nextStage }) => {
         <div className="stage-input-container">
           <div className="stage-text">רמה</div>
           <Dropdown
-            defaultValue={
-              itemDetails['level'] ? itemDetails['level'] : 'בחרו רמת קושי'
-            }
+            defaultValue="בחרו רמת קושי"
             list={levels}
-            style={{ width: '100%', height: '25px' }}
+            fieldName="level"
           />
         </div>
         <div className="stage-input-container">
           <div className="stage-text">זמן מוערך</div>
           <Dropdown
-            defaultValue={
-              itemDetails['estimatedTime']
-                ? itemDetails['estimatedTime']
-                : "20 דק'"
-            }
+            defaultValue="20 דק'"
             list={["20 דק'", "30 דק'", "45 דק'", "60+ דק'"]}
-            style={{ width: '100%', height: '25px' }}
+            fieldName="estimatedTime"
           />
         </div>
       </div>
@@ -80,14 +76,14 @@ const Setting = ({ nextStage }) => {
             defaultValue={
               itemDetails['experationDateObject']?.num
                 ? itemDetails['experationDateObject'].num
-                : 12
+                : experationDate.num
             }
           />
           <Dropdown
             defaultValue={
               itemDetails['experationDateObject']?.unit
                 ? itemDetails['experationDateObject'].unit
-                : 'חודשים'
+                : experationDate.unit
             }
             list={['ימים', 'חודשים', 'שנים']}
             style={{ width: '33.3%', height: '25px' }}

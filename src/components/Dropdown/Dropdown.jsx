@@ -1,51 +1,47 @@
-import React, { useState, useContext } from "react";
-import "./Dropdown.css";
-import dropdownIcon from "../../assets/media/Icons/dropdownIcon.svg";
-import vIcon from "../../assets/media/Icons/v.svg";
-import warningIcon from "../../assets/media/Upload/warning.svg";
-import { PopupContext } from "../../store/popup-context";
+import React, { useState, useContext } from 'react';
+import './Dropdown.css';
+import dropdownIcon from '../../assets/media/Icons/dropdownIcon.svg';
+import vIcon from '../../assets/media/Icons/v.svg';
+import warningIcon from '../../assets/media/Upload/warning.svg';
+import { PopupContext } from '../../store/popup-context';
 
 const Dropdown = ({
   list,
   onNewSubClick,
   style,
   defaultValue,
+  fieldName,
+  onSelect,
   listHeight = {},
-  onSelect = () => {},
 }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [selectedItem, setSelectedItem] = useState(defaultValue);
   const { setItemDetails, itemDetails } = useContext(PopupContext);
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(
+    itemDetails[fieldName] ? itemDetails[fieldName] : defaultValue
+  );
 
-  const IS_NEW_SUB_SUBJECT = selectedItem === "תת נושא חדש";
+  const IS_NEW_SUB_SUBJECT = selectedItem === 'תת נושא חדש';
 
-  const handleSelect = (item) => {
-    if (defaultValue?.includes("תת נושא")) {
+  const saveDetails = (item) => {
+    if (onSelect) onSelect(item);
+    if (IS_NEW_SUB_SUBJECT)
       setItemDetails((prevDetails) => ({
         ...prevDetails,
-        subSubject: item,
+        [fieldName]: item,
+      }));
+    else
+      setItemDetails((prevDetails) => ({
+        ...prevDetails,
+        [fieldName]: item,
         isNewSubSubject: false,
       }));
-    } else if (defaultValue?.includes("נושא")) {
-      setItemDetails((prevDetails) => ({
-        ...prevDetails,
-        subject: item,
-      }));
-    } else if (defaultValue?.includes("רמת"))
-      setItemDetails((prevDetails) => ({
-        ...prevDetails,
-        level: item,
-      }));
-    else if (defaultValue?.includes("חודשים")) onSelect(item);
-    else if (defaultValue?.includes("דק'"))
-      setItemDetails((prevDetails) => ({
-        ...prevDetails,
-        estimatedTime: item,
-      }));
+  };
 
+  const handleSelect = (item) => {
+    saveDetails(item);
     setSelectedItem(item);
     setIsOpen(false);
-    if (item === "תת נושא חדש") {
+    if (item === 'תת נושא חדש') {
       onNewSubClick(item);
     }
   };
@@ -59,9 +55,9 @@ const Dropdown = ({
       <div className="dropdown-item-container">
         <div className="dropdown-item-warning">
           <div className="dropdown-input-text">
-            {IS_NEW_SUB_SUBJECT ? itemDetails["subSubject"] : selectedItem}
+            {IS_NEW_SUB_SUBJECT ? itemDetails['subSubject'] : selectedItem}
           </div>
-          {itemDetails["isNewSubSubject"] && IS_NEW_SUB_SUBJECT && (
+          {itemDetails['isNewSubSubject'] && IS_NEW_SUB_SUBJECT && (
             <img src={warningIcon} alt="warning" />
           )}
         </div>
@@ -70,7 +66,7 @@ const Dropdown = ({
       {isOpen && (
         <div
           className="dropdown-list"
-          style={{ height: listHeight, overflowY: "auto", overflowX: "hidden" }}
+          style={{ height: listHeight, overflowY: 'auto', overflowX: 'hidden' }}
           onClick={() => setIsOpen((prev) => !prev)}
         >
           {list.map((item, index) => (
@@ -83,7 +79,7 @@ const Dropdown = ({
                 onClick={() => handleSelect(item)}
               >
                 <div
-                  className={`dropdown-text ${item === "תת נושא חדש" && "new"}`}
+                  className={`dropdown-text ${item === 'תת נושא חדש' && 'new'}`}
                 >
                   {item}
                 </div>

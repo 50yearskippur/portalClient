@@ -63,22 +63,16 @@ const Details = ({ nextStage }) => {
           <div className="stage-text">נושא</div>
           <Dropdown
             listHeight={'25vh'}
-            defaultValue={
-              itemDetails['subject'] ? itemDetails['subject'] : 'בחרו נושא'
-            }
+            defaultValue="בחרו נושא"
             list={['מבואות מודיעין', 'טכנולוגיה וסייבר', 'שפה', 'המלצות']}
-            style={{ width: '100%', height: '100%' }}
+            fieldName="subject"
           />
         </div>
         <div className="stage-input-container">
           <div className="stage-text">תת נושא</div>
           <Dropdown
             listHeight={'25vh'}
-            defaultValue={
-              itemDetails['subSubject']
-                ? itemDetails['subSubject']
-                : 'בחרו תת נושא'
-            }
+            defaultValue="בחרו תת נושא"
             list={[
               'מבואות מודיעין',
               'טכנולוגיה וסייבר',
@@ -86,7 +80,7 @@ const Details = ({ nextStage }) => {
               'המלצות',
               'תת נושא חדש',
             ]}
-            style={{ width: '100%', height: '100%' }}
+            fieldName="subSubject"
             onNewSubClick={() => setIsSubOpen(true)}
           />
         </div>
