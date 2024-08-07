@@ -1,10 +1,11 @@
-import "./AdminUploadPage.css";
-import { useState, useContext } from "react";
-import { PopupContext } from "../store/popup-context";
-import TopSection from "../components/TopSection/TopSection";
-import getUploadStages from "../utils/getUploadStages";
-import { useLocation } from "react-router-dom";
-import pencilIcon from "../assets/media/Icons/pencil.svg";
+import './AdminUploadPage.css';
+import { useState, useContext } from 'react';
+import { PopupContext } from '../store/popup-context';
+import TopSection from '../components/TopSection/TopSection';
+import getUploadStages from '../utils/getUploadStages';
+import { useLocation } from 'react-router-dom';
+import pencilIcon from '../assets/media/Icons/pencil.svg';
+import whiteV from '../assets/media/Icons/whiteV.svg';
 
 const Upload = () => {
   const location = useLocation();
@@ -21,7 +22,7 @@ const Upload = () => {
   return (
     <div className="admin-upload-container">
       <TopSection
-        navigateTo={"/admin"}
+        navigateTo={'/admin'}
         title="העלאת תוצר"
         exitText="לעמוד ההעלאות"
       />
@@ -29,14 +30,22 @@ const Upload = () => {
         {stagesArray.map((stage, index) => (
           <div key={stage.title} className="stage-white-container">
             <div className="stage-header">
-              <div
-                className={`stage-number ${index < currentStage && "current"}`}
-              >
-                {index + 1}
-              </div>
+              {index + 1 < currentStage ? (
+                <img src={whiteV} alt="v" />
+              ) : (
+                <div
+                  className={`stage-number ${
+                    index < currentStage && 'current'
+                  }`}
+                >
+                  {index + 1}
+                </div>
+              )}
               <div className="stage-column-header">
                 <div
-                  className={`stage-title ${index < currentStage && "current"}`}
+                  className={`stage-title ${
+                    index + 1 === currentStage && 'current'
+                  }`}
                 >
                   {stage.title}
                 </div>

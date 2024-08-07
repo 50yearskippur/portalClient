@@ -26,6 +26,19 @@ import arrow from "../assets/media/Icons/curvedArrow.svg";
 import OrderBy from "../components/OrderBy/OrderBy";
 
 const AdminPage = () => {
+
+  const navigate = useNavigate();
+  const [tabsArray, setTabs] = useState([
+    "תוצרים",
+    "עיצובים",
+    "טפסים",
+    "תמונות סטוק ואלבומים",
+  ]);
+  const [selectedTab, setSelectedTab] = useState(tabsArray[0]);
+  const [data, setData] = useState([]);
+  const [uploadTypesOpen, setUploadTypesOpen] = useState(false);
+  const [selectedType, setSelectedType] = useState();   
+
   const uploadTypesArray = [
     {
       text: "תוצרי לימוד",
@@ -45,20 +58,6 @@ const AdminPage = () => {
 
     },
   ];
-
-  const navigate = useNavigate();
-  const [tabsArray, setTabs] = useState([
-    "תוצרים",
-    "עיצובים",
-    "טפסים",
-    "תמונות סטוק ואלבומים",
-  ]);
-  const [selectedTab, setSelectedTab] = useState(tabsArray[0]);
-  const [data, setData] = useState([]);
-  const [uploadTypesOpen, setUploadTypesOpen] = useState(false);
-  const [selectedType, setSelectedType] = useState(uploadTypesArray[0].text);   
-
-  console.log(selectedType);
 
   //delete in production
   const requestsArr = [
@@ -464,7 +463,7 @@ const AdminPage = () => {
                   }
                   onMouseEnter={()=> setSelectedType(type.text)}                >
                   <img src={selectedType === type.text ? type.grayIcon : type.blackIcon} alt="type" /> 
-                  <div>{type.text} </div>
+                  <>{type.text} </>
                 </div>
               ))}
             </div>
