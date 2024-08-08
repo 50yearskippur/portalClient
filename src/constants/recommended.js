@@ -20,11 +20,6 @@ const  recommendedEduResource = [
             fileName: 'sea',
             MimeType: 'image',
           },
-          cover:{
-            file: sea,
-            fileName: 'sea',
-            MimeType: 'image',
-          },
         },
       ],
       subject: {
@@ -91,11 +86,6 @@ const  recommendedEduResource = [
             file: video,
             fileName: 'chocolate',
             MimeType: 'mp4',
-          },
-          cover:{
-            file: sea,
-            fileName: 'sea',
-            MimeType: 'image',
           },
         },
       ],
@@ -164,11 +154,6 @@ const  recommendedEduResource = [
             fileName: 'rabit',
             MimeType: 'image',
           },
-          cover:{
-            file: sea,
-            fileName: 'sea',
-            MimeType: 'image',
-          },
         },
       ],
       subject: {
@@ -232,11 +217,6 @@ const  recommendedEduResource = [
             fileName: 'robot',
             MimeType: 'image',
           },
-          cover:{
-            file: sea,
-            fileName: 'sea',
-            MimeType: 'image',
-          },
         },
       ],
       subject: {
@@ -286,11 +266,6 @@ const  recommendedEduResource = [
           media: {
             file: bamba,
             fileName: 'bamba',
-            MimeType: 'image',
-          },
-          cover:{
-            file: sea,
-            fileName: 'sea',
             MimeType: 'image',
           },
         },

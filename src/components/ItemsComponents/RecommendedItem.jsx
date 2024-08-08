@@ -9,7 +9,7 @@ const RecommendedItem = ({
 }) => {
   const navigate = useNavigate();
 
-  console.log(item)
+  console.log(item.files[0].media.file)
 
   return (
     <div
@@ -18,7 +18,7 @@ const RecommendedItem = ({
       onClick={() => navigate("/subSubject", { state: { item } })}
     >
       <FileController
-        item={item}
+        item={item.files[0]}
         style={{ ...style, borderRadius: "10px"}}
         gradientStyle={{ height: "65%", top: "35%" }}
       />

@@ -11,9 +11,6 @@ import ForYouItem from "../components/ItemsComponents/ForYouItem/ForYouItem.jsx"
 import recommendedEduResource from "../constants/recommended";
 
 //delete in production
-
-
-//delete in production
 const subjects = [
   {
     title: "מבואות מודיעין",
@@ -130,14 +127,14 @@ const HomePage = () => {
         מומלצים
       </p>
       <RecommendedSection data={recommendedEduResource} />
-      <TopNav
+      {/* <TopNav
         tabsArray={tabsArray}
         setSelectedTab={setSelectedTab}
         selectedTab={selectedTab}
         tabsStyle={{ marginRight: "0.5vw" }}
         topNavStyle={{ marginBottom: "4vh", marginTop: "5.96vh" }}
       />
-      {getEduResources(selectedTab)}
+      {getEduResources(selectedTab)} */}
     </div>
   );
 };

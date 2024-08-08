@@ -12,9 +12,10 @@ const FileController = ({
   gradientStyle = {},
   showOnHover = false,
 }) => {
-  const [display, setDisplay] = useState(item?.cover ? item.cover : item.media);
+
+  const [display, setDisplay] = useState(item?.cover ? item.cover.file : item.media.file);
   const [fileType, setFileType] = useState(
-    item.cover ? "image" : item.mediaType
+    item.cover ? "image" : item?.media?.MimeType
   );
   return (
     <div
