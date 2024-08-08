@@ -9,8 +9,6 @@ const RecommendedItem = ({
 }) => {
   const navigate = useNavigate();
 
-  console.log(item.files[0].media.file)
-
   return (
     <div
       className="recommended-item"
