@@ -17,7 +17,7 @@ const RecommendedItem = ({
     >
       <FileController
         item={item}
-        style={{ ...style, borderRadius: "8px"}}
+        style={{ ...style, borderRadius: "10px"}}
         gradientStyle={{ height: "65%", top: "35%" }}
       />
       <p className="recommended-item-title">{item.title}</p>

@@ -10,6 +10,8 @@ import rabit from "../assets/img/rabit.jpg";
 import SortBySubject from "../components/SortBySubject/SortBySubject.jsx";
 import ForYouItem from "../components/ItemsComponents/ForYouItem/ForYouItem.jsx";
 import video from "../assets/img/video.mp4";
+import sea from "../assets/img/sea.jpg";
+import robot from "../assets/img/robot.jpg";
 // import pdf from "../assets/pdfs/pdfPage.pdf";
 
 //delete in production
@@ -22,8 +24,10 @@ const recommendedEduResource = [
       description: "תיאור תיאור",
       eduResource: [],
     },
-    media: "/StoryLine/story.html",
-    mediaType: "html",
+    media: "sea",
+    mediaType: "image",
+    // media: "/StoryLine/story.html",
+    // mediaType: "html",
   },
   {
     title: "מומלץ ממש",
@@ -55,7 +59,7 @@ const recommendedEduResource = [
       description: "תיאור תיאור",
       eduResource: [],
     },
-    media: rabit,
+    media: robot,
     mediaType: "image",
   },
   {
