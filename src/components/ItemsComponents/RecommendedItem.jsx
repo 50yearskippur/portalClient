@@ -9,6 +9,8 @@ const RecommendedItem = ({
 }) => {
   const navigate = useNavigate();
 
+  console.log(item)
+
   return (
     <div
       className="recommended-item"

@@ -5,75 +5,13 @@ import Search from "../components/Search/Search";
 import RecommendedSection from "../components/RecommendedSection/RecommendedSection";
 import Favorites from "../components/Favorites/Favorites.jsx";
 import TopNav from "../components/TopNav/TopNav.jsx";
-//delete in production
-import rabit from "../assets/img/rabit.jpg";
 import SortBySubject from "../components/SortBySubject/SortBySubject.jsx";
 import ForYouItem from "../components/ItemsComponents/ForYouItem/ForYouItem.jsx";
-import video from "../assets/img/video.mp4";
-import sea from "../assets/img/sea.jpg";
-import robot from "../assets/img/robot.jpg";
-// import pdf from "../assets/pdfs/pdfPage.pdf";
+//delete in production
+import recommendedEduResource from "../constants/recommended";
 
 //delete in production
-const recommendedEduResource = [
-  {
-    title: "רעיון מטורף",
-    type: "לומדה",
-    subSubject: {
-      title: "קיפוד",
-      description: "תיאור תיאור",
-      eduResource: [],
-    },
-    media: "sea",
-    mediaType: "image",
-    // media: "/StoryLine/story.html",
-    // mediaType: "html",
-  },
-  {
-    title: "מומלץ ממש",
-    type: "סרטון",
-    subSubject: {
-      title: "מחברות",
-      description: "תיאור תיאור",
-      eduResource: [],
-    },
-    media: video,
-    mediaType: "mp4",
-  },
-  {
-    title: "הכי מומלץ",
-    type: "משחק",
-    subSubject: {
-      title: "מבצע כיף",
-      description: "תיאור תיאור",
-      eduResource: [],
-    },
-    media: rabit,
-    mediaType: "image",
-  },
-  {
-    title: 'משחקי פז"מ',
-    type: "משחק",
-    subSubject: {
-      title: "קיץ",
-      description: "תיאור תיאור",
-      eduResource: [],
-    },
-    media: robot,
-    mediaType: "image",
-  },
-  {
-    title: "מבצעים שווים",
-    type: "משחק",
-    subSubject: {
-      title: "צוות סימבה",
-      description: "תיאור תיאור",
-      eduResource: [],
-    },
-    media: rabit,
-    mediaType: "image",
-  },
-];
+
 
 //delete in production
 const subjects = [
