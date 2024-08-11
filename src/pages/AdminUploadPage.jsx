@@ -14,17 +14,28 @@ const Upload = () => {
   const { itemDetails, setItemDetails } = useContext(PopupContext);
 
   useEffect(() => {
-    setItemDetails((prevDetails) => ({
-      ...prevDetails,
-      pageType,
-    }));
-  }, [pageType, setItemDetails]);
+    console.log(itemDetails);
+  }, [currentStage, itemDetails]);
 
   const nextStage = () => {
     setCurrentStage((prevStage) => prevStage + 1);
   };
 
+  // useEffect(() => {
+  //   setItemDetails((prevDetails) => ({
+  //     ...prevDetails,
+  //     currentStageTitle: stagesArray[currentStage - 1].title,
+  //   }));
+  // }, [currentStage]);
+
   const stagesArray = getUploadStages(pageType, itemDetails, nextStage);
+
+  useEffect(() => {
+    setItemDetails((prevDetails) => ({
+      ...prevDetails,
+      pageType,
+    }));
+  }, [pageType, setItemDetails]);
 
   return (
     <div className="admin-upload-container">
@@ -42,7 +53,9 @@ const Upload = () => {
                   src={whiteV}
                   alt="v"
                   className={
-                    stage.title === 'סוג מוצר' && 'admin-upload-horizontal-v'
+                    stage.title === 'סוג מוצר'
+                      ? 'admin-upload-horizontal-v'
+                      : undefined
                   }
                 />
               ) : (

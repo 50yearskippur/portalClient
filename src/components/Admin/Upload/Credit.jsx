@@ -21,10 +21,12 @@ const Credit = ({ role, defaultValue, deleteCredit, setCreditsList }) => {
         className="stage-input"
         type="text"
         defaultValue={defaultValue}
-        style={{ height: '19px', width: '17.5vw' }}
+        style={{ width: '15.5vw' }}
         onChange={(e) => addUserToCredit(e.target.value)}
       />
-      <img alt="trash" src={trashIcon} onClick={() => deleteCredit(role)} />
+      <div className='trash-icon-container'>
+        <img alt="trash" src={trashIcon} onClick={() => deleteCredit(role)} />
+      </div>
     </div>
   );
 };

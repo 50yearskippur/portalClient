@@ -11,7 +11,6 @@ import yellowWarning from '../../../assets/media/Icons/yellowWarning.svg';
 
 const Setting = ({ nextStage }) => {
   const { itemDetails, setItemDetails } = useContext(PopupContext);
-  console.log(itemDetails);
   const [experationDate, setExperationDate] = useState({
     num: 12,
     unit: 'חודשים',
@@ -70,7 +69,6 @@ const Setting = ({ nextStage }) => {
             defaultValue="בחרו רמת קושי"
             list={levels}
             fieldName="level"
-            style={{ height: '3.241vh' }}
           />
         </div>
         <div className="stage-input-container">
@@ -79,7 +77,6 @@ const Setting = ({ nextStage }) => {
             defaultValue="20 דק'"
             list={["20 דק'", "30 דק'", "45 דק'", "60+ דק'"]}
             fieldName="estimatedTime"
-            style={{ height: '3.241vh' }}
           />
         </div>
       </div>
@@ -89,7 +86,7 @@ const Setting = ({ nextStage }) => {
           <input
             className="stage-input"
             type="number"
-            style={{ width: '2.969vw' }}
+            style={{ width: '2.969vw', height: '100%' }}
             onChange={(e) =>
               setExperationDate((prevDate) => {
                 return { ...prevDate, num: e.target.value };
@@ -102,7 +99,7 @@ const Setting = ({ nextStage }) => {
             }
           />
           <Dropdown
-            style={{ height: '3.241vh', width: '33.3%' }}
+            style={{ width: '33.3%' }}
             defaultValue={
               itemDetails['experationDateObject']?.unit
                 ? itemDetails['experationDateObject'].unit

@@ -37,7 +37,7 @@
 }
 
 .stage-input {
-  padding: 8px 10px;
+  height: 3.241vh;
   border-radius: 4px;
   border: 1px solid var(--filed, #f2f4fa);
   background: var(--filed, #f2f4fa);
@@ -58,7 +58,6 @@
 .stage-credit-container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   height: 35px;
 }
 
@@ -117,4 +116,11 @@
   font-feature-settings: 'salt' on;
   font-size: 14px;
   font-weight: 400;
+}
+
+.trash-icon-container {
+  width: 1.677vw;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
