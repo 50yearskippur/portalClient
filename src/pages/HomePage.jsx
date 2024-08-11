@@ -11,67 +11,6 @@ import ForYouItem from "../components/ItemsComponents/ForYouItem/ForYouItem.jsx"
 import recommendedEduResource from "../constants/recommended";
 import subjects from "../constants/subjects.js";
 
-//delete in production
-// const subjects = [
-//   {
-//     title: "מבואות מודיעין",
-//     type: "אמצעי למידה",
-//     subSubjects: [
-//       {
-//         title: "זירת במבה",
-//         description: "בואו ללמוד איתנו על זירת במבה!",
-//         eduResourse: [{}, {}, {}, {}, {}],
-//       },
-//       {
-//         title: "זירת במבה",
-//         description: "בואו ללמוד איתנו על זירת במבה!",
-//         eduResourse: [{}, {}, {}, {}, {}],
-//       },
-//     ],
-//   },
-//   {
-//     title: "טכנולוגיה וסייבר",
-//     type: "אמצעי למידה",
-//     subSubjects: [
-//       {
-//         title: "זירת במבה",
-//         description: "בואו ללמוד איתנו על זירת במבה!",
-//         eduResourse: [{}, {}],
-//       },
-//     ],
-//   },
-//   {
-//     title: "מחקר ומיצוי מידע",
-//     type: "אמצעי למידה",
-//     subSubjects: [],
-//   },
-//   {
-//     title: "שפה",
-//     type: "אמצעי למידה",
-//     subSubjects: [
-//       {
-//         title: "זירת במבה",
-//         description: "בואו ללמוד איתנו על זירת במבה!",
-//         eduResourse: [{}],
-//       },
-//       {
-//         title: "זירת במבה",
-//         description: "בואו ללמוד איתנו על זירת במבה!",
-//         eduResourse: [{}, {}, {}, {}, {}, {}, {}],
-//       },
-//       {
-//         title: "זירת במבה",
-//         description: "בואו ללמוד איתנו על זירת במבה!",
-//         eduResourse: [{}, {}, {}, {}, {}, {}, {}, {}, {}],
-//       },
-//     ],
-//   },
-//   {
-//     title: "המלצות",
-//     type: "אמצעי למידה",
-//     subSubjects: [],
-//   },
-// ];
 const tabsArray = ["במיוחד בשבילך", "כל התוצרים", "תוצרים שאהבתי"];
 
 //get recommended item per unit
@@ -97,13 +36,13 @@ const getEduResources = (selectedTab) => {
         />
       );
     default:
-      // return (
-      //   <SortBySubject
-      //     numberOfItemsInLine={1}
-      //     subjects={subjects}
-      //     ItemComponent={ForYouItem}
-      //   />
-      // );
+      return (
+        <SortBySubject
+          numberOfItemsInLine={1}
+          subjects={subjects}
+          ItemComponent={ForYouItem}
+        />
+      );
   }
 };
 

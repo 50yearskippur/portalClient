@@ -19,7 +19,7 @@ import bluePlus from "../assets/media/Icons/bluePlus.svg";
 import rabit from "../assets/img/rabit.jpg";
 // import plusImg from "../assets/media/Icons/plus.svg";
 
-const SubSubjectPage = () => {
+const SubSubjectPage = ({subSubject = ""}) => {
   const { showPopup } = useContext(PopupContext);
   const location = useLocation();
   const currentEdu = location.state?.item;
@@ -109,6 +109,23 @@ const SubSubjectPage = () => {
   //   ],
   // };
 
+  const getEduCredits = (credits) => {
+    return (
+      <div className="edu-resourse-cradit-container">
+        {credits.map((credit, index) => {
+          return (
+            <div className="edu-resourse-cradit" key={index}>
+              <div className="edu-resourse-text" style={{ color: "#7D81B2" }}>
+                {credit.role}
+              </div>
+              <div className="edu-resourse-text">{credit.user.fullName}</div>
+            </div>
+          );
+        })}
+      </div>
+    )
+  }
+
   return (
     <>
       <TopSection title={currentEdu?.subSubject?.title} navigateTo={"/"} />
@@ -192,38 +209,7 @@ const SubSubjectPage = () => {
           <div className="edu-resourse-text">
             {currentEdu.description}
           </div>
-          <div className="edu-resourse-cradit-container">
-            <div className="edu-resourse-cradit">
-              <div className="edu-resourse-text" style={{ color: "#7D81B2" }}>
-                פרויקטור
-              </div>
-              <div className="edu-resourse-text">שם פרויקטור</div>
-            </div>
-            <div className="edu-resourse-cradit">
-              <div className="edu-resourse-text" style={{ color: "#7D81B2" }}>
-                מומחה תוכן
-              </div>
-              <div className="edu-resourse-text">שם מומחה תוכן</div>
-            </div>
-            <div className="edu-resourse-cradit">
-              <div className="edu-resourse-text" style={{ color: "#7D81B2" }}>
-                עיצוב גרפי
-              </div>
-              <div className="edu-resourse-text">שם עיצוב גרפי</div>
-            </div>
-            <div className="edu-resourse-cradit">
-              <div className="edu-resourse-text" style={{ color: "#7D81B2" }}>
-                פרויקטור
-              </div>
-              <div className="edu-resourse-text">שם פיתוח</div>
-            </div>
-            <div className="edu-resourse-cradit">
-              <div className="edu-resourse-text" style={{ color: "#7D81B2" }}>
-                פרויקטור
-              </div>
-              <div className="edu-resourse-text">שם פיצוח תוכן</div>
-            </div>
-          </div>
+          {getEduCredits(currentEdu.credits)}
         </div>
         <div className="edu-resource-other-container">
           {/* <div className="edu-resource-other-users">

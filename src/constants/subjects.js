@@ -15,7 +15,7 @@ const subjects = [
         },
         {
             title:  'מבנה אמ"ן',
-            eduResourse:  recommendedEduResource.slice(3,9),
+            eduResourse:  recommendedEduResource.slice(-6),
         },
         ],
     },
@@ -27,7 +27,7 @@ const subjects = [
         subSubjects: [
         {
             title: "לימודי SQL",
-            eduResourse: recommendedEduResource.slice(7,9),
+            eduResourse: recommendedEduResource.slice(-5),
         },
         {
             title:  "מערכות מידע",
