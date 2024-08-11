@@ -86,7 +86,7 @@ const Setting = ({ nextStage }) => {
           <input
             className="stage-input"
             type="number"
-            style={{ width: '2.969vw', height: '100%' }}
+            style={{ width: '2.969vw', height: '100%', textAlign: 'center' }}
             onChange={(e) =>
               setExperationDate((prevDate) => {
                 return { ...prevDate, num: e.target.value };

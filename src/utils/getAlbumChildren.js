@@ -1,11 +1,11 @@
-import Setting from "../components/Popup/EduPreview/SettingsList";
-import EduResSection from "../components/Popup/EduPreview/EduResSection";
-import Groups from "../components/Popup/EduPreview/Groups";
+import Setting from '../components/Popup/EduPreview/SettingsList';
+import EduResSection from '../components/Popup/EduPreview/EduResSection';
+import Groups from '../components/Popup/EduPreview/Groups';
 
 const getAlbumChildren = (edu) => {
-  const settingsArray = ["   האלבום יופיע באלבומים מומלצים"];
+  const settingsArray = ['האלבום יופיע באלבומים מומלצים'];
   switch (true) {
-    case edu.type.includes("אלבום"):
+    case edu.type.includes('אלבום'):
       return [
         <EduResSection
           title="הגדרות"
@@ -16,10 +16,10 @@ const getAlbumChildren = (edu) => {
           content={
             <Groups
               groups={[
-                "לורם איפסום",
-                "לורם איפסום",
-                "לורם איפסום",
-                "לורם איפסום",
+                'לורם איפסום',
+                'לורם איפסום',
+                'לורם איפסום',
+                'לורם איפסום',
               ]}
             />
           }

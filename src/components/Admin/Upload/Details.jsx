@@ -16,7 +16,6 @@ const Details = ({ nextStage }) => {
     itemDetails.credits ? itemDetails.credits : getCredits(itemDetails?.type)
   );
   const [newCredit, setNewCredit] = useState({ role: '', user: '' });
-  const IS_SUMMARY = itemDetails.type !== 'סיכום';
 
   useEffect(() => {
     setItemDetails((prevDetails) => ({
@@ -84,61 +83,56 @@ const Details = ({ nextStage }) => {
           />
         </div>
       </div>
-      {IS_SUMMARY && (
-        <div className="stage-input-container">
-          <div className="stage-text">תיאור (אופציונלי)</div>
-          <Textarea
-            defaultValue={itemDetails['description']}
-            placeholder="כתבו כאן את תיאור התוכן שאתם מעלים..."
-            style={{ height: '16.667vh' }}
-            onChange={(e) => saveDetails({ description: e.target.value })}
+
+      <div className="stage-input-container">
+        <div className="stage-text">תיאור (אופציונלי)</div>
+        <Textarea
+          defaultValue={itemDetails['description']}
+          placeholder="כתבו כאן את תיאור התוכן שאתם מעלים..."
+          style={{ height: '16.667vh' }}
+          onChange={(e) => saveDetails({ description: e.target.value })}
+        />
+      </div>
+      <div className="stage-text big">קרדיטים</div>
+      {creditsList?.map((credit, index) => (
+        <Credit
+          key={`credit ${index}`}
+          role={credit.role}
+          defaultValue={
+            itemDetails['credits']?.[index]?.user
+              ? itemDetails['credits'][index].user
+              : credit.user
+          }
+          deleteCredit={() => deleteCredit(index)}
+          setCreditsList={setCreditsList}
+        />
+      ))}
+      {isNewCredit && (
+        <div className="stage-credit-container">
+          <input
+            className="stage-input"
+            type="text"
+            onChange={(e) => handleNewCredit({ role: e.target.value })}
+            style={{ width: '6.146vw' }}
           />
+          <input
+            className="stage-input"
+            onChange={(e) => handleNewCredit({ user: e.target.value })}
+            type="text"
+            style={{ width: '15.5vw' }}
+          />
+          <div className="stage-blue-text" onClick={addNewCredit}>
+            שמור
+          </div>
         </div>
       )}
-      {IS_SUMMARY && (
-        <>
-          <div className="stage-text big">קרדיטים</div>
-          {creditsList?.map((credit, index) => (
-            <Credit
-              key={`credit ${index}`}
-              role={credit.role}
-              defaultValue={
-                itemDetails['credits']?.[index]?.user
-                  ? itemDetails['credits'][index].user
-                  : credit.user
-              }
-              deleteCredit={() => deleteCredit(index)}
-              setCreditsList={setCreditsList}
-            />
-          ))}
-          {isNewCredit && (
-            <div className="stage-credit-container">
-              <input
-                className="stage-input"
-                type="text"
-                onChange={(e) => handleNewCredit({ role: e.target.value })}
-                style={{ width: '6.146vw' }}
-              />
-              <input
-                className="stage-input"
-                onChange={(e) => handleNewCredit({ user: e.target.value })}
-                type="text"
-                style={{ width: '15.5vw' }}
-              />
-              <div className="stage-blue-text" onClick={addNewCredit}>
-                שמור
-              </div>
-            </div>
-          )}
-          <div
-            className="add-credit-container"
-            onClick={() => setIsNewCredit(true)}
-          >
-            <img alt="blue plus" src={BluePlusIcon} />
-            <div className="stage-blue-text">הוספת קרדיט</div>
-          </div>
-        </>
-      )}
+      <div
+        className="add-credit-container"
+        onClick={() => setIsNewCredit(true)}
+      >
+        <img alt="blue plus" src={BluePlusIcon} />
+        <div className="stage-blue-text">הוספת קרדיט</div>
+      </div>
       <NextBtn
         disabled={
           !itemDetails['title'] ||
