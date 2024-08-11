@@ -38,7 +38,13 @@ const Upload = () => {
           <div key={stage.title} className="stage-white-container">
             <div className="stage-header">
               {index + 1 < currentStage ? (
-                <img src={whiteV} alt="v" />
+                <img
+                  src={whiteV}
+                  alt="v"
+                  className={
+                    stage.title === 'סוג מוצר' && 'admin-upload-horizontal-v'
+                  }
+                />
               ) : (
                 <div
                   className={`stage-number ${
