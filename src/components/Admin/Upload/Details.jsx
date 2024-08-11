@@ -1,12 +1,12 @@
-import { useState, useEffect, useContext } from "react";
-import { PopupContext } from "../../../store/popup-context";
-import Dropdown from "../../Dropdown/Dropdown";
-import Textarea from "../../Textarea/Textarea";
-import Credit from "./Credit";
-import getCredits from "../../../utils/getCredits";
-import BluePlusIcon from "../../../assets/media/Icons/bluePlus.svg";
-import Button from "../../Button/Button";
-import AddSubSubject from "../../Popup/General/AddSubSubject";
+import { useState, useEffect, useContext } from 'react';
+import { PopupContext } from '../../../store/popup-context';
+import NextBtn from './NextBtn';
+import Dropdown from '../../Dropdown/Dropdown';
+import Textarea from '../../Textarea/Textarea';
+import Credit from './Credit';
+import getCredits from '../../../utils/getCredits';
+import BluePlusIcon from '../../../assets/media/Icons/bluePlus.svg';
+import AddSubSubject from '../../Popup/General/AddSubSubject';
 
 const Details = ({ nextStage }) => {
   const { itemDetails, setItemDetails } = useContext(PopupContext);
@@ -15,7 +15,7 @@ const Details = ({ nextStage }) => {
   const [creditsList, setCreditsList] = useState(
     itemDetails.credits ? itemDetails.credits : getCredits(itemDetails?.type)
   );
-  const [newCredit, setNewCredit] = useState({ role: "", user: "" });
+  const [newCredit, setNewCredit] = useState({ role: '', user: '' });
 
   useEffect(() => {
     setItemDetails((prevDetails) => ({
@@ -54,7 +54,7 @@ const Details = ({ nextStage }) => {
         <input
           className="stage-input"
           type="text"
-          defaultValue={itemDetails["title"]}
+          defaultValue={itemDetails['title']}
           onChange={(e) => saveDetails({ title: e.target.value })}
         />
       </div>
@@ -62,31 +62,25 @@ const Details = ({ nextStage }) => {
         <div className="stage-input-container">
           <div className="stage-text">נושא</div>
           <Dropdown
-            listHeight={"25vh"}
-            defaultValue={
-              itemDetails["subject"] ? itemDetails["subject"] : "בחרו נושא"
-            }
-            list={["מבואות מודיעין", "טכנולוגיה וסייבר", "שפה", "המלצות"]}
-            style={{ width: "100%", height: "100%" }}
+            listHeight={'25vh'}
+            defaultValue="בחרו נושא"
+            list={['מבואות מודיעין', 'טכנולוגיה וסייבר', 'שפה', 'המלצות']}
+            fieldName="subject"
           />
         </div>
         <div className="stage-input-container">
           <div className="stage-text">תת נושא</div>
           <Dropdown
-            listHeight={"25vh"}
-            defaultValue={
-              itemDetails["subSubject"]
-                ? itemDetails["subSubject"]
-                : "בחרו תת נושא"
-            }
+            listHeight={'25vh'}
+            defaultValue="בחרו תת נושא"
             list={[
-              "מבואות מודיעין",
-              "טכנולוגיה וסייבר",
-              "שפה",
-              "המלצות",
-              "תת נושא חדש",
+              'מבואות מודיעין',
+              'טכנולוגיה וסייבר',
+              'שפה',
+              'המלצות',
+              'תת נושא חדש',
             ]}
-            style={{ width: "100%", height: "100%" }}
+            fieldName="subSubject"
             onNewSubClick={() => setIsSubOpen(true)}
           />
         </div>
@@ -94,9 +88,9 @@ const Details = ({ nextStage }) => {
       <div className="stage-input-container">
         <div className="stage-text">תיאור (אופציונלי)</div>
         <Textarea
-          defaultValue={itemDetails["description"]}
+          defaultValue={itemDetails['description']}
           placeholder="כתבו כאן את תיאור התוכן שאתם מעלים..."
-          style={{ height: "16.667vh" }}
+          style={{ height: '16.667vh' }}
           onChange={(e) => saveDetails({ description: e.target.value })}
         />
       </div>
@@ -106,8 +100,8 @@ const Details = ({ nextStage }) => {
           key={`credit ${index}`}
           role={credit.role}
           defaultValue={
-            itemDetails["credits"]?.[index]?.user
-              ? itemDetails["credits"][index].user
+            itemDetails['credits']?.[index]?.user
+              ? itemDetails['credits'][index].user
               : credit.user
           }
           deleteCredit={() => deleteCredit(index)}
@@ -119,14 +113,14 @@ const Details = ({ nextStage }) => {
           <input
             className="stage-input"
             type="text"
-            style={{ height: "19px", width: "5.104vw" }}
+            style={{ height: '19px', width: '5.104vw' }}
             onChange={(e) => handleNewCredit({ role: e.target.value })}
           />
           <input
             className="stage-input"
             onChange={(e) => handleNewCredit({ user: e.target.value })}
             type="text"
-            style={{ height: "19px", width: "17.5vw" }}
+            style={{ height: '19px', width: '17.5vw' }}
           />
           <div className="stage-blue-text" onClick={addNewCredit}>
             שמור
@@ -140,19 +134,14 @@ const Details = ({ nextStage }) => {
         <img alt="blue plus" src={BluePlusIcon} />
         <div className="stage-blue-text">הוספת קרדיט</div>
       </div>
-      <Button
-        text={"הבא"}
-        style={{
-          width: "6.667vw",
-          height: "4.4vh",
-          margin: "0 auto",
-        }}
+      <NextBtn
+        text={'הבא'}
         disabled={
-          !itemDetails["title"] ||
-          !itemDetails["subject"] ||
-          !itemDetails["subSubject"]
+          !itemDetails['title'] ||
+          !itemDetails['subject'] ||
+          !itemDetails['subSubject']
         }
-        onClick={nextStage}
+        nextStage={nextStage}
       />
       <AddSubSubject isOpen={isSubOpen} onClose={() => setIsSubOpen(false)} />
     </div>

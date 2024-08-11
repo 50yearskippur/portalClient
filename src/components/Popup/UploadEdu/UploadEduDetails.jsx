@@ -1,14 +1,14 @@
-import React from "react";
-import "./UploadEduDetails.css";
-import { useContext } from "react";
-import { PopupContext } from "../../../store/popup-context";
-import handlePropagation from "../../../utils/handlePropagation";
-import PopupTop from "../Edges/PopupTop";
-import PopupBottom from "../Edges/PopupBottom";
-import UploadEdu from "./UploadEdu";
-import Dropdown from "../../Dropdown/Dropdown";
-import Switch from "../../Switch/Switch";
-import SearchDropdown from "../../Search/SearchDropdown";
+import React from 'react';
+import './UploadEduDetails.css';
+import { useContext } from 'react';
+import { PopupContext } from '../../../store/popup-context';
+import handlePropagation from '../../../utils/handlePropagation';
+import PopupTop from '../Edges/PopupTop';
+import PopupBottom from '../Edges/PopupBottom';
+import UploadEdu from './UploadEdu';
+import Dropdown from '../../Dropdown/Dropdown';
+import Switch from '../../Switch/Switch';
+import SearchDropdown from '../../Search/SearchDropdown';
 
 const UploadEduDetails = () => {
   const { hidePopup } = useContext(PopupContext);
@@ -19,13 +19,13 @@ const UploadEduDetails = () => {
         <div
           className="upload-details-text-container"
           style={{
-            display: "flex",
-            flexDirection: "row",
-            gap: "5px",
-            marginBottom: "2.222vh",
+            display: 'flex',
+            flexDirection: 'row',
+            gap: '5px',
+            marginBottom: '2.222vh',
           }}
         >
-          <div className="upload-details-text" style={{ fontSize: "14px" }}>
+          <div className="upload-details-text" style={{ fontSize: '14px' }}>
             כמעט סיימנו,
           </div>
           <div className="upload-popup-text">
@@ -42,7 +42,7 @@ const UploadEduDetails = () => {
             <div className="upload-details-container">
               <div className="upload-popup-text">דרגה:</div>
               <Dropdown
-                listHeight={"25vh"}
+                listHeight={'25vh'}
                 defaultValue="בחרו דרגה"
                 list={[
                   'סמ"ר',
@@ -53,30 +53,30 @@ const UploadEduDetails = () => {
                   'רנ"ם',
                   'רנ"ג',
                   'סג"ם',
-                  "סגן",
-                  "סרן",
+                  'סגן',
+                  'סרן',
                   'רס"ן',
                   'סא"ל',
                   'אל"ם',
                   'תא"ל',
-                  "אלוף",
+                  'אלוף',
                 ]}
-                style={{ width: "100%" }}
+                fieldName="rank"
               />
             </div>
           </div>
-          <div className="upload-details-row" style={{ marginBottom: "2.5vh" }}>
+          <div className="upload-details-row" style={{ marginBottom: '2.5vh' }}>
             <div className="upload-details-container">
               <div className="upload-popup-text">מס' טלפון:</div>
               <input
                 type="text"
                 className="upload-input-field"
-                style={{ width: "45%" }}
+                style={{ width: '45%' }}
               />
             </div>
           </div>
         </div>
-        <div className="switch-container" style={{ marginBottom: "1.2vh" }}>
+        <div className="switch-container" style={{ marginBottom: '1.2vh' }}>
           <Switch defaultChecked={true} />
           <div className="upload-popup-text">
             תוכן זה יכול לשמש לקורסים נוספים
@@ -89,31 +89,31 @@ const UploadEduDetails = () => {
         <div
           className="upload-popup-line"
           style={{
-            position: "relative",
-            marginTop: "1.667vh",
-            marginBottom: "1.1vh",
+            position: 'relative',
+            marginTop: '1.667vh',
+            marginBottom: '1.1vh',
           }}
         />
         <div className="upload-details-text-container">
           <div className="upload-details-text">הוספת תיוגים</div>
           <SearchDropdown
             options={[
-              "מבואות מודיעין",
-              "מבואות קרב",
-              "טכנולוגיה וסייבר",
-              "שפה",
-              "מדעי המחשב",
-              "קיפודים",
-              "חתולים",
-              "כלבלבים",
-              "רעיונות לארוחות",
-              "מתנות",
+              'מבואות מודיעין',
+              'מבואות קרב',
+              'טכנולוגיה וסייבר',
+              'שפה',
+              'מדעי המחשב',
+              'קיפודים',
+              'חתולים',
+              'כלבלבים',
+              'רעיונות לארוחות',
+              'מתנות',
             ]}
             placeholder="בחר תיוגים"
           />
         </div>
       </div>
-      <div style={{ marginTop: "6.75vh" }}>
+      <div style={{ marginTop: '6.75vh' }}>
         <PopupBottom PreviousPopup={UploadEdu} />
       </div>
     </div>

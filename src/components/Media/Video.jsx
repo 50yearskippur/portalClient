@@ -1,6 +1,6 @@
-import { useRef, useState, useEffect } from "react";
-import "./Video.css";
-import playIcon from "../../assets/media/Icons/playIcon.png";
+import { useRef, useState, useEffect } from 'react';
+import './Video.css';
+import playIcon from '../../assets/media/Icons/playIcon.png';
 
 const Video = ({ src, style }) => {
   const videoRef = useRef(null);
@@ -11,11 +11,10 @@ const Video = ({ src, style }) => {
   useEffect(() => {
     const video = videoRef.current;
     if (video) {
-      console.log(video);
-      video.addEventListener("timeupdate", () =>
+      video.addEventListener('timeupdate', () =>
         setCurrentTime(video.currentTime)
       );
-      video.addEventListener("loadedmetadata", () =>
+      video.addEventListener('loadedmetadata', () =>
         setDuration(video.duration)
       );
     }
@@ -35,7 +34,7 @@ const Video = ({ src, style }) => {
   const formatTime = (time) => {
     const minutes = Math.floor(time / 60);
     const seconds = Math.floor(time % 60);
-    return `${minutes < 10 ? "00" : ""}:${seconds < 10 ? "0" : ""}${seconds}`;
+    return `${minutes < 10 ? '00' : ''}:${seconds < 10 ? '0' : ''}${seconds}`;
   };
 
   const handleTimelineClick = (e) => {
@@ -55,7 +54,7 @@ const Video = ({ src, style }) => {
           <div className="activation-container" onClick={activationHandler}>
             <div className="activation-shadow">
               <div className="activation-background">
-                <img className="play-icon-video" src={playIcon} />
+                <img className="play-icon-video" src={playIcon} alt="play" />
               </div>
             </div>
           </div>

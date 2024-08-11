@@ -26,7 +26,7 @@
 .stage-number {
   width: 9px;
   height: 10px;
-  padding: 10px;
+  padding: 12px;
   border-radius: 33px;
   background: var(--title, #7d81b2);
   color: var(--Main-colors-White, #fff);
@@ -68,7 +68,6 @@
 .stage-header {
   display: flex;
   align-items: center;
-  align-items: flex-start;
   gap: 16px;
 }
 

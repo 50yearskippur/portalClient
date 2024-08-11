@@ -2,8 +2,7 @@ import "./uploadStage.css";
 import { useContext } from "react";
 import { PopupContext } from "../../../store/popup-context";
 import FileUploader from "../../Media/FileUploader";
-import Button from "../../Button/Button";
-
+import NextBtn from "./NextBtn";
 const Files = ({ nextStage, fileTypes, hasCover }) => {
   const { itemDetails } = useContext(PopupContext);
 
@@ -29,15 +28,12 @@ const Files = ({ nextStage, fileTypes, hasCover }) => {
           </div>
         )}
       </div>
-      <Button
-        text={"הבא"}
-        style={{
-          width: "6.667vw",
-          height: "4.4vh",
-          margin: "0 auto",
-        }}
-        disabled={!itemDetails["files"]["media"]}
-        onClick={nextStage}
+       <NextBtn
+        text={'הבא'}
+        disabled={
+          !itemDetails["files"]["media"]
+        }
+        nextStage={nextStage}
       />
     </div>
   );
