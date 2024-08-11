@@ -6,7 +6,7 @@ import TopSection from "../components/TopSection/TopSection";
 import FileController from "../components/Media/FileController";
 import SideBar from "../components/SideBar/SideBar";
 import Rate from "../components/Rate/Rate";
-import EduResPrev from "../components/EduResPrev/EduResPrev";
+import EduResPreview from "../components/EduResPreview/EduResPreview";
 import UploadEduType from "../components/Popup/UploadEdu/UploadEduType";
 import { PopupContext } from "../store/popup-context";
 import notebookImg from "../assets/media/Icons/notebook.svg";
@@ -17,97 +17,47 @@ import clock from "../assets/media/Icons/clock.svg";
 import bluePlus from "../assets/media/Icons/bluePlus.svg";
 // delete in production
 import rabit from "../assets/img/rabit.jpg";
+import recommendedEduResource from "../constants/recommended";
 // import plusImg from "../assets/media/Icons/plus.svg";
 
-const SubSubjectPage = ({subSubject = ""}) => {
+const SubSubjectPage = () => {
   const { showPopup } = useContext(PopupContext);
   const location = useLocation();
   const currentEdu = location.state?.item;
+
   //delete in production
-  // const eduResources = {
-  //   uploadByArtch: [
-  //     {
-  //       title: "אמצעי למידה",
-  //       type: "סרטון",
-  //       date: Date("28.8.2024"),
-  //       subSubject: {
-  //         title: "זירת במבה",
-  //       },
-  //       subject: { title: "מבואות מודיעין" },
-  //       media: rabit,
-  //       mediaType: "image",
-  //       level: "רמה בסיסית",
-  //       uploadByArtech: true,
-  //     },
-  //     {
-  //       title: "אמצעי למידה",
-  //       type: "סרטון",
-  //       date: Date("28.05.2024"),
-  //       subSubject: {
-  //         title: "זירת במבה",
-  //       },
-  //       subject: { title: "מבואות מודיעין" },
-  //       media: rabit,
-  //       mediaType: "image",
-  //       level: "רמה בסיסית",
-  //       uploadByArtech: true,
-  //     },
-  //     {
-  //       title: "אמצעי למידה",
-  //       type: "סרטון",
-  //       date: Date("28.8.2024"),
-  //       subSubject: {
-  //         title: "זירת במבה",
-  //       },
-  //       subject: { title: "מבואות מודיעין" },
-  //       media: rabit,
-  //       mediaType: "image",
-  //       level: "רמה בסיסית",
-  //       uploadByArtech: true,
-  //     },
-  //   ],
-  //   uploadByOther: [
-  //     {
-  //       title: "במבה מאז ועד היום",
-  //       type: "סרטון",
-  //       date: Date("28.8.2024"),
-  //       subSubject: {
-  //         title: "זירת במבה",
-  //       },
-  //       subject: { title: "מבואות מודיעין" },
-  //       media: rabit,
-  //       mediaType: "image",
-  //       level: "מותאם לכל הרמות",
-  //       uploadByArtech: false,
-  //     },
-  //     {
-  //       title: "במבה מאז ועד היום",
-  //       type: "סרטון",
-  //       date: Date("28.8.2024"),
-  //       subSubject: {
-  //         title: "זירת במבה",
-  //       },
-  //       subject: { title: "מבואות מודיעין" },
-  //       media: rabit,
-  //       mediaType: "image",
-  //       level: "מותאם לכל הרמות",
-  //       uploadByArtech: false,
-  //     },
-  //     {
-  //       title: "במבה מאז ועד היום",
-  //       type: "סרטון",
-  //       date: Date("28.8.2024"),
-  //       subSubject: {
-  //         title: "זירת במבה",
-  //       },
-  //       subject: { title: "מבואות מודיעין" },
-  //       media: rabit,
-  //       mediaType: "image",
-  //       level: "מותאם לכל הרמות",
-  //       uploadByArtech: false,
-  //     },
-  //   ],
-  // };
+  const subSubject = {
+    _id: "66b46996cb231f6817ea15cb",
+    title: "מבואות מודיעין",
+    pageType: "אמצעי למידה",
+    type: "נושא",
+    subSubjects: [
+    {
+        title: "הכרת זירת סוריה",
+        eduResourse: recommendedEduResource.slice(-6),
+    },
+    {
+        title:  'מבנה אמ"ן',
+        eduResourse:  recommendedEduResource.slice(-6),
+    },
+    ],
+  }
+
+
+ // Iterate over each subSubject and separate the resources by admin status
+ subSubject.subSubjects.forEach(sub => {
+  const { resourcesByAdmin, resourcesByNonAdmin } = sub.eduResourse.reduce((acc, resource) => {
+    if (resource.creator.isAdmin) {
+      acc.resourcesByAdmin.push(resource);
+    } else {
+      acc.resourcesByNonAdmin.push(resource);
+    }
+    return acc;
+  }, { resourcesByAdmin: [], resourcesByNonAdmin: [] });
+
+  sub.resourcesByAdmin = resourcesByAdmin;
+  sub.resourcesByNonAdmin = resourcesByNonAdmin;
+});
 
   const getEduCredits = (credits) => {
     return (
@@ -212,13 +162,13 @@ const SubSubjectPage = ({subSubject = ""}) => {
           {getEduCredits(currentEdu.credits)}
         </div>
         <div className="edu-resource-other-container">
-          {/* <div className="edu-resource-other-users">
+          <div className="edu-resource-other-users">
             <div className="edu-resource-title">עוד דרכים ללמוד</div>
             <SideBar
               numItems={3}
               startFrom={0}
-              ItemComponent={EduResPrev}
-              data={eduResources?.uploadByArtch}
+              ItemComponent={EduResPreview}
+              data={subSubject.subSubjects[0].resourcesByAdmin}
               style={{ height: "30.4vh" }}
             />
           </div>
@@ -252,11 +202,11 @@ const SubSubjectPage = ({subSubject = ""}) => {
             <SideBar
               numItems={3}
               startFrom={0}
-              ItemComponent={EduResPrev}
-              data={eduResources?.uploadByOther}
+              ItemComponent={EduResPreview}
+              data={subSubject.subSubjects[0].resourcesByNonAdmin}
               style={{ height: "30.4vh" }}
             />
-          </div> */}
+          </div>
         </div>
       </div>
     </>

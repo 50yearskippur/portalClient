@@ -65,6 +65,7 @@ const  recommendedEduResource = [
       difficultyLevel: "מותאם לכל הרמות",
       creator: {
         fullName: "הארי סטיילס",
+        isAdmin: true
       },
       views: 1240,
       rating: [
@@ -131,6 +132,7 @@ const  recommendedEduResource = [
       difficultyLevel: "רמה גבוהה",
       creator: {
         fullName: "איש הווקה",
+        isAdmin: true
       },
       views: 190,
       rating: [
@@ -193,6 +195,7 @@ const  recommendedEduResource = [
       difficultyLevel: "קל",
       creator: {
         fullName: "טיילור סוויפט",
+        isAdmin: false
       },
       views: 1000,
       rating: [
@@ -243,6 +246,7 @@ const  recommendedEduResource = [
       difficultyLevel: "רמה בינונית",
       creator: {
         fullName: "סבא טוביה",
+        isAdmin: true,
       },
       views: 700,
       rating: [
@@ -293,6 +297,7 @@ const  recommendedEduResource = [
       difficultyLevel: "קל",
       creator: {
         fullName: "דובון אכפת לי",
+        isAdmin: true,
       },
       views: 32,
       rating: [
@@ -353,6 +358,7 @@ const  recommendedEduResource = [
       difficultyLevel: "קל",
       creator: {
         fullName: "איינשטיין",
+        isAdmin: true
       },
       views: 500,
       rating: [
@@ -413,6 +419,7 @@ const  recommendedEduResource = [
       difficultyLevel: "בינוני",
       creator: {
         fullName: "נפוליאון",
+        isAdmin: true
       },
       views: 800,
       rating: [
@@ -473,6 +480,7 @@ const  recommendedEduResource = [
       difficultyLevel: "גבוה",
       creator: {
         fullName: "ביל גייטס",
+        isAdmin: false
       },
       views: 1200,
       rating: [
@@ -533,6 +541,7 @@ const  recommendedEduResource = [
       difficultyLevel: "בינוני",
       creator: {
         fullName: "וינסנט ואן גוך",
+        isAdmin: false,
       },
       views: 900,
       rating: [
@@ -593,6 +602,7 @@ const  recommendedEduResource = [
       difficultyLevel: "גבוה",
       creator: {
         fullName: "איינשטיין",
+        isAdmin: false
       },
       views: 1500,
       rating: [
@@ -653,6 +663,7 @@ const  recommendedEduResource = [
       difficultyLevel: "בינוני",
       creator: {
         fullName: "אוסקר פיסטוריוס",
+        isAdmin: true,
       },
       views: 1100,
       rating: [
@@ -668,5 +679,6 @@ const  recommendedEduResource = [
       timestamps: new Date()
     }
   ];
+
 
   export default recommendedEduResource;
