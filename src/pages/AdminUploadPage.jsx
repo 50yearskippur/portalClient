@@ -1,5 +1,5 @@
 import './AdminUploadPage.css';
-import { useState, useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { PopupContext } from '../store/popup-context';
 import TopSection from '../components/TopSection/TopSection';
 import getUploadStages from '../utils/getUploadStages';
@@ -11,13 +11,31 @@ const Upload = () => {
   const location = useLocation();
   const pageType = location.state?.pageType;
   const [currentStage, setCurrentStage] = useState(1);
-  const { itemDetails } = useContext(PopupContext);
+  const { itemDetails, setItemDetails } = useContext(PopupContext);
+
+  useEffect(() => {
+    console.log(itemDetails);
+  }, [currentStage, itemDetails]);
 
   const nextStage = () => {
     setCurrentStage((prevStage) => prevStage + 1);
   };
 
+  // useEffect(() => {
+  //   setItemDetails((prevDetails) => ({
+  //     ...prevDetails,
+  //     currentStageTitle: stagesArray[currentStage - 1].title,
+  //   }));
+  // }, [currentStage]);
+
   const stagesArray = getUploadStages(pageType, itemDetails, nextStage);
+
+  useEffect(() => {
+    setItemDetails((prevDetails) => ({
+      ...prevDetails,
+      pageType,
+    }));
+  }, [pageType, setItemDetails]);
 
   return (
     <div className="admin-upload-container">
@@ -31,7 +49,15 @@ const Upload = () => {
           <div key={stage.title} className="stage-white-container">
             <div className="stage-header">
               {index + 1 < currentStage ? (
-                <img src={whiteV} alt="v" />
+                <img
+                  src={whiteV}
+                  alt="v"
+                  className={
+                    stage.title === 'סוג מוצר'
+                      ? 'admin-upload-horizontal-v'
+                      : undefined
+                  }
+                />
               ) : (
                 <div
                   className={`stage-number ${

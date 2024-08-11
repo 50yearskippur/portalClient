@@ -1,12 +1,12 @@
-import "./FileUploader.css";
-import { useDropzone } from "react-dropzone";
-import { useState, useContext } from "react";
-import { PopupContext } from "../../store/popup-context";
-import uploadFile from "../../assets/media/Upload/uploadFile.svg";
-import whiteEdit from "../../assets/media/Icons/whiteEdit.svg";
-import UploadError from "./UploadError";
-import FilePreview from "./FilePreview";
-import Button from "../Button/Button";
+import './FileUploader.css';
+import { useDropzone } from 'react-dropzone';
+import { useState, useContext } from 'react';
+import { PopupContext } from '../../store/popup-context';
+import uploadFile from '../../assets/media/Upload/uploadFile.svg';
+import whiteEdit from '../../assets/media/Icons/whiteEdit.svg';
+import UploadError from './UploadError';
+import FilePreview from './FilePreview';
+import Button from '../Button/Button';
 
 const FileUploader = ({ text, fileTypes, isCover = false }) => {
   const { itemDetails, setItemDetails } = useContext(PopupContext);
@@ -15,7 +15,7 @@ const FileUploader = ({ text, fileTypes, isCover = false }) => {
   const { getRootProps, getInputProps } = useDropzone({
     onDrop: (acceptedFiles) => {
       const unsupportedFiles = acceptedFiles.filter((file) => {
-        const fileExtension = file.path.split(".").pop().toUpperCase();
+        const fileExtension = file.path.split('.').pop().toUpperCase();
         return !fileTypes.includes(fileExtension);
       });
 
@@ -25,7 +25,7 @@ const FileUploader = ({ text, fileTypes, isCover = false }) => {
           ...prevDetails,
           files: {
             ...prevDetails.files,
-            [isCover ? "cover" : "media"]: acceptedFiles[0],
+            [isCover ? 'cover' : 'media']: acceptedFiles[0],
           },
         }));
         setIsInvalidType(false);
@@ -74,15 +74,15 @@ const FileUploader = ({ text, fileTypes, isCover = false }) => {
         return (
           <div className="file-upload-container" {...getRootProps()}>
             <input {...getInputProps({ multiple: true })} />
-            <img src={uploadFile} style={{ width: "4vw" }} alt="upload file" />
+            <img src={uploadFile} style={{ width: '4vw' }} alt="upload file" />
             <div className="file-upload-text-container">
               <div className="file-upload-text">{text}</div>
               {fileTypes && (
-                <div className="file-upload-type">{fileTypes?.join(" / ")}</div>
+                <div className="file-upload-type">{fileTypes?.join(' / ')}</div>
               )}
             </div>
             <Button
-              style={{ height: "3vh" }}
+              style={{ height: '3vh' }}
               onClick={() => {}}
               isWhiteButton={true}
               text="בחר קובץ"
@@ -96,28 +96,3 @@ const FileUploader = ({ text, fileTypes, isCover = false }) => {
 };
 
 export default FileUploader;
-
-// some files and covers code
-// setItemDetails((prevDetails) => {
-//   const newFileObject = {
-//     [isCover ? "cover" : "media"]: acceptedFiles[0],
-//   };
-//   let newFiles = [...prevDetails.files];
-
-//   if (
-//     newFiles.length === 0 ||
-//     newFiles[newFiles.length - 1].length === 2
-//   ) {
-//     newFiles = [...newFiles, [newFileObject]];
-//   } else {
-//     newFiles[newFiles.length - 1] = [
-//       ...newFiles[newFiles.length - 1],
-//       newFileObject,
-//     ];
-//   }
-
-//   return {
-//     ...prevDetails,
-//     files: newFiles,
-//   };
-// });

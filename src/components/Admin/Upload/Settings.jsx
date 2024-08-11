@@ -7,6 +7,7 @@ import Dropdown from '../../Dropdown/Dropdown';
 import levels from '../../../store/levels';
 // import SearchDropdown from "../../Search/SearchDropdown";
 import NextBtn from './NextBtn';
+import yellowWarning from '../../../assets/media/Icons/yellowWarning.svg';
 
 const Setting = ({ nextStage }) => {
   const { itemDetails, setItemDetails } = useContext(PopupContext);
@@ -14,6 +15,7 @@ const Setting = ({ nextStage }) => {
     num: 12,
     unit: 'חודשים',
   });
+  const isPrimaryEduResourse = 'התוצר יהיה ראשי תחת תת הנושא';
 
   const calculateFutureDate = (experationDate) => {
     const { unit, num } = experationDate;
@@ -43,6 +45,23 @@ const Setting = ({ nextStage }) => {
   return (
     <div className="stage-upload-container">
       <SettingsList settingsArray={getSettings(itemDetails?.type)} />
+      {itemDetails?.settings?.some(
+        (setting) =>
+          setting.text === isPrimaryEduResourse && setting.defaultValue
+      ) && (
+        <div className="setting-notification-container">
+          <img src={yellowWarning} alt="yellow warning" />
+          <div className="setting-notification-content">
+            <div className="setting-notification-header">
+              רק תוצר אחד יכול להיות ראשי בתת נושא
+            </div>
+            <div className="setting-notification-sub-header">
+              כרגע זה התוצר “סרטון פתיחה מבואות”. לחץ שוב על המתג, כדי להחליף
+              אותו.
+            </div>
+          </div>
+        </div>
+      )}
       <div className="stage-row-container">
         <div className="stage-input-container">
           <div className="stage-text">רמה</div>
@@ -67,7 +86,7 @@ const Setting = ({ nextStage }) => {
           <input
             className="stage-input"
             type="number"
-            style={{ width: '2.969vw', height: '10px' }}
+            style={{ width: '2.969vw', height: '100%', textAlign: 'center' }}
             onChange={(e) =>
               setExperationDate((prevDate) => {
                 return { ...prevDate, num: e.target.value };
@@ -80,13 +99,13 @@ const Setting = ({ nextStage }) => {
             }
           />
           <Dropdown
+            style={{ width: '33.3%' }}
             defaultValue={
               itemDetails['experationDateObject']?.unit
                 ? itemDetails['experationDateObject'].unit
                 : experationDate.unit
             }
             list={['ימים', 'חודשים', 'שנים']}
-            style={{ width: '33.3%', height: '25px' }}
             onSelect={(item) =>
               setExperationDate((prevDate) => {
                 return { ...prevDate, unit: item };

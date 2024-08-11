@@ -13,11 +13,7 @@ const EduType = ({ nextStage, eduTypesTitles, numberOfItemsInLine }) => {
         defaultValue={itemDetails['type']}
         numberOfItemsInLine={numberOfItemsInLine}
       />
-      <NextBtn
-        text={'הבא'}
-        disabled={!itemDetails['type']}
-        nextStage={nextStage}
-      />
+      <NextBtn disabled={!itemDetails['type']} nextStage={nextStage} />
     </div>
   );
 };

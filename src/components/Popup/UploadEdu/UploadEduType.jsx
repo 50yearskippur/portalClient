@@ -77,13 +77,11 @@ const UploadEduType = () => {
               נושא:
             </div>
             <Dropdown
-              listHeight={'20vh'}
               defaultValue="נושא ראשי"
               list={['מבואות מודיעין', 'טכנולוגיה וסייבר', 'שפה', 'המלצות']}
               fieldName="subject"
             />
             <Dropdown
-              listHeight={'20vh'}
               defaultValue="תת נושא"
               list={[
                 'מבואות מודיעין',
@@ -103,6 +101,7 @@ const UploadEduType = () => {
         <EduTypes
           eduTypesTitles={eduTypesTitles}
           defaultValue={itemDetails['type']}
+          numberOfItemsInLine={3}
         />
       </div>
       <div

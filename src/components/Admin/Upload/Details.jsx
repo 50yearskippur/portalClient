@@ -62,7 +62,6 @@ const Details = ({ nextStage }) => {
         <div className="stage-input-container">
           <div className="stage-text">נושא</div>
           <Dropdown
-            listHeight={'25vh'}
             defaultValue="בחרו נושא"
             list={['מבואות מודיעין', 'טכנולוגיה וסייבר', 'שפה', 'המלצות']}
             fieldName="subject"
@@ -71,7 +70,6 @@ const Details = ({ nextStage }) => {
         <div className="stage-input-container">
           <div className="stage-text">תת נושא</div>
           <Dropdown
-            listHeight={'25vh'}
             defaultValue="בחרו תת נושא"
             list={[
               'מבואות מודיעין',
@@ -85,6 +83,7 @@ const Details = ({ nextStage }) => {
           />
         </div>
       </div>
+
       <div className="stage-input-container">
         <div className="stage-text">תיאור (אופציונלי)</div>
         <Textarea
@@ -95,7 +94,7 @@ const Details = ({ nextStage }) => {
         />
       </div>
       <div className="stage-text big">קרדיטים</div>
-      {creditsList.map((credit, index) => (
+      {creditsList?.map((credit, index) => (
         <Credit
           key={`credit ${index}`}
           role={credit.role}
@@ -113,14 +112,14 @@ const Details = ({ nextStage }) => {
           <input
             className="stage-input"
             type="text"
-            style={{ height: '19px', width: '5.104vw' }}
             onChange={(e) => handleNewCredit({ role: e.target.value })}
+            style={{ width: '6.146vw' }}
           />
           <input
             className="stage-input"
             onChange={(e) => handleNewCredit({ user: e.target.value })}
             type="text"
-            style={{ height: '19px', width: '17.5vw' }}
+            style={{ width: '15.5vw' }}
           />
           <div className="stage-blue-text" onClick={addNewCredit}>
             שמור
@@ -135,13 +134,13 @@ const Details = ({ nextStage }) => {
         <div className="stage-blue-text">הוספת קרדיט</div>
       </div>
       <NextBtn
-        text={'הבא'}
         disabled={
           !itemDetails['title'] ||
           !itemDetails['subject'] ||
           !itemDetails['subSubject']
         }
         nextStage={nextStage}
+        current="פרטים"
       />
       <AddSubSubject isOpen={isSubOpen} onClose={() => setIsSubOpen(false)} />
     </div>
