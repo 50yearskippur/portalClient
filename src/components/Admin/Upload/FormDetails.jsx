@@ -29,7 +29,6 @@ const FormDetails = ({ nextStage }) => {
         <div className="stage-input-container">
           <div className="stage-text">נושא</div>
           <Dropdown
-            listHeight={'25vh'}
             list={['מבואות מודיעין', 'טכנולוגיה וסייבר', 'שפה', 'המלצות']}
             fieldName="subject"
           />

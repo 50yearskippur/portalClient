@@ -12,7 +12,6 @@ const Dropdown = ({
   defaultValue,
   fieldName,
   onSelect,
-  listHeight = {},
 }) => {
   const { setItemDetails, itemDetails } = useContext(PopupContext);
   const [isOpen, setIsOpen] = useState(false);
@@ -52,7 +51,7 @@ const Dropdown = ({
       onClick={() => setIsOpen((prev) => !prev)}
       style={style}
     >
-      <div className="dropdown-item-container">
+      <div className="dropdown-item-container no-hover">
         <div className="dropdown-item-warning">
           <div className="dropdown-input-text">
             {IS_NEW_SUB_SUBJECT ? itemDetails['subSubject'] : selectedItem}
@@ -66,7 +65,6 @@ const Dropdown = ({
       {isOpen && (
         <div
           className="dropdown-list"
-          style={{ height: listHeight, overflowY: 'auto', overflowX: 'hidden' }}
           onClick={() => setIsOpen((prev) => !prev)}
         >
           {list.map((item, index) => (

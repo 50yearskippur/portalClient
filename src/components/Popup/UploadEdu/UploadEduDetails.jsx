@@ -42,7 +42,6 @@ const UploadEduDetails = () => {
             <div className="upload-details-container">
               <div className="upload-popup-text">דרגה:</div>
               <Dropdown
-                listHeight={'25vh'}
                 defaultValue="בחרו דרגה"
                 list={[
                   'סמ"ר',

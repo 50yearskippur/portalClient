@@ -50,6 +50,7 @@ const Setting = ({ nextStage }) => {
             defaultValue="בחרו רמת קושי"
             list={levels}
             fieldName="level"
+            style={{ height: '3.241vh' }}
           />
         </div>
         <div className="stage-input-container">
@@ -58,6 +59,7 @@ const Setting = ({ nextStage }) => {
             defaultValue="20 דק'"
             list={["20 דק'", "30 דק'", "45 דק'", "60+ דק'"]}
             fieldName="estimatedTime"
+            style={{ height: '3.241vh' }}
           />
         </div>
       </div>
@@ -67,7 +69,7 @@ const Setting = ({ nextStage }) => {
           <input
             className="stage-input"
             type="number"
-            style={{ width: '2.969vw', height: '10px' }}
+            style={{ width: '2.969vw' }}
             onChange={(e) =>
               setExperationDate((prevDate) => {
                 return { ...prevDate, num: e.target.value };
@@ -80,13 +82,13 @@ const Setting = ({ nextStage }) => {
             }
           />
           <Dropdown
+            style={{ height: '3.241vh', width: '33.3%' }}
             defaultValue={
               itemDetails['experationDateObject']?.unit
                 ? itemDetails['experationDateObject'].unit
                 : experationDate.unit
             }
             list={['ימים', 'חודשים', 'שנים']}
-            style={{ width: '33.3%', height: '25px' }}
             onSelect={(item) =>
               setExperationDate((prevDate) => {
                 return { ...prevDate, unit: item };

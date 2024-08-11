@@ -37,7 +37,6 @@
 }
 
 .stage-input {
-  height: 3.704vh;
   padding: 8px 10px;
   border-radius: 4px;
   border: 1px solid var(--filed, #f2f4fa);
