@@ -6,6 +6,7 @@ const ListTemplate = ({
   selectedSubject,
   setSelectedSubject,
 }) => {
+
   return (
     <div className="list-template-container">
       {subjects?.map((subject, index) => {

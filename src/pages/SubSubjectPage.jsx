@@ -23,9 +23,6 @@ const SubSubjectPage = () => {
   const { showPopup } = useContext(PopupContext);
   const location = useLocation();
   const currentEdu = location.state?.item;
-
-console.log(currentEdu)
-
   //delete in production
   // const eduResources = {
   //   uploadByArtch: [
@@ -117,7 +114,7 @@ console.log(currentEdu)
       <TopSection title={currentEdu?.subSubject?.title} navigateTo={"/"} />
       <div className="page-container edu-resource-page">
         <div className="edu-resource-container">
-          <FileController item={currentEdu.files[0]} style={{ height: "54.1vh" }} />
+          <FileController item={currentEdu.files} style={{ height: "54.1vh" }} />
           <div className="edu-resource-title-container">
             <div className="edu-resource-info-container">
               <img

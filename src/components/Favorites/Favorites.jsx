@@ -4,6 +4,8 @@ import FavotireEdu from "../ItemsComponents/FavoriteEdu";
 import { useState, useEffect } from "react";
 //delete in production
 import rabit from "../../assets/img/rabit.jpg";
+import recommendedEduResource from "../../constants/recommended";
+
 
 const Favorits = () => {
   const [favoritesData, setFavoritesData] = useState([]);
@@ -14,125 +16,7 @@ const Favorits = () => {
 
   const getFavorites = () => {
     // After connect to the api, change to get favorite from tha api
-    setFavoritesData([
-      {
-        title: "ראשוןן",
-        type: "משחק",
-        subSubject: {
-          title: "זירת דוגמה",
-        },
-        media: rabit,
-        mediaType: "image",
-      },
-      {
-        title: "קיפודים עם סלים 1",
-        type: "משחק",
-        subSubject: {
-          title: "זירת דוגמה",
-        },
-        media: rabit,
-        mediaType: "image",
-      },
-      {
-        title: "קיפודים עם סלים 2",
-        type: "משחק",
-        subSubject: {
-          title: "זירת דוגמה",
-        },
-        media: rabit,
-        mediaType: "image",
-      },
-      {
-        title: "קיפודים עם סלים 3",
-        type: "משחק",
-        subSubject: {
-          title: "זירת דוגמה",
-        },
-        media: rabit,
-        mediaType: "image",
-      },
-      {
-        title: "קיפודים עם סלים 4",
-        type: "משחק",
-        subSubject: {
-          title: "זירת דוגמה",
-        },
-        media: rabit,
-        mediaType: "image",
-      },
-      {
-        title: "קיפודים עם סלים 5",
-        type: "משחק",
-        subSubject: {
-          title: "זירת דוגמה",
-        },
-        media: rabit,
-        mediaType: "image",
-      },
-      {
-        title: "קיפודים עם סלים 6",
-        type: "משחק",
-        subSubject: {
-          title: "זירת דוגמה",
-        },
-        media: rabit,
-        mediaType: "image",
-      },
-      {
-        title: "קיפודים עם סלים 7",
-        type: "משחק",
-        subSubject: {
-          title: "זירת דוגמה",
-        },
-        media: rabit,
-        mediaType: "image",
-      },
-      {
-        title: "קיפודים עם סלים 8",
-        type: "משחק",
-        subSubject: {
-          title: "זירת דוגמה",
-        },
-        media: rabit,
-        mediaType: "image",
-      },
-      {
-        title: "קיפודים עם סלים 9",
-        type: "משחק",
-        subSubject: {
-          title: "זירת דוגמה",
-        },
-        media: rabit,
-        mediaType: "image",
-      },
-      {
-        title: "קיפודים עם סלים 10",
-        type: "משחק",
-        subSubject: {
-          title: "זירת דוגמה",
-        },
-        media: rabit,
-        mediaType: "image",
-      },
-      {
-        title: "קיפודים עם סלים 11",
-        type: "משחק",
-        subSubject: {
-          title: "זירת דוגמה",
-        },
-        media: rabit,
-        mediaType: "image",
-      },
-      {
-        title: "קיפודים עם סלים 12",
-        type: "משחק",
-        subSubject: {
-          title: "זירת דוגמה",
-        },
-        media: rabit,
-        mediaType: "image",
-      },
-    ]);
+    setFavoritesData(recommendedEduResource);
   };
 
   return (
@@ -140,7 +24,8 @@ const Favorits = () => {
       style={{ width: "100%" }}
       ItemComponent={FavotireEdu}
       data={favoritesData}
-      gapSize={2}
+      gapRowSizeInPx={20}
+      gapColumnSizeInPercentage={2}
       numberOfItemsInLine={3}
     />
   );

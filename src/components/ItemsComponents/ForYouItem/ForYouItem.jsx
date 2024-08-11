@@ -15,7 +15,7 @@ const ForYouItem = ({ item }) => {
           navigate("/subSubject", {
             state: {
               item: {
-                media: rabit,
+                files: { media: { media: rabit, mediaType: "image" } },
                 mediaType: "image",
                 subSubject: { title: "זירת דוגמה" },
                 title: "קיפודים עם סלים",
@@ -26,7 +26,7 @@ const ForYouItem = ({ item }) => {
         }
       >
         <FileController
-          item={{ media: rabit, mediaType: "image" }}
+          item={item.eduResourse[0].files}
           style={{ width: "8.3vw", borderRadius: "6px" }}
         />
         <div className="for-you-item-content">
@@ -35,11 +35,11 @@ const ForYouItem = ({ item }) => {
         </div>
       </div>
       <div className="for-you-item-edu-container">
-        {item.eduResourse.slice(0, 3).map((edu, index) => (
+        {item.eduResourse.slice(1, 4).map((edu, index) => (
           <div className="for-you-item-edu-img" key={`edu${index}`}>
             <FileController
               key={`edu${index}`}
-              item={{ media: rabit, mediaType: "image" }}
+              item={edu.files}
               style={{
                 width: "4.2vw",
                 height: "4.8vh",

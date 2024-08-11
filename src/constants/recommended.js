@@ -13,7 +13,7 @@ const  recommendedEduResource = [
       unit: '8200',
       type: "לומדה",
       estimatedTime: "20",
-      files: [
+      files: 
         {
           media: {
             file: sea,
@@ -21,7 +21,6 @@ const  recommendedEduResource = [
             MimeType: 'image',
           },
         },
-      ],
       subject: {
         title: "טבע",
         description: "תיאור תיאור",
@@ -80,7 +79,7 @@ const  recommendedEduResource = [
       unit: 'בה"ד 15',
       type: "סרטון",
       estimatedTime: "2",
-      files: [
+      files:
         {
           media: {
             file: video,
@@ -88,7 +87,6 @@ const  recommendedEduResource = [
             MimeType: 'mp4',
           },
         },
-      ],
       subject: {
         title: "טבע",
         description: "תיאור תיאור",
@@ -147,7 +145,7 @@ const  recommendedEduResource = [
       unit: 'בה"ד 15',
       type: "לומדה",
       estimatedTime: "40",
-      files: [
+      files:
         {
           media: {
             file: rabit,
@@ -155,7 +153,6 @@ const  recommendedEduResource = [
             MimeType: 'image',
           },
         },
-      ],
       subject: {
         title: "חלל",
       },
@@ -210,7 +207,7 @@ const  recommendedEduResource = [
       unit: '8200',
       type: "לומדה",
       estimatedTime: "30",
-      files: [
+      files:
         {
           media: {
             file: robot,
@@ -218,7 +215,6 @@ const  recommendedEduResource = [
             MimeType: 'image',
           },
         },
-      ],
       subject: {
         title: "טכנולוגיה",
       },
@@ -261,7 +257,7 @@ const  recommendedEduResource = [
       unit: '81',
       type: "pdf",
       estimatedTime: "10",
-      files: [
+      files:
         {
           media: {
             file: bamba,
@@ -269,7 +265,6 @@ const  recommendedEduResource = [
             MimeType: 'image',
           },
         },
-      ],
       subject: {
         title: "חלבייה",
       },

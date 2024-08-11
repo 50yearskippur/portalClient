@@ -16,7 +16,7 @@ const RecommendedItem = ({
       onClick={() => navigate("/subSubject", { state: { item } })}
     >
       <FileController
-        item={item.files[0]}
+        item={item.files}
         style={{ ...style, borderRadius: "10px"}}
         gradientStyle={{ height: "65%", top: "35%" }}
       />

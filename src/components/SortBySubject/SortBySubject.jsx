@@ -11,6 +11,7 @@ const SortBySubject = ({
   numberOfItemsInLine = 1,
   getDetailsFromJSON = false,
 }) => {
+
   const [selectedSubject, setSelectedSubject] = useState(subjects[0]);
   const [subSubjects, setSubSubjects] = useState(subjects[0].subSubjects);
 

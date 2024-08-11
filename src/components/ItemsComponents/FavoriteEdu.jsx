@@ -19,7 +19,7 @@ const FavoriteEdu = ({ item, defaultHeart = true }) => {
       onClick={() => navigate("/subSubject", { state: { item } })}
     >
       <FileController
-        item={item}
+        item={item.files}
         style={{ borderRadius: "8.647px", height: "25.4vh" }}
       />
       <div className="favorite-edu-info">
