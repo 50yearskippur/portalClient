@@ -87,3 +87,34 @@
   display: flex;
   gap: 8px;
 }
+
+.setting-notification-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.setting-notification-container {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  border-radius: 6px;
+  border: 1px solid #ffd582;
+  background: #fffbeb;
+  padding: 12px 12px 17px 20px;
+}
+
+.setting-notification-header {
+  color: #da8b03;
+  text-align: right;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.setting-notification-sub-header {
+  color: #987a5f;
+  text-align: right;
+  font-feature-settings: 'salt' on;
+  font-size: 14px;
+  font-weight: 400;
+}
