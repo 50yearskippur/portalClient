@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { PopupContext } from '../../../store/popup-context';
 import Dropdown from '../../Dropdown/Dropdown';
 import SettingsList from '../../Popup/EduPreview/SettingsList';
-import Button from '../../Button/Button';
+import NextBtn from './NextBtn';
 
 const FormDetails = ({ nextStage }) => {
   const { itemDetails, setItemDetails } = useContext(PopupContext);
@@ -39,15 +39,10 @@ const FormDetails = ({ nextStage }) => {
           { text: 'הטופס יופיע טפסים נפוצים', defaultValue: false },
         ]}
       />
-      <Button
-        text={'הבא'}
-        style={{
-          width: '6.667vw',
-          height: '4.4vh',
-          margin: '0 auto',
-        }}
-        disabled={!itemDetails['files']['media']}
-        onClick={nextStage}
+      <NextBtn
+        disabled={!itemDetails['title'] || !itemDetails['subject']}
+        nextStage={nextStage}
+        current="פרטים"
       />
     </div>
   );

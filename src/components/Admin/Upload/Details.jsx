@@ -95,7 +95,7 @@ const Details = ({ nextStage }) => {
         />
       </div>
       <div className="stage-text big">קרדיטים</div>
-      {creditsList.map((credit, index) => (
+      {creditsList?.map((credit, index) => (
         <Credit
           key={`credit ${index}`}
           role={credit.role}
@@ -135,13 +135,13 @@ const Details = ({ nextStage }) => {
         <div className="stage-blue-text">הוספת קרדיט</div>
       </div>
       <NextBtn
-        text={'הבא'}
         disabled={
           !itemDetails['title'] ||
           !itemDetails['subject'] ||
           !itemDetails['subSubject']
         }
         nextStage={nextStage}
+        current="פרטים"
       />
       <AddSubSubject isOpen={isSubOpen} onClose={() => setIsSubOpen(false)} />
     </div>
