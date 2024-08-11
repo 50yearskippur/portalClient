@@ -27,7 +27,7 @@ const ForYouItem = ({ item }) => {
       >
         <FileController
           item={item.eduResourse[0].files}
-          style={{ width: "8.3vw", borderRadius: "6px" }}
+          style={{ width: "8.3vw", borderRadius: "6px", height: "9.6vh" }}
         />
         <div className="for-you-item-content">
           <div className="for-you-item-title">{item.title}</div>

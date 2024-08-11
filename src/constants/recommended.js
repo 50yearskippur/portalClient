@@ -4,6 +4,12 @@ import video from "../assets/img/video.mp4";
 import sea from "../assets/img/sea.jpg";
 import robot from "../assets/img/robot.jpg";
 import bamba from "../assets/img/bamba.jpg";
+import flowers from "../assets/img/flowers.jfif";
+import PT from "../assets/img/PT.jfif";
+import snow from  "../assets/img/snow.jfif";
+import tiger from "../assets/img/tiger.jfif";
+import zebra from "../assets/img/zebra.jpg";
+import sports from "../assets/img/sports.jfif";
 
 //delete in production
 const  recommendedEduResource = [
@@ -301,6 +307,366 @@ const  recommendedEduResource = [
       ],
      timestamps: new Date()
     },
+    {
+      title: "כוחות הטבע",
+      description: "למדו על כוחות הטבע וכיצד הם משפיעים על העולם שסביבנו",
+      unit: 'בה"ד 10',
+      type: "לומדה",
+      estimatedTime: "15",
+      files:
+        {
+          media: {
+            file: flowers,
+            fileName: 'flowers',
+            MimeType: 'image',
+          },
+        },
+      subject: {
+        title: "פיזיקה",
+        description: "תיאור תיאור",
+        eduResource: [],
+      },
+      subSubject: {
+        title: "כוחות טבעיים",
+        description: "תיאור תיאור",
+        eduResource: [],
+      },
+      credits: [
+        {
+          role: "מומחה תוכן",
+          user: {
+            fullName: "אליס פיזיקה",
+          },
+        },
+        {
+          role: "עיצוב גרפי",
+          user: {
+            fullName: "בוב גרף",
+          },
+        },
+      ],
+      settings: [
+        {
+          isHeadphonesNeeded: false,
+        },
+      ],
+      difficultyLevel: "קל",
+      creator: {
+        fullName: "איינשטיין",
+      },
+      views: 500,
+      rating: [
+        {
+          userId: "123456",
+          rate: 4,
+        },
+        {
+          userId: "123456",
+          rate: 5,
+        },
+      ],
+      timestamps: new Date()
+    },
+    {
+      title: "היסטוריה של עולם",
+      description: "למדו על היסטוריה של העולם והאירועים המרכזיים בה",
+      unit: 'בה"ד 20',
+      type: "לומדה",
+      estimatedTime: "25",
+      files:
+        {
+          media: {
+            file: PT,
+            fileName: 'PT',
+            MimeType: 'image',
+          },
+        },
+      subject: {
+        title: "היסטוריה",
+        description: "תיאור תיאור",
+        eduResource: [],
+      },
+      subSubject: {
+        title: "אירועים מרכזיים",
+        description: "תיאור תיאור",
+        eduResource: [],
+      },
+      credits: [
+        {
+          role: "מומחה תוכן",
+          user: {
+            fullName: "היסטוריון יוסי",
+          },
+        },
+        {
+          role: "פרויקטור",
+          user: {
+            fullName: "שרה היסטוריה",
+          },
+        },
+      ],
+      settings: [
+        {
+          isHeadphonesNeeded: false,
+        },
+      ],
+      difficultyLevel: "בינוני",
+      creator: {
+        fullName: "נפוליאון",
+      },
+      views: 800,
+      rating: [
+        {
+          userId: "123456",
+          rate: 3,
+        },
+        {
+          userId: "123456",
+          rate: 4,
+        },
+      ],
+      timestamps: new Date()
+    },
+    {
+      title: "מדעי המחשב",
+      description: "למדו על מדעי המחשב והטכנולוגיות המתקדמות בתחום",
+      unit: 'בה"ד 30',
+      type: "לומדה",
+      estimatedTime: "35",
+      files:
+        {
+          media: {
+            file: snow,
+            fileName: 'snow',
+            MimeType: 'image',
+          },
+        },
+      subject: {
+        title: "מדעי המחשב",
+        description: "תיאור תיאור",
+        eduResource: [],
+      },
+      subSubject: {
+        title: "תכנות",
+        description: "תיאור תיאור",
+        eduResource: [],
+      },
+      credits: [
+        {
+          role: "מומחה תוכן",
+          user: {
+            fullName: "ג'ון תכנות",
+          },
+        },
+        {
+          role: "עיצוב גרפי",
+          user: {
+            fullName: "לילי גרף",
+          },
+        },
+      ],
+      settings: [
+        {
+          isHeadphonesNeeded: true,
+        },
+      ],
+      difficultyLevel: "גבוה",
+      creator: {
+        fullName: "ביל גייטס",
+      },
+      views: 1200,
+      rating: [
+        {
+          userId: "123456",
+          rate: 5,
+        },
+        {
+          userId: "123456",
+          rate: 4,
+        },
+      ],
+      timestamps: new Date()
+    },
+    {
+      title: "אמנות",
+      description: "למדו על אמנות ויצירה והשפעתה על החברה",
+      unit: 'בה"ד 25',
+      type: "לומדה",
+      estimatedTime: "30",
+      files:
+        {
+          media: {
+            file: tiger,
+            fileName: 'tiger',
+            MimeType: 'image',
+          },
+        },
+      subject: {
+        title: "אמנות",
+        description: "תיאור תיאור",
+        eduResource: [],
+      },
+      subSubject: {
+        title: "ציור",
+        description: "תיאור תיאור",
+        eduResource: [],
+      },
+      credits: [
+        {
+          role: "מומחה תוכן",
+          user: {
+            fullName: "פיקאסו",
+          },
+        },
+        {
+          role: "עיצוב גרפי",
+          user: {
+            fullName: "מונה ליזה",
+          },
+        },
+      ],
+      settings: [
+        {
+          isHeadphonesNeeded: false,
+        },
+      ],
+      difficultyLevel: "בינוני",
+      creator: {
+        fullName: "וינסנט ואן גוך",
+      },
+      views: 900,
+      rating: [
+        {
+          userId: "123456",
+          rate: 4,
+        },
+        {
+          userId: "123456",
+          rate: 3,
+        },
+      ],
+      timestamps: new Date()
+    },
+    {
+      title: "מדעי הטבע",
+      description: "למדו על מדעי הטבע והתהליכים הטבעיים בעולם",
+      unit: 'בה"ד 40',
+      type: "לומדה",
+      estimatedTime: "45",
+      files:
+        {
+          media: {
+            file: zebra,
+            fileName: 'zebra',
+            MimeType: 'image',
+          },
+        },
+      subject: {
+        title: "מדעי הטבע",
+        description: "תיאור תיאור",
+        eduResource: [],
+      },
+      subSubject: {
+        title: "תהליכים טבעיים",
+        description: "תיאור תיאור",
+        eduResource: [],
+      },
+      credits: [
+        {
+          role: "מומחה תוכן",
+          user: {
+            fullName: "ניוטון",
+          },
+        },
+        {
+          role: "עיצוב גרפי",
+          user: {
+            fullName: "גלילאו",
+          },
+        },
+      ],
+      settings: [
+        {
+          isHeadphonesNeeded: false,
+        },
+      ],
+      difficultyLevel: "גבוה",
+      creator: {
+        fullName: "איינשטיין",
+      },
+      views: 1500,
+      rating: [
+        {
+          userId: "123456",
+          rate: 5,
+        },
+        {
+          userId: "123456",
+          rate: 4,
+        },
+      ],
+      timestamps: new Date()
+    },
+    {
+      title: "ספורט",
+      description: "למדו על ספורט ופעילות גופנית והשפעתן על הבריאות",
+      unit: 'בה"ד 35',
+      type: "לומדה",
+      estimatedTime: "40",
+      files:
+        {
+          media: {
+            file: sports,
+            fileName: 'sports',
+            MimeType: 'image',
+          },
+        },
+      subject: {
+        title: "גוף ונפש",
+        description: "תיאור תיאור",
+        eduResource: [],
+      },
+      subSubject: {
+        title: "ספורט",
+        description: "תיאור תיאור",
+        eduResource: [],
+      },
+      credits: [
+        {
+          role: "מומחה תוכן",
+          user: {
+            fullName: "מייקל פילס",
+          },
+        },
+        {
+          role: "מאמן",
+          user: {
+            fullName: "כריס רונאלדו",
+          },
+        },
+      ],
+      settings: [
+        {
+          isHeadphonesNeeded: false,
+        },
+      ],
+      difficultyLevel: "בינוני",
+      creator: {
+        fullName: "אוסקר פיסטוריוס",
+      },
+      views: 1100,
+      rating: [
+        {
+          userId: "123456",
+          rate: 4,
+        },
+        {
+          userId: "123456",
+          rate: 3,
+        },
+      ],
+      timestamps: new Date()
+    }
   ];
 
   export default recommendedEduResource;
