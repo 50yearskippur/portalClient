@@ -16,7 +16,7 @@ import {
   addPermissionsIcon,
   addPermissionsIconSelected,
   telephoneIcon
-} from "../../assets/icons";
+} from "../../assets/media/Navbar";
 import "./NavBar.css";
 
 // import designTemplatesIcon from "../../assets/media/Navbar/designTemplates.svg";
