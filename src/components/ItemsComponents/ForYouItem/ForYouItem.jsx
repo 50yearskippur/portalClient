@@ -1,8 +1,7 @@
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import FileController from "../../Media/FileController";
 import "./ForYouItem.css";
-import rabit from "../../../assets/img/rabit.jpg";
-import React, { useEffect } from "react";
 
 const ForYouItem = ({ item }) => {
   const navigate = useNavigate();
@@ -11,19 +10,13 @@ const ForYouItem = ({ item }) => {
     <div className="for-you-item-container">
       <div
         className="for-you-item-details"
-        onClick={() =>
+        onClick={() => {
           navigate("/subSubject", {
-            // state: {
-            //   item: {
-            //     files: { media: { media: rabit, mediaType: "image" } },
-            //     mediaType: "image",
-            //     subSubject: { title: "זירת דוגמה" },
-            //     title: "קיפודים עם סלים",
-            //     type: "משחק",
-            //   },
-            // },
-          })
-        }
+            state: {
+              item: item.eduResourse[0],
+            },
+          });
+        }}
       >
         <FileController
           item={item.eduResourse[0].files}

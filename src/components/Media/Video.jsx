@@ -11,7 +11,6 @@ const Video = ({ src, style }) => {
   useEffect(() => {
     const video = videoRef.current;
     if (video) {
-      console.log(video);
       video.addEventListener("timeupdate", () =>
         setCurrentTime(video.currentTime)
       );

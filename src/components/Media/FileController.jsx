@@ -8,7 +8,7 @@ import { download } from "../../utils/download";
 const FileController = ({
   item,
   style = {},
-  onClick = () => {},
+  onClick,
   gradientStyle = {},
   showOnHover = false,
 }) => {
@@ -22,9 +22,11 @@ const FileController = ({
       className="file-container"
       style={style}
       onClick={() => {
-        onClick();
-        setDisplay(item.media);
-        setFileType(item.mediaType);
+        if (onClick) {
+          onClick();
+          setDisplay(item.media);
+          setFileType(item.mediaType);
+        }
       }}
     >
       {getHtml(display, fileType, style)}
