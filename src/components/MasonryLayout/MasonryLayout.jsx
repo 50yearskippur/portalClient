@@ -9,23 +9,23 @@ const MasonryLayout = ({ data }) => {
   const { showPopup } = useContext(PopupContext);
   return (
     <div className="masonry-container">
-      {data.map((item, index) => (
+      {data.files.map((image, index) => (
         <div key={`masonry item ${index}`} style={{ marginBottom: "2.222vh" }}>
           <FileController
             showOnHover={true}
             key={`masonry${index}`}
-            item={item}
+            item={image}
             onClick={() =>
               showPopup(
                 <MediaPopup
                   children={
                     <img
                       className="masonry-item-popup"
-                      src={item.media}
-                      alt="the full size item"
+                      src={image.media.file}
+                      alt="the full size image"
                     />
                   }
-                  item={item}
+                  item={image}
                 />
               )
             }

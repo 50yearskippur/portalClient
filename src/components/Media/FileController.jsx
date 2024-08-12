@@ -34,7 +34,7 @@ const FileController = ({
       {showOnHover && (
         <div className="file-overlay">
           <img
-            onClick={() => download(item)}
+            onClick={() => download(item.media)}
             style={{ marginLeft: "1.778vw" }}
             src={downloadIconHover}
             alt="download icon"

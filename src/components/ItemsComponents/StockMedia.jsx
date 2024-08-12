@@ -5,10 +5,11 @@ import { useNavigate } from "react-router-dom";
 
 const StockMedia = ({ item }) => {
   const navigate = useNavigate();
+  
   return (
     <div className="stock-media-container">
       <FileController
-        item={item}
+        item={item.files[0]}
         onClick={() => navigate("/mediaAlbum")}
         style={{ height: "7.5vh", borderRadius: "4px" }}
         gradientStyle={{ background: "#18132B99", height: "100%" }}
