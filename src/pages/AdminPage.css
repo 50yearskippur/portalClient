@@ -14,18 +14,23 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  width: 9.531vw;
+  position: relative;
 }
 
 .admin-upload-types-dropdown {
   display: flex;
   flex-direction: column;
+  width: 9.531vw;
   background-color: var(--Main-colors-white, #fff);
   border-radius: 4px;
   padding: 4px 0;
+  position: absolute;
+  top: 60px;
 }
 
 .admin-upload-types-item {
+  display: flex;
+  gap: 8px;
   color: #4c4c66;
   padding: 10px 12px;
   cursor: pointer;
@@ -72,7 +77,7 @@
 .admin-upload-btn {
   display: flex;
   align-items: center;
-  width: 4.948vw;
+  width: 7.7vw;
   padding: 12px 24px;
   background-color: #3259ff;
   font-size: 16px;

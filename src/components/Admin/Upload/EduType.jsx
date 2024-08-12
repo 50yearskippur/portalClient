@@ -1,8 +1,8 @@
-import "./uploadStage.css";
-import { useContext } from "react";
-import { PopupContext } from "../../../store/popup-context";
-import EduTypes from "../../EduTypes/EduTypes";
-import Button from "../../Button/Button";
+import './uploadStage.css';
+import { useContext } from 'react';
+import { PopupContext } from '../../../store/popup-context';
+import EduTypes from '../../EduTypes/EduTypes';
+import NextBtn from './NextBtn';
 
 const EduType = ({ nextStage, eduTypesTitles, numberOfItemsInLine }) => {
   const { itemDetails } = useContext(PopupContext);
@@ -10,19 +10,10 @@ const EduType = ({ nextStage, eduTypesTitles, numberOfItemsInLine }) => {
     <div className="stage-upload-container">
       <EduTypes
         eduTypesTitles={eduTypesTitles}
-        defaultValue={itemDetails["type"]}
+        defaultValue={itemDetails['type']}
         numberOfItemsInLine={numberOfItemsInLine}
       />
-      <Button
-        text={"הבא"}
-        style={{
-          width: "6.667vw",
-          height: "4.4vh",
-          margin: "0 auto",
-        }}
-        disabled={!itemDetails["type"]}
-        onClick={nextStage}
-      />
+      <NextBtn disabled={!itemDetails['type']} nextStage={nextStage} />
     </div>
   );
 };

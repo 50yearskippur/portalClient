@@ -7,92 +7,92 @@ import usa from "../assets/img/usa.png";
 import Search from "../components/Search/Search";
 
 const MediaPage = () => {
-  const data = [
-    {
-      title: "צבא",
-      type: "חיה",
-      subSubject: {
-        title: "יונקים",
-      },
-      media: usa,
-      mediaType: "image",
-    },
-    {
-      title: "ביטחון מידע",
-      type: "חיה",
-      subSubject: {
-        title: "יונקים",
-      },
-      media: usa,
-      mediaType: "image",
-    },
-    {
-      title: "תשתיות ובינוי",
-      type: "חיה",
-      subSubject: {
-        title: "יונקים",
-      },
-      media: rabit,
-      mediaType: "image",
-    },
-    {
-      title: "הדרכה",
-      type: "חיה",
-      subSubject: {
-        title: "יונקים",
-      },
-      media: rabit,
-      mediaType: "image",
-    },
-    {
-      title: "סייבר וטכנולוגיה",
-      type: "חיה",
-      subSubject: {
-        title: "יונקים",
-      },
-      media: rabit,
-      mediaType: "image",
-    },
-    {
-      title: "פיקוד ומנהיגות (ערכים)",
-      type: "חיה",
-      subSubject: {
-        title: "יונקים",
-      },
-      media: rabit,
-      mediaType: "image",
-    },
-    {
-      title: "גיאוגרפיה, שטח ושדה",
-      type: "חיה",
-      subSubject: {
-        title: "יונקים",
-      },
-      media: rabit,
-      mediaType: "image",
-    },
-    {
-      title: "שונות",
-      type: "חיה",
-      subSubject: {
-        title: "יונקים",
-      },
-      media: rabit,
-      mediaType: "image",
-    },
-  ];
+  // const data = [
+  //   {
+  //     title: "צבא",
+  //     type: "חיה",
+  //     subSubject: {
+  //       title: "יונקים",
+  //     },
+  //     media: usa,
+  //     mediaType: "image",
+  //   },
+  //   {
+  //     title: "ביטחון מידע",
+  //     type: "חיה",
+  //     subSubject: {
+  //       title: "יונקים",
+  //     },
+  //     media: usa,
+  //     mediaType: "image",
+  //   },
+  //   {
+  //     title: "תשתיות ובינוי",
+  //     type: "חיה",
+  //     subSubject: {
+  //       title: "יונקים",
+  //     },
+  //     media: rabit,
+  //     mediaType: "image",
+  //   },
+  //   {
+  //     title: "הדרכה",
+  //     type: "חיה",
+  //     subSubject: {
+  //       title: "יונקים",
+  //     },
+  //     media: rabit,
+  //     mediaType: "image",
+  //   },
+  //   {
+  //     title: "סייבר וטכנולוגיה",
+  //     type: "חיה",
+  //     subSubject: {
+  //       title: "יונקים",
+  //     },
+  //     media: rabit,
+  //     mediaType: "image",
+  //   },
+  //   {
+  //     title: "פיקוד ומנהיגות (ערכים)",
+  //     type: "חיה",
+  //     subSubject: {
+  //       title: "יונקים",
+  //     },
+  //     media: rabit,
+  //     mediaType: "image",
+  //   },
+  //   {
+  //     title: "גיאוגרפיה, שטח ושדה",
+  //     type: "חיה",
+  //     subSubject: {
+  //       title: "יונקים",
+  //     },
+  //     media: rabit,
+  //     mediaType: "image",
+  //   },
+  //   {
+  //     title: "שונות",
+  //     type: "חיה",
+  //     subSubject: {
+  //       title: "יונקים",
+  //     },
+  //     media: rabit,
+  //     mediaType: "image",
+  //   },
+  // ];
   return (
     <div className="page-container">
       <div className="header" style={{ marginBottom: "4.1vh" }}>
         תמונות סטוק
       </div>
-      <PageTemplate
+      {/* <PageTemplate
         ItemComponent={StockMedia}
         numberOfItemsInLine={4}
         data={data}
         gapRowSizeInPx={32}
         gapColumnSizeInPercentage={2}
-      />
+      /> */}
       <div
         style={{
           display: "flex",
@@ -108,6 +108,7 @@ const MediaPage = () => {
           מדיה
         </div>
         <Search
+        placeholder={"חיפוש חופשי"}
           style={{
             width: "21.178vw",
             height: "3.369vh",
@@ -116,13 +117,13 @@ const MediaPage = () => {
           }}
         />
       </div>
-      <PageTemplate
+      {/* <PageTemplate
         ItemComponent={CollageMedia}
         numberOfItemsInLine={4}
         data={data}
         gapRowSizeInPx={25.681}
         gapColumnSizeInPercentage={3.2}
-      />
+      /> */}
     </div>
   );
 };

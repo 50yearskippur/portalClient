@@ -1,27 +1,37 @@
+import React, { useState } from 'react';
+import { FaStar } from 'react-icons/fa';
 import "./Rate.css";
-import { useState } from "react";
-import Star from "./Star";
-import React from 'react';
 
-const Rate = ({ style, clickable, numberOfStars = 5 }) => {
-  const [starsIndex, setStarsIndex] = useState(0);
-  const onStarClick = (index) => {
-    setStarsIndex(index);
-  };
+const Rate = ({ style, clickable = true, numberOfStars = 5 }) => {
+  const [rating, setRating] = useState(null);
+  const [hover, setHover] = useState(null);
 
   return (
     <div className="rate-container">
-      {Array.from({ length: numberOfStars }).map((_, index) => (
-        <Star
-          key={`star${index}`}
-          style={style}
-          onClick={() => onStarClick(index + 1)}
-          pressed={index < starsIndex}
-          clickable={clickable}
-        />
-      ))}
+      {[...Array(numberOfStars)].map((star, index) => {
+        const currentRating = index + 1;
+        return (
+          <label>
+            <input
+              type="radio"
+              name="rating"
+              value={currentRating}
+              onClick={() => setRating(currentRating)}
+              disabled={!clickable}
+            />
+            <FaStar
+              className="star"
+              size={35}
+              style={style}
+              color={currentRating <= (hover || rating) ? "#ffc107" : "#e4e5e9"}
+              onMouseEnter={() => clickable && setHover(currentRating)}
+              onMouseLeave={() => clickable && setHover(null)}
+            />
+          </label>
+        );
+      })}
     </div>
-  );
-};
+  )
+}
 
 export default Rate;

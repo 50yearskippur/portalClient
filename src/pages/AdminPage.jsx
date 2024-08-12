@@ -14,12 +14,19 @@ import staricon from "../assets/media/Icons/starIcon.svg";
 import selectedstaricon from "../assets/media/Icons/blueStarIcon.svg";
 import downloadIcon from "../assets/media/Icons/squereDownload.svg";
 import selecteddownloadIcon from "../assets/media/Icons/blueDownloadIcon.svg";
+import blackHome from "../assets/media/Icons/blackHome.svg";  
+import blackForm from "../assets/media/Icons/blackForm.svg";
+import blackMedia from "../assets/media/Icons/blackMedia.svg";  
+import grayHome from "../assets/media/Icons/grayHome.svg";  
+import grayForm from "../assets/media/Icons/grayForm.svg";  
+import grayMedia from "../assets/media/Icons/grayMedia.svg";  
 //delete in production
 import rabit from "../assets/img/rabit.jpg";
 import arrow from "../assets/media/Icons/curvedArrow.svg";
 import OrderBy from "../components/OrderBy/OrderBy";
 
 const AdminPage = () => {
+
   const navigate = useNavigate();
   const [tabsArray, setTabs] = useState([
     "תוצרים",
@@ -30,17 +37,25 @@ const AdminPage = () => {
   const [selectedTab, setSelectedTab] = useState(tabsArray[0]);
   const [data, setData] = useState([]);
   const [uploadTypesOpen, setUploadTypesOpen] = useState(false);
-  // const [currentUploadType, setCurrentUploadType] = useState();
+  const [selectedType, setSelectedType] = useState();   
 
   const uploadTypesArray = [
     {
       text: "תוצרי לימוד",
+      blackIcon: blackHome, 
+      grayIcon: grayHome,
     },
     {
       text: "טפסים",
+      blackIcon: blackForm,
+      grayIcon: grayForm,
+
     },
     {
       text: "תמונת סטוק / אלבום",
+      blackIcon: blackMedia,
+      grayIcon: grayMedia,
+
     },
   ];
 
@@ -434,7 +449,7 @@ const AdminPage = () => {
             className="admin-upload-btn"
             onClick={() => setUploadTypesOpen((prev) => !prev)}
           >
-            העלאה
+          + העלאת תוכן 
           </div>
           {uploadTypesOpen && (
             <div className="admin-upload-types-dropdown">
@@ -446,8 +461,9 @@ const AdminPage = () => {
                       state: { pageType: type.text },
                     })
                   }
-                >
-                  {type.text}
+                  onMouseEnter={()=> setSelectedType(type.text)}                >
+                  <img src={selectedType === type.text ? type.grayIcon : type.blackIcon} alt="type" /> 
+                  <>{type.text} </>
                 </div>
               ))}
             </div>

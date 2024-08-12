@@ -1,27 +1,46 @@
-import "./AdminUploadPage.css";
-import { useState, useContext } from "react";
-import { PopupContext } from "../store/popup-context";
-import TopSection from "../components/TopSection/TopSection";
-import getUploadStages from "../utils/getUploadStages";
-import { useLocation } from "react-router-dom";
-import pencilIcon from "../assets/media/Icons/pencil.svg";
+import './AdminUploadPage.css';
+import { useState, useContext, useEffect } from 'react';
+import { PopupContext } from '../store/popup-context';
+import TopSection from '../components/TopSection/TopSection';
+import getUploadStages from '../utils/getUploadStages';
+import { useLocation } from 'react-router-dom';
+import pencilIcon from '../assets/media/Icons/pencil.svg';
+import whiteV from '../assets/media/Icons/whiteV.svg';
 
 const Upload = () => {
   const location = useLocation();
   const pageType = location.state?.pageType;
   const [currentStage, setCurrentStage] = useState(1);
-  const { itemDetails } = useContext(PopupContext);
+  const { itemDetails, setItemDetails } = useContext(PopupContext);
+
+  useEffect(() => {
+    console.log(itemDetails);
+  }, [currentStage, itemDetails]);
 
   const nextStage = () => {
     setCurrentStage((prevStage) => prevStage + 1);
   };
 
+  // useEffect(() => {
+  //   setItemDetails((prevDetails) => ({
+  //     ...prevDetails,
+  //     currentStageTitle: stagesArray[currentStage - 1].title,
+  //   }));
+  // }, [currentStage]);
+
   const stagesArray = getUploadStages(pageType, itemDetails, nextStage);
+
+  useEffect(() => {
+    setItemDetails((prevDetails) => ({
+      ...prevDetails,
+      pageType,
+    }));
+  }, [pageType, setItemDetails]);
 
   return (
     <div className="admin-upload-container">
       <TopSection
-        navigateTo={"/admin"}
+        navigateTo={'/admin'}
         title="העלאת תוצר"
         exitText="לעמוד ההעלאות"
       />
@@ -29,14 +48,30 @@ const Upload = () => {
         {stagesArray.map((stage, index) => (
           <div key={stage.title} className="stage-white-container">
             <div className="stage-header">
-              <div
-                className={`stage-number ${index < currentStage && "current"}`}
-              >
-                {index + 1}
-              </div>
+              {index + 1 < currentStage ? (
+                <img
+                  src={whiteV}
+                  alt="v"
+                  className={
+                    stage.title === 'סוג מוצר'
+                      ? 'admin-upload-horizontal-v'
+                      : undefined
+                  }
+                />
+              ) : (
+                <div
+                  className={`stage-number ${
+                    index < currentStage && 'current'
+                  }`}
+                >
+                  {index + 1}
+                </div>
+              )}
               <div className="stage-column-header">
                 <div
-                  className={`stage-title ${index < currentStage && "current"}`}
+                  className={`stage-title ${
+                    index + 1 === currentStage && 'current'
+                  }`}
                 >
                   {stage.title}
                 </div>

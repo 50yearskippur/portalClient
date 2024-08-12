@@ -1,18 +1,18 @@
-import React from "react";
-import "./UploadEduType.css";
-import { useState, useEffect, useContext, useMemo } from "react";
-import { PopupContext } from "../../../store/popup-context";
-import EduTypes from "../../EduTypes/EduTypes";
-import PopupTop from "../Edges/PopupTop";
-import PopupBottom from "../Edges/PopupBottom";
-import ExitWarningPopup from "../General/ExitWarning";
-import PersonalAreaAvater from "../../PersonalAreaAvater/PersonalAreaAvater";
-import Dropdown from "../../Dropdown/Dropdown";
-import handlePropagation from "../../../utils/handlePropagation";
-import AddSubSubject from "../General/AddSubSubject";
-import UploadEdu from "./UploadEdu";
-import sentIcon from "../../../assets/media/Icons/sentIcon.svg";
-import eduTypesTitles from "../../../constants/eduTypes";
+import React from 'react';
+import './UploadEduType.css';
+import { useState, useEffect, useContext, useMemo } from 'react';
+import { PopupContext } from '../../../store/popup-context';
+import EduTypes from '../../EduTypes/EduTypes';
+import PopupTop from '../Edges/PopupTop';
+import PopupBottom from '../Edges/PopupBottom';
+import ExitWarningPopup from '../General/ExitWarning';
+import PersonalAreaAvater from '../../PersonalAreaAvater/PersonalAreaAvater';
+import Dropdown from '../../Dropdown/Dropdown';
+import handlePropagation from '../../../utils/handlePropagation';
+import AddSubSubject from '../General/AddSubSubject';
+import UploadEdu from './UploadEdu';
+import sentIcon from '../../../assets/media/Icons/sentIcon.svg';
+import eduTypesTitles from '../../../constants/eduTypes';
 
 const UploadEduType = () => {
   const [isSubOpen, setIsSubOpen] = useState(false);
@@ -25,13 +25,13 @@ const UploadEduType = () => {
   //delete in production
   const user = useMemo(
     () => ({
-      fullName: "יובל כהן",
-      email: "email@gmail.com",
-      personalNumber: "123456789",
-      unit: "1000",
-      group: "קורס",
-      role: "user",
-      favorites: ["1", "2", "3"],
+      fullName: 'יובל כהן',
+      email: 'email@gmail.com',
+      personalNumber: '123456789',
+      unit: '1000',
+      group: 'קורס',
+      role: 'user',
+      favorites: ['1', '2', '3'],
     }),
     []
   );
@@ -49,22 +49,22 @@ const UploadEduType = () => {
         title="העלאת תוכן לפורטל"
         onClickExit={() => showPopup(ExitWarningPopup)}
       />
-      <div className="upload-popup-content" style={{ gap: "24px" }}>
+      <div className="upload-popup-content" style={{ gap: '24px' }}>
         <div className="upload-popup-info">
           <div className="upload-popup-text-container">
             <div
               className="upload-popup-text"
-              style={{ width: "109px", height: "29px" }}
+              style={{ width: '109px', height: '29px' }}
             >
               שם מעלה התוכן:
             </div>
             <PersonalAreaAvater
               name="יכ"
               style={{
-                width: "32px",
-                height: "32px",
-                fontSize: "14px",
-                borderRadius: "43px",
+                width: '32px',
+                height: '32px',
+                fontSize: '14px',
+                borderRadius: '43px',
               }}
             />
             <div className="upload-popup-detailes">{user?.fullName}</div>
@@ -72,26 +72,26 @@ const UploadEduType = () => {
           <div className="upload-popup-text-container">
             <div
               className="upload-popup-text"
-              style={{ width: "109px", height: " 29px" }}
+              style={{ width: '109px', height: ' 29px' }}
             >
               נושא:
             </div>
             <Dropdown
-              listHeight={"20vh"}
-              defaultValue={itemDetails["subject"] || "נושא ראשי"}
-              list={["מבואות מודיעין", "טכנולוגיה וסייבר", "שפה", "המלצות"]}
+              defaultValue="נושא ראשי"
+              list={['מבואות מודיעין', 'טכנולוגיה וסייבר', 'שפה', 'המלצות']}
+              fieldName="subject"
             />
             <Dropdown
-              listHeight={"20vh"}
-              defaultValue={itemDetails["subSubject"] || "תת נושא"}
+              defaultValue="תת נושא"
               list={[
-                "מבואות מודיעין",
-                "טכנולוגיה וסייבר",
-                "שפה",
-                "המלצות",
-                "תת נושא חדש",
+                'מבואות מודיעין',
+                'טכנולוגיה וסייבר',
+                'שפה',
+                'המלצות',
+                'תת נושא חדש',
               ]}
               onNewSubClick={handleNewSubClick}
+              fieldName="subSubject"
             />
           </div>
         </div>
@@ -100,18 +100,19 @@ const UploadEduType = () => {
         </div>
         <EduTypes
           eduTypesTitles={eduTypesTitles}
-          defaultValue={itemDetails["type"]}
+          defaultValue={itemDetails['type']}
+          numberOfItemsInLine={3}
         />
       </div>
       <div
         className="button-container"
         style={{
-          justifyContent: itemDetails["isNewSubSubject"]
-            ? "space-between"
-            : "flex-end",
+          justifyContent: itemDetails['isNewSubSubject']
+            ? 'space-between'
+            : 'flex-end',
         }}
       >
-        {itemDetails["isNewSubSubject"] && (
+        {itemDetails['isNewSubSubject'] && (
           <div className="new-sub-subject-created-feedback">
             <img src={sentIcon} alt="send" />
             <div>בקשה לצירוף תת נושא חדש נשלחה</div>
@@ -120,10 +121,10 @@ const UploadEduType = () => {
         <PopupBottom
           NextPopup={<UploadEdu />}
           disabled={
-            !itemDetails["type"] ||
-            !itemDetails["subSubject"] ||
-            !itemDetails["subject"] ||
-            !itemDetails["uploader"]
+            !itemDetails['type'] ||
+            !itemDetails['subSubject'] ||
+            !itemDetails['subject'] ||
+            !itemDetails['uploader']
           }
         />
       </div>

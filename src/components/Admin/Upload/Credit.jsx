@@ -1,4 +1,4 @@
-import trashIcon from "../../../assets/media/Icons/grayTrash.svg";
+import trashIcon from '../../../assets/media/Icons/grayTrash.svg';
 
 const Credit = ({ role, defaultValue, deleteCredit, setCreditsList }) => {
   const addUserToCredit = (user) => {
@@ -13,7 +13,7 @@ const Credit = ({ role, defaultValue, deleteCredit, setCreditsList }) => {
     <div className="stage-credit-container">
       <div
         className="stage-text"
-        style={{ alignSelf: "center", width: "6.146vw" }}
+        style={{ alignSelf: 'center', width: '6.146vw' }}
       >
         {role}
       </div>
@@ -21,10 +21,12 @@ const Credit = ({ role, defaultValue, deleteCredit, setCreditsList }) => {
         className="stage-input"
         type="text"
         defaultValue={defaultValue}
-        style={{ height: "19px", width: "17.5vw" }}
+        style={{ width: '15.5vw' }}
         onChange={(e) => addUserToCredit(e.target.value)}
       />
-      <img alt="trash" src={trashIcon} onClick={() => deleteCredit(role)} />
+      <div className='trash-icon-container'>
+        <img alt="trash" src={trashIcon} onClick={() => deleteCredit(role)} />
+      </div>
     </div>
   );
 };
