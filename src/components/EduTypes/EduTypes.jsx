@@ -1,6 +1,6 @@
-import "./EduTypes.css";
-import { useState, useContext } from "react";
+import React, { useState, useContext } from "react";
 import { PopupContext } from "../../store/popup-context";
+import "./EduTypes.css";
 
 const EduTypes = ({ defaultValue, eduTypesTitles, numberOfItemsInLine }) => {
   const [activeIndex, setActiveIndex] = useState(
@@ -16,15 +16,13 @@ const EduTypes = ({ defaultValue, eduTypesTitles, numberOfItemsInLine }) => {
     }));
   };
 
+  const calculateColumnWidth = () => {
+    const baseWidth = (100 - (numberOfItemsInLine - 1) * 5) / numberOfItemsInLine;
+    return `repeat(auto-fill, minmax(${baseWidth}%, 1fr))`;
+  };
+
   return (
-    <div
-      className="edu-types-container"
-      style={{
-        gridTemplateColumns: `repeat(auto-fill, minmax(${
-          (100 - (numberOfItemsInLine - 1) * 5) / numberOfItemsInLine
-        }%, 1fr))`,
-      }}
-    >
+    <div className="edu-types-container" style={{ gridTemplateColumns: calculateColumnWidth() }}>
       {eduTypesTitles.map((type, index) => (
         <div
           key={`eduType${index}`}

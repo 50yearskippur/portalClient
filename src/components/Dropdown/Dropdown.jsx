@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import PropTypes from 'prop-types';
 import './Dropdown.css';
 import dropdownIcon from '../../assets/media/Icons/dropdownIcon.svg';
 import vIcon from '../../assets/media/Icons/v.svg';
@@ -16,24 +17,25 @@ const Dropdown = ({
   const { setItemDetails, itemDetails } = useContext(PopupContext);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(
-    itemDetails[fieldName] ? itemDetails[fieldName] : defaultValue
+    itemDetails[fieldName] || defaultValue
   );
 
   const IS_NEW_SUB_SUBJECT = selectedItem === 'תת נושא חדש';
 
   const saveDetails = (item) => {
     if (onSelect) onSelect(item);
-    if (IS_NEW_SUB_SUBJECT)
+    if (IS_NEW_SUB_SUBJECT) {
       setItemDetails((prevDetails) => ({
         ...prevDetails,
         [fieldName]: item,
       }));
-    else
+    } else {
       setItemDetails((prevDetails) => ({
         ...prevDetails,
         [fieldName]: item,
         isNewSubSubject: false,
       }));
+    }
   };
 
   const handleSelect = (item) => {
@@ -91,6 +93,15 @@ const Dropdown = ({
       )}
     </div>
   );
+};
+
+Dropdown.propTypes = {
+  list: PropTypes.array.isRequired,
+  onNewSubClick: PropTypes.func,
+  style: PropTypes.object,
+  defaultValue: PropTypes.string,
+  fieldName: PropTypes.string.isRequired,
+  onSelect: PropTypes.func,
 };
 
 export default Dropdown;
