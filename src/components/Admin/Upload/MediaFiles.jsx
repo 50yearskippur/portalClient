@@ -1,4 +1,4 @@
-import './uploadStage.css';
+import './UploadStage.css';
 import { useContext } from 'react';
 import { PopupContext } from '../../../store/popup-context';
 import FilesUploaderArray from '../../Media/FilesUploaderArray';
