@@ -164,6 +164,7 @@ const SubSubjectPage = () => {
           <div className="edu-resource-other-users">
             <div className="edu-resource-title">עוד דרכים ללמוד</div>
             <SideBar
+            isWithShadow={true}
               numItems={3}
               startFrom={0}
               ItemComponent={EduResPreview}
@@ -198,7 +199,8 @@ const SubSubjectPage = () => {
                 </div>
               </div>
             </div>
-            <SideBar
+            <SideBar 
+              isWithShadow={true}
               numItems={3}
               startFrom={0}
               ItemComponent={EduResPreview}
