@@ -327,12 +327,12 @@ const  recommendedEduResource = [
           },
         },
       subject: {
-        title: "פיזיקה",
+        title: "מבואות מודיעין",
         description: "תיאור תיאור",
         eduResource: [],
       },
       subSubject: {
-        title: "כוחות טבעיים",
+        title: "הכרת זירת סוריה",
         description: "תיאור תיאור",
         eduResource: [],
       },
@@ -388,12 +388,12 @@ const  recommendedEduResource = [
           },
         },
       subject: {
-        title: "היסטוריה",
+        title: "מבואות מודיעין",
         description: "תיאור תיאור",
         eduResource: [],
       },
       subSubject: {
-        title: "אירועים מרכזיים",
+        title: "הכרת זירת סוריה",
         description: "תיאור תיאור",
         eduResource: [],
       },
@@ -449,12 +449,12 @@ const  recommendedEduResource = [
           },
         },
       subject: {
-        title: "מדעי המחשב",
+        title: "מבואות מודיעין",
         description: "תיאור תיאור",
         eduResource: [],
       },
       subSubject: {
-        title: "תכנות",
+        title: "הכרת זירת סוריה",
         description: "תיאור תיאור",
         eduResource: [],
       },
@@ -510,12 +510,12 @@ const  recommendedEduResource = [
           },
         },
       subject: {
-        title: "אמנות",
+        title: "מבואות מודיעין",
         description: "תיאור תיאור",
         eduResource: [],
       },
       subSubject: {
-        title: "ציור",
+        title: "הכרת זירת סוריה",
         description: "תיאור תיאור",
         eduResource: [],
       },
@@ -571,12 +571,12 @@ const  recommendedEduResource = [
           },
         },
       subject: {
-        title: "מדעי הטבע",
+        title: "מבואות מודיעין",
         description: "תיאור תיאור",
         eduResource: [],
       },
       subSubject: {
-        title: "תהליכים טבעיים",
+        title: "הכרת זירת סוריה",
         description: "תיאור תיאור",
         eduResource: [],
       },
@@ -632,12 +632,12 @@ const  recommendedEduResource = [
           },
         },
       subject: {
-        title: "גוף ונפש",
+        title: "מבואות מודיעין",
         description: "תיאור תיאור",
         eduResource: [],
       },
       subSubject: {
-        title: "ספורט",
+        title: "הכרת זירת סוריה",
         description: "תיאור תיאור",
         eduResource: [],
       },

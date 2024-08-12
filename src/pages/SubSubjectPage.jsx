@@ -24,40 +24,19 @@ import convertDateToString from "../utils/convertDateToString";
 const SubSubjectPage = () => {
   const { showPopup } = useContext(PopupContext);
   const location = useLocation();
-  const currentEdu = location.state?.item;
+  const subSubject = location.state?.subSubject;
+  const currentEdu = location.state?.item || subSubject?.eduResourse[0];
+  const uploadByAdmin = [];
+  const uploadByNonAdmin = [];
+  
 
-  //delete in production
-  const subSubject = {
-    _id: "66b46996cb231f6817ea15cb",
-    title: "מבואות מודיעין",
-    pageType: "אמצעי למידה",
-    type: "נושא",
-    subSubjects: [
-    {
-        title: "הכרת זירת סוריה",
-        eduResourse: recommendedEduResource.slice(-6),
-    },
-    {
-        title:  'מבנה אמ"ן',
-        eduResourse:  recommendedEduResource.slice(-6),
-    },
-    ],
-  }
-
-
- subSubject.subSubjects.forEach(sub => {
-  const { resourcesByAdmin, resourcesByNonAdmin } = sub.eduResourse.reduce((acc, resource) => {
-    if (resource.creator.isAdmin) {
-      acc.resourcesByAdmin.push(resource);
+  subSubject?.eduResourse?.forEach(eduResourse => {
+    if (eduResourse.creator.isAdmin) {
+      uploadByAdmin.push(eduResourse);
     } else {
-      acc.resourcesByNonAdmin.push(resource);
+      uploadByNonAdmin.push(eduResourse);
     }
-    return acc;
-  }, { resourcesByAdmin: [], resourcesByNonAdmin: [] });
-
-  sub.resourcesByAdmin = resourcesByAdmin;
-  sub.resourcesByNonAdmin = resourcesByNonAdmin;
-});
+  });
 
   const getEduCredits = (credits) => {
     return (
@@ -78,7 +57,7 @@ const SubSubjectPage = () => {
 
   return (
     <>
-      <TopSection title={currentEdu?.subSubject?.title} navigateTo={"/"} />
+      <TopSection title={subSubject.title} navigateTo={"/"} />
       <div className="page-container edu-resource-page">
         <div className="edu-resource-container">
           <FileController item={currentEdu.files} style={{ height: "54.1vh" }} />
@@ -169,7 +148,7 @@ const SubSubjectPage = () => {
               numItems={3}
               startFrom={0}
               ItemComponent={EduResPreview}
-              data={subSubject.subSubjects[0].resourcesByAdmin}
+              data={uploadByAdmin}
               style={{ height: "30.4vh" }}
             />
           </div>
@@ -181,7 +160,7 @@ const SubSubjectPage = () => {
             <div className="edu-resource-add-edu">
               <div className="edu-resource-add-text">
                 יש לכם חומר על
-                <span style={{ fontWeight: "700" }}> זירת במבה </span>? שתפו
+                <span style={{ fontWeight: "700" }}> {subSubject.title} </span>? שתפו
                 אותנו ואולי תופיעו בפורטל
               </div>
               <div
@@ -205,7 +184,7 @@ const SubSubjectPage = () => {
               numItems={3}
               startFrom={0}
               ItemComponent={EduResPreview}
-              data={subSubject.subSubjects[0].resourcesByNonAdmin}
+              data={uploadByNonAdmin}
               style={{ height: "30.4vh" }}
             />
           </div>

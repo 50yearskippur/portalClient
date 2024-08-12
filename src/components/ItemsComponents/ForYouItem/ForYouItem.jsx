@@ -13,7 +13,7 @@ const ForYouItem = ({ item }) => {
         onClick={() => {
           navigate("/subSubject", {
             state: {
-              item: item.eduResourse[0],
+              subSubject: item,
             },
           });
         }}

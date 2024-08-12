@@ -11,11 +11,13 @@ const subjects = [
         subSubjects: [
         {
             title: "הכרת זירת סוריה",
-            eduResourse: recommendedEduResource.slice(2,5),
+            description: "סיכום על סוריה",
+            eduResourse: recommendedEduResource.slice(-6),
         },
         {
             title:  'מבנה אמ"ן',
-            eduResourse:  recommendedEduResource.slice(-6),
+            description: "סיכום על מבנה אמ\"ן",
+            eduResourse:  recommendedEduResource.slice(2,5),
         },
         ],
     },
@@ -27,11 +29,13 @@ const subjects = [
         subSubjects: [
         {
             title: "לימודי SQL",
-            eduResourse: recommendedEduResource.slice(-5),
+            description: "סיכום על לימודי SQL",
+            eduResourse: recommendedEduResource.slice(0,8),
         },
         {
             title:  "מערכות מידע",
-            eduResourse:  recommendedEduResource.slice(-9),
+            description: "סיכום על מערכות מידע",
+            eduResourse:  recommendedEduResource.slice(-2),
         },
         ],
     },
@@ -43,10 +47,12 @@ const subjects = [
         subSubjects: [
         {
             title: "ערבית מדוברת",
+            description: "סיכום על ערבית מדוברת",
             eduResourse: recommendedEduResource.slice(3,10),
         },
         {
             title:  'פרסית',
+            description: "סיכום על פרסית",
             eduResourse:  recommendedEduResource.slice(6,10),
         },
         ],
