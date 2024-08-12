@@ -8,12 +8,7 @@
   border-radius: 10px;
   background: var(--Main-colors-White, #fff);
   box-shadow: 9.818px 13.745px 28.471px -11.781px rgba(20, 13, 63, 0.11);
-  /* position: relative; */
-  border-radius: 10px;
-background: var(--Main-colors-White, #FFF);
-
-/* video card */
-box-shadow: 9.818px 13.745px 28.471px -11.781px rgba(20, 13, 63, 0.11);
+  position: relative;
 }
 
 .edu-preview-deatails {

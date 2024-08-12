@@ -12,12 +12,14 @@ import { PopupContext } from "../store/popup-context";
 import notebookImg from "../assets/media/Icons/notebook.svg";
 import heartimg from "../assets/media/Icons/fullHeart.svg";
 import point from "../assets/media/Icons/pinkPoint.svg";
-import headpones from "../assets/media/Icons/headphones.svg";
+import headphones from "../assets/media/Icons/headphones.svg";
+import headphonesSilent from "../assets/media/Icons/headphonesSilent.svg";
 import clock from "../assets/media/Icons/clock.svg";
 import bluePlus from "../assets/media/Icons/bluePlus.svg";
 // delete in production
 import rabit from "../assets/img/rabit.jpg";
 import recommendedEduResource from "../constants/recommended";
+import convertDateToString from "../utils/convertDateToString";
 // import plusImg from "../assets/media/Icons/plus.svg";
 
 const SubSubjectPage = () => {
@@ -122,14 +124,14 @@ const SubSubjectPage = () => {
               <div className="edu-resource-details-text">{currentEdu.difficultyLevel}</div>
               <img src={point} alt="point" />
               <div className="edu-resource-details-text">
-                מעודכן לתאריך 28.05.2024
+                מעודכן לתאריך {convertDateToString(currentEdu.timestamps)}
               </div>
               <img src={point} alt="point" />
               <div className="edu-resource-details-text">{currentEdu.views} משתמשים</div>
             </div>
             <div className="edu-resource-requirement">
               <div className="edu-resource-caption-icon">
-                <img src={headpones} alt="headpones" />
+                <img src={currentEdu.settings[0].isHeadphonesNeeded ? headphones : headphonesSilent} alt="headpones" />
                 <div className="edu-resource-requirement">{currentEdu.settings[0].isHeadphonesNeeded ? 'צריך' : 'ללא'} אוזניות</div>
               </div>
               <div className="edu-resource-caption-icon">
