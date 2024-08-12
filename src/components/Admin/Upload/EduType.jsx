@@ -1,4 +1,4 @@
-import './uploadStage.css';
+import './UploadStage.css';
 import { useContext } from 'react';
 import { PopupContext } from '../../../store/popup-context';
 import EduTypes from '../../EduTypes/EduTypes';
@@ -10,10 +10,10 @@ const EduType = ({ nextStage, eduTypesTitles, numberOfItemsInLine }) => {
     <div className="stage-upload-container">
       <EduTypes
         eduTypesTitles={eduTypesTitles}
-        defaultValue={itemDetails['type']}
+        defaultValue={itemDetails.type}
         numberOfItemsInLine={numberOfItemsInLine}
       />
-      <NextBtn disabled={!itemDetails['type']} nextStage={nextStage} />
+      <NextBtn disabled={!itemDetails.type} nextStage={nextStage} />
     </div>
   );
 };

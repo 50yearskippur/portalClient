@@ -1,5 +1,5 @@
 import "./Files.css";
-import "./genericFileComponent.css";
+import "./GenericFileComponent.css";
 import greyArrow from "../../../assets/media/Icons/greyArrow.svg";
 import greyDownload from "../../../assets/media/Icons/greyDownloadIcon.svg";
 import FileController from "../../Media/FileController";

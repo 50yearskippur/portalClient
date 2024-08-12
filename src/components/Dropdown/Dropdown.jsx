@@ -56,9 +56,9 @@ const Dropdown = ({
       <div className="dropdown-item-container no-hover">
         <div className="dropdown-item-warning">
           <div className="dropdown-input-text">
-            {IS_NEW_SUB_SUBJECT ? itemDetails['subSubject'] : selectedItem}
+            {IS_NEW_SUB_SUBJECT ? itemDetails.subSubject : selectedItem}
           </div>
-          {itemDetails['isNewSubSubject'] && IS_NEW_SUB_SUBJECT && (
+          {itemDetails.isNewSubSubject && IS_NEW_SUB_SUBJECT && (
             <img src={warningIcon} alt="warning" />
           )}
         </div>

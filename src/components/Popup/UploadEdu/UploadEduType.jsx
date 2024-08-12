@@ -100,19 +100,19 @@ const UploadEduType = () => {
         </div>
         <EduTypes
           eduTypesTitles={eduTypesTitles}
-          defaultValue={itemDetails['type']}
+          defaultValue={itemDetails.type}
           numberOfItemsInLine={3}
         />
       </div>
       <div
         className="button-container"
         style={{
-          justifyContent: itemDetails['isNewSubSubject']
+          justifyContent: itemDetails.isNewSubSubject
             ? 'space-between'
             : 'flex-end',
         }}
       >
-        {itemDetails['isNewSubSubject'] && (
+        {itemDetails.isNewSubSubject && (
           <div className="new-sub-subject-created-feedback">
             <img src={sentIcon} alt="send" />
             <div>בקשה לצירוף תת נושא חדש נשלחה</div>
@@ -121,10 +121,10 @@ const UploadEduType = () => {
         <PopupBottom
           NextPopup={<UploadEdu />}
           disabled={
-            !itemDetails['type'] ||
-            !itemDetails['subSubject'] ||
-            !itemDetails['subject'] ||
-            !itemDetails['uploader']
+            !itemDetails.type ||
+            !itemDetails.subSubject ||
+            !itemDetails.subject ||
+            !itemDetails.uploader
           }
         />
       </div>
