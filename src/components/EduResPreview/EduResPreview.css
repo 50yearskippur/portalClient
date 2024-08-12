@@ -1,4 +1,4 @@
-.edu-prev-container {
+.edu-preview-container {
   display: flex;
   align-items: center;
   gap: 0.8vw;
@@ -8,16 +8,21 @@
   border-radius: 10px;
   background: var(--Main-colors-White, #fff);
   box-shadow: 9.818px 13.745px 28.471px -11.781px rgba(20, 13, 63, 0.11);
-  position: relative;
+  /* position: relative; */
+  border-radius: 10px;
+background: var(--Main-colors-White, #FFF);
+
+/* video card */
+box-shadow: 9.818px 13.745px 28.471px -11.781px rgba(20, 13, 63, 0.11);
 }
 
-.edu-prev-deatails {
+.edu-preview-deatails {
   display: flex;
   gap: 8px;
   color: #444a5a;
 }
 
-.edu-prev-title {
+.edu-preview-title {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
@@ -29,24 +34,24 @@
   font-weight: 500;
 }
 
-.edu-prev-info {
+.edu-preview-info {
   font-size: 12px;
   font-weight: 400;
 }
 
-.edu-prev-deatails-container {
+.edu-preview-deatails-container {
   display: flex;
   flex-direction: column;
 }
 
-.edu-prev-creator {
+.edu-preview-creator {
   color: #6f6e71;
   font-size: 12px;
   font-weight: 400;
   text-align: right;
 }
 
-.edu-prev-subSubject-tag {
+.edu-preview-subSubject-tag {
   display: flex;
   position: absolute;
   right: 8px;

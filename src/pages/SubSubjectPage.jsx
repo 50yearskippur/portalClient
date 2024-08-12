@@ -44,7 +44,6 @@ const SubSubjectPage = () => {
   }
 
 
- // Iterate over each subSubject and separate the resources by admin status
  subSubject.subSubjects.forEach(sub => {
   const { resourcesByAdmin, resourcesByNonAdmin } = sub.eduResourse.reduce((acc, resource) => {
     if (resource.creator.isAdmin) {
