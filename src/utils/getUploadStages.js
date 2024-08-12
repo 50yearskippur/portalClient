@@ -2,6 +2,7 @@ import EduType from '../components/Admin/Upload/EduType';
 import Files from '../components/Admin/Upload/Files';
 import Details from '../components/Admin/Upload/Details';
 import FormDetails from '../components/Admin/Upload/FormDetails';
+import MediaDetails from '../components/Admin/Upload/MediaDetails';
 import Settings from '../components/Admin/Upload/Settings';
 import getFilesFormats from './getFilesFormats';
 import eduTypesTitles from '../constants/eduTypes';
@@ -77,7 +78,7 @@ const getUploadStages = (pageType, itemDetails, nextStage) => {
             />
           ),
         },
-        { title: 'פרטים', component: <Details nextStage={nextStage} /> },
+        { title: 'פרטים', component: <MediaDetails nextStage={nextStage} /> },
       ];
     default:
       return [

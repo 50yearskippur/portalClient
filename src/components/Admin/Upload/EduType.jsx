@@ -10,10 +10,10 @@ const EduType = ({ nextStage, eduTypesTitles, numberOfItemsInLine }) => {
     <div className="stage-upload-container">
       <EduTypes
         eduTypesTitles={eduTypesTitles}
-        defaultValue={itemDetails['type']}
+        defaultValue={itemDetails.type}
         numberOfItemsInLine={numberOfItemsInLine}
       />
-      <NextBtn disabled={!itemDetails['type']} nextStage={nextStage} />
+      <NextBtn disabled={!itemDetails.type} nextStage={nextStage} />
     </div>
   );
 };

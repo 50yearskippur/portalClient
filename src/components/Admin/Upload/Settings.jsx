@@ -93,16 +93,16 @@ const Setting = ({ nextStage }) => {
               })
             }
             defaultValue={
-              itemDetails['experationDateObject']?.num
-                ? itemDetails['experationDateObject'].num
+              itemDetails.experationDateObject?.num
+                ? itemDetails.experationDateObject.num
                 : experationDate.num
             }
           />
           <Dropdown
             style={{ width: '33.3%' }}
             defaultValue={
-              itemDetails['experationDateObject']?.unit
-                ? itemDetails['experationDateObject'].unit
+              itemDetails.experationDateObject?.unit
+                ? itemDetails.experationDateObject.unit
                 : experationDate.unit
             }
             list={['ימים', 'חודשים', 'שנים']}
@@ -154,9 +154,9 @@ const Setting = ({ nextStage }) => {
       <NextBtn
         text={'העלה תוצר'}
         disabled={
-          !itemDetails['level'] ||
-          !itemDetails['estimatedTime'] ||
-          !itemDetails['experationDate']
+          !itemDetails.level ||
+          !itemDetails.estimatedTime ||
+          !itemDetails.experationDate
         }
         nextStage={nextStage}
       />

@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { PopupContext } from '../../../store/popup-context';
 import FileUploader from '../../Media/FileUploader';
 import NextBtn from './NextBtn';
-const Files = ({ nextStage, fileTypes, hasCover }) => {
+const Files = ({ nextStage, fileTypes }) => {
   const { itemDetails } = useContext(PopupContext);
 
   return (
@@ -17,19 +17,9 @@ const Files = ({ nextStage, fileTypes, hasCover }) => {
             defaultFile={itemDetails.files}
           />
         </div>
-        {hasCover && (
-          <div className="admin-upload-file" style={{ width: '28%' }}>
-            <div className="stage-text">תמונת קאבר</div>
-            <FileUploader
-              text="צרף קובץ"
-              fileTypes={['PNG', 'JPG']}
-              isCover={true}
-            />
-          </div>
-        )}
       </div>
       <NextBtn
-        disabled={!itemDetails?.files?.media}
+        disabled={!itemDetails.files.media}
         nextStage={nextStage}
         current="קבצים"
       />
