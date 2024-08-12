@@ -1,11 +1,11 @@
-import MediaFiles from '../components/Popup/EduPreview/MediaFiles';
+import MediaFilesPreview from '../components/Popup/EduPreview/MediaFilesPreview';
 import Files from '../components/Popup/EduPreview/Files';
 import GenericFileComponent from '../components/Popup/EduPreview/GenericFileComponent';
 
 const getCorrectFileTemplate = (edu, eduType) => {
   switch (true) {
     case eduType === 'תמונה':
-      return <MediaFiles edu={edu} />;
+      return <MediaFilesPreview edu={edu} />;
     case eduType === 'אלבום':
       return (
         <GenericFileComponent

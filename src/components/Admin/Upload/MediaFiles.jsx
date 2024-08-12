@@ -1,17 +1,18 @@
 import './uploadStage.css';
 import { useContext } from 'react';
 import { PopupContext } from '../../../store/popup-context';
-import FileUploader from '../../Media/FileUploader';
+import FilesUploaderArray from '../../Media/FilesUploaderArray';
 import NextBtn from './NextBtn';
-const Files = ({ nextStage, fileTypes }) => {
+
+const MediaFiles = ({ nextStage, fileTypes }) => {
   const { itemDetails } = useContext(PopupContext);
 
   return (
     <div className="stage-upload-container">
       <div className="stage-files-container">
         <div className="admin-upload-file">
-          <div className="stage-text">קובץ תוכן</div>
-          <FileUploader
+          <div className="stage-text">קבצי תמונות</div>
+          <FilesUploaderArray
             text="צרף או גרור לתיבה קובץ"
             fileTypes={fileTypes}
             defaultFile={itemDetails.files}
@@ -19,7 +20,7 @@ const Files = ({ nextStage, fileTypes }) => {
         </div>
       </div>
       <NextBtn
-        disabled={!itemDetails.files.media}
+        disabled={!itemDetails.files?.media}
         nextStage={nextStage}
         current="קבצים"
       />
@@ -27,4 +28,4 @@ const Files = ({ nextStage, fileTypes }) => {
   );
 };
 
-export default Files;
+export default MediaFiles;
