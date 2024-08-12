@@ -2,7 +2,6 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
   gap: 10px;
-  /* padding: 10px; */
 }
 
 .grid-item {
@@ -12,7 +11,6 @@
   display: flex;
   width: 7.872vw;
   height: 9.273vh;
-  /* padding: 13px 10px;
 }
 
 .grid-item img {
@@ -20,15 +18,14 @@
   height: auto;
   display: block;
 }
+
 .fileGrid-container {
   display: flex;
-  /* width: 550px; */
   width: 100%;
-  /* padding: 21.531px 43.062px; */
   flex-direction: column;
-  /* align-items: flex-end; */
   gap: 8px;
 }
+
 .cover-title {
   position: relative;
   right: 11.938px;
@@ -41,9 +38,11 @@
   font-weight: 600;
   line-height: normal;
 }
+
 .cover-container {
   border-radius: 8px;
 }
+
 .fileGrid-container {
   display: flex;
   flex-direction: column;
