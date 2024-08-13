@@ -13,16 +13,6 @@ import subjects from "../constants/subjects.js";
 
 const tabsArray = ["במיוחד בשבילך", "כל התוצרים", "תוצרים שאהבתי"];
 
-//get recommended item per unit
-// const getRecommendedPerUnit = () => {
-//   return data;
-// };
-
-//get recommended for all
-// const getRecommendedForAll = () => {
-//   return data[0];
-// };
-
 const getEduResources = (selectedTab) => {
   switch (true) {
     case selectedTab === "תוצרים שאהבתי":

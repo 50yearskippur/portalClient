@@ -134,7 +134,6 @@ const AdminPermissionManagment = () => {
                 ,
               ]}
             />
-
             <Search
               placeholder={"חיפוש חופשי"}
               style={{ height: "42px", width: "16.7vw" }}

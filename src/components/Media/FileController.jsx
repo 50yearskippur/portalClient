@@ -1,5 +1,5 @@
 import "./FileController.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import getHtml from "./getHtml";
 import watchIconHover from "../../assets/media/Icons/watchHoverIcon.png";
 import downloadIconHover from "../../assets/media/Icons/downloadHoverIcon.png";
@@ -12,11 +12,14 @@ const FileController = ({
   gradientStyle = {},
   showOnHover = false,
 }) => {
-
   const [display, setDisplay] = useState(item?.cover ? item.cover.file : item.media.file);
-  const [fileType, setFileType] = useState(
-    item.cover ? "image" : item?.media?.MimeType
-  );
+  const [fileType, setFileType] = useState(item.cover ? "image" : item?.media?.MimeType);
+
+  useEffect(() => {
+    setDisplay(item?.cover ? item.cover.file : item.media.file);
+    setFileType(item.cover ? "image" : item?.media?.MimeType);
+  }, [item]);
+
   return (
     <div
       className="file-container"

@@ -16,7 +16,7 @@ const SortBySubject = ({
   const [subSubjects, setSubSubjects] = useState(subjects[0].subSubjects);
 
   const getSubSubjects = (subject) => {
-    setSubSubjects(subject.subSubjects);
+  setSubSubjects(subject.subSubjects);
   };
 
   const getNumberOfItemsInLine = () => {

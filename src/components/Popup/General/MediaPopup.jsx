@@ -8,7 +8,6 @@ import { download } from "../../../utils/download";
 
 const MediaPopup = ({ children, item = {} }) => {
   const { hidePopup } = useContext(PopupContext);
-  console.log(item);
 
   return (
     <div className="media-popup-container">

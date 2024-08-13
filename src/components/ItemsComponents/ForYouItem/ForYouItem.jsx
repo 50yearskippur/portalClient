@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import FileController from "../../Media/FileController";
 import "./ForYouItem.css";
 
 const ForYouItem = ({ item }) => {
+  const [files, setFiles] = useState(item.eduResourse[0].files);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    setFiles(item.eduResourse[0].files);
+  }, [item])
 
   return (
     <div className="for-you-item-container">
@@ -19,7 +24,7 @@ const ForYouItem = ({ item }) => {
         }}
       >
         <FileController
-          item={item.eduResourse[0].files}
+          item={files}
           style={{ width: "8.3vw", borderRadius: "6px", height: "9.6vh" }}
         />
         <div className="for-you-item-content">

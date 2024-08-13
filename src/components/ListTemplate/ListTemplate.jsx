@@ -7,6 +7,11 @@ const ListTemplate = ({
   setSelectedSubject,
 }) => {
 
+  const handleItemClick = (subject) => {
+    setSelectedSubject(subject);
+    getSubSubjects(subject);
+  };
+
   return (
     <div className="list-template-container">
       {subjects?.map((subject, index) => {
@@ -18,10 +23,7 @@ const ListTemplate = ({
               backgroundColor:
                 subject.title === selectedSubject.title && "#f2f4fa",
             }}
-            onClick={() => {
-              setSelectedSubject(subject);
-              getSubSubjects(subject);
-            }}
+            onClick={() => handleItemClick(subject)}
           >
             <div className="list-item-text">{subject.title}</div>
             <div
