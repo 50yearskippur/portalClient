@@ -9,10 +9,6 @@ import MediaFilesPreview from '../Popup/EduPreview/MediaFilesPreview';
 const FileUploaderArray = ({ text, fileTypes }) => {
   const { itemDetails, setItemDetails } = useContext(PopupContext);
 
-  useEffect(() => {
-    console.log('itemDetails', itemDetails);
-  }, [itemDetails]);
-
   const { getRootProps, getInputProps } = useDropzone({
     onDrop: (acceptedFiles) => {
       setItemDetails((prevDetails) => ({

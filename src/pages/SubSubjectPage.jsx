@@ -17,7 +17,6 @@ import headphonesSilent from "../assets/media/Icons/headphonesSilent.svg";
 import clock from "../assets/media/Icons/clock.svg";
 import bluePlus from "../assets/media/Icons/bluePlus.svg";
 // delete in production
-import recommendedEduResource from "../constants/recommended";
 import convertDateToString from "../utils/convertDateToString";
 // import plusImg from "../assets/media/Icons/plus.svg";
 
