@@ -2,7 +2,7 @@ import './FileUploader.css';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import { useDropzone } from 'react-dropzone';
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { PopupContext } from '../../store/popup-context';
 import uploadFile from '../../assets/media/Upload/uploadFile.svg';
 import Button from '../Button/Button';
@@ -10,10 +10,6 @@ import MediaFilesPreview from '../Popup/EduPreview/MediaFilesPreview';
 
 const FileUploaderArray = ({ text, fileTypes }) => {
   const { itemDetails, setItemDetails } = useContext(PopupContext);
-
-  useEffect(() => {
-    console.log('itemDetails', itemDetails);
-  }, [itemDetails]);
 
   const { getRootProps, getInputProps } = useDropzone({
     onDrop: (acceptedFiles) => {
@@ -24,13 +20,6 @@ const FileUploaderArray = ({ text, fileTypes }) => {
     },
     directory: true,
   });
-
-  //   const handleRemoveFile = () => {
-  //     setItemDetails((prevDetails) => {
-  //       const newFiles = { ...prevDetails.files };
-  //       return { ...prevDetails, files: newFiles };
-  //     });
-  //   };
 
   const hadnleDragFiles = () => {
     switch (true) {

@@ -1,6 +1,7 @@
 import './MediaFilesPreview.css';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { useDrop, useDrag } from 'react-dnd';
+import { PopupContext } from '../../../store/popup-context';
 
 const BigImage = ({ image, onDrop }) => {
   const [{ isOver }, drop] = useDrop({
@@ -14,12 +15,15 @@ const BigImage = ({ image, onDrop }) => {
   return (
     <div
       ref={drop}
-      style={{ border: isOver ? '2px solid blue' : '2px solid transparent' }}
+      className="media-file-cover-container"
+      style={{
+        border: isOver ? '2px solid blue' : '2px solid transparent',
+      }}
     >
       <img
         src={URL.createObjectURL(image)}
         alt="file"
-        className="media-file-cover"
+        className="media-file-cover grab"
       />
     </div>
   );
@@ -43,18 +47,18 @@ const SmallImage = ({ image, index, setCurrentImageSwap }) => {
       <img
         src={URL.createObjectURL(image)}
         alt="file"
-        className={`media-file ${isDragging ? 'grabbing' : 'grab'}}`}
+        className="media-file grabbing"
       />
     </div>
   );
 };
 
 const MediaFilesPreview = ({ files }) => {
+  const { setItemDetails } = useContext(PopupContext);
   const [images, setImages] = useState(files);
   const [currentImageSwap, setCurrentImageSwap] = useState();
 
   const onDrop = (swapImage) => {
-    console.log(swapImage);
     const indexToSwap = images.findIndex(
       (image) => image.path === swapImage.path
     );
@@ -71,6 +75,10 @@ const MediaFilesPreview = ({ files }) => {
     ];
 
     setImages(updatedImages);
+    setItemDetails((prevDetails) => ({
+      ...prevDetails,
+      files: updatedImages,
+    }));
   };
 
   return (
