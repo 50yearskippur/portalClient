@@ -4,7 +4,9 @@ import point from "../../assets/media/Icons/blackPoint.svg";
 import convertDateToString from "../../utils/convertDateToString";
 import React from "react";
 
-const EduResPreview = ({ item }) => {
+const EduResPreview = ({ item, props }) => {
+  const isUploadByAdmin = props.isUploadByAdmin;
+
   return (
     <div className="edu-preview-container">
       <FileController
@@ -13,7 +15,7 @@ const EduResPreview = ({ item }) => {
       />
       <div className="edu-preview-deatails-container">
         <div className="edu-preview-title">
-          {item?.creator.isAdmin
+          {isUploadByAdmin
             ? `${item?.subSubject?.title}, ${item.type}`
             : item?.title}
         </div>
@@ -22,17 +24,9 @@ const EduResPreview = ({ item }) => {
           <img src={point} alt="black point" />
           <div className="edu-preview-info">{item?.difficultyLevel}</div>
         </div>
-        {!item?.creator.isAdmin && <div className="edu-preview-creator">{item.creator.fullName}</div>}
-        {item?.creator.isAdmin ? (
-          <div className="edu-preview-subSubject-tag">{item.type}</div>
-        ) : (
-          <div
-            className="edu-preview-subSubject-tag"
-            style={{ backgroundColor: "#444a5a" }}
-          >
-            {item.type}
-          </div>
-        )}
+        {!isUploadByAdmin && <div className="edu-preview-creator">{item.creator.fullName}</div>}
+        
+          <div className="edu-preview-subSubject-tag" style={{ backgroundColor: !isUploadByAdmin && "#444a5a" }}>{item.type}</div>
       </div>
     </div>
   );

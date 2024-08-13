@@ -144,7 +144,8 @@ const SubSubjectPage = () => {
           <div className="edu-resource-other-users">
             <div className="edu-resource-title">עוד דרכים ללמוד</div>
             <SideBar
-            isWithShadow={true}
+              isWithShadow={true}
+              propsToItemComponent={{ isUploadByAdmin: true }}
               numItems={3}
               startFrom={0}
               ItemComponent={EduResPreview}
@@ -184,6 +185,7 @@ const SubSubjectPage = () => {
               numItems={3}
               startFrom={0}
               ItemComponent={EduResPreview}
+              propsToItemComponent={{ isUploadByAdmin: false }}
               data={uploadByNonAdmin}
               style={{ height: "30.4vh" }}
             />

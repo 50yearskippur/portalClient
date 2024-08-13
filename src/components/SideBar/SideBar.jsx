@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./SideBar.css";
 
-const SideBar = ({ numItems, ItemComponent, data, style, startFrom, isWithShadow = false }) => {
+const SideBar = ({ numItems, ItemComponent, data, style, startFrom, isWithShadow = false, propsToItemComponent={} }) => {
   const navigate = useNavigate();
 
   return (
@@ -11,6 +11,7 @@ const SideBar = ({ numItems, ItemComponent, data, style, startFrom, isWithShadow
         <div className="image-item" style={{overflow: isWithShadow ? 'unset' : 'auto'}} key={index} onClick={() => navigate("/subSubject", { state: { item } })}>
           <ItemComponent
             item={item}
+            props={propsToItemComponent}
             style={{ position: "relative", objectFit: "cover", height: "100%" }}
           />
         </div>
