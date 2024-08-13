@@ -50,11 +50,11 @@ const Details = ({ nextStage }) => {
   return (
     <div className="stage-upload-container">
       <div className="stage-input-container">
-        <div className="stage-text">שם המצגת</div>
+        <div className="stage-text">{`שם ה${itemDetails.type}`}</div>
         <input
           className="stage-input"
           type="text"
-          defaultValue={itemDetails['title']}
+          defaultValue={itemDetails.title}
           onChange={(e) => saveDetails({ title: e.target.value })}
         />
       </div>
@@ -87,7 +87,7 @@ const Details = ({ nextStage }) => {
       <div className="stage-input-container">
         <div className="stage-text">תיאור (אופציונלי)</div>
         <Textarea
-          defaultValue={itemDetails['description']}
+          defaultValue={itemDetails.description}
           placeholder="כתבו כאן את תיאור התוכן שאתם מעלים..."
           style={{ height: '16.667vh' }}
           onChange={(e) => saveDetails({ description: e.target.value })}
@@ -99,8 +99,8 @@ const Details = ({ nextStage }) => {
           key={`credit ${index}`}
           role={credit.role}
           defaultValue={
-            itemDetails['credits']?.[index]?.user
-              ? itemDetails['credits'][index].user
+            itemDetails.credits?.[index]?.user
+              ? itemDetails.credits?.[index].user
               : credit.user
           }
           deleteCredit={() => deleteCredit(index)}
@@ -135,9 +135,7 @@ const Details = ({ nextStage }) => {
       </div>
       <NextBtn
         disabled={
-          !itemDetails['title'] ||
-          !itemDetails['subject'] ||
-          !itemDetails['subSubject']
+          !itemDetails.title || !itemDetails.subject || !itemDetails.subSubject
         }
         nextStage={nextStage}
         current="פרטים"

@@ -4,14 +4,14 @@ import Video from "./Video";
 // import PDFViewer from "pdf-viewer-reactjs";
 
 const getHtml = (src, fileType, style) => {
-  const fileTypeArray = fileType.split("/");
+  const fileTypeArray = fileType.split('/');
   switch (true) {
-    case fileTypeArray.includes("mp4"):
+    case fileTypeArray.includes('mp4'):
       return <Video src={src} className="file" style={style} />;
-    case fileTypeArray.includes("pdf"):
+    case fileTypeArray.includes('pdf'):
       return <Pdf file={src} style={style} />;
     // return <PDFViewer document={{ url: src }} style={style} />;
-    case fileTypeArray.includes("html"):
+    case fileTypeArray.includes('html'):
       return <Courseware src={src} />;
     default:
       return <img src={src} className="file" style={style} alt="file" />;

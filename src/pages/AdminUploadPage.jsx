@@ -13,10 +13,6 @@ const Upload = () => {
   const [currentStage, setCurrentStage] = useState(1);
   const { itemDetails, setItemDetails } = useContext(PopupContext);
 
-  useEffect(() => {
-    console.log(itemDetails);
-  }, [currentStage, itemDetails]);
-
   const nextStage = () => {
     setCurrentStage((prevStage) => prevStage + 1);
   };

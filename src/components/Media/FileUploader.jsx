@@ -4,13 +4,14 @@ import { useState, useContext } from 'react';
 import { PopupContext } from '../../store/popup-context';
 import uploadFile from '../../assets/media/Upload/uploadFile.svg';
 import whiteEdit from '../../assets/media/Icons/whiteEdit.svg';
-import UploadError from './UploadError';
+import UploadError from './Notiffactions/UploadError';
 import FilePreview from './FilePreview';
 import Button from '../Button/Button';
 
 const FileUploader = ({ text, fileTypes, isCover = false }) => {
   const { itemDetails, setItemDetails } = useContext(PopupContext);
   const [isInvalidType, setIsInvalidType] = useState(false);
+  console.log(itemDetails?.files?.cover);
 
   const { getRootProps, getInputProps } = useDropzone({
     onDrop: (acceptedFiles) => {
