@@ -1,7 +1,9 @@
 import './MediaFilesPreview.css';
-import { useState, useContext } from 'react';
+import { useState, useEffect, useContext, useRef } from 'react';
 import { useDrop, useDrag } from 'react-dnd';
 import { PopupContext } from '../../../store/popup-context';
+import grayPlus from '../../../assets/media/Icons/grayPlus.svg';
+import DotsMenu from './DotsMenu';
 
 const BigImage = ({ image, onDrop }) => {
   const [{ isOver }, drop] = useDrop({
@@ -25,6 +27,7 @@ const BigImage = ({ image, onDrop }) => {
         alt="file"
         className="media-file-cover grab"
       />
+      <DotsMenu />
     </div>
   );
 };
@@ -43,12 +46,17 @@ const SmallImage = ({ image, index, setCurrentImageSwap }) => {
   }
 
   return (
-    <div ref={drag} style={{ opacity: isDragging ? 0.5 : 1 }}>
+    <div
+      ref={drag}
+      className="media-file-container"
+      style={{ opacity: isDragging ? 0.5 : 1 }}
+    >
       <img
         src={URL.createObjectURL(image)}
         alt="file"
         className="media-file grabbing"
       />
+      <DotsMenu />
     </div>
   );
 };
@@ -57,6 +65,14 @@ const MediaFilesPreview = ({ files }) => {
   const { setItemDetails } = useContext(PopupContext);
   const [images, setImages] = useState(files);
   const [currentImageSwap, setCurrentImageSwap] = useState();
+  const fileInputRef = useRef(null);
+
+  useEffect(() => {
+    setItemDetails((prevDetails) => ({
+      ...prevDetails,
+      files: images,
+    }));
+  }, [images, setItemDetails]);
 
   const onDrop = (swapImage) => {
     const indexToSwap = images.findIndex(
@@ -75,10 +91,15 @@ const MediaFilesPreview = ({ files }) => {
     ];
 
     setImages(updatedImages);
-    setItemDetails((prevDetails) => ({
-      ...prevDetails,
-      files: updatedImages,
-    }));
+  };
+
+  const handleAddImages = (event) => {
+    const newImages = Array.from(event.target.files);
+    setImages((prevImages) => [...prevImages, ...newImages]);
+  };
+
+  const triggerFileInput = () => {
+    fileInputRef.current.click();
   };
 
   return (
@@ -86,13 +107,28 @@ const MediaFilesPreview = ({ files }) => {
       <BigImage image={images[0]} onDrop={() => onDrop(currentImageSwap)} />
       <div className="media-files-grid">
         {images.slice(1).map((image, index) => (
-          <SmallImage
-            key={index}
-            image={image}
-            setCurrentImageSwap={setCurrentImageSwap}
-          />
+          <>
+            <SmallImage
+              key={index}
+              image={image}
+              setCurrentImageSwap={setCurrentImageSwap}
+            />
+            <DotsMenu />
+          </>
         ))}
+        <div className="media-file-add-container" onClick={triggerFileInput}>
+          <img src={grayPlus} alt="add" />
+          <div className="media-file-add-text">תמונות נוספות</div>
+        </div>
       </div>
+      <input
+        type="file"
+        ref={fileInputRef}
+        style={{ display: 'none' }}
+        multiple
+        accept="image/*"
+        onChange={handleAddImages}
+      />
     </div>
   );
 };
