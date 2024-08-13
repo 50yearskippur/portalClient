@@ -1,5 +1,6 @@
 import './MediaFilesPreview.css';
-import { useDrop } from 'react-dnd';
+import { useState } from 'react';
+import { useDrop, useDrag } from 'react-dnd';
 
 const BigImage = ({ image, onDrop }) => {
   const [{ isOver }, drop] = useDrop({
@@ -24,23 +25,63 @@ const BigImage = ({ image, onDrop }) => {
   );
 };
 
+const SmallImage = ({ image, index, setCurrentImageSwap }) => {
+  const [{ isDragging }, drag] = useDrag({
+    type: 'image',
+    item: { index, image },
+    collect: (monitor) => ({
+      isDragging: !!monitor.isDragging(),
+    }),
+  });
+
+  if (isDragging) {
+    setCurrentImageSwap(image);
+  }
+
+  return (
+    <div ref={drag} style={{ opacity: isDragging ? 0.5 : 1 }}>
+      <img
+        src={URL.createObjectURL(image)}
+        alt="file"
+        className={`media-file ${isDragging ? 'grabbing' : 'grab'}}`}
+      />
+    </div>
+  );
+};
+
 const MediaFilesPreview = ({ files }) => {
+  const [images, setImages] = useState(files);
+  const [currentImageSwap, setCurrentImageSwap] = useState();
+
+  const onDrop = (swapImage) => {
+    console.log(swapImage);
+    const indexToSwap = images.findIndex(
+      (image) => image.path === swapImage.path
+    );
+
+    if (indexToSwap === -1 || indexToSwap === 0) {
+      return;
+    }
+
+    const updatedImages = [...images];
+
+    [updatedImages[0], updatedImages[indexToSwap]] = [
+      updatedImages[indexToSwap],
+      updatedImages[0],
+    ];
+
+    setImages(updatedImages);
+  };
+
   return (
     <div className="media-files-preview-containr">
-      {/* <div className="media-files-cover-title ">תמונת קאבר</div>
-      <img
-        src={URL.createObjectURL(files[0])}
-        alt="file"
-        className="media-file-cover"
-      /> */}
-      <BigImage image={files[0]} onDrop={(item) => console.log(item)} />
+      <BigImage image={images[0]} onDrop={() => onDrop(currentImageSwap)} />
       <div className="media-files-grid">
-        {files.slice(1).map((file, index) => (
-          <img
+        {images.slice(1).map((image, index) => (
+          <SmallImage
             key={index}
-            src={URL.createObjectURL(file)}
-            alt="file"
-            className="media-file"
+            image={image}
+            setCurrentImageSwap={setCurrentImageSwap}
           />
         ))}
       </div>

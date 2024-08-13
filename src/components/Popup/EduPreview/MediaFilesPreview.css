@@ -11,6 +11,15 @@
   width: 7.872vw;
   height: 9.273vh;
 }
+
+.media-file.grabbing {
+  cursor: grabbing;
+}
+
+.media-file.grab {
+  cursor: grab;
+}
+
 .media-files-cover-title {
   position: relative;
   right: 10px;
