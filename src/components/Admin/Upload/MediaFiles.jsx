@@ -20,7 +20,7 @@ const MediaFiles = ({ nextStage, fileTypes }) => {
         </div>
       </div>
       <NextBtn
-        disabled={!itemDetails.files?.media}
+        disabled={!itemDetails.files}
         nextStage={nextStage}
         current="קבצים"
       />

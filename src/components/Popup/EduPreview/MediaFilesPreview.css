@@ -1,4 +1,4 @@
-.media-files-preview-containr {
+.media-files-preview-container {
   display: flex;
   flex-direction: column;
   gap: 9px;
@@ -8,9 +8,30 @@
 }
 
 .media-file {
-  width: 7.872vw;
+  width: 100%;
   height: 9.273vh;
+  border-radius: 8px;
+  background: lightgray 50% / cover no-repeat;
 }
+
+.media-file-container {
+  position: relative;
+}
+
+.media-file.grabbing {
+  cursor: grabbing;
+}
+
+.media-file-cover.grab {
+  cursor: grab;
+}
+
+.media-file-cover-container {
+  border-radius: 8px;
+  height: 31.667vh;
+  position: relative;
+}
+
 .media-files-cover-title {
   position: relative;
   right: 10px;
@@ -28,10 +49,32 @@
 }
 
 .media-file-cover {
-  height: 31.667vh;
+  width: 100%;
+  height: 100%;
   background: linear-gradient(
     0deg,
     rgba(0, 0, 0, 0) 70.22%,
     rgba(0, 0, 0, 0.5) 104.02%
   );
+  border-radius: 8px;
+}
+
+.media-file-add-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  height: 9.273vh;
+  border-radius: 7.5px;
+  border: 1px dashed #78beff;
+  background: #e5f4ff;
+  text-align: center;
+  cursor: pointer;
+}
+
+.media-file-add-text {
+  color: var(--body-text, #4c4c66);
+  font-size: 14px;
+  font-weight: 500;
 }

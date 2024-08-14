@@ -1,16 +1,16 @@
 // import { Document, Page } from "react-pdf";
 // import "react-pdf/dist/Page/AnnotationLayer.css";
-import "./Pdf.css";
-import React from "react";
-import PDFViewer from "pdf-viewer-reactjs";
+import './Pdf.css';
+import React from 'react';
+import PDFViewer from 'pdf-viewer-reactjs';
 
-const Loading = () => {
-  return (
-    <div className="pdf-loading">
-      ..............................................................................
-    </div>
-  );
-};
+// const Loading = () => {
+//   return (
+//     <div className="pdf-loading">
+//       ..............................................................................
+//     </div>
+//   );
+// };
 
 const Pdf = ({ file, style }) => {
   return (
