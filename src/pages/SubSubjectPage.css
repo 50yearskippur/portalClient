@@ -4,6 +4,20 @@
   gap: 1.7vw;
 }
 
+.favorite-btn {
+  border: 1.5px solid #fc4e84;
+  color: #fc4e84;
+}
+
+.add-content-btn {
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  background-color: #fff;
+}
+
+.sidebar {
+  height: 30.4vh;
+}
+
 .edu-resource-container {
   position: relative;
   width: 54.1vw;
