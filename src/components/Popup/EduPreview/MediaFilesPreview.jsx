@@ -1,13 +1,12 @@
-import './MediaFilesPreview.css';
+import React from 'react';
 import { useState, useEffect, useContext, useRef } from 'react';
 import { useDrop, useDrag } from 'react-dnd';
 import { PopupContext } from '../../../store/popup-context';
 import grayPlus from '../../../assets/media/Icons/grayPlus.svg';
 import DotsMenu from './DotsMenu';
+import './MediaFilesPreview.css';
 
 const rotateImageOnCanvas = (imageFile, callback) => {
-  console.log('in');
-  console.log(imageFile);
   const reader = new FileReader();
   reader.readAsDataURL(imageFile);
 
@@ -61,16 +60,20 @@ const BigImage = ({ image, onDrop, handleDeleteImage, handleRotateImage }) => {
         border: isOver ? '2px solid blue' : '2px solid transparent',
       }}
     >
-      <img
-        src={URL.createObjectURL(image)}
-        alt="file"
-        className="media-file-cover grab"
-      />
-      <DotsMenu
-        handleDeleteImage={handleDeleteImage}
-        handleRotateImage={handleRotateImage}
-        currentImage={image}
-      />
+      {image && (
+        <>
+          <img
+            src={URL.createObjectURL(image)}
+            alt="file"
+            className="media-file-cover grab"
+          />
+          <DotsMenu
+            handleDeleteImage={handleDeleteImage}
+            handleRotateImage={handleRotateImage}
+            image={image}
+          />
+        </>
+      )}
     </div>
   );
 };
@@ -108,15 +111,14 @@ const SmallImage = ({
       <DotsMenu
         handleDeleteImage={handleDeleteImage}
         handleRotateImage={handleRotateImage}
-        currentImage={image}
+        image={image}
       />
     </div>
   );
 };
 
 const MediaFilesPreview = ({ files }) => {
-  const { setItemDetails, itemDetails } = useContext(PopupContext);
-  console.log(itemDetails);
+  const { setItemDetails } = useContext(PopupContext);
   const [images, setImages] = useState(files);
   const [currentImageSwap, setCurrentImageSwap] = useState();
   const fileInputRef = useRef(null);
@@ -130,7 +132,7 @@ const MediaFilesPreview = ({ files }) => {
 
   const onDrop = (swapImage) => {
     const indexToSwap = images.findIndex(
-      (image) => image.path === swapImage.path
+      (image) => image.name === swapImage.name
     );
 
     if (indexToSwap === -1 || indexToSwap === 0) {
@@ -138,7 +140,6 @@ const MediaFilesPreview = ({ files }) => {
     }
 
     const updatedImages = [...images];
-
     [updatedImages[0], updatedImages[indexToSwap]] = [
       updatedImages[indexToSwap],
       updatedImages[0],
@@ -152,18 +153,17 @@ const MediaFilesPreview = ({ files }) => {
     setImages((prevImages) => [...prevImages, ...newImages]);
   };
 
-  const handleDeleteImage = (imgaeToDelete) => {
+  const handleDeleteImage = (imageToDelete) => {
     const newImages = images.filter(
-      (image) => image.path !== imgaeToDelete.path
+      (image) => image.name !== imageToDelete.name
     );
     setImages(newImages);
   };
 
   const handleRotateImage = (file) => {
-    console.log('handleRotateImage');
     rotateImageOnCanvas(file, (rotatedFile) => {
       const updatedImages = images.map((image) =>
-        image.path === rotatedFile.path ? rotatedFile : image
+        image.name === rotatedFile.name ? rotatedFile : image
       );
 
       setImages(updatedImages);
@@ -175,7 +175,7 @@ const MediaFilesPreview = ({ files }) => {
   };
 
   return (
-    <div className="media-files-preview-containr">
+    <div className="media-files-preview-container">
       <BigImage
         image={images[0]}
         onDrop={() => onDrop(currentImageSwap)}
@@ -184,16 +184,16 @@ const MediaFilesPreview = ({ files }) => {
       />
       <div className="media-files-grid">
         {images.slice(1).map((image, index) => (
-          <>
+          <React.Fragment key={index}>
             <SmallImage
-              key={index}
               image={image}
+              index={index}
               setCurrentImageSwap={setCurrentImageSwap}
               handleDeleteImage={handleDeleteImage}
               handleRotateImage={handleRotateImage}
             />
             <DotsMenu />
-          </>
+          </React.Fragment>
         ))}
         <div className="media-file-add-container" onClick={triggerFileInput}>
           <img src={grayPlus} alt="add" />
