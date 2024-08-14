@@ -1,9 +1,9 @@
 import React from 'react';
-import ListTemplate from "../ListTemplate/ListTemplate";
-import "./SortBySubject.css";
-import SubSubjects from "../SubSubjects/SubSubjects";
-import { useState, useEffect } from "react";
-import { designTemplatesArray } from "../../store/designTemplatesArray";
+import ListTemplate from '../ListTemplate/ListTemplate';
+import './SortBySubject.css';
+import SubSubjects from '../SubSubjects/SubSubjects';
+import { useState, useEffect } from 'react';
+import { designTemplatesArray } from '../../store/designTemplatesArray';
 
 const SortBySubject = ({
   subjects,
@@ -11,12 +11,19 @@ const SortBySubject = ({
   numberOfItemsInLine = 1,
   getDetailsFromJSON = false,
 }) => {
-
   const [selectedSubject, setSelectedSubject] = useState(subjects[0]);
-  const [subSubjects, setSubSubjects] = useState(subjects[0].subSubjects);
+  const [subSubjects, setSubSubjects] = useState(
+    subjects[0]?.subSubjects ? subjects[0]?.subSubjects : subjects[0]?.forms
+  );
+
+  useEffect(() => {
+    getSubSubjects(selectedSubject);
+  }, [selectedSubject]);
 
   const getSubSubjects = (subject) => {
-  setSubSubjects(subject.subSubjects);
+    setSubSubjects(
+      subject?.subSubjects ? subject?.subSubjects : subject?.forms
+    );
   };
 
   const getNumberOfItemsInLine = () => {
@@ -32,10 +39,6 @@ const SortBySubject = ({
     }
     return ItemComponent;
   };
-
-  useEffect(() => {
-    getSubSubjects(selectedSubject);
-  }, [selectedSubject]);
 
   return (
     <div className="sort-by-subject-container">

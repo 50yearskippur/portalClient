@@ -1,4 +1,4 @@
-import "./ListTemplate.css";
+import './ListTemplate.css';
 import React from 'react';
 const ListTemplate = ({
   subjects,
@@ -6,10 +6,9 @@ const ListTemplate = ({
   selectedSubject,
   setSelectedSubject,
 }) => {
-
   const handleItemClick = (subject) => {
     setSelectedSubject(subject);
-    getSubSubjects(subject);
+    getSubSubjects(subject.forms);
   };
 
   return (
@@ -21,7 +20,7 @@ const ListTemplate = ({
             key={`listItem${index}`}
             style={{
               backgroundColor:
-                subject.title === selectedSubject.title && "#f2f4fa",
+                subject.title === selectedSubject.title && '#f2f4fa',
             }}
             onClick={() => handleItemClick(subject)}
           >
@@ -30,11 +29,13 @@ const ListTemplate = ({
               className="rectangle"
               style={{
                 backgroundColor:
-                  subject.title === selectedSubject.title && "#7d81b2",
-                color: subject.title === selectedSubject.title && "#f1f3fb",
+                  subject.title === selectedSubject.title && '#7d81b2',
+                color: subject.title === selectedSubject.title && '#f1f3fb',
               }}
             >
-              {subject.subSubjects.length}
+              {subject.subSubjects
+                ? subject.subSubjects.length
+                : subject.forms.length}
             </div>
           </div>
         );

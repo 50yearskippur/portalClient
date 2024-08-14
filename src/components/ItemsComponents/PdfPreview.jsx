@@ -1,21 +1,22 @@
-import React from "react";
-import "./PdfPreview.css";
-import FileController from "../Media/FileController";
-import ShowFullPdf from "../ShowFullPdf/ShowFullPdf";
-import { useContext } from "react";
-import MediaPopup from "../Popup/General/MediaPopup";
-import { PopupContext } from "../../store/popup-context";
+import React from 'react';
+import './PdfPreview.css';
+import FileController from '../Media/FileController';
+import ShowFullPdf from '../ShowFullPdf/ShowFullPdf';
+import { useContext } from 'react';
+import MediaPopup from '../Popup/General/MediaPopup';
+import { PopupContext } from '../../store/popup-context';
 
 const PdfPreview = ({ item }) => {
   const { showPopup } = useContext(PopupContext);
+
   return (
     <>
       <div className="pdf-preview-container">
-        <div className="pdf-preview-subject">{item.subSubject.title}</div>
+        <div className="pdf-preview-subject">{item.title}</div>
         <FileController
-          item={item}
+          item={item.file}
           showOnHover={true}
-          style={{ height: "auto" }}
+          style={{ height: 'auto' }}
           onClick={() =>
             showPopup(
               <MediaPopup

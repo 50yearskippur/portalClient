@@ -1,6 +1,6 @@
-import React from "react";
-import "./SubSubjects.css";
-import PageTemplate from "../PageTemplate/PageTemplate";
+import React from 'react';
+import './SubSubjects.css';
+import PageTemplate from '../PageTemplate/PageTemplate';
 
 const SubSubjects = ({
   subject,
