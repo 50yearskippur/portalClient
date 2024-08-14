@@ -3,7 +3,7 @@ import pdfFile from '../assets/pdfs/pdfPage.pdf';
 export const forms = [
   {
     _id: '0',
-    title: 'טופס חופשה חולים',
+    title: 'טופס חולים',
     settings: [{ isRecommended: true }],
     file: { media: { file: pdfFile, MimeType: 'pdf', fileName: 'מסמך' } },
   },
