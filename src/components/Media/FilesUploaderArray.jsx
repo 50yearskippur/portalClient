@@ -1,6 +1,6 @@
 import './FileUploader.css';
 import { useDropzone } from 'react-dropzone';
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { PopupContext } from '../../store/popup-context';
 import uploadFile from '../../assets/media/Upload/uploadFile.svg';
 import Button from '../Button/Button';

@@ -20,7 +20,7 @@ const MasonryLayout = ({ data }) => {
                   <img
                     className="masonry-item-popup"
                     src={image.media.file}
-                    alt="the full size image"
+                    alt="the full size item"
                   />
                 }
                 item={image}
