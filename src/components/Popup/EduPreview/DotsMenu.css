@@ -28,6 +28,7 @@
   border-radius: 4px;
   background: #eef1fb;
   box-shadow: 2px 4px 4px 0px rgba(67, 74, 92, 0.1);
+  cursor: pointer;
 }
 
 .media-setting-row {
