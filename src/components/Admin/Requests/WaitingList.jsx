@@ -1,6 +1,6 @@
-import "./WaitingList.css";
-import getRequestChildren from "../../../utils/getRequestChildren";
-const WaitingList = ({ requests, children, header }) => {
+import './WaitingList.css';
+import getRequestChildren from '../../../utils/getRequestChildren';
+const WaitingList = ({ requests, header }) => {
   return (
     <div className="requests-container">
       {requests.map((request, index) => (

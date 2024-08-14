@@ -3,7 +3,7 @@ import { useState } from 'react';
 import redTrash from '../../../assets/media/Icons/redTrash.svg';
 import back from '../../../assets/media/Icons/back.svg';
 
-const DotsMenu = ({ handleDeleteImage, handleRotateImage, image }) => {
+const DotsMenu = ({ handleDeleteImage, handleRotateImage, image, style }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleMenuHover = () => {
@@ -16,12 +16,12 @@ const DotsMenu = ({ handleDeleteImage, handleRotateImage, image }) => {
         className="dots-container"
         onMouseEnter={() => handleMenuHover(image)}
       >
-        {Array.from({ length: 3 }).map(() => (
-          <div className="dot" />
+        {Array.from({ length: 3 }).map((_, index) => (
+          <div className="dot" key={index} />
         ))}
       </div>
       {isMenuOpen && (
-        <div className="media-setting-popup" onMouseLeave={handleMenuHover}>
+        <div className="media-setting-popup" style={style}>
           <div
             className="media-setting-row"
             onClick={() => handleRotateImage(image)}
