@@ -1,16 +1,16 @@
-import "./SearchDropdown.css";
-import "../Dropdown/Dropdown.css";
-import { useState, useEffect } from "react";
+import './SearchDropdown.css';
+import '../Dropdown/Dropdown.css';
+import { useState, useEffect } from 'react';
 // import { PopupContext } from "../../store/popup-context";
-import SearchIcon from "../../assets/media/Icons/search.svg";
-import dropdownIcon from "../../assets/media/Icons/dropdownIcon.svg";
-import removeIcon from "../../assets/media/Icons/exitIcon.svg";
-import React from "react";
+import SearchIcon from '../../assets/media/Icons/search.svg';
+import dropdownIcon from '../../assets/media/Icons/dropdownIcon.svg';
+import removeIcon from '../../assets/media/Icons/exitIcon.svg';
+import React from 'react';
 
 const SearchDropdown = ({ options, placeholder }) => {
   // const { setItemDetails } = useContext(PopupContext);
 
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState('');
   const [optionsAfterSelect, setOptionsAfterSelect] = useState(options);
   const [isOpen, setIsOpen] = useState(false);
   const [filteredOptions, setFilteredOptions] = useState(optionsAfterSelect);
@@ -49,7 +49,7 @@ const SearchDropdown = ({ options, placeholder }) => {
     setOptionsAfterSelect((prev) => prev.filter((item) => item !== option));
     setIsOpen(false);
     setSelectedOptions([...selectedOptions, option]);
-    setInput("");
+    setInput('');
     setFilteredOptions([]);
   };
 
@@ -61,7 +61,7 @@ const SearchDropdown = ({ options, placeholder }) => {
   return (
     <div
       className="dropdown-container"
-      style={{ width: "100%", height: "25px" }}
+      style={{ width: '100%', height: '25px' }}
     >
       <div className="search-dropdown-container">
         <div className="search-text-container">
@@ -83,8 +83,8 @@ const SearchDropdown = ({ options, placeholder }) => {
       </div>
       {optionsAfterSelect.length > 0 && isOpen && (
         <div className="dropdown-list">
-          {filteredOptions.map((option) => (
-            <div key={option} onClick={() => handleOptionClick(option)}>
+          {filteredOptions.map((option, index) => (
+            <div key={index} onClick={() => handleOptionClick(option)}>
               {option}
             </div>
           ))}

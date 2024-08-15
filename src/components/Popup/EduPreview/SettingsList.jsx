@@ -29,7 +29,7 @@ const Setting = ({ settingsArray }) => {
   return (
     <div className="settings-container">
       {settings.map((setting, index) => (
-        <div key={`setting ${index}`} className="setting-container">
+        <div key={index} className="setting-container">
           <Switch
             defaultChecked={setting.defaultValue}
             changeSetting={() => changeSetting(setting.text)}
