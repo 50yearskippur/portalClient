@@ -4,11 +4,11 @@ import FileController from "../../Media/FileController";
 import "./ForYouItem.css";
 
 const ForYouItem = ({ item }) => {
-  const [files, setFiles] = useState(item.eduResourse[0].files);
+  const [files, setFiles] = useState(item.eduResource[0].files);
   const navigate = useNavigate();
 
   useEffect(() => {
-    setFiles(item.eduResourse[0].files);
+    setFiles(item.eduResource[0].files);
   }, [item])
 
   return (
@@ -33,7 +33,7 @@ const ForYouItem = ({ item }) => {
         </div>
       </div>
       <div className="for-you-item-edu-container">
-        {item.eduResourse.slice(1, 4).map((edu, index) => (
+        {item.eduResource.slice(1, 4).map((edu, index) => (
           <div className="for-you-item-edu-img" key={`edu${index}`}>
             <FileController
               key={`edu${index}`}
@@ -50,7 +50,7 @@ const ForYouItem = ({ item }) => {
             />
             {index === 2 && (
               <div className="for-you-item-edu-number">{`+${
-                item.eduResourse.length - 3
+                item.eduResource.length - 3
               }`}</div>
             )}
           </div>

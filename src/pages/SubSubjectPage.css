@@ -4,20 +4,6 @@
   gap: 1.7vw;
 }
 
-.favorite-btn {
-  border: 1.5px solid #fc4e84;
-  color: #fc4e84;
-}
-
-.add-content-btn {
-  border: 1.5px solid rgba(255, 255, 255, 0.2);
-  background-color: #fff;
-}
-
-.sidebar {
-  height: 30.4vh;
-}
-
 .edu-resource-container {
   position: relative;
   width: 54.1vw;
@@ -74,17 +60,17 @@
   opacity: 0.8;
 }
 
-.edu-resourse-nootbook {
+.edu-resource-nootbook {
   width: 64px;
 }
 
-.edu-resourse-btn-container {
+.edu-resource-btn-container {
   display: flex;
   align-items: flex-start;
   gap: 12px;
 }
 
-.edu-resourse-add-container {
+.edu-resource-add-container {
   display: flex;
   padding: 12px;
   align-items: center;
@@ -145,7 +131,7 @@
   font-weight: 400;
 }
 
-.edu-resourse-text {
+.edu-resource-text {
   overflow: hidden;
   color: #444a5a;
   text-align: right;
@@ -155,12 +141,12 @@
   width: 38.5vw;
 }
 
-.edu-resourse-cradit-container {
+.edu-resource-cradit-container {
   display: flex;
   flex-direction: column;
 }
 
-.edu-resourse-cradit {
+.edu-resource-cradit {
   display: flex;
   width: 12.9vw;
 }

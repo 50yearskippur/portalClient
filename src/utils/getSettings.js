@@ -8,7 +8,7 @@ const getSettings = (fileType) => {
           text: settingArray.isRecomennded,
           defaultValue: false,
         },
-        { text: settingArray.isPrimaryEduResourse, defaultValue: false },
+        { text: settingArray.isPrimaryEduResource, defaultValue: false },
         {
           text: settingArray.isValidated,
           defaultValue: true,
@@ -31,7 +31,7 @@ const getSettings = (fileType) => {
           text: settingArray.isValidated,
           defaultValue: true,
         },
-        { text: settingArray.isPrimaryEduResourse, defaultValue: false },
+        { text: settingArray.isPrimaryEduResource, defaultValue: false },
       ];
     default:
       return;
