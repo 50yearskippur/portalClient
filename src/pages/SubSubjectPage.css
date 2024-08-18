@@ -71,6 +71,7 @@
 }
 
 .edu-resource-add-container {
+  width: 6.5vw;
   display: flex;
   padding: 12px;
   align-items: center;

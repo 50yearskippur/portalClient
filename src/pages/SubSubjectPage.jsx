@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import './SubSubjectPage.css';
-import { useLocation } from 'react-router-dom';
-import { useContext } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import TopSection from '../components/TopSection/TopSection';
 import FileController from '../components/Media/FileController';
 import SideBar from '../components/SideBar/SideBar';
@@ -15,14 +14,17 @@ import point from '../assets/media/Icons/pinkPoint.svg';
 import headphones from '../assets/media/Icons/headphones.svg';
 import headphonesSilent from '../assets/media/Icons/headphonesSilent.svg';
 import clock from '../assets/media/Icons/clock.svg';
-import bluePlus from '../assets/media/Icons/bluePlus.svg';
+import addedToFavoritesIcon from '../assets/media/Icons/addedToFavoritesIcon.svg';
 // delete in production
+import bluePlus from '../assets/media/Icons/bluePlus.svg';
 import convertDateToString from '../utils/convertDateToString';
 // import plusImg from "../assets/media/Icons/plus.svg";
 
 const SubSubjectPage = () => {
   const { showPopup } = useContext(PopupContext);
+  const [isAddedToFavorites, setIsAddedToFavorites] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const subSubject = location.state?.subSubject;
   const currentEdu = location.state?.item || subSubject?.eduResource[0];
   const uploadByAdmin = [];
@@ -35,6 +37,14 @@ const SubSubjectPage = () => {
       uploadByNonAdmin.push(eduResource);
     }
   });
+
+  const handleItemClick = (item) => {
+    navigate(location.pathname, { state: { subSubject, item } });
+  };
+
+  const onAddToFavoritesHandler = () => {
+    setIsAddedToFavorites((prev) => !prev);
+  };
 
   const getEduCredits = (credits) => {
     return (
@@ -77,13 +87,20 @@ const SubSubjectPage = () => {
             <div className="edu-resource-btn-container">
               <div
                 className="edu-resource-add-container"
+                onClick={onAddToFavoritesHandler}
                 style={{
                   border: '1.5px solid #FC4E84',
-                  color: '#FC4E84',
+                  color: isAddedToFavorites ? 'white' : '#FC4E84',
+                  backgroundColor: isAddedToFavorites ? '#FC4E84' : 'white',
                 }}
               >
-                <img src={heartimg} alt="heart" />
-                <>הוספה למועדפים</>
+                <img
+                  src={isAddedToFavorites ? addedToFavoritesIcon : heartimg}
+                  alt="heart"
+                />
+                <span>
+                  {isAddedToFavorites ? 'נוסף למועדפים' : 'הוספה למועדפים'}
+                </span>
               </div>
             </div>
           </div>
@@ -155,6 +172,7 @@ const SubSubjectPage = () => {
               ItemComponent={EduResPreview}
               data={uploadByAdmin}
               style={{ height: '30.4vh' }}
+              onItemClick={handleItemClick}
             />
           </div>
           <div
@@ -192,6 +210,7 @@ const SubSubjectPage = () => {
               propsToItemComponent={{ isUploadByAdmin: false }}
               data={uploadByNonAdmin}
               style={{ height: '30.4vh' }}
+              onItemClick={handleItemClick}
             />
           </div>
         </div>
