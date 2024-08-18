@@ -5,14 +5,7 @@ import SettingsList from '../../Popup/EduPreview/SettingsList';
 import NextBtn from './NextBtn';
 
 const FormDetails = ({ nextStage }) => {
-  const { itemDetails, setItemDetails } = useContext(PopupContext);
-
-  const saveDetails = (detail) => {
-    setItemDetails((prevDetails) => ({
-      ...prevDetails,
-      ...detail,
-    }));
-  };
+  const { itemDetails, saveDetails } = useContext(PopupContext);
 
   return (
     <div className="stage-upload-container">

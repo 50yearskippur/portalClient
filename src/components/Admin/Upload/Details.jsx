@@ -9,7 +9,7 @@ import BluePlusIcon from '../../../assets/media/Icons/bluePlus.svg';
 import AddSubSubject from '../../Popup/General/AddSubSubject';
 
 const Details = ({ nextStage }) => {
-  const { itemDetails, setItemDetails } = useContext(PopupContext);
+  const { itemDetails, saveDetails } = useContext(PopupContext);
   const [isSubOpen, setIsSubOpen] = useState(false);
   const [isNewCredit, setIsNewCredit] = useState(false);
   const [creditsList, setCreditsList] = useState(
@@ -18,18 +18,8 @@ const Details = ({ nextStage }) => {
   const [newCredit, setNewCredit] = useState({ role: '', user: '' });
 
   useEffect(() => {
-    setItemDetails((prevDetails) => ({
-      ...prevDetails,
-      credits: creditsList,
-    }));
-  }, [creditsList, setItemDetails]);
-
-  const saveDetails = (detail) => {
-    setItemDetails((prevDetails) => ({
-      ...prevDetails,
-      ...detail,
-    }));
-  };
+    saveDetails({ credits: creditsList });
+  }, [creditsList, saveDetails]);
 
   const handleNewCredit = (credit) => {
     setNewCredit((prevCredit) => ({ ...prevCredit, ...credit }));

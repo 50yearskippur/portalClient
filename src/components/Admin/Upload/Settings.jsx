@@ -5,12 +5,11 @@ import SettingsList from '../../Popup/EduPreview/SettingsList';
 import getSettings from '../../../utils/getSettings';
 import Dropdown from '../../Dropdown/Dropdown';
 import levels from '../../../store/levels';
-// import SearchDropdown from "../../Search/SearchDropdown";
 import NextBtn from './NextBtn';
 import yellowWarning from '../../../assets/media/Icons/yellowWarning.svg';
 
 const Setting = ({ nextStage }) => {
-  const { itemDetails, setItemDetails } = useContext(PopupContext);
+  const { itemDetails, saveDetails } = useContext(PopupContext);
   const [experationDate, setExperationDate] = useState({
     num: 12,
     unit: 'חודשים',
@@ -34,13 +33,11 @@ const Setting = ({ nextStage }) => {
   };
 
   useEffect(() => {
-    if (experationDate.num || experationDate.unit)
-      setItemDetails((prevDetails) => ({
-        ...prevDetails,
-        experationDate: calculateFutureDate(experationDate),
-        experationDateObject: experationDate,
-      }));
-  }, [experationDate, setItemDetails]);
+    if (experationDate.num || experationDate.unit) {
+      saveDetails({ experationDate: calculateFutureDate(experationDate) });
+      saveDetails({ experationDateObject: experationDate });
+    }
+  }, [experationDate, saveDetails]);
 
   return (
     <div className="stage-upload-container">
@@ -111,46 +108,10 @@ const Setting = ({ nextStage }) => {
                 return { ...prevDate, unit: item };
               })
             }
+            fieldName=""
           />
         </div>
       </div>
-      {/* <div className="stage-input-container">
-        <div className="stage-text">קורסים או יחידות רלוונטיות</div>
-        <SearchDropdown
-          options={[
-            "מבואות מודיעין",
-            "מבואות קרב",
-            "טכנולוגיה וסייבר",
-            "שפה",
-            "מדעי המחשב",
-            "קיפודים",
-            "חתולים",
-            "כלבלבים",
-            "רעיונות לארוחות",
-            "מתנות",
-          ]}
-          placeholder="חיפוש קורסים"
-        />
-      </div> */}
-      {/* <div className="stage-input-container">
-        <div className="stage-text">תיוגים</div>
-        <SearchDropdown
-          options={[
-            "מבואות מודיעין",
-            "מבואות קרב",
-            "טכנולוגיה וסייבר",
-            "שפה",
-            "מדעי המחשב",
-            "קיפודים",
-            "חתולים",
-            "כלבלבים",
-            "רעיונות לארוחות",
-            "מתנות",
-          ]}
-          placeholder="בחר תיוגים"
-          fieldName="tags"
-        />
-      </div> */}
       <NextBtn
         text={'העלה תוצר'}
         disabled={

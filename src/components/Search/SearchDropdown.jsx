@@ -1,15 +1,12 @@
 import './SearchDropdown.css';
 import '../Dropdown/Dropdown.css';
 import { useState, useEffect } from 'react';
-// import { PopupContext } from "../../store/popup-context";
 import SearchIcon from '../../assets/media/Icons/search.svg';
 import dropdownIcon from '../../assets/media/Icons/dropdownIcon.svg';
 import removeIcon from '../../assets/media/Icons/exitIcon.svg';
 import React from 'react';
 
 const SearchDropdown = ({ options, placeholder }) => {
-  // const { setItemDetails } = useContext(PopupContext);
-
   const [input, setInput] = useState('');
   const [optionsAfterSelect, setOptionsAfterSelect] = useState(options);
   const [isOpen, setIsOpen] = useState(false);
@@ -21,13 +18,6 @@ const SearchDropdown = ({ options, placeholder }) => {
       setFilteredOptions(optionsAfterSelect);
     }
   }, [isOpen, optionsAfterSelect]);
-
-  // useEffect(() => {
-  //   setItemDetails((prevDetails) => ({
-  //     ...prevDetails,
-  //     [fieldName]: selectedOptions,
-  //   }));
-  // }, [selectedOptions, fieldName]);
 
   const handleInputChange = (e) => {
     const value = e.target.value;
