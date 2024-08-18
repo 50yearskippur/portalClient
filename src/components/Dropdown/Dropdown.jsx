@@ -14,32 +14,26 @@ const Dropdown = ({
   fieldName,
   onSelect,
 }) => {
-  const { setItemDetails, itemDetails } = useContext(PopupContext);
+  const { saveDetails, itemDetails } = useContext(PopupContext);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(
     itemDetails[fieldName] || defaultValue
   );
+  const IS_NEW_SUB_SUBJECT =
+    selectedItem === 'תת נושא חדש' || itemDetails.isNewSubSubject;
 
-  const IS_NEW_SUB_SUBJECT = selectedItem === 'תת נושא חדש';
-
-  const saveDetails = (item) => {
+  const addDetails = (item) => {
     if (onSelect) onSelect(item);
     if (IS_NEW_SUB_SUBJECT) {
-      setItemDetails((prevDetails) => ({
-        ...prevDetails,
-        [fieldName]: item,
-      }));
+      saveDetails({ [fieldName]: item });
+      saveDetails({ isNewSubSubject: true });
     } else {
-      setItemDetails((prevDetails) => ({
-        ...prevDetails,
-        [fieldName]: item,
-        isNewSubSubject: false,
-      }));
+      saveDetails({ [fieldName]: item });
     }
   };
 
   const handleSelect = (item) => {
-    saveDetails(item);
+    addDetails(item);
     setSelectedItem(item);
     setIsOpen(false);
     if (item === 'תת נושא חדש') {

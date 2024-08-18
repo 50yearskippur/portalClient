@@ -60,7 +60,7 @@ const BigImage = ({ image, onDrop, handleDeleteImage, handleRotateImage }) => {
         border: isOver ? '2px solid blue' : '2px solid transparent',
       }}
     >
-      {image && (
+      {!!image && (
         <>
           <img
             src={URL.createObjectURL(image)}
@@ -71,6 +71,7 @@ const BigImage = ({ image, onDrop, handleDeleteImage, handleRotateImage }) => {
             handleDeleteImage={handleDeleteImage}
             handleRotateImage={handleRotateImage}
             image={image}
+            style={{ right: '23.385vw' }}
           />
         </>
       )}
@@ -93,9 +94,11 @@ const SmallImage = ({
     }),
   });
 
-  if (isDragging) {
-    setCurrentImageSwap(image);
-  }
+  useEffect(() => {
+    if (isDragging) {
+      setCurrentImageSwap(image);
+    }
+  }, [isDragging, image, setCurrentImageSwap]);
 
   return (
     <div
@@ -118,17 +121,14 @@ const SmallImage = ({
 };
 
 const MediaFilesPreview = ({ files }) => {
-  const { setItemDetails } = useContext(PopupContext);
+  const { saveDetails } = useContext(PopupContext);
   const [images, setImages] = useState(files);
   const [currentImageSwap, setCurrentImageSwap] = useState();
   const fileInputRef = useRef(null);
 
   useEffect(() => {
-    setItemDetails((prevDetails) => ({
-      ...prevDetails,
-      files: images,
-    }));
-  }, [images, setItemDetails]);
+    saveDetails({ files: images });
+  }, [images, saveDetails]);
 
   const onDrop = (swapImage) => {
     const indexToSwap = images.findIndex(

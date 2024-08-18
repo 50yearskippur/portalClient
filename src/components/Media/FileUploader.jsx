@@ -11,7 +11,6 @@ import Button from '../Button/Button';
 const FileUploader = ({ text, fileTypes, isCover = false }) => {
   const { itemDetails, setItemDetails } = useContext(PopupContext);
   const [isInvalidType, setIsInvalidType] = useState(false);
-  console.log(itemDetails?.files?.cover);
 
   const { getRootProps, getInputProps } = useDropzone({
     onDrop: (acceptedFiles) => {
