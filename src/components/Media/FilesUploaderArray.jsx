@@ -9,11 +9,11 @@ import Button from '../Button/Button';
 import MediaFilesPreview from '../Popup/EduPreview/MediaFilesPreview';
 
 const FileUploaderArray = ({ text, fileTypes }) => {
-  const { itemDetails, saveDetails } = useContext(PopupContext);
+  const { itemDetails, setItemDetails } = useContext(PopupContext);
 
   const { getRootProps, getInputProps } = useDropzone({
     onDrop: (acceptedFiles) => {
-      saveDetails({ files: acceptedFiles });
+      setItemDetails({ files: acceptedFiles });
     },
     directory: true,
   });

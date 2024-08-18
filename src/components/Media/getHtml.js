@@ -1,7 +1,7 @@
-import Courseware from './Courseware';
-import Pdf from './Pdf';
-import Video from './Video';
-// import PDFViewer from 'pdf-viewer-reactjs';
+import Courseware from "./Courseware";
+import Pdf from "./Pdf";
+import Video from "./Video";
+// import PDFViewer from "pdf-viewer-reactjs";
 
 const getHtml = (src, fileType, style) => {
   const fileTypeArray = fileType.split('/');

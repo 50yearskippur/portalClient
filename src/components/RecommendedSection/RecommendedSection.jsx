@@ -19,7 +19,7 @@ const RecommendedSection = ({ data }) => {
           startFrom={3}
           ItemComponent={RecommendedItem}
           data={data}
-          style={{ width: "100%", height: "100%", objectFit: "cover" }}
+          style={{ width: "100%", objectFit: "cover" }}
         />
       </div>
       <div className="main-recommendation">

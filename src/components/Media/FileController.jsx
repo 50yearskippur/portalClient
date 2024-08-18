@@ -1,29 +1,39 @@
-import "./FileController.css";
-import React, { useState } from "react";
-import getHtml from "./getHtml";
-import watchIconHover from "../../assets/media/Icons/watchHoverIcon.png";
-import downloadIconHover from "../../assets/media/Icons/downloadHoverIcon.png";
-import { download } from "../../utils/download";
+import './FileController.css';
+import React, { useEffect, useState } from 'react';
+import getHtml from './getHtml';
+import watchIconHover from '../../assets/media/Icons/watchHoverIcon.png';
+import downloadIconHover from '../../assets/media/Icons/downloadHoverIcon.png';
+import { download } from '../../utils/download';
 
 const FileController = ({
   item,
   style = {},
-  onClick = () => {},
+  onClick,
   gradientStyle = {},
   showOnHover = false,
 }) => {
-  const [display, setDisplay] = useState(item?.cover ? item.cover : item.media);
-  const [fileType, setFileType] = useState(
-    item.cover ? "image" : item.mediaType
+  const [display, setDisplay] = useState(
+    item?.cover ? item.cover.file : item.media.file
   );
+  const [fileType, setFileType] = useState(
+    item.cover ? 'image' : item?.media?.MimeType
+  );
+
+  useEffect(() => {
+    setDisplay(item?.cover ? item.cover.file : item.media.file);
+    setFileType(item.cover ? 'image' : item?.media?.MimeType);
+  }, [item]);
+
   return (
     <div
       className="file-container"
       style={style}
       onClick={() => {
-        onClick();
-        setDisplay(item.media);
-        setFileType(item.mediaType);
+        if (onClick) {
+          onClick();
+          setDisplay(item.media);
+          setFileType(item.mediaType);
+        }
       }}
     >
       {getHtml(display, fileType, style)}
@@ -31,8 +41,8 @@ const FileController = ({
       {showOnHover && (
         <div className="file-overlay">
           <img
-            onClick={() => download(item)}
-            style={{ marginLeft: "1.778vw" }}
+            onClick={() => download(item.media)}
+            style={{ marginLeft: '1.778vw' }}
             src={downloadIconHover}
             alt="download icon"
           />

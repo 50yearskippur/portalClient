@@ -11,7 +11,7 @@ const Video = ({ src, style }) => {
   useEffect(() => {
     const video = videoRef.current;
     if (video) {
-      video.addEventListener('timeupdate', () =>
+      video.addEventListener("timeupdate", () =>
         setCurrentTime(video.currentTime)
       );
       video.addEventListener('loadedmetadata', () =>
@@ -48,13 +48,13 @@ const Video = ({ src, style }) => {
       <div className="timer">
         {formatTime(duration)} / {formatTime(currentTime)}
       </div>
-      <div className="video-container" style={style}>
-        <video ref={videoRef} src={src} className="file" />
+      <div className="video-container" style={style} >
+        <video ref={videoRef} src={src} className="file"  />
         <div className="controls">
           <div className="activation-container" onClick={activationHandler}>
             <div className="activation-shadow">
               <div className="activation-background">
-                <img className="play-icon-video" src={playIcon} alt="play" />
+                <img className="play-icon-video" src={playIcon} />
               </div>
             </div>
           </div>
