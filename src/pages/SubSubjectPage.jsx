@@ -15,10 +15,9 @@ import headphones from '../assets/media/Icons/headphones.svg';
 import headphonesSilent from '../assets/media/Icons/headphonesSilent.svg';
 import clock from '../assets/media/Icons/clock.svg';
 import addedToFavoritesIcon from '../assets/media/Icons/addedToFavoritesIcon.svg';
+import convertDateToString from '../utils/convertDateToString';
 // delete in production
 import bluePlus from '../assets/media/Icons/bluePlus.svg';
-import convertDateToString from '../utils/convertDateToString';
-// import plusImg from "../assets/media/Icons/plus.svg";
 
 const SubSubjectPage = () => {
   const { showPopup } = useContext(PopupContext);
