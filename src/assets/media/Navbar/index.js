@@ -13,6 +13,7 @@ import addPermissionsIcon from "./addPermissions.svg";
 import addPermissionsIconSelected from "./addPermissionsSelected.svg";
 import telephoneIcon from "./telephone.svg";
 import adminSubsubjectIcon from './adminSubsubjectIcon.svg';
+import adminSubsubjectIconSelected from './adminSubsubjectIconSelected.svg';
 
 export {
   closeNavbarIcon,
@@ -28,5 +29,6 @@ export {
   addPermissionsIcon,
   addPermissionsIconSelected,
   telephoneIcon,
-  adminSubsubjectIcon
+  adminSubsubjectIcon,
+  adminSubsubjectIconSelected
 };
