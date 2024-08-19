@@ -1,18 +1,24 @@
 .admin-container {
-    display: flex;
-    gap: 24px;
-  }
-  
-  .admin-header-container {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    margin-bottom: 42.8px;
-  }
+  display: flex;
+  gap: 24px;
+}
 
-  
+.admin-header-container {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 42.8px;
+}
+
 .admin-top-approved {
-    display: flex;
-    justify-content: space-between;
-  }
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.right-content {
+}
+
+.left-content {
   
+}
