@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import getHtml from './getHtml';
 import watchIconHover from '../../assets/media/Icons/watchHoverIcon.png';
 import downloadIconHover from '../../assets/media/Icons/downloadHoverIcon.png';
-import { download } from '../../utils/download';
+import download from '../../utils/download';
 
 const FileController = ({
   item,

@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  width: 100%;
 }
 
 .edu-preview-file-section-container {
@@ -14,6 +15,7 @@
 .edu-preview-file-container {
   display: flex;
   gap: 16px;
+  width: 100%;
   padding: 16px;
   border-radius: 6px;
   border: 1px solid #f2f4fa;
@@ -46,5 +48,6 @@
 .file-details-container {
   width: 100%;
   display: flex;
+  align-items: flex-start;
   justify-content: space-between;
 }
