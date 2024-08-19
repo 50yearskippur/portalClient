@@ -69,6 +69,7 @@ const SubSubjectPage = () => {
         <div className="edu-resource-container">
           <FileController
             item={currentEdu.files}
+            showCover={false}
             style={{ height: '54.1vh' }}
           />
           <div className="edu-resource-title-container">
