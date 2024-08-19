@@ -152,6 +152,7 @@
 }
 
 .navbar-bottom-icons.open {
+  margin-bottom: 14.2px;
   padding: 6px 8px;
   align-items: flex-start;
 }
