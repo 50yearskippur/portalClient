@@ -24,7 +24,7 @@
 }
 
 .edu-blue-text.underline::after {
-  content: "";
+  content: '';
   position: absolute;
   right: 0;
   bottom: 4px;
@@ -52,7 +52,7 @@
 
 .edu-validation-text {
   color: var(--Destructive-700, #b91c1c);
-  font-feature-settings: "salt" on;
+  font-feature-settings: 'salt' on;
   font-size: 14px;
   font-weight: 400;
   text-align: right;

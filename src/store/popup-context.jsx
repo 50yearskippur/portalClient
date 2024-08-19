@@ -19,10 +19,6 @@ export const PopupProvider = ({ children }) => {
     document.body.style.overflow = isPopupVisible ? 'hidden' : 'auto';
   }, [isPopupVisible]);
 
-  useEffect(() => {
-    console.log(itemDetails);
-  }, [itemDetails]);
-
   const showPopup = (content) => {
     setPopupContent(content);
     setPopupVisible(true);

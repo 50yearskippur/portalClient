@@ -107,11 +107,16 @@ const AdminPage = () => {
         title: 'הכירו את זירת לבנון',
         type: 'לומדה',
         date: Date('28.8.2024'),
-        creator: 'נפתלי בנט',
+        creator: { fullName: 'נפתלי בנט', role: 'user' },
         experationDate: new Date('2024-07-26T00:00'),
         subSubject: {
           title: 'זירת חתול',
         },
+        settings: [
+          {
+            isHeadphonesNeeded: false,
+          },
+        ],
         subject: { title: 'מבואות מודיעין' },
         media: rabit,
         cover: rabit,
@@ -161,6 +166,11 @@ const AdminPage = () => {
         subSubject: {
           title: ' חתול',
         },
+        settings: [
+          {
+            isHeadphonesNeeded: false,
+          },
+        ],
         subject: { title: 'מבואות מודיעין' },
         media: rabit,
         cover: rabit,
@@ -210,6 +220,11 @@ const AdminPage = () => {
         subSubject: {
           title: ' חתול',
         },
+        settings: [
+          {
+            isHeadphonesNeeded: false,
+          },
+        ],
         subject: { title: 'מבואות מודיעין' },
         media: rabit,
         cover: rabit,
@@ -259,11 +274,17 @@ const AdminPage = () => {
         subSubject: {
           title: 'זירת חתול',
         },
+        settings: [
+          {
+            isHeadphonesNeeded: false,
+          },
+        ],
         subject: { title: 'מבואות מודיעין' },
         media: rabit,
         cover: rabit,
         mediaType: 'image',
         level: 'רמה בסיסית',
+        creator: { fullName: 'נפתלי בנט', role: 'user' },
         uploadByArtech: false,
         tags: [{ title: 'תג 1' }, { title: 'תג 2' }],
         info: 'משחק שנועד ללמד את צבעי הכומתות בחיילות השונים משחק שנועד ללמד את צבעי הכומתות בחיילות השונים  משחק שנועד ללמד את צבעי הכומתות בחיילות השונים',
@@ -299,25 +320,6 @@ const AdminPage = () => {
             user: { fullName: 'בני גבע', role: 'רמ"ד קורס כלבלב' },
           },
         ],
-      },
-    ];
-
-    const designsArr = [
-      {
-        title: 'תבניות עיצוב 1',
-        type: 'מצגת',
-        date: Date('28.8.2024'),
-        media: rabit,
-        cover: rabit,
-        mediaType: 'image',
-      },
-      {
-        title: 'תבניות עיצוב 2',
-        type: 'סיכום',
-        date: Date('28.8.2024'),
-        media: rabit,
-        cover: rabit,
-        mediaType: 'image',
       },
     ];
 
@@ -415,16 +417,12 @@ const AdminPage = () => {
     ];
     setTabs([
       `תוצרים (${eduArr.length})`,
-      `עיצובים (${designsArr.length})`,
       `טפסים (${formsArr.length})`,
       `תמונות סטוק ואלבומים (${mediaArr.length})`,
     ]);
     switch (true) {
       case selectedTab.includes('תוצרים'):
         setData(eduArr);
-        break;
-      case selectedTab.includes('עיצובים'):
-        setData(designsArr);
         break;
       case selectedTab.includes('טפסים'):
         setData(formsArr);

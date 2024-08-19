@@ -13,7 +13,7 @@
 }
 
 .generic-row-child::after {
-  content: "";
+  content: '';
   position: absolute;
   right: -24px;
   top: 50%;
@@ -39,12 +39,6 @@
   font-size: 12px;
   white-space: nowrap;
   font-weight: 400;
-}
-
-.edu-row-tag-container {
-  display: flex;
-  gap: 8px;
-  /* width: 11.302vw; */
 }
 
 .generic-row-arrow {

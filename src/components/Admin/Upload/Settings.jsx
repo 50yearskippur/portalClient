@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from 'react';
 import { PopupContext } from '../../../store/popup-context';
 import { addDays, addMonths, addYears } from 'date-fns';
 import SettingsList from '../../Popup/EduPreview/SettingsList';
-import getSettings from '../../../utils/getSettings';
+import getDefaultSettings from '../../../utils/getDefaultSettings';
 import Dropdown from '../../Dropdown/Dropdown';
 import levels from '../../../store/levels';
 import NextBtn from './NextBtn';
@@ -41,7 +41,7 @@ const Setting = ({ nextStage }) => {
 
   return (
     <div className="stage-upload-container">
-      <SettingsList settingsArray={getSettings(itemDetails?.type)} />
+      <SettingsList settingsArray={getDefaultSettings(itemDetails?.type)} />
       {itemDetails?.settings?.some(
         (setting) =>
           setting.text === isPrimaryEduResourse && setting.defaultValue

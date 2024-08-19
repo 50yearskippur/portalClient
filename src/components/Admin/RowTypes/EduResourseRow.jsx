@@ -1,10 +1,10 @@
-import "./EduResourseRow.css";
-import "./TemplateRow.css";
-import GenericItem from "../GenericObjects/GenericItem";
-import Star from "../../Rate/Star";
-import eduTypeByText from "../../../utils/eduTypeByText";
-import convertDateToString from "../../../utils/convertDateToString";
-import iconType from "../RowTypes/IconType";
+import GenericItem from '../GenericObjects/GenericItem';
+import eduTypeByText from '../../../utils/eduTypeByText';
+import convertDateToString from '../../../utils/convertDateToString';
+import iconType from '../RowTypes/IconType';
+import './EduResourseRow.css';
+import './TemplateRow.css';
+import Star from '../../Rate/Star';
 
 const EduResourseRow = (item) => {
   return [
@@ -23,25 +23,21 @@ const EduResourseRow = (item) => {
     <GenericItem
       title={item?.subject?.title}
       subTitle={item?.subSubject?.title}
-      style={{ width: "6.25vw" }}
+      style={{ width: '6.25vw' }}
     />,
     <div className="edu-row-views">12 צפיות</div>,
-    <div className="generic-item-container" style={{ width: "3.125vw" }}>
-      <Star style={{ width: "20px" }} />
+    <div
+      className="generic-item-container"
+      style={{ width: '3.125vw', alignItems: 'center' }}
+    >
+      <Star />
       <div className="generic-item-sub-title">מומלץ</div>
     </div>,
     <GenericItem
       title={convertDateToString(item?.date)}
-      subTitle="תאריך העלאה"
-      style={{ width: "7.4vw" }}
+      subTitle="עודכן בתאריך"
+      style={{ width: '7.4vw' }}
     />,
-    <div className="edu-row-tag-container">
-      {item?.tags?.map((tag, tagIndex) => (
-        <div key={`tag ${tagIndex}`} className="edu-row-tag">
-          {tag?.title}
-        </div>
-      ))}
-    </div>,
   ];
 };
 
