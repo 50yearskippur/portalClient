@@ -9,14 +9,14 @@ const OrderBy = ({ options }) => {
     {
       value: "orderbyup",
       label: "סדר עולה",
-      icon: sortIcon,
-      selectedicon: sortIcon,
+      icon: sortUp,
+      selectedicon: sortUp,
     },
     {
       value: "orderbydown",
       label: "סדר יורד",
-      icon: sortUp,
-      selectedicon: sortUp,
+      icon: sortIcon,
+      selectedicon: sortIcon,
     },
   ];
 
