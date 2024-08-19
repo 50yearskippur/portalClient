@@ -1,6 +1,6 @@
 import React from 'react';
 import './AdminPage.css';
-import { useState, useMemo } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Tabs from '../components/Tabs/Tabs';
 import WaitingList from '../components/Admin/Requests/WaitingList';
@@ -100,7 +100,7 @@ const AdminPage = () => {
 
   //delete in production
 
-  useMemo(() => {
+  useEffect(() => {
     //delete in production
     const eduArr = [
       {
@@ -114,8 +114,15 @@ const AdminPage = () => {
         },
         settings: [
           {
-            isHeadphonesNeeded: false,
+            isHeadponesNeeded: false,
           },
+          {
+            isRecomennded: false,
+          },
+          {
+            isValidated: true,
+          },
+          { isPrimaryEduResourse: false },
         ],
         subject: { title: 'מבואות מודיעין' },
         media: rabit,
@@ -168,8 +175,15 @@ const AdminPage = () => {
         },
         settings: [
           {
-            isHeadphonesNeeded: false,
+            isHeadponesNeeded: true,
           },
+          {
+            isRecomennded: false,
+          },
+          {
+            isValidated: true,
+          },
+          { isPrimaryEduResourse: false },
         ],
         credits: [
           {
@@ -254,8 +268,15 @@ const AdminPage = () => {
         },
         settings: [
           {
-            isHeadphonesNeeded: false,
+            isHeadponesNeeded: true,
           },
+          {
+            isRecomennded: false,
+          },
+          {
+            isValidated: true,
+          },
+          { isPrimaryEduResourse: false },
         ],
         credits: [
           {
@@ -328,8 +349,12 @@ const AdminPage = () => {
         },
         settings: [
           {
-            isHeadphonesNeeded: false,
+            isRecomennded: false,
           },
+          {
+            isValidated: true,
+          },
+          { isPrimaryEduResourse: false },
         ],
         credits: [
           {
