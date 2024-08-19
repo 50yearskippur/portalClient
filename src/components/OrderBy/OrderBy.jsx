@@ -1,7 +1,9 @@
 // src/DropdownMenu.js
 import React, { useState } from "react";
 import sortIcon from "../../assets/media/Icons/sortIcon.svg";
-import sortUp from "../../assets/media/Icons/sortUp.svg";
+import selectedSortDown from "../../assets/media/Icons/blueSortDown.svg";
+import selectedSortUp from "../../assets/media/Icons/blueSortUp.svg";
+import sortUp from "../../assets/media/Icons/sortUp.svg"
 import "./OrderBy.css";
 
 const OrderBy = ({ options }) => {
@@ -10,13 +12,13 @@ const OrderBy = ({ options }) => {
       value: "orderbyup",
       label: "סדר עולה",
       icon: sortUp,
-      selectedicon: sortUp,
+      selectedicon: selectedSortUp,
     },
     {
       value: "orderbydown",
       label: "סדר יורד",
       icon: sortIcon,
-      selectedicon: sortIcon,
+      selectedicon: selectedSortDown,
     },
   ];
 
