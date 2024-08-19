@@ -11,19 +11,16 @@ import Setting from './SettingsList';
 import MoreDetails from './MoreDetails';
 import DeleteEduPopup from '../General/DeleteEdu';
 import GenericFilePreview from './GenericFilePreview';
-import getDefaultSettings from '../../../utils/getDefaultSettings';
 import UserDetails from './UserDetails';
 import './EduResPreview.css';
 
 const EduPreview = ({ edu }) => {
   const [isDeletePopup, setIsDeletePopup] = useState(false);
-  const [settingsArray, setSettingsArray] = useState(
-    getDefaultSettings(edu.type)
-  );
+  const [settingsArray, setSettingsArray] = useState(edu.settings);
   const uploadByUser = edu.creator?.role === 'user';
 
   useEffect(() => {
-    setSettingsArray(getDefaultSettings(edu.type));
+    setSettingsArray(edu.settings);
   }, [edu]);
 
   return (
@@ -54,7 +51,7 @@ const EduPreview = ({ edu }) => {
       />
       <EduResSection
         title="הגדרות"
-        content={<Setting settingsArray={settingsArray} disabled={true}/>}
+        content={<Setting settingsArray={settingsArray} disabled={true} />}
       />
       <EduResSection
         content={<MoreDetails edu={edu} uploadByUser={uploadByUser} />}

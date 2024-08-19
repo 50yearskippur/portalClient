@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
 import { PopupContext } from '../../../store/popup-context';
 import Switch from '../../Switch/Switch';
-import settingDic from '../../../store/settingDic';
+import settingsDic from '../../../store/settingsDic';
 import './SettingsList.css';
 
 const Setting = ({ settingsArray, disabled }) => {
@@ -11,8 +11,8 @@ const Setting = ({ settingsArray, disabled }) => {
   );
 
   useEffect(() => {
-    saveDetails({ settings });
-  }, [settings, saveDetails]);
+    if (!disabled) saveDetails({ settings });
+  }, [settings, saveDetails, disabled]);
 
   function changeSetting(key) {
     const updatedState = settings.map((item) => {
@@ -37,7 +37,7 @@ const Setting = ({ settingsArray, disabled }) => {
               changeSetting={() => changeSetting(settingBooleanValue)}
             />
             <div className="edu-dark-text">
-              {settingDic[settingBooleanValue]}
+              {settingsDic[settingBooleanValue]}
             </div>
           </div>
         );
