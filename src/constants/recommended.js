@@ -276,7 +276,7 @@ const recommendedEduResource = [
     title: 'במבה',
     description: 'מארז אספנות 60 שנה לבמבה',
     unit: '81',
-    type: 'pdf',
+    type: 'סיכום',
     estimatedTime: '10',
     files: {
       media: {

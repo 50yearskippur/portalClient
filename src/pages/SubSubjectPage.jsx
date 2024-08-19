@@ -18,6 +18,7 @@ import addedToFavoritesIcon from '../assets/media/Icons/addedToFavoritesIcon.svg
 import convertDateToString from '../utils/convertDateToString';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import eduTypeByText from '../utils/eduTypeByText';
 // delete in production
 import bluePlus from '../assets/media/Icons/bluePlus.svg';
 
@@ -103,9 +104,9 @@ const SubSubjectPage = () => {
           <div className="edu-resource-title-container">
             <div className="edu-resource-info-container">
               <img
-                src={notebookImg}
-                className="edu-resource-nootbook"
-                alt="nootbook"
+                src={eduTypeByText(currentEdu.type)}
+                alt="edu type"
+                lassName="currentEdu-type-img"
               />
               <div className="edu-resource-info">
                 <div className="edu-resource-title">{currentEdu.title}</div>
