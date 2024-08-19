@@ -82,7 +82,7 @@ const NavBar = () => {
       {
         path: adminSubsubjectIcon,
         selected: adminSubsubjectIconSelected,
-        navigateTo: "", //add navigate to
+        navigateTo: "/subsubjectManagment", 
         text: "ניהול תתי נושאים",
         show: isAdmin,
       },
