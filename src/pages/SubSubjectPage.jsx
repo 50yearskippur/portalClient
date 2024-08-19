@@ -37,9 +37,9 @@ const SubSubjectPage = () => {
     }
   });
 
-  const handleItemClick = (item) => {
-    navigate(location.pathname, { state: { subSubject, item } });
-  };
+  // const handleItemClick = (item) => {
+  //   navigate(location.pathname, { state: { subSubject, item } });
+  // };
 
   const onAddToFavoritesHandler = () => {
     setIsAddedToFavorites((prev) => !prev);
@@ -171,7 +171,7 @@ const SubSubjectPage = () => {
               ItemComponent={EduResPreview}
               data={uploadByAdmin}
               style={{ height: '30.4vh' }}
-              onItemClick={handleItemClick}
+              // onItemClick={handleItemClick}
             />
           </div>
           <div
@@ -209,7 +209,7 @@ const SubSubjectPage = () => {
               propsToItemComponent={{ isUploadByAdmin: false }}
               data={uploadByNonAdmin}
               style={{ height: '30.4vh' }}
-              onItemClick={handleItemClick}
+              // onItemClick={handleItemClick}
             />
           </div>
         </div>

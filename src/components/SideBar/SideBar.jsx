@@ -10,9 +10,7 @@ const SideBar = ({
   startFrom,
   isWithShadow = false,
   propsToItemComponent = {},
-  onItemClick = () => {},
 }) => {
-  const navigate = useNavigate();
 
   return (
     <div
@@ -24,10 +22,6 @@ const SideBar = ({
           className="image-item"
           style={{ overflow: isWithShadow ? 'unset' : 'auto' }}
           key={index}
-          onClick={() => {
-            onItemClick();
-            navigate('/subSubject', { state: { item } });
-          }}
         >
           <ItemComponent
             item={item}

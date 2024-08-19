@@ -1,684 +1,696 @@
 //delete in production
-import rabit from "../assets/img/rabit.jpg";
-import video from "../assets/img/video.mp4";
-import sea from "../assets/img/sea.jpg";
-import robot from "../assets/img/robot.jpg";
-import bamba from "../assets/img/bamba.jpg";
-import flowers from "../assets/img/flowers.jfif";
-import PT from "../assets/img/PT.jfif";
-import snow from  "../assets/img/snow.jfif";
-import tiger from "../assets/img/tiger.jfif";
-import zebra from "../assets/img/zebra.jpg";
-import sports from "../assets/img/sports.jfif";
+import rabit from '../assets/img/rabit.jpg';
+import video from '../assets/img/video.mp4';
+import sea from '../assets/img/sea.jpg';
+import robot from '../assets/img/robot.jpg';
+import bamba from '../assets/img/bamba.jpg';
+import flowers from '../assets/img/flowers.jfif';
+import PT from '../assets/img/PT.jfif';
+import snow from '../assets/img/snow.jfif';
+import tiger from '../assets/img/tiger.jfif';
+import zebra from '../assets/img/zebra.jpg';
+import sports from '../assets/img/sports.jfif';
+import elit from '../assets/img/elit.jfif';
 
 //delete in production
-const  recommendedEduResource = [
-    {
-      title: "איזה כיף בים",
-      description: "כמה כיף לי בים איזה כיף לי בקיץ חם חם חם חם אין לי עוד רעיון לתיאור",
-      unit: '8200',
-      type: "לומדה",
-      estimatedTime: "20",
-      files: 
-        {
-          media: {
-            file: sea,
-            fileName: 'sea',
-            MimeType: 'image',
-          },
-        },
-      subject: {
-        title: "טבע",
-        description: "תיאור תיאור",
-        eduResource: [],
+const recommendedEduResource = [
+  {
+    title: 'איזה כיף בים',
+    description:
+      'כמה כיף לי בים איזה כיף לי בקיץ חם חם חם חם אין לי עוד רעיון לתיאור',
+    unit: '8200',
+    type: 'לומדה',
+    estimatedTime: '20',
+    files: {
+      media: {
+        file: sea,
+        fileName: 'sea',
+        MimeType: 'image',
       },
-      subSubject: {
-        title: "קיפוד",
-        description: "תיאור תיאור",
-        eduResource: [],
-      },
-      credits: [
-        {
-          role: "עיצוב גרפי",
-          user: {
-            fullName: "אלה כהן",
-          },
-        },
-        {
-          role: "מומחה תוכן",
-          user: {
-            fullName: "התינוק של במבה",
-          },
-        },
-        {
-          role: "פרויקטור",
-          user: {
-            fullName: "שלומי שלמה",
-          },
-        },
-      ],
-      settings: [
-        {
-          isHeadphonesNeeded: false,
-        },
-      ],
-      difficultyLevel: "מותאם לכל הרמות",
-      creator: {
-        fullName: "הארי סטיילס",
-        isAdmin: true
-      },
-      views: 1240,
-      rating: [
-        {
-          userId: "123456",
-          rate: 5,
-        },
-        {
-          userId: "123456",
-          rate: 3,
-        },
-      ],
-     timestamps: new Date()
     },
-    {
-      title: "רגע מתוק של עלית",
-      description: "אני אוהב שוקולד ועוגות גבינה וארטיק וסוכריות ותות גינה",
-      unit: 'בה"ד 15',
-      type: "סרטון",
-      estimatedTime: "2",
-      files:
-        {
-          media: {
-            file: video,
-            fileName: 'chocolate',
-            MimeType: 'mp4',
-          },
-        },
-      subject: {
-        title: "טבע",
-        description: "תיאור תיאור",
-        eduResource: [],
-      },
-      subSubject: {
-        title: "שוקולדים",
-        description: "תיאור תיאור",
-        eduResource: [],
-      },
-      credits: [
-        {
-          role: "פיתוח",
-          user: {
-            fullName: "פורטל פורטלי",
-          },
-        },
-        {
-          role: "מומחה תוכן",
-          user: {
-            fullName: "דורה",
-          },
-        },
-        {
-          role: "פיצוח תוכן",
-          user: {
-            fullName: "דייגו",
-          },
-        },
-      ],
-      settings: [
-        {
-          isHeadphonesNeeded: true,
-        },
-      ],
-      difficultyLevel: "רמה גבוהה",
-      creator: {
-        fullName: "איש הווקה",
-        isAdmin: true
-      },
-      views: 190,
-      rating: [
-        {
-          userId: "123456",
-          rate: 2,
-        },
-        {
-          userId: "123456",
-          rate: 4,
-        },
-      ],
-     timestamps: new Date()
+    subject: {
+      title: 'טבע',
+      description: 'תיאור תיאור',
+      eduResource: [],
     },
-    {
-      title: "חלליות",
-      description: "בלה בלה בלה חלליות וחייזרים",
-      unit: 'בה"ד 15',
-      type: "לומדה",
-      estimatedTime: "40",
-      files:
-        {
-          media: {
-            file: rabit,
-            fileName: 'rabit',
-            MimeType: 'image',
-          },
-        },
-      subject: {
-        title: "חלל",
-      },
-      subSubject: {
-        title: "כוכבי לכת",
-      },
-      credits: [
-        {
-          role: "מומחה תוכן",
-          user: {
-            fullName: "אסף גרניט",
-          },
-        },
-        {
-          role: "פיצוח",
-          user: {
-            fullName: "קובי מחט",
-          },
-        },
-        {
-          role: "עיצוב גרפי",
-          user: {
-            fullName: "טל מוסרי",
-          },
-        },
-      ],
-      settings: [
-        {
-          isHeadphonesNeeded: false,
-        },
-      ],
-      difficultyLevel: "קל",
-      creator: {
-        fullName: "טיילור סוויפט",
-        isAdmin: false
-      },
-      views: 1000,
-      rating: [
-        {
-          userId: "123456",
-          rate: 1,
-        },
-        {
-          userId: "123456",
-          rate: 2,
-        },
-      ],
-     timestamps: new Date()
+    subSubject: {
+      _id: '0',
+      title: 'קיפוד',
+      description: 'תיאור תיאור',
+      eduResource: [],
     },
-    {
-      title: "רובוטים",
-      description: "רובוט הלך לשוק וקנה שם סוללות כדי שיהיה לו כוח",
-      unit: '8200',
-      type: "לומדה",
-      estimatedTime: "30",
-      files:
-        {
-          media: {
-            file: robot,
-            fileName: 'robot',
-            MimeType: 'image',
-          },
+    credits: [
+      {
+        role: 'עיצוב גרפי',
+        user: {
+          fullName: 'אלה כהן',
         },
-      subject: {
-        title: "טכנולוגיה",
       },
-      subSubject: {
-        title: "חידושים",
+      {
+        role: 'מומחה תוכן',
+        user: {
+          fullName: 'התינוק של במבה',
+        },
       },
-      credits: [
-        {
-          role: "פיתוח",
-          user: {
-            fullName: "צוות ווב",
-          },
+      {
+        role: 'פרויקטור',
+        user: {
+          fullName: 'שלומי שלמה',
         },
-      ],
-      settings: [
-        {
-          isHeadphonesNeeded: true,
-        },
-      ],
-      difficultyLevel: "רמה בינונית",
-      creator: {
-        fullName: "סבא טוביה",
-        isAdmin: true,
       },
-      views: 700,
-      rating: [
-        {
-          userId: "123456",
-          rate: 1,
-        },
-        {
-          userId: "123456",
-          rate: 1,
-        },
-      ],
-     timestamps: new Date()
+    ],
+    settings: [
+      {
+        isHeadphonesNeeded: false,
+      },
+    ],
+    difficultyLevel: 'מותאם לכל הרמות',
+    creator: {
+      fullName: 'הארי סטיילס',
+      isAdmin: true,
     },
-    {
-      title: "במבה",
-      description: "מארז אספנות 60 שנה לבמבה",
-      unit: '81',
-      type: "pdf",
-      estimatedTime: "10",
-      files:
-        {
-          media: {
-            file: bamba,
-            fileName: 'bamba',
-            MimeType: 'image',
-          },
-        },
-      subject: {
-        title: "חלבייה",
+    views: 1240,
+    rating: [
+      {
+        userId: '123456',
+        rate: 5,
       },
-      subSubject: {
-        title: "מבצעים שווים",
+      {
+        userId: '123456',
+        rate: 3,
       },
-      credits: [
-        {
-          role: "הכל",
-          user: {
-            fullName: "ארטק",
-          },
-        },
-      ],
-      settings: [
-        {
-          isHeadphonesNeeded: false,
-        },
-      ],
-      difficultyLevel: "קל",
-      creator: {
-        fullName: "דובון אכפת לי",
-        isAdmin: true,
+    ],
+    timestamps: new Date(),
+  },
+  {
+    title: 'רגע מתוק של עלית',
+    description: 'אני אוהב שוקולד ועוגות גבינה וארטיק וסוכריות ותות גינה',
+    unit: 'בה"ד 15',
+    type: 'סרטון',
+    estimatedTime: '2',
+    files: {
+      cover: {
+        file: elit,
+        fileName: 'elit',
+        MimeType: 'image',
       },
-      views: 32,
-      rating: [
-        {
-          userId: "123456",
-          rate: 5,
-        },
-        {
-          userId: "123456",
-          rate: 4,
-        },
-      ],
-     timestamps: new Date()
+      media: {
+        file: video,
+        fileName: 'chocolate',
+        MimeType: 'mp4',
+      },
     },
-    {
-      title: "כוחות הטבע",
-      description: "למדו על כוחות הטבע וכיצד הם משפיעים על העולם שסביבנו",
-      unit: 'בה"ד 10',
-      type: "לומדה",
-      estimatedTime: "15",
-      files:
-        {
-          media: {
-            file: flowers,
-            fileName: 'flowers',
-            MimeType: 'image',
-          },
-        },
-      subject: {
-        title: "מבואות מודיעין",
-        description: "תיאור תיאור",
-        eduResource: [],
-      },
-      subSubject: {
-        title: "הכרת זירת סוריה",
-        description: "תיאור תיאור",
-        eduResource: [],
-      },
-      credits: [
-        {
-          role: "מומחה תוכן",
-          user: {
-            fullName: "אליס פיזיקה",
-          },
-        },
-        {
-          role: "עיצוב גרפי",
-          user: {
-            fullName: "בוב גרף",
-          },
-        },
-      ],
-      settings: [
-        {
-          isHeadphonesNeeded: false,
-        },
-      ],
-      difficultyLevel: "קל",
-      creator: {
-        fullName: "איינשטיין",
-        isAdmin: true
-      },
-      views: 500,
-      rating: [
-        {
-          userId: "123456",
-          rate: 4,
-        },
-        {
-          userId: "123456",
-          rate: 5,
-        },
-      ],
-      timestamps: new Date()
+    subject: {
+      title: 'טבע',
+      description: 'תיאור תיאור',
+      eduResource: [],
     },
-    {
-      title: "היסטוריה של עולם",
-      description: "למדו על היסטוריה של העולם והאירועים המרכזיים בה",
-      unit: 'בה"ד 20',
-      type: "לומדה",
-      estimatedTime: "25",
-      files:
-        {
-          media: {
-            file: PT,
-            fileName: 'PT',
-            MimeType: 'image',
-          },
-        },
-      subject: {
-        title: "מבואות מודיעין",
-        description: "תיאור תיאור",
-        eduResource: [],
-      },
-      subSubject: {
-        title: "הכרת זירת סוריה",
-        description: "תיאור תיאור",
-        eduResource: [],
-      },
-      credits: [
-        {
-          role: "מומחה תוכן",
-          user: {
-            fullName: "היסטוריון יוסי",
-          },
-        },
-        {
-          role: "פרויקטור",
-          user: {
-            fullName: "שרה היסטוריה",
-          },
-        },
-      ],
-      settings: [
-        {
-          isHeadphonesNeeded: false,
-        },
-      ],
-      difficultyLevel: "בינוני",
-      creator: {
-        fullName: "נפוליאון",
-        isAdmin: true
-      },
-      views: 800,
-      rating: [
-        {
-          userId: "123456",
-          rate: 3,
-        },
-        {
-          userId: "123456",
-          rate: 4,
-        },
-      ],
-      timestamps: new Date()
+    subSubject: {
+      _id: '1',
+      title: 'שוקולדים',
+      description: 'תיאור תיאור',
+      eduResource: [],
     },
-    {
-      title: "מדעי המחשב",
-      description: "למדו על מדעי המחשב והטכנולוגיות המתקדמות בתחום",
-      unit: 'בה"ד 30',
-      type: "לומדה",
-      estimatedTime: "35",
-      files:
-        {
-          media: {
-            file: snow,
-            fileName: 'snow',
-            MimeType: 'image',
-          },
+    credits: [
+      {
+        role: 'פיתוח',
+        user: {
+          fullName: 'פורטל פורטלי',
         },
-      subject: {
-        title: "מבואות מודיעין",
-        description: "תיאור תיאור",
-        eduResource: [],
       },
-      subSubject: {
-        title: "הכרת זירת סוריה",
-        description: "תיאור תיאור",
-        eduResource: [],
+      {
+        role: 'מומחה תוכן',
+        user: {
+          fullName: 'דורה',
+        },
       },
-      credits: [
-        {
-          role: "מומחה תוכן",
-          user: {
-            fullName: "ג'ון תכנות",
-          },
+      {
+        role: 'פיצוח תוכן',
+        user: {
+          fullName: 'דייגו',
         },
-        {
-          role: "עיצוב גרפי",
-          user: {
-            fullName: "לילי גרף",
-          },
-        },
-      ],
-      settings: [
-        {
-          isHeadphonesNeeded: true,
-        },
-      ],
-      difficultyLevel: "גבוה",
-      creator: {
-        fullName: "ביל גייטס",
-        isAdmin: false
       },
-      views: 1200,
-      rating: [
-        {
-          userId: "123456",
-          rate: 5,
-        },
-        {
-          userId: "123456",
-          rate: 4,
-        },
-      ],
-      timestamps: new Date()
+    ],
+    settings: [
+      {
+        isHeadphonesNeeded: true,
+      },
+    ],
+    difficultyLevel: 'רמה גבוהה',
+    creator: {
+      fullName: 'איש הווקה',
+      isAdmin: true,
     },
-    {
-      title: "אמנות",
-      description: "למדו על אמנות ויצירה והשפעתה על החברה",
-      unit: 'בה"ד 25',
-      type: "לומדה",
-      estimatedTime: "30",
-      files:
-        {
-          media: {
-            file: tiger,
-            fileName: 'tiger',
-            MimeType: 'image',
-          },
-        },
-      subject: {
-        title: "מבואות מודיעין",
-        description: "תיאור תיאור",
-        eduResource: [],
+    views: 190,
+    rating: [
+      {
+        userId: '123456',
+        rate: 2,
       },
-      subSubject: {
-        title: "הכרת זירת סוריה",
-        description: "תיאור תיאור",
-        eduResource: [],
+      {
+        userId: '123456',
+        rate: 4,
       },
-      credits: [
-        {
-          role: "מומחה תוכן",
-          user: {
-            fullName: "פיקאסו",
-          },
-        },
-        {
-          role: "עיצוב גרפי",
-          user: {
-            fullName: "מונה ליזה",
-          },
-        },
-      ],
-      settings: [
-        {
-          isHeadphonesNeeded: false,
-        },
-      ],
-      difficultyLevel: "בינוני",
-      creator: {
-        fullName: "וינסנט ואן גוך",
-        isAdmin: false,
+    ],
+    timestamps: new Date(),
+  },
+  {
+    title: 'חלליות',
+    description: 'בלה בלה בלה חלליות וחייזרים',
+    unit: 'בה"ד 15',
+    type: 'לומדה',
+    estimatedTime: '40',
+    files: {
+      media: {
+        file: rabit,
+        fileName: 'rabit',
+        MimeType: 'image',
       },
-      views: 900,
-      rating: [
-        {
-          userId: "123456",
-          rate: 4,
-        },
-        {
-          userId: "123456",
-          rate: 3,
-        },
-      ],
-      timestamps: new Date()
     },
-    {
-      title: "מדעי הטבע",
-      description: "למדו על מדעי הטבע והתהליכים הטבעיים בעולם",
-      unit: 'בה"ד 40',
-      type: "לומדה",
-      estimatedTime: "45",
-      files:
-        {
-          media: {
-            file: zebra,
-            fileName: 'zebra',
-            MimeType: 'image',
-          },
-        },
-      subject: {
-        title: "מבואות מודיעין",
-        description: "תיאור תיאור",
-        eduResource: [],
-      },
-      subSubject: {
-        title: "הכרת זירת סוריה",
-        description: "תיאור תיאור",
-        eduResource: [],
-      },
-      credits: [
-        {
-          role: "מומחה תוכן",
-          user: {
-            fullName: "ניוטון",
-          },
-        },
-        {
-          role: "עיצוב גרפי",
-          user: {
-            fullName: "גלילאו",
-          },
-        },
-      ],
-      settings: [
-        {
-          isHeadphonesNeeded: false,
-        },
-      ],
-      difficultyLevel: "גבוה",
-      creator: {
-        fullName: "איינשטיין",
-        isAdmin: false
-      },
-      views: 1500,
-      rating: [
-        {
-          userId: "123456",
-          rate: 5,
-        },
-        {
-          userId: "123456",
-          rate: 4,
-        },
-      ],
-      timestamps: new Date()
+    subject: {
+      title: 'חלל',
     },
-    {
-      title: "ספורט",
-      description: "למדו על ספורט ופעילות גופנית והשפעתן על הבריאות",
-      unit: 'בה"ד 35',
-      type: "לומדה",
-      estimatedTime: "40",
-      files:
-        {
-          media: {
-            file: sports,
-            fileName: 'sports',
-            MimeType: 'image',
-          },
+    subSubject: {
+      _id: '0',
+      title: 'כוכבי לכת',
+      description: 'תיאור תיאור',
+      eduResource: [],
+    },
+    credits: [
+      {
+        role: 'מומחה תוכן',
+        user: {
+          fullName: 'אסף גרניט',
         },
-      subject: {
-        title: "מבואות מודיעין",
-        description: "תיאור תיאור",
-        eduResource: [],
       },
-      subSubject: {
-        title: "הכרת זירת סוריה",
-        description: "תיאור תיאור",
-        eduResource: [],
+      {
+        role: 'פיצוח',
+        user: {
+          fullName: 'קובי מחט',
+        },
       },
-      credits: [
-        {
-          role: "מומחה תוכן",
-          user: {
-            fullName: "מייקל פילס",
-          },
+      {
+        role: 'עיצוב גרפי',
+        user: {
+          fullName: 'טל מוסרי',
         },
-        {
-          role: "מאמן",
-          user: {
-            fullName: "כריס רונאלדו",
-          },
-        },
-      ],
-      settings: [
-        {
-          isHeadphonesNeeded: false,
-        },
-      ],
-      difficultyLevel: "בינוני",
-      creator: {
-        fullName: "אוסקר פיסטוריוס",
-        isAdmin: true,
       },
-      views: 1100,
-      rating: [
-        {
-          userId: "123456",
-          rate: 4,
+    ],
+    settings: [
+      {
+        isHeadphonesNeeded: false,
+      },
+    ],
+    difficultyLevel: 'קל',
+    creator: {
+      fullName: 'טיילור סוויפט',
+      isAdmin: false,
+    },
+    views: 1000,
+    rating: [
+      {
+        userId: '123456',
+        rate: 1,
+      },
+      {
+        userId: '123456',
+        rate: 2,
+      },
+    ],
+    timestamps: new Date(),
+  },
+  {
+    title: 'רובוטים',
+    description: 'רובוט הלך לשוק וקנה שם סוללות כדי שיהיה לו כוח',
+    unit: '8200',
+    type: 'לומדה',
+    estimatedTime: '30',
+    files: {
+      media: {
+        file: robot,
+        fileName: 'robot',
+        MimeType: 'image',
+      },
+    },
+    subject: {
+      title: 'טכנולוגיה',
+    },
+    subSubject: {
+      _id: '0',
+      title: 'חידושים',
+      description: 'תיאור תיאור',
+      eduResource: [],
+    },
+    credits: [
+      {
+        role: 'פיתוח',
+        user: {
+          fullName: 'צוות ווב',
         },
-        {
-          userId: "123456",
-          rate: 3,
+      },
+    ],
+    settings: [
+      {
+        isHeadphonesNeeded: true,
+      },
+    ],
+    difficultyLevel: 'רמה בינונית',
+    creator: {
+      fullName: 'סבא טוביה',
+      isAdmin: true,
+    },
+    views: 700,
+    rating: [
+      {
+        userId: '123456',
+        rate: 1,
+      },
+      {
+        userId: '123456',
+        rate: 1,
+      },
+    ],
+    timestamps: new Date(),
+  },
+  {
+    title: 'במבה',
+    description: 'מארז אספנות 60 שנה לבמבה',
+    unit: '81',
+    type: 'pdf',
+    estimatedTime: '10',
+    files: {
+      media: {
+        file: bamba,
+        fileName: 'bamba',
+        MimeType: 'image',
+      },
+    },
+    subject: {
+      title: 'חלבייה',
+    },
+    subSubject: {
+      _id: '0',
+      title: 'מבצעים שווים',
+      description: 'תיאור תיאור',
+      eduResource: [],
+    },
+    credits: [
+      {
+        role: 'הכל',
+        user: {
+          fullName: 'ארטק',
         },
-      ],
-      timestamps: new Date()
-    }
-  ];
+      },
+    ],
+    settings: [
+      {
+        isHeadphonesNeeded: false,
+      },
+    ],
+    difficultyLevel: 'קל',
+    creator: {
+      fullName: 'דובון אכפת לי',
+      isAdmin: true,
+    },
+    views: 32,
+    rating: [
+      {
+        userId: '123456',
+        rate: 5,
+      },
+      {
+        userId: '123456',
+        rate: 4,
+      },
+    ],
+    timestamps: new Date(),
+  },
+  {
+    title: 'כוחות הטבע',
+    description: 'למדו על כוחות הטבע וכיצד הם משפיעים על העולם שסביבנו',
+    unit: 'בה"ד 10',
+    type: 'לומדה',
+    estimatedTime: '15',
+    files: {
+      media: {
+        file: flowers,
+        fileName: 'flowers',
+        MimeType: 'image',
+      },
+    },
+    subject: {
+      title: 'מבואות מודיעין',
+      description: 'תיאור תיאור',
+      eduResource: [],
+    },
+    subSubject: {
+      _id: '0',
+      title: 'הכרת זירת סוריה',
+      description: 'תיאור תיאור',
+      eduResource: [],
+    },
+    credits: [
+      {
+        role: 'מומחה תוכן',
+        user: {
+          fullName: 'אליס פיזיקה',
+        },
+      },
+      {
+        role: 'עיצוב גרפי',
+        user: {
+          fullName: 'בוב גרף',
+        },
+      },
+    ],
+    settings: [
+      {
+        isHeadphonesNeeded: false,
+      },
+    ],
+    difficultyLevel: 'קל',
+    creator: {
+      fullName: 'איינשטיין',
+      isAdmin: true,
+    },
+    views: 500,
+    rating: [
+      {
+        userId: '123456',
+        rate: 4,
+      },
+      {
+        userId: '123456',
+        rate: 5,
+      },
+    ],
+    timestamps: new Date(),
+  },
+  {
+    title: 'היסטוריה של עולם',
+    description: 'למדו על היסטוריה של העולם והאירועים המרכזיים בה',
+    unit: 'בה"ד 20',
+    type: 'לומדה',
+    estimatedTime: '25',
+    files: {
+      media: {
+        file: PT,
+        fileName: 'PT',
+        MimeType: 'image',
+      },
+    },
+    subject: {
+      title: 'מבואות מודיעין',
+      description: 'תיאור תיאור',
+      eduResource: [],
+    },
+    subSubject: {
+      _id: '0',
+      title: 'הכרת זירת סוריה',
+      description: 'תיאור תיאור',
+      eduResource: [],
+    },
+    credits: [
+      {
+        role: 'מומחה תוכן',
+        user: {
+          fullName: 'היסטוריון יוסי',
+        },
+      },
+      {
+        role: 'פרויקטור',
+        user: {
+          fullName: 'שרה היסטוריה',
+        },
+      },
+    ],
+    settings: [
+      {
+        isHeadphonesNeeded: false,
+      },
+    ],
+    difficultyLevel: 'בינוני',
+    creator: {
+      fullName: 'נפוליאון',
+      isAdmin: true,
+    },
+    views: 800,
+    rating: [
+      {
+        userId: '123456',
+        rate: 3,
+      },
+      {
+        userId: '123456',
+        rate: 4,
+      },
+    ],
+    timestamps: new Date(),
+  },
+  {
+    title: 'מדעי המחשב',
+    description: 'למדו על מדעי המחשב והטכנולוגיות המתקדמות בתחום',
+    unit: 'בה"ד 30',
+    type: 'לומדה',
+    estimatedTime: '35',
+    files: {
+      media: {
+        file: snow,
+        fileName: 'snow',
+        MimeType: 'image',
+      },
+    },
+    subject: {
+      title: 'מבואות מודיעין',
+      description: 'תיאור תיאור',
+      eduResource: [],
+    },
+    subSubject: {
+      _id: '0',
+      title: 'הכרת זירת סוריה',
+      description: 'תיאור תיאור',
+      eduResource: [],
+    },
+    credits: [
+      {
+        role: 'מומחה תוכן',
+        user: {
+          fullName: "ג'ון תכנות",
+        },
+      },
+      {
+        role: 'עיצוב גרפי',
+        user: {
+          fullName: 'לילי גרף',
+        },
+      },
+    ],
+    settings: [
+      {
+        isHeadphonesNeeded: true,
+      },
+    ],
+    difficultyLevel: 'גבוה',
+    creator: {
+      fullName: 'ביל גייטס',
+      isAdmin: false,
+    },
+    views: 1200,
+    rating: [
+      {
+        userId: '123456',
+        rate: 5,
+      },
+      {
+        userId: '123456',
+        rate: 4,
+      },
+    ],
+    timestamps: new Date(),
+  },
+  {
+    title: 'אמנות',
+    description: 'למדו על אמנות ויצירה והשפעתה על החברה',
+    unit: 'בה"ד 25',
+    type: 'לומדה',
+    estimatedTime: '30',
+    files: {
+      media: {
+        file: tiger,
+        fileName: 'tiger',
+        MimeType: 'image',
+      },
+    },
+    subject: {
+      title: 'מבואות מודיעין',
+      description: 'תיאור תיאור',
+      eduResource: [],
+    },
+    subSubject: {
+      _id: '0',
+      title: 'הכרת זירת סוריה',
+      description: 'תיאור תיאור',
+      eduResource: [],
+    },
+    credits: [
+      {
+        role: 'מומחה תוכן',
+        user: {
+          fullName: 'פיקאסו',
+        },
+      },
+      {
+        role: 'עיצוב גרפי',
+        user: {
+          fullName: 'מונה ליזה',
+        },
+      },
+    ],
+    settings: [
+      {
+        isHeadphonesNeeded: false,
+      },
+    ],
+    difficultyLevel: 'בינוני',
+    creator: {
+      fullName: 'וינסנט ואן גוך',
+      isAdmin: false,
+    },
+    views: 900,
+    rating: [
+      {
+        userId: '123456',
+        rate: 4,
+      },
+      {
+        userId: '123456',
+        rate: 3,
+      },
+    ],
+    timestamps: new Date(),
+  },
+  {
+    title: 'מדעי הטבע',
+    description: 'למדו על מדעי הטבע והתהליכים הטבעיים בעולם',
+    unit: 'בה"ד 40',
+    type: 'לומדה',
+    estimatedTime: '45',
+    files: {
+      media: {
+        file: zebra,
+        fileName: 'zebra',
+        MimeType: 'image',
+      },
+    },
+    subject: {
+      title: 'מבואות מודיעין',
+      description: 'תיאור תיאור',
+      eduResource: [],
+    },
+    subSubject: {
+      _id: '0',
+      title: 'הכרת זירת סוריה',
+      description: 'תיאור תיאור',
+      eduResource: [],
+    },
+    credits: [
+      {
+        role: 'מומחה תוכן',
+        user: {
+          fullName: 'ניוטון',
+        },
+      },
+      {
+        role: 'עיצוב גרפי',
+        user: {
+          fullName: 'גלילאו',
+        },
+      },
+    ],
+    settings: [
+      {
+        isHeadphonesNeeded: false,
+      },
+    ],
+    difficultyLevel: 'גבוה',
+    creator: {
+      fullName: 'איינשטיין',
+      isAdmin: false,
+    },
+    views: 1500,
+    rating: [
+      {
+        userId: '123456',
+        rate: 5,
+      },
+      {
+        userId: '123456',
+        rate: 4,
+      },
+    ],
+    timestamps: new Date(),
+  },
+  {
+    title: 'ספורט',
+    description: 'למדו על ספורט ופעילות גופנית והשפעתן על הבריאות',
+    unit: 'בה"ד 35',
+    type: 'לומדה',
+    estimatedTime: '40',
+    files: {
+      media: {
+        file: sports,
+        fileName: 'sports',
+        MimeType: 'image',
+      },
+    },
+    subject: {
+      title: 'מבואות מודיעין',
+      description: 'תיאור תיאור',
+      eduResource: [],
+    },
+    subSubject: {
+      _id: '0',
+      title: 'הכרת זירת סוריה',
+      description: 'תיאור תיאור',
+      eduResource: [],
+    },
+    credits: [
+      {
+        role: 'מומחה תוכן',
+        user: {
+          fullName: 'מייקל פילס',
+        },
+      },
+      {
+        role: 'מאמן',
+        user: {
+          fullName: 'כריס רונאלדו',
+        },
+      },
+    ],
+    settings: [
+      {
+        isHeadphonesNeeded: false,
+      },
+    ],
+    difficultyLevel: 'בינוני',
+    creator: {
+      fullName: 'אוסקר פיסטוריוס',
+      isAdmin: true,
+    },
+    views: 1100,
+    rating: [
+      {
+        userId: '123456',
+        rate: 4,
+      },
+      {
+        userId: '123456',
+        rate: 3,
+      },
+    ],
+    timestamps: new Date(),
+  },
+];
 
-
-  export default recommendedEduResource;
+export default recommendedEduResource;
