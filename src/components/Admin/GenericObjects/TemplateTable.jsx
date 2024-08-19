@@ -14,7 +14,7 @@ const TemplateTable = ({ dataArr, selectedTab, onClick, icon }) => {
           children={getAdminChildren(item, selectedTab)}
           item={item}
           onClick={onClick}
-          PopUp={getAdminPopUp(selectedTab, item.type)}
+          PopUp={getAdminPopUp(selectedTab)}
         />
       ))}
     </div>

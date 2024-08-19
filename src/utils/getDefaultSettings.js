@@ -1,27 +1,30 @@
-import settingArray from "../store/settingsArray";
+import settingArray from '../store/settingsArray';
 
-const getSettings = (fileType) => {
+const getDefaultSettings = (fileType) => {
   switch (true) {
-    case fileType === "סיכום":
+    case fileType === 'סיכום':
       return [
         {
           text: settingArray.isRecomennded,
           defaultValue: false,
         },
-        { text: settingArray.isPrimaryEduResourse, defaultValue: false },
+        {
+          text: settingArray.isPrimaryEduResourse,
+          defaultValue: false,
+        },
         {
           text: settingArray.isValidated,
           defaultValue: true,
         },
       ];
-    case fileType === "מצגת" ||
-      fileType === "לומדה" ||
-      fileType === "סרטון" ||
-      fileType === "משחק":
+    case fileType === 'מצגת' ||
+      fileType === 'לומדה' ||
+      fileType === 'סרטון' ||
+      fileType === 'משחק':
       return [
         {
           text: settingArray.isHeadponesNeeded,
-          defaultValue: fileType === "סרטון" ? true : false,
+          defaultValue: fileType === 'סרטון' ? true : false,
         },
         {
           text: settingArray.isRecomennded,
@@ -38,4 +41,4 @@ const getSettings = (fileType) => {
   }
 };
 
-export default getSettings;
+export default getDefaultSettings;

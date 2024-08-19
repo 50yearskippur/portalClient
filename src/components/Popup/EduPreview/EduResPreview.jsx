@@ -1,5 +1,4 @@
-import './EduResPreview.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import handlePropagation from '../../../utils/handlePropagation';
 import EduPreviewTop from './EduPreviewTop';
 import DeleteEduText from './DeleteEduText';
@@ -12,25 +11,20 @@ import Setting from './SettingsList';
 import MoreDetails from './MoreDetails';
 import DeleteEduPopup from '../General/DeleteEdu';
 import GenericFilePreview from './GenericFilePreview';
+import getDefaultSettings from '../../../utils/getDefaultSettings';
+import UserDetails from './UserDetails';
+import './EduResPreview.css';
 
 const EduPreview = ({ edu }) => {
   const [isDeletePopup, setIsDeletePopup] = useState(false);
-  const settingsArray = [
-    { text: 'התוצר מצריך שימוש באוזניות', defaultValue: true },
-    {
-      text: 'התוצר בסיווג גבוה מסגול צמצם ומצריך סיסמא',
-      defaultValue: false,
-    },
-    {
-      text: 'התוצר יהיה חלק ממאגר המומלצים ליחידות והקורסים הרלוונטיים',
-      defaultValue: true,
-    },
-    { text: 'התוצר יהיה התוצר הראשי תחת תת הנושא', defaultValue: false },
-    {
-      text: 'התוצר נבדק, המידע בו עדכני ומאושר ע”י גורם המקצועי',
-      defaultValue: false,
-    },
-  ];
+  const [settingsArray, setSettingsArray] = useState(
+    getDefaultSettings(edu.type)
+  );
+  const uploadByUser = edu.creator?.role === 'user';
+
+  useEffect(() => {
+    setSettingsArray(getDefaultSettings(edu.type));
+  }, [edu]);
 
   return (
     <div className="edu-preview-content" onClick={(e) => handlePropagation(e)}>
@@ -46,9 +40,14 @@ const EduPreview = ({ edu }) => {
           <div className="edu-blue-text underline">לחצו לאישור תיקוף</div>
         </div>
       </div>
-      <EduResSection title="פרטים" content={<Details edu={edu} />} />
+      <EduResSection
+        title="פרטים"
+        content={<Details edu={edu} uploadByUser={uploadByUser} />}
+      />
       <EduResSection title="תגובות" content={<Comments edu={edu} />} />
-      <EduResSection title="קרדיטים" content={<Credits edu={edu} />} />
+      {!uploadByUser && (
+        <EduResSection title="קרדיטים" content={<Credits edu={edu} />} />
+      )}
       <EduResSection
         title="קבצים"
         content={<GenericFilePreview fileTitle={edu.title} edu={edu} />}
@@ -57,7 +56,10 @@ const EduPreview = ({ edu }) => {
         title="הגדרות"
         content={<Setting settingsArray={settingsArray} />}
       />
-      <EduResSection content={<MoreDetails edu={edu} />} />
+      <EduResSection
+        content={<MoreDetails edu={edu} uploadByUser={uploadByUser} />}
+      />
+      {uploadByUser && <EduResSection content={<UserDetails edu={edu} />} />}
       <DeleteEduText onClick={() => setIsDeletePopup(true)} />
       <DeleteEduPopup
         isOpen={isDeletePopup}

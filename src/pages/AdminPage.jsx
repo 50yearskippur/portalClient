@@ -107,11 +107,16 @@ const AdminPage = () => {
         title: 'הכירו את זירת לבנון',
         type: 'לומדה',
         date: Date('28.8.2024'),
-        creator: 'נפתלי בנט',
+        creator: { fullName: 'נפתלי בנט', role: 'user' },
         experationDate: new Date('2024-07-26T00:00'),
         subSubject: {
           title: 'זירת חתול',
         },
+        settings: [
+          {
+            isHeadphonesNeeded: false,
+          },
+        ],
         subject: { title: 'מבואות מודיעין' },
         media: rabit,
         cover: rabit,
@@ -161,6 +166,11 @@ const AdminPage = () => {
         subSubject: {
           title: ' חתול',
         },
+        settings: [
+          {
+            isHeadphonesNeeded: false,
+          },
+        ],
         subject: { title: 'מבואות מודיעין' },
         media: rabit,
         cover: rabit,
@@ -210,6 +220,11 @@ const AdminPage = () => {
         subSubject: {
           title: ' חתול',
         },
+        settings: [
+          {
+            isHeadphonesNeeded: false,
+          },
+        ],
         subject: { title: 'מבואות מודיעין' },
         media: rabit,
         cover: rabit,
@@ -259,11 +274,17 @@ const AdminPage = () => {
         subSubject: {
           title: 'זירת חתול',
         },
+        settings: [
+          {
+            isHeadphonesNeeded: false,
+          },
+        ],
         subject: { title: 'מבואות מודיעין' },
         media: rabit,
         cover: rabit,
         mediaType: 'image',
         level: 'רמה בסיסית',
+        creator: { fullName: 'נפתלי בנט', role: 'user' },
         uploadByArtech: false,
         tags: [{ title: 'תג 1' }, { title: 'תג 2' }],
         info: 'משחק שנועד ללמד את צבעי הכומתות בחיילות השונים משחק שנועד ללמד את צבעי הכומתות בחיילות השונים  משחק שנועד ללמד את צבעי הכומתות בחיילות השונים',

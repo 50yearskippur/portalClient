@@ -1,10 +1,10 @@
-const Details = ({ edu }) => {
+const Details = ({ edu, uploadByUser }) => {
   return (
     <div className="edu-paragraph-container">
-      {!edu.uploadByArtech && (
+      {uploadByUser && (
         <div className="edu-text-container">
           <div className="edu-bright-text">הועלה על ידי</div>
-          <div className="edu-dark-text">{edu.creator}</div>
+          <div className="edu-dark-text">{edu.creator.fullName}</div>
         </div>
       )}
       <div className="edu-row-container">
@@ -17,10 +17,12 @@ const Details = ({ edu }) => {
           <div className="edu-dark-text">{edu.subSubject.title}</div>
         </div>
       </div>
-      <div className="edu-text-container">
-        <div className="edu-bright-text">תיאור</div>
-        <div className="edu-dark-text">{edu.info}</div>
-      </div>
+      {edu.type !== 'סיכום' && (
+        <div className="edu-text-container">
+          <div className="edu-bright-text">תיאור</div>
+          <div className="edu-dark-text">{edu.info}</div>
+        </div>
+      )}
     </div>
   );
 };

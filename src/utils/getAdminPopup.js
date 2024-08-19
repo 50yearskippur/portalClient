@@ -2,13 +2,13 @@ import EduResPreview from '../components/Popup/EduPreview/EduResPreview';
 import FormPreview from '../components/Popup/EduPreview/FormPreview';
 import MediaPreview from '../components/Popup/EduPreview/MediaPreview';
 
-const getAdminPopUp = (fileType) => {
+const getAdminPopUp = (selectedTab) => {
   switch (true) {
-    case fileType === 'מצגת' || fileType === 'לומדה' || fileType === 'משחק':
+    case selectedTab.includes('תוצרים'):
       return EduResPreview;
-    case fileType === 'טופס':
+    case selectedTab.includes('טפסים'):
       return FormPreview;
-    case fileType === 'תמונות סטוק ואלבומים':
+    case selectedTab.includes('תמונות סטוק ואלבומים'):
       return MediaPreview;
     default:
       return EduResPreview;

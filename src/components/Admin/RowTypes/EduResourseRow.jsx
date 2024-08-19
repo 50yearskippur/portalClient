@@ -38,13 +38,6 @@ const EduResourseRow = (item) => {
       subTitle="עודכן בתאריך"
       style={{ width: '7.4vw' }}
     />,
-    <div className="edu-row-tag-container">
-      {item?.tags?.map((tag, tagIndex) => (
-        <div key={`tag ${tagIndex}`} className="edu-row-tag">
-          {tag?.title}
-        </div>
-      ))}
-    </div>,
   ];
 };
 
