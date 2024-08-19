@@ -171,6 +171,38 @@ const AdminPage = () => {
             isHeadphonesNeeded: false,
           },
         ],
+        credits: [
+          {
+            role: 'פיתוח',
+            user: {
+              fullName: 'פורטל פורטלי',
+            },
+          },
+          {
+            role: 'מומחה תוכן',
+            user: {
+              fullName: 'דורה',
+            },
+          },
+          {
+            role: 'פיצוח תוכן',
+            user: {
+              fullName: 'דייגו',
+            },
+          },
+          {
+            role: 'פיצוח תוכן',
+            user: {
+              fullName: 'דייגו',
+            },
+          },
+          {
+            role: 'פיצוח תוכן',
+            user: {
+              fullName: 'דייגו',
+            },
+          },
+        ],
         subject: { title: 'מבואות מודיעין' },
         media: rabit,
         cover: rabit,
@@ -225,6 +257,26 @@ const AdminPage = () => {
             isHeadphonesNeeded: false,
           },
         ],
+        credits: [
+          {
+            role: 'פיתוח',
+            user: {
+              fullName: 'פורטל פורטלי',
+            },
+          },
+          {
+            role: 'מומחה תוכן',
+            user: {
+              fullName: 'דורה',
+            },
+          },
+          {
+            role: 'פיצוח תוכן',
+            user: {
+              fullName: 'דייגו',
+            },
+          },
+        ],
         subject: { title: 'מבואות מודיעין' },
         media: rabit,
         cover: rabit,
@@ -277,6 +329,26 @@ const AdminPage = () => {
         settings: [
           {
             isHeadphonesNeeded: false,
+          },
+        ],
+        credits: [
+          {
+            role: 'פיתוח',
+            user: {
+              fullName: 'פורטל פורטלי',
+            },
+          },
+          {
+            role: 'מומחה תוכן',
+            user: {
+              fullName: 'דורה',
+            },
+          },
+          {
+            role: 'פיצוח תוכן',
+            user: {
+              fullName: 'דייגו',
+            },
           },
         ],
         subject: { title: 'מבואות מודיעין' },

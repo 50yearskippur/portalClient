@@ -1,10 +1,10 @@
-import React from "react";
-import "./MediaPopup.css";
-import backImg from "../../../assets/media/Icons/backIcon.svg";
-import downloadIcon from "../../../assets/media/Icons/downloadIcon.svg";
-import { useContext } from "react";
-import { PopupContext } from "../../../store/popup-context";
-import { download } from "../../../utils/download";
+import React from 'react';
+import './MediaPopup.css';
+import backImg from '../../../assets/media/Icons/backIcon.svg';
+import downloadIcon from '../../../assets/media/Icons/downloadIcon.svg';
+import { useContext } from 'react';
+import { PopupContext } from '../../../store/popup-context';
+import download from '../../../utils/download';
 
 const MediaPopup = ({ children, item = {} }) => {
   const { hidePopup } = useContext(PopupContext);
