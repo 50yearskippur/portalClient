@@ -1,20 +1,15 @@
-import settingArray from '../store/settingsArray';
-
 const getDefaultSettings = (fileType) => {
   switch (true) {
     case fileType === 'סיכום':
       return [
         {
-          text: settingArray.isRecomennded,
-          defaultValue: false,
+          isRecomennded: false,
         },
         {
-          text: settingArray.isPrimaryEduResourse,
-          defaultValue: false,
+          isPrimaryEduResourse: false,
         },
         {
-          text: settingArray.isValidated,
-          defaultValue: true,
+          isValidated: true,
         },
       ];
     case fileType === 'מצגת' ||
@@ -23,18 +18,15 @@ const getDefaultSettings = (fileType) => {
       fileType === 'משחק':
       return [
         {
-          text: settingArray.isHeadponesNeeded,
-          defaultValue: fileType === 'סרטון' ? true : false,
+          isHeadponesNeeded: fileType === 'סרטון' ? true : false,
         },
         {
-          text: settingArray.isRecomennded,
-          defaultValue: false,
+          isRecomennded: false,
         },
         {
-          text: settingArray.isValidated,
-          defaultValue: true,
+          isValidated: true,
         },
-        { text: settingArray.isPrimaryEduResourse, defaultValue: false },
+        { isPrimaryEduResourse: false },
       ];
     default:
       return;

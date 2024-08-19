@@ -54,7 +54,7 @@ const EduPreview = ({ edu }) => {
       />
       <EduResSection
         title="הגדרות"
-        content={<Setting settingsArray={settingsArray} />}
+        content={<Setting settingsArray={settingsArray} disabled={true}/>}
       />
       <EduResSection
         content={<MoreDetails edu={edu} uploadByUser={uploadByUser} />}
