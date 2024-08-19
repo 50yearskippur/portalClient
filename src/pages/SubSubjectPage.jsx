@@ -16,6 +16,8 @@ import headphonesSilent from '../assets/media/Icons/headphonesSilent.svg';
 import clock from '../assets/media/Icons/clock.svg';
 import addedToFavoritesIcon from '../assets/media/Icons/addedToFavoritesIcon.svg';
 import convertDateToString from '../utils/convertDateToString';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 // delete in production
 import bluePlus from '../assets/media/Icons/bluePlus.svg';
 
@@ -43,6 +45,32 @@ const SubSubjectPage = () => {
 
   const onAddToFavoritesHandler = () => {
     setIsAddedToFavorites((prev) => !prev);
+    if (!isAddedToFavorites) {
+      toast(
+        <div
+          style={{
+            display: 'flex',
+            direction: 'rtl',
+            justifyContent: 'space-between',
+            fontSize: '14px',
+          }}
+        >
+          <img src={heartimg} alt="heart" />
+          <div>נוסף למועדפים</div>
+          <a
+            style={{ color: '#8CAEFF', cursor: 'pointer' }}
+            href="/personalArea"
+          >
+            מעבר למועדפים
+          </a>
+        </div>,
+        {
+          type: 'info',
+          autoClose: 2000,
+          icon: false,
+        }
+      );
+    }
   };
 
   const getEduCredits = (credits) => {
