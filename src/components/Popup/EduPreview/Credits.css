@@ -1,0 +1,7 @@
+.credits-list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 2.6vh;
+  column-gap: 2.6vw;
+}
