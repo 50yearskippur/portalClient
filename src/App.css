@@ -1,11 +1,11 @@
 @font-face {
-  font-family: "Assistant";
-  src: url("./assets/fonts/Assistant-VariableFont_wght.ttf");
+  font-family: 'Assistant';
+  src: url('./assets/fonts/Assistant-VariableFont_wght.ttf');
 }
 
 @font-face {
-  font-family: "Rubik";
-  src: url("./assets/fonts/Rubik-VariableFont_wght.ttf");
+  font-family: 'Rubik';
+  src: url('./assets/fonts/Rubik-VariableFont_wght.ttf');
 }
 
 html,
@@ -17,8 +17,8 @@ body {
   margin: 0;
 }
 
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
   -webkit-appearance: none;
 }
 
@@ -55,7 +55,7 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 .header::after {
-  content: "";
+  content: '';
   position: absolute;
   right: 0;
   bottom: 0px;

@@ -1,34 +1,34 @@
-import "./EduResPreview.css";
-import { useState } from "react";
-import handlePropagation from "../../../utils/handlePropagation";
-import EduPreviewTop from "./EduPreviewTop";
-import DeleteEduText from "./DeleteEduText";
-import warning from "../../../assets/media/Icons/warningBox.svg";
-import EduResSection from "./EduResSection";
-import Details from "./Details";
-import Comments from "./Comments";
-import Credits from "./Credits";
-import Setting from "./SettingsList";
-import MoreDetails from "./MoreDetails";
-import Groups from "./Groups";
-import DeleteEduPopup from "../General/DeleteEdu";
-import GenericFileComponent from "./GenericFileComponent";
+import './EduResPreview.css';
+import { useState } from 'react';
+import handlePropagation from '../../../utils/handlePropagation';
+import EduPreviewTop from './EduPreviewTop';
+import DeleteEduText from './DeleteEduText';
+import warning from '../../../assets/media/Icons/warningBox.svg';
+import EduResSection from './EduResSection';
+import Details from './Details';
+import Comments from './Comments';
+import Credits from './Credits';
+import Setting from './SettingsList';
+import MoreDetails from './MoreDetails';
+import Groups from './Groups';
+import DeleteEduPopup from '../General/DeleteEdu';
+import GenericFilePreview from './GenericFilePreview';
 
 const EduPreview = ({ edu }) => {
   const [isDeletePopup, setIsDeletePopup] = useState(false);
   const settingsArray = [
-    { text: "התוצר מצריך שימוש באוזניות", defaultValue: true },
+    { text: 'התוצר מצריך שימוש באוזניות', defaultValue: true },
     {
-      text: "התוצר בסיווג גבוה מסגול צמצם ומצריך סיסמא",
+      text: 'התוצר בסיווג גבוה מסגול צמצם ומצריך סיסמא',
       defaultValue: false,
     },
     {
-      text: "התוצר יהיה חלק ממאגר המומלצים ליחידות והקורסים הרלוונטיים",
+      text: 'התוצר יהיה חלק ממאגר המומלצים ליחידות והקורסים הרלוונטיים',
       defaultValue: true,
     },
-    { text: "התוצר יהיה התוצר הראשי תחת תת הנושא", defaultValue: false },
+    { text: 'התוצר יהיה התוצר הראשי תחת תת הנושא', defaultValue: false },
     {
-      text: "התוצר נבדק, המידע בו עדכני ומאושר ע”י גורם המקצועי",
+      text: 'התוצר נבדק, המידע בו עדכני ומאושר ע”י גורם המקצועי',
       defaultValue: false,
     },
   ];
@@ -52,7 +52,7 @@ const EduPreview = ({ edu }) => {
       <EduResSection title="קרדיטים" content={<Credits edu={edu} />} />
       <EduResSection
         title="קבצים"
-        content={<GenericFileComponent fileTitle={edu.title} edu={edu} />}
+        content={<GenericFilePreview fileTitle={edu.title} edu={edu} />}
       />
       <EduResSection
         title="הגדרות"
@@ -62,17 +62,17 @@ const EduPreview = ({ edu }) => {
       <EduResSection content={<MoreDetails edu={edu} />} />
       <EduResSection
         title="קורסים או יחידות רלוונטיים"
-        content={<Groups groups={["לורם איפסום", "לורם איפסום"]} />}
+        content={<Groups groups={['לורם איפסום', 'לורם איפסום']} />}
       />
       <EduResSection
         title="תיוגים"
         content={
           <Groups
             groups={[
-              "לורם איפסום",
-              "לורם איפסום",
-              "לורם איפסום",
-              "לורם איפסום",
+              'לורם איפסום',
+              'לורם איפסום',
+              'לורם איפסום',
+              'לורם איפסום',
             ]}
           />
         }

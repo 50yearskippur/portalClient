@@ -1,9 +1,9 @@
-import "./FileController.css";
-import React, { useState } from "react";
-import getHtml from "./getHtml";
-import watchIconHover from "../../assets/media/Icons/watchHoverIcon.png";
-import downloadIconHover from "../../assets/media/Icons/downloadHoverIcon.png";
-import { download } from "../../utils/download";
+import './FileController.css';
+import React, { useState } from 'react';
+import getHtml from './getHtml';
+import watchIconHover from '../../assets/media/Icons/watchHoverIcon.png';
+import downloadIconHover from '../../assets/media/Icons/downloadHoverIcon.png';
+import { download } from '../../utils/download';
 
 const FileController = ({
   item,
@@ -14,7 +14,7 @@ const FileController = ({
 }) => {
   const [display, setDisplay] = useState(item?.cover ? item.cover : item.media);
   const [fileType, setFileType] = useState(
-    item.cover ? "image" : item.mediaType
+    item.cover ? 'image' : item.mediaType
   );
   return (
     <div
@@ -32,7 +32,7 @@ const FileController = ({
         <div className="file-overlay">
           <img
             onClick={() => download(item)}
-            style={{ marginLeft: "1.778vw" }}
+            style={{ marginLeft: '1.778vw' }}
             src={downloadIconHover}
             alt="download icon"
           />

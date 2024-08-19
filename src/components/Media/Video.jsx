@@ -49,7 +49,7 @@ const Video = ({ src, style }) => {
         {formatTime(duration)} / {formatTime(currentTime)}
       </div>
       <div className="video-container" style={style}>
-        <video ref={videoRef} src={src} className="file" />
+        <video ref={videoRef} src={src} className="file-style" />
         <div className="controls">
           <div className="activation-container" onClick={activationHandler}>
             <div className="activation-shadow">

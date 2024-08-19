@@ -35,7 +35,7 @@ const EduResourseRow = (item) => {
     </div>,
     <GenericItem
       title={convertDateToString(item?.date)}
-      subTitle="תאריך העלאה"
+      subTitle="עודכן בתאריך"
       style={{ width: '7.4vw' }}
     />,
     <div className="edu-row-tag-container">

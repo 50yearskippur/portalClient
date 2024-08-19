@@ -1,8 +1,8 @@
-import "./TemplateRow.css";
-import eduTypeByText from "../../../utils/eduTypeByText";
-import GenericItem from "../GenericObjects/GenericItem";
-import convertDateToString from "../../../utils/convertDateToString";
-import V from "./V";
+import './TemplateRow.css';
+import eduTypeByText from '../../../utils/eduTypeByText';
+import GenericItem from '../GenericObjects/GenericItem';
+import convertDateToString from '../../../utils/convertDateToString';
+import V from './V';
 
 const FormRow = (item) => {
   return [
@@ -15,7 +15,7 @@ const FormRow = (item) => {
       <GenericItem
         title={item.title}
         subTitle="שם הטופס"
-        style={{ width: "6.1vw" }}
+        style={{ width: '6.1vw' }}
       />
     </div>,
     <div className="edu-row-tag">{item?.tag?.title}</div>,
@@ -23,11 +23,11 @@ const FormRow = (item) => {
       <V />
       <div className="generic-item-sub-title">טפסים נפוצים</div>
     </div>,
-    <GenericItem title="PDF" subTitle="סוג קובץ" style={{ width: "4.5vw" }} />,
+    <GenericItem title="PDF" subTitle="סוג קובץ" style={{ width: '4.5vw' }} />,
     <GenericItem
       title={convertDateToString(item.date)}
-      subTitle="תאריך העלאה"
-      style={{ width: "7.4vw" }}
+      subTitle="עודכן בתאריך"
+      style={{ width: '7.4vw' }}
     />,
   ];
 };
