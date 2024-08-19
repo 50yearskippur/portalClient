@@ -1,17 +1,14 @@
-import EduResPreview from "../components/Popup/EduPreview/EduResPreview";
-import DesignPreview from "../components/Popup/EduPreview/DesignPreview";
-import FormPreview from "../components/Popup/EduPreview/FormPreview";
-import MediaPreview from "../components/Popup/EduPreview/MediaPreview";
+import EduResPreview from '../components/Popup/EduPreview/EduResPreview';
+import FormPreview from '../components/Popup/EduPreview/FormPreview';
+import MediaPreview from '../components/Popup/EduPreview/MediaPreview';
 
-const getAdminPopUp = (selectedTab) => {
+const getAdminPopUp = (fileType) => {
   switch (true) {
-    case selectedTab.includes("תוצרים"):
+    case fileType === 'מצגת' || fileType === 'לומדה' || fileType === 'משחק':
       return EduResPreview;
-    case selectedTab.includes("עיצובים"):
-      return DesignPreview;
-    case selectedTab.includes("טפסים"):
+    case fileType === 'טופס':
       return FormPreview;
-    case selectedTab.includes("תמונות סטוק ואלבומים"):
+    case fileType === 'תמונות סטוק ואלבומים':
       return MediaPreview;
     default:
       return EduResPreview;

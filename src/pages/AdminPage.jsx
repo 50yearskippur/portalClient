@@ -302,25 +302,6 @@ const AdminPage = () => {
       },
     ];
 
-    const designsArr = [
-      {
-        title: 'תבניות עיצוב 1',
-        type: 'מצגת',
-        date: Date('28.8.2024'),
-        media: rabit,
-        cover: rabit,
-        mediaType: 'image',
-      },
-      {
-        title: 'תבניות עיצוב 2',
-        type: 'סיכום',
-        date: Date('28.8.2024'),
-        media: rabit,
-        cover: rabit,
-        mediaType: 'image',
-      },
-    ];
-
     const formsArr = [
       {
         title: 'טפסים 1',
@@ -415,16 +396,12 @@ const AdminPage = () => {
     ];
     setTabs([
       `תוצרים (${eduArr.length})`,
-      `עיצובים (${designsArr.length})`,
       `טפסים (${formsArr.length})`,
       `תמונות סטוק ואלבומים (${mediaArr.length})`,
     ]);
     switch (true) {
       case selectedTab.includes('תוצרים'):
         setData(eduArr);
-        break;
-      case selectedTab.includes('עיצובים'):
-        setData(designsArr);
         break;
       case selectedTab.includes('טפסים'):
         setData(formsArr);

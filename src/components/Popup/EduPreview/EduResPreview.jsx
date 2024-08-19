@@ -10,7 +10,6 @@ import Comments from './Comments';
 import Credits from './Credits';
 import Setting from './SettingsList';
 import MoreDetails from './MoreDetails';
-import Groups from './Groups';
 import DeleteEduPopup from '../General/DeleteEdu';
 import GenericFilePreview from './GenericFilePreview';
 
@@ -59,24 +58,6 @@ const EduPreview = ({ edu }) => {
         content={<Setting settingsArray={settingsArray} />}
       />
       <EduResSection content={<MoreDetails edu={edu} />} />
-      <EduResSection content={<MoreDetails edu={edu} />} />
-      <EduResSection
-        title="קורסים או יחידות רלוונטיים"
-        content={<Groups groups={['לורם איפסום', 'לורם איפסום']} />}
-      />
-      <EduResSection
-        title="תיוגים"
-        content={
-          <Groups
-            groups={[
-              'לורם איפסום',
-              'לורם איפסום',
-              'לורם איפסום',
-              'לורם איפסום',
-            ]}
-          />
-        }
-      />
       <DeleteEduText onClick={() => setIsDeletePopup(true)} />
       <DeleteEduPopup
         isOpen={isDeletePopup}
