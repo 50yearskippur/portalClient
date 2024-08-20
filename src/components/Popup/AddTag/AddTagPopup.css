@@ -1,0 +1,16 @@
+.popup-stage-white-container {
+  display: flex;
+  width: 534px;
+  height: 247px;
+  padding: 32px;
+  flex-direction: column;
+  gap: 18px;
+  border-radius: 8px;
+  background: var(--Main-colors-White, #fff);
+}
+
+.popup-title {
+  color: var(--body-text, #4c4c66);
+  font-size: 14px;
+  font-weight: 700;
+}
