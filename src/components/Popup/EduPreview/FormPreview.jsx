@@ -9,7 +9,7 @@ import GenericFilePreview from './GenericFilePreview';
 const FormPreview = ({ edu }) => {
   return (
     <div className="edu-preview-content" onClick={(e) => handlePropagation(e)}>
-      <GenericEduTop edu={edu} iconSrc={formIcon} />
+      <GenericEduTop edu={edu} iconSrc={formIcon} pageType="טפסים" />
       <EduResSection
         title="קבצים"
         content={<GenericFilePreview fileTitle={edu.title} edu={edu} />}

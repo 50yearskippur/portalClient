@@ -8,7 +8,11 @@ import ImageGallery from './ImageGallery';
 const MediaPreview = ({ edu }) => {
   return (
     <div className="edu-preview-content" onClick={(e) => handlePropagation(e)}>
-      <GenericEduTop edu={edu} iconSrc={pictureIcon} />
+      <GenericEduTop
+        edu={edu}
+        iconSrc={pictureIcon}
+        pageType="תמונת סטוק / אלבום"
+      />
       <EduResSection
         title="קבצים"
         content={<ImageGallery images={edu.files} />}

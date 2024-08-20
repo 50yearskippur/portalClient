@@ -11,14 +11,17 @@ const EduPreviewTop = ({
   iconDetails = {
     text: 'עריכה',
     icon: editIcon,
-    onClick: (navigate, hidePopup) => {
-      navigate('admin/upload');
+    onClick: (navigate, hidePopup, setItemDetails) => {
+      navigate('/admin/upload', {
+        state: { pageType: 'תוצרים' },
+      });
       hidePopup();
+      setItemDetails(edu);
     },
   },
 }) => {
   const navigate = useNavigate();
-  const { hidePopup } = useContext(PopupContext);
+  const { hidePopup, setItemDetails } = useContext(PopupContext);
 
   return (
     <div className="edu-preview-top-right" key="edu-preview-top">
@@ -39,7 +42,7 @@ const EduPreviewTop = ({
       </div>
       <div
         className="edu-edit-container"
-        onClick={() => iconDetails.onClick(navigate, hidePopup)}
+        onClick={() => iconDetails.onClick(navigate, hidePopup, setItemDetails)}
       >
         <img src={iconDetails.icon} alt="edit" />
         <div className="edu-blue-text">{iconDetails.text}</div>
