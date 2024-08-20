@@ -1,6 +1,6 @@
 import React from 'react';
-import './AdminPage.css';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { PopupContext } from '../store/popup-context';
 import { useNavigate } from 'react-router-dom';
 import Tabs from '../components/Tabs/Tabs';
 import WaitingList from '../components/Admin/Requests/WaitingList';
@@ -20,6 +20,7 @@ import blackMedia from '../assets/media/Icons/blackMedia.svg';
 import grayHome from '../assets/media/Icons/grayHome.svg';
 import grayForm from '../assets/media/Icons/grayForm.svg';
 import grayMedia from '../assets/media/Icons/grayMedia.svg';
+import './AdminPage.css';
 //delete in production
 import rabit from '../assets/img/rabit.jpg';
 import arrow from '../assets/media/Icons/curvedArrow.svg';
@@ -27,6 +28,7 @@ import OrderBy from '../components/OrderBy/OrderBy';
 
 const AdminPage = () => {
   const navigate = useNavigate();
+  const { setItemDetails, itemDetails } = useContext(PopupContext);
   const [tabsArray, setTabs] = useState([
     'תוצרים',
     'עיצובים',
@@ -55,6 +57,13 @@ const AdminPage = () => {
       grayIcon: grayMedia,
     },
   ];
+
+  const choseUploadType = (pageType) => {
+    if (itemDetails.pageType !== pageType) setItemDetails({});
+    navigate('upload', {
+      state: { pageType },
+    });
+  };
 
   //delete in production
   const requestsArr = [
@@ -456,7 +465,7 @@ const AdminPage = () => {
     const mediaArr = [
       {
         title: 'הרמת כוסית לראש השנה',
-        type: 'תמונה',
+        pageType: 'תמונות סטוק',
         date: Date('28.8.2024'),
         media: rabit,
         files: [rabit, rabit, rabit, rabit, rabit],
@@ -465,7 +474,7 @@ const AdminPage = () => {
       },
       {
         title: 'פורים 2024',
-        type: 'תמונה',
+        pageType: 'אלבום',
         date: Date('28.8.2024'),
         media: rabit,
         cover: rabit,
@@ -488,7 +497,7 @@ const AdminPage = () => {
       },
       {
         title: 'אלבום טקס קצינים ',
-        type: 'אלבום',
+        pageType: 'תמונות סטוק',
         uploadByArtech: true,
         date: Date('28.8.2024'),
         media: rabit,
@@ -548,11 +557,7 @@ const AdminPage = () => {
                 <div
                   key={index}
                   className="admin-upload-types-item"
-                  onClick={() =>
-                    navigate('upload', {
-                      state: { pageType: type.text },
-                    })
-                  }
+                  onClick={() => choseUploadType(type.text)}
                   onMouseEnter={() => setSelectedType(type.text)}
                 >
                   <img

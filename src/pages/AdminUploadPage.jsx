@@ -1,5 +1,5 @@
 import './AdminUploadPage.css';
-import { useState, useContext, useEffect } from 'react';
+import { useState, useContext } from 'react';
 import { PopupContext } from '../store/popup-context';
 import TopSection from '../components/TopSection/TopSection';
 import getUploadStages from '../utils/getUploadStages';
@@ -11,7 +11,7 @@ const Upload = () => {
   const location = useLocation();
   const pageType = location.state?.pageType;
   const [currentStage, setCurrentStage] = useState(1);
-  const { itemDetails, editPopUp, saveDetails } = useContext(PopupContext);
+  const { itemDetails, editPopUp } = useContext(PopupContext);
 
   const nextStage = () => {
     setCurrentStage((prevStage) => prevStage + 1);
@@ -23,10 +23,6 @@ const Upload = () => {
   };
 
   const stagesArray = getUploadStages(pageType, itemDetails, nextStage);
-
-  useEffect(() => {
-    saveDetails({ pageType });
-  }, [pageType, saveDetails]);
 
   return (
     <div className="admin-upload-container">

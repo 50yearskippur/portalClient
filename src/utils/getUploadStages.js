@@ -1,6 +1,6 @@
 import EduType from '../components/Admin/Upload/EduType';
 import Files from '../components/Admin/Upload/Files';
-import MediaFiles from '../components/Admin/Upload/MediaFiles'; 
+import MediaFiles from '../components/Admin/Upload/MediaFiles';
 import Details from '../components/Admin/Upload/Details';
 import FormDetails from '../components/Admin/Upload/FormDetails';
 import MediaDetails from '../components/Admin/Upload/MediaDetails';
@@ -66,6 +66,7 @@ const getUploadStages = (pageType, itemDetails, nextStage) => {
                 { text: 'תמונות סטוק', img: stockIcon },
               ]}
               numberOfItemsInLine={2}
+              pageType={pageType}
             />
           ),
         },
@@ -93,6 +94,7 @@ const getUploadStages = (pageType, itemDetails, nextStage) => {
                 { text: 'משחק', img: gameIcon },
               ]}
               numberOfItemsInLine={3}
+              pageType={pageType}
             />
           ),
         },
