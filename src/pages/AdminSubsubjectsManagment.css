@@ -1,24 +1,25 @@
-.admin-container {
+.admin-subsubject-container {
   display: flex;
   gap: 24px;
+  flex-direction: column;
 }
 
-.admin-header-container {
+.admin-subsubject-header-container {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
   margin-bottom: 42.8px;
 }
 
-.admin-top-approved {
+.admin-subsubject-top-approved {
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
   width: 100%;
 }
-
+/* 
 .right-content {
 }
 
 .left-content {
-  
-}
+} */
