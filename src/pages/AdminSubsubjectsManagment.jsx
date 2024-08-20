@@ -16,11 +16,9 @@ const AdminSubsubjectsManagment = () => {
   let subjectsArray = [
     {
       subjectName: 'זירת סוריה',
-      personalAreaName: 'DD',
     },
     {
       subjectName: 'זירת סוריה',
-      personalAreaName: 'DD',
       subSubjectTags: [
         { title: 'מדעי המחשב' },
         { title: 'מפל' },
@@ -29,11 +27,9 @@ const AdminSubsubjectsManagment = () => {
     },
     {
       subjectName: 'זירת סוריה',
-      personalAreaName: 'DD',
     },
     {
       subjectName: 'זירת לבנון',
-      personalAreaName: 'DD',
       subSubjectTags: [{ title: 'מדעי המחשב' }, { title: 'מפל' }],
     },
   ];
@@ -48,11 +44,9 @@ const AdminSubsubjectsManagment = () => {
     const subjectsArray = [
       {
         subjectName: 'זירת סוריה',
-        personalAreaName: 'DD',
       },
       {
         subjectName: 'זירת סוריה',
-        personalAreaName: 'DD',
         subSubjectTags: [
           { title: 'מדעי המחשב' },
           { title: 'מפל' },
@@ -61,11 +55,9 @@ const AdminSubsubjectsManagment = () => {
       },
       {
         subjectName: 'זירת סוריה',
-        personalAreaName: 'DD',
       },
       {
         subjectName: 'זירת לבנון',
-        personalAreaName: 'DD',
         subSubjectTags: [{ title: 'מדעי המחשב' }, { title: 'מפל' }],
       },
     ];
