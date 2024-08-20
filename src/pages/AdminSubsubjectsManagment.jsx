@@ -5,37 +5,79 @@ import selecteddownloadIcon from '../assets/media/Icons/blueDownloadIcon.svg';
 import bigA from '../assets/media/Icons/bigA.svg';
 import selectedbigA from '../assets/media/Icons/blueBigA.svg';
 import Search from '../components/Search/Search';
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import Tabs from '../components/Tabs/Tabs';
+import plus from '../assets/media/Icons/plusIcon.svg';
+import TemplateTable from '../components/Admin/GenericObjects/TemplateTable';
 
 const AdminSubsubjectsManagment = () => {
-  let subjectsArr = [
+  const [data, setData] = useState([]);
+
+  let subjectsArray = [
     {
       subjectName: 'זירת סוריה',
+      personalAreaName: 'DD',
     },
     {
       subjectName: 'זירת סוריה',
+      personalAreaName: 'DD',
     },
     {
       subjectName: 'זירת סוריה',
+      personalAreaName: 'DD',
     },
     {
       subjectName: 'זירת סוריה',
+      personalAreaName: 'DD',
+      subSubjectTags: [{ title: 'מדעי המחשב' }, { title: 'מפל' }],
     },
   ];
-
   const [tabsArray, settabsArray] = useState([
-    `תתי נושאים (${subjectsArr.length})`,
+    `תתי נושאים (${subjectsArray.length})`,
   ]);
   const [selectedTab, setSelectedTab] = useState(tabsArray[0]);
 
+  useMemo(() => {
+    //delete in production
+
+    const subjectsArray = [
+      {
+        subjectName: 'זירת סוריה',
+        personalAreaName: 'DD',
+      },
+      {
+        subjectName: 'זירת סוריה',
+        personalAreaName: 'DD',
+      },
+      {
+        subjectName: 'זירת סוריה',
+        personalAreaName: 'DD',
+      },
+      {
+        subjectName: 'זירת סוריה',
+        personalAreaName: 'DD',
+        subSubjectTags: [{ title: 'מדעי המחשב' }, { title: 'מפל' }],
+      },
+    ];
+
+    switch (true) {
+      case selectedTab === `תתי נושאים (${subjectsArray.length})`:
+        settabsArray([`תתי נושאים (${subjectsArray.length})`]);
+        setData(subjectsArray);
+        break;
+      default:
+        settabsArray([`תתי נושאים (${subjectsArray.length})`]);
+        setData(subjectsArray);
+    }
+  }, [selectedTab]);
+
   return (
     <div className="page-container">
-      <div className="admin-header-container">
+      <div className="admin-subsubject-header-container">
         <div className="header">ניהול תתי נושאים</div>
       </div>
-      <div className="admin-container">
-        <div className="admin-top-approved">
+      <div className="admin-subsubject-container">
+        <div className="admin-subsubject-top-approved">
           <div className="right-content">
             <Tabs
               tabsArray={tabsArray}
@@ -66,6 +108,12 @@ const AdminSubsubjectsManagment = () => {
             />
           </div>
         </div>
+        <TemplateTable
+          icon={plus}
+          onClick={() => console.log('no design yet')}
+          dataArr={data}
+          selectedTab={selectedTab}
+        />
       </div>
     </div>
   );
