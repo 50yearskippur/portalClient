@@ -32,7 +32,7 @@
   color: #7d81b2;
   font-size: 14px;
   font-weight: 500;
-  background: #f2f4fa;
+  background: #eef1fb;
 }
 
 .dropdown-menu {
@@ -42,10 +42,10 @@
   flex-direction: column;
   top: 100%;
   border-radius: 4px;
-  background: #e8ebf4;
+  background: #eef1fb;
   box-shadow: 10px 12.6px 29px 0px rgba(67, 66, 89, 0.1);
   padding: 10px 12px;
-  gap: 24px;
+  gap: 2px;
 }
 
 .check-icon {
