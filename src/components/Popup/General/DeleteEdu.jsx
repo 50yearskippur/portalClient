@@ -1,9 +1,13 @@
-import "./DeleteEdu.css";
-import handlePropagation from "../../../utils/handlePropagation";
-import PopupTop from "../Edges/PopupTop";
-import Textarea from "../../Textarea/Textarea";
+import { useContext } from 'react';
+import { PopupContext } from '../../../store/popup-context';
+import handlePropagation from '../../../utils/handlePropagation';
+import PopupTop from '../Edges/PopupTop';
+import Textarea from '../../Textarea/Textarea';
+import Button from '../../Button/Button';
+import './DeleteEdu.css';
 
 const DeleteEdu = ({ isOpen, onClose }) => {
+  const { saveDetails, hidePopup, itemDetails } = useContext(PopupContext);
   if (!isOpen) return null;
 
   return (
@@ -15,17 +19,30 @@ const DeleteEdu = ({ isOpen, onClose }) => {
             על מנת למחוק את התוכן תצטרכו לשלוח הודעה למעלה התוכן
           </div>
           <Textarea
-            style={{ height: "16.667vh" }}
+            style={{ height: '16.667vh' }}
             placeholder="כתוב כאן את תוכן ההודעה ..."
+            onChange={(e) =>
+              saveDetails({ cancellationReason: e.target.value })
+            }
           />
         </div>
         <div className="delete-edu-buttons-conatiner">
           <div className="delete-edu-cancel" onClick={onClose}>
             ביטול
           </div>
-          <div className="delete-edu-send" onClick={onClose}>
-            שלח
-          </div>
+          <Button
+            text="שלח"
+            style={{
+              width: '6.667vw',
+              height: '4.4vh',
+              margin: '0 auto',
+            }}
+            disabled={!itemDetails.cancellationReason}
+            onClick={() => {
+              onClose();
+              hidePopup();
+            }}
+          />
         </div>
       </div>
     </div>
