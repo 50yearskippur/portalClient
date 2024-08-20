@@ -8,7 +8,6 @@ import './GenericFilePreview.css';
 
 const GenericFilePreview = ({ edu, fileTitle }) => {
   const fileStyle = { width: '6.8vw', height: '6.8vh', borderRadius: '3px' };
-  console.log(edu);
 
   return (
     <div className="files-section-container">

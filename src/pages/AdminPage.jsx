@@ -459,7 +459,7 @@ const AdminPage = () => {
         type: 'תמונה',
         date: Date('28.8.2024'),
         media: rabit,
-        files: [rabit, rabit, rabit, rabit],
+        files: [rabit, rabit, rabit, rabit, rabit],
         cover: rabit,
         mediaType: 'image',
       },
