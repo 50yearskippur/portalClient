@@ -18,6 +18,7 @@ const AdminSubsubjectsRow = (item) => {
     <div className="subsubject-row-tag-container">
       {item?.subSubjectTags?.map((tag, tagIndex) => (
         <div key={`tag ${tagIndex}`} className="subsubject-row-tag">
+          {tag?.title}
           <img
             src={deleteIcon}
             alt="delete tag"
