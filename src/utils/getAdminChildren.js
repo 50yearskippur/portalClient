@@ -19,6 +19,8 @@ const getAdminChildren = (item, selectedTab) => {
       return adminRow(item);
     case selectedTab?.includes('תתי נושאים'):
       return AdminSubsubjectsRow(item);
+    case selectedTab?.includes('קורסים'):
+      return AdminSubsubjectsRow(item);
     default:
       return EduResourceRow(item);
   }
