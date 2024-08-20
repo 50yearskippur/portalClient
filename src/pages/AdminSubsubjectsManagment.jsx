@@ -116,7 +116,6 @@ const AdminSubsubjectsManagment = () => {
         <TemplateTable
           icon={plus}
           iconStyle={{ margin: 0, width: '16px' }}
-          onClick={() => console.log('no design yet')}
           dataArr={data}
           selectedTab={selectedTab}
         />
