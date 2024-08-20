@@ -2,17 +2,14 @@ import DeleteEduText from './DeleteEduText';
 import handlePropagation from '../../../utils/handlePropagation';
 import EduResSection from './EduResSection';
 import getCorrectFileTemplate from '../../../utils/getCorrectFileTemplate';
-import getEduPreviewTopChildren from '../../../utils/getEduPreviewTopChildren';
-import MainEduTop from './MainEduTop';
+import GenericEduTop from './GenericEduTop';
 import getAlbumChildren from '../../../utils/getAlbumChildren';
+import formIcon from '../../../assets/media/Upload/form.svg';
 
 const MediaPreview = ({ edu }) => {
   return (
     <div className="edu-preview-content" onClick={(e) => handlePropagation(e)}>
-      <MainEduTop
-        children={getEduPreviewTopChildren(edu.type, edu)}
-        edu={edu}
-      />
+      <GenericEduTop edu={edu} icon={formIcon} />
       <EduResSection
         title="קבצים"
         content={getCorrectFileTemplate(edu, edu.type)}

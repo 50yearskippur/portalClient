@@ -430,6 +430,7 @@ const AdminPage = () => {
         cover: rabit,
         uploadByArtech: true,
         mediaType: 'image',
+        settings: [{ isRecomennded: false }],
       },
       {
         title: 'טפסים 1',
@@ -441,6 +442,7 @@ const AdminPage = () => {
         uploadByArtech: false,
 
         mediaType: 'image',
+        settings: [{ isRecomennded: true }],
       },
       {
         title: 'טפסים 2',
@@ -451,6 +453,7 @@ const AdminPage = () => {
         cover: rabit,
         uploadByArtech: true,
         mediaType: 'image',
+        settings: [{ isRecomennded: false }],
       },
     ];
 

@@ -41,7 +41,9 @@ const Setting = ({ nextStage }) => {
 
   return (
     <div className="stage-upload-container">
-      <SettingsList settingsArray={getDefaultSettings(itemDetails?.type)} />
+      <SettingsList
+        settingsArray={getDefaultSettings(itemDetails?.type)}
+      />
       {itemDetails?.settings?.some(
         (setting) =>
           setting.text === isPrimaryEduResourse && setting.defaultValue

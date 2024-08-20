@@ -1,10 +1,10 @@
 import { useState, useEffect, useContext } from 'react';
 import { PopupContext } from '../../../store/popup-context';
 import Switch from '../../Switch/Switch';
-import settingsDic from '../../../store/settingsDic';
+import getSettingText from '../../../utils/getSettingText';
 import './SettingsList.css';
 
-const Setting = ({ settingsArray, disabled }) => {
+const Setting = ({ settingsArray, disabled, pageType }) => {
   const { itemDetails, saveDetails } = useContext(PopupContext);
   const [settings, setSettings] = useState(
     itemDetails.settings ? itemDetails.settings : settingsArray
@@ -28,6 +28,7 @@ const Setting = ({ settingsArray, disabled }) => {
   return (
     <div className="settings-container">
       {settings.map((setting, index) => {
+        console.log(Object.keys(setting)[0]);
         const settingBooleanValue = Object.keys(setting)[0];
         return (
           <div key={index} className="setting-container">
@@ -37,7 +38,7 @@ const Setting = ({ settingsArray, disabled }) => {
               changeSetting={() => changeSetting(settingBooleanValue)}
             />
             <div className="edu-dark-text">
-              {settingsDic[settingBooleanValue]}
+              {getSettingText(pageType)[settingBooleanValue]}
             </div>
           </div>
         );

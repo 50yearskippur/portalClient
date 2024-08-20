@@ -51,7 +51,13 @@ const EduPreview = ({ edu }) => {
       />
       <EduResSection
         title="הגדרות"
-        content={<Setting settingsArray={settingsArray} disabled={true} />}
+        content={
+          <Setting
+            settingsArray={settingsArray}
+            disabled={true}
+            pageType="תוצרים"
+          />
+        }
       />
       <EduResSection
         content={<MoreDetails edu={edu} uploadByUser={uploadByUser} />}
