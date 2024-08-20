@@ -1,7 +1,5 @@
 import './AdminSubsubjectsManagment.css';
 import OrderBy from '../components/OrderBy/OrderBy';
-import downloadIcon from '../assets/media/Icons/squereDownload.svg';
-import selecteddownloadIcon from '../assets/media/Icons/blueDownloadIcon.svg';
 import bigA from '../assets/media/Icons/bigA.svg';
 import selectedbigA from '../assets/media/Icons/blueBigA.svg';
 import Search from '../components/Search/Search';
@@ -9,33 +7,13 @@ import { useState, useMemo } from 'react';
 import Tabs from '../components/Tabs/Tabs';
 import plus from '../assets/media/Icons/plusIcon.svg';
 import TemplateTable from '../components/Admin/GenericObjects/TemplateTable';
+import subjectIcon from '../assets/media/Icons/adminSubjectIcon.svg';
+import selectedSubjectIcon from '../assets/media/Icons/adminSubjectIconSelected.svg';
 
 const AdminSubsubjectsManagment = () => {
   const [data, setData] = useState([]);
 
-  let subjectsArray = [
-    {
-      subjectName: 'זירת סוריה',
-    },
-    {
-      subjectName: 'זירת סוריה',
-      subSubjectTags: [
-        { title: 'מדעי המחשב' },
-        { title: 'מפל' },
-        { title: 'אזרחות' },
-      ],
-    },
-    {
-      subjectName: 'זירת סוריה',
-    },
-    {
-      subjectName: 'זירת לבנון',
-      subSubjectTags: [{ title: 'מדעי המחשב' }, { title: 'מפל' }],
-    },
-  ];
-  const [tabsArray, settabsArray] = useState([
-    `תתי נושאים (${subjectsArray.length})`,
-  ]);
+  const [tabsArray, settabsArray] = useState([`תתי נושאים`, `קורסים`]);
   const [selectedTab, setSelectedTab] = useState(tabsArray[0]);
 
   useMemo(() => {
@@ -43,10 +21,11 @@ const AdminSubsubjectsManagment = () => {
 
     const subjectsArray = [
       {
-        subjectName: 'זירת סוריה',
+        name: 'זירת סוריה',
+        subSubjectTags: [{ title: 'מדעי המחשב' }, { title: 'מפל' }],
       },
       {
-        subjectName: 'זירת סוריה',
+        name: 'זירת סוריה',
         subSubjectTags: [
           { title: 'מדעי המחשב' },
           { title: 'מפל' },
@@ -54,24 +33,63 @@ const AdminSubsubjectsManagment = () => {
         ],
       },
       {
-        subjectName: 'זירת סוריה',
+        name: 'זירת סוריה',
+        subSubjectTags: [{ title: 'מדעי המחשב' }],
       },
       {
-        subjectName: 'זירת לבנון',
+        name: 'זירת לבנון',
         subSubjectTags: [{ title: 'מדעי המחשב' }, { title: 'מפל' }],
       },
     ];
 
+    const coursesArray = [
+      {
+        name: 'אתרוג',
+        subSubjectTags: [
+          { title: 'תת נושא' },
+          { title: 'תת נושא' },
+          { title: 'תת נושא' },
+        ],
+      },
+      {
+        name: 'ערבית',
+        subSubjectTags: [{ title: 'תת נושא' }, { title: 'תת נושא' }],
+      },
+    ];
+
+    settabsArray([
+      `תתי נושאים (${subjectsArray.length})`,
+      `קורסים (${coursesArray.length})`,
+    ]);
     switch (true) {
-      case selectedTab === `תתי נושאים (${subjectsArray.length})`:
-        settabsArray([`תתי נושאים (${subjectsArray.length})`]);
+      case selectedTab.includes('תתי נושאים'):
         setData(subjectsArray);
         break;
+      case selectedTab.includes('קורסים'):
+        setData(coursesArray);
+        break;
       default:
-        settabsArray([`תתי נושאים (${subjectsArray.length})`]);
         setData(subjectsArray);
     }
   }, [selectedTab]);
+
+  const orderByOptions = [
+    {
+      value: 'alphabet',
+      label: " 'א' - ב",
+      icon: bigA,
+      selectedicon: selectedbigA,
+    },
+  ];
+
+  if (selectedTab.includes('קורסים')) {
+    orderByOptions.push({
+      value: 'upload-date',
+      label: 'נושאים',
+      icon: subjectIcon,
+      selectedicon: selectedSubjectIcon,
+    });
+  }
 
   return (
     <div className="page-container">
@@ -88,22 +106,7 @@ const AdminSubsubjectsManagment = () => {
             />
           </div>
           <div className="left-content">
-            <OrderBy
-              options={[
-                {
-                  value: 'upload-date',
-                  label: 'תאריך העלאה',
-                  icon: downloadIcon,
-                  selectedicon: selecteddownloadIcon,
-                },
-                {
-                  value: 'alphabet',
-                  label: " 'א' - ב",
-                  icon: bigA,
-                  selectedicon: selectedbigA,
-                },
-              ]}
-            />
+            <OrderBy options={orderByOptions} />
             <Search
               placeholder={'חיפוש חופשי'}
               style={{ height: '42px', width: '16.7vw' }}
@@ -112,6 +115,7 @@ const AdminSubsubjectsManagment = () => {
         </div>
         <TemplateTable
           icon={plus}
+          iconStyle={{ margin: 0, width: '16px' }}
           onClick={() => console.log('no design yet')}
           dataArr={data}
           selectedTab={selectedTab}
