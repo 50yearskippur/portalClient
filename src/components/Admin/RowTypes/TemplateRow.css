@@ -90,3 +90,14 @@
   justify-content: center;
   gap: 12px;
 }
+
+.subsubject-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  overflow: hidden;
+}
