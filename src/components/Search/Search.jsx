@@ -1,6 +1,6 @@
-import "./Search.css";
-import SearchIcon from "../../assets/media/Icons/search.svg";
-import React from "react";
+import './Search.css';
+import SearchIcon from '../../assets/media/Icons/search.svg';
+import React from 'react';
 
 const Search = ({ style, placeholder }) => {
   return (
