@@ -8,22 +8,26 @@ import download from '../../utils/download';
 const FileController = ({
   item,
   style = {},
-  onClick = () => {},
+  onClick,
   gradientStyle = {},
   showOnHover = false,
+  showCover = true,
 }) => {
-  const [display, setDisplay] = useState(item?.cover ? item.cover : item.media);
-  const [fileType, setFileType] = useState(
-    item.cover ? 'image' : item.mediaType
+  const [display, setDisplay] = useState(
+    item?.cover && showCover ? item.cover?.file : item.media?.file
   );
+  const [fileType, setFileType] = useState(
+    item.cover && showCover ? 'image' : item?.media?.MimeType
+  );
+
   return (
     <div
       className="file-container"
       style={style}
       onClick={() => {
-        onClick();
-        setDisplay(item.media);
-        setFileType(item.mediaType);
+        if (onClick) {
+          onClick();
+        }
       }}
     >
       {getHtml(display, fileType, style)}
@@ -31,7 +35,7 @@ const FileController = ({
       {showOnHover && (
         <div className="file-overlay">
           <img
-            onClick={() => download(item)}
+            onClick={() => download(item.media)}
             style={{ marginLeft: '1.778vw' }}
             src={downloadIconHover}
             alt="download icon"

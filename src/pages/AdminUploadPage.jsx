@@ -19,7 +19,10 @@ const Upload = () => {
 
   const editStage = (stage, index) => {
     setCurrentStage(index + 1);
-    if (stage.title === 'סוג מוצר') editPopUp();
+    if (stage.title === 'סוג מוצר') {
+      editPopUp();
+      console.log('in');
+    }
   };
 
   const stagesArray = getUploadStages(pageType, itemDetails, nextStage);

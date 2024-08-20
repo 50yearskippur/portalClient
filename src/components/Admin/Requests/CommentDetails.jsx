@@ -15,7 +15,7 @@ const CommentDetails = ({ item, icon, style }) => {
           <div className="comment-title">{item.title}</div>
           <div className="comment-user-details">
             <div> {item.creator}</div>
-            <div>{convertDateToString(item.date)} </div>
+            <div>{convertDateToString(item.createdAt)} </div>
           </div>
         </div>
       </div>

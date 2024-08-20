@@ -21,7 +21,7 @@ const FormRow = (item) => {
     </div>,
     <GenericItem title="PDF" subTitle="סוג קובץ" style={{ width: '4.5vw' }} />,
     <GenericItem
-      title={convertDateToString(item.date)}
+      title={convertDateToString(item.createdAt)}
       subTitle="עודכן בתאריך"
       style={{ width: '7.4vw' }}
     />,

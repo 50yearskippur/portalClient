@@ -3,6 +3,10 @@ import { useState, useEffect, useContext } from 'react';
 import { PopupContext } from '../store/popup-context';
 import { useNavigate } from 'react-router-dom';
 import Tabs from '../components/Tabs/Tabs';
+import uploadTypesArray from '../constants/uploadTypesArray';
+// import forms from '../constants/forms';
+// import media from '../constants/media';
+import eduResources from '../constants/eduResourse';
 import WaitingList from '../components/Admin/Requests/WaitingList';
 import Search from '../components/Search/Search';
 import TemplateTable from '../components/Admin/GenericObjects/TemplateTable';
@@ -14,17 +18,11 @@ import staricon from '../assets/media/Icons/starIcon.svg';
 import selectedstaricon from '../assets/media/Icons/blueStarIcon.svg';
 import downloadIcon from '../assets/media/Icons/squereDownload.svg';
 import selecteddownloadIcon from '../assets/media/Icons/blueDownloadIcon.svg';
-import blackHome from '../assets/media/Icons/blackHome.svg';
-import blackForm from '../assets/media/Icons/blackForm.svg';
-import blackMedia from '../assets/media/Icons/blackMedia.svg';
-import grayHome from '../assets/media/Icons/grayHome.svg';
-import grayForm from '../assets/media/Icons/grayForm.svg';
-import grayMedia from '../assets/media/Icons/grayMedia.svg';
+import OrderBy from '../components/OrderBy/OrderBy';
 import './AdminPage.css';
 //delete in production
 import rabit from '../assets/img/rabit.jpg';
 import arrow from '../assets/media/Icons/curvedArrow.svg';
-import OrderBy from '../components/OrderBy/OrderBy';
 
 const AdminPage = () => {
   const navigate = useNavigate();
@@ -40,23 +38,7 @@ const AdminPage = () => {
   const [uploadTypesOpen, setUploadTypesOpen] = useState(false);
   const [selectedType, setSelectedType] = useState();
 
-  const uploadTypesArray = [
-    {
-      text: 'תוצרי לימוד',
-      blackIcon: blackHome,
-      grayIcon: grayHome,
-    },
-    {
-      text: 'טפסים',
-      blackIcon: blackForm,
-      grayIcon: grayForm,
-    },
-    {
-      text: 'תמונת סטוק / אלבום',
-      blackIcon: blackMedia,
-      grayIcon: grayMedia,
-    },
-  ];
+  const uploadTypes = uploadTypesArray;
 
   const choseUploadType = (pageType) => {
     if (itemDetails.pageType !== pageType) setItemDetails({});
@@ -111,323 +93,7 @@ const AdminPage = () => {
 
   useEffect(() => {
     //delete in production
-    const eduArr = [
-      {
-        title: 'הכירו את זירת לבנון',
-        type: 'לומדה',
-        date: Date('28.8.2024'),
-        creator: { fullName: 'נפתלי בנט', role: 'user' },
-        experationDate: new Date('2024-07-26T00:00'),
-        subSubject: {
-          title: 'זירת חתול',
-        },
-        settings: [
-          {
-            isHeadponesNeeded: false,
-          },
-          {
-            isRecomennded: false,
-          },
-          {
-            isValidated: true,
-          },
-          { isPrimaryEduResourse: false },
-        ],
-        subject: { title: 'מבואות מודיעין' },
-        media: rabit,
-        cover: rabit,
-        mediaType: 'image',
-        level: 'רמה בסיסית',
-        uploadByArtech: true,
-        tags: [{ title: 'תג 1' }, { title: 'תג 2' }],
-        info: 'משחק שנועד ללמד את צבעי הכומתות בחיילות השונים משחק שנועד ללמד את צבעי הכומתות בחיילות השונים  משחק שנועד ללמד את צבעי הכומתות בחיילות השונים',
-        comments: [
-          {
-            content:
-              'אחלה לומדה, לימדה אותי מלא על זירת חתול איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.',
-            date: Date('28.8.2024'),
-            user: { fullName: 'בני גבע', role: 'רמ"ד קורס כלבלב' },
-          },
-          {
-            content:
-              'אחלה לומדה, לימדה אותי מלא על זירת חתול איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.',
-            date: Date('28.8.2024'),
-            user: { fullName: 'בני גבע', role: 'רמ"ד קורס כלבלב' },
-          },
-          {
-            content:
-              'אחלה לומדה, לימדה אותי מלא על זירת חתול איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.',
-            date: Date('28.8.2024'),
-            user: { fullName: 'בני גבע', role: 'רמ"ד קורס כלבלב' },
-          },
-          {
-            content:
-              'אחלה לומדה, לימדה אותי מלא על זירת חתול איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.',
-            date: Date('28.8.2024'),
-            user: { fullName: 'בני גבע', role: 'רמ"ד קורס כלבלב' },
-          },
-          {
-            content:
-              'אחלה לומדה, לימדה אותי מלא על זירת חתול איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.',
-            date: Date('28.8.2024'),
-            user: { fullName: 'בני גבע', role: 'רמ"ד קורס כלבלב' },
-          },
-        ],
-      },
-      {
-        title: 'איך לשרוד בתנאי שטח',
-        type: 'סרטון',
-        date: Date('28.8.2024'),
-        experationDate: new Date('2024-07-26T00:00'),
-        subSubject: {
-          title: ' חתול',
-        },
-        settings: [
-          {
-            isHeadponesNeeded: true,
-          },
-          {
-            isRecomennded: false,
-          },
-          {
-            isValidated: true,
-          },
-          { isPrimaryEduResourse: false },
-        ],
-        credits: [
-          {
-            role: 'פיתוח',
-            user: {
-              fullName: 'פורטל פורטלי',
-            },
-          },
-          {
-            role: 'מומחה תוכן',
-            user: {
-              fullName: 'דורה',
-            },
-          },
-          {
-            role: 'פיצוח תוכן',
-            user: {
-              fullName: 'דייגו',
-            },
-          },
-          {
-            role: 'פיצוח תוכן',
-            user: {
-              fullName: 'דייגו',
-            },
-          },
-          {
-            role: 'פיצוח תוכן',
-            user: {
-              fullName: 'דייגו',
-            },
-          },
-        ],
-        subject: { title: 'מבואות מודיעין' },
-        media: rabit,
-        cover: rabit,
-        mediaType: 'image',
-        level: 'רמה בסיסית',
-        uploadByArtech: true,
-        tags: [{ title: 'תג 1' }, { title: 'תג 2' }],
-        info: 'משחק שנועד ללמד את צבעי הכומתות בחיילות השונים משחק שנועד ללמד את צבעי הכומתות בחיילות השונים  משחק שנועד ללמד את צבעי הכומתות בחיילות השונים',
-        comments: [
-          {
-            content:
-              'אחלה לומדה, לימדה אותי מלא על זירת חתול איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.',
-            date: Date('28.8.2024'),
-            user: { fullName: 'בני גבע', role: 'רמ"ד קורס כלבלב' },
-          },
-          {
-            content:
-              'אחלה לומדה, לימדה אותי מלא על זירת חתול איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.',
-            date: Date('28.8.2024'),
-            user: { fullName: 'בני גבע', role: 'רמ"ד קורס כלבלב' },
-          },
-          {
-            content:
-              'אחלה לומדה, לימדה אותי מלא על זירת חתול איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.',
-            date: Date('28.8.2024'),
-            user: { fullName: 'בני גבע', role: 'רמ"ד קורס כלבלב' },
-          },
-          {
-            content:
-              'אחלה לומדה, לימדה אותי מלא על זירת חתול איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.',
-            date: Date('28.8.2024'),
-            user: { fullName: 'בני גבע', role: 'רמ"ד קורס כלבלב' },
-          },
-          {
-            content:
-              'אחלה לומדה, לימדה אותי מלא על זירת חתול איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.',
-            date: Date('28.8.2024'),
-            user: { fullName: 'בני גבע', role: 'רמ"ד קורס כלבלב' },
-          },
-        ],
-      },
-      {
-        title: 'לומדת בם',
-        type: 'סרטון',
-        date: Date('28.8.2024'),
-        experationDate: new Date('2024-08-03T00:00'),
-        subSubject: {
-          title: ' חתול',
-        },
-        settings: [
-          {
-            isHeadponesNeeded: true,
-          },
-          {
-            isRecomennded: false,
-          },
-          {
-            isValidated: true,
-          },
-          { isPrimaryEduResourse: false },
-        ],
-        credits: [
-          {
-            role: 'פיתוח',
-            user: {
-              fullName: 'פורטל פורטלי',
-            },
-          },
-          {
-            role: 'מומחה תוכן',
-            user: {
-              fullName: 'דורה',
-            },
-          },
-          {
-            role: 'פיצוח תוכן',
-            user: {
-              fullName: 'דייגו',
-            },
-          },
-        ],
-        subject: { title: 'מבואות מודיעין' },
-        media: rabit,
-        cover: rabit,
-        mediaType: 'image',
-        level: 'רמה בסיסית',
-        uploadByArtech: true,
-        tags: [{ title: 'תג 1' }, { title: 'תג 2' }],
-        info: 'משחק שנועד ללמד את צבעי הכומתות בחיילות השונים משחק שנועד ללמד את צבעי הכומתות בחיילות השונים  משחק שנועד ללמד את צבעי הכומתות בחיילות השונים',
-        comments: [
-          {
-            content:
-              'אחלה לומדה, לימדה אותי מלא על זירת חתול איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.',
-            date: Date('28.8.2024'),
-            user: { fullName: 'בני גבע', role: 'רמ"ד קורס כלבלב' },
-          },
-          {
-            content:
-              'אחלה לומדה, לימדה אותי מלא על זירת חתול איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.',
-            date: Date('28.8.2024'),
-            user: { fullName: 'בני גבע', role: 'רמ"ד קורס כלבלב' },
-          },
-          {
-            content:
-              'אחלה לומדה, לימדה אותי מלא על זירת חתול איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.',
-            date: Date('28.8.2024'),
-            user: { fullName: 'בני גבע', role: 'רמ"ד קורס כלבלב' },
-          },
-          {
-            content:
-              'אחלה לומדה, לימדה אותי מלא על זירת חתול איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.',
-            date: Date('28.8.2024'),
-            user: { fullName: 'בני גבע', role: 'רמ"ד קורס כלבלב' },
-          },
-          {
-            content:
-              'אחלה לומדה, לימדה אותי מלא על זירת חתול איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.',
-            date: Date('28.8.2024'),
-            user: { fullName: 'בני גבע', role: 'רמ"ד קורס כלבלב' },
-          },
-        ],
-      },
-      {
-        title: '3הכירו את זירת חתול',
-        type: 'סיכום',
-        date: Date('28.8.2024'),
-        experationDate: new Date('2024-07-20T00:00'),
-        subSubject: {
-          title: 'זירת חתול',
-        },
-        settings: [
-          {
-            isRecomennded: false,
-          },
-          {
-            isValidated: true,
-          },
-          { isPrimaryEduResourse: false },
-        ],
-        credits: [
-          {
-            role: 'פיתוח',
-            user: {
-              fullName: 'פורטל פורטלי',
-            },
-          },
-          {
-            role: 'מומחה תוכן',
-            user: {
-              fullName: 'דורה',
-            },
-          },
-          {
-            role: 'פיצוח תוכן',
-            user: {
-              fullName: 'דייגו',
-            },
-          },
-        ],
-        subject: { title: 'מבואות מודיעין' },
-        media: rabit,
-        cover: rabit,
-        mediaType: 'image',
-        level: 'רמה בסיסית',
-        creator: { fullName: 'נפתלי בנט', role: 'user' },
-        uploadByArtech: false,
-        tags: [{ title: 'תג 1' }, { title: 'תג 2' }],
-        info: 'משחק שנועד ללמד את צבעי הכומתות בחיילות השונים משחק שנועד ללמד את צבעי הכומתות בחיילות השונים  משחק שנועד ללמד את צבעי הכומתות בחיילות השונים',
-        comments: [
-          {
-            content:
-              'אחלה לומדה, לימדה אותי מלא על זירת חתול איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.',
-            date: Date('28.8.2024'),
-            user: { fullName: 'בני גבע', role: 'רמ"ד קורס כלבלב' },
-          },
-          {
-            content:
-              'אחלה לומדה, לימדה אותי מלא על זירת חתול איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.',
-            date: Date('28.8.2024'),
-            user: { fullName: 'בני גבע', role: 'רמ"ד קורס כלבלב' },
-          },
-          {
-            content:
-              'אחלה לומדה, לימדה אותי מלא על זירת חתול איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.',
-            date: Date('28.8.2024'),
-            user: { fullName: 'בני גבע', role: 'רמ"ד קורס כלבלב' },
-          },
-          {
-            content:
-              'אחלה לומדה, לימדה אותי מלא על זירת חתול איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.',
-            date: Date('28.8.2024'),
-            user: { fullName: 'בני גבע', role: 'רמ"ד קורס כלבלב' },
-          },
-          {
-            content:
-              'אחלה לומדה, לימדה אותי מלא על זירת חתול איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.',
-            date: Date('28.8.2024'),
-            user: { fullName: 'בני גבע', role: 'רמ"ד קורס כלבלב' },
-          },
-        ],
-      },
-    ];
+    const eduArr = eduResources;
 
     const formsArr = [
       {
@@ -553,7 +219,7 @@ const AdminPage = () => {
           </div>
           {uploadTypesOpen && (
             <div className="admin-upload-types-dropdown">
-              {uploadTypesArray.map((type, index) => (
+              {uploadTypes.map((type, index) => (
                 <div
                   key={index}
                   className="admin-upload-types-item"

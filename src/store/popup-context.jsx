@@ -14,6 +14,9 @@ export const PopupProvider = ({ children }) => {
   const [popupContent, setPopupContent] = useState(null);
   const [itemDetails, setItemDetails] = useState({});
   const [isEdit, setIsEdit] = useState(false);
+
+  console.log(itemDetails);
+
   useEffect(() => {
     document.body.style.overflow = isPopupVisible ? 'hidden' : 'auto';
   }, [isPopupVisible]);

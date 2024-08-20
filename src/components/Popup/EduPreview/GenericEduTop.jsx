@@ -9,11 +9,11 @@ const GenericEduTop = ({ edu, iconSrc, pageType }) => {
   const { hidePopup, setItemDetails } = useContext(PopupContext);
 
   const editEdu = () => {
+    setItemDetails(edu);
     navigate('/admin/upload', {
       state: { pageType },
     });
     hidePopup();
-    setItemDetails(edu);
   };
 
   return (

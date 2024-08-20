@@ -34,7 +34,7 @@ const EduResourseRow = (item) => {
       <div className="generic-item-sub-title">מומלץ</div>
     </div>,
     <GenericItem
-      title={convertDateToString(item?.date)}
+      title={convertDateToString(item?.createdAt)}
       subTitle="עודכן בתאריך"
       style={{ width: '7.4vw' }}
     />,
