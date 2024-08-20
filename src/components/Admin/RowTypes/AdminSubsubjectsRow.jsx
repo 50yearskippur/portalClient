@@ -21,6 +21,7 @@ const AdminSubsubjectsRow = (item) => {
             src={deleteIcon}
             alt="delete tag"
             className="delete-subsubject-icon"
+            onClick={console.log('do something')}
           />
         </div>
       ))}
