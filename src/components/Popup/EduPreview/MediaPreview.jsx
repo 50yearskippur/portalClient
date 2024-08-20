@@ -10,11 +10,11 @@ const MediaPreview = ({ edu }) => {
   return (
     <div className="edu-preview-content" onClick={(e) => handlePropagation(e)}>
       <GenericEduTop edu={edu} iconSrc={pictureIcon} />
-      <EduResSection
+      {/* <EduResSection
         title="קבצים"
         content={getCorrectFileTemplate(edu, edu.type)}
       />
-      {getAlbumChildren(edu).map((child) => child)}
+      {getAlbumChildren(edu).map((child) => child)} */}
       <DeleteEduText />
     </div>
   );

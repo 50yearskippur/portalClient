@@ -9,4 +9,5 @@
 .edu-delete-container {
   display: flex;
   gap: 7px;
+  margin: auto 0 30px;
 }
