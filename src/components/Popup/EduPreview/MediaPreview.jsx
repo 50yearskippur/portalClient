@@ -4,12 +4,12 @@ import EduResSection from './EduResSection';
 import getCorrectFileTemplate from '../../../utils/getCorrectFileTemplate';
 import GenericEduTop from './GenericEduTop';
 import getAlbumChildren from '../../../utils/getAlbumChildren';
-import formIcon from '../../../assets/media/Upload/form.svg';
+import pictureIcon from '../../../assets/media/Upload/picture.svg';
 
 const MediaPreview = ({ edu }) => {
   return (
     <div className="edu-preview-content" onClick={(e) => handlePropagation(e)}>
-      <GenericEduTop edu={edu} icon={formIcon} />
+      <GenericEduTop edu={edu} iconSrc={pictureIcon} />
       <EduResSection
         title="קבצים"
         content={getCorrectFileTemplate(edu, edu.type)}

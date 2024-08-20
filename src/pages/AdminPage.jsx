@@ -423,7 +423,6 @@ const AdminPage = () => {
     const formsArr = [
       {
         title: 'טפסים 1',
-        type: 'סיכום',
         date: Date('28.8.2024'),
         tag: { title: 'שלישות' },
         media: rabit,
@@ -434,19 +433,16 @@ const AdminPage = () => {
       },
       {
         title: 'טפסים 1',
-        type: 'סיכום',
         date: Date('28.8.2024'),
         tag: { title: 'שלישות' },
         media: rabit,
         cover: rabit,
         uploadByArtech: false,
-
         mediaType: 'image',
         settings: [{ isRecomennded: true }],
       },
       {
         title: 'טפסים 2',
-        type: 'סיכום',
         date: Date('28.8.2024'),
         tag: { title: 'נשקייה' },
         media: rabit,

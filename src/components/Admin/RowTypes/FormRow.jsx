@@ -1,17 +1,13 @@
 import './TemplateRow.css';
-import eduTypeByText from '../../../utils/eduTypeByText';
 import GenericItem from '../GenericObjects/GenericItem';
 import convertDateToString from '../../../utils/convertDateToString';
 import V from './V';
+import formIcon from '../../../assets/media/Upload/form.svg';
 
 const FormRow = (item) => {
   return [
     <div className="generic-row-item-container">
-      <img
-        src={eduTypeByText(item?.type)}
-        alt="edu type"
-        className="item-type-img"
-      />
+      <img src={formIcon} alt="edu type" className="item-type-img" />
       <GenericItem
         title={item.title}
         subTitle="שם הטופס"

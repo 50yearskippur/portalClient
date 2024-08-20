@@ -2,9 +2,9 @@ import DeleteEduText from './DeleteEduText';
 import handlePropagation from '../../../utils/handlePropagation';
 import EduResSection from './EduResSection';
 import GenericEduTop from './GenericEduTop';
-import getCorrectFileTemplate from '../../../utils/getCorrectFileTemplate';
 import Setting from './SettingsList';
 import formIcon from '../../../assets/media/Upload/form.svg';
+import GenericFilePreview from './GenericFilePreview';
 
 const FormPreview = ({ edu }) => {
   return (
@@ -12,7 +12,7 @@ const FormPreview = ({ edu }) => {
       <GenericEduTop edu={edu} iconSrc={formIcon} />
       <EduResSection
         title="קבצים"
-        content={getCorrectFileTemplate(edu, edu.type)}
+        content={<GenericFilePreview fileTitle={edu.title} edu={edu} />}
       />
       <EduResSection
         title="הגדרות"

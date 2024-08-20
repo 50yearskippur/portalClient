@@ -28,7 +28,6 @@ const Setting = ({ settingsArray, disabled, pageType }) => {
   return (
     <div className="settings-container">
       {settings.map((setting, index) => {
-        console.log(Object.keys(setting)[0]);
         const settingBooleanValue = Object.keys(setting)[0];
         return (
           <div key={index} className="setting-container">
