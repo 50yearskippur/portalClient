@@ -49,6 +49,7 @@
 
 .generic-row-arrow {
   margin-right: auto;
+  cursor: pointer;
 }
 
 .generic-row-item-container {
@@ -66,6 +67,7 @@
 .delete-subsubject-icon {
   align-items: center;
   width: 16px;
+  cursor: pointer;
 }
 
 .subsubject-row-tag-container {
