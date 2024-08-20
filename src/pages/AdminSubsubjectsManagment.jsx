@@ -21,13 +21,18 @@ const AdminSubsubjectsManagment = () => {
     {
       subjectName: 'זירת סוריה',
       personalAreaName: 'DD',
+      subSubjectTags: [
+        { title: 'מדעי המחשב' },
+        { title: 'מפל' },
+        { title: 'אזרחות' },
+      ],
     },
     {
       subjectName: 'זירת סוריה',
       personalAreaName: 'DD',
     },
     {
-      subjectName: 'זירת סוריה',
+      subjectName: 'זירת לבנון',
       personalAreaName: 'DD',
       subSubjectTags: [{ title: 'מדעי המחשב' }, { title: 'מפל' }],
     },
@@ -48,13 +53,18 @@ const AdminSubsubjectsManagment = () => {
       {
         subjectName: 'זירת סוריה',
         personalAreaName: 'DD',
+        subSubjectTags: [
+          { title: 'מדעי המחשב' },
+          { title: 'מפל' },
+          { title: 'אזרחות' },
+        ],
       },
       {
         subjectName: 'זירת סוריה',
         personalAreaName: 'DD',
       },
       {
-        subjectName: 'זירת סוריה',
+        subjectName: 'זירת לבנון',
         personalAreaName: 'DD',
         subSubjectTags: [{ title: 'מדעי המחשב' }, { title: 'מפל' }],
       },
