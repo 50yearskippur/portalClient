@@ -15,6 +15,7 @@ const Details = ({ nextStage }) => {
   const [creditsList, setCreditsList] = useState(
     itemDetails.credits ? itemDetails.credits : getCredits(itemDetails?.type)
   );
+  console.log(creditsList);
   const [newCredit, setNewCredit] = useState({ role: '', user: '' });
 
   useEffect(() => {
@@ -115,7 +116,9 @@ const Details = ({ nextStage }) => {
           />
           <input
             className="stage-input"
-            onChange={(e) => handleNewCredit({ user: e.target.value })}
+            onChange={(e) =>
+              handleNewCredit({ user: { fullName: e.target.value } })
+            }
             type="text"
             style={{ width: '15.5vw' }}
           />

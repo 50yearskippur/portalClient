@@ -20,7 +20,7 @@ const Dropdown = ({
     defaultValue ? defaultValue : itemDetails[fieldName]
   );
   const IS_NEW_SUB_SUBJECT =
-    fieldName === 'subSubject' && !itemDetails.subSubject?.isApproved;
+    fieldName === 'subSubject' && itemDetails.subSubject?.isApproved === false;
 
   const addDetails = (item) => {
     if (onSelect) onSelect(item);
@@ -32,9 +32,10 @@ const Dropdown = ({
       saveDetails({
         [fieldName]: {
           [fieldName === 'experationDate' ? 'unit' : 'title']: item,
-          ...(fieldName === 'subSubject' && {
-            isApproved: IS_NEW_SUB_SUBJECT,
-          }),
+          ...(fieldName === 'subSubject' &&
+            IS_NEW_SUB_SUBJECT && {
+              isApproved: list.includes(item),
+            }),
         },
       });
     else saveDetails({ [fieldName]: item });

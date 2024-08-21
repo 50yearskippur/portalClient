@@ -4,7 +4,14 @@ const Credit = ({ role, defaultValue, deleteCredit, setCreditsList }) => {
   const addUserToCredit = (user) => {
     setCreditsList((prevCredits) =>
       prevCredits.map((credit) =>
-        credit.role === role ? { ...credit, user } : credit
+        credit.role === role
+          ? {
+              ...credit,
+              user: {
+                fullName: user,
+              },
+            }
+          : credit
       )
     );
   };
@@ -24,7 +31,7 @@ const Credit = ({ role, defaultValue, deleteCredit, setCreditsList }) => {
         style={{ width: '15.5vw' }}
         onChange={(e) => addUserToCredit(e.target.value)}
       />
-      <div className='trash-icon-container'>
+      <div className="trash-icon-container">
         <img alt="trash" src={trashIcon} onClick={() => deleteCredit(role)} />
       </div>
     </div>
