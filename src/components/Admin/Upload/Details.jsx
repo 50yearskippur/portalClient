@@ -52,23 +52,25 @@ const Details = ({ nextStage }) => {
         <div className="stage-input-container">
           <div className="stage-text">נושא</div>
           <Dropdown
-            defaultValue="בחרו נושא"
+            defaultValue={
+              itemDetails.subject?.title
+                ? itemDetails.subject.title
+                : 'בחרו נושא'
+            }
             list={['מבואות מודיעין', 'טכנולוגיה וסייבר', 'שפה', 'המלצות']}
-            fieldName="subject"
+            fieldName=""
           />
         </div>
         <div className="stage-input-container">
           <div className="stage-text">תת נושא</div>
           <Dropdown
-            defaultValue="בחרו תת נושא"
-            list={[
-              'מבואות מודיעין',
-              'טכנולוגיה וסייבר',
-              'שפה',
-              'המלצות',
-              'תת נושא חדש',
-            ]}
-            fieldName="subSubject"
+            defaultValue={
+              itemDetails.subSubject?.title
+                ? itemDetails.subSubject.title
+                : 'בחרו תת נושא'
+            }
+            list={['מבואות מודיעין', 'טכנולוגיה וסייבר', 'שפה', 'המלצות']}
+            fieldName=""
             onNewSubClick={() => setIsSubOpen(true)}
           />
         </div>

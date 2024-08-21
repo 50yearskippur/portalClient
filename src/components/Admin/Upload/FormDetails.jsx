@@ -22,8 +22,13 @@ const FormDetails = ({ nextStage }) => {
         <div className="stage-input-container">
           <div className="stage-text">נושא</div>
           <Dropdown
+            defaultValue={
+              itemDetails.subject?.title
+                ? itemDetails.subject.title
+                : 'בחרו נושא'
+            }
             list={['מבואות מודיעין', 'טכנולוגיה וסייבר', 'שפה', 'המלצות']}
-            fieldName="subject"
+            fieldName=""
           />
         </div>
       </div>

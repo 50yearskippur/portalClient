@@ -118,7 +118,7 @@ const Setting = ({ nextStage }) => {
       <NextBtn
         text={'העלה תוצר'}
         disabled={
-          !itemDetails.level ||
+          !itemDetails.difficultyLevel ||
           !itemDetails.estimatedTime ||
           !itemDetails.experationDate
         }
