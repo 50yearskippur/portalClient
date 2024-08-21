@@ -41,7 +41,7 @@ const getUploadStages = (pageType, itemDetails, nextStage) => {
         { title: 'פרטים', component: <Details nextStage={nextStage} /> },
         {
           title: 'הגדרות',
-          component: <Settings nextStage={nextStage} />,
+          component: <Settings nextStage={nextStage} pageType="תוצרים" />,
         },
       ];
     case pageType === 'טפסים':
@@ -111,7 +111,7 @@ const getUploadStages = (pageType, itemDetails, nextStage) => {
         { title: 'פרטים', component: <Details nextStage={nextStage} /> },
         {
           title: 'הגדרות',
-          component: <Settings nextStage={nextStage} />,
+          component: <Settings nextStage={nextStage} pageType="תוצרים" />,
         },
       ];
   }

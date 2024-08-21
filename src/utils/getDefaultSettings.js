@@ -1,7 +1,7 @@
 const getDefaultSettings = (fileType) => {
   return [
     fileType !== 'סיכום' && {
-      isHeadponesNeeded: fileType === 'סרטון' ? true : false,
+      isHeadphonesNeeded: fileType === 'סרטון' ? true : false,
     },
     {
       isRecomennded: false,

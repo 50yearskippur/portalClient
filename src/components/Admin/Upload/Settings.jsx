@@ -43,6 +43,7 @@ const Setting = ({ nextStage }) => {
     <div className="stage-upload-container">
       <SettingsList
         settingsArray={getDefaultSettings(itemDetails?.type)}
+        pageType="תוצרים"
       />
       {itemDetails?.settings?.some(
         (setting) =>
@@ -67,7 +68,7 @@ const Setting = ({ nextStage }) => {
           <Dropdown
             defaultValue="בחרו רמת קושי"
             list={levels}
-            fieldName="level"
+            fieldName="difficultyLevel"
           />
         </div>
         <div className="stage-input-container">

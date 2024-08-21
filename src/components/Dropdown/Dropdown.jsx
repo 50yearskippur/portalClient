@@ -19,6 +19,7 @@ const Dropdown = ({
   const [selectedItem, setSelectedItem] = useState(
     itemDetails[fieldName] || defaultValue
   );
+  console.log(selectedItem);
   const IS_NEW_SUB_SUBJECT =
     selectedItem === 'תת נושא חדש' || itemDetails.isNewSubSubject;
 

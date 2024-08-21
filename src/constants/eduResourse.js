@@ -26,38 +26,6 @@ const eduResource = [
       description: 'תיאור תיאור',
       eduResource: [],
     },
-    comments: [
-      {
-        content:
-          'אחלה לומדה, לימדה אותי מלא על זירת חתול איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.',
-        date: Date('28.8.2024'),
-        user: { fullName: 'בני גבע', role: 'רמ"ד קורס כלבלב' },
-      },
-      {
-        content:
-          'אחלה לומדה, לימדה אותי מלא על זירת חתול איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.',
-        date: Date('28.8.2024'),
-        user: { fullName: 'בני גבע', role: 'רמ"ד קורס כלבלב' },
-      },
-      {
-        content:
-          'אחלה לומדה, לימדה אותי מלא על זירת חתול איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.',
-        date: Date('28.8.2024'),
-        user: { fullName: 'בני גבע', role: 'רמ"ד קורס כלבלב' },
-      },
-      {
-        content:
-          'אחלה לומדה, לימדה אותי מלא על זירת חתול איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.',
-        date: Date('28.8.2024'),
-        user: { fullName: 'בני גבע', role: 'רמ"ד קורס כלבלב' },
-      },
-      {
-        content:
-          'אחלה לומדה, לימדה אותי מלא על זירת חתול איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.',
-        date: Date('28.8.2024'),
-        user: { fullName: 'בני גבע', role: 'רמ"ד קורס כלבלב' },
-      },
-    ],
     credits: [
       {
         role: 'פיתוח',
@@ -78,7 +46,6 @@ const eduResource = [
         },
       },
     ],
-    level: 'מותאם לכל הרמות',
     comments: [
       {
         content:
@@ -115,6 +82,13 @@ const eduResource = [
       {
         isHeadphonesNeeded: true,
       },
+      {
+        isRecomennded: false,
+      },
+      {
+        isValidated: true,
+      },
+      { isPrimaryEduResourse: false },
     ],
     difficultyLevel: 'רמה גבוהה',
     creator: {
@@ -158,7 +132,6 @@ const eduResource = [
       description: 'תיאור תיאור',
       eduResource: [],
     },
-    level: 'מותאם לכל הרמות',
     credits: [
       {
         role: 'פיתוח',
@@ -179,10 +152,49 @@ const eduResource = [
         },
       },
     ],
+    comments: [
+      {
+        content:
+          'אחלה לומדה, לימדה אותי מלא על זירת חתול איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.',
+        date: Date('28.8.2024'),
+        user: { fullName: 'בני גבע', role: 'רמ"ד קורס כלבלב' },
+      },
+      {
+        content:
+          'אחלה לומדה, לימדה אותי מלא על זירת חתול איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.',
+        date: Date('28.8.2024'),
+        user: { fullName: 'בני גבע', role: 'רמ"ד קורס כלבלב' },
+      },
+      {
+        content:
+          'אחלה לומדה, לימדה אותי מלא על זירת חתול איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.',
+        date: Date('28.8.2024'),
+        user: { fullName: 'בני גבע', role: 'רמ"ד קורס כלבלב' },
+      },
+      {
+        content:
+          'אחלה לומדה, לימדה אותי מלא על זירת חתול איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.',
+        date: Date('28.8.2024'),
+        user: { fullName: 'בני גבע', role: 'רמ"ד קורס כלבלב' },
+      },
+      {
+        content:
+          'אחלה לומדה, לימדה אותי מלא על זירת חתול איזה כיף. מה שכן נתקע באיזה שהוא שלב, שווה לסדר את זה.',
+        date: Date('28.8.2024'),
+        user: { fullName: 'בני גבע', role: 'רמ"ד קורס כלבלב' },
+      },
+    ],
     settings: [
       {
         isHeadphonesNeeded: true,
       },
+      {
+        isRecomennded: false,
+      },
+      {
+        isValidated: true,
+      },
+      { isPrimaryEduResourse: false },
     ],
     difficultyLevel: 'רמה גבוהה',
     creator: {

@@ -2,7 +2,7 @@ const getSettingText = (pageType) => {
   switch (true) {
     case pageType === 'תוצרים':
       return {
-        isHeadponesNeeded: 'התוצר מצריך שימוש באמצעי שמע',
+        isHeadphonesNeeded: 'התוצר מצריך שימוש באמצעי שמע',
         isRecomennded:
           'התוצר יהיה חלק ממאגר המומלצים ליחידות והקורסים הרלוונטיים',
         isPrimaryEduResourse: 'התוצר יהיה ראשי תחת תת הנושא',

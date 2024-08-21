@@ -89,9 +89,9 @@ const Details = ({ nextStage }) => {
           key={`credit ${index}`}
           role={credit.role}
           defaultValue={
-            itemDetails.credits?.[index]?.user
-              ? itemDetails.credits?.[index].user
-              : credit.user
+            itemDetails.credits?.[index]?.user?.fullName
+              ? itemDetails.credits?.[index].user.fullName
+              : credit.user?.fullName
           }
           deleteCredit={() => deleteCredit(index)}
           setCreditsList={setCreditsList}

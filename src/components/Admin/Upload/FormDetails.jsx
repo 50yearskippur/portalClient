@@ -31,6 +31,7 @@ const FormDetails = ({ nextStage }) => {
         settingsArray={[
           { text: 'הטופס יופיע טפסים נפוצים', defaultValue: false },
         ]}
+        pageType="טפסים"
       />
       <NextBtn
         disabled={!itemDetails.title || !itemDetails.subject}
