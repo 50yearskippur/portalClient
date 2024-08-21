@@ -58,7 +58,7 @@ const Details = ({ nextStage }) => {
                 : 'בחרו נושא'
             }
             list={['מבואות מודיעין', 'טכנולוגיה וסייבר', 'שפה', 'המלצות']}
-            fieldName=""
+            fieldName="subject"
           />
         </div>
         <div className="stage-input-container">
@@ -70,7 +70,7 @@ const Details = ({ nextStage }) => {
                 : 'בחרו תת נושא'
             }
             list={['מבואות מודיעין', 'טכנולוגיה וסייבר', 'שפה', 'המלצות']}
-            fieldName=""
+            fieldName="subSubject"
             onNewSubClick={() => setIsSubOpen(true)}
           />
         </div>

@@ -28,7 +28,7 @@ const FormDetails = ({ nextStage }) => {
                 : 'בחרו נושא'
             }
             list={['מבואות מודיעין', 'טכנולוגיה וסייבר', 'שפה', 'המלצות']}
-            fieldName=""
+            fieldName="subject"
           />
         </div>
       </div>

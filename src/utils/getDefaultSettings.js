@@ -10,7 +10,7 @@ const getDefaultSettings = (fileType) => {
       isValidated: true,
     },
     { isPrimaryEduResourse: false },
-  ];
+  ].filter(Boolean);
 };
 
 export default getDefaultSettings;

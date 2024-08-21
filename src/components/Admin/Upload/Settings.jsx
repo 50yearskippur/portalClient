@@ -111,7 +111,7 @@ const Setting = ({ nextStage }) => {
                 return { ...prevDate, unit: item };
               })
             }
-            fieldName=""
+            fieldName="experationDate"
           />
         </div>
       </div>

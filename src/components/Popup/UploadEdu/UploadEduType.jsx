@@ -80,7 +80,7 @@ const UploadEduType = () => {
                   : 'נושא ראשי'
               }
               list={['מבואות מודיעין', 'טכנולוגיה וסייבר', 'שפה', 'המלצות']}
-              fieldName=""
+              fieldName="subject"
             />
             <Dropdown
               defaultValue={
@@ -89,7 +89,7 @@ const UploadEduType = () => {
                   : 'תת נושא'
               }
               list={['מבואות מודיעין', 'טכנולוגיה וסייבר', 'שפה', 'המלצות']}
-              fieldName=""
+              fieldName="subSubject"
               onNewSubClick={handleNewSubClick}
             />
           </div>
