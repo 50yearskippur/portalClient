@@ -17,12 +17,10 @@ const Dropdown = ({
   const { saveDetails, itemDetails } = useContext(PopupContext);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(
-    typeof itemDetails[fieldName] === 'object'
-      ? defaultValue
-      : itemDetails[fieldName]
+    defaultValue ? defaultValue : itemDetails[fieldName]
   );
   const IS_NEW_SUB_SUBJECT =
-    selectedItem === 'תת נושא חדש' || itemDetails.isNewSubSubject;
+    fieldName === 'subSubject' && !itemDetails.subSubject?.isApproved;
 
   const addDetails = (item) => {
     if (onSelect) onSelect(item);
@@ -34,6 +32,9 @@ const Dropdown = ({
       saveDetails({
         [fieldName]: {
           [fieldName === 'experationDate' ? 'unit' : 'title']: item,
+          ...(fieldName === 'subSubject' && {
+            isApproved: IS_NEW_SUB_SUBJECT,
+          }),
         },
       });
     else saveDetails({ [fieldName]: item });
@@ -57,11 +58,9 @@ const Dropdown = ({
       <div className="dropdown-item-container no-hover">
         <div className="dropdown-item-warning">
           <div className="dropdown-input-text">
-            {IS_NEW_SUB_SUBJECT ? itemDetails.subSubject : selectedItem}
+            {IS_NEW_SUB_SUBJECT ? itemDetails.subSubject?.title : selectedItem}
           </div>
-          {itemDetails.isNewSubSubject && IS_NEW_SUB_SUBJECT && (
-            <img src={warningIcon} alt="warning" />
-          )}
+          {IS_NEW_SUB_SUBJECT && <img src={warningIcon} alt="warning" />}
         </div>
         <img alt="dropdown" src={dropdownIcon} />
       </div>

@@ -69,7 +69,13 @@ const Details = ({ nextStage }) => {
                 ? itemDetails.subSubject.title
                 : 'בחרו תת נושא'
             }
-            list={['מבואות מודיעין', 'טכנולוגיה וסייבר', 'שפה', 'המלצות']}
+            list={[
+              'מבואות מודיעין',
+              'טכנולוגיה וסייבר',
+              'שפה',
+              'המלצות',
+              'תת נושא חדש',
+            ]}
             fieldName="subSubject"
             onNewSubClick={() => setIsSubOpen(true)}
           />

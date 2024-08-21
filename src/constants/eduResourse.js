@@ -25,6 +25,7 @@ const eduResource = [
       title: 'שוקולדים',
       description: 'תיאור תיאור',
       eduResource: [],
+      isApproved: false,
     },
     credits: [
       {
@@ -131,6 +132,7 @@ const eduResource = [
       title: 'שוקולדים',
       description: 'תיאור תיאור',
       eduResource: [],
+      isApproved: true,
     },
     credits: [
       {
