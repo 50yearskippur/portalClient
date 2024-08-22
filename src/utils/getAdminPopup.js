@@ -14,8 +14,6 @@ const getAdminPopUp = (selectedTab) => {
       return FormPreview;
     case selectedTab.includes('תמונות סטוק ואלבומים'):
       return MediaPreview;
-    case selectedTab.includes('תתי נושאים'):
-      return AddTagPopup;
     default:
       return EduResPreview;
   }
