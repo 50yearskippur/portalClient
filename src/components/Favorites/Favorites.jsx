@@ -1,11 +1,9 @@
-import React from "react";
-import PageTemplate from "../PageTemplate/PageTemplate";
-import FavotireEdu from "../ItemsComponents/FavoriteEdu";
-import { useState, useEffect } from "react";
+import React from 'react';
+import PageTemplate from '../PageTemplate/PageTemplate';
+import FavotireEdu from '../ItemsComponents/FavoriteEdu';
+import { useState, useEffect } from 'react';
 //delete in production
-import rabit from "../../assets/img/rabit.jpg";
-import recommendedEduResource from "../../constants/recommended";
-
+import recommendedEduResource from '../../constants/recommended';
 
 const Favorits = () => {
   const [favoritesData, setFavoritesData] = useState([]);
@@ -21,10 +19,10 @@ const Favorits = () => {
 
   return (
     <PageTemplate
-      style={{ width: "100%" }}
+      style={{ width: '100%' }}
       ItemComponent={FavotireEdu}
       data={favoritesData}
-      gapRowSizeInPx={20}
+      gapRowSizeInPx={30}
       gapColumnSizeInPercentage={2}
       numberOfItemsInLine={3}
     />

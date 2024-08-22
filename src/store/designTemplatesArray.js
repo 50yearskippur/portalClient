@@ -1,5 +1,4 @@
-import FontPreview from "../components/FontPreview/FontPreview";
-import PdfPreview from "../components/ItemsComponents/PdfPreview";
+import PdfPreview from '../components/ItemsComponents/PdfPreview';
 
 export const designTemplatesArray = {
   מצגות: {
@@ -10,7 +9,7 @@ export const designTemplatesArray = {
     numberOfItemsInLine: 3,
     itemComponent: PdfPreview,
   },
-  "קול קורא": {
+  'קול קורא': {
     numberOfItemsInLine: 3,
     itemComponent: PdfPreview,
   },
@@ -32,7 +31,7 @@ export const designTemplatesArray = {
   },
   פונטים: {
     numberOfItemsInLine: 1,
-    itemComponent: FontPreview,
+    itemComponent: PdfPreview,
   },
   הזמנות: {
     numberOfItemsInLine: 3,
