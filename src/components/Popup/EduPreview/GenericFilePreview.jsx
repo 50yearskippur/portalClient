@@ -13,7 +13,7 @@ const GenericFilePreview = ({ edu, fileTitle }) => {
     <div className="files-section-container">
       <div className="edu-preview-file-container">
         {edu.type ? (
-          <FileController item={edu} style={fileStyle} />
+          <FileController item={edu.files} style={fileStyle} />
         ) : (
           <img src={formIcon} alt="form" />
         )}

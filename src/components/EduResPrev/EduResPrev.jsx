@@ -8,7 +8,7 @@ const EduResPrev = ({ item }) => {
   return (
     <div className="edu-prev-container">
       <FileController
-        item={item}
+        item={item.files}
         style={{ width: '8.6vw', borderRadius: '10px' }}
       />
       <div className="edu-prev-deatails-container">

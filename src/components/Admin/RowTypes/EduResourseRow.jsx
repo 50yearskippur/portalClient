@@ -25,7 +25,7 @@ const EduResourseRow = (item) => {
       subTitle={item?.subSubject?.title}
       style={{ width: '6.25vw' }}
     />,
-    <div className="edu-row-views">12 צפיות</div>,
+    <div className="edu-row-views">{`${item.views} צפיות`}</div>,
     <div
       className="generic-item-container"
       style={{ width: '3.125vw', alignItems: 'center' }}
@@ -34,7 +34,7 @@ const EduResourseRow = (item) => {
       <div className="generic-item-sub-title">מומלץ</div>
     </div>,
     <GenericItem
-      title={convertDateToString(item?.createdAt)}
+      title={convertDateToString(item?.updatedAt)}
       subTitle="עודכן בתאריך"
       style={{ width: '7.4vw' }}
     />,

@@ -13,6 +13,7 @@ const FileController = ({
   showOnHover = false,
   showCover = true,
 }) => {
+  console.log(item);
   const [display, setDisplay] = useState(
     item?.cover && showCover ? item.cover?.file : item.media?.file
   );
