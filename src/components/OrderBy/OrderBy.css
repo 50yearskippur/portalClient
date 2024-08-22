@@ -1,7 +1,6 @@
 .order-by-container {
   position: relative;
   display: inline-block;
-  width: 13vw;
 }
 
 .dropdown-toggle {
@@ -46,6 +45,7 @@
   box-shadow: 10px 12.6px 29px 0px rgba(67, 66, 89, 0.1);
   padding: 10px 12px;
   gap: 2px;
+  margin-top: 10px;
 }
 
 .check-icon {
