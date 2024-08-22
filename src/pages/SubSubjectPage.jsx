@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import './SubSubjectPage.css';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import TopSection from '../components/TopSection/TopSection';
 import FileController from '../components/Media/FileController';
 import SideBar from '../components/SideBar/SideBar';
@@ -8,7 +8,6 @@ import Rate from '../components/Rate/Rate';
 import EduResPreview from '../components/EduResPreview/EduResPreview';
 import UploadEduType from '../components/Popup/UploadEdu/UploadEduType';
 import { PopupContext } from '../store/popup-context';
-import notebookImg from '../assets/media/Icons/notebook.svg';
 import heartimg from '../assets/media/Icons/fullHeart.svg';
 import point from '../assets/media/Icons/pinkPoint.svg';
 import headphones from '../assets/media/Icons/headphones.svg';
@@ -26,7 +25,6 @@ const SubSubjectPage = () => {
   const { showPopup } = useContext(PopupContext);
   const [isAddedToFavorites, setIsAddedToFavorites] = useState(false);
   const location = useLocation();
-  const navigate = useNavigate();
   const subSubject = location.state?.subSubject;
   const currentEdu = location.state?.item || subSubject?.eduResource[0];
   const uploadByAdmin = [];

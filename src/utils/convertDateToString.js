@@ -7,7 +7,6 @@ const convertDateToString = (date) => {
   } else {
     return "";
   }
-  return '';
 };
 
 export default convertDateToString;
