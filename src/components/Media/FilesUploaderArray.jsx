@@ -13,7 +13,7 @@ const FileUploaderArray = ({ text, fileTypes }) => {
 
   const { getRootProps, getInputProps } = useDropzone({
     onDrop: (acceptedFiles) => {
-      saveDetails({ files: acceptedFiles });
+      setItemDetails({ files: acceptedFiles });
     },
     directory: true,
   });
