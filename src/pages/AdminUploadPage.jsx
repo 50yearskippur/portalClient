@@ -11,27 +11,22 @@ const Upload = () => {
   const location = useLocation();
   const pageType = location.state?.pageType;
   const [currentStage, setCurrentStage] = useState(1);
-  const { itemDetails, setItemDetails } = useContext(PopupContext);
+  const { itemDetails, editPopUp, saveDetails } = useContext(PopupContext);
 
   const nextStage = () => {
     setCurrentStage((prevStage) => prevStage + 1);
   };
 
-  // useEffect(() => {
-  //   setItemDetails((prevDetails) => ({
-  //     ...prevDetails,
-  //     currentStageTitle: stagesArray[currentStage - 1].title,
-  //   }));
-  // }, [currentStage]);
+  const editStage = (stage, index) => {
+    setCurrentStage(index + 1);
+    if (stage.title === 'סוג מוצר') editPopUp();
+  };
 
   const stagesArray = getUploadStages(pageType, itemDetails, nextStage);
 
   useEffect(() => {
-    setItemDetails((prevDetails) => ({
-      ...prevDetails,
-      pageType,
-    }));
-  }, [pageType, setItemDetails]);
+    saveDetails({ pageType });
+  }, [pageType, saveDetails]);
 
   return (
     <div className="admin-upload-container">
@@ -82,7 +77,7 @@ const Upload = () => {
                   alt="pencil"
                   src={pencilIcon}
                   className="admin-upload-edit-icon"
-                  onClick={() => setCurrentStage(index + 1)}
+                  onClick={() => editStage(stage, index)}
                 />
               )}
             </div>

@@ -1,37 +1,27 @@
-import "./EduResPreview.css";
-import { useState } from "react";
-import handlePropagation from "../../../utils/handlePropagation";
-import EduPreviewTop from "./EduPreviewTop";
-import DeleteEduText from "./DeleteEduText";
-import warning from "../../../assets/media/Icons/warningBox.svg";
-import EduResSection from "./EduResSection";
-import Details from "./Details";
-import Comments from "./Comments";
-import Credits from "./Credits";
-import Setting from "./SettingsList";
-import MoreDetails from "./MoreDetails";
-import Groups from "./Groups";
-import DeleteEduPopup from "../General/DeleteEdu";
-import GenericFileComponent from "./GenericFileComponent";
+import { useState, useEffect } from 'react';
+import handlePropagation from '../../../utils/handlePropagation';
+import EduPreviewTop from './EduPreviewTop';
+import DeleteEduText from './DeleteEduText';
+import warning from '../../../assets/media/Icons/warningBox.svg';
+import EduResSection from './EduResSection';
+import Details from './Details';
+import Comments from './Comments';
+import Credits from './Credits';
+import Setting from './SettingsList';
+import MoreDetails from './MoreDetails';
+import DeleteEduPopup from '../General/DeleteEdu';
+import GenericFilePreview from './GenericFilePreview';
+import UserDetails from './UserDetails';
+import './EduResPreview.css';
 
 const EduPreview = ({ edu }) => {
   const [isDeletePopup, setIsDeletePopup] = useState(false);
-  const settingsArray = [
-    { text: "התוצר מצריך שימוש באוזניות", defaultValue: true },
-    {
-      text: "התוצר בסיווג גבוה מסגול צמצם ומצריך סיסמא",
-      defaultValue: false,
-    },
-    {
-      text: "התוצר יהיה חלק ממאגר המומלצים ליחידות והקורסים הרלוונטיים",
-      defaultValue: true,
-    },
-    { text: "התוצר יהיה התוצר הראשי תחת תת הנושא", defaultValue: false },
-    {
-      text: "התוצר נבדק, המידע בו עדכני ומאושר ע”י גורם המקצועי",
-      defaultValue: false,
-    },
-  ];
+  const [settingsArray, setSettingsArray] = useState(edu.settings);
+  const uploadByUser = edu.creator?.role === 'user';
+
+  useEffect(() => {
+    setSettingsArray(edu.settings);
+  }, [edu]);
 
   return (
     <div className="edu-preview-content" onClick={(e) => handlePropagation(e)}>
@@ -47,36 +37,26 @@ const EduPreview = ({ edu }) => {
           <div className="edu-blue-text underline">לחצו לאישור תיקוף</div>
         </div>
       </div>
-      <EduResSection title="פרטים" content={<Details edu={edu} />} />
+      <EduResSection
+        title="פרטים"
+        content={<Details edu={edu} uploadByUser={uploadByUser} />}
+      />
       <EduResSection title="תגובות" content={<Comments edu={edu} />} />
-      <EduResSection title="קרדיטים" content={<Credits edu={edu} />} />
+      {!uploadByUser && (
+        <EduResSection title="קרדיטים" content={<Credits edu={edu} />} />
+      )}
       <EduResSection
         title="קבצים"
-        content={<GenericFileComponent fileTitle={edu.title} edu={edu} />}
+        content={<GenericFilePreview fileTitle={edu.title} edu={edu} />}
       />
       <EduResSection
         title="הגדרות"
-        content={<Setting settingsArray={settingsArray} />}
-      />
-      <EduResSection content={<MoreDetails edu={edu} />} />
-      <EduResSection content={<MoreDetails edu={edu} />} />
-      <EduResSection
-        title="קורסים או יחידות רלוונטיים"
-        content={<Groups groups={["לורם איפסום", "לורם איפסום"]} />}
+        content={<Setting settingsArray={settingsArray} disabled={true} />}
       />
       <EduResSection
-        title="תיוגים"
-        content={
-          <Groups
-            groups={[
-              "לורם איפסום",
-              "לורם איפסום",
-              "לורם איפסום",
-              "לורם איפסום",
-            ]}
-          />
-        }
+        content={<MoreDetails edu={edu} uploadByUser={uploadByUser} />}
       />
+      {uploadByUser && <EduResSection content={<UserDetails edu={edu} />} />}
       <DeleteEduText onClick={() => setIsDeletePopup(true)} />
       <DeleteEduPopup
         isOpen={isDeletePopup}

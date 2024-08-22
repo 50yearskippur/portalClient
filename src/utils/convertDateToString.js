@@ -1,4 +1,5 @@
-import { format } from "date-fns";
+import { format } from 'date-fns';
+
 const convertDateToString = (date) => {
   if (date) {
     const newDate = String(format(new Date(date), "dd.MM.yyyy"));
@@ -6,6 +7,7 @@ const convertDateToString = (date) => {
   } else {
     return "";
   }
+  return '';
 };
 
 export default convertDateToString;

@@ -16,7 +16,7 @@ import eduTypesTitles from '../../../constants/eduTypes';
 
 const UploadEduType = () => {
   const [isSubOpen, setIsSubOpen] = useState(false);
-  const { showPopup, itemDetails, setItemDetails } = useContext(PopupContext);
+  const { showPopup, itemDetails, saveDetails } = useContext(PopupContext);
 
   const handleNewSubClick = () => {
     setIsSubOpen(true);
@@ -37,11 +37,8 @@ const UploadEduType = () => {
   );
 
   useEffect(() => {
-    setItemDetails((prevDetails) => ({
-      ...prevDetails,
-      uploader: user,
-    }));
-  }, [setItemDetails, user]);
+    saveDetails({ uploader: user });
+  }, [user, saveDetails]);
 
   return (
     <div className="upload-popup" onClick={(e) => handlePropagation(e)}>

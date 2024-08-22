@@ -6,3 +6,5 @@ export const download = (item) => {
   link.click();
   document.body.removeChild(link);
 };
+
+export default download;

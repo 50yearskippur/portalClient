@@ -1,21 +1,17 @@
-import "./AddSubSubject.css";
-import React from "react";
-import { useState, useContext } from "react";
-import handlePropagation from "../../../utils/handlePropagation";
-import exitIcon from "../../../assets/media/Icons/exitIcon.svg";
-import Button from "../../Button/Button";
-import { PopupContext } from "../../../store/popup-context";
+import './AddSubSubject.css';
+import React from 'react';
+import { useState, useContext } from 'react';
+import handlePropagation from '../../../utils/handlePropagation';
+import exitIcon from '../../../assets/media/Icons/exitIcon.svg';
+import Button from '../../Button/Button';
+import { PopupContext } from '../../../store/popup-context';
 
 const AddSubSubject = ({ isOpen, onClose }) => {
-  const [subSubjectName, setSubSubjectName] = useState("");
-  const { setItemDetails } = useContext(PopupContext);
+  const [subSubjectName, setSubSubjectName] = useState('');
+  const { saveDetails } = useContext(PopupContext);
 
   const handleSave = () => {
-    setItemDetails((prevDetails) => ({
-      ...prevDetails,
-      subSubject: subSubjectName,
-      isNewSubSubject: true,
-    }));
+    saveDetails({ subSubject: subSubjectName });
     onClose();
   };
 
@@ -28,7 +24,7 @@ const AddSubSubject = ({ isOpen, onClose }) => {
           <img
             src={exitIcon}
             className="upload-exit-button"
-            style={{ position: "relative", right: "95%" }}
+            style={{ position: 'relative', right: '95%' }}
             alt="exit-button"
             onClick={onClose}
           />
@@ -47,13 +43,13 @@ const AddSubSubject = ({ isOpen, onClose }) => {
         </div>
         <div
           className="upload-button-container"
-          style={{ justifyContent: "center" }}
+          style={{ justifyContent: 'center' }}
         >
           <Button
-            text={"שליחת בקשה"}
+            text={'שליחת בקשה'}
             onClick={handleSave}
-            disabled={subSubjectName.trim() === ""}
-            style={{ background: "#3259FF" }}
+            disabled={subSubjectName.trim() === ''}
+            style={{ background: '#3259FF' }}
           />
           <div className="cancel-btn" onClick={onClose}>
             ביטול

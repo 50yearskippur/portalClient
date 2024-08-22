@@ -3,14 +3,7 @@ import { PopupContext } from '../../../store/popup-context';
 import NextBtn from './NextBtn';
 
 const MediaDetails = ({ nextStage }) => {
-  const { itemDetails, setItemDetails } = useContext(PopupContext);
-
-  const saveDetails = (detail) => {
-    setItemDetails((prevDetails) => ({
-      ...prevDetails,
-      ...detail,
-    }));
-  };
+  const { itemDetails, saveDetails } = useContext(PopupContext);
 
   return (
     <div className="stage-upload-container">

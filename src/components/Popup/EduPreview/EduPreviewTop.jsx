@@ -20,32 +20,32 @@ const EduPreviewTop = ({
   const navigate = useNavigate();
   const { hidePopup } = useContext(PopupContext);
 
-  return [
-    <div className="edu-preview-top-right">
-      <div className="edu-preview-name-container">
-        <img src={eduTypeByText(edu?.type)} alt="edu type" />
-        <div className="edu-preview-title-container">
-          <div className="edu-preview-title">{edu.title}</div>
-          <div className="edu-rate-container">
-            <Rate
-              style={{ width: "24px" }}
-              clickable={false}
-              numberOfStars={5}
-            />
-            <>(147)</>
+  return (
+      <div className="edu-preview-top-right" key="edu-preview-top">
+          <div className="edu-preview-name-container">
+              <img src={eduTypeByText(edu?.type)} alt="edu type" />
+              <div className="edu-preview-title-container">
+                  <div className="edu-preview-title">{edu.title}</div>
+                  <div className="edu-rate-container">
+                      <Rate
+                          style={{ width: "24px" }}
+                          clickable={false}
+                          numberOfStars={5}
+                      />
+                      <>(147)</>
+                  </div>
+              </div>
+              <div className="edu-preview-type">{edu?.type}</div>
           </div>
-        </div>
-        <div className="edu-preview-type">{edu?.type}</div>
+          <div
+              className="edu-edit-container"
+              onClick={() => iconDetails.onClick(navigate, hidePopup)}
+              key="edu-edit-container"
+          >
+              <img src={iconDetails.icon} alt="edit" />
+              <div className="edu-blue-text">{iconDetails.text}</div>
+          </div>
       </div>
-      <div
-        className="edu-edit-container"
-        onClick={() => iconDetails.onClick(navigate, hidePopup)}
-      >
-        <img src={iconDetails.icon} alt="edit" />
-        <div className="edu-blue-text">{iconDetails.text}</div>
-      </div>
-      ,
-    </div>,
-  ];
+  );
 };
 export default EduPreviewTop;

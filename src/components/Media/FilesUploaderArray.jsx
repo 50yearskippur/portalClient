@@ -1,4 +1,6 @@
 import './FileUploader.css';
+import { DndProvider } from 'react-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend';
 import { useDropzone } from 'react-dropzone';
 import { useContext } from 'react';
 import { PopupContext } from '../../store/popup-context';
@@ -11,25 +13,19 @@ const FileUploaderArray = ({ text, fileTypes }) => {
 
   const { getRootProps, getInputProps } = useDropzone({
     onDrop: (acceptedFiles) => {
-      setItemDetails((prevDetails) => ({
-        ...prevDetails,
-        files: acceptedFiles,
-      }));
+      saveDetails({ files: acceptedFiles });
     },
     directory: true,
   });
 
-  //   const handleRemoveFile = () => {
-  //     setItemDetails((prevDetails) => {
-  //       const newFiles = { ...prevDetails.files };
-  //       return { ...prevDetails, files: newFiles };
-  //     });
-  //   };
-
   const hadnleDragFiles = () => {
     switch (true) {
       case !!itemDetails?.files:
-        return <MediaFilesPreview files={itemDetails.files} />;
+        return (
+          <DndProvider backend={HTML5Backend}>
+            <MediaFilesPreview files={itemDetails.files} />
+          </DndProvider>
+        );
       default:
         return (
           <div className="file-upload-container" {...getRootProps()}>

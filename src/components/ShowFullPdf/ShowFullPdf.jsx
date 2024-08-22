@@ -4,13 +4,13 @@ import "./ShowFullPdf.css";
 // import PDFViewer from "pdf-viewer-reactjs";
 
 const ShowFullPdf = ({ pdfDetails }) => {
-  const [numPages, setNumPages] = useState(null);
+  const [numPages] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
   const documentRef = useRef();
 
-  const onDocumentLoadSuccess = ({ numPages }) => {
-    setNumPages(numPages);
-  };
+  // const onDocumentLoadSuccess = ({ numPages }) => {
+  //   setNumPages(numPages);
+  // };
 
   useEffect(() => {
     const currentDocument = documentRef.current;
@@ -24,12 +24,12 @@ const ShowFullPdf = ({ pdfDetails }) => {
     };
 
     if (currentDocument) {
-      currentDocument.addEventListener("scroll", handleScroll);
+      currentDocument.addEventListener('scroll', handleScroll);
     }
 
     return () => {
       if (currentDocument) {
-        currentDocument.removeEventListener("scroll", handleScroll);
+        currentDocument.removeEventListener('scroll', handleScroll);
       }
     };
   }, [numPages]);
@@ -39,7 +39,7 @@ const ShowFullPdf = ({ pdfDetails }) => {
       <p className="pdf-page-number">
         דף {currentPage} מתוך {numPages}
       </p>
-      <div style={{ display: "flex", justifyContent: "flex-end" }}>
+      <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
         <div className="pdf-document" ref={documentRef}>
           {/* <PDFViewer document={{ url: pdfDetails.media }} /> */}
           {/* <Document
