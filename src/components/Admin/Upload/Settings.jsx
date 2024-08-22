@@ -39,6 +39,10 @@ const Setting = ({ nextStage }) => {
     }
   }, [experationDate, saveDetails]);
 
+  const getestimatedTimeText = (estimatedTime) => {
+    return `${estimatedTime} דק'`;
+  };
+
   return (
     <div className="stage-upload-container">
       <SettingsList
@@ -66,7 +70,11 @@ const Setting = ({ nextStage }) => {
         <div className="stage-input-container">
           <div className="stage-text">רמה</div>
           <Dropdown
-            defaultValue="בחרו רמת קושי"
+            defaultValue={
+              itemDetails.difficultyLevel
+                ? itemDetails.difficultyLevel
+                : 'בחרו רמת קושי'
+            }
             list={levels}
             fieldName="difficultyLevel"
           />
@@ -74,9 +82,18 @@ const Setting = ({ nextStage }) => {
         <div className="stage-input-container">
           <div className="stage-text">זמן מוערך</div>
           <Dropdown
-            defaultValue="20 דק'"
+            defaultValue={
+              itemDetails.estimatedTime
+                ? getestimatedTimeText(itemDetails.estimatedTime)
+                : "20 דק'"
+            }
             list={["20 דק'", "30 דק'", "45 דק'", "60+ דק'"]}
             fieldName="estimatedTime"
+            extractNumber = {(input) =>  {
+              const match = input.match(/\+?\d+/);
+              return match ? match[0] : null;
+          }}
+          
           />
         </div>
       </div>

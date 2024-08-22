@@ -15,7 +15,6 @@ const Details = ({ nextStage }) => {
   const [creditsList, setCreditsList] = useState(
     itemDetails.credits ? itemDetails.credits : getCredits(itemDetails?.type)
   );
-  console.log(creditsList);
   const [newCredit, setNewCredit] = useState({ role: '', user: '' });
 
   useEffect(() => {

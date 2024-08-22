@@ -13,12 +13,14 @@ const Dropdown = ({
   defaultValue,
   fieldName,
   onSelect,
+  extractNumber,
 }) => {
   const { saveDetails, itemDetails } = useContext(PopupContext);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(
     defaultValue ? defaultValue : itemDetails[fieldName]
   );
+
   const IS_NEW_SUB_SUBJECT =
     fieldName === 'subSubject' && itemDetails.subSubject?.isApproved === false;
 
@@ -38,7 +40,10 @@ const Dropdown = ({
             }),
         },
       });
-    else saveDetails({ [fieldName]: item });
+    else
+      saveDetails({
+        [fieldName]: fieldName === 'estimatedTime' ? extractNumber(item) : item,
+      });
   };
 
   const handleSelect = (item) => {

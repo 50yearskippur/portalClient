@@ -4,7 +4,7 @@ import { PopupContext } from '../store/popup-context';
 import { useNavigate } from 'react-router-dom';
 import Tabs from '../components/Tabs/Tabs';
 import uploadTypesArray from '../constants/uploadTypesArray';
-// import forms from '../constants/forms';
+import forms from '../constants/forms';
 // import media from '../constants/media';
 import eduResources from '../constants/eduResourse';
 import WaitingList from '../components/Admin/Requests/WaitingList';
@@ -95,38 +95,7 @@ const AdminPage = () => {
     //delete in production
     const eduArr = eduResources;
 
-    const formsArr = [
-      {
-        title: 'טפסים 1',
-        date: Date('28.8.2024'),
-        tag: { title: 'שלישות' },
-        media: rabit,
-        cover: rabit,
-        uploadByArtech: true,
-        mediaType: 'image',
-        settings: [{ isRecomennded: false }],
-      },
-      {
-        title: 'טפסים 1',
-        date: Date('28.8.2024'),
-        tag: { title: 'שלישות' },
-        media: rabit,
-        cover: rabit,
-        uploadByArtech: false,
-        mediaType: 'image',
-        settings: [{ isRecomennded: true }],
-      },
-      {
-        title: 'טפסים 2',
-        date: Date('28.8.2024'),
-        tag: { title: 'נשקייה' },
-        media: rabit,
-        cover: rabit,
-        uploadByArtech: true,
-        mediaType: 'image',
-        settings: [{ isRecomennded: false }],
-      },
-    ];
+    const formsArr = forms;
 
     const mediaArr = [
       {

@@ -75,35 +75,4 @@ export const forms = [
   },
 ];
 
-export const formsSubjects = [
-  {
-    _id: '01',
-    title: 'שלישות',
-    forms: forms.slice(0, 3),
-  },
-  {
-    _id: '02',
-    title: 'ת"ש',
-    forms: forms.slice(3, 5),
-  },
-  {
-    _id: '03',
-    title: 'יוהל"ם',
-    forms: forms.slice(5, 6),
-  },
-  {
-    _id: '04',
-    title: 'חינוך',
-    forms: forms.slice(6, 8),
-  },
-  {
-    _id: '05',
-    title: 'נפגעים',
-    forms: [],
-  },
-  {
-    _id: '06',
-    title: 'בטיחות',
-    forms: forms.slice(-3),
-  },
-];
+export default forms;

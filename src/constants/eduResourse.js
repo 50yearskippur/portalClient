@@ -8,7 +8,7 @@ const eduResource = [
     description: 'אני אוהב שוקולד ועוגות גבינה וארטיק וסוכריות ותות גינה',
     unit: 'בה"ד 15',
     type: 'סרטון',
-    estimatedTime: '2',
+    estimatedTime: '30',
     files: {
       media: {
         file: video,
@@ -115,7 +115,7 @@ const eduResource = [
     description: 'אני אוהב עמבה כתומה וקצת צהובה',
     unit: 'בה"ד 15',
     type: 'סרטון',
-    estimatedTime: '2',
+    estimatedTime: '+60',
     files: {
       media: {
         file: video,

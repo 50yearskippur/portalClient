@@ -33,9 +33,7 @@ const FormDetails = ({ nextStage }) => {
         </div>
       </div>
       <SettingsList
-        settingsArray={[
-          { text: 'הטופס יופיע טפסים נפוצים', defaultValue: false },
-        ]}
+        settingsArray={[{ isRecomennded: false }]}
         pageType="טפסים"
       />
       <NextBtn
