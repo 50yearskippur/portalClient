@@ -70,6 +70,12 @@
   cursor: pointer;
 }
 
+.plus-subsubject-icon {
+  align-items: center;
+  width: 11px;
+  cursor: pointer;
+}
+
 .subsubject-row-tag-container {
   display: flex;
   gap: 8px;
