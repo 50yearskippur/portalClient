@@ -10,11 +10,22 @@ const FavoriteEdu = ({ item, defaultHeart = true }) => {
   const [activeHeart, setActiveHeart] = useState(defaultHeart);
   const navigate = useNavigate();
 
+  const getSubSubject = (subSubjectId) => {
+    //return subSubject by id from server
+    //delete in production
+
+    return subSubjectId;
+  };
+
+  const handleClick = () => {
+    const subSubject = getSubSubject(item.subSubject);
+    navigate('/subSubject', {
+      state: { item, subSubject },
+    });
+  };
+
   return (
-    <div
-      className="favorite-edu-container"
-      onClick={() => navigate('/subSubject', { state: { item } })}
-    >
+    <div className="favorite-edu-container" onClick={handleClick}>
       <FileController
         gradientStyle={{ height: '35%', top: '65%' }}
         item={item.files}

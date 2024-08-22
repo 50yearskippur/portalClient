@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import './SubSubjectPage.css';
 import { useLocation } from 'react-router-dom';
 import TopSection from '../components/TopSection/TopSection';
@@ -29,6 +29,10 @@ const SubSubjectPage = () => {
   const currentEdu = location.state?.item || subSubject?.eduResource[0];
   const uploadByAdmin = [];
   const uploadByNonAdmin = [];
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   subSubject?.eduResource?.forEach((eduResource) => {
     if (eduResource.creator.isAdmin) {
