@@ -21,7 +21,7 @@ import grayHome from '../assets/media/Icons/grayHome.svg';
 import grayForm from '../assets/media/Icons/grayForm.svg';
 import grayMedia from '../assets/media/Icons/grayMedia.svg';
 //delete in production
-import rabit from '../assets/img/rabit.jpg';
+import rabit from '../assets/dummyMedia/rabit.jpg';
 import arrow from '../assets/media/Icons/curvedArrow.svg';
 import OrderBy from '../components/OrderBy/OrderBy';
 

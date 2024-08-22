@@ -1,4 +1,4 @@
-import pdfFile from '../assets/pdfs/pdfPage.pdf';
+import pdfFile from '../assets/dummyMedia/pdfs/pdfPage.pdf';
 
 export const forms = [
   {

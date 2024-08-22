@@ -1,16 +1,16 @@
 //delete in production
-import rabit from '../assets/img/rabit.jpg';
-import video from '../assets/img/video.mp4';
-import sea from '../assets/img/sea.jpg';
-import robot from '../assets/img/robot.jpg';
-import bamba from '../assets/img/bamba.jpg';
-import flowers from '../assets/img/flowers.jfif';
-import PT from '../assets/img/PT.jfif';
-import snow from '../assets/img/snow.jfif';
-import tiger from '../assets/img/tiger.jfif';
-import zebra from '../assets/img/zebra.jpg';
-import sports from '../assets/img/sports.jfif';
-import elit from '../assets/img/elit.jfif';
+import rabit from '../assets/dummyMedia/rabit.jpg';
+import video from '../assets/dummyMedia/video.mp4';
+import sea from '../assets/dummyMedia/sea.jpg';
+import robot from '../assets/dummyMedia/robot.jpg';
+import bamba from '../assets/dummyMedia/bamba.jpg';
+import flowers from '../assets/dummyMedia/flowers.jfif';
+import PT from '../assets/dummyMedia/PT.jfif';
+import snow from '../assets/dummyMedia/snow.jfif';
+import tiger from '../assets/dummyMedia/tiger.jfif';
+import zebra from '../assets/dummyMedia/zebra.jpg';
+import sports from '../assets/dummyMedia/sports.jfif';
+import elit from '../assets/dummyMedia/elit.jfif';
 
 //delete in production
 const recommendedEduResource = [
