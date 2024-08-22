@@ -7,8 +7,9 @@ const media = [
   {
     _id: '66b46996cb231f6817ea15cb',
     title: 'סיום קורס מט"ל',
-    pageType: 'מדיה',
+    pageType: 'אלבום',
     type: 'נושא',
+    views: 500,
     files: [
       { media: { file: party, MimeType: 'image', fileName: 'ספורט' } },
       { media: { file: rabit, MimeType: 'image', fileName: 'ים' } },
@@ -25,8 +26,9 @@ const media = [
   {
     _id: '66b46996cb231f6817ea15cb',
     title: 'יום כיף בספארי',
-    pageType: 'מדיה',
+    pageType: 'אלבום',
     type: 'נושא',
+    views: 500,
     files: [
       { media: { file: party, MimeType: 'image', fileName: 'ספורט' } },
       { media: { file: rabit, MimeType: 'image', fileName: 'ים' } },
@@ -43,8 +45,9 @@ const media = [
   {
     _id: '66b46996cb231f6817ea15cb',
     title: 'פורימון 2021',
-    pageType: 'מדיה',
+    pageType: 'תמונות סטוק',
     type: 'נושא',
+    views: 500,
     files: [
       { media: { file: party, MimeType: 'image', fileName: 'ספורט' } },
       { media: { file: rabit, MimeType: 'image', fileName: 'ים' } },
@@ -61,8 +64,9 @@ const media = [
   {
     _id: '66b46996cb231f6817ea15cb',
     title: 'בה"ד 1',
-    pageType: 'מדיה',
+    pageType: 'תמונות סטוק',
     type: 'נושא',
+    views: 500,
     files: [
       { media: { file: party, MimeType: 'image', fileName: 'ספורט' } },
       { media: { file: rabit, MimeType: 'image', fileName: 'ים' } },
@@ -79,8 +83,9 @@ const media = [
   {
     _id: '66b46996cb231f6817ea15cb',
     title: 'סיום קורס קמ"נים',
-    pageType: 'מדיה',
+    pageType: 'אלבום',
     type: 'נושא',
+    views: 500,
     files: [
       { media: { file: party, MimeType: 'image', fileName: 'ספורט' } },
       { media: { file: rabit, MimeType: 'image', fileName: 'ים' } },

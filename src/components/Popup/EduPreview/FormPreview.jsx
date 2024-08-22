@@ -18,6 +18,7 @@ const FormPreview = ({ edu }) => {
         title="הגדרות"
         content={
           <Setting
+            item={edu}
             settingsArray={edu.settings}
             disabled={true}
             pageType="טפסים"

@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import Tabs from '../components/Tabs/Tabs';
 import uploadTypesArray from '../constants/uploadTypesArray';
 import forms from '../constants/forms';
-// import media from '../constants/media';
+import media from '../constants/media';
 import eduResources from '../constants/eduResourse';
 import WaitingList from '../components/Admin/Requests/WaitingList';
 import Search from '../components/Search/Search';
@@ -19,10 +19,8 @@ import selectedstaricon from '../assets/media/Icons/blueStarIcon.svg';
 import downloadIcon from '../assets/media/Icons/squereDownload.svg';
 import selecteddownloadIcon from '../assets/media/Icons/blueDownloadIcon.svg';
 import OrderBy from '../components/OrderBy/OrderBy';
-import './AdminPage.css';
-//delete in production
-import rabit from '../assets/img/rabit.jpg';
 import arrow from '../assets/media/Icons/curvedArrow.svg';
+import './AdminPage.css';
 
 const AdminPage = () => {
   const navigate = useNavigate();
@@ -34,7 +32,7 @@ const AdminPage = () => {
     'תמונות סטוק ואלבומים',
   ]);
   const [selectedTab, setSelectedTab] = useState(tabsArray[0]);
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(eduResources);
   const [uploadTypesOpen, setUploadTypesOpen] = useState(false);
   const [selectedType, setSelectedType] = useState();
 
@@ -93,85 +91,24 @@ const AdminPage = () => {
 
   useEffect(() => {
     //delete in production
-    const eduArr = eduResources;
 
-    const formsArr = forms;
-
-    const mediaArr = [
-      {
-        title: 'הרמת כוסית לראש השנה',
-        pageType: 'תמונות סטוק',
-        date: Date('28.8.2024'),
-        media: rabit,
-        files: [rabit, rabit, rabit, rabit, rabit],
-        cover: rabit,
-        mediaType: 'image',
-      },
-      {
-        title: 'פורים 2024',
-        pageType: 'אלבום',
-        date: Date('28.8.2024'),
-        media: rabit,
-        cover: rabit,
-        files: [
-          rabit,
-          rabit,
-          rabit,
-          rabit,
-          rabit,
-          rabit,
-          rabit,
-          rabit,
-          rabit,
-          rabit,
-          rabit,
-          rabit,
-        ],
-
-        mediaType: 'image',
-      },
-      {
-        title: 'אלבום טקס קצינים ',
-        pageType: 'תמונות סטוק',
-        uploadByArtech: true,
-        date: Date('28.8.2024'),
-        media: rabit,
-        cover: rabit,
-        files: [
-          rabit,
-          rabit,
-          rabit,
-          rabit,
-          rabit,
-          rabit,
-          rabit,
-          rabit,
-          rabit,
-          rabit,
-          rabit,
-          rabit,
-        ],
-
-        mediaType: 'image',
-      },
-    ];
     setTabs([
-      `תוצרים (${eduArr.length})`,
-      `טפסים (${formsArr.length})`,
-      `תמונות סטוק ואלבומים (${mediaArr.length})`,
+      `תוצרים (${eduResources.length})`,
+      `טפסים (${forms.length})`,
+      `תמונות סטוק ואלבומים (${media.length})`,
     ]);
     switch (true) {
       case selectedTab.includes('תוצרים'):
-        setData(eduArr);
+        setData(eduResources);
         break;
       case selectedTab.includes('טפסים'):
-        setData(formsArr);
+        setData(forms);
         break;
       case selectedTab.includes('תמונות סטוק ואלבומים'):
-        setData(mediaArr);
+        setData(media);
         break;
       default:
-        setData(eduArr);
+        setData(eduResources);
     }
   }, [selectedTab]);
 

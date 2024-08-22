@@ -4,7 +4,7 @@ import Switch from '../../Switch/Switch';
 import getSettingText from '../../../utils/getSettingText';
 import './SettingsList.css';
 
-const Setting = ({ settingsArray, disabled, pageType }) => {
+const Setting = ({ item, settingsArray, disabled, pageType }) => {
   const { itemDetails, saveDetails } = useContext(PopupContext);
   const [settings, setSettings] = useState(
     itemDetails.settings ? itemDetails.settings : settingsArray

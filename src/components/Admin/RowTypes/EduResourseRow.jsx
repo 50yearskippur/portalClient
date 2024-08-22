@@ -7,6 +7,10 @@ import './TemplateRow.css';
 import Star from '../../Rate/Star';
 
 const EduResourseRow = (item) => {
+  const isRecommended = item.settings?.find((setting) =>
+    setting.hasOwnProperty('isRecommended')
+  ).isRecommended;
+
   return [
     <div className="generic-row-item-container">
       <img
@@ -30,7 +34,7 @@ const EduResourseRow = (item) => {
       className="generic-item-container"
       style={{ width: '3.125vw', alignItems: 'center' }}
     >
-      <Star />
+      <Star defaultValue={isRecommended} />
       <div className="generic-item-sub-title">מומלץ</div>
     </div>,
     <GenericItem

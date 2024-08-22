@@ -121,6 +121,7 @@ const SmallImage = ({
 };
 
 const MediaFilesPreview = ({ files }) => {
+  console.log(files);
   const { saveDetails } = useContext(PopupContext);
   const [images, setImages] = useState(files);
   const [currentImageSwap, setCurrentImageSwap] = useState();

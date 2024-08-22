@@ -4,7 +4,7 @@ const getDefaultSettings = (fileType) => {
       isHeadphonesNeeded: fileType === 'סרטון' ? true : false,
     },
     {
-      isRecomennded: false,
+      isRecommended: false,
     },
     {
       isValidated: true,

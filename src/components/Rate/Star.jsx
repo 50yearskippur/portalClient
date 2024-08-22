@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { FaStar } from 'react-icons/fa';
 import handlePropagation from '../../utils/handlePropagation';
 
-const Star = () => {
-  const [isPressed, setIsPressed] = useState(null);
+const Star = ({ defaultValue }) => {
+  const [isPressed, setIsPressed] = useState(defaultValue);
   return (
     <FaStar
       className="star"

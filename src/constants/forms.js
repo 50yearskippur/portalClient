@@ -7,7 +7,7 @@ export const forms = [
     subject: { title: 'שלישות' },
     downloads: 500,
     settings: [{ isRecommended: true }],
-    file: { media: { file: pdfFile, MimeType: 'pdf', fileName: 'מסמך' } },
+    files: { media: { file: pdfFile, MimeType: 'pdf', fileName: 'מסמך' } },
     updatedAt: Date('28.8.2024'),
   },
   {
@@ -16,7 +16,7 @@ export const forms = [
     subject: { title: 'שלישות' },
     downloads: 500,
     settings: [{ isRecommended: false }],
-    file: { media: { file: pdfFile, MimeType: 'pdf', fileName: 'מסמך' } },
+    files: { media: { file: pdfFile, MimeType: 'pdf', fileName: 'מסמך' } },
     updatedAt: Date('28.8.2024'),
   },
   {
@@ -24,8 +24,8 @@ export const forms = [
     title: 'טופס טיולים',
     subject: { title: 'שלישות' },
     downloads: 500,
-    settings: [{ isRecommended: true }],
-    file: { media: { file: pdfFile, MimeType: 'pdf', fileName: 'מסמך' } },
+    settings: [{ isRecommended: false }],
+    files: { media: { file: pdfFile, MimeType: 'pdf', fileName: 'מסמך' } },
     updatedAt: Date('28.8.2024'),
   },
   {
@@ -34,7 +34,7 @@ export const forms = [
     subject: { title: 'שלישות' },
     downloads: 500,
     settings: [{ isRecommended: true }],
-    file: { media: { file: pdfFile, MimeType: 'pdf', fileName: 'מסמך' } },
+    files: { media: { file: pdfFile, MimeType: 'pdf', fileName: 'מסמך' } },
     updatedAt: Date('28.8.2024'),
   },
   {
@@ -43,7 +43,7 @@ export const forms = [
     subject: { title: 'שלישות' },
     downloads: 500,
     settings: [{ isRecommended: true }],
-    file: { media: { file: pdfFile, MimeType: 'pdf', fileName: 'מסמך' } },
+    files: { media: { file: pdfFile, MimeType: 'pdf', fileName: 'מסמך' } },
     updatedAt: Date('28.8.2024'),
   },
   {
@@ -52,7 +52,7 @@ export const forms = [
     subject: { title: 'שלישות' },
     downloads: 500,
     settings: [{ isRecommended: false }],
-    file: { media: { file: pdfFile, MimeType: 'pdf', fileName: 'מסמך' } },
+    files: { media: { file: pdfFile, MimeType: 'pdf', fileName: 'מסמך' } },
     updatedAt: Date('28.8.2024'),
   },
   {
@@ -61,7 +61,7 @@ export const forms = [
     subject: { title: 'שלישות' },
     downloads: 500,
     settings: [{ isRecommended: true }],
-    file: { media: { file: pdfFile, MimeType: 'pdf', fileName: 'מסמך' } },
+    files: { media: { file: pdfFile, MimeType: 'pdf', fileName: 'מסמך' } },
     updatedAt: Date('28.8.2024'),
   },
   {
@@ -70,7 +70,7 @@ export const forms = [
     subject: { title: 'שלישות' },
     downloads: 500,
     settings: [{ isRecommended: false }],
-    file: { media: { file: pdfFile, MimeType: 'pdf', fileName: 'מסמך' } },
+    files: { media: { file: pdfFile, MimeType: 'pdf', fileName: 'מסמך' } },
     updatedAt: Date('28.8.2024'),
   },
   {
@@ -79,7 +79,7 @@ export const forms = [
     subject: { title: 'שלישות' },
     downloads: 500,
     settings: [{ isRecommended: true }],
-    file: { media: { file: pdfFile, MimeType: 'pdf', fileName: 'מסמך' } },
+    files: { media: { file: pdfFile, MimeType: 'pdf', fileName: 'מסמך' } },
     updatedAt: Date('28.8.2024'),
   },
   {
@@ -88,7 +88,7 @@ export const forms = [
     subject: { title: 'שלישות' },
     downloads: 500,
     settings: [{ isRecommended: true }],
-    file: { media: { file: pdfFile, MimeType: 'pdf', fileName: 'מסמך' } },
+    files: { media: { file: pdfFile, MimeType: 'pdf', fileName: 'מסמך' } },
     updatedAt: Date('28.8.2024'),
   },
   {
@@ -97,7 +97,7 @@ export const forms = [
     subject: { title: 'שלישות' },
     downloads: 500,
     settings: [{ isRecommended: false }],
-    file: { media: { file: pdfFile, MimeType: 'pdf', fileName: 'מסמך' } },
+    files: { media: { file: pdfFile, MimeType: 'pdf', fileName: 'מסמך' } },
     updatedAt: Date('28.8.2024'),
   },
   {
@@ -106,7 +106,7 @@ export const forms = [
     subject: { title: 'שלישות' },
     downloads: 500,
     settings: [{ isRecommended: false }],
-    file: { media: { file: pdfFile, MimeType: 'pdf', fileName: 'מסמך' } },
+    files: { media: { file: pdfFile, MimeType: 'pdf', fileName: 'מסמך' } },
     updatedAt: Date('28.8.2024'),
   },
 ];

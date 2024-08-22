@@ -5,7 +5,6 @@ import Star from '../../Rate/Star';
 import formIcon from '../../../assets/media/Upload/form.svg';
 
 const FormRow = (item) => {
-  console.log(item);
   return [
     <div className="generic-row-item-container">
       <img src={formIcon} alt="edu type" className="item-type-img" />
@@ -22,7 +21,7 @@ const FormRow = (item) => {
     />,
     <div className="edu-row-downloads">{`${item.downloads} הורדות`}</div>,
     <div className="generic-item-container" style={{ alignItems: 'center' }}>
-      <Star />
+      <Star defaultValue={item.settings[0]?.isRecommended} />
       <div className="generic-item-sub-title">נפוצים</div>
     </div>,
     <GenericItem title="PDF" subTitle="סוג קובץ" style={{ width: '4.5vw' }} />,

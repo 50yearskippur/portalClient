@@ -46,8 +46,6 @@ const FileUploader = ({ text, fileTypes, isCover = false }) => {
   };
 
   const hadnleDragFiles = () => {
-    console.log(isCover);
-    console.log(!itemDetails.files?.media);
     switch (true) {
       case isInvalidType:
         return <UploadError fileTypes={fileTypes} onClick={tryUploadAgain} />;

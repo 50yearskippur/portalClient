@@ -33,7 +33,7 @@ const FormDetails = ({ nextStage }) => {
         </div>
       </div>
       <SettingsList
-        settingsArray={[{ isRecomennded: false }]}
+        settingsArray={[{ isRecommended: false }]}
         pageType="טפסים"
       />
       <NextBtn

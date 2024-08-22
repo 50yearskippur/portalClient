@@ -3,7 +3,7 @@ const getSettingText = (pageType) => {
     case pageType === 'תוצרים':
       return {
         isHeadphonesNeeded: 'התוצר מצריך שימוש באמצעי שמע',
-        isRecomennded:
+        isRecommended:
           'התוצר יהיה חלק ממאגר המומלצים ליחידות והקורסים הרלוונטיים',
         isPrimaryEduResourse: 'התוצר יהיה ראשי תחת תת הנושא',
         isValidated: 'התוצר נבדק, המידע בו עדכני ומאושר ע”י גורם המקצועי',
@@ -11,11 +11,11 @@ const getSettingText = (pageType) => {
       };
     case pageType === 'טפסים':
       return {
-        isRecomennded: 'הטופס יופיע בטפסים נפוצים',
+        isRecommended: 'הטופס יופיע בטפסים נפוצים',
       };
     case pageType === 'אלבום':
       return {
-        isRecomennded: 'האלבום יופיע במומלצים',
+        isRecommended: 'האלבום יופיע במומלצים',
       };
     default:
       return;

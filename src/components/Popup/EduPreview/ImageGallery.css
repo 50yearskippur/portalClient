@@ -28,6 +28,16 @@
 
 .image-grid-item {
   width: 100%;
-  height: auto;
+  height: 9.259vh;
   object-fit: cover;
+}
+
+.image-grid {
+  height: 100%;
+  width: 100%;
+}
+
+.image-grid-large {
+  height: 29.259vh;
+  width: 100%;
 }
