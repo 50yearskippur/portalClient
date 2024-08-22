@@ -5,7 +5,6 @@ import selectedbigA from '../assets/media/Icons/blueBigA.svg';
 import Search from '../components/Search/Search';
 import { useState, useMemo } from 'react';
 import Tabs from '../components/Tabs/Tabs';
-import plus from '../assets/media/Icons/plusIcon.svg';
 import TemplateTable from '../components/Admin/GenericObjects/TemplateTable';
 import subjectIcon from '../assets/media/Icons/adminSubjectIcon.svg';
 import selectedSubjectIcon from '../assets/media/Icons/adminSubjectIconSelected.svg';
@@ -114,10 +113,9 @@ const AdminSubsubjectsManagment = () => {
           </div>
         </div>
         <TemplateTable
-          icon={plus}
-          iconStyle={{ margin: 0, width: '16px' }}
           dataArr={data}
           selectedTab={selectedTab}
+          onClick={() => {}}
         />
       </div>
     </div>
