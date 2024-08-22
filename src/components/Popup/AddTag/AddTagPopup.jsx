@@ -1,9 +1,9 @@
 import './AddTagPopup.css';
-import Search from '../../Search/Search';
 import Button from '../../Button/Button';
 import handlePropagation from '../../../utils/handlePropagation';
 import { useContext } from 'react';
 import { PopupContext } from '../../../store/popup-context';
+import SearchDropdown from '../../../components/Search/SearchDropdown';
 
 //TODO: consider changing the prop name
 const MediaPreview = ({ edu }) => {
@@ -13,6 +13,20 @@ const MediaPreview = ({ edu }) => {
 
   const { hidePopup } = useContext(PopupContext);
 
+  //temp dropdown options
+  const dropdownOptions = [
+    'מבואות מודיעין',
+    'מבואות קרב',
+    'טכנולוגיה וסייבר',
+    'שפה',
+    'מדעי המחשב',
+    'קיפודים',
+    'חתולים',
+    'כלבלבים',
+    'רעיונות לארוחות',
+    'מתנות',
+  ];
+
   return (
     <div>
       <div
@@ -20,16 +34,11 @@ const MediaPreview = ({ edu }) => {
         onClick={(e) => handlePropagation(e)}
       >
         {/* {edu.name} */}
-        <div className="popup-title">תתי נושא רלוונטים</div>
-        <Search
-          placeholder={'חיפוש תתי נושא'}
-          style={{
-            height: '42px',
-            width: '16.7vw',
-            borderRadius: '4px',
-            width: '460px',
-            height: '50px',
-          }}
+        <div className="popup-title">קורסים או יחידות רלוונטים</div>
+        <SearchDropdown
+          options={dropdownOptions}
+          placeholder="חיפוש קורסים"
+          inputStyle={{ height: '70px' }}
         />
         <div className="popup-buttons-container">
           <Button
@@ -39,7 +48,7 @@ const MediaPreview = ({ edu }) => {
           />
           <Button
             text="ביטול"
-            style={{ width: '150px', height: '48px' }}
+            style={{ width: '150px', height: '48px', borderStyle: 'none' }}
             isWhiteButton={true}
             onClick={hidePopup}
           />
