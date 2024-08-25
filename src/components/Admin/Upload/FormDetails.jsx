@@ -22,15 +22,19 @@ const FormDetails = ({ nextStage }) => {
         <div className="stage-input-container">
           <div className="stage-text">נושא</div>
           <Dropdown
+            defaultValue={
+              itemDetails.subject?.title
+                ? itemDetails.subject.title
+                : 'בחרו נושא'
+            }
             list={['מבואות מודיעין', 'טכנולוגיה וסייבר', 'שפה', 'המלצות']}
             fieldName="subject"
           />
         </div>
       </div>
       <SettingsList
-        settingsArray={[
-          { text: 'הטופס יופיע טפסים נפוצים', defaultValue: false },
-        ]}
+        settingsArray={[{ isRecommended: false }]}
+        pageType="טפסים"
       />
       <NextBtn
         disabled={!itemDetails.title || !itemDetails.subject}

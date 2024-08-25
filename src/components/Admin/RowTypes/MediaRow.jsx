@@ -13,14 +13,14 @@ const MediaRow = (item) => {
       style={{ width: '8.3vw' }}
     />,
 
-    <div className="edu-row-views">12 צפיות</div>,
+    <div className="edu-row-views">{`${item.views} צפיות`}</div>,
     <GenericItem
       title={item.type}
       subTitle="סוג תמונה"
       style={{ width: '4.5vw' }}
     />,
     <GenericItem
-      title={convertDateToString(item.date)}
+      title={convertDateToString(item.updatedAt)}
       subTitle="עודכן בתאריך"
       style={{ width: '7.4vw' }}
     />,

@@ -10,7 +10,7 @@ const EduTypes = ({ defaultValue, eduTypesTitles, numberOfItemsInLine }) => {
 
   const selectTypeHandler = (index, type) => {
     setActiveIndex(index);
-    saveDetails({ type });
+    saveDetails({ [numberOfItemsInLine === 2 ? 'pageType' : 'type']: type });
   };
 
   const calculateColumnWidth = () => {

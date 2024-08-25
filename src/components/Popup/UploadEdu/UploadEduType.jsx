@@ -74,21 +74,23 @@ const UploadEduType = () => {
               נושא:
             </div>
             <Dropdown
-              defaultValue="נושא ראשי"
+              defaultValue={
+                itemDetails.subject?.title
+                  ? itemDetails.subject.title
+                  : 'נושא ראשי'
+              }
               list={['מבואות מודיעין', 'טכנולוגיה וסייבר', 'שפה', 'המלצות']}
               fieldName="subject"
             />
             <Dropdown
-              defaultValue="תת נושא"
-              list={[
-                'מבואות מודיעין',
-                'טכנולוגיה וסייבר',
-                'שפה',
-                'המלצות',
-                'תת נושא חדש',
-              ]}
-              onNewSubClick={handleNewSubClick}
+              defaultValue={
+                itemDetails.subject?.title
+                  ? itemDetails.subject.title
+                  : 'תת נושא'
+              }
+              list={['מבואות מודיעין', 'טכנולוגיה וסייבר', 'שפה', 'המלצות']}
               fieldName="subSubject"
+              onNewSubClick={handleNewSubClick}
             />
           </div>
         </div>

@@ -1,7 +1,7 @@
-import "./TemplateRow.css";
-import GenericItem from "../GenericObjects/GenericItem";
-import eduTypeByText from "../../../utils/eduTypeByText";
-import convertDateToString from "../../../utils/convertDateToString";
+import './TemplateRow.css';
+import GenericItem from '../GenericObjects/GenericItem';
+import eduTypeByText from '../../../utils/eduTypeByText';
+import convertDateToString from '../../../utils/convertDateToString';
 
 const DesignTemplatesRow = (item) => {
   return [
@@ -14,23 +14,23 @@ const DesignTemplatesRow = (item) => {
       <GenericItem
         title={item.type}
         subTitle="סוג עיצוב"
-        style={{ width: "6.25vw" }}
+        style={{ width: '6.25vw' }}
       />
     </div>,
     <GenericItem
       title={item.title}
       subTitle="שם"
-      style={{ width: "6.25vw" }}
+      style={{ width: '6.25vw' }}
     />,
     <GenericItem
       title="Power Point"
       subTitle="קובץ"
-      style={{ width: "4.5vw" }}
+      style={{ width: '4.5vw' }}
     />,
     <GenericItem
-      title={convertDateToString(item.date)}
+      title={convertDateToString(item.updatedAt)}
       subTitle="עודכן בתאריך"
-      style={{ width: "7.4vw" }}
+      style={{ width: '7.4vw' }}
     />,
   ];
 };

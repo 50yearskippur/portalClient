@@ -4,16 +4,26 @@ import { PopupContext } from '../../../store/popup-context';
 import EduTypes from '../../EduTypes/EduTypes';
 import NextBtn from './NextBtn';
 
-const EduType = ({ nextStage, eduTypesTitles, numberOfItemsInLine }) => {
+const EduType = ({
+  nextStage,
+  eduTypesTitles,
+  numberOfItemsInLine,
+  pageType,
+}) => {
   const { itemDetails } = useContext(PopupContext);
+  const isMedia = pageType === 'תמונת סטוק / אלבום';
+
   return (
     <div className="stage-upload-container">
       <EduTypes
         eduTypesTitles={eduTypesTitles}
-        defaultValue={itemDetails.type}
+        defaultValue={isMedia ? itemDetails.pageType : itemDetails.type}
         numberOfItemsInLine={numberOfItemsInLine}
       />
-      <NextBtn disabled={!itemDetails.type} nextStage={nextStage} />
+      <NextBtn
+        disabled={isMedia ? !itemDetails.pageType : !itemDetails.type}
+        nextStage={nextStage}
+      />
     </div>
   );
 };

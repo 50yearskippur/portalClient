@@ -52,7 +52,11 @@ const Details = ({ nextStage }) => {
         <div className="stage-input-container">
           <div className="stage-text">נושא</div>
           <Dropdown
-            defaultValue="בחרו נושא"
+            defaultValue={
+              itemDetails.subject?.title
+                ? itemDetails.subject.title
+                : 'בחרו נושא'
+            }
             list={['מבואות מודיעין', 'טכנולוגיה וסייבר', 'שפה', 'המלצות']}
             fieldName="subject"
           />
@@ -60,7 +64,11 @@ const Details = ({ nextStage }) => {
         <div className="stage-input-container">
           <div className="stage-text">תת נושא</div>
           <Dropdown
-            defaultValue="בחרו תת נושא"
+            defaultValue={
+              itemDetails.subSubject?.title
+                ? itemDetails.subSubject.title
+                : 'בחרו תת נושא'
+            }
             list={[
               'מבואות מודיעין',
               'טכנולוגיה וסייבר',
@@ -89,9 +97,9 @@ const Details = ({ nextStage }) => {
           key={`credit ${index}`}
           role={credit.role}
           defaultValue={
-            itemDetails.credits?.[index]?.user
-              ? itemDetails.credits?.[index].user
-              : credit.user
+            itemDetails.credits?.[index]?.user?.fullName
+              ? itemDetails.credits?.[index].user.fullName
+              : credit.user?.fullName
           }
           deleteCredit={() => deleteCredit(index)}
           setCreditsList={setCreditsList}
@@ -107,7 +115,9 @@ const Details = ({ nextStage }) => {
           />
           <input
             className="stage-input"
-            onChange={(e) => handleNewCredit({ user: e.target.value })}
+            onChange={(e) =>
+              handleNewCredit({ user: { fullName: e.target.value } })
+            }
             type="text"
             style={{ width: '15.5vw' }}
           />

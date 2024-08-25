@@ -15,8 +15,8 @@ const FileUploader = ({ text, fileTypes, isCover = false }) => {
   const { getRootProps, getInputProps } = useDropzone({
     onDrop: (acceptedFiles) => {
       const unsupportedFiles = acceptedFiles.filter((file) => {
-        const fileExtension = file.path.split('.').pop().toUpperCase();
-        return !fileTypes.includes(fileExtension);
+        const fileExtension = file.path?.split('.').pop().toUpperCase();
+        return !fileTypes?.includes(fileExtension);
       });
 
       if (unsupportedFiles.length > 0) setIsInvalidType(true);
