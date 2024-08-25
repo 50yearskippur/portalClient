@@ -8,9 +8,10 @@ import Tabs from '../components/Tabs/Tabs';
 import TemplateTable from '../components/Admin/GenericObjects/TemplateTable';
 import subjectIcon from '../assets/media/Icons/adminSubjectIcon.svg';
 import selectedSubjectIcon from '../assets/media/Icons/adminSubjectIconSelected.svg';
+import GroupedTemplateTable from '../components/Admin/SubjectsFiltering/GroupedTemplateTable';
 
 const AdminSubsubjectsManagment = () => {
-  const [selectedOrderBy, setSelectedOrderBy] = useState(null);
+  const [selectedOrderBy, setSelectedOrderBy] = useState('');
 
   const handleOrderSelect = (option) => {
     setSelectedOrderBy(option);
@@ -118,11 +119,17 @@ const AdminSubsubjectsManagment = () => {
             />
           </div>
         </div>
-        <TemplateTable
-          dataArr={data}
-          selectedTab={selectedTab}
-          onClick={() => {}}
-        />
+       
+        {selectedTab.includes('תתי נושאים') &&
+        selectedOrderBy.label === 'נושאים' ? (
+          <GroupedTemplateTable data={data} selectedTab={selectedTab} />
+        ) : (
+          <TemplateTable
+            dataArr={data}
+            selectedTab={selectedTab}
+            onClick={() => {}}
+          />
+        )}
       </div>
     </div>
   );
