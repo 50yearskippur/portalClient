@@ -2,7 +2,6 @@ import EduResPreview from '../components/Popup/EduPreview/EduResPreview';
 import DesignPreview from '../components/Popup/EduPreview/DesignPreview';
 import FormPreview from '../components/Popup/EduPreview/FormPreview';
 import MediaPreview from '../components/Popup/EduPreview/MediaPreview';
-import AddTagPopup from '../components/Popup/AddTag/AddTagPopup';
 
 const getAdminPopUp = (selectedTab) => {
   switch (true) {
