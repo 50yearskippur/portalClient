@@ -10,6 +10,12 @@ import subjectIcon from '../assets/media/Icons/adminSubjectIcon.svg';
 import selectedSubjectIcon from '../assets/media/Icons/adminSubjectIconSelected.svg';
 
 const AdminSubsubjectsManagment = () => {
+  const [selectedOrderBy, setSelectedOrderBy] = useState(null);
+
+  const handleOrderSelect = (option) => {
+    setSelectedOrderBy(option);
+  };
+
   const [data, setData] = useState([]);
 
   const [tabsArray, settabsArray] = useState([`תתי נושאים`, `קורסים`]);
@@ -105,7 +111,7 @@ const AdminSubsubjectsManagment = () => {
             />
           </div>
           <div className="left-content">
-            <OrderBy options={orderByOptions} />
+            <OrderBy options={orderByOptions} onSelect={handleOrderSelect} />
             <Search
               placeholder={'חיפוש חופשי'}
               style={{ height: '42px', width: '16.7vw' }}
