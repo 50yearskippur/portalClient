@@ -13,7 +13,11 @@ const FileUploaderArray = ({ text, fileTypes }) => {
 
   const { getRootProps, getInputProps } = useDropzone({
     onDrop: (acceptedFiles) => {
-      saveDetails({ files: acceptedFiles });
+      const transformedFiles = acceptedFiles.map((file) => ({
+        media: { file },
+      }));
+
+      saveDetails({ files: transformedFiles });
     },
     directory: true,
   });
