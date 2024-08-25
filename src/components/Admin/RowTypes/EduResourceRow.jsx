@@ -2,11 +2,11 @@ import GenericItem from '../GenericObjects/GenericItem';
 import eduTypeByText from '../../../utils/eduTypeByText';
 import convertDateToString from '../../../utils/convertDateToString';
 import iconType from '../RowTypes/IconType';
-import './EduResourseRow.css';
+import './EduResourceRow.css';
 import './TemplateRow.css';
 import Star from '../../Rate/Star';
 
-const EduResourseRow = (item) => {
+const EduResourceRow = (item) => {
   const isRecommended = item.settings?.find((setting) =>
     setting.hasOwnProperty('isRecommended')
   ).isRecommended;
@@ -45,4 +45,4 @@ const EduResourseRow = (item) => {
   ];
 };
 
-export default EduResourseRow;
+export default EduResourceRow;

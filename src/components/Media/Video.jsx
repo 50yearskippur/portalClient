@@ -49,12 +49,16 @@ const Video = ({ src, style }) => {
         {formatTime(duration)} / {formatTime(currentTime)}
       </div>
       <div className="video-container" style={style}>
-        <video ref={videoRef} src={src} className="file-style" />
+        <video ref={videoRef} src={src} className="file" />
         <div className="controls">
           <div className="activation-container" onClick={activationHandler}>
             <div className="activation-shadow">
               <div className="activation-background">
-                <img className="play-icon-video" src={playIcon} alt="play" />
+                <img
+                  className="play-icon-video"
+                  src={playIcon}
+                  alt="play-icon"
+                />
               </div>
             </div>
           </div>

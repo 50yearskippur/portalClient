@@ -1,6 +1,6 @@
-import React from "react";
-import "./SubSubjects.css";
-import PageTemplate from "../PageTemplate/PageTemplate";
+import React from 'react';
+import './SubSubjects.css';
+import PageTemplate from '../PageTemplate/PageTemplate';
 
 const SubSubjects = ({
   subject,
@@ -8,6 +8,7 @@ const SubSubjects = ({
   ItemComponent,
   numberOfItemsInLine,
 }) => {
+
   return (
     <div className="sub-subjects-wrapper">
       <div className="sub-subjects-title">{subject.title}</div>

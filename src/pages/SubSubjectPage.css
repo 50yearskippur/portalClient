@@ -4,6 +4,10 @@
   gap: 1.7vw;
 }
 
+.Toastify__toast--info {
+  width: 14vw;
+}
+
 .edu-resource-container {
   position: relative;
   width: 54.1vw;
@@ -50,7 +54,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-end;
   gap: 4px;
 }
 
@@ -61,17 +64,18 @@
   opacity: 0.8;
 }
 
-.edu-resourse-nootbook {
+.currentEdu-type-img {
   width: 64px;
 }
 
-.edu-resourse-btn-container {
+.edu-resource-btn-container {
   display: flex;
   align-items: flex-start;
   gap: 12px;
 }
 
-.edu-resourse-add-container {
+.edu-resource-add-container {
+  width: 6.5vw;
   display: flex;
   padding: 12px;
   align-items: center;
@@ -132,7 +136,7 @@
   font-weight: 400;
 }
 
-.edu-resourse-text {
+.edu-resource-text {
   overflow: hidden;
   color: #444a5a;
   text-align: right;
@@ -142,14 +146,13 @@
   width: 38.5vw;
 }
 
-.edu-resourse-cradit-container {
+.edu-resource-cradit-container {
   display: flex;
   flex-direction: column;
 }
 
-.edu-resourse-cradit {
+.edu-resource-cradit {
   display: flex;
-  gap: 38px;
   width: 12.9vw;
 }
 
@@ -158,7 +161,6 @@
   background-color: #000;
   height: 1px;
   opacity: 0.1;
-  margin-bottom: 24px;
   margin-top: 8px;
 }
 

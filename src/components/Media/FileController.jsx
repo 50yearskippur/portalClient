@@ -1,9 +1,9 @@
+import React from 'react';
 import './FileController.css';
-import React, { useState } from 'react';
 import getHtml from './getHtml';
 import watchIconHover from '../../assets/media/Icons/watchHoverIcon.png';
 import downloadIconHover from '../../assets/media/Icons/downloadHoverIcon.png';
-import download from '../../utils/download';
+import { download } from '../../utils/download';
 
 const FileController = ({
   item,
@@ -13,12 +13,8 @@ const FileController = ({
   showOnHover = false,
   showCover = true,
 }) => {
-  const [display, setDisplay] = useState(
-    item?.cover && showCover ? item.cover?.file : item.media?.file
-  );
-  const [fileType, setFileType] = useState(
-    item.cover && showCover ? 'image' : item?.media?.MimeType
-  );
+  const display = item?.cover && showCover ? item.cover.file : item.media.file;
+  const fileType = item.cover && showCover ? 'image' : item?.media?.MimeType;
 
   return (
     <div

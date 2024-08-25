@@ -1,5 +1,5 @@
-import "./Button.css";
-import React from "react";
+import './Button.css';
+import React from 'react';
 
 const Button = ({
   text,
@@ -8,25 +8,22 @@ const Button = ({
   disabled = false,
   onClick = () => {},
 }) => {
-  const onClickHandler = () => {
-    if (disabled) return;
-    return onClick();
-  };
+  const onClickHandler = () => (disabled ? null : onClick());
 
   return (
     <div
-      className={`button ${disabled && "disabled"}`}
+      className={`button ${disabled && 'disabled'}`}
       style={{
         ...style,
-        background: isWhiteButton && "white",
-        border: isWhiteButton && "1.5px solid #6C60FF",
+        background: isWhiteButton && 'white',
+        border: isWhiteButton && '1.5px solid #6C60FF',
       }}
       onClick={onClickHandler}
     >
       <p
         className="text-button"
         style={{
-          color: isWhiteButton && "#3259ff",
+          color: isWhiteButton && '#3259ff',
         }}
       >
         {text}

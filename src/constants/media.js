@@ -1,7 +1,7 @@
-import party from '../assets/img/party.png';
-import rabit from '../assets/img/rabit.jpg';
-import robot from '../assets/img/robot.jpg';
-import usa from '../assets/img/usa.png';
+import party from '../assets/dummyMedia/party.png';
+import rabit from '../assets/dummyMedia/rabit.jpg';
+import robot from '../assets/dummyMedia/robot.jpg';
+import usa from '../assets/dummyMedia/usa.png';
 
 const media = [
   {

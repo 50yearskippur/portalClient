@@ -12,6 +12,16 @@ const PersonalAreaPage = () => {
   const tabsArray = ['תוצרים שאהבתי', 'תוצרים שהעלתי'];
   const [selectedTab, setSelectedTab] = useState(tabsArray[0]);
 
+  const coursesList = [
+    'קורס 1',
+    'קורס 2',
+    'קורס 3',
+    'קורס 4',
+    'קורס 5',
+    'קורס 6',
+    'קורס 7',
+  ];
+
   const getEduResources = () => {
     switch (true) {
       case selectedTab === 'תוצרים שאהבתי':
@@ -29,7 +39,7 @@ const PersonalAreaPage = () => {
       <div className="page-container">
         <div className="personal-area-user">
           <PersonalAreaAvater
-            name="YC"
+            name="יכ"
             style={{
               width: '10.3vw',
               height: '15.8vh',
@@ -39,7 +49,7 @@ const PersonalAreaPage = () => {
           />
           <div className="personal-area-details">
             <div className="personal-area-username">יובל כהן</div>
-            <Dropdown list={['כלב', 'חתול', 'קיפוד', 'כלבלב']} />
+            <Dropdown list={coursesList} style={{ width: '10vw' }} />
           </div>
         </div>
         <TopNav
@@ -47,7 +57,7 @@ const PersonalAreaPage = () => {
           selectedTab={selectedTab}
           setSelectedTab={setSelectedTab}
           tabsStyle={{ gap: '24px' }}
-          topNavStyle={{ marginBottom: '4vh' }}
+          topNavStyle={{ marginBottom: '4vh', marginTop: '-9vh' }}
         />
         {getEduResources()}
       </div>

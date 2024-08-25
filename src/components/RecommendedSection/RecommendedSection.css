@@ -4,14 +4,19 @@
   grid-gap: 1.4%;
   height: 54.03vh;
   width: 100%;
+  position: relative;
+  overflow: hidden;
 }
 
 .recommendations-per-unit {
   height: 100%;
   display: flex;
+  position: relative;
   gap: 2.7%;
+  overflow: hidden;
 }
 
 .main-recommendation {
   height: 100%;
+  overflow: hidden;
 }

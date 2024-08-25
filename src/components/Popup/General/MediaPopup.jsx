@@ -4,7 +4,7 @@ import backImg from '../../../assets/media/Icons/backIcon.svg';
 import downloadIcon from '../../../assets/media/Icons/downloadIcon.svg';
 import { useContext } from 'react';
 import { PopupContext } from '../../../store/popup-context';
-import download from '../../../utils/download';
+import { download } from '../../../utils/download';
 
 const MediaPopup = ({ children, item = {} }) => {
   const { hidePopup } = useContext(PopupContext);
@@ -16,10 +16,10 @@ const MediaPopup = ({ children, item = {} }) => {
           <img src={backImg} alt="back icon" />
           <div className="media-popup-exit-text">יציאה ממצב תצוגה מקדימה</div>
         </div>
-        <div className="media-popup-title">{item.title}</div>
+        <div className="media-popup-title">{item.media.fileName}</div>
         <div
           className="media-popup-download-container"
-          onClick={() => download(item)}
+          onClick={() => download(item.media)}
         >
           <img src={downloadIcon} alt="download icon" />
           <div className="media-popup-download-text">הורדה</div>

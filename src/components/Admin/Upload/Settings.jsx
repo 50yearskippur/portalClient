@@ -14,7 +14,7 @@ const Setting = ({ nextStage }) => {
     num: 12,
     unit: 'חודשים',
   });
-  const isPrimaryEduResourse = 'התוצר יהיה ראשי תחת תת הנושא';
+  const isPrimaryEduResource = 'התוצר יהיה ראשי תחת תת הנושא';
 
   const calculateFutureDate = (experationDate) => {
     const { unit, num } = experationDate;
@@ -51,7 +51,7 @@ const Setting = ({ nextStage }) => {
       />
       {itemDetails?.settings?.some(
         (setting) =>
-          setting.text === isPrimaryEduResourse && setting.defaultValue
+          setting.text === isPrimaryEduResource && setting.defaultValue
       ) && (
         <div className="setting-notification-container">
           <img src={yellowWarning} alt="yellow warning" />
