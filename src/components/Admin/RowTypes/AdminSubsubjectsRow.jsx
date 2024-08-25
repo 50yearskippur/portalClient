@@ -12,7 +12,7 @@ const AdminSubsubjectsRow = (item) => {
   return [
     <GenericItem title={item.name} style={{ width: '8.3vw' }} />,
     <div className="subsubject-row-tag-container">
-      {item?.subSubjectTags?.map((tag, tagIndex) => (
+      {item?.tags?.map((tag, tagIndex) => (
         <div key={`tag ${tagIndex}`} className="subsubject-row-tag">
           {tag?.title}
           <img
