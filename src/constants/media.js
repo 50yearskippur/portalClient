@@ -1,13 +1,7 @@
+import party from '../assets/dummyMedia/party.png';
 import rabit from '../assets/dummyMedia/rabit.jpg';
-import sea from '../assets/dummyMedia/sea.jpg';
 import robot from '../assets/dummyMedia/robot.jpg';
-import bamba from '../assets/dummyMedia/bamba.jpg';
-import flowers from '../assets/dummyMedia/flowers.jfif';
-import PT from '../assets/dummyMedia/PT.jfif';
-import snow from '../assets/dummyMedia/snow.jfif';
-import tiger from '../assets/dummyMedia/tiger.jfif';
-import zebra from '../assets/dummyMedia/zebra.jpg';
-import sports from '../assets/dummyMedia/sports.jfif';
+import usa from '../assets/dummyMedia/usa.png';
 
 const media = [
   {

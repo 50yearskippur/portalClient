@@ -1,5 +1,5 @@
 //delete in production
-import video from '../assets/img/video.mp4';
+import video from '../assets/dummyMedia/video.mp4';
 
 //delete in production
 const eduResource = [
