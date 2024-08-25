@@ -6,7 +6,7 @@ import selectedSortUp from '../../assets/media/Icons/blueSortUp.svg';
 import sortUp from '../../assets/media/Icons/sortUp.svg';
 import './OrderBy.css';
 
-const OrderBy = ({ options }) => {
+const OrderBy = ({ options, onSelect }) => {
   const sortBottons = [
     {
       value: 'orderbyup',
@@ -31,6 +31,9 @@ const OrderBy = ({ options }) => {
 
   const handleSelect = (option) => {
     setSelected(option);
+    if (onSelect) {
+      onSelect(option);
+    }
     // setIsOpen(false); // Close the dropdown after selection
   };
 
