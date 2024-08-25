@@ -2,8 +2,7 @@ import React from 'react';
 import TemplateTable from '../GenericObjects/TemplateTable';
 
 const GroupedTemplateTable = ({ data, selectedTab }) => {
-
-    const groupedData = data.reduce((acc, item) => {
+  const groupedData = data.reduce((acc, item) => {
     const { subjectName } = item;
     if (!acc[subjectName]) {
       acc[subjectName] = [];
