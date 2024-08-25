@@ -24,33 +24,33 @@ const AdminSubsubjectsManagment = () => {
   useMemo(() => {
     //delete in production
 
-    const subjectsArray = [
+    const subsubjectsArray = [
       {
+        subjectName: 'זירות',
         name: 'זירת סוריה',
-        subSubjectTags: [{ title: 'מדעי המחשב' }, { title: 'מפל' }],
+        tags: [{ title: 'מדעי המחשב' }, { title: 'מפל' }],
       },
       {
-        name: 'זירת סוריה',
-        subSubjectTags: [
-          { title: 'מדעי המחשב' },
-          { title: 'מפל' },
-          { title: 'אזרחות' },
-        ],
+        subjectName: 'זירות',
+        name: 'זירת עזה',
+        tags: [{ title: 'מדעי המחשב' }, { title: 'מפל' }, { title: 'אזרחות' }],
       },
       {
+        subjectName: 'זירות',
         name: 'זירת סוריה',
-        subSubjectTags: [{ title: 'מדעי המחשב' }],
+        tags: [{ title: 'מדעי המחשב' }],
       },
       {
-        name: 'זירת לבנון',
-        subSubjectTags: [{ title: 'מדעי המחשב' }, { title: 'מפל' }],
+        subjectName: 'שפות',
+        name: 'שפות מחשב',
+        tags: [{ title: 'מדעי המחשב' }, { title: 'מפל' }],
       },
     ];
 
     const coursesArray = [
       {
         name: 'אתרוג',
-        subSubjectTags: [
+        tags: [
           { title: 'תת נושא' },
           { title: 'תת נושא' },
           { title: 'תת נושא' },
@@ -58,23 +58,23 @@ const AdminSubsubjectsManagment = () => {
       },
       {
         name: 'ערבית',
-        subSubjectTags: [{ title: 'תת נושא' }, { title: 'תת נושא' }],
+        tags: [{ title: 'תת נושא' }, { title: 'תת נושא' }],
       },
     ];
 
     settabsArray([
-      `תתי נושאים (${subjectsArray.length})`,
+      `תתי נושאים (${subsubjectsArray.length})`,
       `קורסים (${coursesArray.length})`,
     ]);
     switch (true) {
       case selectedTab.includes('תתי נושאים'):
-        setData(subjectsArray);
+        setData(subsubjectsArray);
         break;
       case selectedTab.includes('קורסים'):
         setData(coursesArray);
         break;
       default:
-        setData(subjectsArray);
+        setData(subsubjectsArray);
     }
   }, [selectedTab]);
 
@@ -87,7 +87,7 @@ const AdminSubsubjectsManagment = () => {
     },
   ];
 
-  if (selectedTab.includes('קורסים')) {
+  if (selectedTab.includes('תתי נושאים')) {
     orderByOptions.push({
       value: 'upload-date',
       label: 'נושאים',
