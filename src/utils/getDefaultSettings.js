@@ -1,16 +1,16 @@
 const getDefaultSettings = (fileType) => {
   return [
     fileType !== 'סיכום' && {
-      isHeadponesNeeded: fileType === 'סרטון' ? true : false,
+      isHeadphonesNeeded: fileType === 'סרטון' ? true : false,
     },
     {
-      isRecomennded: false,
+      isRecommended: false,
     },
     {
       isValidated: true,
     },
     { isPrimaryEduResourse: false },
-  ];
+  ].filter(Boolean);
 };
 
 export default getDefaultSettings;

@@ -11,7 +11,12 @@ const AddSubSubject = ({ isOpen, onClose }) => {
   const { saveDetails } = useContext(PopupContext);
 
   const handleSave = () => {
-    saveDetails({ subSubject: subSubjectName });
+    saveDetails({
+      subSubject: {
+        title: subSubjectName,
+        isApproved: false,
+      },
+    });
     onClose();
   };
 

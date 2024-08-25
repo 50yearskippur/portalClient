@@ -4,7 +4,7 @@ import Video from './Video';
 // import PDFViewer from "pdf-viewer-reactjs";
 
 const getHtml = (src, fileType, style) => {
-  const fileTypeArray = fileType.split('/');
+  const fileTypeArray = fileType?.split('/');
   switch (true) {
     case fileTypeArray.includes('mp4'):
       return <Video src={src} className="file-style" style={style} />;

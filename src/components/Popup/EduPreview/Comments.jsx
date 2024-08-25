@@ -1,18 +1,18 @@
-import "./Comments.css";
-import { useContext } from "react";
-import EduResSection from "./EduResSection";
-import { PopupContext } from "../../../store/popup-context";
-import handlePropagation from "../../../utils/handlePropagation";
-import EduPreviewTop from "./EduPreviewTop";
-import DeleteEduText from "./DeleteEduText";
-import backIcon from "../../../assets/media/Icons/backIcon.svg";
-import EduPreview from "./EduResPreview";
-import convertDateToString from "../../../utils/convertDateToString";
+import './Comments.css';
+import { useContext } from 'react';
+import EduResSection from './EduResSection';
+import { PopupContext } from '../../../store/popup-context';
+import handlePropagation from '../../../utils/handlePropagation';
+import EduPreviewTop from './EduPreviewTop';
+import DeleteEduText from './DeleteEduText';
+import backIcon from '../../../assets/media/Icons/backIcon.svg';
+import EduPreview from './EduResPreview';
+import convertDateToString from '../../../utils/convertDateToString';
 
 const MoreComments = ({ edu }) => {
   const { showPopup } = useContext(PopupContext);
   const iconDetails = {
-    text: "לחזרה",
+    text: 'לחזרה',
     icon: backIcon,
     onClick: () => {
       showPopup(<EduPreview edu={edu} />);
@@ -34,7 +34,7 @@ const Comments = ({ edu, checkbox = false }) => {
   const { showPopup } = useContext(PopupContext);
   return (
     <div className="comments-container">
-      {edu.comments.map((comment, index) => (
+      {edu.comments?.map((comment, index) => (
         <div key={`comment ${index}`} className="comment-container">
           <div className="select-comment-container">
             {checkbox && (
@@ -60,7 +60,7 @@ const Comments = ({ edu, checkbox = false }) => {
       ))}
       {!checkbox && (
         <div className="comments-more-container">
-          <div className="edu-dark-text">{`סה"כ ${edu.comments.length} תגובות`}</div>
+          <div className="edu-dark-text">{`סה"כ ${edu.comments?.length} תגובות`}</div>
           <div
             className="edu-blue-text"
             onClick={() => showPopup(<MoreComments edu={edu} />)}

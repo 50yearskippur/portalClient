@@ -20,7 +20,7 @@ const Details = ({ edu, uploadByUser }) => {
       {edu.type !== 'סיכום' && (
         <div className="edu-text-container">
           <div className="edu-bright-text">תיאור</div>
-          <div className="edu-dark-text">{edu.info}</div>
+          <div className="edu-dark-text">{edu.description}</div>
         </div>
       )}
     </div>
