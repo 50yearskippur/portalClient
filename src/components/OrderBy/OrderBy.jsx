@@ -1,22 +1,24 @@
 // src/DropdownMenu.js
-import React, { useState } from "react";
-import sortIcon from "../../assets/media/Icons/sortIcon.svg";
-import sortUp from "../../assets/media/Icons/sortUp.svg";
-import "./OrderBy.css";
+import React, { useState } from 'react';
+import sortIcon from '../../assets/media/Icons/sortIcon.svg';
+import selectedSortDown from '../../assets/media/Icons/blueSortDown.svg';
+import selectedSortUp from '../../assets/media/Icons/blueSortUp.svg';
+import sortUp from '../../assets/media/Icons/sortUp.svg';
+import './OrderBy.css';
 
-const OrderBy = ({ options }) => {
+const OrderBy = ({ options, onSelect }) => {
   const sortBottons = [
     {
-      value: "orderbyup",
-      label: "סדר עולה",
-      icon: sortIcon,
-      selectedicon: sortIcon,
+      value: 'orderbyup',
+      label: 'סדר עולה',
+      icon: sortUp,
+      selectedicon: selectedSortUp,
     },
     {
-      value: "orderbydown",
-      label: "סדר יורד",
-      icon: sortUp,
-      selectedicon: sortUp,
+      value: 'orderbydown',
+      label: 'סדר יורד',
+      icon: sortIcon,
+      selectedicon: selectedSortDown,
     },
   ];
 
@@ -29,7 +31,10 @@ const OrderBy = ({ options }) => {
 
   const handleSelect = (option) => {
     setSelected(option);
-    // setIsOpen(false); // Close the dropdown after selection
+    if (onSelect) {
+      onSelect(option);
+    }
+    setIsOpen(false);
   };
 
   return (
@@ -43,45 +48,45 @@ const OrderBy = ({ options }) => {
             <div
               key={option.value}
               className={`dropdown-item ${
-                selected?.value === option.value ? "selected" : ""
+                selected?.value === option.value ? 'selected' : ''
               }`}
               onClick={() => handleSelect(option)}
             >
               {selected?.value === option.value ? (
                 <img
                   src={option?.selectedicon}
-                  alt={"check-mark"}
+                  alt={'check-mark'}
                   className="check-icon"
                 />
               ) : (
                 <img
                   src={option?.icon}
-                  alt={"check-mark"}
+                  alt={'check-mark'}
                   className="check-icon"
                 />
               )}
               {option.label}
             </div>
           ))}
-          <div className={"dropdown-item"}>
+          <div className={'dropdown-item'}>
             {sortBottons.map((option) => (
               <div
                 key={option.value}
                 className={`dropdown-sort-item ${
-                  selected?.value === option.value ? "selected" : ""
+                  selected?.value === option.value ? 'selected' : ''
                 }`}
                 onClick={() => handleSelect(option)}
               >
                 {selected?.value === option.value ? (
                   <img
                     src={option?.selectedicon}
-                    alt={"check-mark"}
+                    alt={'check-mark'}
                     className="sort-icon"
                   />
                 ) : (
                   <img
                     src={option?.icon}
-                    alt={"check-mark"}
+                    alt={'check-mark'}
                     className="sort-icon"
                   />
                 )}

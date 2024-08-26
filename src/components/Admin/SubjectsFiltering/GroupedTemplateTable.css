@@ -1,0 +1,8 @@
+.grouped-section-title {
+  color: var(--H1, #1f0039);
+  text-align: right;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  margin: 10.5px;
+}

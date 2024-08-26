@@ -4,6 +4,7 @@ import iconType from '../RowTypes/IconType';
 
 const TemplateRow = React.memo(({ children, item, PopUp, onClick, icon }) => {
   const { showPopup } = useContext(PopupContext);
+
   return (
     <div
       style={{ backgroundColor: iconType(item)[1]?.color }}
@@ -15,7 +16,8 @@ const TemplateRow = React.memo(({ children, item, PopUp, onClick, icon }) => {
           {child}
         </div>
       ))}
-      <img src={icon} alt="arrow" className="generic-row-arrow" />
+
+      {icon && <img src={icon} alt="arrow" className="generic-row-arrow" />}
     </div>
   );
 });

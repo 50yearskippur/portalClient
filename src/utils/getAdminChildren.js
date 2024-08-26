@@ -3,6 +3,7 @@ import DesignTemplateRow from '../components/Admin/RowTypes/DesignTemplateRow';
 import FormRow from '../components/Admin/RowTypes/FormRow';
 import adminRow from '../components/Admin/RowTypes/adminRow';
 import MediaRow from '../components/Admin/RowTypes/MediaRow';
+import AdminSubsubjectsRow from '../components/Admin/RowTypes/AdminSubsubjectsRow';
 
 const getAdminChildren = (item, selectedTab) => {
   switch (true) {
@@ -16,6 +17,10 @@ const getAdminChildren = (item, selectedTab) => {
       return MediaRow(item);
     case selectedTab?.includes('אדמינים'):
       return adminRow(item);
+    case selectedTab?.includes('תתי נושאים'):
+      return AdminSubsubjectsRow(item);
+    case selectedTab?.includes('קורסים'):
+      return AdminSubsubjectsRow(item);
     default:
       return EduResourceRow(item);
   }

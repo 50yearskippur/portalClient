@@ -14,9 +14,9 @@ const Button = ({
     <div
       className={`button ${disabled && 'disabled'}`}
       style={{
-        ...style,
         background: isWhiteButton && 'white',
         border: isWhiteButton && '1.5px solid #6C60FF',
+        ...style
       }}
       onClick={onClickHandler}
     >

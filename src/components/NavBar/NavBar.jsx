@@ -15,7 +15,9 @@ import {
   adminIconSelected,
   addPermissionsIcon,
   addPermissionsIconSelected,
-  telephoneIcon
+  telephoneIcon,
+  adminSubsubjectIcon,
+  adminSubsubjectIconSelected
 } from "../../assets/media/Navbar";
 import "./NavBar.css";
 
@@ -76,6 +78,13 @@ const NavBar = () => {
         navigateTo: "/permissionsManagement",
         text: "ניהול הרשאות",
         show: isSuperAdmin,
+      },
+      {
+        path: adminSubsubjectIcon,
+        selected: adminSubsubjectIconSelected,
+        navigateTo: "/subsubjectManagment", 
+        text: "ניהול תתי נושאים",
+        show: isAdmin,
       },
     ],
     [isAdmin, isSuperAdmin]

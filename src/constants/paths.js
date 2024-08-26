@@ -7,6 +7,7 @@ import PersonalArea from "../pages/PersonalAreaPage";
 import AdminPermissionManagment from "../pages/AdminPermissionManagment";
 import Admin from "../pages/AdminPage";
 import AdminUpload from "../pages/AdminUploadPage.jsx";
+import AdminSubsubjectsManagment from "../pages/AdminSubsubjectsManagment.jsx"
 
 const paths = [
   {
@@ -33,6 +34,11 @@ const paths = [
     path: "/permissionsManagement",
     text: " ניהול הרשאות",
     component: AdminPermissionManagment,
+  },
+  {
+    path: "/subsubjectManagment",
+    text: " ניהול תתי נושאים",
+    component: AdminSubsubjectsManagment,
   },
   { path: "/admin/upload", text: "העלאה באדמין", component: AdminUpload },
 ];
