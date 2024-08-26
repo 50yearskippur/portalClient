@@ -4,6 +4,10 @@
   gap: 1.7vw;
 }
 
+.Toastify__toast--info {
+  width: 14vw;
+}
+
 .edu-resource-container {
   position: relative;
   width: 54.1vw;
@@ -60,7 +64,7 @@
   opacity: 0.8;
 }
 
-.edu-resource-nootbook {
+.currentEdu-type-img {
   width: 64px;
 }
 

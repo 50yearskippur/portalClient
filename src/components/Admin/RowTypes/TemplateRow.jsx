@@ -1,5 +1,4 @@
-import { useContext } from 'react';
-import React from 'react';
+import React, { useContext } from 'react';
 import { PopupContext } from '../../../store/popup-context';
 import iconType from '../RowTypes/IconType';
 

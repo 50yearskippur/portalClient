@@ -8,10 +8,7 @@ const Button = ({
   disabled = false,
   onClick = () => {},
 }) => {
-  const onClickHandler = () => {
-    if (disabled) return;
-    return onClick();
-  };
+  const onClickHandler = () => (disabled ? null : onClick());
 
   return (
     <div
@@ -19,7 +16,7 @@ const Button = ({
       style={{
         background: isWhiteButton && 'white',
         border: isWhiteButton && '1.5px solid #6C60FF',
-        ...style,
+        ...style
       }}
       onClick={onClickHandler}
     >

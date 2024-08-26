@@ -1,23 +1,22 @@
 import DeleteEduText from './DeleteEduText';
 import handlePropagation from '../../../utils/handlePropagation';
 import EduResSection from './EduResSection';
-import getCorrectFileTemplate from '../../../utils/getCorrectFileTemplate';
-import getEduPreviewTopChildren from '../../../utils/getEduPreviewTopChildren';
-import MainEduTop from './MainEduTop';
-import getAlbumChildren from '../../../utils/getAlbumChildren';
+import GenericEduTop from './GenericEduTop';
+import pictureIcon from '../../../assets/media/Upload/picture.svg';
+import ImageGallery from './ImageGallery';
 
 const MediaPreview = ({ edu }) => {
   return (
     <div className="edu-preview-content" onClick={(e) => handlePropagation(e)}>
-      <MainEduTop
-        children={getEduPreviewTopChildren(edu.type, edu)}
+      <GenericEduTop
         edu={edu}
+        iconSrc={pictureIcon}
+        pageType="תמונת סטוק / אלבום"
       />
       <EduResSection
         title="קבצים"
-        content={getCorrectFileTemplate(edu, edu.type)}
+        content={<ImageGallery images={edu.files} />}
       />
-      {getAlbumChildren(edu).map((child) => child)}
       <DeleteEduText />
     </div>
   );

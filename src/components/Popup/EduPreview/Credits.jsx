@@ -1,33 +1,14 @@
+import './Credits.css';
+
 const Credits = ({ edu }) => {
   return (
-    <div className="edu-paragraph-container">
-      <div className="edu-row-container">
-        <div className="edu-text-container" style={{ width: "7.3vw" }}>
-          <div className="edu-bright-text">רת"ח</div>
+    <div className="credits-list">
+      {edu.credits?.map((credit, index) => (
+        <div className="edu-text-container" key={index}>
+          <div className="edu-bright-text">{credit.role}</div>
+          <div className=".edu-dark-text">{credit.user.fullName}</div>
         </div>
-        <div className="edu-text-container">
-          <div className="edu-bright-text">רשצים</div>
-        </div>
-      </div>
-      <div className="edu-row-container">
-        <div className="edu-text-container" style={{ width: "7.3vw" }}>
-          <div className="edu-bright-text">רמד פיתוח</div>
-        </div>
-        <div className="edu-text-container">
-          <div className="edu-bright-text">אפיון</div>
-        </div>
-      </div>
-      <div className="edu-row-container">
-        <div className="edu-text-container" style={{ width: "7.3vw" }}>
-          <div className="edu-bright-text">מידול תלת מימד</div>
-        </div>
-        <div className="edu-text-container">
-          <div className="edu-bright-text">מומחה תוכן</div>
-        </div>
-      </div>
-      <div className="edu-text-container">
-        <div className="edu-bright-text">פרויקטור</div>
-      </div>
+      ))}
     </div>
   );
 };

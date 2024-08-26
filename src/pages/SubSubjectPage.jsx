@@ -1,6 +1,13 @@
+<<<<<<<<< Temporary merge branch 1
 import React, { useContext, useState } from 'react';
 import './SubSubjectPage.css';
 import { useLocation, useNavigate } from 'react-router-dom';
+=========
+import React from 'react';
+import './SubSubjectPage.css';
+import { useLocation } from 'react-router-dom';
+import { useContext } from 'react';
+>>>>>>>>> Temporary merge branch 2
 import TopSection from '../components/TopSection/TopSection';
 import FileController from '../components/Media/FileController';
 import SideBar from '../components/SideBar/SideBar';
@@ -8,28 +15,38 @@ import Rate from '../components/Rate/Rate';
 import EduResPreview from '../components/EduResPreview/EduResPreview';
 import UploadEduType from '../components/Popup/UploadEdu/UploadEduType';
 import { PopupContext } from '../store/popup-context';
-import notebookImg from '../assets/media/Icons/notebook.svg';
 import heartimg from '../assets/media/Icons/fullHeart.svg';
 import point from '../assets/media/Icons/pinkPoint.svg';
 import headphones from '../assets/media/Icons/headphones.svg';
 import headphonesSilent from '../assets/media/Icons/headphonesSilent.svg';
 import clock from '../assets/media/Icons/clock.svg';
 import addedToFavoritesIcon from '../assets/media/Icons/addedToFavoritesIcon.svg';
+import convertDateToString from '../utils/convertDateToString';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import eduTypeByText from '../utils/eduTypeByText';
 // delete in production
 import bluePlus from '../assets/media/Icons/bluePlus.svg';
 import convertDateToString from '../utils/convertDateToString';
 // import plusImg from "../assets/media/Icons/plus.svg";
+=========
+import headpones from '../assets/media/Icons/headphones.svg';
+import clock from '../assets/media/Icons/clock.svg';
+import bluePlus from '../assets/media/Icons/bluePlus.svg';
+// delete in production
+import rabit from '../assets/img/rabit.jpg';
+>>>>>>>>> Temporary merge branch 2
 
 const SubSubjectPage = () => {
   const { showPopup } = useContext(PopupContext);
   const [isAddedToFavorites, setIsAddedToFavorites] = useState(false);
   const location = useLocation();
-  const navigate = useNavigate();
   const subSubject = location.state?.subSubject;
   const currentEdu = location.state?.item || subSubject?.eduResource[0];
   const uploadByAdmin = [];
   const uploadByNonAdmin = [];
 
+<<<<<<<<< Temporary merge branch 1
   subSubject?.eduResource?.forEach((eduResource) => {
     if (eduResource.creator.isAdmin) {
       uploadByAdmin.push(eduResource);
@@ -38,12 +55,38 @@ const SubSubjectPage = () => {
     }
   });
 
-  const handleItemClick = (item) => {
-    navigate(location.pathname, { state: { subSubject, item } });
-  };
+  // const handleItemClick = (item) => {
+  //   navigate(location.pathname, { state: { subSubject, item } });
+  // };
 
   const onAddToFavoritesHandler = () => {
     setIsAddedToFavorites((prev) => !prev);
+    if (!isAddedToFavorites) {
+      toast(
+        <div
+          style={{
+            display: 'flex',
+            direction: 'rtl',
+            justifyContent: 'space-between',
+            fontSize: '14px',
+          }}
+        >
+          <img src={heartimg} alt="heart" />
+          <div>נוסף למועדפים</div>
+          <a
+            style={{ color: '#8CAEFF', cursor: 'pointer' }}
+            href="/personalArea"
+          >
+            מעבר למועדפים
+          </a>
+        </div>,
+        {
+          type: 'info',
+          autoClose: 2000,
+          icon: false,
+        }
+      );
+    }
   };
 
   const getEduCredits = (credits) => {
@@ -70,14 +113,15 @@ const SubSubjectPage = () => {
         <div className="edu-resource-container">
           <FileController
             item={currentEdu.files}
+            showCover={false}
             style={{ height: '54.1vh' }}
           />
           <div className="edu-resource-title-container">
             <div className="edu-resource-info-container">
               <img
-                src={notebookImg}
-                className="edu-resource-nootbook"
-                alt="nootbook"
+                src={eduTypeByText(currentEdu.type)}
+                alt="edu type"
+                lassName="currentEdu-type-img"
               />
               <div className="edu-resource-info">
                 <div className="edu-resource-title">{currentEdu.title}</div>
@@ -173,6 +217,11 @@ const SubSubjectPage = () => {
               data={uploadByAdmin}
               style={{ height: '30.4vh' }}
               onItemClick={handleItemClick}
+=========
+              ItemComponent={EduResPrev}
+              data={eduResources?.uploadByArtch}
+              style={{ height: '30.4vh' }}
+>>>>>>>>> Temporary merge branch 2
             />
           </div>
           <div
@@ -211,6 +260,11 @@ const SubSubjectPage = () => {
               data={uploadByNonAdmin}
               style={{ height: '30.4vh' }}
               onItemClick={handleItemClick}
+=========
+              ItemComponent={EduResPrev}
+              data={eduResources?.uploadByOther}
+              style={{ height: '30.4vh' }}
+>>>>>>>>> Temporary merge branch 2
             />
           </div>
         </div>

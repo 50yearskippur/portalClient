@@ -1,25 +1,18 @@
-import { useState } from "react";
-import emptyStar from "../../assets/media/Icons/emptyStar.svg";
-import fullStar from "../../assets/media/Icons/fullStar.svg";
-import handlePropagation from "../../utils/handlePropagation";
+import { useState } from 'react';
+import { FaStar } from 'react-icons/fa';
+import handlePropagation from '../../utils/handlePropagation';
 
-
-// Todo: delete this component and replace it with the one in the Rate.jsx file
-
-const Star = ({ style, onClick = () => {}, clickable = true }) => {
-  const [pressed, setPressed] = useState(false);
-
-  const handleClick = (e) => {
-    handlePropagation(e);
-    if (clickable) setPressed((prev) => !prev);
-  };
-
+const Star = ({ defaultValue }) => {
+  const [isPressed, setIsPressed] = useState(defaultValue);
   return (
-    <img
-      src={pressed || !clickable ? fullStar : emptyStar}
-      alt="star"
-      style={style}
-      onClick={(e) => handleClick(e)}
+    <FaStar
+      className="star"
+      size={20}
+      color={isPressed ? '#111827' : '#dadbe8'}
+      onClick={(e) => {
+        setIsPressed((prev) => !prev);
+        handlePropagation(e);
+      }}
     />
   );
 };

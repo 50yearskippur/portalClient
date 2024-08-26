@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaStar } from 'react-icons/fa';
-import "./Rate.css";
+import './Rate.css';
 
 const Rate = ({ style, clickable = true, numberOfStars = 5 }) => {
   const [rating, setRating] = useState(null);
@@ -8,10 +8,10 @@ const Rate = ({ style, clickable = true, numberOfStars = 5 }) => {
 
   return (
     <div className="rate-container">
-      {[...Array(numberOfStars)].map((star, index) => {
+      {[...Array(numberOfStars)].map((_, index) => {
         const currentRating = index + 1;
         return (
-          <label>
+          <label key={index}>
             <input
               type="radio"
               name="rating"
@@ -23,7 +23,7 @@ const Rate = ({ style, clickable = true, numberOfStars = 5 }) => {
               className="star"
               size={35}
               style={style}
-              color={currentRating <= (hover || rating) ? "#ffc107" : "#e4e5e9"}
+              color={currentRating <= (hover || rating) ? '#ffc107' : '#e4e5e9'}
               onMouseEnter={() => clickable && setHover(currentRating)}
               onMouseLeave={() => clickable && setHover(null)}
             />
@@ -31,7 +31,7 @@ const Rate = ({ style, clickable = true, numberOfStars = 5 }) => {
         );
       })}
     </div>
-  )
-}
+  );
+};
 
 export default Rate;

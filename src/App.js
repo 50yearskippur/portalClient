@@ -1,13 +1,13 @@
-import React from "react";
-import "react-toastify/dist/ReactToastify.css";
-import "./App.css";
-import { PopupProvider } from "./store/popup-context";
-import { UserProvider } from "./store/user-context";
-import { Route, Routes, BrowserRouter } from "react-router-dom";
-import paths from "./constants/paths.js";
-import NavBar from "./components/NavBar/NavBar";
-import Popup from "./components/Popup/Popup";
-import { ToastContainer } from "react-toastify";
+import React from 'react';
+import 'react-toastify/dist/ReactToastify.css';
+import './App.css';
+import { PopupProvider } from './store/popup-context';
+import { UserProvider } from './store/user-context';
+import { Route, Routes, BrowserRouter } from 'react-router-dom';
+import paths from './constants/paths.js';
+import NavBar from './components/NavBar/NavBar';
+import Popup from './components/Popup/Popup';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
@@ -30,7 +30,7 @@ function App() {
             </div>
           </div>
           <ToastContainer
-            position={"bottom-center"}
+            position={'bottom-center'}
             hideProgressBar={true}
             limit={1}
           />

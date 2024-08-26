@@ -31,6 +31,7 @@ const rotateImageOnCanvas = (imageFile, callback) => {
       // Draw the image onto the canvas, adjusting position based on rotation
       ctx.drawImage(img, -img.width / 2, -img.height / 2);
 
+      // const fileName = imageFile.name || imageFile.fileName;
       // Convert the canvas back to a file object
       canvas.toBlob((blob) => {
         const rotatedFile = new File([blob], imageFile.name, {
@@ -43,7 +44,13 @@ const rotateImageOnCanvas = (imageFile, callback) => {
   };
 };
 
-const BigImage = ({ image, onDrop, handleDeleteImage, handleRotateImage }) => {
+const BigImage = ({
+  image,
+  onDrop,
+  handleDeleteImage,
+  handleRotateImage,
+  isTypeFile,
+}) => {
   const [{ isOver }, drop] = useDrop({
     accept: 'image',
     drop: (item) => onDrop(item),
@@ -63,7 +70,7 @@ const BigImage = ({ image, onDrop, handleDeleteImage, handleRotateImage }) => {
       {!!image && (
         <>
           <img
-            src={URL.createObjectURL(image)}
+            src={isTypeFile ? URL.createObjectURL(image) : image}
             alt="file"
             className="media-file-cover grab"
           />
@@ -85,6 +92,7 @@ const SmallImage = ({
   setCurrentImageSwap,
   handleDeleteImage,
   handleRotateImage,
+  isTypeFile,
 }) => {
   const [{ isDragging }, drag] = useDrag({
     type: 'image',
@@ -107,7 +115,7 @@ const SmallImage = ({
       style={{ opacity: isDragging ? 0.5 : 1 }}
     >
       <img
-        src={URL.createObjectURL(image)}
+        src={isTypeFile ? URL.createObjectURL(image) : image}
         alt="file"
         className="media-file grabbing"
       />
@@ -150,12 +158,17 @@ const MediaFilesPreview = ({ files }) => {
 
   const handleAddImages = (event) => {
     const newImages = Array.from(event.target.files);
-    setImages((prevImages) => [...prevImages, ...newImages]);
+    const transformedFiles = newImages.map((file) => ({
+      media: { file },
+    }));
+    setImages((prevImages) => [...prevImages, ...transformedFiles]);
   };
 
   const handleDeleteImage = (imageToDelete) => {
     const newImages = images.filter(
-      (image) => image.name !== imageToDelete.name
+      (image) =>
+        image.media?.file?.name !== imageToDelete.name ||
+        image.media?.file?.fileName !== imageToDelete.fileName
     );
     setImages(newImages);
   };
@@ -177,20 +190,22 @@ const MediaFilesPreview = ({ files }) => {
   return (
     <div className="media-files-preview-container">
       <BigImage
-        image={images[0]}
+        image={images[0].media.file}
         onDrop={() => onDrop(currentImageSwap)}
         handleDeleteImage={handleDeleteImage}
         handleRotateImage={handleRotateImage}
+        isTypeFile={images[0].media.file instanceof File}
       />
       <div className="media-files-grid">
         {images.slice(1).map((image, index) => (
           <React.Fragment key={index}>
             <SmallImage
-              image={image}
+              image={image.media.file}
               index={index}
               setCurrentImageSwap={setCurrentImageSwap}
               handleDeleteImage={handleDeleteImage}
               handleRotateImage={handleRotateImage}
+              isTypeFile={image.media.file instanceof File}
             />
             <DotsMenu />
           </React.Fragment>

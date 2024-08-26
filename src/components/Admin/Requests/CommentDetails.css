@@ -10,9 +10,9 @@
   border-bottom: 1px solid #e0e0e0;
 } */
 .comment-list-big-container {
-  gap: "16px";
-  display: "flex";
-  align-items: "center";
+  gap: '16px';
+  display: 'flex';
+  align-items: 'center';
 }
 .commet-text {
   flex: 1 0 0;
@@ -25,9 +25,9 @@
   line-height: 160%; /* 25.6px */
 }
 .comment-pic-and-details {
-  gap: "16px";
-  display: "flex";
-  align-items: "center";
+  gap: '16px';
+  display: 'flex';
+  align-items: 'center';
 }
 .comment-container {
   display: flex;
@@ -37,6 +37,7 @@
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   align-self: stretch;
   overflow: hidden;
   color: #444a5a;

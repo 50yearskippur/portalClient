@@ -1,7 +1,7 @@
-import React from "react";
-import "./CoverComponent.css";
-import leftImage from "../../../assets/img/party.png"; // update with the correct path
-import rightImage from "../../../assets/img/rabit.jpg"; // update with the correct path
+import React from 'react';
+import './CoverComponent.css';
+import leftImage from '../../../assets/dummyMedia/party.png'; // update with the correct path
+import rightImage from '../../../assets/dummyMedia/rabit.jpg'; // update with the correct path
 
 const CoverComponent = () => {
   return (

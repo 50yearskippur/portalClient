@@ -1,44 +1,102 @@
-import rabit from "../assets/img/rabit.jpg";
-import sea from "../assets/img/sea.jpg";
-import robot from "../assets/img/robot.jpg";
-import bamba from "../assets/img/bamba.jpg";
-import flowers from "../assets/img/flowers.jfif";
-import PT from "../assets/img/PT.jfif";
-import snow from  "../assets/img/snow.jfif";
-import tiger from "../assets/img/tiger.jfif";
-import zebra from "../assets/img/zebra.jpg";
-import sports from "../assets/img/sports.jfif";
+import party from '../assets/dummyMedia/party.png';
+import rabit from '../assets/dummyMedia/rabit.jpg';
+import robot from '../assets/dummyMedia/robot.jpg';
+import usa from '../assets/dummyMedia/usa.png';
 
-const media = [{
-    _id: "66b46996cb231f6817ea15cb",
+const media = [
+  {
+    _id: '66b46996cb231f6817ea15cb',
     title: 'סיום קורס מט"ל',
-    pageType: 'מדיה',
+    pageType: 'אלבום',
     type: 'נושא',
-    files: [ {media: {file: sports, MimeType: 'image', fileName: "ספורט"}}, {media: {file: sea, MimeType: 'image', fileName: 'ים'}}, {media: {file: robot, MimeType: 'image', fileName: 'רובוט'}}, {media: {file: bamba, MimeType: 'image', fileName: 'במבה'}}, {media: {file: flowers, MimeType: 'image', fileName: 'פרחים'}}, {media: {file: PT, MimeType: 'image', fileName: 'פתח תקווה'}}, {media: {file: snow, MimeType: 'image', fileName: 'שלג'}}, {media: {file: tiger, MimeType: 'image', fileName: 'נמר'}}, {media: {file: zebra, MimeType: 'image', fileName: 'זברה'}}, {media: {file: rabit, MimeType: 'image', fileName: 'ארנב'}},],
-},{
-    _id: "66b46996cb231f6817ea15cb",
+    views: 500,
+    updatedAt: '2021-08-01T12:00:00.000Z',
+    files: [
+      { media: { file: party, mimeType: 'image', fileName: 'ספורט' } },
+      { media: { file: rabit, mimeType: 'image', fileName: 'ים' } },
+      { media: { file: robot, mimeType: 'image', fileName: 'רובוט' } },
+      { media: { file: usa, mimeType: 'image', fileName: 'במבה' } },
+      { media: { file: rabit, mimeType: 'image', fileName: 'פרחים' } },
+      { media: { file: party, mimeType: 'image', fileName: 'פתח תקווה' } },
+      { media: { file: party, mimeType: 'image', fileName: 'שלג' } },
+      { media: { file: usa, mimeType: 'image', fileName: 'נמר' } },
+      { media: { file: usa, mimeType: 'image', fileName: 'זברה' } },
+      { media: { file: rabit, mimeType: 'image', fileName: 'ארנב' } },
+    ],
+  },
+  {
+    _id: '66b46996cb231f6817ea15cb',
     title: 'יום כיף בספארי',
-    pageType: 'מדיה',
+    pageType: 'אלבום',
     type: 'נושא',
-    files: [ {media: {file: sports, MimeType: 'image', fileName: "ספורט"}}, {media: {file: sea, MimeType: 'image', fileName: 'ים'}}, {media: {file: robot, MimeType: 'image', fileName: 'רובוט'}}, {media: {file: bamba, MimeType: 'image', fileName: 'במבה'}}, {media: {file: flowers, MimeType: 'image', fileName: 'פרחים'}}, {media: {file: PT, MimeType: 'image', fileName: 'פתח תקווה'}}, {media: {file: snow, MimeType: 'image', fileName: 'שלג'}}, {media: {file: tiger, MimeType: 'image', fileName: 'נמר'}}, {media: {file: zebra, MimeType: 'image', fileName: 'זברה'}}, {media: {file: rabit, MimeType: 'image', fileName: 'ארנב'}},],
-}, {
-    _id: "66b46996cb231f6817ea15cb",
+    views: 500,
+    updatedAt: '2021-08-01T12:00:00.000Z',
+    files: [
+      { media: { file: party, mimeType: 'image', fileName: 'ספורט' } },
+      { media: { file: rabit, mimeType: 'image', fileName: 'ים' } },
+      { media: { file: robot, mimeType: 'image', fileName: 'רובוט' } },
+      { media: { file: usa, mimeType: 'image', fileName: 'במבה' } },
+      { media: { file: rabit, mimeType: 'image', fileName: 'פרחים' } },
+      { media: { file: party, mimeType: 'image', fileName: 'פתח תקווה' } },
+      { media: { file: party, mimeType: 'image', fileName: 'שלג' } },
+      { media: { file: usa, mimeType: 'image', fileName: 'נמר' } },
+      { media: { file: usa, mimeType: 'image', fileName: 'זברה' } },
+      { media: { file: rabit, mimeType: 'image', fileName: 'ארנב' } },
+    ],
+  },
+  {
+    _id: '66b46996cb231f6817ea15cb',
     title: 'פורימון 2021',
-    pageType: 'מדיה',
+    pageType: 'תמונות סטוק',
     type: 'נושא',
-    files: [ {media: {file: sports, MimeType: 'image', fileName: "ספורט"}}, {media: {file: sea, MimeType: 'image', fileName: 'ים'}}, {media: {file: robot, MimeType: 'image', fileName: 'רובוט'}}, {media: {file: bamba, MimeType: 'image', fileName: 'במבה'}}, {media: {file: flowers, MimeType: 'image', fileName: 'פרחים'}}, {media: {file: PT, MimeType: 'image', fileName: 'פתח תקווה'}}, {media: {file: snow, MimeType: 'image', fileName: 'שלג'}}, {media: {file: tiger, MimeType: 'image', fileName: 'נמר'}}, {media: {file: zebra, MimeType: 'image', fileName: 'זברה'}}, {media: {file: rabit, MimeType: 'image', fileName: 'ארנב'}},],
-}, {
-    _id: "66b46996cb231f6817ea15cb",
+    views: 500,
+    updatedAt: '2021-08-01T12:00:00.000Z',
+    files: [
+      { media: { file: party, mimeType: 'image', fileName: 'ספורט' } },
+      { media: { file: rabit, mimeType: 'image', fileName: 'ים' } },
+      { media: { file: robot, mimeType: 'image', fileName: 'רובוט' } },
+      { media: { file: usa, mimeType: 'image', fileName: 'במבה' } },
+      { media: { file: rabit, mimeType: 'image', fileName: 'פרחים' } },
+      { media: { file: party, mimeType: 'image', fileName: 'פתח תקווה' } },
+      { media: { file: party, mimeType: 'image', fileName: 'שלג' } },
+      { media: { file: usa, mimeType: 'image', fileName: 'נמר' } },
+      { media: { file: usa, mimeType: 'image', fileName: 'זברה' } },
+      { media: { file: rabit, mimeType: 'image', fileName: 'ארנב' } },
+    ],
+  },
+  {
+    _id: '66b46996cb231f6817ea15cb',
     title: 'בה"ד 1',
-    pageType: 'מדיה',
+    pageType: 'תמונות סטוק',
     type: 'נושא',
-    files: [ {media: {file: sports, MimeType: 'image', fileName: "ספורט"}}, {media: {file: sea, MimeType: 'image', fileName: 'ים'}}, {media: {file: robot, MimeType: 'image', fileName: 'רובוט'}}, {media: {file: bamba, MimeType: 'image', fileName: 'במבה'}}, {media: {file: flowers, MimeType: 'image', fileName: 'פרחים'}}, {media: {file: PT, MimeType: 'image', fileName: 'פתח תקווה'}}, {media: {file: snow, MimeType: 'image', fileName: 'שלג'}}, {media: {file: tiger, MimeType: 'image', fileName: 'נמר'}}, {media: {file: zebra, MimeType: 'image', fileName: 'זברה'}}, {media: {file: rabit, MimeType: 'image', fileName: 'ארנב'}},],
-}, {
-    _id: "66b46996cb231f6817ea15cb",
+    views: 500,
+    updatedAt: '2021-08-01T12:00:00.000Z',
+    files: [
+      { media: { file: party, mimeType: 'image', fileName: 'ספורט' } },
+      { media: { file: rabit, mimeType: 'image', fileName: 'ים' } },
+      { media: { file: robot, MimeType: 'image', fileName: 'רובוט' } },
+      { media: { file: usa, mimeType: 'image', fileName: 'במבה' } },
+      { media: { file: rabit, mimeType: 'image', fileName: 'פרחים' } },
+      { media: { file: party, mimeType: 'image', fileName: 'פתח תקווה' } },
+      { media: { file: party, mimeType: 'image', fileName: 'שלג' } },
+      { media: { file: usa, mimeType: 'image', fileName: 'נמר' } },
+      { media: { file: usa, mimeType: 'image', fileName: 'זברה' } },
+      { media: { file: rabit, mimeType: 'image', fileName: 'ארנב' } },
+    ],
+  },
+  {
+    _id: '66b46996cb231f6817ea15cb',
     title: 'סיום קורס קמ"נים',
-    pageType: 'מדיה',
+    pageType: 'אלבום',
     type: 'נושא',
-    files: [ {media: {file: sports, MimeType: 'image', fileName: "ספורט"}}, {media: {file: sea, MimeType: 'image', fileName: 'ים'}}, {media: {file: robot, MimeType: 'image', fileName: 'רובוט'}}, {media: {file: bamba, MimeType: 'image', fileName: 'במבה'}}, {media: {file: flowers, MimeType: 'image', fileName: 'פרחים'}}, {media: {file: PT, MimeType: 'image', fileName: 'פתח תקווה'}}, {media: {file: snow, MimeType: 'image', fileName: 'שלג'}}, {media: {file: tiger, MimeType: 'image', fileName: 'נמר'}}, {media: {file: zebra, MimeType: 'image', fileName: 'זברה'}}, {media: {file: rabit, MimeType: 'image', fileName: 'ארנב'}},],
-}]
+    views: 500,
+    updatedAt: '2021-08-01T12:00:00.000Z',
+    files: [
+      { key: 1, fileName: 'ספורט', mimeType: 'image' },
+      { key: 2, fileName: 'ספורט', mimeType: 'image' },
+      { key: 3, fileName: 'ספורט', mimeType: 'image' },
+    ],
+  },
+];
 
 export default media;

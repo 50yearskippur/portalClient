@@ -1,39 +1,47 @@
-import './SettingsList.css';
 import { useState, useEffect, useContext } from 'react';
 import { PopupContext } from '../../../store/popup-context';
 import Switch from '../../Switch/Switch';
+import getSettingText from '../../../utils/getSettingText';
+import './SettingsList.css';
 
-const Setting = ({ settingsArray }) => {
+const Setting = ({ item, settingsArray, disabled, pageType }) => {
   const { itemDetails, saveDetails } = useContext(PopupContext);
   const [settings, setSettings] = useState(
     itemDetails.settings ? itemDetails.settings : settingsArray
   );
 
   useEffect(() => {
-    saveDetails({ settings });
-  }, [settings, saveDetails]);
+    if (!disabled) saveDetails({ settings });
+  }, [settings, saveDetails, disabled]);
 
-  const changeSetting = (settingText) => {
-    setSettings((prevSettingAray) =>
-      prevSettingAray.map((setting) =>
-        setting.text === settingText
-          ? { ...setting, defaultValue: !setting.defaultValue }
-          : setting
-      )
-    );
-  };
+  function changeSetting(key) {
+    const updatedState = settings.map((item) => {
+      if (key in item) {
+        return { ...item, [key]: !item[key] };
+      }
+      return item;
+    });
+
+    setSettings(updatedState);
+  }
 
   return (
     <div className="settings-container">
-      {settings.map((setting, index) => (
-        <div key={index} className="setting-container">
-          <Switch
-            defaultChecked={setting.defaultValue}
-            changeSetting={() => changeSetting(setting.text)}
-          />
-          <div className="edu-dark-text">{setting.text}</div>
-        </div>
-      ))}
+      {settings.map((setting, index) => {
+        const settingBooleanValue = Object.keys(setting)[0];
+        return (
+          <div key={index} className="setting-container">
+            <Switch
+              defaultChecked={Object.values(setting)[0]}
+              disabled={disabled}
+              changeSetting={() => changeSetting(settingBooleanValue)}
+            />
+            <div className="edu-dark-text">
+              {getSettingText(pageType)[settingBooleanValue]}
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 };

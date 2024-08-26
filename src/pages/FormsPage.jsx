@@ -6,6 +6,13 @@ import SortBySubject from '../components/SortBySubject/SortBySubject';
 import { formsSubjects } from '../constants/forms';
 
 const FormPage = () => {
+  const getCommonForms = () => {
+    // get common forms from the server
+    return {
+      title: 'טפסים נפוצים',
+      forms: 1,
+    };
+  };
 
   return (
     <div className="page-container">

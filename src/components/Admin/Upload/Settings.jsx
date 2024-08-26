@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from 'react';
 import { PopupContext } from '../../../store/popup-context';
 import { addDays, addMonths, addYears } from 'date-fns';
 import SettingsList from '../../Popup/EduPreview/SettingsList';
-import getSettings from '../../../utils/getSettings';
+import getDefaultSettings from '../../../utils/getDefaultSettings';
 import Dropdown from '../../Dropdown/Dropdown';
 import levels from '../../../store/levels';
 import NextBtn from './NextBtn';
@@ -39,9 +39,16 @@ const Setting = ({ nextStage }) => {
     }
   }, [experationDate, saveDetails]);
 
+  const getestimatedTimeText = (estimatedTime) => {
+    return `${estimatedTime} דק'`;
+  };
+
   return (
     <div className="stage-upload-container">
-      <SettingsList settingsArray={getSettings(itemDetails?.type)} />
+      <SettingsList
+        settingsArray={getDefaultSettings(itemDetails?.type)}
+        pageType="תוצרים"
+      />
       {itemDetails?.settings?.some(
         (setting) =>
           setting.text === isPrimaryEduResource && setting.defaultValue
@@ -63,17 +70,30 @@ const Setting = ({ nextStage }) => {
         <div className="stage-input-container">
           <div className="stage-text">רמה</div>
           <Dropdown
-            defaultValue="בחרו רמת קושי"
+            defaultValue={
+              itemDetails.difficultyLevel
+                ? itemDetails.difficultyLevel
+                : 'בחרו רמת קושי'
+            }
             list={levels}
-            fieldName="level"
+            fieldName="difficultyLevel"
           />
         </div>
         <div className="stage-input-container">
           <div className="stage-text">זמן מוערך</div>
           <Dropdown
-            defaultValue="20 דק'"
+            defaultValue={
+              itemDetails.estimatedTime
+                ? getestimatedTimeText(itemDetails.estimatedTime)
+                : "20 דק'"
+            }
             list={["20 דק'", "30 דק'", "45 דק'", "60+ דק'"]}
             fieldName="estimatedTime"
+            extractNumber = {(input) =>  {
+              const match = input.match(/\+?\d+/);
+              return match ? match[0] : null;
+          }}
+          
           />
         </div>
       </div>
@@ -108,14 +128,14 @@ const Setting = ({ nextStage }) => {
                 return { ...prevDate, unit: item };
               })
             }
-            fieldName=""
+            fieldName="experationDate"
           />
         </div>
       </div>
       <NextBtn
         text={'העלה תוצר'}
         disabled={
-          !itemDetails.level ||
+          !itemDetails.difficultyLevel ||
           !itemDetails.estimatedTime ||
           !itemDetails.experationDate
         }

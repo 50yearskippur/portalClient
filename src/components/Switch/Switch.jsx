@@ -1,14 +1,15 @@
-import Switch from "react-switch";
-import { useState } from "react";
+import Switch from 'react-switch';
+import { useState } from 'react';
 
 const SwitchComponent = ({
   defaultChecked = false,
+  disabled = false,
   changeSetting = () => {},
   style = {
     width: 39,
     height: 16,
-    onColor: "#42C8A0",
-    offColor: "#C2C6CC",
+    onColor: '#42C8A0',
+    offColor: '#C2C6CC',
     handleDiameter: 10,
   },
 }) => {
@@ -30,6 +31,7 @@ const SwitchComponent = ({
       height={style.height}
       width={style.width}
       handleDiameter={style.handleDiameter}
+      disabled={disabled}
     />
   );
 };

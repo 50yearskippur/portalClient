@@ -8,7 +8,7 @@ const ListTemplate = ({
 }) => {
   const handleItemClick = (subject) => {
     setSelectedSubject(subject);
-    getSubSubjects(subject.forms);
+    getSubSubjects(subject);
   };
 
   return (

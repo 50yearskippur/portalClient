@@ -1,5 +1,4 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import './SideBar.css';
 
 const SideBar = ({
@@ -10,9 +9,7 @@ const SideBar = ({
   startFrom,
   isWithShadow = false,
   propsToItemComponent = {},
-  onItemClick = () => {},
 }) => {
-  const navigate = useNavigate();
 
   return (
     <div
@@ -24,10 +21,6 @@ const SideBar = ({
           className="image-item"
           style={{ overflow: isWithShadow ? 'unset' : 'auto' }}
           key={index}
-          onClick={() => {
-            onItemClick();
-            navigate('/subSubject', { state: { item } });
-          }}
         >
           <ItemComponent
             item={item}
