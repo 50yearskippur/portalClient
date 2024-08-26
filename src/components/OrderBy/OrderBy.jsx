@@ -34,7 +34,7 @@ const OrderBy = ({ options, onSelect }) => {
     if (onSelect) {
       onSelect(option);
     }
-    // setIsOpen(false); // Close the dropdown after selection
+    setIsOpen(false);
   };
 
   return (
