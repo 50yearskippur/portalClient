@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom';
 
 const StockMedia = ({ item }) => {
   const navigate = useNavigate();
+
+  console.log(item);
   return (
     <div
       className="stock-media-container"

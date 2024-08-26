@@ -3,7 +3,7 @@ import './FormsPage.css';
 import PdfPreview from '../components/ItemsComponents/PdfPreview';
 import Search from '../components/Search/Search';
 import SortBySubject from '../components/SortBySubject/SortBySubject';
-import { forms } from '../constants/forms';
+import { formsSubjects } from '../constants/forms';
 
 const FormPage = () => {
   const getCommonForms = () => {
@@ -25,7 +25,7 @@ const FormPage = () => {
       </div>
       <SortBySubject
         numberOfItemsInLine={3}
-        subjects={forms}
+        subjects={formsSubjects}
         ItemComponent={PdfPreview}
       />
     </div>

@@ -4,7 +4,7 @@ import { PopupContext } from '../store/popup-context';
 import { useNavigate } from 'react-router-dom';
 import Tabs from '../components/Tabs/Tabs';
 import uploadTypesArray from '../constants/uploadTypesArray';
-import forms from '../constants/forms';
+import { forms } from '../constants/forms';
 import media from '../constants/media';
 import eduResources from '../constants/eduResourse';
 import WaitingList from '../components/Admin/Requests/WaitingList';

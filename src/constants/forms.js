@@ -7,7 +7,7 @@ export const forms = [
     subject: { title: 'שלישות' },
     downloads: 500,
     settings: [{ isRecommended: true }],
-    files: { media: { file: pdfFile, MimeType: 'pdf', fileName: 'מסמך' } },
+    file: { media: { file: pdfFile, MimeType: 'pdf', fileName: 'מסמך' } },
     updatedAt: Date('28.8.2024'),
   },
   {
@@ -16,7 +16,7 @@ export const forms = [
     subject: { title: 'שלישות' },
     downloads: 500,
     settings: [{ isRecommended: false }],
-    files: { media: { file: pdfFile, MimeType: 'pdf', fileName: 'מסמך' } },
+    file: { media: { file: pdfFile, MimeType: 'pdf', fileName: 'מסמך' } },
     updatedAt: Date('28.8.2024'),
   },
   {
@@ -25,7 +25,7 @@ export const forms = [
     subject: { title: 'שלישות' },
     downloads: 500,
     settings: [{ isRecommended: false }],
-    files: { media: { file: pdfFile, MimeType: 'pdf', fileName: 'מסמך' } },
+    file: { media: { file: pdfFile, MimeType: 'pdf', fileName: 'מסמך' } },
     updatedAt: Date('28.8.2024'),
   },
   {
@@ -34,7 +34,7 @@ export const forms = [
     subject: { title: 'שלישות' },
     downloads: 500,
     settings: [{ isRecommended: true }],
-    files: { media: { file: pdfFile, MimeType: 'pdf', fileName: 'מסמך' } },
+    file: { media: { file: pdfFile, MimeType: 'pdf', fileName: 'מסמך' } },
     updatedAt: Date('28.8.2024'),
   },
   {
@@ -43,7 +43,7 @@ export const forms = [
     subject: { title: 'שלישות' },
     downloads: 500,
     settings: [{ isRecommended: true }],
-    files: { media: { file: pdfFile, MimeType: 'pdf', fileName: 'מסמך' } },
+    file: { media: { file: pdfFile, MimeType: 'pdf', fileName: 'מסמך' } },
     updatedAt: Date('28.8.2024'),
   },
   {
@@ -52,7 +52,7 @@ export const forms = [
     subject: { title: 'שלישות' },
     downloads: 500,
     settings: [{ isRecommended: false }],
-    files: { media: { file: pdfFile, MimeType: 'pdf', fileName: 'מסמך' } },
+    file: { media: { file: pdfFile, MimeType: 'pdf', fileName: 'מסמך' } },
     updatedAt: Date('28.8.2024'),
   },
   {
@@ -61,7 +61,7 @@ export const forms = [
     subject: { title: 'שלישות' },
     downloads: 500,
     settings: [{ isRecommended: true }],
-    files: { media: { file: pdfFile, MimeType: 'pdf', fileName: 'מסמך' } },
+    file: { media: { file: pdfFile, MimeType: 'pdf', fileName: 'מסמך' } },
     updatedAt: Date('28.8.2024'),
   },
   {
@@ -70,7 +70,7 @@ export const forms = [
     subject: { title: 'שלישות' },
     downloads: 500,
     settings: [{ isRecommended: false }],
-    files: { media: { file: pdfFile, MimeType: 'pdf', fileName: 'מסמך' } },
+    file: { media: { file: pdfFile, MimeType: 'pdf', fileName: 'מסמך' } },
     updatedAt: Date('28.8.2024'),
   },
   {
@@ -79,7 +79,7 @@ export const forms = [
     subject: { title: 'שלישות' },
     downloads: 500,
     settings: [{ isRecommended: true }],
-    files: { media: { file: pdfFile, MimeType: 'pdf', fileName: 'מסמך' } },
+    file: { media: { file: pdfFile, MimeType: 'pdf', fileName: 'מסמך' } },
     updatedAt: Date('28.8.2024'),
   },
   {
@@ -88,7 +88,7 @@ export const forms = [
     subject: { title: 'שלישות' },
     downloads: 500,
     settings: [{ isRecommended: true }],
-    files: { media: { file: pdfFile, MimeType: 'pdf', fileName: 'מסמך' } },
+    file: { media: { file: pdfFile, MimeType: 'pdf', fileName: 'מסמך' } },
     updatedAt: Date('28.8.2024'),
   },
   {
@@ -97,7 +97,7 @@ export const forms = [
     subject: { title: 'שלישות' },
     downloads: 500,
     settings: [{ isRecommended: false }],
-    files: { media: { file: pdfFile, MimeType: 'pdf', fileName: 'מסמך' } },
+    file: { media: { file: pdfFile, MimeType: 'pdf', fileName: 'מסמך' } },
     updatedAt: Date('28.8.2024'),
   },
   {
@@ -106,9 +106,40 @@ export const forms = [
     subject: { title: 'שלישות' },
     downloads: 500,
     settings: [{ isRecommended: false }],
-    files: { media: { file: pdfFile, MimeType: 'pdf', fileName: 'מסמך' } },
+    file: { media: { file: pdfFile, MimeType: 'pdf', fileName: 'מסמך' } },
     updatedAt: Date('28.8.2024'),
   },
 ];
 
-export default forms;
+export const formsSubjects = [
+  {
+    _id: '01',
+    title: 'שלישות',
+    forms: forms.slice(0, 3),
+  },
+  {
+    _id: '02',
+    title: 'ת"ש',
+    forms: forms.slice(3, 5),
+  },
+  {
+    _id: '03',
+    title: 'יוהל"ם',
+    forms: forms.slice(5, 6),
+  },
+  {
+    _id: '04',
+    title: 'חינוך',
+    forms: forms.slice(6, 8),
+  },
+  {
+    _id: '05',
+    title: 'נפגעים',
+    forms: [],
+  },
+  {
+    _id: '06',
+    title: 'בטיחות',
+    forms: forms.slice(-3),
+  },
+];

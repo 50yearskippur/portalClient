@@ -7,7 +7,6 @@ import DotsMenu from './DotsMenu';
 import './MediaFilesPreview.css';
 
 const rotateImageOnCanvas = (imageFile, callback) => {
-  console.log(imageFile);
   const reader = new FileReader();
   reader.readAsDataURL(imageFile);
 
@@ -59,7 +58,6 @@ const BigImage = ({
       isOver: !!monitor.isOver(),
     }),
   });
-  console.log(image);
 
   return (
     <div
@@ -167,13 +165,11 @@ const MediaFilesPreview = ({ files }) => {
   };
 
   const handleDeleteImage = (imageToDelete) => {
-    console.log(imageToDelete);
     const newImages = images.filter(
       (image) =>
         image.media?.file?.name !== imageToDelete.name ||
         image.media?.file?.fileName !== imageToDelete.fileName
     );
-    console.log(newImages);
     setImages(newImages);
   };
 
