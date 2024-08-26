@@ -1,13 +1,6 @@
-<<<<<<<<< Temporary merge branch 1
-import React, { useContext, useState } from 'react';
-import './SubSubjectPage.css';
-import { useLocation, useNavigate } from 'react-router-dom';
-=========
-import React from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import './SubSubjectPage.css';
 import { useLocation } from 'react-router-dom';
-import { useContext } from 'react';
->>>>>>>>> Temporary merge branch 2
 import TopSection from '../components/TopSection/TopSection';
 import FileController from '../components/Media/FileController';
 import SideBar from '../components/SideBar/SideBar';
@@ -27,15 +20,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import eduTypeByText from '../utils/eduTypeByText';
 // delete in production
 import bluePlus from '../assets/media/Icons/bluePlus.svg';
-import convertDateToString from '../utils/convertDateToString';
-// import plusImg from "../assets/media/Icons/plus.svg";
-=========
-import headpones from '../assets/media/Icons/headphones.svg';
-import clock from '../assets/media/Icons/clock.svg';
-import bluePlus from '../assets/media/Icons/bluePlus.svg';
-// delete in production
-import rabit from '../assets/img/rabit.jpg';
->>>>>>>>> Temporary merge branch 2
 
 const SubSubjectPage = () => {
   const { showPopup } = useContext(PopupContext);
@@ -46,7 +30,10 @@ const SubSubjectPage = () => {
   const uploadByAdmin = [];
   const uploadByNonAdmin = [];
 
-<<<<<<<<< Temporary merge branch 1
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   subSubject?.eduResource?.forEach((eduResource) => {
     if (eduResource.creator.isAdmin) {
       uploadByAdmin.push(eduResource);
@@ -216,12 +203,7 @@ const SubSubjectPage = () => {
               ItemComponent={EduResPreview}
               data={uploadByAdmin}
               style={{ height: '30.4vh' }}
-              onItemClick={handleItemClick}
-=========
-              ItemComponent={EduResPrev}
-              data={eduResources?.uploadByArtch}
-              style={{ height: '30.4vh' }}
->>>>>>>>> Temporary merge branch 2
+              // onItemClick={handleItemClick}
             />
           </div>
           <div
@@ -259,12 +241,7 @@ const SubSubjectPage = () => {
               propsToItemComponent={{ isUploadByAdmin: false }}
               data={uploadByNonAdmin}
               style={{ height: '30.4vh' }}
-              onItemClick={handleItemClick}
-=========
-              ItemComponent={EduResPrev}
-              data={eduResources?.uploadByOther}
-              style={{ height: '30.4vh' }}
->>>>>>>>> Temporary merge branch 2
+              // onItemClick={handleItemClick}
             />
           </div>
         </div>
