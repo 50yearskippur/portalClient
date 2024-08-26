@@ -1,6 +1,6 @@
 import React from 'react';
 import TemplateTable from '../GenericObjects/TemplateTable';
-import './GroupedTemplateTable.css'
+import './GroupedTemplateTable.css';
 
 const GroupedTemplateTable = ({ data, selectedTab }) => {
   const groupedData = data.reduce((acc, item) => {

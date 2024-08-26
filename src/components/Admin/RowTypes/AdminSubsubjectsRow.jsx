@@ -30,7 +30,7 @@ const AdminSubsubjectsRow = (item) => {
         className="subsubject-row-tag"
         onClick={() => showPopup(<AddTagPopup />)}
       >
-        <img src={plus} alt="delete tag" className="plus-subsubject-icon" />
+        <img src={plus} alt="add tag" className="plus-subsubject-icon" />
       </div>
     </div>,
   ];
