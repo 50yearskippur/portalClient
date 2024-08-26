@@ -18,6 +18,15 @@
   width: 100%;
 }
 
+.orderBy-text {
+  color: var(--Titale-2, #9599c6);
+  font-size: 16px;
+  font-weight: 500;
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
 .right-content {
 }
 
