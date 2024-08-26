@@ -1,6 +1,8 @@
 .order-by-container {
   position: relative;
   display: inline-block;
+  display: flex;
+  align-items: center;
 }
 
 .dropdown-toggle {
@@ -15,7 +17,7 @@
   display: flex;
   align-items: center;
   margin-right: auto;
-  margin-left: 1.08vw;
+  margin-left: 6px;
   cursor: pointer;
   color: var(--Titale-2, #9599c6);
   font-size: 16px;
