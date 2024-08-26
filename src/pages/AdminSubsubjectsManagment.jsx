@@ -113,7 +113,7 @@ const AdminSubsubjectsManagment = () => {
           </div>
           <div className="left-content">
             <OrderBy options={orderByOptions} onSelect={handleOrderSelect} />
-            <div className='orderBy-text'>סדר לפי</div>
+            <div className="orderBy-text">סדר לפי</div>
             <Search
               placeholder={'חיפוש חופשי'}
               style={{ height: '42px', width: '16.7vw' }}
