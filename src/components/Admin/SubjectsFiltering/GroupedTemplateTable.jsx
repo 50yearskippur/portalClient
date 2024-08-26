@@ -1,5 +1,6 @@
 import React from 'react';
 import TemplateTable from '../GenericObjects/TemplateTable';
+import './GroupedTemplateTable.css'
 
 const GroupedTemplateTable = ({ data, selectedTab }) => {
   const groupedData = data.reduce((acc, item) => {
@@ -12,9 +13,9 @@ const GroupedTemplateTable = ({ data, selectedTab }) => {
   }, {});
 
   return (
-    <div className="grouped-template-table">
+    <div>
       {Object.keys(groupedData).map((subjectName) => (
-        <div key={subjectName} className="grouped-section">
+        <div key={subjectName}>
           <div className="grouped-section-title">{subjectName}</div>
           <TemplateTable
             dataArr={groupedData[subjectName]}
